@@ -1,0 +1,136 @@
+grammar es.us.isa.interparamdep.InterparameterDependenciesLanguage with org.eclipse.xtext.common.Terminals
+
+generate interparameterDependenciesLanguage "http://www.isa.us.es/interparamdep/InterparameterDependenciesLanguage"
+
+Model:
+	dependencies+=Dependency*
+;
+
+Dependency:
+	dep=(ArithmeticDependency | ConditionalDependency | PredefinedDependency2) ';' NL?
+;
+
+terminal NL:
+	('\r'? '\n')+
+;
+
+ArithmeticDependency:
+	param1=ID arithOp=ArithmeticOperator param2=ID
+;
+
+ArithmeticOperator:
+	'<' | '>' | '<=' | '>=' | '=' | '!='
+;
+
+ConditionalDependency:
+	'IF' condition=Predicate2 'THEN' consequence=Predicate2
+;
+
+Predicate2:
+	Clause3 |
+	PositiveAtomic |
+	NegativeAtomic
+;
+
+Predicate:
+	clauses+=Clause (LogicalOperator clauses+=Clause)*
+;
+
+Clause:
+	atomicElements+=(PositiveAtomic|NegativeAtomic) (LogicalOperator atomicElements+=(PositiveAtomic|NegativeAtomic))* |
+	Not? '(' clauses+=Clause (LogicalOperator clauses+=Clause)* ')' |
+	PredefinedDependency
+;
+
+Clause2:
+	firstElement=(PositiveAtomic|NegativeAtomic) logicalOp=LogicalOperator additionalElements=(PositiveAtomic|NegativeAtomic|Clause2) |
+	Not? '(' firstElement=(PositiveAtomic|NegativeAtomic) logicalOp=LogicalOperator additionalElements=(PositiveAtomic|NegativeAtomic|Clause2) ')'
+;
+
+ClauseContinuation:
+	logicalOp=LogicalOperator additionalElements=(PositiveAtomic|NegativeAtomic|Clause3)
+;
+
+Clause3:
+	firstElement=(PositiveAtomic|NegativeAtomic) clauseContinuation=ClauseContinuation |
+	Not? '(' firstElement=(PositiveAtomic|NegativeAtomic|PredefinedDependency2) clauseContinuation=ClauseContinuation ')' (clauseContinuation2=ClauseContinuation)? |
+	firstElement=PredefinedDependency2 (clauseContinuation=ClauseContinuation)?
+;
+
+PositiveClauseContinuation:
+	logicalOp=LogicalOperator additionalElements=(PositiveAtomic|PositiveClause3)
+;
+
+PositiveClause3:
+	positiveFirstElement=PositiveAtomic positiveClauseContinuation=PositiveClauseContinuation |
+	Not? '(' positiveFirstElement=(PositiveAtomic|PredefinedDependency2) positiveClauseContinuation=PositiveClauseContinuation ')' (positiveClauseContinuation2=PositiveClauseContinuation)? |
+	PredefinedDependency2 (positiveClauseContinuation=PositiveClauseContinuation)?
+;
+
+PredefinedDependency2:
+	Not? predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=(PositiveAtomic|PositiveClause3) (',' predefDepClauses+=(PositiveAtomic|PositiveClause3))+ ')'
+;
+
+PositiveClause2:
+	firstElement=PositiveAtomic logicalOp=LogicalOperator additionalElements=(PositiveAtomic|PositiveClause2) |
+	Not? '(' firstElement=PositiveAtomic logicalOp=LogicalOperator additionalElements=(PositiveAtomic|PositiveClause2) ')'
+;
+
+PositiveFullClause2:
+	'(' PositiveClause2 ')'
+;
+
+Atomic:
+	Not? Param |
+	Not? ParamAssignment |
+	ArithmeticDependency
+;
+
+NegativeAtomic:
+	Not Param |
+	Not ParamAssignment
+;
+
+Not:
+	'NOT'
+;
+
+LogicalOperator:
+	'AND' | 'OR'
+;
+
+Param:
+	name=ID
+;
+
+ParamAssignment:
+	Param '=' paramValues+=STRING('|'paramValues+=STRING)*
+;
+
+//PositiveTerminalClause:
+//	PositiveAtomic ({PositiveTerminalClause.left2=current} LogicOperator right2=(PositiveTerminalClause|PositiveFullTerminalClause|PredefinedDependency))*
+//;
+
+PositiveClause:
+	positiveClauses+=PositiveAtomic (LogicalOperator positiveClauses+=(PositiveClause|PositiveFullClause|PredefinedDependency))*
+;
+
+PositiveFullClause:
+	'(' PositiveClause ')'
+;
+
+PositiveAtomic:
+	Param |
+	ParamAssignment |
+	ArithmeticDependency
+;
+
+//PredefinedDependency:
+//	Not? ('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' (PositiveTerminalClause|PositiveFullTerminalClause|PredefinedDependency) ({PredefinedDependency.left3=current} ',' right3=(PositiveTerminalClause|PositiveFullTerminalClause|PredefinedDependency))+ ')'
+//;
+
+PredefinedDependency:
+	Not? predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=(PositiveClause|PositiveFullClause|PredefinedDependency) (',' predefDepClauses+=(PositiveClause|PositiveFullClause|PredefinedDependency))+ ')'
+;
+
+

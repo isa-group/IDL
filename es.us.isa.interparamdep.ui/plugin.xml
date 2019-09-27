@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension
+		point="org.eclipse.ui.editors">
+		<editor
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+			default="true"
+			extensions="idl"
+			id="es.us.isa.interparamdep.InterparameterDependenciesLanguage"
+			name="InterparameterDependenciesLanguage Editor">
+		</editor>
+	</extension>
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+			commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+			<activeWhen>
+				<reference
+					definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+		<handler
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+			commandId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.validate">
+		<activeWhen>
+			<reference
+					definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened">
+			</reference>
+		</activeWhen>
+		</handler>
+		<!-- copy qualified name -->
+		<handler
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
+			<activeWhen>
+				<reference definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened" />
+			</activeWhen>
+		</handler>
+		<handler
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
+			<activeWhen>
+				<and>
+					<reference definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.XtextEditor.opened" />
+					<iterate>
+						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
+					</iterate>
+				</and>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension point="org.eclipse.core.expressions.definitions">
+		<definition id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened">
+			<and>
+				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+				<with variable="activeEditor">
+					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
+						value="es.us.isa.interparamdep.InterparameterDependenciesLanguage"
+						forcePluginActivation="true"/>
+				</with>
+			</and>
+		</definition>
+		<definition id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.XtextEditor.opened">
+			<and>
+				<reference definitionId="isXtextEditorActive"/>
+				<with variable="activeEditor">
+					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
+						value="es.us.isa.interparamdep.InterparameterDependenciesLanguage"
+						forcePluginActivation="true"/>
+				</with>
+			</and>
+		</definition>
+	</extension>
+	<extension
+			point="org.eclipse.ui.preferencePages">
+		<page
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="es.us.isa.interparamdep.InterparameterDependenciesLanguage"
+			name="InterparameterDependenciesLanguage">
+			<keywordReference id="es.us.isa.interparamdep.ui.keyword_InterparameterDependenciesLanguage"/>
+		</page>
+		<page
+			category="es.us.isa.interparamdep.InterparameterDependenciesLanguage"
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+			id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.coloring"
+			name="Syntax Coloring">
+			<keywordReference id="es.us.isa.interparamdep.ui.keyword_InterparameterDependenciesLanguage"/>
+		</page>
+		<page
+			category="es.us.isa.interparamdep.InterparameterDependenciesLanguage"
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+			id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.templates"
+			name="Templates">
+			<keywordReference id="es.us.isa.interparamdep.ui.keyword_InterparameterDependenciesLanguage"/>
+		</page>
+	</extension>
+	<extension
+			point="org.eclipse.ui.propertyPages">
+		<page
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="es.us.isa.interparamdep.InterparameterDependenciesLanguage"
+			name="InterparameterDependenciesLanguage">
+			<keywordReference id="es.us.isa.interparamdep.ui.keyword_InterparameterDependenciesLanguage"/>
+			<enabledWhen>
+				<adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+			<filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+		</page>
+	</extension>
+	<extension
+		point="org.eclipse.ui.keywords">
+		<keyword
+			id="es.us.isa.interparamdep.ui.keyword_InterparameterDependenciesLanguage"
+			label="InterparameterDependenciesLanguage"/>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+	<command
+			description="Trigger expensive validation"
+			id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.validate"
+			name="Validate">
+	</command>
+	<!-- copy qualified name -->
+	<command
+			id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+			categoryId="org.eclipse.ui.category.edit"
+			description="Copy the qualified name for the selected element"
+			name="Copy Qualified Name">
+	</command>
+	<command
+			id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
+			categoryId="org.eclipse.ui.category.edit"
+			description="Copy the qualified name for the selected element"
+			name="Copy Qualified Name">
+	</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.edit">
+			 <command
+				 commandId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.validate"
+				 style="push"
+				 tooltip="Trigger expensive validation">
+			<visibleWhen checkEnabled="false">
+				<reference
+					definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened">
+				</reference>
+			</visibleWhen>
+		</command>
+		</menuContribution>
+		<!-- copy qualified name -->
+		<menuContribution locationURI="popup:#TextEditorContext?after=copy">
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+				style="push" tooltip="Copy Qualified Name">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened" />
+				</visibleWhen>
+			</command>
+		</menuContribution>
+		<menuContribution locationURI="menu:edit?after=copy">
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+				style="push" tooltip="Copy Qualified Name">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened" />
+				</visibleWhen>
+			</command>
+		</menuContribution>
+		<menuContribution locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
+				style="push" tooltip="Copy Qualified Name">
+				<visibleWhen checkEnabled="false">
+					<and>
+						<reference definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.XtextEditor.opened" />
+						<iterate>
+							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
+						</iterate>
+					</and>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened">
+					</reference>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+		<handler
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+			commandId="org.eclipse.xtext.ui.editor.FindReferences">
+			<activeWhen>
+				<reference
+					definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type
+			base-type="org.eclipse.core.runtime.text"
+			file-extensions="idl"
+			id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.contenttype"
+			name="InterparameterDependenciesLanguage File"
+			priority="normal">
+		</content-type>
+	</extension>
+	<!-- adding resource factories -->
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="idl">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+		<resourceServiceProvider
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			uriExtension="idl">
+		</resourceServiceProvider>
+	</extension>
+	<!-- marker definitions for es.us.isa.interparamdep.InterparameterDependenciesLanguage -->
+	<extension
+			id="interparameterdependencieslanguage.check.fast"
+			name="InterparameterDependenciesLanguage Problem"
+			point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.xtext.ui.check.fast"/>
+		<persistent value="true"/>
+	</extension>
+	<extension
+			id="interparameterdependencieslanguage.check.normal"
+			name="InterparameterDependenciesLanguage Problem"
+			point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.xtext.ui.check.normal"/>
+		<persistent value="true"/>
+	</extension>
+	<extension
+			id="interparameterdependencieslanguage.check.expensive"
+			name="InterparameterDependenciesLanguage Problem"
+			point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.xtext.ui.check.expensive"/>
+		<persistent value="true"/>
+	</extension>
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="es.us.isa.interparamdep.InterparameterDependenciesLanguage"
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
+			id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.validator.preferencePage"
+			name="Errors/Warnings">
+			<keywordReference id="es.us.isa.interparamdep.ui.keyword_InterparameterDependenciesLanguage"/>
+		</page>
+	</extension>
+	<extension point="org.eclipse.xtext.builder.participant">
+		<participant
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+			fileExtensions="idl"/>
+	</extension>
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="es.us.isa.interparamdep.InterparameterDependenciesLanguage"
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.compiler.preferencePage"
+			name="Compiler">
+			<keywordReference id="es.us.isa.interparamdep.ui.keyword_InterparameterDependenciesLanguage"/>
+		</page>
+	</extension>
+	<extension point="org.eclipse.ui.propertyPages">
+		<page
+			category="es.us.isa.interparamdep.InterparameterDependenciesLanguage"
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.compiler.propertyPage"
+			name="Compiler">
+			<keywordReference id="es.us.isa.interparamdep.ui.keyword_InterparameterDependenciesLanguage"/>
+			<enabledWhen>
+				<adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+			<filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+		</page>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
+			<command
+				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
+				id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.OpenGeneratedCode"
+				style="push">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened" />
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+		<handler
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
+			<activeWhen>
+				<reference definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened" />
+			</activeWhen>
+		</handler>
+	</extension>
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<!-- quickfix marker resolution generator for es.us.isa.interparamdep.InterparameterDependenciesLanguage -->
+	<extension
+			point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="es.us.isa.interparamdep.ui.interparameterdependencieslanguage.check.fast">
+			<attribute
+				name="FIXABLE_KEY"
+				value="true">
+			</attribute>
+		</markerResolutionGenerator>
+		<markerResolutionGenerator
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="es.us.isa.interparamdep.ui.interparameterdependencieslanguage.check.normal">
+			<attribute
+				name="FIXABLE_KEY"
+				value="true">
+			</attribute>
+		</markerResolutionGenerator>
+		<markerResolutionGenerator
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="es.us.isa.interparamdep.ui.interparameterdependencieslanguage.check.expensive">
+			<attribute
+				name="FIXABLE_KEY"
+				value="true">
+			</attribute>
+		</markerResolutionGenerator>
+	</extension>
+	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler 
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.edit">
+			<command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+				style="push">
+				<visibleWhen checkEnabled="false">
+					<reference
+						definitionId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.Editor.opened">
+					</reference>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="es.us.isa.interparamdep.InterparameterDependenciesLanguage"
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+			id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.refactoring"
+			name="Refactoring">
+			<keywordReference id="es.us.isa.interparamdep.ui.keyword_InterparameterDependenciesLanguage"/>
+		</page>
+	</extension>
+	<extension point="org.eclipse.compare.contentViewers">
+		<viewer id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.compare.contentViewers"
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+			extensions="idl">
+		</viewer>
+		<contentTypeBinding
+			contentTypeId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.contenttype"
+			contentViewerId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.compare.contentViewers" />
+	</extension>
+	<extension point="org.eclipse.compare.contentMergeViewers">
+		<viewer id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.compare.contentMergeViewers"
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+			extensions="idl" label="InterparameterDependenciesLanguage Compare">
+		</viewer>
+		<contentTypeBinding
+			contentTypeId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.contenttype"
+			contentMergeViewerId="es.us.isa.interparamdep.InterparameterDependenciesLanguage.compare.contentMergeViewers" />
+	</extension>
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider id="es.us.isa.interparamdep.InterparameterDependenciesLanguage.editors.documentProviders"
+			class="es.us.isa.interparamdep.ui.InterparameterDependenciesLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+			extensions="idl">
+		</provider>
+	</extension>
+	<extension point="org.eclipse.team.core.fileTypes">
+		<fileTypes
+			extension="idl"
+			type="text">
+		</fileTypes>
+	</extension>
+</plugin>

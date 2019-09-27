@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="interparameterDependenciesLanguage" nsURI="http://www.isa.us.es/interparamdep/InterparameterDependenciesLanguage"
+    nsPrefix="interparameterDependenciesLanguage">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
+        eType="#//Dependency" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dep" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArithmeticDependency" eSuperTypes="#//Atomic #//PositiveAtomic">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arithOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalDependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Predicate2"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="consequence" eType="#//Predicate2"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Predicate2"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Predicate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clauses" upperBound="-1"
+        eType="#//Clause" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Clause">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atomicElements" upperBound="-1"
+        eType="#//Predicate2" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clauses" upperBound="-1"
+        eType="#//Clause" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Clause2">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="firstElement" eType="#//Predicate2"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="additionalElements" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClauseContinuation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="additionalElements" eType="#//Predicate2"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Clause3" eSuperTypes="#//Predicate2">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="firstElement" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clauseContinuation" eType="#//ClauseContinuation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clauseContinuation2" eType="#//ClauseContinuation"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositiveClauseContinuation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="additionalElements" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositiveClause3">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positiveFirstElement" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positiveClauseContinuation"
+        eType="#//PositiveClauseContinuation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positiveClauseContinuation2"
+        eType="#//PositiveClauseContinuation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredefinedDependency2" eSuperTypes="#//PositiveClause3">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="predefDepType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predefDepClauses" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositiveClause2" eSuperTypes="#//PositiveFullClause2">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="firstElement" eType="#//PositiveAtomic"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="additionalElements" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositiveFullClause2"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Atomic"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NegativeAtomic" eSuperTypes="#//Predicate2"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Param" eSuperTypes="#//Atomic #//NegativeAtomic #//ParamAssignment #//PositiveAtomic">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paramValues" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParamAssignment" eSuperTypes="#//Atomic #//NegativeAtomic #//PositiveAtomic"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PositiveClause" eSuperTypes="#//PositiveFullClause">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positiveClauses" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositiveFullClause"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PositiveAtomic" eSuperTypes="#//Predicate2"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PredefinedDependency" eSuperTypes="#//Clause">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="predefDepType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predefDepClauses" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
