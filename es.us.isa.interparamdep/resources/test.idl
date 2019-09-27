@@ -1,0 +1,7 @@
+Or(p1, p2);
+Or(p1, p2, p3); //IF p1 OR (p2 AND p3) THEN p1<p2 AND ZeroOrOne(p4, p5, p6) OR p2>=p3 OR AllOrNone(AllOrNone(p5, p6, p7<=p8), p3, ZeroOrOne(p1, p2, AllOrNone(p3, p4))) AND p!=q OR p2<=p3 OR p9 AND NOT pp; //
+IF p1<p2 THEN p3<p4;
+IF ZeroOrOne(p1 AND p6, p2, p4<p5) THEN p3;
+
+IF p1 AND p2 AND p3 THEN OnlyOne(p2='A', p3='B' AND (p4 OR p5));
+

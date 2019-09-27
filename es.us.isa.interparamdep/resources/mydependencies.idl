@@ -1,0 +1,106 @@
+Param1 < Param2;
+
+p2 >= p3;
+
+p1!=p4;
+
+p1<p3; //IF ZeroOrOne(p2 AND NOT (p4 AND p5), p6) THEN p5; --> This does not work INTENTIONALLY ('NOT' is not allowed inside predef deps)
+
+
+
+
+IF Param1 THEN NOT p2='N';
+IF NOT p1 AND (NOT p2 OR NOT p1) THEN NOT p2='A';
+IF (p1 OR p2 AND p5 OR p1<p5 AND p4='B') THEN p4;
+IF (p4 AND p5 OR (p3 AND p2) OR p8='O' AND p4<=p9) THEN p7;
+IF p2 AND p3 THEN p4;
+IF p<p9 THEN (p4<p2 AND p4 OR p4='A'|'B' OR (p4 AND o4));
+IF p3 THEN p4;
+AllOrNone(Param1, p2);
+OnlyOne(p1<p2, p3);
+OnlyOne((p1 OR p2), p3, (p2 AND p3));
+ZeroOrOne(p2 AND p3, p4);
+
+ZeroOrOne(p1, p2);
+IF AllOrNone(p1, p2, ZeroOrOne(p1, p2)) THEN ZeroOrOne(p2 AND p3, p4);
+IF AllOrNone(p1, p2) THEN ZeroOrOne(p2 AND p3, p4) OR p3;
+
+IF AllOrNone(p1, p2) THEN ZeroOrOne(p2 AND p3, p4);
+IF AllOrNone(p1, p2) AND p3 THEN ZeroOrOne(p2 AND p3, p4);
+IF p3 AND AllOrNone(p1, p2, ZeroOrOne(p2 AND p3, p4)) OR p1<=p4 THEN ZeroOrOne(p2 AND p3, p4);
+
+ZeroOrOne(p1, AllOrNone(p2, p3), p4);
+IF (p1 AND p2 OR (p3 AND p4)) OR (p1 AND p2) THEN p3;
+IF (p1 AND p2 OR (p3 AND p4)) OR p4 THEN p3; 
+IF (p1 AND p2 OR (p3 AND p4)) OR ZeroOrOne(p1, p2) THEN p3;
+IF (p1 AND p2 OR (p3 AND p4)) OR NOT p1 AND NOT p2 THEN p3;
+IF ZeroOrOne(p2 AND OnlyOne(p3, p4 AND p5), p6) THEN p5;
+ZeroOrOne((p3 AND p4), p2 AND OnlyOne(p3, p4 AND p5), p6);
+IF (ZeroOrOne(p1, p2) OR NOT p1) AND NOT p2 THEN (p3 AND p4) OR (p5 AND p6);
+IF (ZeroOrOne(p1, p2, p1>p4, p2 OR p4 AND (p3 OR p2)) OR NOT p1) AND NOT p2 THEN (p3 AND p4) OR p5;
+IF p1 OR (p3 AND p2) AND p4 THEN p5; //IF (ZeroOrOne(p1, p2, p1>p4, p2 OR p4 AND NOT (p3 OR p2)) OR NOT p1) AND NOT p2 THEN (p3 AND p4) OR p5;
+
+IF (ZeroOrOne(p1, p2, p1>p4, p2 OR p4 AND (p3 OR p2)) OR NOT p1) AND NOT p2 THEN (p3 AND p4) OR p5;
+
+
+
+IF name THEN age;
+
+IF NOT (date='something' AND example) THEN other;
+
+IF p1 AND p2 THEN (p3 OR p4) AND p5=p;
+
+IF p1 THEN NOT p2='A';
+
+IF p1='A' THEN p2 OR (p3 OR p4);
+
+IF p1 THEN p2;
+
+IF NOT p1 THEN p2;
+
+IF p1 THEN NOT p2;
+
+IF p1 THEN p2 AND p3;
+
+IF p1 THEN NOT p2;		//----------------------OnlyOne(p1, p2, p3)
+IF p2 THEN NOT p3;		//----------------------
+IF p1 THEN NOT p3;		//----------------------
+
+IF p1 THEN NOT p2;		//----------------------ZeroOrOne(p1, p2)
+
+IF p1 THEN p2=A;		//----------------------AllOrNone(p1, p2=A)
+
+
+IF p1='A' AND NOT (p2 OR p3) THEN p4 AND p5;	//------IF p1=A THEN OnlyOne(p2 AND p3, p4 AND p5)
+IF p1='A' AND NOT (p4 OR p5) THEN p2 AND p3;	//------
+IF p1='A' AND p2 THEN p3;				//------
+IF p1='A' AND p3 THEN p2;				//------
+IF p1='A' AND p4 THEN p5;				//------
+IF p1='A'|'B' AND p5 THEN p4;				//------
+
+AllOrNone(param1,param2);
+AllOrNone(param1,w);
+
+AllOrNone((param0 AND param00), param1 OR PASAS, ASD AND (QWE OR DF43),param2,param3 OR param4, param5 AND param6 OR param78);
+
+OnlyOne(p2='A'|'B', p3='B' AND (p4 OR p5));
+
+OnlyOne(p1, ZeroOrOne(p2, p3, p4, Or(p90, p80)), AllOrNone(p5, p6));
+
+IF p1 OR (p2 AND p3) THEN p1<p2 AND ZeroOrOne(p4, p5, p6) OR p2>=p3 OR AllOrNone(AllOrNone(p5, p6), p3) AND p!=q OR p2<=p3 OR p9 AND NOT pp;
+
+IF age THEN ageMax>=ageMin;
+
+OnlyOne(Or(p1, p2), p3, p7='B');
+
+IF q THEN p1=p4 AND p3 OR (p4 AND p10) OR p3<=p123;
+
+
+p1>p3;
+p2<=p4;
+p1=p2;
+
+p1!=age2;
+
+
+
