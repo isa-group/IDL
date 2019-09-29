@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class ParamImpl extends AtomicImpl implements Param
+public class ParamImpl extends ParamAssignmentImpl implements Param
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.

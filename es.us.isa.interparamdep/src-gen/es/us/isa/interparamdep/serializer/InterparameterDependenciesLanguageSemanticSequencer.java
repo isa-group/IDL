@@ -5,9 +5,8 @@ package es.us.isa.interparamdep.serializer;
 
 import com.google.inject.Inject;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.Atomic;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause2;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause3;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ConditionalDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Dependency;
@@ -15,12 +14,9 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.Interparameter
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Model;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Param;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause2;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause3;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate;
 import es.us.isa.interparamdep.services.InterparameterDependenciesLanguageGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -50,14 +46,11 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 			case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY:
 				sequence_ArithmeticDependency(context, (ArithmeticDependency) semanticObject); 
 				return; 
+			case InterparameterDependenciesLanguagePackage.ATOMIC:
+				sequence_Atomic(context, (Atomic) semanticObject); 
+				return; 
 			case InterparameterDependenciesLanguagePackage.CLAUSE:
 				sequence_Clause(context, (Clause) semanticObject); 
-				return; 
-			case InterparameterDependenciesLanguagePackage.CLAUSE2:
-				sequence_Clause2(context, (Clause2) semanticObject); 
-				return; 
-			case InterparameterDependenciesLanguagePackage.CLAUSE3:
-				sequence_Clause3(context, (Clause3) semanticObject); 
 				return; 
 			case InterparameterDependenciesLanguagePackage.CLAUSE_CONTINUATION:
 				sequence_ClauseContinuation(context, (ClauseContinuation) semanticObject); 
@@ -76,14 +69,11 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 					sequence_Param(context, (Param) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getPredicate2Rule()
-						|| rule == grammarAccess.getAtomicRule()
-						|| rule == grammarAccess.getNegativeAtomicRule()
-						|| rule == grammarAccess.getPositiveAtomicRule()) {
+				else if (rule == grammarAccess.getParamAssignmentRule()) {
 					sequence_Param_ParamAssignment(context, (Param) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getParamAssignmentRule()) {
+				else if (rule == grammarAccess.getPositiveAtomicRule()) {
 					sequence_Param_ParamAssignment(context, (Param) semanticObject); 
 					return; 
 				}
@@ -91,30 +81,21 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 			case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE:
 				sequence_PositiveClause(context, (PositiveClause) semanticObject); 
 				return; 
-			case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE2:
-				sequence_PositiveClause2(context, (PositiveClause2) semanticObject); 
-				return; 
-			case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE3:
-				sequence_PositiveClause3(context, (PositiveClause3) semanticObject); 
-				return; 
 			case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE_CONTINUATION:
 				sequence_PositiveClauseContinuation(context, (PositiveClauseContinuation) semanticObject); 
 				return; 
-			case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY:
-				sequence_PredefinedDependency(context, (PredefinedDependency) semanticObject); 
-				return; 
-			case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2:
-				if (rule == grammarAccess.getPositiveClause3Rule()) {
-					sequence_PositiveClause3_PredefinedDependency2(context, (PredefinedDependency2) semanticObject); 
+			case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY:
+				if (rule == grammarAccess.getPositiveClauseRule()) {
+					sequence_PositiveClause_PositivePredefinedDependency(context, (PositivePredefinedDependency) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getPredefinedDependency2Rule()) {
-					sequence_PredefinedDependency2(context, (PredefinedDependency2) semanticObject); 
+				else if (rule == grammarAccess.getPositivePredefinedDependencyRule()) {
+					sequence_PositivePredefinedDependency(context, (PositivePredefinedDependency) semanticObject); 
 					return; 
 				}
 				else break;
-			case InterparameterDependenciesLanguagePackage.PREDICATE:
-				sequence_Predicate(context, (Predicate) semanticObject); 
+			case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY:
+				sequence_PredefinedDependency(context, (PredefinedDependency) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -124,7 +105,7 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	/**
 	 * Contexts:
 	 *     ArithmeticDependency returns ArithmeticDependency
-	 *     Predicate2 returns ArithmeticDependency
+	 *     Predicate returns ArithmeticDependency
 	 *     Atomic returns ArithmeticDependency
 	 *     PositiveAtomic returns ArithmeticDependency
 	 *
@@ -150,44 +131,13 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	
 	/**
 	 * Contexts:
-	 *     Clause2 returns Clause2
+	 *     Predicate returns Atomic
+	 *     Atomic returns Atomic
 	 *
 	 * Constraint:
-	 *     (
-	 *         (
-	 *             (firstElement=PositiveAtomic | firstElement=NegativeAtomic) 
-	 *             logicalOp=LogicalOperator 
-	 *             (additionalElements=PositiveAtomic | additionalElements=NegativeAtomic | additionalElements=Clause2)
-	 *         ) | 
-	 *         (
-	 *             (firstElement=PositiveAtomic | firstElement=NegativeAtomic) 
-	 *             logicalOp=LogicalOperator 
-	 *             (additionalElements=PositiveAtomic | additionalElements=NegativeAtomic | additionalElements=Clause2)
-	 *         )
-	 *     )
+	 *     ((not=Not? param=Param) | (not=Not? paramAssignment=ParamAssignment))
 	 */
-	protected void sequence_Clause2(ISerializationContext context, Clause2 semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Predicate2 returns Clause3
-	 *     Clause3 returns Clause3
-	 *
-	 * Constraint:
-	 *     (
-	 *         ((firstElement=PositiveAtomic | firstElement=NegativeAtomic) clauseContinuation=ClauseContinuation) | 
-	 *         (
-	 *             (firstElement=PositiveAtomic | firstElement=NegativeAtomic | firstElement=PredefinedDependency2) 
-	 *             clauseContinuation=ClauseContinuation 
-	 *             clauseContinuation2=ClauseContinuation?
-	 *         ) | 
-	 *         (firstElement=PredefinedDependency2 clauseContinuation=ClauseContinuation?)
-	 *     )
-	 */
-	protected void sequence_Clause3(ISerializationContext context, Clause3 semanticObject) {
+	protected void sequence_Atomic(ISerializationContext context, Atomic semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -197,7 +147,7 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     ClauseContinuation returns ClauseContinuation
 	 *
 	 * Constraint:
-	 *     (logicalOp=LogicalOperator (additionalElements=PositiveAtomic | additionalElements=NegativeAtomic | additionalElements=Clause3))
+	 *     (logicalOp=LogicalOperator (additionalElements=Atomic | additionalElements=Clause))
 	 */
 	protected void sequence_ClauseContinuation(ISerializationContext context, ClauseContinuation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -206,16 +156,19 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	
 	/**
 	 * Contexts:
+	 *     Predicate returns Clause
 	 *     Clause returns Clause
 	 *
 	 * Constraint:
 	 *     (
+	 *         (firstElement=Atomic clauseContinuation=ClauseContinuation) | 
 	 *         (
-	 *             (atomicElements+=PositiveAtomic | atomicElements+=NegativeAtomic) 
-	 *             atomicElements+=PositiveAtomic? 
-	 *             (atomicElements+=NegativeAtomic? atomicElements+=PositiveAtomic?)*
+	 *             not=Not? 
+	 *             (firstElement=Atomic | firstElement=PredefinedDependency) 
+	 *             clauseContinuation=ClauseContinuation 
+	 *             clauseContinuation2=ClauseContinuation?
 	 *         ) | 
-	 *         (clauses+=Clause clauses+=Clause*)
+	 *         (firstElement=PredefinedDependency clauseContinuation=ClauseContinuation?)
 	 *     )
 	 */
 	protected void sequence_Clause(ISerializationContext context, Clause semanticObject) {
@@ -228,7 +181,7 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     ConditionalDependency returns ConditionalDependency
 	 *
 	 * Constraint:
-	 *     (condition=Predicate2 consequence=Predicate2)
+	 *     (condition=Predicate consequence=Predicate)
 	 */
 	protected void sequence_ConditionalDependency(ISerializationContext context, ConditionalDependency semanticObject) {
 		if (errorAcceptor != null) {
@@ -238,8 +191,8 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.CONDITIONAL_DEPENDENCY__CONSEQUENCE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConditionalDependencyAccess().getConditionPredicate2ParserRuleCall_1_0(), semanticObject.getCondition());
-		feeder.accept(grammarAccess.getConditionalDependencyAccess().getConsequencePredicate2ParserRuleCall_3_0(), semanticObject.getConsequence());
+		feeder.accept(grammarAccess.getConditionalDependencyAccess().getConditionPredicateParserRuleCall_1_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getConditionalDependencyAccess().getConsequencePredicateParserRuleCall_3_0(), semanticObject.getConsequence());
 		feeder.finish();
 	}
 	
@@ -249,7 +202,7 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     Dependency returns Dependency
 	 *
 	 * Constraint:
-	 *     (dep=ArithmeticDependency | dep=ConditionalDependency | dep=PredefinedDependency2)
+	 *     (dep=ArithmeticDependency | dep=ConditionalDependency | dep=PredefinedDependency)
 	 */
 	protected void sequence_Dependency(ISerializationContext context, Dependency semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -288,13 +241,10 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	
 	/**
 	 * Contexts:
-	 *     Predicate2 returns Param
-	 *     Atomic returns Param
-	 *     NegativeAtomic returns Param
-	 *     PositiveAtomic returns Param
+	 *     ParamAssignment returns Param
 	 *
 	 * Constraint:
-	 *     (name=ID (paramValues+=STRING paramValues+=STRING*)?)
+	 *     (name=ID paramValues+=STRING paramValues+=STRING*)
 	 */
 	protected void sequence_Param_ParamAssignment(ISerializationContext context, Param semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -306,71 +256,19 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
 	//
 	// Contexts:
-	//     ParamAssignment returns Param
+	//     PositiveAtomic returns Param
 	//
 	// Constraint:
-	//     (name=ID paramValues+=STRING paramValues+=STRING*)
+	//     (name=ID (paramValues+=STRING paramValues+=STRING*)?)
 	//
 	// protected void sequence_Param_ParamAssignment(ISerializationContext context, Param semanticObject) { }
-	
-	/**
-	 * Contexts:
-	 *     PositiveClause2 returns PositiveClause2
-	 *     PositiveFullClause2 returns PositiveClause2
-	 *
-	 * Constraint:
-	 *     (
-	 *         (firstElement=PositiveAtomic logicalOp=LogicalOperator (additionalElements=PositiveAtomic | additionalElements=PositiveClause2)) | 
-	 *         (firstElement=PositiveAtomic logicalOp=LogicalOperator (additionalElements=PositiveAtomic | additionalElements=PositiveClause2))
-	 *     )
-	 */
-	protected void sequence_PositiveClause2(ISerializationContext context, PositiveClause2 semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     PositiveClause3 returns PositiveClause3
-	 *
-	 * Constraint:
-	 *     (
-	 *         (positiveFirstElement=PositiveAtomic positiveClauseContinuation=PositiveClauseContinuation) | 
-	 *         (
-	 *             (positiveFirstElement=PositiveAtomic | positiveFirstElement=PredefinedDependency2) 
-	 *             positiveClauseContinuation=PositiveClauseContinuation 
-	 *             positiveClauseContinuation2=PositiveClauseContinuation?
-	 *         )
-	 *     )
-	 */
-	protected void sequence_PositiveClause3(ISerializationContext context, PositiveClause3 semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     PositiveClause3 returns PredefinedDependency2
-	 *
-	 * Constraint:
-	 *     (
-	 *         (predefDepType='Or' | predefDepType='OnlyOne' | predefDepType='AllOrNone' | predefDepType='ZeroOrOne') 
-	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause3) 
-	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause3)+ 
-	 *         positiveClauseContinuation=PositiveClauseContinuation?
-	 *     )
-	 */
-	protected void sequence_PositiveClause3_PredefinedDependency2(ISerializationContext context, PredefinedDependency2 semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * Contexts:
 	 *     PositiveClauseContinuation returns PositiveClauseContinuation
 	 *
 	 * Constraint:
-	 *     (logicalOp=LogicalOperator (additionalElements=PositiveAtomic | additionalElements=PositiveClause3))
+	 *     (logicalOp=LogicalOperator (additionalElements=PositiveAtomic | additionalElements=PositiveClause))
 	 */
 	protected void sequence_PositiveClauseContinuation(ISerializationContext context, PositiveClauseContinuation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -380,12 +278,15 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	/**
 	 * Contexts:
 	 *     PositiveClause returns PositiveClause
-	 *     PositiveFullClause returns PositiveClause
 	 *
 	 * Constraint:
 	 *     (
-	 *         positiveClauses+=PositiveAtomic 
-	 *         (positiveClauses+=PositiveClause | positiveClauses+=PositiveFullClause | positiveClauses+=PredefinedDependency)*
+	 *         (positiveFirstElement=PositiveAtomic positiveClauseContinuation=PositiveClauseContinuation) | 
+	 *         (
+	 *             (positiveFirstElement=PositiveAtomic | positiveFirstElement=PositivePredefinedDependency) 
+	 *             positiveClauseContinuation=PositiveClauseContinuation 
+	 *             positiveClauseContinuation2=PositiveClauseContinuation?
+	 *         )
 	 *     )
 	 */
 	protected void sequence_PositiveClause(ISerializationContext context, PositiveClause semanticObject) {
@@ -395,45 +296,50 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	
 	/**
 	 * Contexts:
-	 *     PredefinedDependency2 returns PredefinedDependency2
+	 *     PositiveClause returns PositivePredefinedDependency
 	 *
 	 * Constraint:
 	 *     (
 	 *         (predefDepType='Or' | predefDepType='OnlyOne' | predefDepType='AllOrNone' | predefDepType='ZeroOrOne') 
-	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause3) 
-	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause3)+
+	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause) 
+	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause)+ 
+	 *         positiveClauseContinuation=PositiveClauseContinuation?
 	 *     )
 	 */
-	protected void sequence_PredefinedDependency2(ISerializationContext context, PredefinedDependency2 semanticObject) {
+	protected void sequence_PositiveClause_PositivePredefinedDependency(ISerializationContext context, PositivePredefinedDependency semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Clause returns PredefinedDependency
+	 *     PositivePredefinedDependency returns PositivePredefinedDependency
+	 *
+	 * Constraint:
+	 *     (
+	 *         (predefDepType='Or' | predefDepType='OnlyOne' | predefDepType='AllOrNone' | predefDepType='ZeroOrOne') 
+	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause) 
+	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause)+
+	 *     )
+	 */
+	protected void sequence_PositivePredefinedDependency(ISerializationContext context, PositivePredefinedDependency semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     PredefinedDependency returns PredefinedDependency
 	 *
 	 * Constraint:
 	 *     (
+	 *         not=Not? 
 	 *         (predefDepType='Or' | predefDepType='OnlyOne' | predefDepType='AllOrNone' | predefDepType='ZeroOrOne') 
-	 *         (predefDepClauses+=PositiveClause | predefDepClauses+=PositiveFullClause | predefDepClauses+=PredefinedDependency) 
-	 *         (predefDepClauses+=PositiveClause | predefDepClauses+=PositiveFullClause | predefDepClauses+=PredefinedDependency)+
+	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause) 
+	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause)+
 	 *     )
 	 */
 	protected void sequence_PredefinedDependency(ISerializationContext context, PredefinedDependency semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Predicate returns Predicate
-	 *
-	 * Constraint:
-	 *     (clauses+=Clause clauses+=Clause*)
-	 */
-	protected void sequence_Predicate(ISerializationContext context, Predicate semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

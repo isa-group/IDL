@@ -3,23 +3,15 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredicateImpl#getClauses <em>Clauses</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredicateImpl#getNot <em>Not</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +29,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class PredicateImpl extends MinimalEObjectImpl.Container implements Predicate
 {
   /**
-   * The cached value of the '{@link #getClauses() <em>Clauses</em>}' containment reference list.
+   * The default value of the '{@link #getNot() <em>Not</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClauses()
+   * @see #getNot()
    * @generated
    * @ordered
    */
-  protected EList<Clause> clauses;
+  protected static final String NOT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNot()
+   * @generated
+   * @ordered
+   */
+  protected String not = NOT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +75,9 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
    * @generated
    */
   @Override
-  public EList<Clause> getClauses()
+  public String getNot()
   {
-    if (clauses == null)
-    {
-      clauses = new EObjectContainmentEList<Clause>(Clause.class, this, InterparameterDependenciesLanguagePackage.PREDICATE__CLAUSES);
-    }
-    return clauses;
+    return not;
   }
 
   /**
@@ -88,14 +86,12 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setNot(String newNot)
   {
-    switch (featureID)
-    {
-      case InterparameterDependenciesLanguagePackage.PREDICATE__CLAUSES:
-        return ((InternalEList<?>)getClauses()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldNot = not;
+    not = newNot;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.PREDICATE__NOT, oldNot, not));
   }
 
   /**
@@ -108,8 +104,8 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDICATE__CLAUSES:
-        return getClauses();
+      case InterparameterDependenciesLanguagePackage.PREDICATE__NOT:
+        return getNot();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,15 +115,13 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDICATE__CLAUSES:
-        getClauses().clear();
-        getClauses().addAll((Collection<? extends Clause>)newValue);
+      case InterparameterDependenciesLanguagePackage.PREDICATE__NOT:
+        setNot((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +137,8 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDICATE__CLAUSES:
-        getClauses().clear();
+      case InterparameterDependenciesLanguagePackage.PREDICATE__NOT:
+        setNot(NOT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -160,10 +154,27 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDICATE__CLAUSES:
-        return clauses != null && !clauses.isEmpty();
+      case InterparameterDependenciesLanguagePackage.PREDICATE__NOT:
+        return NOT_EDEFAULT == null ? not != null : !NOT_EDEFAULT.equals(not);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (not: ");
+    result.append(not);
+    result.append(')');
+    return result.toString();
   }
 
 } //PredicateImpl

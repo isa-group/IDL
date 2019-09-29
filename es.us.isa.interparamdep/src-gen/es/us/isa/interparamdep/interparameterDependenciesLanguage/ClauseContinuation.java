@@ -51,12 +51,12 @@ public interface ClauseContinuation extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Additional Elements</em>' containment reference.
-   * @see #setAdditionalElements(Predicate2)
+   * @see #setAdditionalElements(Predicate)
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getClauseContinuation_AdditionalElements()
    * @model containment="true"
    * @generated
    */
-  Predicate2 getAdditionalElements();
+  Predicate getAdditionalElements();
 
   /**
    * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation#getAdditionalElements <em>Additional Elements</em>}' containment reference.
@@ -66,6 +66,6 @@ public interface ClauseContinuation extends EObject
    * @see #getAdditionalElements()
    * @generated
    */
-  void setAdditionalElements(Predicate2 value);
+  void setAdditionalElements(Predicate value);
 
 } // ClauseContinuation

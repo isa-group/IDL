@@ -3,8 +3,6 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,38 +14,81 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getAtomicElements <em>Atomic Elements</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getClauses <em>Clauses</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getFirstElement <em>First Element</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getClauseContinuation <em>Clause Continuation</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getClauseContinuation2 <em>Clause Continuation2</em>}</li>
  * </ul>
  *
  * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getClause()
  * @model
  * @generated
  */
-public interface Clause extends EObject
+public interface Clause extends Predicate
 {
   /**
-   * Returns the value of the '<em><b>Atomic Elements</b></em>' containment reference list.
-   * The list contents are of type {@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate2}.
+   * Returns the value of the '<em><b>First Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Atomic Elements</em>' containment reference list.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getClause_AtomicElements()
+   * @return the value of the '<em>First Element</em>' containment reference.
+   * @see #setFirstElement(EObject)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getClause_FirstElement()
    * @model containment="true"
    * @generated
    */
-  EList<Predicate2> getAtomicElements();
+  EObject getFirstElement();
 
   /**
-   * Returns the value of the '<em><b>Clauses</b></em>' containment reference list.
-   * The list contents are of type {@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause}.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getFirstElement <em>First Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Clauses</em>' containment reference list.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getClause_Clauses()
+   * @param value the new value of the '<em>First Element</em>' containment reference.
+   * @see #getFirstElement()
+   * @generated
+   */
+  void setFirstElement(EObject value);
+
+  /**
+   * Returns the value of the '<em><b>Clause Continuation</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Clause Continuation</em>' containment reference.
+   * @see #setClauseContinuation(ClauseContinuation)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getClause_ClauseContinuation()
    * @model containment="true"
    * @generated
    */
-  EList<Clause> getClauses();
+  ClauseContinuation getClauseContinuation();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getClauseContinuation <em>Clause Continuation</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Clause Continuation</em>' containment reference.
+   * @see #getClauseContinuation()
+   * @generated
+   */
+  void setClauseContinuation(ClauseContinuation value);
+
+  /**
+   * Returns the value of the '<em><b>Clause Continuation2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Clause Continuation2</em>' containment reference.
+   * @see #setClauseContinuation2(ClauseContinuation)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getClause_ClauseContinuation2()
+   * @model containment="true"
+   * @generated
+   */
+  ClauseContinuation getClauseContinuation2();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getClauseContinuation2 <em>Clause Continuation2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Clause Continuation2</em>' containment reference.
+   * @see #getClauseContinuation2()
+   * @generated
+   */
+  void setClauseContinuation2(ClauseContinuation value);
 
 } // Clause

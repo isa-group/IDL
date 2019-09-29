@@ -21,62 +21,45 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//ConditionalDependency/condition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//ConditionalDependency/consequence"/>
     </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Predicate2"/>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Predicate">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Predicate/clauses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Predicate/not"/>
     </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Clause">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Clause/atomicElements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Clause/clauses"/>
+    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Atomic">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Atomic/param"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Atomic/paramAssignment"/>
     </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Clause2">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Clause2/firstElement"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Clause2/logicalOp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Clause2/additionalElements"/>
-    </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//ClauseContinuation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//ClauseContinuation/logicalOp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//ClauseContinuation/additionalElements"/>
-    </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Clause3">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Clause3/firstElement"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Clause3/clauseContinuation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Clause3/clauseContinuation2"/>
-    </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PositiveClauseContinuation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//PositiveClauseContinuation/logicalOp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositiveClauseContinuation/additionalElements"/>
-    </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PositiveClause3">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositiveClause3/positiveFirstElement"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositiveClause3/positiveClauseContinuation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositiveClause3/positiveClauseContinuation2"/>
-    </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PredefinedDependency2">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//PredefinedDependency2/predefDepType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PredefinedDependency2/predefDepClauses"/>
-    </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PositiveClause2">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositiveClause2/firstElement"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//PositiveClause2/logicalOp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositiveClause2/additionalElements"/>
-    </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PositiveFullClause2"/>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Atomic"/>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//NegativeAtomic"/>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Param">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/paramValues"/>
     </genClasses>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//ParamAssignment"/>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PositiveClause">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositiveClause/positiveClauses"/>
+    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Clause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Clause/firstElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Clause/clauseContinuation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Clause/clauseContinuation2"/>
     </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PositiveFullClause"/>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PositiveAtomic"/>
+    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//ClauseContinuation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//ClauseContinuation/logicalOp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//ClauseContinuation/additionalElements"/>
+    </genClasses>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PredefinedDependency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//PredefinedDependency/not"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//PredefinedDependency/predefDepType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PredefinedDependency/predefDepClauses"/>
+    </genClasses>
+    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PositiveAtomic"/>
+    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PositiveClauseContinuation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//PositiveClauseContinuation/logicalOp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositiveClauseContinuation/additionalElements"/>
+    </genClasses>
+    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PositiveClause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositiveClause/positiveFirstElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositiveClause/positiveClauseContinuation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositiveClause/positiveClauseContinuation2"/>
+    </genClasses>
+    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PositivePredefinedDependency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//PositivePredefinedDependency/predefDepType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositivePredefinedDependency/predefDepClauses"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

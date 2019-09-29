@@ -4,22 +4,17 @@
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate2;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,33 +24,44 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseImpl#getAtomicElements <em>Atomic Elements</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseImpl#getClauses <em>Clauses</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseImpl#getFirstElement <em>First Element</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseImpl#getClauseContinuation <em>Clause Continuation</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseImpl#getClauseContinuation2 <em>Clause Continuation2</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
+public class ClauseImpl extends PredicateImpl implements Clause
 {
   /**
-   * The cached value of the '{@link #getAtomicElements() <em>Atomic Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getFirstElement() <em>First Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAtomicElements()
+   * @see #getFirstElement()
    * @generated
    * @ordered
    */
-  protected EList<Predicate2> atomicElements;
+  protected EObject firstElement;
 
   /**
-   * The cached value of the '{@link #getClauses() <em>Clauses</em>}' containment reference list.
+   * The cached value of the '{@link #getClauseContinuation() <em>Clause Continuation</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClauses()
+   * @see #getClauseContinuation()
    * @generated
    * @ordered
    */
-  protected EList<Clause> clauses;
+  protected ClauseContinuation clauseContinuation;
+
+  /**
+   * The cached value of the '{@link #getClauseContinuation2() <em>Clause Continuation2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClauseContinuation2()
+   * @generated
+   * @ordered
+   */
+  protected ClauseContinuation clauseContinuation2;
 
   /**
    * <!-- begin-user-doc -->
@@ -84,13 +90,26 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
    * @generated
    */
   @Override
-  public EList<Predicate2> getAtomicElements()
+  public EObject getFirstElement()
   {
-    if (atomicElements == null)
+    return firstElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFirstElement(EObject newFirstElement, NotificationChain msgs)
+  {
+    EObject oldFirstElement = firstElement;
+    firstElement = newFirstElement;
+    if (eNotificationRequired())
     {
-      atomicElements = new EObjectContainmentEList<Predicate2>(Predicate2.class, this, InterparameterDependenciesLanguagePackage.CLAUSE__ATOMIC_ELEMENTS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.CLAUSE__FIRST_ELEMENT, oldFirstElement, newFirstElement);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return atomicElements;
+    return msgs;
   }
 
   /**
@@ -99,13 +118,120 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
    * @generated
    */
   @Override
-  public EList<Clause> getClauses()
+  public void setFirstElement(EObject newFirstElement)
   {
-    if (clauses == null)
+    if (newFirstElement != firstElement)
     {
-      clauses = new EObjectContainmentEList<Clause>(Clause.class, this, InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSES);
+      NotificationChain msgs = null;
+      if (firstElement != null)
+        msgs = ((InternalEObject)firstElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.CLAUSE__FIRST_ELEMENT, null, msgs);
+      if (newFirstElement != null)
+        msgs = ((InternalEObject)newFirstElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.CLAUSE__FIRST_ELEMENT, null, msgs);
+      msgs = basicSetFirstElement(newFirstElement, msgs);
+      if (msgs != null) msgs.dispatch();
     }
-    return clauses;
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.CLAUSE__FIRST_ELEMENT, newFirstElement, newFirstElement));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ClauseContinuation getClauseContinuation()
+  {
+    return clauseContinuation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetClauseContinuation(ClauseContinuation newClauseContinuation, NotificationChain msgs)
+  {
+    ClauseContinuation oldClauseContinuation = clauseContinuation;
+    clauseContinuation = newClauseContinuation;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION, oldClauseContinuation, newClauseContinuation);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setClauseContinuation(ClauseContinuation newClauseContinuation)
+  {
+    if (newClauseContinuation != clauseContinuation)
+    {
+      NotificationChain msgs = null;
+      if (clauseContinuation != null)
+        msgs = ((InternalEObject)clauseContinuation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION, null, msgs);
+      if (newClauseContinuation != null)
+        msgs = ((InternalEObject)newClauseContinuation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION, null, msgs);
+      msgs = basicSetClauseContinuation(newClauseContinuation, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION, newClauseContinuation, newClauseContinuation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ClauseContinuation getClauseContinuation2()
+  {
+    return clauseContinuation2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetClauseContinuation2(ClauseContinuation newClauseContinuation2, NotificationChain msgs)
+  {
+    ClauseContinuation oldClauseContinuation2 = clauseContinuation2;
+    clauseContinuation2 = newClauseContinuation2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION2, oldClauseContinuation2, newClauseContinuation2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setClauseContinuation2(ClauseContinuation newClauseContinuation2)
+  {
+    if (newClauseContinuation2 != clauseContinuation2)
+    {
+      NotificationChain msgs = null;
+      if (clauseContinuation2 != null)
+        msgs = ((InternalEObject)clauseContinuation2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION2, null, msgs);
+      if (newClauseContinuation2 != null)
+        msgs = ((InternalEObject)newClauseContinuation2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION2, null, msgs);
+      msgs = basicSetClauseContinuation2(newClauseContinuation2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION2, newClauseContinuation2, newClauseContinuation2));
   }
 
   /**
@@ -118,10 +244,12 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.CLAUSE__ATOMIC_ELEMENTS:
-        return ((InternalEList<?>)getAtomicElements()).basicRemove(otherEnd, msgs);
-      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSES:
-        return ((InternalEList<?>)getClauses()).basicRemove(otherEnd, msgs);
+      case InterparameterDependenciesLanguagePackage.CLAUSE__FIRST_ELEMENT:
+        return basicSetFirstElement(null, msgs);
+      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION:
+        return basicSetClauseContinuation(null, msgs);
+      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION2:
+        return basicSetClauseContinuation2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,10 +264,12 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.CLAUSE__ATOMIC_ELEMENTS:
-        return getAtomicElements();
-      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSES:
-        return getClauses();
+      case InterparameterDependenciesLanguagePackage.CLAUSE__FIRST_ELEMENT:
+        return getFirstElement();
+      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION:
+        return getClauseContinuation();
+      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION2:
+        return getClauseContinuation2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -149,19 +279,19 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.CLAUSE__ATOMIC_ELEMENTS:
-        getAtomicElements().clear();
-        getAtomicElements().addAll((Collection<? extends Predicate2>)newValue);
+      case InterparameterDependenciesLanguagePackage.CLAUSE__FIRST_ELEMENT:
+        setFirstElement((EObject)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSES:
-        getClauses().clear();
-        getClauses().addAll((Collection<? extends Clause>)newValue);
+      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION:
+        setClauseContinuation((ClauseContinuation)newValue);
+        return;
+      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION2:
+        setClauseContinuation2((ClauseContinuation)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -177,11 +307,14 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.CLAUSE__ATOMIC_ELEMENTS:
-        getAtomicElements().clear();
+      case InterparameterDependenciesLanguagePackage.CLAUSE__FIRST_ELEMENT:
+        setFirstElement((EObject)null);
         return;
-      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSES:
-        getClauses().clear();
+      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION:
+        setClauseContinuation((ClauseContinuation)null);
+        return;
+      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION2:
+        setClauseContinuation2((ClauseContinuation)null);
         return;
     }
     super.eUnset(featureID);
@@ -197,10 +330,12 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.CLAUSE__ATOMIC_ELEMENTS:
-        return atomicElements != null && !atomicElements.isEmpty();
-      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSES:
-        return clauses != null && !clauses.isEmpty();
+      case InterparameterDependenciesLanguagePackage.CLAUSE__FIRST_ELEMENT:
+        return firstElement != null;
+      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION:
+        return clauseContinuation != null;
+      case InterparameterDependenciesLanguagePackage.CLAUSE__CLAUSE_CONTINUATION2:
+        return clauseContinuation2 != null;
     }
     return super.eIsSet(featureID);
   }

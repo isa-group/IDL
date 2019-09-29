@@ -5,7 +5,7 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ConditionalDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate2;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -40,7 +40,7 @@ public class ConditionalDependencyImpl extends MinimalEObjectImpl.Container impl
    * @generated
    * @ordered
    */
-  protected Predicate2 condition;
+  protected Predicate condition;
 
   /**
    * The cached value of the '{@link #getConsequence() <em>Consequence</em>}' containment reference.
@@ -50,7 +50,7 @@ public class ConditionalDependencyImpl extends MinimalEObjectImpl.Container impl
    * @generated
    * @ordered
    */
-  protected Predicate2 consequence;
+  protected Predicate consequence;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public class ConditionalDependencyImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public Predicate2 getCondition()
+  public Predicate getCondition()
   {
     return condition;
   }
@@ -89,9 +89,9 @@ public class ConditionalDependencyImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCondition(Predicate2 newCondition, NotificationChain msgs)
+  public NotificationChain basicSetCondition(Predicate newCondition, NotificationChain msgs)
   {
-    Predicate2 oldCondition = condition;
+    Predicate oldCondition = condition;
     condition = newCondition;
     if (eNotificationRequired())
     {
@@ -107,7 +107,7 @@ public class ConditionalDependencyImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public void setCondition(Predicate2 newCondition)
+  public void setCondition(Predicate newCondition)
   {
     if (newCondition != condition)
     {
@@ -129,7 +129,7 @@ public class ConditionalDependencyImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public Predicate2 getConsequence()
+  public Predicate getConsequence()
   {
     return consequence;
   }
@@ -139,9 +139,9 @@ public class ConditionalDependencyImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetConsequence(Predicate2 newConsequence, NotificationChain msgs)
+  public NotificationChain basicSetConsequence(Predicate newConsequence, NotificationChain msgs)
   {
-    Predicate2 oldConsequence = consequence;
+    Predicate oldConsequence = consequence;
     consequence = newConsequence;
     if (eNotificationRequired())
     {
@@ -157,7 +157,7 @@ public class ConditionalDependencyImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public void setConsequence(Predicate2 newConsequence)
+  public void setConsequence(Predicate newConsequence)
   {
     if (newConsequence != consequence)
     {
@@ -220,10 +220,10 @@ public class ConditionalDependencyImpl extends MinimalEObjectImpl.Container impl
     switch (featureID)
     {
       case InterparameterDependenciesLanguagePackage.CONDITIONAL_DEPENDENCY__CONDITION:
-        setCondition((Predicate2)newValue);
+        setCondition((Predicate)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.CONDITIONAL_DEPENDENCY__CONSEQUENCE:
-        setConsequence((Predicate2)newValue);
+        setConsequence((Predicate)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -240,10 +240,10 @@ public class ConditionalDependencyImpl extends MinimalEObjectImpl.Container impl
     switch (featureID)
     {
       case InterparameterDependenciesLanguagePackage.CONDITIONAL_DEPENDENCY__CONDITION:
-        setCondition((Predicate2)null);
+        setCondition((Predicate)null);
         return;
       case InterparameterDependenciesLanguagePackage.CONDITIONAL_DEPENDENCY__CONSEQUENCE:
-        setConsequence((Predicate2)null);
+        setConsequence((Predicate)null);
         return;
     }
     super.eUnset(featureID);

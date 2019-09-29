@@ -9,22 +9,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Predefined Dependency2</b></em>'.
+ * A representation of the model object '<em><b>Positive Predefined Dependency</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2#getPredefDepType <em>Predef Dep Type</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2#getPredefDepClauses <em>Predef Dep Clauses</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency#getPredefDepType <em>Predef Dep Type</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency#getPredefDepClauses <em>Predef Dep Clauses</em>}</li>
  * </ul>
  *
- * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPredefinedDependency2()
+ * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPositivePredefinedDependency()
  * @model
  * @generated
  */
-public interface PredefinedDependency2 extends PositiveClause3
+public interface PositivePredefinedDependency extends PositiveClause
 {
   /**
    * Returns the value of the '<em><b>Predef Dep Type</b></em>' attribute.
@@ -32,14 +32,14 @@ public interface PredefinedDependency2 extends PositiveClause3
    * <!-- end-user-doc -->
    * @return the value of the '<em>Predef Dep Type</em>' attribute.
    * @see #setPredefDepType(String)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPredefinedDependency2_PredefDepType()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPositivePredefinedDependency_PredefDepType()
    * @model
    * @generated
    */
   String getPredefDepType();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2#getPredefDepType <em>Predef Dep Type</em>}' attribute.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency#getPredefDepType <em>Predef Dep Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Predef Dep Type</em>' attribute.
@@ -54,10 +54,10 @@ public interface PredefinedDependency2 extends PositiveClause3
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Predef Dep Clauses</em>' containment reference list.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPredefinedDependency2_PredefDepClauses()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPositivePredefinedDependency_PredefDepClauses()
    * @model containment="true"
    * @generated
    */
   EList<EObject> getPredefDepClauses();
 
-} // PredefinedDependency2
+} // PositivePredefinedDependency

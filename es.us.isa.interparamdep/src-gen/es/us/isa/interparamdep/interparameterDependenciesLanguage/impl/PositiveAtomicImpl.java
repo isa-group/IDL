@@ -8,6 +8,8 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveAtomic
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Positive Atomic</b></em>'.
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PositiveAtomicImpl extends Predicate2Impl implements PositiveAtomic
+public class PositiveAtomicImpl extends MinimalEObjectImpl.Container implements PositiveAtomic
 {
   /**
    * <!-- begin-user-doc -->

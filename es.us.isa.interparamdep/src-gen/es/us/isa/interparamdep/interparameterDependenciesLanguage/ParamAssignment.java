@@ -14,6 +14,6 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage;
  * @model
  * @generated
  */
-public interface ParamAssignment extends Atomic, NegativeAtomic, PositiveAtomic
+public interface ParamAssignment extends PositiveAtomic
 {
 } // ParamAssignment

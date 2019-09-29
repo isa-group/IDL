@@ -5,7 +5,7 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate2;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -60,7 +60,7 @@ public class ClauseContinuationImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    * @ordered
    */
-  protected Predicate2 additionalElements;
+  protected Predicate additionalElements;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,7 +114,7 @@ public class ClauseContinuationImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public Predicate2 getAdditionalElements()
+  public Predicate getAdditionalElements()
   {
     return additionalElements;
   }
@@ -124,9 +124,9 @@ public class ClauseContinuationImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAdditionalElements(Predicate2 newAdditionalElements, NotificationChain msgs)
+  public NotificationChain basicSetAdditionalElements(Predicate newAdditionalElements, NotificationChain msgs)
   {
-    Predicate2 oldAdditionalElements = additionalElements;
+    Predicate oldAdditionalElements = additionalElements;
     additionalElements = newAdditionalElements;
     if (eNotificationRequired())
     {
@@ -142,7 +142,7 @@ public class ClauseContinuationImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public void setAdditionalElements(Predicate2 newAdditionalElements)
+  public void setAdditionalElements(Predicate newAdditionalElements)
   {
     if (newAdditionalElements != additionalElements)
     {
@@ -206,7 +206,7 @@ public class ClauseContinuationImpl extends MinimalEObjectImpl.Container impleme
         setLogicalOp((String)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS:
-        setAdditionalElements((Predicate2)newValue);
+        setAdditionalElements((Predicate)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -226,7 +226,7 @@ public class ClauseContinuationImpl extends MinimalEObjectImpl.Container impleme
         setLogicalOp(LOGICAL_OP_EDEFAULT);
         return;
       case InterparameterDependenciesLanguagePackage.CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS:
-        setAdditionalElements((Predicate2)null);
+        setAdditionalElements((Predicate)null);
         return;
     }
     super.eUnset(featureID);

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,14 +31,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependencyImpl#getNot <em>Not</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependencyImpl#getPredefDepType <em>Predef Dep Type</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependencyImpl#getPredefDepClauses <em>Predef Dep Clauses</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PredefinedDependencyImpl extends ClauseImpl implements PredefinedDependency
+public class PredefinedDependencyImpl extends MinimalEObjectImpl.Container implements PredefinedDependency
 {
+  /**
+   * The default value of the '{@link #getNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNot()
+   * @generated
+   * @ordered
+   */
+  protected static final String NOT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNot()
+   * @generated
+   * @ordered
+   */
+  protected String not = NOT_EDEFAULT;
+
   /**
    * The default value of the '{@link #getPredefDepType() <em>Predef Dep Type</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -87,6 +109,31 @@ public class PredefinedDependencyImpl extends ClauseImpl implements PredefinedDe
   protected EClass eStaticClass()
   {
     return InterparameterDependenciesLanguagePackage.Literals.PREDEFINED_DEPENDENCY;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getNot()
+  {
+    return not;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNot(String newNot)
+  {
+    String oldNot = not;
+    not = newNot;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY__NOT, oldNot, not));
   }
 
   /**
@@ -155,6 +202,8 @@ public class PredefinedDependencyImpl extends ClauseImpl implements PredefinedDe
   {
     switch (featureID)
     {
+      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY__NOT:
+        return getNot();
       case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         return getPredefDepType();
       case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
@@ -174,6 +223,9 @@ public class PredefinedDependencyImpl extends ClauseImpl implements PredefinedDe
   {
     switch (featureID)
     {
+      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY__NOT:
+        setNot((String)newValue);
+        return;
       case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         setPredefDepType((String)newValue);
         return;
@@ -195,6 +247,9 @@ public class PredefinedDependencyImpl extends ClauseImpl implements PredefinedDe
   {
     switch (featureID)
     {
+      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY__NOT:
+        setNot(NOT_EDEFAULT);
+        return;
       case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         setPredefDepType(PREDEF_DEP_TYPE_EDEFAULT);
         return;
@@ -215,6 +270,8 @@ public class PredefinedDependencyImpl extends ClauseImpl implements PredefinedDe
   {
     switch (featureID)
     {
+      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY__NOT:
+        return NOT_EDEFAULT == null ? not != null : !NOT_EDEFAULT.equals(not);
       case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         return PREDEF_DEP_TYPE_EDEFAULT == null ? predefDepType != null : !PREDEF_DEP_TYPE_EDEFAULT.equals(predefDepType);
       case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
@@ -234,7 +291,9 @@ public class PredefinedDependencyImpl extends ClauseImpl implements PredefinedDe
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (predefDepType: ");
+    result.append(" (not: ");
+    result.append(not);
+    result.append(", predefDepType: ");
     result.append(predefDepType);
     result.append(')');
     return result.toString();

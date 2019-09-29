@@ -5,19 +5,17 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,22 +25,44 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseImpl#getPositiveClauses <em>Positive Clauses</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseImpl#getPositiveFirstElement <em>Positive First Element</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseImpl#getPositiveClauseContinuation <em>Positive Clause Continuation</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseImpl#getPositiveClauseContinuation2 <em>Positive Clause Continuation2</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PositiveClauseImpl extends PositiveFullClauseImpl implements PositiveClause
+public class PositiveClauseImpl extends MinimalEObjectImpl.Container implements PositiveClause
 {
   /**
-   * The cached value of the '{@link #getPositiveClauses() <em>Positive Clauses</em>}' containment reference list.
+   * The cached value of the '{@link #getPositiveFirstElement() <em>Positive First Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPositiveClauses()
+   * @see #getPositiveFirstElement()
    * @generated
    * @ordered
    */
-  protected EList<EObject> positiveClauses;
+  protected EObject positiveFirstElement;
+
+  /**
+   * The cached value of the '{@link #getPositiveClauseContinuation() <em>Positive Clause Continuation</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPositiveClauseContinuation()
+   * @generated
+   * @ordered
+   */
+  protected PositiveClauseContinuation positiveClauseContinuation;
+
+  /**
+   * The cached value of the '{@link #getPositiveClauseContinuation2() <em>Positive Clause Continuation2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPositiveClauseContinuation2()
+   * @generated
+   * @ordered
+   */
+  protected PositiveClauseContinuation positiveClauseContinuation2;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +91,148 @@ public class PositiveClauseImpl extends PositiveFullClauseImpl implements Positi
    * @generated
    */
   @Override
-  public EList<EObject> getPositiveClauses()
+  public EObject getPositiveFirstElement()
   {
-    if (positiveClauses == null)
+    return positiveFirstElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPositiveFirstElement(EObject newPositiveFirstElement, NotificationChain msgs)
+  {
+    EObject oldPositiveFirstElement = positiveFirstElement;
+    positiveFirstElement = newPositiveFirstElement;
+    if (eNotificationRequired())
     {
-      positiveClauses = new EObjectContainmentEList<EObject>(EObject.class, this, InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSES);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT, oldPositiveFirstElement, newPositiveFirstElement);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return positiveClauses;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPositiveFirstElement(EObject newPositiveFirstElement)
+  {
+    if (newPositiveFirstElement != positiveFirstElement)
+    {
+      NotificationChain msgs = null;
+      if (positiveFirstElement != null)
+        msgs = ((InternalEObject)positiveFirstElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT, null, msgs);
+      if (newPositiveFirstElement != null)
+        msgs = ((InternalEObject)newPositiveFirstElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT, null, msgs);
+      msgs = basicSetPositiveFirstElement(newPositiveFirstElement, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT, newPositiveFirstElement, newPositiveFirstElement));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PositiveClauseContinuation getPositiveClauseContinuation()
+  {
+    return positiveClauseContinuation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPositiveClauseContinuation(PositiveClauseContinuation newPositiveClauseContinuation, NotificationChain msgs)
+  {
+    PositiveClauseContinuation oldPositiveClauseContinuation = positiveClauseContinuation;
+    positiveClauseContinuation = newPositiveClauseContinuation;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION, oldPositiveClauseContinuation, newPositiveClauseContinuation);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPositiveClauseContinuation(PositiveClauseContinuation newPositiveClauseContinuation)
+  {
+    if (newPositiveClauseContinuation != positiveClauseContinuation)
+    {
+      NotificationChain msgs = null;
+      if (positiveClauseContinuation != null)
+        msgs = ((InternalEObject)positiveClauseContinuation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION, null, msgs);
+      if (newPositiveClauseContinuation != null)
+        msgs = ((InternalEObject)newPositiveClauseContinuation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION, null, msgs);
+      msgs = basicSetPositiveClauseContinuation(newPositiveClauseContinuation, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION, newPositiveClauseContinuation, newPositiveClauseContinuation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PositiveClauseContinuation getPositiveClauseContinuation2()
+  {
+    return positiveClauseContinuation2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPositiveClauseContinuation2(PositiveClauseContinuation newPositiveClauseContinuation2, NotificationChain msgs)
+  {
+    PositiveClauseContinuation oldPositiveClauseContinuation2 = positiveClauseContinuation2;
+    positiveClauseContinuation2 = newPositiveClauseContinuation2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2, oldPositiveClauseContinuation2, newPositiveClauseContinuation2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPositiveClauseContinuation2(PositiveClauseContinuation newPositiveClauseContinuation2)
+  {
+    if (newPositiveClauseContinuation2 != positiveClauseContinuation2)
+    {
+      NotificationChain msgs = null;
+      if (positiveClauseContinuation2 != null)
+        msgs = ((InternalEObject)positiveClauseContinuation2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2, null, msgs);
+      if (newPositiveClauseContinuation2 != null)
+        msgs = ((InternalEObject)newPositiveClauseContinuation2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2, null, msgs);
+      msgs = basicSetPositiveClauseContinuation2(newPositiveClauseContinuation2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2, newPositiveClauseContinuation2, newPositiveClauseContinuation2));
   }
 
   /**
@@ -90,8 +245,12 @@ public class PositiveClauseImpl extends PositiveFullClauseImpl implements Positi
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSES:
-        return ((InternalEList<?>)getPositiveClauses()).basicRemove(otherEnd, msgs);
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT:
+        return basicSetPositiveFirstElement(null, msgs);
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION:
+        return basicSetPositiveClauseContinuation(null, msgs);
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2:
+        return basicSetPositiveClauseContinuation2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +265,12 @@ public class PositiveClauseImpl extends PositiveFullClauseImpl implements Positi
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSES:
-        return getPositiveClauses();
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT:
+        return getPositiveFirstElement();
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION:
+        return getPositiveClauseContinuation();
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2:
+        return getPositiveClauseContinuation2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,15 +280,19 @@ public class PositiveClauseImpl extends PositiveFullClauseImpl implements Positi
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSES:
-        getPositiveClauses().clear();
-        getPositiveClauses().addAll((Collection<? extends EObject>)newValue);
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT:
+        setPositiveFirstElement((EObject)newValue);
+        return;
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION:
+        setPositiveClauseContinuation((PositiveClauseContinuation)newValue);
+        return;
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2:
+        setPositiveClauseContinuation2((PositiveClauseContinuation)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +308,14 @@ public class PositiveClauseImpl extends PositiveFullClauseImpl implements Positi
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSES:
-        getPositiveClauses().clear();
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT:
+        setPositiveFirstElement((EObject)null);
+        return;
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION:
+        setPositiveClauseContinuation((PositiveClauseContinuation)null);
+        return;
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2:
+        setPositiveClauseContinuation2((PositiveClauseContinuation)null);
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +331,12 @@ public class PositiveClauseImpl extends PositiveFullClauseImpl implements Positi
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSES:
-        return positiveClauses != null && !positiveClauses.isEmpty();
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT:
+        return positiveFirstElement != null;
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION:
+        return positiveClauseContinuation != null;
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2:
+        return positiveClauseContinuation2 != null;
     }
     return super.eIsSet(featureID);
   }

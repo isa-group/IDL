@@ -114,6 +114,34 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int DEPENDENCY_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredicateImpl <em>Predicate</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredicateImpl
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPredicate()
+   * @generated
+   */
+  int PREDICATE = 4;
+
+  /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__NOT = 0;
+
+  /**
+   * The number of structural features of the '<em>Predicate</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.AtomicImpl <em>Atomic</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -121,7 +149,34 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getAtomic()
    * @generated
    */
-  int ATOMIC = 15;
+  int ATOMIC = 5;
+
+  /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOMIC__NOT = PREDICATE__NOT;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOMIC__PARAM = PREDICATE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Param Assignment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOMIC__PARAM_ASSIGNMENT = PREDICATE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Atomic</em>' class.
@@ -130,7 +185,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATOMIC_FEATURE_COUNT = 0;
+  int ATOMIC_FEATURE_COUNT = PREDICATE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl <em>Arithmetic Dependency</em>}' class.
@@ -141,6 +196,33 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    */
   int ARITHMETIC_DEPENDENCY = 2;
+
+  /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARITHMETIC_DEPENDENCY__NOT = ATOMIC__NOT;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARITHMETIC_DEPENDENCY__PARAM = ATOMIC__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Param Assignment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARITHMETIC_DEPENDENCY__PARAM_ASSIGNMENT = ATOMIC__PARAM_ASSIGNMENT;
 
   /**
    * The feature id for the '<em><b>Param1</b></em>' attribute.
@@ -216,51 +298,79 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int CONDITIONAL_DEPENDENCY_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Predicate2Impl <em>Predicate2</em>}' class.
+   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveAtomicImpl <em>Positive Atomic</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Predicate2Impl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPredicate2()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveAtomicImpl
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveAtomic()
    * @generated
    */
-  int PREDICATE2 = 4;
+  int POSITIVE_ATOMIC = 11;
 
   /**
-   * The number of structural features of the '<em>Predicate2</em>' class.
+   * The number of structural features of the '<em>Positive Atomic</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREDICATE2_FEATURE_COUNT = 0;
+  int POSITIVE_ATOMIC_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredicateImpl <em>Predicate</em>}' class.
+   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamAssignmentImpl <em>Param Assignment</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredicateImpl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPredicate()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamAssignmentImpl
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getParamAssignment()
    * @generated
    */
-  int PREDICATE = 5;
+  int PARAM_ASSIGNMENT = 7;
 
   /**
-   * The feature id for the '<em><b>Clauses</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PREDICATE__CLAUSES = 0;
-
-  /**
-   * The number of structural features of the '<em>Predicate</em>' class.
+   * The number of structural features of the '<em>Param Assignment</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREDICATE_FEATURE_COUNT = 1;
+  int PARAM_ASSIGNMENT_FEATURE_COUNT = POSITIVE_ATOMIC_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl <em>Param</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getParam()
+   * @generated
+   */
+  int PARAM = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAM__NAME = PARAM_ASSIGNMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Param Values</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAM__PARAM_VALUES = PARAM_ASSIGNMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Param</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAM_FEATURE_COUNT = PARAM_ASSIGNMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseImpl <em>Clause</em>}' class.
@@ -270,44 +380,16 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getClause()
    * @generated
    */
-  int CLAUSE = 6;
+  int CLAUSE = 8;
 
   /**
-   * The feature id for the '<em><b>Atomic Elements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Not</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLAUSE__ATOMIC_ELEMENTS = 0;
-
-  /**
-   * The feature id for the '<em><b>Clauses</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLAUSE__CLAUSES = 1;
-
-  /**
-   * The number of structural features of the '<em>Clause</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLAUSE_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Clause2Impl <em>Clause2</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Clause2Impl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getClause2()
-   * @generated
-   */
-  int CLAUSE2 = 7;
+  int CLAUSE__NOT = PREDICATE__NOT;
 
   /**
    * The feature id for the '<em><b>First Element</b></em>' containment reference.
@@ -316,34 +398,34 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLAUSE2__FIRST_ELEMENT = 0;
+  int CLAUSE__FIRST_ELEMENT = PREDICATE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Logical Op</b></em>' attribute.
+   * The feature id for the '<em><b>Clause Continuation</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLAUSE2__LOGICAL_OP = 1;
+  int CLAUSE__CLAUSE_CONTINUATION = PREDICATE_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Additional Elements</b></em>' containment reference.
+   * The feature id for the '<em><b>Clause Continuation2</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLAUSE2__ADDITIONAL_ELEMENTS = 2;
+  int CLAUSE__CLAUSE_CONTINUATION2 = PREDICATE_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Clause2</em>' class.
+   * The number of structural features of the '<em>Clause</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLAUSE2_FEATURE_COUNT = 3;
+  int CLAUSE_FEATURE_COUNT = PREDICATE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseContinuationImpl <em>Clause Continuation</em>}' class.
@@ -353,7 +435,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getClauseContinuation()
    * @generated
    */
-  int CLAUSE_CONTINUATION = 8;
+  int CLAUSE_CONTINUATION = 9;
 
   /**
    * The feature id for the '<em><b>Logical Op</b></em>' attribute.
@@ -383,50 +465,50 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int CLAUSE_CONTINUATION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Clause3Impl <em>Clause3</em>}' class.
+   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependencyImpl <em>Predefined Dependency</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Clause3Impl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getClause3()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependencyImpl
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPredefinedDependency()
    * @generated
    */
-  int CLAUSE3 = 9;
+  int PREDEFINED_DEPENDENCY = 10;
 
   /**
-   * The feature id for the '<em><b>First Element</b></em>' containment reference.
+   * The feature id for the '<em><b>Not</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLAUSE3__FIRST_ELEMENT = PREDICATE2_FEATURE_COUNT + 0;
+  int PREDEFINED_DEPENDENCY__NOT = 0;
 
   /**
-   * The feature id for the '<em><b>Clause Continuation</b></em>' containment reference.
+   * The feature id for the '<em><b>Predef Dep Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLAUSE3__CLAUSE_CONTINUATION = PREDICATE2_FEATURE_COUNT + 1;
+  int PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Clause Continuation2</b></em>' containment reference.
+   * The feature id for the '<em><b>Predef Dep Clauses</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLAUSE3__CLAUSE_CONTINUATION2 = PREDICATE2_FEATURE_COUNT + 2;
+  int PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES = 2;
 
   /**
-   * The number of structural features of the '<em>Clause3</em>' class.
+   * The number of structural features of the '<em>Predefined Dependency</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLAUSE3_FEATURE_COUNT = PREDICATE2_FEATURE_COUNT + 3;
+  int PREDEFINED_DEPENDENCY_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseContinuationImpl <em>Positive Clause Continuation</em>}' class.
@@ -436,7 +518,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveClauseContinuation()
    * @generated
    */
-  int POSITIVE_CLAUSE_CONTINUATION = 10;
+  int POSITIVE_CLAUSE_CONTINUATION = 12;
 
   /**
    * The feature id for the '<em><b>Logical Op</b></em>' attribute.
@@ -466,275 +548,6 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int POSITIVE_CLAUSE_CONTINUATION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClause3Impl <em>Positive Clause3</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClause3Impl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveClause3()
-   * @generated
-   */
-  int POSITIVE_CLAUSE3 = 11;
-
-  /**
-   * The feature id for the '<em><b>Positive First Element</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_CLAUSE3__POSITIVE_FIRST_ELEMENT = 0;
-
-  /**
-   * The feature id for the '<em><b>Positive Clause Continuation</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_CLAUSE3__POSITIVE_CLAUSE_CONTINUATION = 1;
-
-  /**
-   * The feature id for the '<em><b>Positive Clause Continuation2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_CLAUSE3__POSITIVE_CLAUSE_CONTINUATION2 = 2;
-
-  /**
-   * The number of structural features of the '<em>Positive Clause3</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_CLAUSE3_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependency2Impl <em>Predefined Dependency2</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependency2Impl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPredefinedDependency2()
-   * @generated
-   */
-  int PREDEFINED_DEPENDENCY2 = 12;
-
-  /**
-   * The feature id for the '<em><b>Positive First Element</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PREDEFINED_DEPENDENCY2__POSITIVE_FIRST_ELEMENT = POSITIVE_CLAUSE3__POSITIVE_FIRST_ELEMENT;
-
-  /**
-   * The feature id for the '<em><b>Positive Clause Continuation</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PREDEFINED_DEPENDENCY2__POSITIVE_CLAUSE_CONTINUATION = POSITIVE_CLAUSE3__POSITIVE_CLAUSE_CONTINUATION;
-
-  /**
-   * The feature id for the '<em><b>Positive Clause Continuation2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PREDEFINED_DEPENDENCY2__POSITIVE_CLAUSE_CONTINUATION2 = POSITIVE_CLAUSE3__POSITIVE_CLAUSE_CONTINUATION2;
-
-  /**
-   * The feature id for the '<em><b>Predef Dep Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PREDEFINED_DEPENDENCY2__PREDEF_DEP_TYPE = POSITIVE_CLAUSE3_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Predef Dep Clauses</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PREDEFINED_DEPENDENCY2__PREDEF_DEP_CLAUSES = POSITIVE_CLAUSE3_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Predefined Dependency2</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PREDEFINED_DEPENDENCY2_FEATURE_COUNT = POSITIVE_CLAUSE3_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveFullClause2Impl <em>Positive Full Clause2</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveFullClause2Impl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveFullClause2()
-   * @generated
-   */
-  int POSITIVE_FULL_CLAUSE2 = 14;
-
-  /**
-   * The number of structural features of the '<em>Positive Full Clause2</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_FULL_CLAUSE2_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClause2Impl <em>Positive Clause2</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClause2Impl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveClause2()
-   * @generated
-   */
-  int POSITIVE_CLAUSE2 = 13;
-
-  /**
-   * The feature id for the '<em><b>First Element</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_CLAUSE2__FIRST_ELEMENT = POSITIVE_FULL_CLAUSE2_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Logical Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_CLAUSE2__LOGICAL_OP = POSITIVE_FULL_CLAUSE2_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Additional Elements</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_CLAUSE2__ADDITIONAL_ELEMENTS = POSITIVE_FULL_CLAUSE2_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Positive Clause2</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_CLAUSE2_FEATURE_COUNT = POSITIVE_FULL_CLAUSE2_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.NegativeAtomicImpl <em>Negative Atomic</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.NegativeAtomicImpl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getNegativeAtomic()
-   * @generated
-   */
-  int NEGATIVE_ATOMIC = 16;
-
-  /**
-   * The number of structural features of the '<em>Negative Atomic</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATIVE_ATOMIC_FEATURE_COUNT = PREDICATE2_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl <em>Param</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getParam()
-   * @generated
-   */
-  int PARAM = 17;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARAM__NAME = ATOMIC_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Param Values</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARAM__PARAM_VALUES = ATOMIC_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Param</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARAM_FEATURE_COUNT = ATOMIC_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamAssignmentImpl <em>Param Assignment</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamAssignmentImpl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getParamAssignment()
-   * @generated
-   */
-  int PARAM_ASSIGNMENT = 18;
-
-  /**
-   * The number of structural features of the '<em>Param Assignment</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARAM_ASSIGNMENT_FEATURE_COUNT = ATOMIC_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveFullClauseImpl <em>Positive Full Clause</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveFullClauseImpl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveFullClause()
-   * @generated
-   */
-  int POSITIVE_FULL_CLAUSE = 20;
-
-  /**
-   * The number of structural features of the '<em>Positive Full Clause</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_FULL_CLAUSE_FEATURE_COUNT = 0;
-
-  /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseImpl <em>Positive Clause</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -742,16 +555,34 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveClause()
    * @generated
    */
-  int POSITIVE_CLAUSE = 19;
+  int POSITIVE_CLAUSE = 13;
 
   /**
-   * The feature id for the '<em><b>Positive Clauses</b></em>' containment reference list.
+   * The feature id for the '<em><b>Positive First Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POSITIVE_CLAUSE__POSITIVE_CLAUSES = POSITIVE_FULL_CLAUSE_FEATURE_COUNT + 0;
+  int POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT = 0;
+
+  /**
+   * The feature id for the '<em><b>Positive Clause Continuation</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION = 1;
+
+  /**
+   * The feature id for the '<em><b>Positive Clause Continuation2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2 = 2;
 
   /**
    * The number of structural features of the '<em>Positive Clause</em>' class.
@@ -760,54 +591,44 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int POSITIVE_CLAUSE_FEATURE_COUNT = POSITIVE_FULL_CLAUSE_FEATURE_COUNT + 1;
+  int POSITIVE_CLAUSE_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveAtomicImpl <em>Positive Atomic</em>}' class.
+   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredefinedDependencyImpl <em>Positive Predefined Dependency</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveAtomicImpl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveAtomic()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredefinedDependencyImpl
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositivePredefinedDependency()
    * @generated
    */
-  int POSITIVE_ATOMIC = 21;
+  int POSITIVE_PREDEFINED_DEPENDENCY = 14;
 
   /**
-   * The number of structural features of the '<em>Positive Atomic</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_ATOMIC_FEATURE_COUNT = PREDICATE2_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependencyImpl <em>Predefined Dependency</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependencyImpl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPredefinedDependency()
-   * @generated
-   */
-  int PREDEFINED_DEPENDENCY = 22;
-
-  /**
-   * The feature id for the '<em><b>Atomic Elements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Positive First Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREDEFINED_DEPENDENCY__ATOMIC_ELEMENTS = CLAUSE__ATOMIC_ELEMENTS;
+  int POSITIVE_PREDEFINED_DEPENDENCY__POSITIVE_FIRST_ELEMENT = POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT;
 
   /**
-   * The feature id for the '<em><b>Clauses</b></em>' containment reference list.
+   * The feature id for the '<em><b>Positive Clause Continuation</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREDEFINED_DEPENDENCY__CLAUSES = CLAUSE__CLAUSES;
+  int POSITIVE_PREDEFINED_DEPENDENCY__POSITIVE_CLAUSE_CONTINUATION = POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION;
+
+  /**
+   * The feature id for the '<em><b>Positive Clause Continuation2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITIVE_PREDEFINED_DEPENDENCY__POSITIVE_CLAUSE_CONTINUATION2 = POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2;
 
   /**
    * The feature id for the '<em><b>Predef Dep Type</b></em>' attribute.
@@ -816,7 +637,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE = CLAUSE_FEATURE_COUNT + 0;
+  int POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE = POSITIVE_CLAUSE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Predef Dep Clauses</b></em>' containment reference list.
@@ -825,16 +646,16 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES = CLAUSE_FEATURE_COUNT + 1;
+  int POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES = POSITIVE_CLAUSE_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Predefined Dependency</em>' class.
+   * The number of structural features of the '<em>Positive Predefined Dependency</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREDEFINED_DEPENDENCY_FEATURE_COUNT = CLAUSE_FEATURE_COUNT + 2;
+  int POSITIVE_PREDEFINED_DEPENDENCY_FEATURE_COUNT = POSITIVE_CLAUSE_FEATURE_COUNT + 2;
 
 
   /**
@@ -955,16 +776,6 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EReference getConditionalDependency_Consequence();
 
   /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate2 <em>Predicate2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Predicate2</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate2
-   * @generated
-   */
-  EClass getPredicate2();
-
-  /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate <em>Predicate</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -975,325 +786,15 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EClass getPredicate();
 
   /**
-   * Returns the meta object for the containment reference list '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getClauses <em>Clauses</em>}'.
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getNot <em>Not</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Clauses</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getClauses()
+   * @return the meta object for the attribute '<em>Not</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getNot()
    * @see #getPredicate()
    * @generated
    */
-  EReference getPredicate_Clauses();
-
-  /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause <em>Clause</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Clause</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause
-   * @generated
-   */
-  EClass getClause();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getAtomicElements <em>Atomic Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Atomic Elements</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getAtomicElements()
-   * @see #getClause()
-   * @generated
-   */
-  EReference getClause_AtomicElements();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getClauses <em>Clauses</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Clauses</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getClauses()
-   * @see #getClause()
-   * @generated
-   */
-  EReference getClause_Clauses();
-
-  /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause2 <em>Clause2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Clause2</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause2
-   * @generated
-   */
-  EClass getClause2();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause2#getFirstElement <em>First Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>First Element</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause2#getFirstElement()
-   * @see #getClause2()
-   * @generated
-   */
-  EReference getClause2_FirstElement();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause2#getLogicalOp <em>Logical Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Logical Op</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause2#getLogicalOp()
-   * @see #getClause2()
-   * @generated
-   */
-  EAttribute getClause2_LogicalOp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause2#getAdditionalElements <em>Additional Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Additional Elements</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause2#getAdditionalElements()
-   * @see #getClause2()
-   * @generated
-   */
-  EReference getClause2_AdditionalElements();
-
-  /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation <em>Clause Continuation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Clause Continuation</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation
-   * @generated
-   */
-  EClass getClauseContinuation();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation#getLogicalOp <em>Logical Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Logical Op</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation#getLogicalOp()
-   * @see #getClauseContinuation()
-   * @generated
-   */
-  EAttribute getClauseContinuation_LogicalOp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation#getAdditionalElements <em>Additional Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Additional Elements</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation#getAdditionalElements()
-   * @see #getClauseContinuation()
-   * @generated
-   */
-  EReference getClauseContinuation_AdditionalElements();
-
-  /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause3 <em>Clause3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Clause3</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause3
-   * @generated
-   */
-  EClass getClause3();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause3#getFirstElement <em>First Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>First Element</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause3#getFirstElement()
-   * @see #getClause3()
-   * @generated
-   */
-  EReference getClause3_FirstElement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause3#getClauseContinuation <em>Clause Continuation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Clause Continuation</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause3#getClauseContinuation()
-   * @see #getClause3()
-   * @generated
-   */
-  EReference getClause3_ClauseContinuation();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause3#getClauseContinuation2 <em>Clause Continuation2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Clause Continuation2</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause3#getClauseContinuation2()
-   * @see #getClause3()
-   * @generated
-   */
-  EReference getClause3_ClauseContinuation2();
-
-  /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation <em>Positive Clause Continuation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Positive Clause Continuation</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation
-   * @generated
-   */
-  EClass getPositiveClauseContinuation();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation#getLogicalOp <em>Logical Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Logical Op</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation#getLogicalOp()
-   * @see #getPositiveClauseContinuation()
-   * @generated
-   */
-  EAttribute getPositiveClauseContinuation_LogicalOp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation#getAdditionalElements <em>Additional Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Additional Elements</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation#getAdditionalElements()
-   * @see #getPositiveClauseContinuation()
-   * @generated
-   */
-  EReference getPositiveClauseContinuation_AdditionalElements();
-
-  /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause3 <em>Positive Clause3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Positive Clause3</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause3
-   * @generated
-   */
-  EClass getPositiveClause3();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause3#getPositiveFirstElement <em>Positive First Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Positive First Element</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause3#getPositiveFirstElement()
-   * @see #getPositiveClause3()
-   * @generated
-   */
-  EReference getPositiveClause3_PositiveFirstElement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause3#getPositiveClauseContinuation <em>Positive Clause Continuation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Positive Clause Continuation</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause3#getPositiveClauseContinuation()
-   * @see #getPositiveClause3()
-   * @generated
-   */
-  EReference getPositiveClause3_PositiveClauseContinuation();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause3#getPositiveClauseContinuation2 <em>Positive Clause Continuation2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Positive Clause Continuation2</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause3#getPositiveClauseContinuation2()
-   * @see #getPositiveClause3()
-   * @generated
-   */
-  EReference getPositiveClause3_PositiveClauseContinuation2();
-
-  /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2 <em>Predefined Dependency2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Predefined Dependency2</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2
-   * @generated
-   */
-  EClass getPredefinedDependency2();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2#getPredefDepType <em>Predef Dep Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Predef Dep Type</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2#getPredefDepType()
-   * @see #getPredefinedDependency2()
-   * @generated
-   */
-  EAttribute getPredefinedDependency2_PredefDepType();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2#getPredefDepClauses <em>Predef Dep Clauses</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Predef Dep Clauses</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2#getPredefDepClauses()
-   * @see #getPredefinedDependency2()
-   * @generated
-   */
-  EReference getPredefinedDependency2_PredefDepClauses();
-
-  /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause2 <em>Positive Clause2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Positive Clause2</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause2
-   * @generated
-   */
-  EClass getPositiveClause2();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause2#getFirstElement <em>First Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>First Element</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause2#getFirstElement()
-   * @see #getPositiveClause2()
-   * @generated
-   */
-  EReference getPositiveClause2_FirstElement();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause2#getLogicalOp <em>Logical Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Logical Op</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause2#getLogicalOp()
-   * @see #getPositiveClause2()
-   * @generated
-   */
-  EAttribute getPositiveClause2_LogicalOp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause2#getAdditionalElements <em>Additional Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Additional Elements</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause2#getAdditionalElements()
-   * @see #getPositiveClause2()
-   * @generated
-   */
-  EReference getPositiveClause2_AdditionalElements();
-
-  /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveFullClause2 <em>Positive Full Clause2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Positive Full Clause2</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveFullClause2
-   * @generated
-   */
-  EClass getPositiveFullClause2();
+  EAttribute getPredicate_Not();
 
   /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Atomic <em>Atomic</em>}'.
@@ -1306,14 +807,26 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EClass getAtomic();
 
   /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.NegativeAtomic <em>Negative Atomic</em>}'.
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Atomic#getParam <em>Param</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Negative Atomic</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.NegativeAtomic
+   * @return the meta object for the containment reference '<em>Param</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Atomic#getParam()
+   * @see #getAtomic()
    * @generated
    */
-  EClass getNegativeAtomic();
+  EReference getAtomic_Param();
+
+  /**
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Atomic#getParamAssignment <em>Param Assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Param Assignment</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Atomic#getParamAssignment()
+   * @see #getAtomic()
+   * @generated
+   */
+  EReference getAtomic_ParamAssignment();
 
   /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param <em>Param</em>}'.
@@ -1358,45 +871,79 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EClass getParamAssignment();
 
   /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause <em>Positive Clause</em>}'.
+   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause <em>Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Positive Clause</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause
+   * @return the meta object for class '<em>Clause</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause
    * @generated
    */
-  EClass getPositiveClause();
+  EClass getClause();
 
   /**
-   * Returns the meta object for the containment reference list '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveClauses <em>Positive Clauses</em>}'.
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getFirstElement <em>First Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Positive Clauses</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveClauses()
-   * @see #getPositiveClause()
+   * @return the meta object for the containment reference '<em>First Element</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getFirstElement()
+   * @see #getClause()
    * @generated
    */
-  EReference getPositiveClause_PositiveClauses();
+  EReference getClause_FirstElement();
 
   /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveFullClause <em>Positive Full Clause</em>}'.
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getClauseContinuation <em>Clause Continuation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Positive Full Clause</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveFullClause
+   * @return the meta object for the containment reference '<em>Clause Continuation</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getClauseContinuation()
+   * @see #getClause()
    * @generated
    */
-  EClass getPositiveFullClause();
+  EReference getClause_ClauseContinuation();
 
   /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveAtomic <em>Positive Atomic</em>}'.
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getClauseContinuation2 <em>Clause Continuation2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Positive Atomic</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveAtomic
+   * @return the meta object for the containment reference '<em>Clause Continuation2</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause#getClauseContinuation2()
+   * @see #getClause()
    * @generated
    */
-  EClass getPositiveAtomic();
+  EReference getClause_ClauseContinuation2();
+
+  /**
+   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation <em>Clause Continuation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Clause Continuation</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation
+   * @generated
+   */
+  EClass getClauseContinuation();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation#getLogicalOp <em>Logical Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Logical Op</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation#getLogicalOp()
+   * @see #getClauseContinuation()
+   * @generated
+   */
+  EAttribute getClauseContinuation_LogicalOp();
+
+  /**
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation#getAdditionalElements <em>Additional Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Additional Elements</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation#getAdditionalElements()
+   * @see #getClauseContinuation()
+   * @generated
+   */
+  EReference getClauseContinuation_AdditionalElements();
 
   /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency <em>Predefined Dependency</em>}'.
@@ -1407,6 +954,17 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    */
   EClass getPredefinedDependency();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency#getNot <em>Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Not</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency#getNot()
+   * @see #getPredefinedDependency()
+   * @generated
+   */
+  EAttribute getPredefinedDependency_Not();
 
   /**
    * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency#getPredefDepType <em>Predef Dep Type</em>}'.
@@ -1429,6 +987,123 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    */
   EReference getPredefinedDependency_PredefDepClauses();
+
+  /**
+   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveAtomic <em>Positive Atomic</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Positive Atomic</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveAtomic
+   * @generated
+   */
+  EClass getPositiveAtomic();
+
+  /**
+   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation <em>Positive Clause Continuation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Positive Clause Continuation</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation
+   * @generated
+   */
+  EClass getPositiveClauseContinuation();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation#getLogicalOp <em>Logical Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Logical Op</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation#getLogicalOp()
+   * @see #getPositiveClauseContinuation()
+   * @generated
+   */
+  EAttribute getPositiveClauseContinuation_LogicalOp();
+
+  /**
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation#getAdditionalElements <em>Additional Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Additional Elements</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation#getAdditionalElements()
+   * @see #getPositiveClauseContinuation()
+   * @generated
+   */
+  EReference getPositiveClauseContinuation_AdditionalElements();
+
+  /**
+   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause <em>Positive Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Positive Clause</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause
+   * @generated
+   */
+  EClass getPositiveClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveFirstElement <em>Positive First Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Positive First Element</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveFirstElement()
+   * @see #getPositiveClause()
+   * @generated
+   */
+  EReference getPositiveClause_PositiveFirstElement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveClauseContinuation <em>Positive Clause Continuation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Positive Clause Continuation</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveClauseContinuation()
+   * @see #getPositiveClause()
+   * @generated
+   */
+  EReference getPositiveClause_PositiveClauseContinuation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveClauseContinuation2 <em>Positive Clause Continuation2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Positive Clause Continuation2</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveClauseContinuation2()
+   * @see #getPositiveClause()
+   * @generated
+   */
+  EReference getPositiveClause_PositiveClauseContinuation2();
+
+  /**
+   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency <em>Positive Predefined Dependency</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Positive Predefined Dependency</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency
+   * @generated
+   */
+  EClass getPositivePredefinedDependency();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency#getPredefDepType <em>Predef Dep Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Predef Dep Type</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency#getPredefDepType()
+   * @see #getPositivePredefinedDependency()
+   * @generated
+   */
+  EAttribute getPositivePredefinedDependency_PredefDepType();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency#getPredefDepClauses <em>Predef Dep Clauses</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Predef Dep Clauses</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency#getPredefDepClauses()
+   * @see #getPositivePredefinedDependency()
+   * @generated
+   */
+  EReference getPositivePredefinedDependency_PredefDepClauses();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1550,16 +1225,6 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EReference CONDITIONAL_DEPENDENCY__CONSEQUENCE = eINSTANCE.getConditionalDependency_Consequence();
 
     /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Predicate2Impl <em>Predicate2</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Predicate2Impl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPredicate2()
-     * @generated
-     */
-    EClass PREDICATE2 = eINSTANCE.getPredicate2();
-
-    /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredicateImpl <em>Predicate</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1570,262 +1235,12 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EClass PREDICATE = eINSTANCE.getPredicate();
 
     /**
-     * The meta object literal for the '<em><b>Clauses</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Not</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PREDICATE__CLAUSES = eINSTANCE.getPredicate_Clauses();
-
-    /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseImpl <em>Clause</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseImpl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getClause()
-     * @generated
-     */
-    EClass CLAUSE = eINSTANCE.getClause();
-
-    /**
-     * The meta object literal for the '<em><b>Atomic Elements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLAUSE__ATOMIC_ELEMENTS = eINSTANCE.getClause_AtomicElements();
-
-    /**
-     * The meta object literal for the '<em><b>Clauses</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLAUSE__CLAUSES = eINSTANCE.getClause_Clauses();
-
-    /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Clause2Impl <em>Clause2</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Clause2Impl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getClause2()
-     * @generated
-     */
-    EClass CLAUSE2 = eINSTANCE.getClause2();
-
-    /**
-     * The meta object literal for the '<em><b>First Element</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLAUSE2__FIRST_ELEMENT = eINSTANCE.getClause2_FirstElement();
-
-    /**
-     * The meta object literal for the '<em><b>Logical Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CLAUSE2__LOGICAL_OP = eINSTANCE.getClause2_LogicalOp();
-
-    /**
-     * The meta object literal for the '<em><b>Additional Elements</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLAUSE2__ADDITIONAL_ELEMENTS = eINSTANCE.getClause2_AdditionalElements();
-
-    /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseContinuationImpl <em>Clause Continuation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseContinuationImpl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getClauseContinuation()
-     * @generated
-     */
-    EClass CLAUSE_CONTINUATION = eINSTANCE.getClauseContinuation();
-
-    /**
-     * The meta object literal for the '<em><b>Logical Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CLAUSE_CONTINUATION__LOGICAL_OP = eINSTANCE.getClauseContinuation_LogicalOp();
-
-    /**
-     * The meta object literal for the '<em><b>Additional Elements</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS = eINSTANCE.getClauseContinuation_AdditionalElements();
-
-    /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Clause3Impl <em>Clause3</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Clause3Impl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getClause3()
-     * @generated
-     */
-    EClass CLAUSE3 = eINSTANCE.getClause3();
-
-    /**
-     * The meta object literal for the '<em><b>First Element</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLAUSE3__FIRST_ELEMENT = eINSTANCE.getClause3_FirstElement();
-
-    /**
-     * The meta object literal for the '<em><b>Clause Continuation</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLAUSE3__CLAUSE_CONTINUATION = eINSTANCE.getClause3_ClauseContinuation();
-
-    /**
-     * The meta object literal for the '<em><b>Clause Continuation2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLAUSE3__CLAUSE_CONTINUATION2 = eINSTANCE.getClause3_ClauseContinuation2();
-
-    /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseContinuationImpl <em>Positive Clause Continuation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseContinuationImpl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveClauseContinuation()
-     * @generated
-     */
-    EClass POSITIVE_CLAUSE_CONTINUATION = eINSTANCE.getPositiveClauseContinuation();
-
-    /**
-     * The meta object literal for the '<em><b>Logical Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute POSITIVE_CLAUSE_CONTINUATION__LOGICAL_OP = eINSTANCE.getPositiveClauseContinuation_LogicalOp();
-
-    /**
-     * The meta object literal for the '<em><b>Additional Elements</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference POSITIVE_CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS = eINSTANCE.getPositiveClauseContinuation_AdditionalElements();
-
-    /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClause3Impl <em>Positive Clause3</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClause3Impl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveClause3()
-     * @generated
-     */
-    EClass POSITIVE_CLAUSE3 = eINSTANCE.getPositiveClause3();
-
-    /**
-     * The meta object literal for the '<em><b>Positive First Element</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference POSITIVE_CLAUSE3__POSITIVE_FIRST_ELEMENT = eINSTANCE.getPositiveClause3_PositiveFirstElement();
-
-    /**
-     * The meta object literal for the '<em><b>Positive Clause Continuation</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference POSITIVE_CLAUSE3__POSITIVE_CLAUSE_CONTINUATION = eINSTANCE.getPositiveClause3_PositiveClauseContinuation();
-
-    /**
-     * The meta object literal for the '<em><b>Positive Clause Continuation2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference POSITIVE_CLAUSE3__POSITIVE_CLAUSE_CONTINUATION2 = eINSTANCE.getPositiveClause3_PositiveClauseContinuation2();
-
-    /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependency2Impl <em>Predefined Dependency2</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependency2Impl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPredefinedDependency2()
-     * @generated
-     */
-    EClass PREDEFINED_DEPENDENCY2 = eINSTANCE.getPredefinedDependency2();
-
-    /**
-     * The meta object literal for the '<em><b>Predef Dep Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PREDEFINED_DEPENDENCY2__PREDEF_DEP_TYPE = eINSTANCE.getPredefinedDependency2_PredefDepType();
-
-    /**
-     * The meta object literal for the '<em><b>Predef Dep Clauses</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PREDEFINED_DEPENDENCY2__PREDEF_DEP_CLAUSES = eINSTANCE.getPredefinedDependency2_PredefDepClauses();
-
-    /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClause2Impl <em>Positive Clause2</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClause2Impl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveClause2()
-     * @generated
-     */
-    EClass POSITIVE_CLAUSE2 = eINSTANCE.getPositiveClause2();
-
-    /**
-     * The meta object literal for the '<em><b>First Element</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference POSITIVE_CLAUSE2__FIRST_ELEMENT = eINSTANCE.getPositiveClause2_FirstElement();
-
-    /**
-     * The meta object literal for the '<em><b>Logical Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute POSITIVE_CLAUSE2__LOGICAL_OP = eINSTANCE.getPositiveClause2_LogicalOp();
-
-    /**
-     * The meta object literal for the '<em><b>Additional Elements</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference POSITIVE_CLAUSE2__ADDITIONAL_ELEMENTS = eINSTANCE.getPositiveClause2_AdditionalElements();
-
-    /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveFullClause2Impl <em>Positive Full Clause2</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveFullClause2Impl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveFullClause2()
-     * @generated
-     */
-    EClass POSITIVE_FULL_CLAUSE2 = eINSTANCE.getPositiveFullClause2();
+    EAttribute PREDICATE__NOT = eINSTANCE.getPredicate_Not();
 
     /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.AtomicImpl <em>Atomic</em>}' class.
@@ -1838,14 +1253,20 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EClass ATOMIC = eINSTANCE.getAtomic();
 
     /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.NegativeAtomicImpl <em>Negative Atomic</em>}' class.
+     * The meta object literal for the '<em><b>Param</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.NegativeAtomicImpl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getNegativeAtomic()
      * @generated
      */
-    EClass NEGATIVE_ATOMIC = eINSTANCE.getNegativeAtomic();
+    EReference ATOMIC__PARAM = eINSTANCE.getAtomic_Param();
+
+    /**
+     * The meta object literal for the '<em><b>Param Assignment</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATOMIC__PARAM_ASSIGNMENT = eINSTANCE.getAtomic_ParamAssignment();
 
     /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl <em>Param</em>}' class.
@@ -1884,42 +1305,64 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EClass PARAM_ASSIGNMENT = eINSTANCE.getParamAssignment();
 
     /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseImpl <em>Positive Clause</em>}' class.
+     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseImpl <em>Clause</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseImpl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveClause()
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseImpl
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getClause()
      * @generated
      */
-    EClass POSITIVE_CLAUSE = eINSTANCE.getPositiveClause();
+    EClass CLAUSE = eINSTANCE.getClause();
 
     /**
-     * The meta object literal for the '<em><b>Positive Clauses</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>First Element</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference POSITIVE_CLAUSE__POSITIVE_CLAUSES = eINSTANCE.getPositiveClause_PositiveClauses();
+    EReference CLAUSE__FIRST_ELEMENT = eINSTANCE.getClause_FirstElement();
 
     /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveFullClauseImpl <em>Positive Full Clause</em>}' class.
+     * The meta object literal for the '<em><b>Clause Continuation</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveFullClauseImpl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveFullClause()
      * @generated
      */
-    EClass POSITIVE_FULL_CLAUSE = eINSTANCE.getPositiveFullClause();
+    EReference CLAUSE__CLAUSE_CONTINUATION = eINSTANCE.getClause_ClauseContinuation();
 
     /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveAtomicImpl <em>Positive Atomic</em>}' class.
+     * The meta object literal for the '<em><b>Clause Continuation2</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveAtomicImpl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveAtomic()
      * @generated
      */
-    EClass POSITIVE_ATOMIC = eINSTANCE.getPositiveAtomic();
+    EReference CLAUSE__CLAUSE_CONTINUATION2 = eINSTANCE.getClause_ClauseContinuation2();
+
+    /**
+     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseContinuationImpl <em>Clause Continuation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ClauseContinuationImpl
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getClauseContinuation()
+     * @generated
+     */
+    EClass CLAUSE_CONTINUATION = eINSTANCE.getClauseContinuation();
+
+    /**
+     * The meta object literal for the '<em><b>Logical Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLAUSE_CONTINUATION__LOGICAL_OP = eINSTANCE.getClauseContinuation_LogicalOp();
+
+    /**
+     * The meta object literal for the '<em><b>Additional Elements</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS = eINSTANCE.getClauseContinuation_AdditionalElements();
 
     /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependencyImpl <em>Predefined Dependency</em>}' class.
@@ -1930,6 +1373,14 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
      * @generated
      */
     EClass PREDEFINED_DEPENDENCY = eINSTANCE.getPredefinedDependency();
+
+    /**
+     * The meta object literal for the '<em><b>Not</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PREDEFINED_DEPENDENCY__NOT = eINSTANCE.getPredefinedDependency_Not();
 
     /**
      * The meta object literal for the '<em><b>Predef Dep Type</b></em>' attribute feature.
@@ -1946,6 +1397,102 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
      * @generated
      */
     EReference PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES = eINSTANCE.getPredefinedDependency_PredefDepClauses();
+
+    /**
+     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveAtomicImpl <em>Positive Atomic</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveAtomicImpl
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveAtomic()
+     * @generated
+     */
+    EClass POSITIVE_ATOMIC = eINSTANCE.getPositiveAtomic();
+
+    /**
+     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseContinuationImpl <em>Positive Clause Continuation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseContinuationImpl
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveClauseContinuation()
+     * @generated
+     */
+    EClass POSITIVE_CLAUSE_CONTINUATION = eINSTANCE.getPositiveClauseContinuation();
+
+    /**
+     * The meta object literal for the '<em><b>Logical Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute POSITIVE_CLAUSE_CONTINUATION__LOGICAL_OP = eINSTANCE.getPositiveClauseContinuation_LogicalOp();
+
+    /**
+     * The meta object literal for the '<em><b>Additional Elements</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POSITIVE_CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS = eINSTANCE.getPositiveClauseContinuation_AdditionalElements();
+
+    /**
+     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseImpl <em>Positive Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositiveClauseImpl
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositiveClause()
+     * @generated
+     */
+    EClass POSITIVE_CLAUSE = eINSTANCE.getPositiveClause();
+
+    /**
+     * The meta object literal for the '<em><b>Positive First Element</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT = eINSTANCE.getPositiveClause_PositiveFirstElement();
+
+    /**
+     * The meta object literal for the '<em><b>Positive Clause Continuation</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION = eINSTANCE.getPositiveClause_PositiveClauseContinuation();
+
+    /**
+     * The meta object literal for the '<em><b>Positive Clause Continuation2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2 = eINSTANCE.getPositiveClause_PositiveClauseContinuation2();
+
+    /**
+     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredefinedDependencyImpl <em>Positive Predefined Dependency</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredefinedDependencyImpl
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositivePredefinedDependency()
+     * @generated
+     */
+    EClass POSITIVE_PREDEFINED_DEPENDENCY = eINSTANCE.getPositivePredefinedDependency();
+
+    /**
+     * The meta object literal for the '<em><b>Predef Dep Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE = eINSTANCE.getPositivePredefinedDependency_PredefDepType();
+
+    /**
+     * The meta object literal for the '<em><b>Predef Dep Clauses</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES = eINSTANCE.getPositivePredefinedDependency_PredefDepClauses();
 
   }
 

@@ -4,7 +4,7 @@
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency;
 
 import java.util.Collection;
 
@@ -24,19 +24,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Predefined Dependency2</b></em>'.
+ * An implementation of the model object '<em><b>Positive Predefined Dependency</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependency2Impl#getPredefDepType <em>Predef Dep Type</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependency2Impl#getPredefDepClauses <em>Predef Dep Clauses</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredefinedDependencyImpl#getPredefDepType <em>Predef Dep Type</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredefinedDependencyImpl#getPredefDepClauses <em>Predef Dep Clauses</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PredefinedDependency2Impl extends PositiveClause3Impl implements PredefinedDependency2
+public class PositivePredefinedDependencyImpl extends PositiveClauseImpl implements PositivePredefinedDependency
 {
   /**
    * The default value of the '{@link #getPredefDepType() <em>Predef Dep Type</em>}' attribute.
@@ -73,7 +73,7 @@ public class PredefinedDependency2Impl extends PositiveClause3Impl implements Pr
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PredefinedDependency2Impl()
+  protected PositivePredefinedDependencyImpl()
   {
     super();
   }
@@ -86,7 +86,7 @@ public class PredefinedDependency2Impl extends PositiveClause3Impl implements Pr
   @Override
   protected EClass eStaticClass()
   {
-    return InterparameterDependenciesLanguagePackage.Literals.PREDEFINED_DEPENDENCY2;
+    return InterparameterDependenciesLanguagePackage.Literals.POSITIVE_PREDEFINED_DEPENDENCY;
   }
 
   /**
@@ -111,7 +111,7 @@ public class PredefinedDependency2Impl extends PositiveClause3Impl implements Pr
     String oldPredefDepType = predefDepType;
     predefDepType = newPredefDepType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2__PREDEF_DEP_TYPE, oldPredefDepType, predefDepType));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE, oldPredefDepType, predefDepType));
   }
 
   /**
@@ -124,7 +124,7 @@ public class PredefinedDependency2Impl extends PositiveClause3Impl implements Pr
   {
     if (predefDepClauses == null)
     {
-      predefDepClauses = new EObjectContainmentEList<EObject>(EObject.class, this, InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2__PREDEF_DEP_CLAUSES);
+      predefDepClauses = new EObjectContainmentEList<EObject>(EObject.class, this, InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES);
     }
     return predefDepClauses;
   }
@@ -139,7 +139,7 @@ public class PredefinedDependency2Impl extends PositiveClause3Impl implements Pr
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2__PREDEF_DEP_CLAUSES:
+      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
         return ((InternalEList<?>)getPredefDepClauses()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -155,9 +155,9 @@ public class PredefinedDependency2Impl extends PositiveClause3Impl implements Pr
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2__PREDEF_DEP_TYPE:
+      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         return getPredefDepType();
-      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2__PREDEF_DEP_CLAUSES:
+      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
         return getPredefDepClauses();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -174,10 +174,10 @@ public class PredefinedDependency2Impl extends PositiveClause3Impl implements Pr
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2__PREDEF_DEP_TYPE:
+      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         setPredefDepType((String)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2__PREDEF_DEP_CLAUSES:
+      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
         getPredefDepClauses().clear();
         getPredefDepClauses().addAll((Collection<? extends EObject>)newValue);
         return;
@@ -195,10 +195,10 @@ public class PredefinedDependency2Impl extends PositiveClause3Impl implements Pr
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2__PREDEF_DEP_TYPE:
+      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         setPredefDepType(PREDEF_DEP_TYPE_EDEFAULT);
         return;
-      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2__PREDEF_DEP_CLAUSES:
+      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
         getPredefDepClauses().clear();
         return;
     }
@@ -215,9 +215,9 @@ public class PredefinedDependency2Impl extends PositiveClause3Impl implements Pr
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2__PREDEF_DEP_TYPE:
+      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         return PREDEF_DEP_TYPE_EDEFAULT == null ? predefDepType != null : !PREDEF_DEP_TYPE_EDEFAULT.equals(predefDepType);
-      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2__PREDEF_DEP_CLAUSES:
+      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
         return predefDepClauses != null && !predefDepClauses.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -240,4 +240,4 @@ public class PredefinedDependency2Impl extends PositiveClause3Impl implements Pr
     return result.toString();
   }
 
-} //PredefinedDependency2Impl
+} //PositivePredefinedDependencyImpl

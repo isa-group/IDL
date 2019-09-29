@@ -60,15 +60,6 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
   ConditionalDependency createConditionalDependency();
 
   /**
-   * Returns a new object of class '<em>Predicate2</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predicate2</em>'.
-   * @generated
-   */
-  Predicate2 createPredicate2();
-
-  /**
    * Returns a new object of class '<em>Predicate</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -78,87 +69,6 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
   Predicate createPredicate();
 
   /**
-   * Returns a new object of class '<em>Clause</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Clause</em>'.
-   * @generated
-   */
-  Clause createClause();
-
-  /**
-   * Returns a new object of class '<em>Clause2</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Clause2</em>'.
-   * @generated
-   */
-  Clause2 createClause2();
-
-  /**
-   * Returns a new object of class '<em>Clause Continuation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Clause Continuation</em>'.
-   * @generated
-   */
-  ClauseContinuation createClauseContinuation();
-
-  /**
-   * Returns a new object of class '<em>Clause3</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Clause3</em>'.
-   * @generated
-   */
-  Clause3 createClause3();
-
-  /**
-   * Returns a new object of class '<em>Positive Clause Continuation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Positive Clause Continuation</em>'.
-   * @generated
-   */
-  PositiveClauseContinuation createPositiveClauseContinuation();
-
-  /**
-   * Returns a new object of class '<em>Positive Clause3</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Positive Clause3</em>'.
-   * @generated
-   */
-  PositiveClause3 createPositiveClause3();
-
-  /**
-   * Returns a new object of class '<em>Predefined Dependency2</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predefined Dependency2</em>'.
-   * @generated
-   */
-  PredefinedDependency2 createPredefinedDependency2();
-
-  /**
-   * Returns a new object of class '<em>Positive Clause2</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Positive Clause2</em>'.
-   * @generated
-   */
-  PositiveClause2 createPositiveClause2();
-
-  /**
-   * Returns a new object of class '<em>Positive Full Clause2</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Positive Full Clause2</em>'.
-   * @generated
-   */
-  PositiveFullClause2 createPositiveFullClause2();
-
-  /**
    * Returns a new object of class '<em>Atomic</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -166,15 +76,6 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
    * @generated
    */
   Atomic createAtomic();
-
-  /**
-   * Returns a new object of class '<em>Negative Atomic</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Negative Atomic</em>'.
-   * @generated
-   */
-  NegativeAtomic createNegativeAtomic();
 
   /**
    * Returns a new object of class '<em>Param</em>'.
@@ -195,22 +96,31 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
   ParamAssignment createParamAssignment();
 
   /**
-   * Returns a new object of class '<em>Positive Clause</em>'.
+   * Returns a new object of class '<em>Clause</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Positive Clause</em>'.
+   * @return a new object of class '<em>Clause</em>'.
    * @generated
    */
-  PositiveClause createPositiveClause();
+  Clause createClause();
 
   /**
-   * Returns a new object of class '<em>Positive Full Clause</em>'.
+   * Returns a new object of class '<em>Clause Continuation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Positive Full Clause</em>'.
+   * @return a new object of class '<em>Clause Continuation</em>'.
    * @generated
    */
-  PositiveFullClause createPositiveFullClause();
+  ClauseContinuation createClauseContinuation();
+
+  /**
+   * Returns a new object of class '<em>Predefined Dependency</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Predefined Dependency</em>'.
+   * @generated
+   */
+  PredefinedDependency createPredefinedDependency();
 
   /**
    * Returns a new object of class '<em>Positive Atomic</em>'.
@@ -222,13 +132,31 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
   PositiveAtomic createPositiveAtomic();
 
   /**
-   * Returns a new object of class '<em>Predefined Dependency</em>'.
+   * Returns a new object of class '<em>Positive Clause Continuation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predefined Dependency</em>'.
+   * @return a new object of class '<em>Positive Clause Continuation</em>'.
    * @generated
    */
-  PredefinedDependency createPredefinedDependency();
+  PositiveClauseContinuation createPositiveClauseContinuation();
+
+  /**
+   * Returns a new object of class '<em>Positive Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Positive Clause</em>'.
+   * @generated
+   */
+  PositiveClause createPositiveClause();
+
+  /**
+   * Returns a new object of class '<em>Positive Predefined Dependency</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Positive Predefined Dependency</em>'.
+   * @generated
+   */
+  PositivePredefinedDependency createPositivePredefinedDependency();
 
   /**
    * Returns the package supported by this factory.

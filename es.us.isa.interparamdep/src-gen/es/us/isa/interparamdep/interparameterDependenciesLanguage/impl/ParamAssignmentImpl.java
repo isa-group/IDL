@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ParamAssignmentImpl extends AtomicImpl implements ParamAssignment
+public class ParamAssignmentImpl extends PositiveAtomicImpl implements ParamAssignment
 {
   /**
    * <!-- begin-user-doc -->

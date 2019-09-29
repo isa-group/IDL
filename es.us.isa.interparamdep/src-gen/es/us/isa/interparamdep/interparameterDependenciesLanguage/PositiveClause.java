@@ -3,8 +3,6 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,25 +14,81 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveClauses <em>Positive Clauses</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveFirstElement <em>Positive First Element</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveClauseContinuation <em>Positive Clause Continuation</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveClauseContinuation2 <em>Positive Clause Continuation2</em>}</li>
  * </ul>
  *
  * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPositiveClause()
  * @model
  * @generated
  */
-public interface PositiveClause extends PositiveFullClause
+public interface PositiveClause extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Positive Clauses</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * Returns the value of the '<em><b>Positive First Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Positive Clauses</em>' containment reference list.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPositiveClause_PositiveClauses()
+   * @return the value of the '<em>Positive First Element</em>' containment reference.
+   * @see #setPositiveFirstElement(EObject)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPositiveClause_PositiveFirstElement()
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getPositiveClauses();
+  EObject getPositiveFirstElement();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveFirstElement <em>Positive First Element</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Positive First Element</em>' containment reference.
+   * @see #getPositiveFirstElement()
+   * @generated
+   */
+  void setPositiveFirstElement(EObject value);
+
+  /**
+   * Returns the value of the '<em><b>Positive Clause Continuation</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Positive Clause Continuation</em>' containment reference.
+   * @see #setPositiveClauseContinuation(PositiveClauseContinuation)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPositiveClause_PositiveClauseContinuation()
+   * @model containment="true"
+   * @generated
+   */
+  PositiveClauseContinuation getPositiveClauseContinuation();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveClauseContinuation <em>Positive Clause Continuation</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Positive Clause Continuation</em>' containment reference.
+   * @see #getPositiveClauseContinuation()
+   * @generated
+   */
+  void setPositiveClauseContinuation(PositiveClauseContinuation value);
+
+  /**
+   * Returns the value of the '<em><b>Positive Clause Continuation2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Positive Clause Continuation2</em>' containment reference.
+   * @see #setPositiveClauseContinuation2(PositiveClauseContinuation)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPositiveClause_PositiveClauseContinuation2()
+   * @model containment="true"
+   * @generated
+   */
+  PositiveClauseContinuation getPositiveClauseContinuation2();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause#getPositiveClauseContinuation2 <em>Positive Clause Continuation2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Positive Clause Continuation2</em>' containment reference.
+   * @see #getPositiveClauseContinuation2()
+   * @generated
+   */
+  void setPositiveClauseContinuation2(PositiveClauseContinuation value);
 
 } // PositiveClause

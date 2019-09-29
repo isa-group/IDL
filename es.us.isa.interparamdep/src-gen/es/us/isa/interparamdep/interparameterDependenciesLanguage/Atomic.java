@@ -3,18 +3,68 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Atomic</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Atomic#getParam <em>Param</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Atomic#getParamAssignment <em>Param Assignment</em>}</li>
+ * </ul>
  *
  * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getAtomic()
  * @model
  * @generated
  */
-public interface Atomic extends EObject
+public interface Atomic extends Predicate
 {
+  /**
+   * Returns the value of the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Param</em>' containment reference.
+   * @see #setParam(Param)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getAtomic_Param()
+   * @model containment="true"
+   * @generated
+   */
+  Param getParam();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Atomic#getParam <em>Param</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Param</em>' containment reference.
+   * @see #getParam()
+   * @generated
+   */
+  void setParam(Param value);
+
+  /**
+   * Returns the value of the '<em><b>Param Assignment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Param Assignment</em>' containment reference.
+   * @see #setParamAssignment(ParamAssignment)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getAtomic_ParamAssignment()
+   * @model containment="true"
+   * @generated
+   */
+  ParamAssignment getParamAssignment();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Atomic#getParamAssignment <em>Param Assignment</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Param Assignment</em>' containment reference.
+   * @see #getParamAssignment()
+   * @generated
+   */
+  void setParamAssignment(ParamAssignment value);
+
 } // Atomic

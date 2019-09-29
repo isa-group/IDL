@@ -69,25 +69,17 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
       case InterparameterDependenciesLanguagePackage.DEPENDENCY: return createDependency();
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY: return createArithmeticDependency();
       case InterparameterDependenciesLanguagePackage.CONDITIONAL_DEPENDENCY: return createConditionalDependency();
-      case InterparameterDependenciesLanguagePackage.PREDICATE2: return createPredicate2();
       case InterparameterDependenciesLanguagePackage.PREDICATE: return createPredicate();
-      case InterparameterDependenciesLanguagePackage.CLAUSE: return createClause();
-      case InterparameterDependenciesLanguagePackage.CLAUSE2: return createClause2();
-      case InterparameterDependenciesLanguagePackage.CLAUSE_CONTINUATION: return createClauseContinuation();
-      case InterparameterDependenciesLanguagePackage.CLAUSE3: return createClause3();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE_CONTINUATION: return createPositiveClauseContinuation();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE3: return createPositiveClause3();
-      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY2: return createPredefinedDependency2();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE2: return createPositiveClause2();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_FULL_CLAUSE2: return createPositiveFullClause2();
       case InterparameterDependenciesLanguagePackage.ATOMIC: return createAtomic();
-      case InterparameterDependenciesLanguagePackage.NEGATIVE_ATOMIC: return createNegativeAtomic();
       case InterparameterDependenciesLanguagePackage.PARAM: return createParam();
       case InterparameterDependenciesLanguagePackage.PARAM_ASSIGNMENT: return createParamAssignment();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE: return createPositiveClause();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_FULL_CLAUSE: return createPositiveFullClause();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_ATOMIC: return createPositiveAtomic();
+      case InterparameterDependenciesLanguagePackage.CLAUSE: return createClause();
+      case InterparameterDependenciesLanguagePackage.CLAUSE_CONTINUATION: return createClauseContinuation();
       case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY: return createPredefinedDependency();
+      case InterparameterDependenciesLanguagePackage.POSITIVE_ATOMIC: return createPositiveAtomic();
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE_CONTINUATION: return createPositiveClauseContinuation();
+      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE: return createPositiveClause();
+      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY: return createPositivePredefinedDependency();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -147,18 +139,6 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public Predicate2 createPredicate2()
-  {
-    Predicate2Impl predicate2 = new Predicate2Impl();
-    return predicate2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Predicate createPredicate()
   {
     PredicateImpl predicate = new PredicateImpl();
@@ -171,130 +151,10 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public Clause createClause()
-  {
-    ClauseImpl clause = new ClauseImpl();
-    return clause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Clause2 createClause2()
-  {
-    Clause2Impl clause2 = new Clause2Impl();
-    return clause2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ClauseContinuation createClauseContinuation()
-  {
-    ClauseContinuationImpl clauseContinuation = new ClauseContinuationImpl();
-    return clauseContinuation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Clause3 createClause3()
-  {
-    Clause3Impl clause3 = new Clause3Impl();
-    return clause3;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PositiveClauseContinuation createPositiveClauseContinuation()
-  {
-    PositiveClauseContinuationImpl positiveClauseContinuation = new PositiveClauseContinuationImpl();
-    return positiveClauseContinuation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PositiveClause3 createPositiveClause3()
-  {
-    PositiveClause3Impl positiveClause3 = new PositiveClause3Impl();
-    return positiveClause3;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PredefinedDependency2 createPredefinedDependency2()
-  {
-    PredefinedDependency2Impl predefinedDependency2 = new PredefinedDependency2Impl();
-    return predefinedDependency2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PositiveClause2 createPositiveClause2()
-  {
-    PositiveClause2Impl positiveClause2 = new PositiveClause2Impl();
-    return positiveClause2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PositiveFullClause2 createPositiveFullClause2()
-  {
-    PositiveFullClause2Impl positiveFullClause2 = new PositiveFullClause2Impl();
-    return positiveFullClause2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Atomic createAtomic()
   {
     AtomicImpl atomic = new AtomicImpl();
     return atomic;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NegativeAtomic createNegativeAtomic()
-  {
-    NegativeAtomicImpl negativeAtomic = new NegativeAtomicImpl();
-    return negativeAtomic;
   }
 
   /**
@@ -327,10 +187,10 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public PositiveClause createPositiveClause()
+  public Clause createClause()
   {
-    PositiveClauseImpl positiveClause = new PositiveClauseImpl();
-    return positiveClause;
+    ClauseImpl clause = new ClauseImpl();
+    return clause;
   }
 
   /**
@@ -339,10 +199,22 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public PositiveFullClause createPositiveFullClause()
+  public ClauseContinuation createClauseContinuation()
   {
-    PositiveFullClauseImpl positiveFullClause = new PositiveFullClauseImpl();
-    return positiveFullClause;
+    ClauseContinuationImpl clauseContinuation = new ClauseContinuationImpl();
+    return clauseContinuation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PredefinedDependency createPredefinedDependency()
+  {
+    PredefinedDependencyImpl predefinedDependency = new PredefinedDependencyImpl();
+    return predefinedDependency;
   }
 
   /**
@@ -363,10 +235,34 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public PredefinedDependency createPredefinedDependency()
+  public PositiveClauseContinuation createPositiveClauseContinuation()
   {
-    PredefinedDependencyImpl predefinedDependency = new PredefinedDependencyImpl();
-    return predefinedDependency;
+    PositiveClauseContinuationImpl positiveClauseContinuation = new PositiveClauseContinuationImpl();
+    return positiveClauseContinuation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PositiveClause createPositiveClause()
+  {
+    PositiveClauseImpl positiveClause = new PositiveClauseImpl();
+    return positiveClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PositivePredefinedDependency createPositivePredefinedDependency()
+  {
+    PositivePredefinedDependencyImpl positivePredefinedDependency = new PositivePredefinedDependencyImpl();
+    return positivePredefinedDependency;
   }
 
   /**

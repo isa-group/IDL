@@ -3,6 +3,7 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,6 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage;
  * @model
  * @generated
  */
-public interface PositiveAtomic extends Predicate2
+public interface PositiveAtomic extends EObject
 {
 } // PositiveAtomic

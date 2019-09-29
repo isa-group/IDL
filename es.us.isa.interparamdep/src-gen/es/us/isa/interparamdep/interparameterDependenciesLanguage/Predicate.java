@@ -3,8 +3,6 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getClauses <em>Clauses</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getNot <em>Not</em>}</li>
  * </ul>
  *
  * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPredicate()
@@ -26,15 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Predicate extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Clauses</b></em>' containment reference list.
-   * The list contents are of type {@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause}.
+   * Returns the value of the '<em><b>Not</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Clauses</em>' containment reference list.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPredicate_Clauses()
-   * @model containment="true"
+   * @return the value of the '<em>Not</em>' attribute.
+   * @see #setNot(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPredicate_Not()
+   * @model
    * @generated
    */
-  EList<Clause> getClauses();
+  String getNot();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getNot <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Not</em>' attribute.
+   * @see #getNot()
+   * @generated
+   */
+  void setNot(String value);
 
 } // Predicate

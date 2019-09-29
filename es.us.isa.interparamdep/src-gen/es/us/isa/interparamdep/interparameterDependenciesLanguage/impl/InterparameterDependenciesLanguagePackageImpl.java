@@ -6,28 +6,20 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Atomic;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause2;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause3;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ConditionalDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Dependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguageFactory;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Model;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.NegativeAtomic;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Param;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveAtomic;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause2;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause3;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveFullClause;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveFullClause2;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate2;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -77,13 +69,6 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass predicate2EClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass predicateEClass = null;
 
   /**
@@ -91,77 +76,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass clauseEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass clause2EClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass clauseContinuationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass clause3EClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass positiveClauseContinuationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass positiveClause3EClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass predefinedDependency2EClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass positiveClause2EClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass positiveFullClause2EClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass atomicEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass negativeAtomicEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -182,14 +97,21 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass positiveClauseEClass = null;
+  private EClass clauseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass positiveFullClauseEClass = null;
+  private EClass clauseContinuationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass predefinedDependencyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -203,7 +125,21 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass predefinedDependencyEClass = null;
+  private EClass positiveClauseContinuationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass positiveClauseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass positivePredefinedDependencyEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -395,17 +331,6 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EClass getPredicate2()
-  {
-    return predicate2EClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getPredicate()
   {
     return predicateEClass;
@@ -417,328 +342,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EReference getPredicate_Clauses()
+  public EAttribute getPredicate_Not()
   {
-    return (EReference)predicateEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getClause()
-  {
-    return clauseEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getClause_AtomicElements()
-  {
-    return (EReference)clauseEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getClause_Clauses()
-  {
-    return (EReference)clauseEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getClause2()
-  {
-    return clause2EClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getClause2_FirstElement()
-  {
-    return (EReference)clause2EClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getClause2_LogicalOp()
-  {
-    return (EAttribute)clause2EClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getClause2_AdditionalElements()
-  {
-    return (EReference)clause2EClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getClauseContinuation()
-  {
-    return clauseContinuationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getClauseContinuation_LogicalOp()
-  {
-    return (EAttribute)clauseContinuationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getClauseContinuation_AdditionalElements()
-  {
-    return (EReference)clauseContinuationEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getClause3()
-  {
-    return clause3EClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getClause3_FirstElement()
-  {
-    return (EReference)clause3EClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getClause3_ClauseContinuation()
-  {
-    return (EReference)clause3EClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getClause3_ClauseContinuation2()
-  {
-    return (EReference)clause3EClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getPositiveClauseContinuation()
-  {
-    return positiveClauseContinuationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getPositiveClauseContinuation_LogicalOp()
-  {
-    return (EAttribute)positiveClauseContinuationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPositiveClauseContinuation_AdditionalElements()
-  {
-    return (EReference)positiveClauseContinuationEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getPositiveClause3()
-  {
-    return positiveClause3EClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPositiveClause3_PositiveFirstElement()
-  {
-    return (EReference)positiveClause3EClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPositiveClause3_PositiveClauseContinuation()
-  {
-    return (EReference)positiveClause3EClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPositiveClause3_PositiveClauseContinuation2()
-  {
-    return (EReference)positiveClause3EClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getPredefinedDependency2()
-  {
-    return predefinedDependency2EClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getPredefinedDependency2_PredefDepType()
-  {
-    return (EAttribute)predefinedDependency2EClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPredefinedDependency2_PredefDepClauses()
-  {
-    return (EReference)predefinedDependency2EClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getPositiveClause2()
-  {
-    return positiveClause2EClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPositiveClause2_FirstElement()
-  {
-    return (EReference)positiveClause2EClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getPositiveClause2_LogicalOp()
-  {
-    return (EAttribute)positiveClause2EClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPositiveClause2_AdditionalElements()
-  {
-    return (EReference)positiveClause2EClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getPositiveFullClause2()
-  {
-    return positiveFullClause2EClass;
+    return (EAttribute)predicateEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -758,9 +364,20 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EClass getNegativeAtomic()
+  public EReference getAtomic_Param()
   {
-    return negativeAtomicEClass;
+    return (EReference)atomicEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAtomic_ParamAssignment()
+  {
+    return (EReference)atomicEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -813,9 +430,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EClass getPositiveClause()
+  public EClass getClause()
   {
-    return positiveClauseEClass;
+    return clauseEClass;
   }
 
   /**
@@ -824,9 +441,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EReference getPositiveClause_PositiveClauses()
+  public EReference getClause_FirstElement()
   {
-    return (EReference)positiveClauseEClass.getEStructuralFeatures().get(0);
+    return (EReference)clauseEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -835,9 +452,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EClass getPositiveFullClause()
+  public EReference getClause_ClauseContinuation()
   {
-    return positiveFullClauseEClass;
+    return (EReference)clauseEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -846,9 +463,42 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EClass getPositiveAtomic()
+  public EReference getClause_ClauseContinuation2()
   {
-    return positiveAtomicEClass;
+    return (EReference)clauseEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getClauseContinuation()
+  {
+    return clauseContinuationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getClauseContinuation_LogicalOp()
+  {
+    return (EAttribute)clauseContinuationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getClauseContinuation_AdditionalElements()
+  {
+    return (EReference)clauseContinuationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -868,7 +518,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EAttribute getPredefinedDependency_PredefDepType()
+  public EAttribute getPredefinedDependency_Not()
   {
     return (EAttribute)predefinedDependencyEClass.getEStructuralFeatures().get(0);
   }
@@ -879,9 +529,141 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
+  public EAttribute getPredefinedDependency_PredefDepType()
+  {
+    return (EAttribute)predefinedDependencyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getPredefinedDependency_PredefDepClauses()
   {
-    return (EReference)predefinedDependencyEClass.getEStructuralFeatures().get(1);
+    return (EReference)predefinedDependencyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPositiveAtomic()
+  {
+    return positiveAtomicEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPositiveClauseContinuation()
+  {
+    return positiveClauseContinuationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPositiveClauseContinuation_LogicalOp()
+  {
+    return (EAttribute)positiveClauseContinuationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPositiveClauseContinuation_AdditionalElements()
+  {
+    return (EReference)positiveClauseContinuationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPositiveClause()
+  {
+    return positiveClauseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPositiveClause_PositiveFirstElement()
+  {
+    return (EReference)positiveClauseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPositiveClause_PositiveClauseContinuation()
+  {
+    return (EReference)positiveClauseEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPositiveClause_PositiveClauseContinuation2()
+  {
+    return (EReference)positiveClauseEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPositivePredefinedDependency()
+  {
+    return positivePredefinedDependencyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPositivePredefinedDependency_PredefDepType()
+  {
+    return (EAttribute)positivePredefinedDependencyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPositivePredefinedDependency_PredefDepClauses()
+  {
+    return (EReference)positivePredefinedDependencyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -930,52 +712,12 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     createEReference(conditionalDependencyEClass, CONDITIONAL_DEPENDENCY__CONDITION);
     createEReference(conditionalDependencyEClass, CONDITIONAL_DEPENDENCY__CONSEQUENCE);
 
-    predicate2EClass = createEClass(PREDICATE2);
-
     predicateEClass = createEClass(PREDICATE);
-    createEReference(predicateEClass, PREDICATE__CLAUSES);
-
-    clauseEClass = createEClass(CLAUSE);
-    createEReference(clauseEClass, CLAUSE__ATOMIC_ELEMENTS);
-    createEReference(clauseEClass, CLAUSE__CLAUSES);
-
-    clause2EClass = createEClass(CLAUSE2);
-    createEReference(clause2EClass, CLAUSE2__FIRST_ELEMENT);
-    createEAttribute(clause2EClass, CLAUSE2__LOGICAL_OP);
-    createEReference(clause2EClass, CLAUSE2__ADDITIONAL_ELEMENTS);
-
-    clauseContinuationEClass = createEClass(CLAUSE_CONTINUATION);
-    createEAttribute(clauseContinuationEClass, CLAUSE_CONTINUATION__LOGICAL_OP);
-    createEReference(clauseContinuationEClass, CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS);
-
-    clause3EClass = createEClass(CLAUSE3);
-    createEReference(clause3EClass, CLAUSE3__FIRST_ELEMENT);
-    createEReference(clause3EClass, CLAUSE3__CLAUSE_CONTINUATION);
-    createEReference(clause3EClass, CLAUSE3__CLAUSE_CONTINUATION2);
-
-    positiveClauseContinuationEClass = createEClass(POSITIVE_CLAUSE_CONTINUATION);
-    createEAttribute(positiveClauseContinuationEClass, POSITIVE_CLAUSE_CONTINUATION__LOGICAL_OP);
-    createEReference(positiveClauseContinuationEClass, POSITIVE_CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS);
-
-    positiveClause3EClass = createEClass(POSITIVE_CLAUSE3);
-    createEReference(positiveClause3EClass, POSITIVE_CLAUSE3__POSITIVE_FIRST_ELEMENT);
-    createEReference(positiveClause3EClass, POSITIVE_CLAUSE3__POSITIVE_CLAUSE_CONTINUATION);
-    createEReference(positiveClause3EClass, POSITIVE_CLAUSE3__POSITIVE_CLAUSE_CONTINUATION2);
-
-    predefinedDependency2EClass = createEClass(PREDEFINED_DEPENDENCY2);
-    createEAttribute(predefinedDependency2EClass, PREDEFINED_DEPENDENCY2__PREDEF_DEP_TYPE);
-    createEReference(predefinedDependency2EClass, PREDEFINED_DEPENDENCY2__PREDEF_DEP_CLAUSES);
-
-    positiveClause2EClass = createEClass(POSITIVE_CLAUSE2);
-    createEReference(positiveClause2EClass, POSITIVE_CLAUSE2__FIRST_ELEMENT);
-    createEAttribute(positiveClause2EClass, POSITIVE_CLAUSE2__LOGICAL_OP);
-    createEReference(positiveClause2EClass, POSITIVE_CLAUSE2__ADDITIONAL_ELEMENTS);
-
-    positiveFullClause2EClass = createEClass(POSITIVE_FULL_CLAUSE2);
+    createEAttribute(predicateEClass, PREDICATE__NOT);
 
     atomicEClass = createEClass(ATOMIC);
-
-    negativeAtomicEClass = createEClass(NEGATIVE_ATOMIC);
+    createEReference(atomicEClass, ATOMIC__PARAM);
+    createEReference(atomicEClass, ATOMIC__PARAM_ASSIGNMENT);
 
     paramEClass = createEClass(PARAM);
     createEAttribute(paramEClass, PARAM__NAME);
@@ -983,16 +725,34 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
 
     paramAssignmentEClass = createEClass(PARAM_ASSIGNMENT);
 
-    positiveClauseEClass = createEClass(POSITIVE_CLAUSE);
-    createEReference(positiveClauseEClass, POSITIVE_CLAUSE__POSITIVE_CLAUSES);
+    clauseEClass = createEClass(CLAUSE);
+    createEReference(clauseEClass, CLAUSE__FIRST_ELEMENT);
+    createEReference(clauseEClass, CLAUSE__CLAUSE_CONTINUATION);
+    createEReference(clauseEClass, CLAUSE__CLAUSE_CONTINUATION2);
 
-    positiveFullClauseEClass = createEClass(POSITIVE_FULL_CLAUSE);
+    clauseContinuationEClass = createEClass(CLAUSE_CONTINUATION);
+    createEAttribute(clauseContinuationEClass, CLAUSE_CONTINUATION__LOGICAL_OP);
+    createEReference(clauseContinuationEClass, CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS);
+
+    predefinedDependencyEClass = createEClass(PREDEFINED_DEPENDENCY);
+    createEAttribute(predefinedDependencyEClass, PREDEFINED_DEPENDENCY__NOT);
+    createEAttribute(predefinedDependencyEClass, PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE);
+    createEReference(predefinedDependencyEClass, PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES);
 
     positiveAtomicEClass = createEClass(POSITIVE_ATOMIC);
 
-    predefinedDependencyEClass = createEClass(PREDEFINED_DEPENDENCY);
-    createEAttribute(predefinedDependencyEClass, PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE);
-    createEReference(predefinedDependencyEClass, PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES);
+    positiveClauseContinuationEClass = createEClass(POSITIVE_CLAUSE_CONTINUATION);
+    createEAttribute(positiveClauseContinuationEClass, POSITIVE_CLAUSE_CONTINUATION__LOGICAL_OP);
+    createEReference(positiveClauseContinuationEClass, POSITIVE_CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS);
+
+    positiveClauseEClass = createEClass(POSITIVE_CLAUSE);
+    createEReference(positiveClauseEClass, POSITIVE_CLAUSE__POSITIVE_FIRST_ELEMENT);
+    createEReference(positiveClauseEClass, POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION);
+    createEReference(positiveClauseEClass, POSITIVE_CLAUSE__POSITIVE_CLAUSE_CONTINUATION2);
+
+    positivePredefinedDependencyEClass = createEClass(POSITIVE_PREDEFINED_DEPENDENCY);
+    createEAttribute(positivePredefinedDependencyEClass, POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE);
+    createEReference(positivePredefinedDependencyEClass, POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES);
   }
 
   /**
@@ -1026,20 +786,12 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     // Add supertypes to classes
     arithmeticDependencyEClass.getESuperTypes().add(this.getAtomic());
     arithmeticDependencyEClass.getESuperTypes().add(this.getPositiveAtomic());
-    clause3EClass.getESuperTypes().add(this.getPredicate2());
-    predefinedDependency2EClass.getESuperTypes().add(this.getPositiveClause3());
-    positiveClause2EClass.getESuperTypes().add(this.getPositiveFullClause2());
-    negativeAtomicEClass.getESuperTypes().add(this.getPredicate2());
-    paramEClass.getESuperTypes().add(this.getAtomic());
-    paramEClass.getESuperTypes().add(this.getNegativeAtomic());
+    atomicEClass.getESuperTypes().add(this.getPredicate());
     paramEClass.getESuperTypes().add(this.getParamAssignment());
     paramEClass.getESuperTypes().add(this.getPositiveAtomic());
-    paramAssignmentEClass.getESuperTypes().add(this.getAtomic());
-    paramAssignmentEClass.getESuperTypes().add(this.getNegativeAtomic());
     paramAssignmentEClass.getESuperTypes().add(this.getPositiveAtomic());
-    positiveClauseEClass.getESuperTypes().add(this.getPositiveFullClause());
-    positiveAtomicEClass.getESuperTypes().add(this.getPredicate2());
-    predefinedDependencyEClass.getESuperTypes().add(this.getClause());
+    clauseEClass.getESuperTypes().add(this.getPredicate());
+    positivePredefinedDependencyEClass.getESuperTypes().add(this.getPositiveClause());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1054,55 +806,15 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     initEAttribute(getArithmeticDependency_Param2(), ecorePackage.getEString(), "param2", null, 0, 1, ArithmeticDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionalDependencyEClass, ConditionalDependency.class, "ConditionalDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConditionalDependency_Condition(), this.getPredicate2(), null, "condition", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConditionalDependency_Consequence(), this.getPredicate2(), null, "consequence", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(predicate2EClass, Predicate2.class, "Predicate2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConditionalDependency_Condition(), this.getPredicate(), null, "condition", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConditionalDependency_Consequence(), this.getPredicate(), null, "consequence", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(predicateEClass, Predicate.class, "Predicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPredicate_Clauses(), this.getClause(), null, "clauses", null, 0, -1, Predicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(clauseEClass, Clause.class, "Clause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getClause_AtomicElements(), this.getPredicate2(), null, "atomicElements", null, 0, -1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClause_Clauses(), this.getClause(), null, "clauses", null, 0, -1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(clause2EClass, Clause2.class, "Clause2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getClause2_FirstElement(), this.getPredicate2(), null, "firstElement", null, 0, 1, Clause2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getClause2_LogicalOp(), ecorePackage.getEString(), "logicalOp", null, 0, 1, Clause2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClause2_AdditionalElements(), ecorePackage.getEObject(), null, "additionalElements", null, 0, 1, Clause2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(clauseContinuationEClass, ClauseContinuation.class, "ClauseContinuation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClauseContinuation_LogicalOp(), ecorePackage.getEString(), "logicalOp", null, 0, 1, ClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClauseContinuation_AdditionalElements(), this.getPredicate2(), null, "additionalElements", null, 0, 1, ClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(clause3EClass, Clause3.class, "Clause3", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getClause3_FirstElement(), ecorePackage.getEObject(), null, "firstElement", null, 0, 1, Clause3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClause3_ClauseContinuation(), this.getClauseContinuation(), null, "clauseContinuation", null, 0, 1, Clause3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClause3_ClauseContinuation2(), this.getClauseContinuation(), null, "clauseContinuation2", null, 0, 1, Clause3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(positiveClauseContinuationEClass, PositiveClauseContinuation.class, "PositiveClauseContinuation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPositiveClauseContinuation_LogicalOp(), ecorePackage.getEString(), "logicalOp", null, 0, 1, PositiveClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPositiveClauseContinuation_AdditionalElements(), ecorePackage.getEObject(), null, "additionalElements", null, 0, 1, PositiveClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(positiveClause3EClass, PositiveClause3.class, "PositiveClause3", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPositiveClause3_PositiveFirstElement(), ecorePackage.getEObject(), null, "positiveFirstElement", null, 0, 1, PositiveClause3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPositiveClause3_PositiveClauseContinuation(), this.getPositiveClauseContinuation(), null, "positiveClauseContinuation", null, 0, 1, PositiveClause3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPositiveClause3_PositiveClauseContinuation2(), this.getPositiveClauseContinuation(), null, "positiveClauseContinuation2", null, 0, 1, PositiveClause3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(predefinedDependency2EClass, PredefinedDependency2.class, "PredefinedDependency2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPredefinedDependency2_PredefDepType(), ecorePackage.getEString(), "predefDepType", null, 0, 1, PredefinedDependency2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPredefinedDependency2_PredefDepClauses(), ecorePackage.getEObject(), null, "predefDepClauses", null, 0, -1, PredefinedDependency2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(positiveClause2EClass, PositiveClause2.class, "PositiveClause2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPositiveClause2_FirstElement(), this.getPositiveAtomic(), null, "firstElement", null, 0, 1, PositiveClause2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPositiveClause2_LogicalOp(), ecorePackage.getEString(), "logicalOp", null, 0, 1, PositiveClause2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPositiveClause2_AdditionalElements(), ecorePackage.getEObject(), null, "additionalElements", null, 0, 1, PositiveClause2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(positiveFullClause2EClass, PositiveFullClause2.class, "PositiveFullClause2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPredicate_Not(), ecorePackage.getEString(), "not", null, 0, 1, Predicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atomicEClass, Atomic.class, "Atomic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(negativeAtomicEClass, NegativeAtomic.class, "NegativeAtomic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAtomic_Param(), this.getParam(), null, "param", null, 0, 1, Atomic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtomic_ParamAssignment(), this.getParamAssignment(), null, "paramAssignment", null, 0, 1, Atomic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(paramEClass, Param.class, "Param", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1110,16 +822,34 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
 
     initEClass(paramAssignmentEClass, ParamAssignment.class, "ParamAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(positiveClauseEClass, PositiveClause.class, "PositiveClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPositiveClause_PositiveClauses(), ecorePackage.getEObject(), null, "positiveClauses", null, 0, -1, PositiveClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(clauseEClass, Clause.class, "Clause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getClause_FirstElement(), ecorePackage.getEObject(), null, "firstElement", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClause_ClauseContinuation(), this.getClauseContinuation(), null, "clauseContinuation", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClause_ClauseContinuation2(), this.getClauseContinuation(), null, "clauseContinuation2", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(positiveFullClauseEClass, PositiveFullClause.class, "PositiveFullClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(clauseContinuationEClass, ClauseContinuation.class, "ClauseContinuation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getClauseContinuation_LogicalOp(), ecorePackage.getEString(), "logicalOp", null, 0, 1, ClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClauseContinuation_AdditionalElements(), this.getPredicate(), null, "additionalElements", null, 0, 1, ClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(predefinedDependencyEClass, PredefinedDependency.class, "PredefinedDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPredefinedDependency_Not(), ecorePackage.getEString(), "not", null, 0, 1, PredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPredefinedDependency_PredefDepType(), ecorePackage.getEString(), "predefDepType", null, 0, 1, PredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPredefinedDependency_PredefDepClauses(), ecorePackage.getEObject(), null, "predefDepClauses", null, 0, -1, PredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(positiveAtomicEClass, PositiveAtomic.class, "PositiveAtomic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(predefinedDependencyEClass, PredefinedDependency.class, "PredefinedDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPredefinedDependency_PredefDepType(), ecorePackage.getEString(), "predefDepType", null, 0, 1, PredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPredefinedDependency_PredefDepClauses(), ecorePackage.getEObject(), null, "predefDepClauses", null, 0, -1, PredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(positiveClauseContinuationEClass, PositiveClauseContinuation.class, "PositiveClauseContinuation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPositiveClauseContinuation_LogicalOp(), ecorePackage.getEString(), "logicalOp", null, 0, 1, PositiveClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPositiveClauseContinuation_AdditionalElements(), ecorePackage.getEObject(), null, "additionalElements", null, 0, 1, PositiveClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(positiveClauseEClass, PositiveClause.class, "PositiveClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPositiveClause_PositiveFirstElement(), ecorePackage.getEObject(), null, "positiveFirstElement", null, 0, 1, PositiveClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPositiveClause_PositiveClauseContinuation(), this.getPositiveClauseContinuation(), null, "positiveClauseContinuation", null, 0, 1, PositiveClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPositiveClause_PositiveClauseContinuation2(), this.getPositiveClauseContinuation(), null, "positiveClauseContinuation2", null, 0, 1, PositiveClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(positivePredefinedDependencyEClass, PositivePredefinedDependency.class, "PositivePredefinedDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPositivePredefinedDependency_PredefDepType(), ecorePackage.getEString(), "predefDepType", null, 0, 1, PositivePredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPositivePredefinedDependency_PredefDepClauses(), ecorePackage.getEObject(), null, "predefDepClauses", null, 0, -1, PositivePredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

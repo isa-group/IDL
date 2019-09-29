@@ -14,7 +14,7 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.Dependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ConditionalDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ConditionalDependencyImpl
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependency2Impl
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredefinedDependencyImpl
 
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -44,12 +44,12 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 			solveDependencyAndOrIterate(dependency.dep, 0, 0)
 	    	Files.write(writePath, Arrays.asList("....................."),
 		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//		    for (subElement: dependency.eAllContents.toIterable) {
-//		    	Files.write(writePath, Arrays.asList(subElement.toString),
-//		    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//		    }
-//		    Files.write(writePath, Arrays.asList("---------------------"),
-//		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+		    for (subElement: dependency.eAllContents.toIterable) {
+		    	Files.write(writePath, Arrays.asList(subElement.toString),
+		    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+		    }
+		    Files.write(writePath, Arrays.asList("---------------------"),
+		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
 		}
 	}
 	
@@ -60,32 +60,65 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	    	Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Condition"),
 	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
     		solveDependencyAndOrIterate((object as ConditionalDependency).condition, depthLevel+1, objectDepthLevel+1)
-//	    	for (element: (object as ConditionalDependency).condition.eContents) {
-//	    		solveDependencyAndOrIterate(element, depthLevel+1, objectDepthLevel+1)
-//	    	}
 	    	Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Consequence"),
 	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
     		solveDependencyAndOrIterate((object as ConditionalDependency).consequence, depthLevel+1, objectDepthLevel+1)
-//	    	for (element: (object as ConditionalDependency).consequence.eContents) {
-//	    		solveDependencyAndOrIterate(element, depthLevel+1, objectDepthLevel+1)
-//	    	}
 		} else if (object.class == typeof(ArithmeticDependencyImpl)) {
 			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Arithmetic dependency: " + object),
     			StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-		} else if (object.class == typeof(PredefinedDependency2Impl)) {
+		} else if (object.class == typeof(PredefinedDependencyImpl)) {
 			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Predefined dependency: " + object),
 	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
 	    	for (element: object.eContents) {
 	    		solveDependencyAndOrIterate(element, depthLevel+1, objectDepthLevel+1)
 	    	}
 		} else {
-//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Object: " + object),
-//	    			StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Object: " + object),
+	    			StandardCharsets.UTF_8, StandardOpenOption.APPEND)
 			for (subElement: object.eContents) {
 				solveDependencyAndOrIterate(subElement, depthLevel, objectDepthLevel+1)
 			}
 		}
 	}
+	
+	// Solving a dependency means returning 'true' or 'false'. In the case of a
+	// conditional dependency, the consequence should only be evaluated if the
+	// condition returns true
+	
+	/*
+	 * Since the arithmetic dependency cannot nest any other dependencies, its
+	 * solving stops after the CSP mapping, i.e. there's no need to iterate over
+	 * other possibly nested dependencies
+	 */
+	def boolean solveArithmeticDependency() {
+		// TODO: Implement CSP mapping
+		
+		return true
+	}
+	
+	def boolean solvePredefinedDependency() {
+		// TODO: Implement CSP mapping
+		
+		return true
+	}
+	
+	def boolean solveConditionalDependency() {
+		// TODO: Implement CSP mapping
+		
+		return true
+	}
+	
+	def boolean solveLogicalClause() {
+		// TODO: Implement CSP mapping
+		
+		return true
+	}
+	
+	
+	
+	
+	
+	
 }
 
 

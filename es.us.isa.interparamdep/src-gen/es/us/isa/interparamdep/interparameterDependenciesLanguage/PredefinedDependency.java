@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency#getNot <em>Not</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency#getPredefDepType <em>Predef Dep Type</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency#getPredefDepClauses <em>Predef Dep Clauses</em>}</li>
  * </ul>
@@ -24,8 +25,30 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface PredefinedDependency extends Clause
+public interface PredefinedDependency extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Not</em>' attribute.
+   * @see #setNot(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPredefinedDependency_Not()
+   * @model
+   * @generated
+   */
+  String getNot();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency#getNot <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Not</em>' attribute.
+   * @see #getNot()
+   * @generated
+   */
+  void setNot(String value);
+
   /**
    * Returns the value of the '<em><b>Predef Dep Type</b></em>' attribute.
    * <!-- begin-user-doc -->

@@ -96,69 +96,14 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
         return createConditionalDependencyAdapter();
       }
       @Override
-      public Adapter casePredicate2(Predicate2 object)
-      {
-        return createPredicate2Adapter();
-      }
-      @Override
       public Adapter casePredicate(Predicate object)
       {
         return createPredicateAdapter();
       }
       @Override
-      public Adapter caseClause(Clause object)
-      {
-        return createClauseAdapter();
-      }
-      @Override
-      public Adapter caseClause2(Clause2 object)
-      {
-        return createClause2Adapter();
-      }
-      @Override
-      public Adapter caseClauseContinuation(ClauseContinuation object)
-      {
-        return createClauseContinuationAdapter();
-      }
-      @Override
-      public Adapter caseClause3(Clause3 object)
-      {
-        return createClause3Adapter();
-      }
-      @Override
-      public Adapter casePositiveClauseContinuation(PositiveClauseContinuation object)
-      {
-        return createPositiveClauseContinuationAdapter();
-      }
-      @Override
-      public Adapter casePositiveClause3(PositiveClause3 object)
-      {
-        return createPositiveClause3Adapter();
-      }
-      @Override
-      public Adapter casePredefinedDependency2(PredefinedDependency2 object)
-      {
-        return createPredefinedDependency2Adapter();
-      }
-      @Override
-      public Adapter casePositiveClause2(PositiveClause2 object)
-      {
-        return createPositiveClause2Adapter();
-      }
-      @Override
-      public Adapter casePositiveFullClause2(PositiveFullClause2 object)
-      {
-        return createPositiveFullClause2Adapter();
-      }
-      @Override
       public Adapter caseAtomic(Atomic object)
       {
         return createAtomicAdapter();
-      }
-      @Override
-      public Adapter caseNegativeAtomic(NegativeAtomic object)
-      {
-        return createNegativeAtomicAdapter();
       }
       @Override
       public Adapter caseParam(Param object)
@@ -171,14 +116,19 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
         return createParamAssignmentAdapter();
       }
       @Override
-      public Adapter casePositiveClause(PositiveClause object)
+      public Adapter caseClause(Clause object)
       {
-        return createPositiveClauseAdapter();
+        return createClauseAdapter();
       }
       @Override
-      public Adapter casePositiveFullClause(PositiveFullClause object)
+      public Adapter caseClauseContinuation(ClauseContinuation object)
       {
-        return createPositiveFullClauseAdapter();
+        return createClauseContinuationAdapter();
+      }
+      @Override
+      public Adapter casePredefinedDependency(PredefinedDependency object)
+      {
+        return createPredefinedDependencyAdapter();
       }
       @Override
       public Adapter casePositiveAtomic(PositiveAtomic object)
@@ -186,9 +136,19 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
         return createPositiveAtomicAdapter();
       }
       @Override
-      public Adapter casePredefinedDependency(PredefinedDependency object)
+      public Adapter casePositiveClauseContinuation(PositiveClauseContinuation object)
       {
-        return createPredefinedDependencyAdapter();
+        return createPositiveClauseContinuationAdapter();
+      }
+      @Override
+      public Adapter casePositiveClause(PositiveClause object)
+      {
+        return createPositiveClauseAdapter();
+      }
+      @Override
+      public Adapter casePositivePredefinedDependency(PositivePredefinedDependency object)
+      {
+        return createPositivePredefinedDependencyAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -273,21 +233,6 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate2 <em>Predicate2</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate2
-   * @generated
-   */
-  public Adapter createPredicate2Adapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate <em>Predicate</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -303,141 +248,6 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause <em>Clause</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause
-   * @generated
-   */
-  public Adapter createClauseAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause2 <em>Clause2</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause2
-   * @generated
-   */
-  public Adapter createClause2Adapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation <em>Clause Continuation</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation
-   * @generated
-   */
-  public Adapter createClauseContinuationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause3 <em>Clause3</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause3
-   * @generated
-   */
-  public Adapter createClause3Adapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation <em>Positive Clause Continuation</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation
-   * @generated
-   */
-  public Adapter createPositiveClauseContinuationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause3 <em>Positive Clause3</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause3
-   * @generated
-   */
-  public Adapter createPositiveClause3Adapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2 <em>Predefined Dependency2</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency2
-   * @generated
-   */
-  public Adapter createPredefinedDependency2Adapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause2 <em>Positive Clause2</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause2
-   * @generated
-   */
-  public Adapter createPositiveClause2Adapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveFullClause2 <em>Positive Full Clause2</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveFullClause2
-   * @generated
-   */
-  public Adapter createPositiveFullClause2Adapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Atomic <em>Atomic</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -448,21 +258,6 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
    * @generated
    */
   public Adapter createAtomicAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.NegativeAtomic <em>Negative Atomic</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.NegativeAtomic
-   * @generated
-   */
-  public Adapter createNegativeAtomicAdapter()
   {
     return null;
   }
@@ -498,31 +293,46 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause <em>Positive Clause</em>}'.
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause <em>Clause</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Clause
    * @generated
    */
-  public Adapter createPositiveClauseAdapter()
+  public Adapter createClauseAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveFullClause <em>Positive Full Clause</em>}'.
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation <em>Clause Continuation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveFullClause
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ClauseContinuation
    * @generated
    */
-  public Adapter createPositiveFullClauseAdapter()
+  public Adapter createClauseContinuationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency <em>Predefined Dependency</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency
+   * @generated
+   */
+  public Adapter createPredefinedDependencyAdapter()
   {
     return null;
   }
@@ -543,16 +353,46 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency <em>Predefined Dependency</em>}'.
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation <em>Positive Clause Continuation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PredefinedDependency
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClauseContinuation
    * @generated
    */
-  public Adapter createPredefinedDependencyAdapter()
+  public Adapter createPositiveClauseContinuationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause <em>Positive Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositiveClause
+   * @generated
+   */
+  public Adapter createPositiveClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency <em>Positive Predefined Dependency</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency
+   * @generated
+   */
+  public Adapter createPositivePredefinedDependencyAdapter()
   {
     return null;
   }
