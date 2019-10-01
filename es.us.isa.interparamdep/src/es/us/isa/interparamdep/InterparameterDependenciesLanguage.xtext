@@ -26,14 +26,14 @@ ConditionalDependency:
 	'IF' condition=Predicate 'THEN' consequence=Predicate
 ;
 
-Predicate:
-	Clause |
-	Atomic
+Predicate returns GeneralPredicate:
+	Atomic |
+	Clause
 ;
 
-Atomic:
+Atomic returns GeneralAtomic:
 	not=Not? param=Param |
-	not=Not? paramAssignment=ParamAssignment |
+	not=Not? param=ParamAssignment |
 	ArithmeticDependency
 ;
 
@@ -45,38 +45,43 @@ ParamAssignment:
 	Param '=' paramValues+=STRING('|'paramValues+=STRING)*
 ;
 
-Clause:
+Clause returns GeneralClause:
 	firstElement=Atomic clauseContinuation=ClauseContinuation |
 	not=Not? '(' firstElement=(Atomic|PredefinedDependency) clauseContinuation=ClauseContinuation ')' (clauseContinuation2=ClauseContinuation)? |
 	firstElement=PredefinedDependency (clauseContinuation=ClauseContinuation)?
 ;
 
-ClauseContinuation:
-	logicalOp=LogicalOperator additionalElements=(Atomic|Clause)
+ClauseContinuation returns GeneralClauseContinuation:
+	logicalOp=LogicalOperator additionalElements=Predicate
 ;
 
-PredefinedDependency:
-	not=Not? predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=(PositiveAtomic|PositiveClause) (',' predefDepClauses+=(PositiveAtomic|PositiveClause))+ ')'
+PredefinedDependency returns GeneralPredefinedDependency:
+	not=Not? predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=PositivePredicate (',' predefDepClauses+=PositivePredicate)+ ')'
 ;
 
-PositiveAtomic:
-	Param |
-	ParamAssignment |
+PositivePredicate returns GeneralPredicate:
+	PositiveAtomic |
+	PositiveClause
+;
+
+PositiveAtomic returns GeneralAtomic:
+	param=Param |
+	param=ParamAssignment |
 	ArithmeticDependency
 ;
 
-PositiveClauseContinuation:
-	logicalOp=LogicalOperator additionalElements=(PositiveAtomic|PositiveClause)
+PositiveClause returns GeneralClause:
+	firstElement=PositiveAtomic clauseContinuation=PositiveClauseContinuation |
+	'(' firstElement=(PositiveAtomic|PositivePredefinedDependency) clauseContinuation=PositiveClauseContinuation ')' (clauseContinuation2=PositiveClauseContinuation)? |
+	firstElement=PositivePredefinedDependency (clauseContinuation=PositiveClauseContinuation)?
 ;
 
-PositiveClause:
-	positiveFirstElement=PositiveAtomic positiveClauseContinuation=PositiveClauseContinuation |
-	'(' positiveFirstElement=(PositiveAtomic|PositivePredefinedDependency) positiveClauseContinuation=PositiveClauseContinuation ')' (positiveClauseContinuation2=PositiveClauseContinuation)? |
-	PositivePredefinedDependency (positiveClauseContinuation=PositiveClauseContinuation)?
+PositiveClauseContinuation returns GeneralClauseContinuation:
+	logicalOp=LogicalOperator additionalElements=PositivePredicate
 ;
 
-PositivePredefinedDependency:
-	predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=(PositiveAtomic|PositiveClause) (',' predefDepClauses+=(PositiveAtomic|PositiveClause))+ ')'
+PositivePredefinedDependency returns GeneralPredefinedDependency:
+	predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=PositivePredicate (',' predefDepClauses+=PositivePredicate)+ ')'
 ;
 
 Not:

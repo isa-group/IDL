@@ -3,8 +3,8 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,18 +15,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Predicate</b></em>'.
+ * An implementation of the model object '<em><b>General Predicate</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredicateImpl#getNot <em>Not</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredicateImpl#getNot <em>Not</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PredicateImpl extends MinimalEObjectImpl.Container implements Predicate
+public class GeneralPredicateImpl extends MinimalEObjectImpl.Container implements GeneralPredicate
 {
   /**
    * The default value of the '{@link #getNot() <em>Not</em>}' attribute.
@@ -53,7 +53,7 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PredicateImpl()
+  protected GeneralPredicateImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   @Override
   protected EClass eStaticClass()
   {
-    return InterparameterDependenciesLanguagePackage.Literals.PREDICATE;
+    return InterparameterDependenciesLanguagePackage.Literals.GENERAL_PREDICATE;
   }
 
   /**
@@ -91,7 +91,7 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
     String oldNot = not;
     not = newNot;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.PREDICATE__NOT, oldNot, not));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__NOT, oldNot, not));
   }
 
   /**
@@ -104,7 +104,7 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDICATE__NOT:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__NOT:
         return getNot();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -120,7 +120,7 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDICATE__NOT:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__NOT:
         setNot((String)newValue);
         return;
     }
@@ -137,7 +137,7 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDICATE__NOT:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__NOT:
         setNot(NOT_EDEFAULT);
         return;
     }
@@ -154,7 +154,7 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.PREDICATE__NOT:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__NOT:
         return NOT_EDEFAULT == null ? not != null : !NOT_EDEFAULT.equals(not);
     }
     return super.eIsSet(featureID);
@@ -177,4 +177,4 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
     return result.toString();
   }
 
-} //PredicateImpl
+} //GeneralPredicateImpl

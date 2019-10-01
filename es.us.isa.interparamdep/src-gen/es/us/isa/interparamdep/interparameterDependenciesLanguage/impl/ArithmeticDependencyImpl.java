@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ArithmeticDependencyImpl extends AtomicImpl implements ArithmeticDependency
+public class ArithmeticDependencyImpl extends GeneralAtomicImpl implements ArithmeticDependency
 {
   /**
    * The default value of the '{@link #getParam1() <em>Param1</em>}' attribute.

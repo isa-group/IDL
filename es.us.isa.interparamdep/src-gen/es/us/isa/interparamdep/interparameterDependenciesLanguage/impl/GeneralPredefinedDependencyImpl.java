@@ -3,8 +3,9 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredefinedDependency;
 
 import java.util.Collection;
 
@@ -14,30 +15,51 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Positive Predefined Dependency</b></em>'.
+ * An implementation of the model object '<em><b>General Predefined Dependency</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredefinedDependencyImpl#getPredefDepType <em>Predef Dep Type</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredefinedDependencyImpl#getPredefDepClauses <em>Predef Dep Clauses</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredefinedDependencyImpl#getNot <em>Not</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredefinedDependencyImpl#getPredefDepType <em>Predef Dep Type</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredefinedDependencyImpl#getPredefDepClauses <em>Predef Dep Clauses</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PositivePredefinedDependencyImpl extends PositiveClauseImpl implements PositivePredefinedDependency
+public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Container implements GeneralPredefinedDependency
 {
+  /**
+   * The default value of the '{@link #getNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNot()
+   * @generated
+   * @ordered
+   */
+  protected static final String NOT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNot()
+   * @generated
+   * @ordered
+   */
+  protected String not = NOT_EDEFAULT;
+
   /**
    * The default value of the '{@link #getPredefDepType() <em>Predef Dep Type</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -66,14 +88,14 @@ public class PositivePredefinedDependencyImpl extends PositiveClauseImpl impleme
    * @generated
    * @ordered
    */
-  protected EList<EObject> predefDepClauses;
+  protected EList<GeneralPredicate> predefDepClauses;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PositivePredefinedDependencyImpl()
+  protected GeneralPredefinedDependencyImpl()
   {
     super();
   }
@@ -86,7 +108,32 @@ public class PositivePredefinedDependencyImpl extends PositiveClauseImpl impleme
   @Override
   protected EClass eStaticClass()
   {
-    return InterparameterDependenciesLanguagePackage.Literals.POSITIVE_PREDEFINED_DEPENDENCY;
+    return InterparameterDependenciesLanguagePackage.Literals.GENERAL_PREDEFINED_DEPENDENCY;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getNot()
+  {
+    return not;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNot(String newNot)
+  {
+    String oldNot = not;
+    not = newNot;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__NOT, oldNot, not));
   }
 
   /**
@@ -111,7 +158,7 @@ public class PositivePredefinedDependencyImpl extends PositiveClauseImpl impleme
     String oldPredefDepType = predefDepType;
     predefDepType = newPredefDepType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE, oldPredefDepType, predefDepType));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE, oldPredefDepType, predefDepType));
   }
 
   /**
@@ -120,11 +167,11 @@ public class PositivePredefinedDependencyImpl extends PositiveClauseImpl impleme
    * @generated
    */
   @Override
-  public EList<EObject> getPredefDepClauses()
+  public EList<GeneralPredicate> getPredefDepClauses()
   {
     if (predefDepClauses == null)
     {
-      predefDepClauses = new EObjectContainmentEList<EObject>(EObject.class, this, InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES);
+      predefDepClauses = new EObjectContainmentEList<GeneralPredicate>(GeneralPredicate.class, this, InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES);
     }
     return predefDepClauses;
   }
@@ -139,7 +186,7 @@ public class PositivePredefinedDependencyImpl extends PositiveClauseImpl impleme
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
         return ((InternalEList<?>)getPredefDepClauses()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -155,9 +202,11 @@ public class PositivePredefinedDependencyImpl extends PositiveClauseImpl impleme
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__NOT:
+        return getNot();
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         return getPredefDepType();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
         return getPredefDepClauses();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -174,12 +223,15 @@ public class PositivePredefinedDependencyImpl extends PositiveClauseImpl impleme
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__NOT:
+        setNot((String)newValue);
+        return;
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         setPredefDepType((String)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
         getPredefDepClauses().clear();
-        getPredefDepClauses().addAll((Collection<? extends EObject>)newValue);
+        getPredefDepClauses().addAll((Collection<? extends GeneralPredicate>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -195,10 +247,13 @@ public class PositivePredefinedDependencyImpl extends PositiveClauseImpl impleme
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__NOT:
+        setNot(NOT_EDEFAULT);
+        return;
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         setPredefDepType(PREDEF_DEP_TYPE_EDEFAULT);
         return;
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
         getPredefDepClauses().clear();
         return;
     }
@@ -215,9 +270,11 @@ public class PositivePredefinedDependencyImpl extends PositiveClauseImpl impleme
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__NOT:
+        return NOT_EDEFAULT == null ? not != null : !NOT_EDEFAULT.equals(not);
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         return PREDEF_DEP_TYPE_EDEFAULT == null ? predefDepType != null : !PREDEF_DEP_TYPE_EDEFAULT.equals(predefDepType);
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
         return predefDepClauses != null && !predefDepClauses.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -234,10 +291,12 @@ public class PositivePredefinedDependencyImpl extends PositiveClauseImpl impleme
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (predefDepType: ");
+    result.append(" (not: ");
+    result.append(not);
+    result.append(", predefDepType: ");
     result.append(predefDepType);
     result.append(')');
     return result.toString();
   }
 
-} //PositivePredefinedDependencyImpl
+} //GeneralPredefinedDependencyImpl

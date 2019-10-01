@@ -8,6 +8,8 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignmen
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Param Assignment</b></em>'.
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ParamAssignmentImpl extends PositiveAtomicImpl implements ParamAssignment
+public class ParamAssignmentImpl extends MinimalEObjectImpl.Container implements ParamAssignment
 {
   /**
    * <!-- begin-user-doc -->

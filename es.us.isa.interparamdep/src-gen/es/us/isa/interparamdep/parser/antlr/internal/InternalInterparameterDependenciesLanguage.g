@@ -388,20 +388,20 @@ rulePredicate returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getPredicateAccess().getClauseParserRuleCall_0());
+			newCompositeNode(grammarAccess.getPredicateAccess().getAtomicParserRuleCall_0());
 		}
-		this_Clause_0=ruleClause
+		this_Atomic_0=ruleAtomic
 		{
-			$current = $this_Clause_0.current;
+			$current = $this_Atomic_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getPredicateAccess().getAtomicParserRuleCall_1());
+			newCompositeNode(grammarAccess.getPredicateAccess().getClauseParserRuleCall_1());
 		}
-		this_Atomic_1=ruleAtomic
+		this_Clause_1=ruleClause
 		{
-			$current = $this_Atomic_1.current;
+			$current = $this_Clause_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -487,17 +487,17 @@ ruleAtomic returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAtomicAccess().getParamAssignmentParamAssignmentParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getAtomicAccess().getParamParamAssignmentParserRuleCall_1_1_0());
 					}
-					lv_paramAssignment_3_0=ruleParamAssignment
+					lv_param_3_0=ruleParamAssignment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAtomicRule());
 						}
 						set(
 							$current,
-							"paramAssignment",
-							lv_paramAssignment_3_0,
+							"param",
+							lv_param_3_0,
 							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ParamAssignment");
 						afterParserOrEnumRuleCall();
 					}
@@ -866,39 +866,21 @@ ruleClauseContinuation returns [EObject current=null]
 		)
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getClauseContinuationAccess().getAdditionalElementsAtomicParserRuleCall_1_0_0());
+				{
+					newCompositeNode(grammarAccess.getClauseContinuationAccess().getAdditionalElementsPredicateParserRuleCall_1_0());
+				}
+				lv_additionalElements_1_0=rulePredicate
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getClauseContinuationRule());
 					}
-					lv_additionalElements_1_1=ruleAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getClauseContinuationRule());
-						}
-						set(
-							$current,
-							"additionalElements",
-							lv_additionalElements_1_1,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Atomic");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getClauseContinuationAccess().getAdditionalElementsClauseParserRuleCall_1_0_1());
-					}
-					lv_additionalElements_1_2=ruleClause
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getClauseContinuationRule());
-						}
-						set(
-							$current,
-							"additionalElements",
-							lv_additionalElements_1_2,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Clause");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"additionalElements",
+						lv_additionalElements_1_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Predicate");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 	)
@@ -994,39 +976,21 @@ rulePredefinedDependency returns [EObject current=null]
 		}
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_3_0_0());
+				{
+					newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositivePredicateParserRuleCall_3_0());
+				}
+				lv_predefDepClauses_3_0=rulePositivePredicate
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPredefinedDependencyRule());
 					}
-					lv_predefDepClauses_3_1=rulePositiveAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPredefinedDependencyRule());
-						}
-						add(
-							$current,
-							"predefDepClauses",
-							lv_predefDepClauses_3_1,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_3_0_1());
-					}
-					lv_predefDepClauses_3_2=rulePositiveClause
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPredefinedDependencyRule());
-						}
-						add(
-							$current,
-							"predefDepClauses",
-							lv_predefDepClauses_3_2,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					add(
+						$current,
+						"predefDepClauses",
+						lv_predefDepClauses_3_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredicate");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 		(
@@ -1036,45 +1000,63 @@ rulePredefinedDependency returns [EObject current=null]
 			}
 			(
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_4_1_0_0());
+					{
+						newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositivePredicateParserRuleCall_4_1_0());
+					}
+					lv_predefDepClauses_5_0=rulePositivePredicate
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPredefinedDependencyRule());
 						}
-						lv_predefDepClauses_5_1=rulePositiveAtomic
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPredefinedDependencyRule());
-							}
-							add(
-								$current,
-								"predefDepClauses",
-								lv_predefDepClauses_5_1,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
-							afterParserOrEnumRuleCall();
-						}
-						    |
-						{
-							newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_4_1_0_1());
-						}
-						lv_predefDepClauses_5_2=rulePositiveClause
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPredefinedDependencyRule());
-							}
-							add(
-								$current,
-								"predefDepClauses",
-								lv_predefDepClauses_5_2,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						add(
+							$current,
+							"predefDepClauses",
+							lv_predefDepClauses_5_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredicate");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 		)+
 		otherlv_6=')'
 		{
 			newLeafNode(otherlv_6, grammarAccess.getPredefinedDependencyAccess().getRightParenthesisKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRulePositivePredicate
+entryRulePositivePredicate returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPositivePredicateRule()); }
+	iv_rulePositivePredicate=rulePositivePredicate
+	{ $current=$iv_rulePositivePredicate.current; }
+	EOF;
+
+// Rule PositivePredicate
+rulePositivePredicate returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getPositivePredicateAccess().getPositiveAtomicParserRuleCall_0());
+		}
+		this_PositiveAtomic_0=rulePositiveAtomic
+		{
+			$current = $this_PositiveAtomic_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getPositivePredicateAccess().getPositiveClauseParserRuleCall_1());
+		}
+		this_PositiveClause_1=rulePositiveClause
+		{
+			$current = $this_PositiveClause_1.current;
+			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -1095,23 +1077,45 @@ rulePositiveAtomic returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getPositiveAtomicAccess().getParamParserRuleCall_0());
-		}
-		this_Param_0=ruleParam
-		{
-			$current = $this_Param_0.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPositiveAtomicAccess().getParamParamParserRuleCall_0_0());
+				}
+				lv_param_0_0=ruleParam
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPositiveAtomicRule());
+					}
+					set(
+						$current,
+						"param",
+						lv_param_0_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Param");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		    |
-		{
-			newCompositeNode(grammarAccess.getPositiveAtomicAccess().getParamAssignmentParserRuleCall_1());
-		}
-		this_ParamAssignment_1=ruleParamAssignment
-		{
-			$current = $this_ParamAssignment_1.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPositiveAtomicAccess().getParamParamAssignmentParserRuleCall_1_0());
+				}
+				lv_param_1_0=ruleParamAssignment
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPositiveAtomicRule());
+					}
+					set(
+						$current,
+						"param",
+						lv_param_1_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ParamAssignment");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		    |
 		{
 			newCompositeNode(grammarAccess.getPositiveAtomicAccess().getArithmeticDependencyParserRuleCall_2());
@@ -1121,6 +1125,192 @@ rulePositiveAtomic returns [EObject current=null]
 			$current = $this_ArithmeticDependency_2.current;
 			afterParserOrEnumRuleCall();
 		}
+	)
+;
+
+// Entry rule entryRulePositiveClause
+entryRulePositiveClause returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPositiveClauseRule()); }
+	iv_rulePositiveClause=rulePositiveClause
+	{ $current=$iv_rulePositiveClause.current; }
+	EOF;
+
+// Rule PositiveClause
+rulePositiveClause returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementPositiveAtomicParserRuleCall_0_0_0());
+					}
+					lv_firstElement_0_0=rulePositiveAtomic
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
+						}
+						set(
+							$current,
+							"firstElement",
+							lv_firstElement_0_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPositiveClauseAccess().getClauseContinuationPositiveClauseContinuationParserRuleCall_0_1_0());
+					}
+					lv_clauseContinuation_1_0=rulePositiveClauseContinuation
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
+						}
+						set(
+							$current,
+							"clauseContinuation",
+							lv_clauseContinuation_1_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClauseContinuation");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			otherlv_2='('
+			{
+				newLeafNode(otherlv_2, grammarAccess.getPositiveClauseAccess().getLeftParenthesisKeyword_1_0());
+			}
+			(
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementPositiveAtomicParserRuleCall_1_1_0_0());
+						}
+						lv_firstElement_3_1=rulePositiveAtomic
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
+							}
+							set(
+								$current,
+								"firstElement",
+								lv_firstElement_3_1,
+								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
+							afterParserOrEnumRuleCall();
+						}
+						    |
+						{
+							newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementPositivePredefinedDependencyParserRuleCall_1_1_0_1());
+						}
+						lv_firstElement_3_2=rulePositivePredefinedDependency
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
+							}
+							set(
+								$current,
+								"firstElement",
+								lv_firstElement_3_2,
+								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredefinedDependency");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPositiveClauseAccess().getClauseContinuationPositiveClauseContinuationParserRuleCall_1_2_0());
+					}
+					lv_clauseContinuation_4_0=rulePositiveClauseContinuation
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
+						}
+						set(
+							$current,
+							"clauseContinuation",
+							lv_clauseContinuation_4_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClauseContinuation");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_5=')'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getPositiveClauseAccess().getRightParenthesisKeyword_1_3());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPositiveClauseAccess().getClauseContinuation2PositiveClauseContinuationParserRuleCall_1_4_0());
+					}
+					lv_clauseContinuation2_6_0=rulePositiveClauseContinuation
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
+						}
+						set(
+							$current,
+							"clauseContinuation2",
+							lv_clauseContinuation2_6_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClauseContinuation");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)?
+		)
+		    |
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementPositivePredefinedDependencyParserRuleCall_2_0_0());
+					}
+					lv_firstElement_7_0=rulePositivePredefinedDependency
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
+						}
+						set(
+							$current,
+							"firstElement",
+							lv_firstElement_7_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredefinedDependency");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPositiveClauseAccess().getClauseContinuationPositiveClauseContinuationParserRuleCall_2_1_0());
+					}
+					lv_clauseContinuation_8_0=rulePositiveClauseContinuation
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
+						}
+						set(
+							$current,
+							"clauseContinuation",
+							lv_clauseContinuation_8_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClauseContinuation");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)?
+		)
 	)
 ;
 
@@ -1161,215 +1351,22 @@ rulePositiveClauseContinuation returns [EObject current=null]
 		)
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPositiveClauseContinuationAccess().getAdditionalElementsPositiveAtomicParserRuleCall_1_0_0());
+				{
+					newCompositeNode(grammarAccess.getPositiveClauseContinuationAccess().getAdditionalElementsPositivePredicateParserRuleCall_1_0());
+				}
+				lv_additionalElements_1_0=rulePositivePredicate
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPositiveClauseContinuationRule());
 					}
-					lv_additionalElements_1_1=rulePositiveAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositiveClauseContinuationRule());
-						}
-						set(
-							$current,
-							"additionalElements",
-							lv_additionalElements_1_1,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getPositiveClauseContinuationAccess().getAdditionalElementsPositiveClauseParserRuleCall_1_0_1());
-					}
-					lv_additionalElements_1_2=rulePositiveClause
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositiveClauseContinuationRule());
-						}
-						set(
-							$current,
-							"additionalElements",
-							lv_additionalElements_1_2,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"additionalElements",
+						lv_additionalElements_1_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredicate");
+					afterParserOrEnumRuleCall();
+				}
 			)
-		)
-	)
-;
-
-// Entry rule entryRulePositiveClause
-entryRulePositiveClause returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPositiveClauseRule()); }
-	iv_rulePositiveClause=rulePositiveClause
-	{ $current=$iv_rulePositiveClause.current; }
-	EOF;
-
-// Rule PositiveClause
-rulePositiveClause returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPositiveClauseAccess().getPositiveFirstElementPositiveAtomicParserRuleCall_0_0_0());
-					}
-					lv_positiveFirstElement_0_0=rulePositiveAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
-						}
-						set(
-							$current,
-							"positiveFirstElement",
-							lv_positiveFirstElement_0_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPositiveClauseAccess().getPositiveClauseContinuationPositiveClauseContinuationParserRuleCall_0_1_0());
-					}
-					lv_positiveClauseContinuation_1_0=rulePositiveClauseContinuation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
-						}
-						set(
-							$current,
-							"positiveClauseContinuation",
-							lv_positiveClauseContinuation_1_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClauseContinuation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
-		    |
-		(
-			otherlv_2='('
-			{
-				newLeafNode(otherlv_2, grammarAccess.getPositiveClauseAccess().getLeftParenthesisKeyword_1_0());
-			}
-			(
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getPositiveClauseAccess().getPositiveFirstElementPositiveAtomicParserRuleCall_1_1_0_0());
-						}
-						lv_positiveFirstElement_3_1=rulePositiveAtomic
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
-							}
-							set(
-								$current,
-								"positiveFirstElement",
-								lv_positiveFirstElement_3_1,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
-							afterParserOrEnumRuleCall();
-						}
-						    |
-						{
-							newCompositeNode(grammarAccess.getPositiveClauseAccess().getPositiveFirstElementPositivePredefinedDependencyParserRuleCall_1_1_0_1());
-						}
-						lv_positiveFirstElement_3_2=rulePositivePredefinedDependency
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
-							}
-							set(
-								$current,
-								"positiveFirstElement",
-								lv_positiveFirstElement_3_2,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredefinedDependency");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPositiveClauseAccess().getPositiveClauseContinuationPositiveClauseContinuationParserRuleCall_1_2_0());
-					}
-					lv_positiveClauseContinuation_4_0=rulePositiveClauseContinuation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
-						}
-						set(
-							$current,
-							"positiveClauseContinuation",
-							lv_positiveClauseContinuation_4_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClauseContinuation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			otherlv_5=')'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getPositiveClauseAccess().getRightParenthesisKeyword_1_3());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPositiveClauseAccess().getPositiveClauseContinuation2PositiveClauseContinuationParserRuleCall_1_4_0());
-					}
-					lv_positiveClauseContinuation2_6_0=rulePositiveClauseContinuation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
-						}
-						set(
-							$current,
-							"positiveClauseContinuation2",
-							lv_positiveClauseContinuation2_6_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClauseContinuation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)?
-		)
-		    |
-		(
-			{
-				newCompositeNode(grammarAccess.getPositiveClauseAccess().getPositivePredefinedDependencyParserRuleCall_2_0());
-			}
-			this_PositivePredefinedDependency_7=rulePositivePredefinedDependency
-			{
-				$current = $this_PositivePredefinedDependency_7.current;
-				afterParserOrEnumRuleCall();
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPositiveClauseAccess().getPositiveClauseContinuationPositiveClauseContinuationParserRuleCall_2_1_0());
-					}
-					lv_positiveClauseContinuation_8_0=rulePositiveClauseContinuation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
-						}
-						set(
-							$current,
-							"positiveClauseContinuation",
-							lv_positiveClauseContinuation_8_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClauseContinuation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)?
 		)
 	)
 ;
@@ -1445,39 +1442,21 @@ rulePositivePredefinedDependency returns [EObject current=null]
 		}
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_2_0_0());
+				{
+					newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositivePredicateParserRuleCall_2_0());
+				}
+				lv_predefDepClauses_2_0=rulePositivePredicate
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPositivePredefinedDependencyRule());
 					}
-					lv_predefDepClauses_2_1=rulePositiveAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositivePredefinedDependencyRule());
-						}
-						add(
-							$current,
-							"predefDepClauses",
-							lv_predefDepClauses_2_1,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_2_0_1());
-					}
-					lv_predefDepClauses_2_2=rulePositiveClause
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositivePredefinedDependencyRule());
-						}
-						add(
-							$current,
-							"predefDepClauses",
-							lv_predefDepClauses_2_2,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					add(
+						$current,
+						"predefDepClauses",
+						lv_predefDepClauses_2_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredicate");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 		(
@@ -1487,39 +1466,21 @@ rulePositivePredefinedDependency returns [EObject current=null]
 			}
 			(
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_3_1_0_0());
+					{
+						newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositivePredicateParserRuleCall_3_1_0());
+					}
+					lv_predefDepClauses_4_0=rulePositivePredicate
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPositivePredefinedDependencyRule());
 						}
-						lv_predefDepClauses_4_1=rulePositiveAtomic
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPositivePredefinedDependencyRule());
-							}
-							add(
-								$current,
-								"predefDepClauses",
-								lv_predefDepClauses_4_1,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
-							afterParserOrEnumRuleCall();
-						}
-						    |
-						{
-							newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_3_1_0_1());
-						}
-						lv_predefDepClauses_4_2=rulePositiveClause
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPositivePredefinedDependencyRule());
-							}
-							add(
-								$current,
-								"predefDepClauses",
-								lv_predefDepClauses_4_2,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						add(
+							$current,
+							"predefDepClauses",
+							lv_predefDepClauses_4_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredicate");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 		)+

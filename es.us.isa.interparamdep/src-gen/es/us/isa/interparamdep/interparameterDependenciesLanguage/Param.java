@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Param extends ParamAssignment, PositiveAtomic
+public interface Param extends ParamAssignment
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

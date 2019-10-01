@@ -69,17 +69,13 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
       case InterparameterDependenciesLanguagePackage.DEPENDENCY: return createDependency();
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY: return createArithmeticDependency();
       case InterparameterDependenciesLanguagePackage.CONDITIONAL_DEPENDENCY: return createConditionalDependency();
-      case InterparameterDependenciesLanguagePackage.PREDICATE: return createPredicate();
-      case InterparameterDependenciesLanguagePackage.ATOMIC: return createAtomic();
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE: return createGeneralPredicate();
+      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC: return createGeneralAtomic();
       case InterparameterDependenciesLanguagePackage.PARAM: return createParam();
       case InterparameterDependenciesLanguagePackage.PARAM_ASSIGNMENT: return createParamAssignment();
-      case InterparameterDependenciesLanguagePackage.CLAUSE: return createClause();
-      case InterparameterDependenciesLanguagePackage.CLAUSE_CONTINUATION: return createClauseContinuation();
-      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY: return createPredefinedDependency();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_ATOMIC: return createPositiveAtomic();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE_CONTINUATION: return createPositiveClauseContinuation();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE: return createPositiveClause();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY: return createPositivePredefinedDependency();
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE: return createGeneralClause();
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE_CONTINUATION: return createGeneralClauseContinuation();
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY: return createGeneralPredefinedDependency();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -139,10 +135,10 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public Predicate createPredicate()
+  public GeneralPredicate createGeneralPredicate()
   {
-    PredicateImpl predicate = new PredicateImpl();
-    return predicate;
+    GeneralPredicateImpl generalPredicate = new GeneralPredicateImpl();
+    return generalPredicate;
   }
 
   /**
@@ -151,10 +147,10 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public Atomic createAtomic()
+  public GeneralAtomic createGeneralAtomic()
   {
-    AtomicImpl atomic = new AtomicImpl();
-    return atomic;
+    GeneralAtomicImpl generalAtomic = new GeneralAtomicImpl();
+    return generalAtomic;
   }
 
   /**
@@ -187,10 +183,10 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public Clause createClause()
+  public GeneralClause createGeneralClause()
   {
-    ClauseImpl clause = new ClauseImpl();
-    return clause;
+    GeneralClauseImpl generalClause = new GeneralClauseImpl();
+    return generalClause;
   }
 
   /**
@@ -199,10 +195,10 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public ClauseContinuation createClauseContinuation()
+  public GeneralClauseContinuation createGeneralClauseContinuation()
   {
-    ClauseContinuationImpl clauseContinuation = new ClauseContinuationImpl();
-    return clauseContinuation;
+    GeneralClauseContinuationImpl generalClauseContinuation = new GeneralClauseContinuationImpl();
+    return generalClauseContinuation;
   }
 
   /**
@@ -211,58 +207,10 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public PredefinedDependency createPredefinedDependency()
+  public GeneralPredefinedDependency createGeneralPredefinedDependency()
   {
-    PredefinedDependencyImpl predefinedDependency = new PredefinedDependencyImpl();
-    return predefinedDependency;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PositiveAtomic createPositiveAtomic()
-  {
-    PositiveAtomicImpl positiveAtomic = new PositiveAtomicImpl();
-    return positiveAtomic;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PositiveClauseContinuation createPositiveClauseContinuation()
-  {
-    PositiveClauseContinuationImpl positiveClauseContinuation = new PositiveClauseContinuationImpl();
-    return positiveClauseContinuation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PositiveClause createPositiveClause()
-  {
-    PositiveClauseImpl positiveClause = new PositiveClauseImpl();
-    return positiveClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PositivePredefinedDependency createPositivePredefinedDependency()
-  {
-    PositivePredefinedDependencyImpl positivePredefinedDependency = new PositivePredefinedDependencyImpl();
-    return positivePredefinedDependency;
+    GeneralPredefinedDependencyImpl generalPredefinedDependency = new GeneralPredefinedDependencyImpl();
+    return generalPredefinedDependency;
   }
 
   /**

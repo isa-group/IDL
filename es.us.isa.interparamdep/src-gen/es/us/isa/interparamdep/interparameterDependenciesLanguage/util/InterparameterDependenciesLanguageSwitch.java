@@ -91,9 +91,8 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
       {
         ArithmeticDependency arithmeticDependency = (ArithmeticDependency)theEObject;
         T result = caseArithmeticDependency(arithmeticDependency);
-        if (result == null) result = caseAtomic(arithmeticDependency);
-        if (result == null) result = casePositiveAtomic(arithmeticDependency);
-        if (result == null) result = casePredicate(arithmeticDependency);
+        if (result == null) result = caseGeneralAtomic(arithmeticDependency);
+        if (result == null) result = caseGeneralPredicate(arithmeticDependency);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -104,18 +103,18 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case InterparameterDependenciesLanguagePackage.PREDICATE:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE:
       {
-        Predicate predicate = (Predicate)theEObject;
-        T result = casePredicate(predicate);
+        GeneralPredicate generalPredicate = (GeneralPredicate)theEObject;
+        T result = caseGeneralPredicate(generalPredicate);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case InterparameterDependenciesLanguagePackage.ATOMIC:
+      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC:
       {
-        Atomic atomic = (Atomic)theEObject;
-        T result = caseAtomic(atomic);
-        if (result == null) result = casePredicate(atomic);
+        GeneralAtomic generalAtomic = (GeneralAtomic)theEObject;
+        T result = caseGeneralAtomic(generalAtomic);
+        if (result == null) result = caseGeneralPredicate(generalAtomic);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -124,7 +123,6 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
         Param param = (Param)theEObject;
         T result = caseParam(param);
         if (result == null) result = caseParamAssignment(param);
-        if (result == null) result = casePositiveAtomic(param);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -132,58 +130,28 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
       {
         ParamAssignment paramAssignment = (ParamAssignment)theEObject;
         T result = caseParamAssignment(paramAssignment);
-        if (result == null) result = casePositiveAtomic(paramAssignment);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case InterparameterDependenciesLanguagePackage.CLAUSE:
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE:
       {
-        Clause clause = (Clause)theEObject;
-        T result = caseClause(clause);
-        if (result == null) result = casePredicate(clause);
+        GeneralClause generalClause = (GeneralClause)theEObject;
+        T result = caseGeneralClause(generalClause);
+        if (result == null) result = caseGeneralPredicate(generalClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case InterparameterDependenciesLanguagePackage.CLAUSE_CONTINUATION:
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE_CONTINUATION:
       {
-        ClauseContinuation clauseContinuation = (ClauseContinuation)theEObject;
-        T result = caseClauseContinuation(clauseContinuation);
+        GeneralClauseContinuation generalClauseContinuation = (GeneralClauseContinuation)theEObject;
+        T result = caseGeneralClauseContinuation(generalClauseContinuation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case InterparameterDependenciesLanguagePackage.PREDEFINED_DEPENDENCY:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY:
       {
-        PredefinedDependency predefinedDependency = (PredefinedDependency)theEObject;
-        T result = casePredefinedDependency(predefinedDependency);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case InterparameterDependenciesLanguagePackage.POSITIVE_ATOMIC:
-      {
-        PositiveAtomic positiveAtomic = (PositiveAtomic)theEObject;
-        T result = casePositiveAtomic(positiveAtomic);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE_CONTINUATION:
-      {
-        PositiveClauseContinuation positiveClauseContinuation = (PositiveClauseContinuation)theEObject;
-        T result = casePositiveClauseContinuation(positiveClauseContinuation);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case InterparameterDependenciesLanguagePackage.POSITIVE_CLAUSE:
-      {
-        PositiveClause positiveClause = (PositiveClause)theEObject;
-        T result = casePositiveClause(positiveClause);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDEFINED_DEPENDENCY:
-      {
-        PositivePredefinedDependency positivePredefinedDependency = (PositivePredefinedDependency)theEObject;
-        T result = casePositivePredefinedDependency(positivePredefinedDependency);
-        if (result == null) result = casePositiveClause(positivePredefinedDependency);
+        GeneralPredefinedDependency generalPredefinedDependency = (GeneralPredefinedDependency)theEObject;
+        T result = caseGeneralPredefinedDependency(generalPredefinedDependency);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -256,33 +224,33 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Predicate</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>General Predicate</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Predicate</em>'.
+   * @return the result of interpreting the object as an instance of '<em>General Predicate</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePredicate(Predicate object)
+  public T caseGeneralPredicate(GeneralPredicate object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Atomic</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>General Atomic</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Atomic</em>'.
+   * @return the result of interpreting the object as an instance of '<em>General Atomic</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAtomic(Atomic object)
+  public T caseGeneralAtomic(GeneralAtomic object)
   {
     return null;
   }
@@ -320,113 +288,49 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Clause</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>General Clause</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Clause</em>'.
+   * @return the result of interpreting the object as an instance of '<em>General Clause</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseClause(Clause object)
+  public T caseGeneralClause(GeneralClause object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Clause Continuation</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>General Clause Continuation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Clause Continuation</em>'.
+   * @return the result of interpreting the object as an instance of '<em>General Clause Continuation</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseClauseContinuation(ClauseContinuation object)
+  public T caseGeneralClauseContinuation(GeneralClauseContinuation object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Predefined Dependency</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>General Predefined Dependency</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Predefined Dependency</em>'.
+   * @return the result of interpreting the object as an instance of '<em>General Predefined Dependency</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePredefinedDependency(PredefinedDependency object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Positive Atomic</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Positive Atomic</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePositiveAtomic(PositiveAtomic object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Positive Clause Continuation</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Positive Clause Continuation</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePositiveClauseContinuation(PositiveClauseContinuation object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Positive Clause</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Positive Clause</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePositiveClause(PositiveClause object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Positive Predefined Dependency</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Positive Predefined Dependency</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePositivePredefinedDependency(PositivePredefinedDependency object)
+  public T caseGeneralPredefinedDependency(GeneralPredefinedDependency object)
   {
     return null;
   }

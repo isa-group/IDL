@@ -3,6 +3,7 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,6 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage;
  * @model
  * @generated
  */
-public interface ParamAssignment extends PositiveAtomic
+public interface ParamAssignment extends EObject
 {
 } // ParamAssignment

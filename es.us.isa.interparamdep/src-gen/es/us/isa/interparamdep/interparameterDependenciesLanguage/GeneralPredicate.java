@@ -7,21 +7,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Predicate</b></em>'.
+ * A representation of the model object '<em><b>General Predicate</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getNot <em>Not</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate#getNot <em>Not</em>}</li>
  * </ul>
  *
- * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPredicate()
+ * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralPredicate()
  * @model
  * @generated
  */
-public interface Predicate extends EObject
+public interface GeneralPredicate extends EObject
 {
   /**
    * Returns the value of the '<em><b>Not</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface Predicate extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Not</em>' attribute.
    * @see #setNot(String)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPredicate_Not()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralPredicate_Not()
    * @model
    * @generated
    */
   String getNot();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getNot <em>Not</em>}' attribute.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate#getNot <em>Not</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Not</em>' attribute.
@@ -45,4 +45,4 @@ public interface Predicate extends EObject
    */
   void setNot(String value);
 
-} // Predicate
+} // GeneralPredicate

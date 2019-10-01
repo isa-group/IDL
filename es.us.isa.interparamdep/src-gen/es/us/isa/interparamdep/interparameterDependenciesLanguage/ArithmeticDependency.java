@@ -22,7 +22,7 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage;
  * @model
  * @generated
  */
-public interface ArithmeticDependency extends Atomic, PositiveAtomic
+public interface ArithmeticDependency extends GeneralAtomic
 {
   /**
    * Returns the value of the '<em><b>Param1</b></em>' attribute.
