@@ -59,7 +59,12 @@ Param:
 
 ParamAssignment:
 	Param '=' paramValues+=STRING('|'paramValues+=STRING)* |
+	Param '=' paramValues+=BOOLEAN |
 	Param arithOp=ArithmeticOperator paramValues+=DOUBLE
+;
+
+terminal BOOLEAN:
+	'true'|'false'
 ;
 
 Clause returns GeneralClause:

@@ -427,16 +427,23 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		private final RuleCall cParamValuesSTRINGTerminalRuleCall_0_3_1_0 = (RuleCall)cParamValuesAssignment_0_3_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final RuleCall cParamParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Assignment cArithOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cArithOpArithmeticOperatorParserRuleCall_1_1_0 = (RuleCall)cArithOpAssignment_1_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cParamValuesAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cParamValuesDOUBLETerminalRuleCall_1_2_0 = (RuleCall)cParamValuesAssignment_1_2.eContents().get(0);
+		private final RuleCall cParamValuesBOOLEANTerminalRuleCall_1_2_0 = (RuleCall)cParamValuesAssignment_1_2.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final RuleCall cParamParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Assignment cArithOpAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cArithOpArithmeticOperatorParserRuleCall_2_1_0 = (RuleCall)cArithOpAssignment_2_1.eContents().get(0);
+		private final Assignment cParamValuesAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cParamValuesDOUBLETerminalRuleCall_2_2_0 = (RuleCall)cParamValuesAssignment_2_2.eContents().get(0);
 		
 		//ParamAssignment:
-		//	Param '=' paramValues+=STRING ('|' paramValues+=STRING)* | Param arithOp=ArithmeticOperator paramValues+=DOUBLE;
+		//	Param '=' paramValues+=STRING ('|' paramValues+=STRING)* | Param '=' paramValues+=BOOLEAN | Param
+		//	arithOp=ArithmeticOperator paramValues+=DOUBLE;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Param '=' paramValues+=STRING ('|' paramValues+=STRING)* | Param arithOp=ArithmeticOperator paramValues+=DOUBLE
+		//Param '=' paramValues+=STRING ('|' paramValues+=STRING)* | Param '=' paramValues+=BOOLEAN | Param
+		//arithOp=ArithmeticOperator paramValues+=DOUBLE
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Param '=' paramValues+=STRING ('|' paramValues+=STRING)*
@@ -466,23 +473,38 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		//STRING
 		public RuleCall getParamValuesSTRINGTerminalRuleCall_0_3_1_0() { return cParamValuesSTRINGTerminalRuleCall_0_3_1_0; }
 		
-		//Param arithOp=ArithmeticOperator paramValues+=DOUBLE
+		//Param '=' paramValues+=BOOLEAN
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//Param
 		public RuleCall getParamParserRuleCall_1_0() { return cParamParserRuleCall_1_0; }
 		
-		//arithOp=ArithmeticOperator
-		public Assignment getArithOpAssignment_1_1() { return cArithOpAssignment_1_1; }
+		//'='
+		public Keyword getEqualsSignKeyword_1_1() { return cEqualsSignKeyword_1_1; }
 		
-		//ArithmeticOperator
-		public RuleCall getArithOpArithmeticOperatorParserRuleCall_1_1_0() { return cArithOpArithmeticOperatorParserRuleCall_1_1_0; }
-		
-		//paramValues+=DOUBLE
+		//paramValues+=BOOLEAN
 		public Assignment getParamValuesAssignment_1_2() { return cParamValuesAssignment_1_2; }
 		
+		//BOOLEAN
+		public RuleCall getParamValuesBOOLEANTerminalRuleCall_1_2_0() { return cParamValuesBOOLEANTerminalRuleCall_1_2_0; }
+		
+		//Param arithOp=ArithmeticOperator paramValues+=DOUBLE
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//Param
+		public RuleCall getParamParserRuleCall_2_0() { return cParamParserRuleCall_2_0; }
+		
+		//arithOp=ArithmeticOperator
+		public Assignment getArithOpAssignment_2_1() { return cArithOpAssignment_2_1; }
+		
+		//ArithmeticOperator
+		public RuleCall getArithOpArithmeticOperatorParserRuleCall_2_1_0() { return cArithOpArithmeticOperatorParserRuleCall_2_1_0; }
+		
+		//paramValues+=DOUBLE
+		public Assignment getParamValuesAssignment_2_2() { return cParamValuesAssignment_2_2; }
+		
 		//DOUBLE
-		public RuleCall getParamValuesDOUBLETerminalRuleCall_1_2_0() { return cParamValuesDOUBLETerminalRuleCall_1_2_0; }
+		public RuleCall getParamValuesDOUBLETerminalRuleCall_2_2_0() { return cParamValuesDOUBLETerminalRuleCall_2_2_0; }
 	}
 	public class ClauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.Clause");
@@ -995,6 +1017,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	private final AtomicElements pAtomic;
 	private final ParamElements pParam;
 	private final ParamAssignmentElements pParamAssignment;
+	private final TerminalRule tBOOLEAN;
 	private final ClauseElements pClause;
 	private final ClauseContinuationElements pClauseContinuation;
 	private final PredefinedDependencyElements pPredefinedDependency;
@@ -1028,6 +1051,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		this.pAtomic = new AtomicElements();
 		this.pParam = new ParamElements();
 		this.pParamAssignment = new ParamAssignmentElements();
+		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.BOOLEAN");
 		this.pClause = new ClauseElements();
 		this.pClauseContinuation = new ClauseContinuationElements();
 		this.pPredefinedDependency = new PredefinedDependencyElements();
@@ -1190,13 +1214,20 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	}
 	
 	//ParamAssignment:
-	//	Param '=' paramValues+=STRING ('|' paramValues+=STRING)* | Param arithOp=ArithmeticOperator paramValues+=DOUBLE;
+	//	Param '=' paramValues+=STRING ('|' paramValues+=STRING)* | Param '=' paramValues+=BOOLEAN | Param
+	//	arithOp=ArithmeticOperator paramValues+=DOUBLE;
 	public ParamAssignmentElements getParamAssignmentAccess() {
 		return pParamAssignment;
 	}
 	
 	public ParserRule getParamAssignmentRule() {
 		return getParamAssignmentAccess().getRule();
+	}
+	
+	//terminal BOOLEAN:
+	//	'true' | 'false';
+	public TerminalRule getBOOLEANRule() {
+		return tBOOLEAN;
 	}
 	
 	//Clause GeneralClause:

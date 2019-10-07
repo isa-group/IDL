@@ -929,30 +929,15 @@ ruleParamAssignment returns [EObject current=null]
 				$current = $this_Param_5.current;
 				afterParserOrEnumRuleCall();
 			}
+			otherlv_6='='
+			{
+				newLeafNode(otherlv_6, grammarAccess.getParamAssignmentAccess().getEqualsSignKeyword_1_1());
+			}
 			(
 				(
+					lv_paramValues_7_0=RULE_BOOLEAN
 					{
-						newCompositeNode(grammarAccess.getParamAssignmentAccess().getArithOpArithmeticOperatorParserRuleCall_1_1_0());
-					}
-					lv_arithOp_6_0=ruleArithmeticOperator
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getParamAssignmentRule());
-						}
-						set(
-							$current,
-							"arithOp",
-							lv_arithOp_6_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticOperator");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				(
-					lv_paramValues_7_0=RULE_DOUBLE
-					{
-						newLeafNode(lv_paramValues_7_0, grammarAccess.getParamAssignmentAccess().getParamValuesDOUBLETerminalRuleCall_1_2_0());
+						newLeafNode(lv_paramValues_7_0, grammarAccess.getParamAssignmentAccess().getParamValuesBOOLEANTerminalRuleCall_1_2_0());
 					}
 					{
 						if ($current==null) {
@@ -962,6 +947,57 @@ ruleParamAssignment returns [EObject current=null]
 							$current,
 							"paramValues",
 							lv_paramValues_7_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.BOOLEAN");
+					}
+				)
+			)
+		)
+		    |
+		(
+			{
+				/* */
+			}
+			{
+				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_2_0());
+			}
+			this_Param_8=ruleParam
+			{
+				$current = $this_Param_8.current;
+				afterParserOrEnumRuleCall();
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getParamAssignmentAccess().getArithOpArithmeticOperatorParserRuleCall_2_1_0());
+					}
+					lv_arithOp_9_0=ruleArithmeticOperator
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getParamAssignmentRule());
+						}
+						set(
+							$current,
+							"arithOp",
+							lv_arithOp_9_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticOperator");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					lv_paramValues_10_0=RULE_DOUBLE
+					{
+						newLeafNode(lv_paramValues_10_0, grammarAccess.getParamAssignmentAccess().getParamValuesDOUBLETerminalRuleCall_2_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getParamAssignmentRule());
+						}
+						addWithLastConsumed(
+							$current,
+							"paramValues",
+							lv_paramValues_10_0,
 							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.DOUBLE");
 					}
 				)
@@ -1927,6 +1963,8 @@ ruleLogicalOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRul
 RULE_NL : ('\r'? '\n')+;
 
 RULE_DOUBLE : RULE_INT ('.' RULE_INT)?;
+
+RULE_BOOLEAN : ('true'|'false');
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
