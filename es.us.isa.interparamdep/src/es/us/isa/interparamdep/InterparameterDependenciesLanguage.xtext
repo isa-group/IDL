@@ -7,14 +7,14 @@ Model:
 ;
 
 Dependency:
-	dep=(ArithmeticDependency | ConditionalDependency | PredefinedDependency) ';' NL?
+	dep=(ComparisonDependency | ArithmeticDependency | ConditionalDependency | PredefinedDependency) ';' NL?
 ;
 
 terminal NL:
 	('\r'? '\n')+
 ;
 
-ArithmeticDependency:
+ComparisonDependency:
 	param1=ID arithOp=ArithmeticOperator param2=ID
 ;
 
@@ -22,19 +22,35 @@ ArithmeticOperator:
 	'<' | '>' | '<=' | '>=' | '=' | '!='
 ;
 
-ConditionalDependency:
-	'IF' condition=Predicate 'THEN' consequence=Predicate
+ArithmeticDependency:
+	operation=Operation arithOp=ArithmeticOperator result=DOUBLE
 ;
 
-Predicate returns GeneralPredicate:
-	Atomic |
-	Clause
+terminal DOUBLE:
+	INT ('.' INT)?
+;
+
+Operation:
+	firstParam=Param (operationContinuation=OperationContinuation)? |
+	'(' firstParam=Param operationContinuation=OperationContinuation ')' (operationContinuation2=OperationContinuation)?
+;
+
+OperationContinuation:
+	mathOp=MathOperator additionalParams=Operation
+;
+
+MathOperator:
+	'+' | '-' | '*' | '/'
+;
+
+ConditionalDependency:
+	'IF' condition=Clause 'THEN' consequence=Clause
 ;
 
 Atomic returns GeneralAtomic:
 	not=Not? param=Param |
 	not=Not? param=ParamAssignment |
-	ArithmeticDependency
+	ComparisonDependency
 ;
 
 Param:
@@ -42,46 +58,42 @@ Param:
 ;
 
 ParamAssignment:
-	Param '=' paramValues+=STRING('|'paramValues+=STRING)*
+	Param '=' paramValues+=STRING('|'paramValues+=STRING)* |
+	Param arithOp=ArithmeticOperator paramValues+=DOUBLE
 ;
 
 Clause returns GeneralClause:
-	firstElement=Atomic clauseContinuation=ClauseContinuation |
-	not=Not? '(' firstElement=(Atomic|PredefinedDependency) clauseContinuation=ClauseContinuation ')' (clauseContinuation2=ClauseContinuation)? |
-	firstElement=PredefinedDependency (clauseContinuation=ClauseContinuation)?
+	firstElement=Atomic (clauseContinuation=ClauseContinuation)? |
+	not=Not? '(' firstElement=(Atomic|PredefinedDependency|ArithmeticDependency) clauseContinuation=ClauseContinuation ')' (clauseContinuation2=ClauseContinuation)? |
+	firstElement=(PredefinedDependency|ArithmeticDependency) (clauseContinuation=ClauseContinuation)?
 ;
 
 ClauseContinuation returns GeneralClauseContinuation:
-	logicalOp=LogicalOperator additionalElements=Predicate
+	logicalOp=LogicalOperator additionalElements=Clause
 ;
 
 PredefinedDependency returns GeneralPredefinedDependency:
-	not=Not? predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=PositivePredicate (',' predefDepClauses+=PositivePredicate)+ ')'
-;
-
-PositivePredicate returns GeneralPredicate:
-	PositiveAtomic |
-	PositiveClause
+	not=Not? predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=PositiveClause (',' predefDepClauses+=PositiveClause)+ ')'
 ;
 
 PositiveAtomic returns GeneralAtomic:
 	param=Param |
 	param=ParamAssignment |
-	ArithmeticDependency
+	ComparisonDependency
 ;
 
 PositiveClause returns GeneralClause:
-	firstElement=PositiveAtomic clauseContinuation=PositiveClauseContinuation |
-	'(' firstElement=(PositiveAtomic|PositivePredefinedDependency) clauseContinuation=PositiveClauseContinuation ')' (clauseContinuation2=PositiveClauseContinuation)? |
-	firstElement=PositivePredefinedDependency (clauseContinuation=PositiveClauseContinuation)?
+	firstElement=PositiveAtomic (clauseContinuation=PositiveClauseContinuation)? |
+	'(' firstElement=(PositiveAtomic|PositivePredefinedDependency|ArithmeticDependency) clauseContinuation=PositiveClauseContinuation ')' (clauseContinuation2=PositiveClauseContinuation)? |
+	firstElement=(PositivePredefinedDependency|ArithmeticDependency) (clauseContinuation=PositiveClauseContinuation)?
 ;
 
 PositiveClauseContinuation returns GeneralClauseContinuation:
-	logicalOp=LogicalOperator additionalElements=PositivePredicate
+	logicalOp=LogicalOperator additionalElements=PositiveClause
 ;
 
 PositivePredefinedDependency returns GeneralPredefinedDependency:
-	predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=PositivePredicate (',' predefDepClauses+=PositivePredicate)+ ')'
+	predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=PositiveClause (',' predefDepClauses+=PositiveClause)+ ')'
 ;
 
 Not:

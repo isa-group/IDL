@@ -87,12 +87,32 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY:
+      {
+        ComparisonDependency comparisonDependency = (ComparisonDependency)theEObject;
+        T result = caseComparisonDependency(comparisonDependency);
+        if (result == null) result = caseGeneralAtomic(comparisonDependency);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY:
       {
         ArithmeticDependency arithmeticDependency = (ArithmeticDependency)theEObject;
         T result = caseArithmeticDependency(arithmeticDependency);
-        if (result == null) result = caseGeneralAtomic(arithmeticDependency);
-        if (result == null) result = caseGeneralPredicate(arithmeticDependency);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case InterparameterDependenciesLanguagePackage.OPERATION:
+      {
+        Operation operation = (Operation)theEObject;
+        T result = caseOperation(operation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION:
+      {
+        OperationContinuation operationContinuation = (OperationContinuation)theEObject;
+        T result = caseOperationContinuation(operationContinuation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -103,18 +123,10 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE:
-      {
-        GeneralPredicate generalPredicate = (GeneralPredicate)theEObject;
-        T result = caseGeneralPredicate(generalPredicate);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC:
       {
         GeneralAtomic generalAtomic = (GeneralAtomic)theEObject;
         T result = caseGeneralAtomic(generalAtomic);
-        if (result == null) result = caseGeneralPredicate(generalAtomic);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -137,7 +149,6 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
       {
         GeneralClause generalClause = (GeneralClause)theEObject;
         T result = caseGeneralClause(generalClause);
-        if (result == null) result = caseGeneralPredicate(generalClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -192,6 +203,22 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Comparison Dependency</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comparison Dependency</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComparisonDependency(ComparisonDependency object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Arithmetic Dependency</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -208,6 +235,38 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperation(Operation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation Continuation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation Continuation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperationContinuation(OperationContinuation object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Conditional Dependency</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -219,22 +278,6 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConditionalDependency(ConditionalDependency object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>General Predicate</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>General Predicate</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseGeneralPredicate(GeneralPredicate object)
   {
     return null;
   }

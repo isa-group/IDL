@@ -3,6 +3,7 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,7 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic#getNot <em>Not</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic#getParam <em>Param</em>}</li>
  * </ul>
  *
@@ -20,8 +22,30 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage;
  * @model
  * @generated
  */
-public interface GeneralAtomic extends GeneralPredicate
+public interface GeneralAtomic extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Not</em>' attribute.
+   * @see #setNot(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralAtomic_Not()
+   * @model
+   * @generated
+   */
+  String getNot();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic#getNot <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Not</em>' attribute.
+   * @see #getNot()
+   * @generated
+   */
+  void setNot(String value);
+
   /**
    * Returns the value of the '<em><b>Param</b></em>' containment reference.
    * <!-- begin-user-doc -->

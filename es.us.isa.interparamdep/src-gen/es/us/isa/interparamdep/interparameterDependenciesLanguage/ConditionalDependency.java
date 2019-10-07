@@ -29,12 +29,12 @@ public interface ConditionalDependency extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Condition</em>' containment reference.
-   * @see #setCondition(GeneralPredicate)
+   * @see #setCondition(GeneralClause)
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getConditionalDependency_Condition()
    * @model containment="true"
    * @generated
    */
-  GeneralPredicate getCondition();
+  GeneralClause getCondition();
 
   /**
    * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ConditionalDependency#getCondition <em>Condition</em>}' containment reference.
@@ -44,19 +44,19 @@ public interface ConditionalDependency extends EObject
    * @see #getCondition()
    * @generated
    */
-  void setCondition(GeneralPredicate value);
+  void setCondition(GeneralClause value);
 
   /**
    * Returns the value of the '<em><b>Consequence</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Consequence</em>' containment reference.
-   * @see #setConsequence(GeneralPredicate)
+   * @see #setConsequence(GeneralClause)
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getConditionalDependency_Consequence()
    * @model containment="true"
    * @generated
    */
-  GeneralPredicate getConsequence();
+  GeneralClause getConsequence();
 
   /**
    * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ConditionalDependency#getConsequence <em>Consequence</em>}' containment reference.
@@ -66,6 +66,6 @@ public interface ConditionalDependency extends EObject
    * @see #getConsequence()
    * @generated
    */
-  void setConsequence(GeneralPredicate value);
+  void setConsequence(GeneralClause value);
 
 } // ConditionalDependency

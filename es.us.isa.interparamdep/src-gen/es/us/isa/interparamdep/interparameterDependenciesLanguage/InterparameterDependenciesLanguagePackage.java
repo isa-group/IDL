@@ -114,34 +114,6 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int DEPENDENCY_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredicateImpl <em>General Predicate</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredicateImpl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getGeneralPredicate()
-   * @generated
-   */
-  int GENERAL_PREDICATE = 4;
-
-  /**
-   * The feature id for the '<em><b>Not</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GENERAL_PREDICATE__NOT = 0;
-
-  /**
-   * The number of structural features of the '<em>General Predicate</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GENERAL_PREDICATE_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralAtomicImpl <em>General Atomic</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -149,7 +121,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getGeneralAtomic()
    * @generated
    */
-  int GENERAL_ATOMIC = 5;
+  int GENERAL_ATOMIC = 7;
 
   /**
    * The feature id for the '<em><b>Not</b></em>' attribute.
@@ -158,7 +130,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_ATOMIC__NOT = GENERAL_PREDICATE__NOT;
+  int GENERAL_ATOMIC__NOT = 0;
 
   /**
    * The feature id for the '<em><b>Param</b></em>' containment reference.
@@ -167,7 +139,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_ATOMIC__PARAM = GENERAL_PREDICATE_FEATURE_COUNT + 0;
+  int GENERAL_ATOMIC__PARAM = 1;
 
   /**
    * The number of structural features of the '<em>General Atomic</em>' class.
@@ -176,7 +148,71 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_ATOMIC_FEATURE_COUNT = GENERAL_PREDICATE_FEATURE_COUNT + 1;
+  int GENERAL_ATOMIC_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ComparisonDependencyImpl <em>Comparison Dependency</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ComparisonDependencyImpl
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getComparisonDependency()
+   * @generated
+   */
+  int COMPARISON_DEPENDENCY = 2;
+
+  /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON_DEPENDENCY__NOT = GENERAL_ATOMIC__NOT;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON_DEPENDENCY__PARAM = GENERAL_ATOMIC__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Param1</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON_DEPENDENCY__PARAM1 = GENERAL_ATOMIC_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Arith Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON_DEPENDENCY__ARITH_OP = GENERAL_ATOMIC_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Param2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON_DEPENDENCY__PARAM2 = GENERAL_ATOMIC_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Comparison Dependency</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON_DEPENDENCY_FEATURE_COUNT = GENERAL_ATOMIC_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl <em>Arithmetic Dependency</em>}' class.
@@ -186,34 +222,16 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getArithmeticDependency()
    * @generated
    */
-  int ARITHMETIC_DEPENDENCY = 2;
+  int ARITHMETIC_DEPENDENCY = 3;
 
   /**
-   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * The feature id for the '<em><b>Operation</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARITHMETIC_DEPENDENCY__NOT = GENERAL_ATOMIC__NOT;
-
-  /**
-   * The feature id for the '<em><b>Param</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_DEPENDENCY__PARAM = GENERAL_ATOMIC__PARAM;
-
-  /**
-   * The feature id for the '<em><b>Param1</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_DEPENDENCY__PARAM1 = GENERAL_ATOMIC_FEATURE_COUNT + 0;
+  int ARITHMETIC_DEPENDENCY__OPERATION = 0;
 
   /**
    * The feature id for the '<em><b>Arith Op</b></em>' attribute.
@@ -222,16 +240,16 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARITHMETIC_DEPENDENCY__ARITH_OP = GENERAL_ATOMIC_FEATURE_COUNT + 1;
+  int ARITHMETIC_DEPENDENCY__ARITH_OP = 1;
 
   /**
-   * The feature id for the '<em><b>Param2</b></em>' attribute.
+   * The feature id for the '<em><b>Result</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARITHMETIC_DEPENDENCY__PARAM2 = GENERAL_ATOMIC_FEATURE_COUNT + 2;
+  int ARITHMETIC_DEPENDENCY__RESULT = 2;
 
   /**
    * The number of structural features of the '<em>Arithmetic Dependency</em>' class.
@@ -240,7 +258,90 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARITHMETIC_DEPENDENCY_FEATURE_COUNT = GENERAL_ATOMIC_FEATURE_COUNT + 3;
+  int ARITHMETIC_DEPENDENCY_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationImpl <em>Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationImpl
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getOperation()
+   * @generated
+   */
+  int OPERATION = 4;
+
+  /**
+   * The feature id for the '<em><b>First Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION__FIRST_PARAM = 0;
+
+  /**
+   * The feature id for the '<em><b>Operation Continuation</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION__OPERATION_CONTINUATION = 1;
+
+  /**
+   * The feature id for the '<em><b>Operation Continuation2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION__OPERATION_CONTINUATION2 = 2;
+
+  /**
+   * The number of structural features of the '<em>Operation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationContinuationImpl <em>Operation Continuation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationContinuationImpl
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getOperationContinuation()
+   * @generated
+   */
+  int OPERATION_CONTINUATION = 5;
+
+  /**
+   * The feature id for the '<em><b>Math Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_CONTINUATION__MATH_OP = 0;
+
+  /**
+   * The feature id for the '<em><b>Additional Params</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_CONTINUATION__ADDITIONAL_PARAMS = 1;
+
+  /**
+   * The number of structural features of the '<em>Operation Continuation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_CONTINUATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ConditionalDependencyImpl <em>Conditional Dependency</em>}' class.
@@ -250,7 +351,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getConditionalDependency()
    * @generated
    */
-  int CONDITIONAL_DEPENDENCY = 3;
+  int CONDITIONAL_DEPENDENCY = 6;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -287,7 +388,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getParamAssignment()
    * @generated
    */
-  int PARAM_ASSIGNMENT = 7;
+  int PARAM_ASSIGNMENT = 9;
 
   /**
    * The number of structural features of the '<em>Param Assignment</em>' class.
@@ -306,7 +407,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getParam()
    * @generated
    */
-  int PARAM = 6;
+  int PARAM = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -327,13 +428,22 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int PARAM__PARAM_VALUES = PARAM_ASSIGNMENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Arith Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAM__ARITH_OP = PARAM_ASSIGNMENT_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Param</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAM_FEATURE_COUNT = PARAM_ASSIGNMENT_FEATURE_COUNT + 2;
+  int PARAM_FEATURE_COUNT = PARAM_ASSIGNMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl <em>General Clause</em>}' class.
@@ -343,16 +453,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getGeneralClause()
    * @generated
    */
-  int GENERAL_CLAUSE = 8;
-
-  /**
-   * The feature id for the '<em><b>Not</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GENERAL_CLAUSE__NOT = GENERAL_PREDICATE__NOT;
+  int GENERAL_CLAUSE = 10;
 
   /**
    * The feature id for the '<em><b>First Element</b></em>' containment reference.
@@ -361,7 +462,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__FIRST_ELEMENT = GENERAL_PREDICATE_FEATURE_COUNT + 0;
+  int GENERAL_CLAUSE__FIRST_ELEMENT = 0;
 
   /**
    * The feature id for the '<em><b>Clause Continuation</b></em>' containment reference.
@@ -370,7 +471,16 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__CLAUSE_CONTINUATION = GENERAL_PREDICATE_FEATURE_COUNT + 1;
+  int GENERAL_CLAUSE__CLAUSE_CONTINUATION = 1;
+
+  /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__NOT = 2;
 
   /**
    * The feature id for the '<em><b>Clause Continuation2</b></em>' containment reference.
@@ -379,7 +489,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__CLAUSE_CONTINUATION2 = GENERAL_PREDICATE_FEATURE_COUNT + 2;
+  int GENERAL_CLAUSE__CLAUSE_CONTINUATION2 = 3;
 
   /**
    * The number of structural features of the '<em>General Clause</em>' class.
@@ -388,7 +498,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE_FEATURE_COUNT = GENERAL_PREDICATE_FEATURE_COUNT + 3;
+  int GENERAL_CLAUSE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseContinuationImpl <em>General Clause Continuation</em>}' class.
@@ -398,7 +508,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getGeneralClauseContinuation()
    * @generated
    */
-  int GENERAL_CLAUSE_CONTINUATION = 9;
+  int GENERAL_CLAUSE_CONTINUATION = 11;
 
   /**
    * The feature id for the '<em><b>Logical Op</b></em>' attribute.
@@ -435,7 +545,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getGeneralPredefinedDependency()
    * @generated
    */
-  int GENERAL_PREDEFINED_DEPENDENCY = 10;
+  int GENERAL_PREDEFINED_DEPENDENCY = 12;
 
   /**
    * The feature id for the '<em><b>Not</b></em>' attribute.
@@ -517,6 +627,49 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EReference getDependency_Dep();
 
   /**
+   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency <em>Comparison Dependency</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comparison Dependency</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency
+   * @generated
+   */
+  EClass getComparisonDependency();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam1 <em>Param1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Param1</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam1()
+   * @see #getComparisonDependency()
+   * @generated
+   */
+  EAttribute getComparisonDependency_Param1();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getArithOp <em>Arith Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Arith Op</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getArithOp()
+   * @see #getComparisonDependency()
+   * @generated
+   */
+  EAttribute getComparisonDependency_ArithOp();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam2 <em>Param2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Param2</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam2()
+   * @see #getComparisonDependency()
+   * @generated
+   */
+  EAttribute getComparisonDependency_Param2();
+
+  /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency <em>Arithmetic Dependency</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -527,15 +680,15 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EClass getArithmeticDependency();
 
   /**
-   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getParam1 <em>Param1</em>}'.
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getOperation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Param1</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getParam1()
+   * @return the meta object for the containment reference '<em>Operation</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getOperation()
    * @see #getArithmeticDependency()
    * @generated
    */
-  EAttribute getArithmeticDependency_Param1();
+  EReference getArithmeticDependency_Operation();
 
   /**
    * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getArithOp <em>Arith Op</em>}'.
@@ -549,15 +702,90 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EAttribute getArithmeticDependency_ArithOp();
 
   /**
-   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getParam2 <em>Param2</em>}'.
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getResult <em>Result</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Param2</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getParam2()
+   * @return the meta object for the attribute '<em>Result</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getResult()
    * @see #getArithmeticDependency()
    * @generated
    */
-  EAttribute getArithmeticDependency_Param2();
+  EAttribute getArithmeticDependency_Result();
+
+  /**
+   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operation</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation
+   * @generated
+   */
+  EClass getOperation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getFirstParam <em>First Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>First Param</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getFirstParam()
+   * @see #getOperation()
+   * @generated
+   */
+  EReference getOperation_FirstParam();
+
+  /**
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperationContinuation <em>Operation Continuation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operation Continuation</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperationContinuation()
+   * @see #getOperation()
+   * @generated
+   */
+  EReference getOperation_OperationContinuation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperationContinuation2 <em>Operation Continuation2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operation Continuation2</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperationContinuation2()
+   * @see #getOperation()
+   * @generated
+   */
+  EReference getOperation_OperationContinuation2();
+
+  /**
+   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation <em>Operation Continuation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operation Continuation</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation
+   * @generated
+   */
+  EClass getOperationContinuation();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation#getMathOp <em>Math Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Math Op</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation#getMathOp()
+   * @see #getOperationContinuation()
+   * @generated
+   */
+  EAttribute getOperationContinuation_MathOp();
+
+  /**
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation#getAdditionalParams <em>Additional Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Additional Params</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation#getAdditionalParams()
+   * @see #getOperationContinuation()
+   * @generated
+   */
+  EReference getOperationContinuation_AdditionalParams();
 
   /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ConditionalDependency <em>Conditional Dependency</em>}'.
@@ -592,27 +820,6 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EReference getConditionalDependency_Consequence();
 
   /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate <em>General Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>General Predicate</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate
-   * @generated
-   */
-  EClass getGeneralPredicate();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate#getNot <em>Not</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Not</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate#getNot()
-   * @see #getGeneralPredicate()
-   * @generated
-   */
-  EAttribute getGeneralPredicate_Not();
-
-  /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic <em>General Atomic</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -621,6 +828,17 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    */
   EClass getGeneralAtomic();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic#getNot <em>Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Not</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic#getNot()
+   * @see #getGeneralAtomic()
+   * @generated
+   */
+  EAttribute getGeneralAtomic_Not();
 
   /**
    * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic#getParam <em>Param</em>}'.
@@ -666,6 +884,17 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EAttribute getParam_ParamValues();
 
   /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getArithOp <em>Arith Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Arith Op</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getArithOp()
+   * @see #getParam()
+   * @generated
+   */
+  EAttribute getParam_ArithOp();
+
+  /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment <em>Param Assignment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -706,6 +935,17 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    */
   EReference getGeneralClause_ClauseContinuation();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getNot <em>Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Not</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getNot()
+   * @see #getGeneralClause()
+   * @generated
+   */
+  EAttribute getGeneralClause_Not();
 
   /**
    * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClauseContinuation2 <em>Clause Continuation2</em>}'.
@@ -853,6 +1093,40 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EReference DEPENDENCY__DEP = eINSTANCE.getDependency_Dep();
 
     /**
+     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ComparisonDependencyImpl <em>Comparison Dependency</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ComparisonDependencyImpl
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getComparisonDependency()
+     * @generated
+     */
+    EClass COMPARISON_DEPENDENCY = eINSTANCE.getComparisonDependency();
+
+    /**
+     * The meta object literal for the '<em><b>Param1</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPARISON_DEPENDENCY__PARAM1 = eINSTANCE.getComparisonDependency_Param1();
+
+    /**
+     * The meta object literal for the '<em><b>Arith Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPARISON_DEPENDENCY__ARITH_OP = eINSTANCE.getComparisonDependency_ArithOp();
+
+    /**
+     * The meta object literal for the '<em><b>Param2</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPARISON_DEPENDENCY__PARAM2 = eINSTANCE.getComparisonDependency_Param2();
+
+    /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl <em>Arithmetic Dependency</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -863,12 +1137,12 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EClass ARITHMETIC_DEPENDENCY = eINSTANCE.getArithmeticDependency();
 
     /**
-     * The meta object literal for the '<em><b>Param1</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Operation</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ARITHMETIC_DEPENDENCY__PARAM1 = eINSTANCE.getArithmeticDependency_Param1();
+    EReference ARITHMETIC_DEPENDENCY__OPERATION = eINSTANCE.getArithmeticDependency_Operation();
 
     /**
      * The meta object literal for the '<em><b>Arith Op</b></em>' attribute feature.
@@ -879,12 +1153,72 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EAttribute ARITHMETIC_DEPENDENCY__ARITH_OP = eINSTANCE.getArithmeticDependency_ArithOp();
 
     /**
-     * The meta object literal for the '<em><b>Param2</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Result</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ARITHMETIC_DEPENDENCY__PARAM2 = eINSTANCE.getArithmeticDependency_Param2();
+    EAttribute ARITHMETIC_DEPENDENCY__RESULT = eINSTANCE.getArithmeticDependency_Result();
+
+    /**
+     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationImpl <em>Operation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationImpl
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getOperation()
+     * @generated
+     */
+    EClass OPERATION = eINSTANCE.getOperation();
+
+    /**
+     * The meta object literal for the '<em><b>First Param</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION__FIRST_PARAM = eINSTANCE.getOperation_FirstParam();
+
+    /**
+     * The meta object literal for the '<em><b>Operation Continuation</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION__OPERATION_CONTINUATION = eINSTANCE.getOperation_OperationContinuation();
+
+    /**
+     * The meta object literal for the '<em><b>Operation Continuation2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION__OPERATION_CONTINUATION2 = eINSTANCE.getOperation_OperationContinuation2();
+
+    /**
+     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationContinuationImpl <em>Operation Continuation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationContinuationImpl
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getOperationContinuation()
+     * @generated
+     */
+    EClass OPERATION_CONTINUATION = eINSTANCE.getOperationContinuation();
+
+    /**
+     * The meta object literal for the '<em><b>Math Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPERATION_CONTINUATION__MATH_OP = eINSTANCE.getOperationContinuation_MathOp();
+
+    /**
+     * The meta object literal for the '<em><b>Additional Params</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION_CONTINUATION__ADDITIONAL_PARAMS = eINSTANCE.getOperationContinuation_AdditionalParams();
 
     /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ConditionalDependencyImpl <em>Conditional Dependency</em>}' class.
@@ -913,24 +1247,6 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EReference CONDITIONAL_DEPENDENCY__CONSEQUENCE = eINSTANCE.getConditionalDependency_Consequence();
 
     /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredicateImpl <em>General Predicate</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredicateImpl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getGeneralPredicate()
-     * @generated
-     */
-    EClass GENERAL_PREDICATE = eINSTANCE.getGeneralPredicate();
-
-    /**
-     * The meta object literal for the '<em><b>Not</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GENERAL_PREDICATE__NOT = eINSTANCE.getGeneralPredicate_Not();
-
-    /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralAtomicImpl <em>General Atomic</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -939,6 +1255,14 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
      * @generated
      */
     EClass GENERAL_ATOMIC = eINSTANCE.getGeneralAtomic();
+
+    /**
+     * The meta object literal for the '<em><b>Not</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_ATOMIC__NOT = eINSTANCE.getGeneralAtomic_Not();
 
     /**
      * The meta object literal for the '<em><b>Param</b></em>' containment reference feature.
@@ -975,6 +1299,14 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EAttribute PARAM__PARAM_VALUES = eINSTANCE.getParam_ParamValues();
 
     /**
+     * The meta object literal for the '<em><b>Arith Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAM__ARITH_OP = eINSTANCE.getParam_ArithOp();
+
+    /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamAssignmentImpl <em>Param Assignment</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1009,6 +1341,14 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
      * @generated
      */
     EReference GENERAL_CLAUSE__CLAUSE_CONTINUATION = eINSTANCE.getGeneralClause_ClauseContinuation();
+
+    /**
+     * The meta object literal for the '<em><b>Not</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_CLAUSE__NOT = eINSTANCE.getGeneralClause_Not();
 
     /**
      * The meta object literal for the '<em><b>Clause Continuation2</b></em>' containment reference feature.

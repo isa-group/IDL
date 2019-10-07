@@ -32,6 +32,13 @@ Workflow {
 		language = StandardLanguage {
 			name = "es.us.isa.interparamdep.InterparameterDependenciesLanguage"
 			fileExtensions = "idl"
+			
+			parserGenerator = {
+//				debugGrammar = true
+			    options = {
+			        backtrack = true
+			    }
+			}
 
 			serializer = {
 				generateStub = false

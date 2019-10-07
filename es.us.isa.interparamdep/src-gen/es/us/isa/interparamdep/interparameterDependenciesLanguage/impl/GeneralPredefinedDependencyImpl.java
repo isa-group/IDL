@@ -3,8 +3,8 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
 
 import java.util.Collection;
@@ -88,7 +88,7 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
    * @generated
    * @ordered
    */
-  protected EList<GeneralPredicate> predefDepClauses;
+  protected EList<GeneralClause> predefDepClauses;
 
   /**
    * <!-- begin-user-doc -->
@@ -167,11 +167,11 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
    * @generated
    */
   @Override
-  public EList<GeneralPredicate> getPredefDepClauses()
+  public EList<GeneralClause> getPredefDepClauses()
   {
     if (predefDepClauses == null)
     {
-      predefDepClauses = new EObjectContainmentEList<GeneralPredicate>(GeneralPredicate.class, this, InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES);
+      predefDepClauses = new EObjectContainmentEList<GeneralClause>(GeneralClause.class, this, InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES);
     }
     return predefDepClauses;
   }
@@ -231,7 +231,7 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
         getPredefDepClauses().clear();
-        getPredefDepClauses().addAll((Collection<? extends GeneralPredicate>)newValue);
+        getPredefDepClauses().addAll((Collection<? extends GeneralClause>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

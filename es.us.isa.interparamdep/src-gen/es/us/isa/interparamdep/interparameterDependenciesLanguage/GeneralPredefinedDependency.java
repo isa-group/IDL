@@ -73,7 +73,7 @@ public interface GeneralPredefinedDependency extends EObject
 
   /**
    * Returns the value of the '<em><b>Predef Dep Clauses</b></em>' containment reference list.
-   * The list contents are of type {@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate}.
+   * The list contents are of type {@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Predef Dep Clauses</em>' containment reference list.
@@ -81,6 +81,6 @@ public interface GeneralPredefinedDependency extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<GeneralPredicate> getPredefDepClauses();
+  EList<GeneralClause> getPredefDepClauses();
 
 } // GeneralPredefinedDependency

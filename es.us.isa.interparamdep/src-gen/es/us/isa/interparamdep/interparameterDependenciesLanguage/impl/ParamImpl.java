@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getName <em>Name</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getParamValues <em>Param Values</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getArithOp <em>Arith Op</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,6 +64,26 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
    * @ordered
    */
   protected EList<String> paramValues;
+
+  /**
+   * The default value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArithOp()
+   * @generated
+   * @ordered
+   */
+  protected static final String ARITH_OP_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArithOp()
+   * @generated
+   * @ordered
+   */
+  protected String arithOp = ARITH_OP_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -131,6 +152,31 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
    * @generated
    */
   @Override
+  public String getArithOp()
+  {
+    return arithOp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setArithOp(String newArithOp)
+  {
+    String oldArithOp = arithOp;
+    arithOp = newArithOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP, oldArithOp, arithOp));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -139,6 +185,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
         return getName();
       case InterparameterDependenciesLanguagePackage.PARAM__PARAM_VALUES:
         return getParamValues();
+      case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
+        return getArithOp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -161,6 +209,9 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
         getParamValues().clear();
         getParamValues().addAll((Collection<? extends String>)newValue);
         return;
+      case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
+        setArithOp((String)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -181,6 +232,9 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
       case InterparameterDependenciesLanguagePackage.PARAM__PARAM_VALUES:
         getParamValues().clear();
         return;
+      case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
+        setArithOp(ARITH_OP_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -199,6 +253,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case InterparameterDependenciesLanguagePackage.PARAM__PARAM_VALUES:
         return paramValues != null && !paramValues.isEmpty();
+      case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
+        return ARITH_OP_EDEFAULT == null ? arithOp != null : !ARITH_OP_EDEFAULT.equals(arithOp);
     }
     return super.eIsSet(featureID);
   }
@@ -218,6 +274,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
     result.append(name);
     result.append(", paramValues: ");
     result.append(paramValues);
+    result.append(", arithOp: ");
+    result.append(arithOp);
     result.append(')');
     return result.toString();
   }

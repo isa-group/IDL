@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,12 +27,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getFirstElement <em>First Element</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getClauseContinuation <em>Clause Continuation</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getNot <em>Not</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getClauseContinuation2 <em>Clause Continuation2</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GeneralClauseImpl extends GeneralPredicateImpl implements GeneralClause
+public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements GeneralClause
 {
   /**
    * The cached value of the '{@link #getFirstElement() <em>First Element</em>}' containment reference.
@@ -52,6 +54,26 @@ public class GeneralClauseImpl extends GeneralPredicateImpl implements GeneralCl
    * @ordered
    */
   protected GeneralClauseContinuation clauseContinuation;
+
+  /**
+   * The default value of the '{@link #getNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNot()
+   * @generated
+   * @ordered
+   */
+  protected static final String NOT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNot()
+   * @generated
+   * @ordered
+   */
+  protected String not = NOT_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getClauseContinuation2() <em>Clause Continuation2</em>}' containment reference.
@@ -190,6 +212,31 @@ public class GeneralClauseImpl extends GeneralPredicateImpl implements GeneralCl
    * @generated
    */
   @Override
+  public String getNot()
+  {
+    return not;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNot(String newNot)
+  {
+    String oldNot = not;
+    not = newNot;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__NOT, oldNot, not));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public GeneralClauseContinuation getClauseContinuation2()
   {
     return clauseContinuation2;
@@ -268,6 +315,8 @@ public class GeneralClauseImpl extends GeneralPredicateImpl implements GeneralCl
         return getFirstElement();
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
         return getClauseContinuation();
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__NOT:
+        return getNot();
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION2:
         return getClauseContinuation2();
     }
@@ -289,6 +338,9 @@ public class GeneralClauseImpl extends GeneralPredicateImpl implements GeneralCl
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
         setClauseContinuation((GeneralClauseContinuation)newValue);
+        return;
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__NOT:
+        setNot((String)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION2:
         setClauseContinuation2((GeneralClauseContinuation)newValue);
@@ -313,6 +365,9 @@ public class GeneralClauseImpl extends GeneralPredicateImpl implements GeneralCl
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
         setClauseContinuation((GeneralClauseContinuation)null);
         return;
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__NOT:
+        setNot(NOT_EDEFAULT);
+        return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION2:
         setClauseContinuation2((GeneralClauseContinuation)null);
         return;
@@ -334,10 +389,29 @@ public class GeneralClauseImpl extends GeneralPredicateImpl implements GeneralCl
         return firstElement != null;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
         return clauseContinuation != null;
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__NOT:
+        return NOT_EDEFAULT == null ? not != null : !NOT_EDEFAULT.equals(not);
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION2:
         return clauseContinuation2 != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (not: ");
+    result.append(not);
+    result.append(')');
+    return result.toString();
   }
 
 } //GeneralClauseImpl

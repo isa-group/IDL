@@ -5,12 +5,16 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,34 +24,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl#getParam1 <em>Param1</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl#getArithOp <em>Arith Op</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl#getParam2 <em>Param2</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl#getResult <em>Result</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ArithmeticDependencyImpl extends GeneralAtomicImpl implements ArithmeticDependency
+public class ArithmeticDependencyImpl extends MinimalEObjectImpl.Container implements ArithmeticDependency
 {
   /**
-   * The default value of the '{@link #getParam1() <em>Param1</em>}' attribute.
+   * The cached value of the '{@link #getOperation() <em>Operation</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParam1()
+   * @see #getOperation()
    * @generated
    * @ordered
    */
-  protected static final String PARAM1_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getParam1() <em>Param1</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getParam1()
-   * @generated
-   * @ordered
-   */
-  protected String param1 = PARAM1_EDEFAULT;
+  protected Operation operation;
 
   /**
    * The default value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
@@ -70,24 +64,24 @@ public class ArithmeticDependencyImpl extends GeneralAtomicImpl implements Arith
   protected String arithOp = ARITH_OP_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getParam2() <em>Param2</em>}' attribute.
+   * The default value of the '{@link #getResult() <em>Result</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParam2()
+   * @see #getResult()
    * @generated
    * @ordered
    */
-  protected static final String PARAM2_EDEFAULT = null;
+  protected static final String RESULT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getParam2() <em>Param2</em>}' attribute.
+   * The cached value of the '{@link #getResult() <em>Result</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParam2()
+   * @see #getResult()
    * @generated
    * @ordered
    */
-  protected String param2 = PARAM2_EDEFAULT;
+  protected String result = RESULT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,9 +110,26 @@ public class ArithmeticDependencyImpl extends GeneralAtomicImpl implements Arith
    * @generated
    */
   @Override
-  public String getParam1()
+  public Operation getOperation()
   {
-    return param1;
+    return operation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetOperation(Operation newOperation, NotificationChain msgs)
+  {
+    Operation oldOperation = operation;
+    operation = newOperation;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION, oldOperation, newOperation);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -127,12 +138,20 @@ public class ArithmeticDependencyImpl extends GeneralAtomicImpl implements Arith
    * @generated
    */
   @Override
-  public void setParam1(String newParam1)
+  public void setOperation(Operation newOperation)
   {
-    String oldParam1 = param1;
-    param1 = newParam1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__PARAM1, oldParam1, param1));
+    if (newOperation != operation)
+    {
+      NotificationChain msgs = null;
+      if (operation != null)
+        msgs = ((InternalEObject)operation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION, null, msgs);
+      if (newOperation != null)
+        msgs = ((InternalEObject)newOperation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION, null, msgs);
+      msgs = basicSetOperation(newOperation, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION, newOperation, newOperation));
   }
 
   /**
@@ -166,9 +185,9 @@ public class ArithmeticDependencyImpl extends GeneralAtomicImpl implements Arith
    * @generated
    */
   @Override
-  public String getParam2()
+  public String getResult()
   {
-    return param2;
+    return result;
   }
 
   /**
@@ -177,12 +196,28 @@ public class ArithmeticDependencyImpl extends GeneralAtomicImpl implements Arith
    * @generated
    */
   @Override
-  public void setParam2(String newParam2)
+  public void setResult(String newResult)
   {
-    String oldParam2 = param2;
-    param2 = newParam2;
+    String oldResult = result;
+    result = newResult;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__PARAM2, oldParam2, param2));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RESULT, oldResult, result));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION:
+        return basicSetOperation(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -195,12 +230,12 @@ public class ArithmeticDependencyImpl extends GeneralAtomicImpl implements Arith
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__PARAM1:
-        return getParam1();
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION:
+        return getOperation();
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__ARITH_OP:
         return getArithOp();
-      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__PARAM2:
-        return getParam2();
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RESULT:
+        return getResult();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -215,14 +250,14 @@ public class ArithmeticDependencyImpl extends GeneralAtomicImpl implements Arith
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__PARAM1:
-        setParam1((String)newValue);
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION:
+        setOperation((Operation)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__ARITH_OP:
         setArithOp((String)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__PARAM2:
-        setParam2((String)newValue);
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RESULT:
+        setResult((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -238,14 +273,14 @@ public class ArithmeticDependencyImpl extends GeneralAtomicImpl implements Arith
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__PARAM1:
-        setParam1(PARAM1_EDEFAULT);
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION:
+        setOperation((Operation)null);
         return;
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__ARITH_OP:
         setArithOp(ARITH_OP_EDEFAULT);
         return;
-      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__PARAM2:
-        setParam2(PARAM2_EDEFAULT);
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RESULT:
+        setResult(RESULT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -261,12 +296,12 @@ public class ArithmeticDependencyImpl extends GeneralAtomicImpl implements Arith
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__PARAM1:
-        return PARAM1_EDEFAULT == null ? param1 != null : !PARAM1_EDEFAULT.equals(param1);
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION:
+        return operation != null;
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__ARITH_OP:
         return ARITH_OP_EDEFAULT == null ? arithOp != null : !ARITH_OP_EDEFAULT.equals(arithOp);
-      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__PARAM2:
-        return PARAM2_EDEFAULT == null ? param2 != null : !PARAM2_EDEFAULT.equals(param2);
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RESULT:
+        return RESULT_EDEFAULT == null ? result != null : !RESULT_EDEFAULT.equals(result);
     }
     return super.eIsSet(featureID);
   }
@@ -282,12 +317,10 @@ public class ArithmeticDependencyImpl extends GeneralAtomicImpl implements Arith
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (param1: ");
-    result.append(param1);
-    result.append(", arithOp: ");
+    result.append(" (arithOp: ");
     result.append(arithOp);
-    result.append(", param2: ");
-    result.append(param2);
+    result.append(", result: ");
+    result.append(result);
     result.append(')');
     return result.toString();
   }

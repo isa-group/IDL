@@ -67,9 +67,11 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
     {
       case InterparameterDependenciesLanguagePackage.MODEL: return createModel();
       case InterparameterDependenciesLanguagePackage.DEPENDENCY: return createDependency();
+      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY: return createComparisonDependency();
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY: return createArithmeticDependency();
+      case InterparameterDependenciesLanguagePackage.OPERATION: return createOperation();
+      case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION: return createOperationContinuation();
       case InterparameterDependenciesLanguagePackage.CONDITIONAL_DEPENDENCY: return createConditionalDependency();
-      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE: return createGeneralPredicate();
       case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC: return createGeneralAtomic();
       case InterparameterDependenciesLanguagePackage.PARAM: return createParam();
       case InterparameterDependenciesLanguagePackage.PARAM_ASSIGNMENT: return createParamAssignment();
@@ -111,6 +113,18 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
+  public ComparisonDependency createComparisonDependency()
+  {
+    ComparisonDependencyImpl comparisonDependency = new ComparisonDependencyImpl();
+    return comparisonDependency;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ArithmeticDependency createArithmeticDependency()
   {
     ArithmeticDependencyImpl arithmeticDependency = new ArithmeticDependencyImpl();
@@ -123,10 +137,10 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public ConditionalDependency createConditionalDependency()
+  public Operation createOperation()
   {
-    ConditionalDependencyImpl conditionalDependency = new ConditionalDependencyImpl();
-    return conditionalDependency;
+    OperationImpl operation = new OperationImpl();
+    return operation;
   }
 
   /**
@@ -135,10 +149,22 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public GeneralPredicate createGeneralPredicate()
+  public OperationContinuation createOperationContinuation()
   {
-    GeneralPredicateImpl generalPredicate = new GeneralPredicateImpl();
-    return generalPredicate;
+    OperationContinuationImpl operationContinuation = new OperationContinuationImpl();
+    return operationContinuation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConditionalDependency createConditionalDependency()
+  {
+    ConditionalDependencyImpl conditionalDependency = new ConditionalDependencyImpl();
+    return conditionalDependency;
   }
 
   /**

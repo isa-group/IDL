@@ -42,6 +42,15 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
   Dependency createDependency();
 
   /**
+   * Returns a new object of class '<em>Comparison Dependency</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comparison Dependency</em>'.
+   * @generated
+   */
+  ComparisonDependency createComparisonDependency();
+
+  /**
    * Returns a new object of class '<em>Arithmetic Dependency</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -51,6 +60,24 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
   ArithmeticDependency createArithmeticDependency();
 
   /**
+   * Returns a new object of class '<em>Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation</em>'.
+   * @generated
+   */
+  Operation createOperation();
+
+  /**
+   * Returns a new object of class '<em>Operation Continuation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation Continuation</em>'.
+   * @generated
+   */
+  OperationContinuation createOperationContinuation();
+
+  /**
    * Returns a new object of class '<em>Conditional Dependency</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -58,15 +85,6 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
    * @generated
    */
   ConditionalDependency createConditionalDependency();
-
-  /**
-   * Returns a new object of class '<em>General Predicate</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>General Predicate</em>'.
-   * @generated
-   */
-  GeneralPredicate createGeneralPredicate();
 
   /**
    * Returns a new object of class '<em>General Atomic</em>'.

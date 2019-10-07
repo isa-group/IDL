@@ -64,6 +64,7 @@ public class InterparameterDependenciesLanguageSyntacticSequencer extends Abstra
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     dep=ArithmeticDependency ';' (ambiguity) (rule end)
+	 *     dep=ComparisonDependency ';' (ambiguity) (rule end)
 	 *     dep=ConditionalDependency ';' (ambiguity) (rule end)
 	 *     dep=PredefinedDependency ';' (ambiguity) (rule end)
 	 */

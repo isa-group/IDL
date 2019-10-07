@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,13 +24,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralAtomicImpl#getNot <em>Not</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralAtomicImpl#getParam <em>Param</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GeneralAtomicImpl extends GeneralPredicateImpl implements GeneralAtomic
+public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements GeneralAtomic
 {
+  /**
+   * The default value of the '{@link #getNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNot()
+   * @generated
+   * @ordered
+   */
+  protected static final String NOT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNot()
+   * @generated
+   * @ordered
+   */
+  protected String not = NOT_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getParam() <em>Param</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -59,6 +81,31 @@ public class GeneralAtomicImpl extends GeneralPredicateImpl implements GeneralAt
   protected EClass eStaticClass()
   {
     return InterparameterDependenciesLanguagePackage.Literals.GENERAL_ATOMIC;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getNot()
+  {
+    return not;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNot(String newNot)
+  {
+    String oldNot = not;
+    not = newNot;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__NOT, oldNot, not));
   }
 
   /**
@@ -137,6 +184,8 @@ public class GeneralAtomicImpl extends GeneralPredicateImpl implements GeneralAt
   {
     switch (featureID)
     {
+      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__NOT:
+        return getNot();
       case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM:
         return getParam();
     }
@@ -153,6 +202,9 @@ public class GeneralAtomicImpl extends GeneralPredicateImpl implements GeneralAt
   {
     switch (featureID)
     {
+      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__NOT:
+        setNot((String)newValue);
+        return;
       case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM:
         setParam((ParamAssignment)newValue);
         return;
@@ -170,6 +222,9 @@ public class GeneralAtomicImpl extends GeneralPredicateImpl implements GeneralAt
   {
     switch (featureID)
     {
+      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__NOT:
+        setNot(NOT_EDEFAULT);
+        return;
       case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM:
         setParam((ParamAssignment)null);
         return;
@@ -187,10 +242,29 @@ public class GeneralAtomicImpl extends GeneralPredicateImpl implements GeneralAt
   {
     switch (featureID)
     {
+      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__NOT:
+        return NOT_EDEFAULT == null ? not != null : !NOT_EDEFAULT.equals(not);
       case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM:
         return param != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (not: ");
+    result.append(not);
+    result.append(')');
+    return result.toString();
   }
 
 } //GeneralAtomicImpl

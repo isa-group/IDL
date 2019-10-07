@@ -3,8 +3,8 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClauseContinuation;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -60,7 +60,7 @@ public class GeneralClauseContinuationImpl extends MinimalEObjectImpl.Container 
    * @generated
    * @ordered
    */
-  protected GeneralPredicate additionalElements;
+  protected GeneralClause additionalElements;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,7 +114,7 @@ public class GeneralClauseContinuationImpl extends MinimalEObjectImpl.Container 
    * @generated
    */
   @Override
-  public GeneralPredicate getAdditionalElements()
+  public GeneralClause getAdditionalElements()
   {
     return additionalElements;
   }
@@ -124,9 +124,9 @@ public class GeneralClauseContinuationImpl extends MinimalEObjectImpl.Container 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAdditionalElements(GeneralPredicate newAdditionalElements, NotificationChain msgs)
+  public NotificationChain basicSetAdditionalElements(GeneralClause newAdditionalElements, NotificationChain msgs)
   {
-    GeneralPredicate oldAdditionalElements = additionalElements;
+    GeneralClause oldAdditionalElements = additionalElements;
     additionalElements = newAdditionalElements;
     if (eNotificationRequired())
     {
@@ -142,7 +142,7 @@ public class GeneralClauseContinuationImpl extends MinimalEObjectImpl.Container 
    * @generated
    */
   @Override
-  public void setAdditionalElements(GeneralPredicate newAdditionalElements)
+  public void setAdditionalElements(GeneralClause newAdditionalElements)
   {
     if (newAdditionalElements != additionalElements)
     {
@@ -206,7 +206,7 @@ public class GeneralClauseContinuationImpl extends MinimalEObjectImpl.Container 
         setLogicalOp((String)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS:
-        setAdditionalElements((GeneralPredicate)newValue);
+        setAdditionalElements((GeneralClause)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -226,7 +226,7 @@ public class GeneralClauseContinuationImpl extends MinimalEObjectImpl.Container 
         setLogicalOp(LOGICAL_OP_EDEFAULT);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS:
-        setAdditionalElements((GeneralPredicate)null);
+        setAdditionalElements((GeneralClause)null);
         return;
     }
     super.eUnset(featureID);

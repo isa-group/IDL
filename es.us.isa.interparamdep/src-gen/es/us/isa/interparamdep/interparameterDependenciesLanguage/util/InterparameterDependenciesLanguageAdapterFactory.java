@@ -86,19 +86,29 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
         return createDependencyAdapter();
       }
       @Override
+      public Adapter caseComparisonDependency(ComparisonDependency object)
+      {
+        return createComparisonDependencyAdapter();
+      }
+      @Override
       public Adapter caseArithmeticDependency(ArithmeticDependency object)
       {
         return createArithmeticDependencyAdapter();
       }
       @Override
+      public Adapter caseOperation(Operation object)
+      {
+        return createOperationAdapter();
+      }
+      @Override
+      public Adapter caseOperationContinuation(OperationContinuation object)
+      {
+        return createOperationContinuationAdapter();
+      }
+      @Override
       public Adapter caseConditionalDependency(ConditionalDependency object)
       {
         return createConditionalDependencyAdapter();
-      }
-      @Override
-      public Adapter caseGeneralPredicate(GeneralPredicate object)
-      {
-        return createGeneralPredicateAdapter();
       }
       @Override
       public Adapter caseGeneralAtomic(GeneralAtomic object)
@@ -183,6 +193,21 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency <em>Comparison Dependency</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency
+   * @generated
+   */
+  public Adapter createComparisonDependencyAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency <em>Arithmetic Dependency</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -198,6 +223,36 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation
+   * @generated
+   */
+  public Adapter createOperationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation <em>Operation Continuation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation
+   * @generated
+   */
+  public Adapter createOperationContinuationAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ConditionalDependency <em>Conditional Dependency</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -208,21 +263,6 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
    * @generated
    */
   public Adapter createConditionalDependencyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate <em>General Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate
-   * @generated
-   */
-  public Adapter createGeneralPredicateAdapter()
   {
     return null;
   }

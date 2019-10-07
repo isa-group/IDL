@@ -3,6 +3,7 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,38 +14,38 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getParam1 <em>Param1</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getOperation <em>Operation</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getArithOp <em>Arith Op</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getParam2 <em>Param2</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getResult <em>Result</em>}</li>
  * </ul>
  *
  * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getArithmeticDependency()
  * @model
  * @generated
  */
-public interface ArithmeticDependency extends GeneralAtomic
+public interface ArithmeticDependency extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Param1</b></em>' attribute.
+   * Returns the value of the '<em><b>Operation</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Param1</em>' attribute.
-   * @see #setParam1(String)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getArithmeticDependency_Param1()
-   * @model
+   * @return the value of the '<em>Operation</em>' containment reference.
+   * @see #setOperation(Operation)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getArithmeticDependency_Operation()
+   * @model containment="true"
    * @generated
    */
-  String getParam1();
+  Operation getOperation();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getParam1 <em>Param1</em>}' attribute.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getOperation <em>Operation</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Param1</em>' attribute.
-   * @see #getParam1()
+   * @param value the new value of the '<em>Operation</em>' containment reference.
+   * @see #getOperation()
    * @generated
    */
-  void setParam1(String value);
+  void setOperation(Operation value);
 
   /**
    * Returns the value of the '<em><b>Arith Op</b></em>' attribute.
@@ -69,25 +70,25 @@ public interface ArithmeticDependency extends GeneralAtomic
   void setArithOp(String value);
 
   /**
-   * Returns the value of the '<em><b>Param2</b></em>' attribute.
+   * Returns the value of the '<em><b>Result</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Param2</em>' attribute.
-   * @see #setParam2(String)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getArithmeticDependency_Param2()
+   * @return the value of the '<em>Result</em>' attribute.
+   * @see #setResult(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getArithmeticDependency_Result()
    * @model
    * @generated
    */
-  String getParam2();
+  String getResult();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getParam2 <em>Param2</em>}' attribute.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getResult <em>Result</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Param2</em>' attribute.
-   * @see #getParam2()
+   * @param value the new value of the '<em>Result</em>' attribute.
+   * @see #getResult()
    * @generated
    */
-  void setParam2(String value);
+  void setResult(String value);
 
 } // ArithmeticDependency

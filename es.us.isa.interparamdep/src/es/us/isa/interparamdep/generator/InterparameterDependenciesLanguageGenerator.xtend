@@ -19,17 +19,18 @@ import java.io.File
 import java.nio.file.Path
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClauseContinuation
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralAtomicImpl
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Dependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ConditionalDependency;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ComparisonDependencyImpl
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ConditionalDependencyImpl
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredefinedDependencyImpl
-
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency
 
 /**
  * Generates code from your model files on save.
@@ -54,8 +55,10 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 
 			if (dependency.dep.class == typeof(ConditionalDependencyImpl)) {
 				solveConditionalDependency(dependency.dep as ConditionalDependency)
+			} else if (dependency.dep.class == typeof(ComparisonDependencyImpl)) {
+				solveComparisonDependency(dependency.dep as ComparisonDependency)
 			} else if (dependency.dep.class == typeof(ArithmeticDependencyImpl)) {
-				solveArithmeticDependency(dependency.dep as ArithmeticDependency)
+//				solveArithmeticDependency(dependency.dep as ArithmeticDependency)
 			} else if (dependency.dep.class == typeof(GeneralPredefinedDependencyImpl)) {
 				solvePredefinedDependency(dependency.dep as GeneralPredefinedDependency)
 			} else {
@@ -88,7 +91,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 //	    	Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Consequence"),
 //	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
 //    		solveDependencyAndOrIterate((object as ConditionalDependency).consequence, depthLevel+1, objectDepthLevel+1)
-//		} else if (object.class == typeof(ArithmeticDependencyImpl)) {
+//		} else if (object.class == typeof(ComparisonDependencyImpl)) {
 //			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Arithmetic dependency: " + object),
 //    			StandardCharsets.UTF_8, StandardOpenOption.APPEND)
 //		} else if (object.class == typeof(GeneralPredefinedDependencyImpl)) {
@@ -120,8 +123,8 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		if (predicate.class == typeof(GeneralAtomicImpl)) {
 			// TODO
 			return true
-		} else if(predicate.class == typeof(ArithmeticDependencyImpl)) {
-			return solveArithmeticDependency(predicate as ArithmeticDependency)
+		} else if(predicate.class == typeof(ComparisonDependencyImpl)) {
+			return solveComparisonDependency(predicate as ComparisonDependency)
 		} else if(predicate.class == typeof(GeneralClauseImpl)) {
 			return solveLogicalClause(
 				(predicate as GeneralClause).firstElement,
@@ -142,7 +145,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	 * solving stops after the CSP mapping, i.e. there's no need to iterate over
 	 * other possibly nested dependencies.
 	 */
-	def boolean solveArithmeticDependency(ArithmeticDependency dep) {
+	def boolean solveComparisonDependency(ComparisonDependency dep) {
 		// TODO: Implement CSP mapping
 		
 		return true
@@ -201,8 +204,8 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		if (firstElement.class == typeof(GeneralAtomicImpl)) { // param or param assignment
 			// TODO
 			firstElementOutput = true
-		} else if(firstElement.class == typeof(ArithmeticDependencyImpl)) {
-			firstElementOutput = solveArithmeticDependency(firstElement as ArithmeticDependency)
+		} else if(firstElement.class == typeof(ComparisonDependencyImpl)) {
+			firstElementOutput = solveComparisonDependency(firstElement as ComparisonDependency)
 		} else if(firstElement.class == typeof(GeneralPredefinedDependencyImpl)) {
 			firstElementOutput = solvePredefinedDependency(firstElement as GeneralPredefinedDependency)
 		} else {
