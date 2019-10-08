@@ -14,20 +14,42 @@ terminal NL:
 	('\r'? '\n')+
 ;
 
-ComparisonDependency:
-	param1=ID arithOp=ArithmeticOperator param2=ID
+terminal BOOLEAN:
+	'true'|'false'
 ;
+
+terminal DOUBLE:
+	INT ('.' INT)?
+;
+
+@Override 
+terminal ID: 
+    ('^')?('a'..'z'|'A'..'Z'|'_'|'-'|'.') ('a'..'z'|'A'..'Z'|'_'|'-'|'.'|'0'..'9')*
+; 
 
 ArithmeticOperator:
 	'<' | '>' | '<=' | '>=' | '=' | '!='
 ;
 
-ArithmeticDependency:
-	operation=Operation arithOp=ArithmeticOperator result=DOUBLE
+MathOperator:
+	'+' | '-' | '*' | '/'
 ;
 
-terminal DOUBLE:
-	INT ('.' INT)?
+Not:
+	'NOT'
+;
+
+LogicalOperator:
+	'AND' | 'OR'
+;
+
+
+ComparisonDependency:
+	param1=ID arithOp=ArithmeticOperator param2=ID
+;
+
+ArithmeticDependency:
+	operation=Operation arithOp=ArithmeticOperator result=DOUBLE
 ;
 
 Operation:
@@ -37,10 +59,6 @@ Operation:
 
 OperationContinuation:
 	mathOp=MathOperator additionalParams=Operation
-;
-
-MathOperator:
-	'+' | '-' | '*' | '/'
 ;
 
 ConditionalDependency:
@@ -54,17 +72,13 @@ Atomic returns GeneralAtomic:
 ;
 
 Param:
-	name=ID
+	name=ID //| preName+=ID('.'preName+=ID)* '.' name=ID
 ;
 
 ParamAssignment:
-	Param '=' paramValues+=STRING('|'paramValues+=STRING)* |
+	Param '=' paramValues+=STRING('|'paramValues+=STRING)* additionalValues='|*'? |
 	Param '=' paramValues+=BOOLEAN |
 	Param arithOp=ArithmeticOperator paramValues+=DOUBLE
-;
-
-terminal BOOLEAN:
-	'true'|'false'
 ;
 
 Clause returns GeneralClause:
@@ -100,13 +114,4 @@ PositiveClauseContinuation returns GeneralClauseContinuation:
 PositivePredefinedDependency returns GeneralPredefinedDependency:
 	predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=PositiveClause (',' predefDepClauses+=PositiveClause)+ ')'
 ;
-
-Not:
-	'NOT'
-;
-
-LogicalOperator:
-	'AND' | 'OR'
-;
-
 

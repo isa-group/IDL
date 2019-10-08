@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getName <em>Name</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getParamValues <em>Param Values</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getAdditionalValues <em>Additional Values</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getArithOp <em>Arith Op</em>}</li>
  * </ul>
  *
@@ -64,6 +65,26 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
    * @ordered
    */
   protected EList<String> paramValues;
+
+  /**
+   * The default value of the '{@link #getAdditionalValues() <em>Additional Values</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAdditionalValues()
+   * @generated
+   * @ordered
+   */
+  protected static final String ADDITIONAL_VALUES_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAdditionalValues() <em>Additional Values</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAdditionalValues()
+   * @generated
+   * @ordered
+   */
+  protected String additionalValues = ADDITIONAL_VALUES_EDEFAULT;
 
   /**
    * The default value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
@@ -152,6 +173,31 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
    * @generated
    */
   @Override
+  public String getAdditionalValues()
+  {
+    return additionalValues;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setAdditionalValues(String newAdditionalValues)
+  {
+    String oldAdditionalValues = additionalValues;
+    additionalValues = newAdditionalValues;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES, oldAdditionalValues, additionalValues));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getArithOp()
   {
     return arithOp;
@@ -185,6 +231,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
         return getName();
       case InterparameterDependenciesLanguagePackage.PARAM__PARAM_VALUES:
         return getParamValues();
+      case InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES:
+        return getAdditionalValues();
       case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
         return getArithOp();
     }
@@ -209,6 +257,9 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
         getParamValues().clear();
         getParamValues().addAll((Collection<? extends String>)newValue);
         return;
+      case InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES:
+        setAdditionalValues((String)newValue);
+        return;
       case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
         setArithOp((String)newValue);
         return;
@@ -232,6 +283,9 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
       case InterparameterDependenciesLanguagePackage.PARAM__PARAM_VALUES:
         getParamValues().clear();
         return;
+      case InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES:
+        setAdditionalValues(ADDITIONAL_VALUES_EDEFAULT);
+        return;
       case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
         setArithOp(ARITH_OP_EDEFAULT);
         return;
@@ -253,6 +307,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case InterparameterDependenciesLanguagePackage.PARAM__PARAM_VALUES:
         return paramValues != null && !paramValues.isEmpty();
+      case InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES:
+        return ADDITIONAL_VALUES_EDEFAULT == null ? additionalValues != null : !ADDITIONAL_VALUES_EDEFAULT.equals(additionalValues);
       case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
         return ARITH_OP_EDEFAULT == null ? arithOp != null : !ARITH_OP_EDEFAULT.equals(arithOp);
     }
@@ -274,6 +330,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
     result.append(name);
     result.append(", paramValues: ");
     result.append(paramValues);
+    result.append(", additionalValues: ");
+    result.append(additionalValues);
     result.append(", arithOp: ");
     result.append(arithOp);
     result.append(')');

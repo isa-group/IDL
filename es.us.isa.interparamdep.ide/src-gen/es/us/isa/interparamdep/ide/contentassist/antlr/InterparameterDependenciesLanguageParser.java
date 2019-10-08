@@ -33,8 +33,9 @@ public class InterparameterDependenciesLanguageParser extends AbstractContentAss
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, InterparameterDependenciesLanguageGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getDependencyAccess().getDepAlternatives_0_0(), "rule__Dependency__DepAlternatives_0_0");
 			builder.put(grammarAccess.getArithmeticOperatorAccess().getAlternatives(), "rule__ArithmeticOperator__Alternatives");
-			builder.put(grammarAccess.getOperationAccess().getAlternatives(), "rule__Operation__Alternatives");
 			builder.put(grammarAccess.getMathOperatorAccess().getAlternatives(), "rule__MathOperator__Alternatives");
+			builder.put(grammarAccess.getLogicalOperatorAccess().getAlternatives(), "rule__LogicalOperator__Alternatives");
+			builder.put(grammarAccess.getOperationAccess().getAlternatives(), "rule__Operation__Alternatives");
 			builder.put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
 			builder.put(grammarAccess.getParamAssignmentAccess().getAlternatives(), "rule__ParamAssignment__Alternatives");
 			builder.put(grammarAccess.getClauseAccess().getAlternatives(), "rule__Clause__Alternatives");
@@ -46,7 +47,6 @@ public class InterparameterDependenciesLanguageParser extends AbstractContentAss
 			builder.put(grammarAccess.getPositiveClauseAccess().getFirstElementAlternatives_1_1_0(), "rule__PositiveClause__FirstElementAlternatives_1_1_0");
 			builder.put(grammarAccess.getPositiveClauseAccess().getFirstElementAlternatives_2_0_0(), "rule__PositiveClause__FirstElementAlternatives_2_0_0");
 			builder.put(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepTypeAlternatives_0_0(), "rule__PositivePredefinedDependency__PredefDepTypeAlternatives_0_0");
-			builder.put(grammarAccess.getLogicalOperatorAccess().getAlternatives(), "rule__LogicalOperator__Alternatives");
 			builder.put(grammarAccess.getDependencyAccess().getGroup(), "rule__Dependency__Group__0");
 			builder.put(grammarAccess.getComparisonDependencyAccess().getGroup(), "rule__ComparisonDependency__Group__0");
 			builder.put(grammarAccess.getArithmeticDependencyAccess().getGroup(), "rule__ArithmeticDependency__Group__0");
@@ -96,6 +96,7 @@ public class InterparameterDependenciesLanguageParser extends AbstractContentAss
 			builder.put(grammarAccess.getParamAccess().getNameAssignment(), "rule__Param__NameAssignment");
 			builder.put(grammarAccess.getParamAssignmentAccess().getParamValuesAssignment_0_2(), "rule__ParamAssignment__ParamValuesAssignment_0_2");
 			builder.put(grammarAccess.getParamAssignmentAccess().getParamValuesAssignment_0_3_1(), "rule__ParamAssignment__ParamValuesAssignment_0_3_1");
+			builder.put(grammarAccess.getParamAssignmentAccess().getAdditionalValuesAssignment_0_4(), "rule__ParamAssignment__AdditionalValuesAssignment_0_4");
 			builder.put(grammarAccess.getParamAssignmentAccess().getParamValuesAssignment_1_2(), "rule__ParamAssignment__ParamValuesAssignment_1_2");
 			builder.put(grammarAccess.getParamAssignmentAccess().getArithOpAssignment_2_1(), "rule__ParamAssignment__ArithOpAssignment_2_1");
 			builder.put(grammarAccess.getParamAssignmentAccess().getParamValuesAssignment_2_2(), "rule__ParamAssignment__ParamValuesAssignment_2_2");

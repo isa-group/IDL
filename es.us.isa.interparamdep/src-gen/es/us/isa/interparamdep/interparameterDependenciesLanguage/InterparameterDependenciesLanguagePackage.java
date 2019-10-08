@@ -428,13 +428,22 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int PARAM__PARAM_VALUES = PARAM_ASSIGNMENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Additional Values</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAM__ADDITIONAL_VALUES = PARAM_ASSIGNMENT_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Arith Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAM__ARITH_OP = PARAM_ASSIGNMENT_FEATURE_COUNT + 2;
+  int PARAM__ARITH_OP = PARAM_ASSIGNMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Param</em>' class.
@@ -443,7 +452,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAM_FEATURE_COUNT = PARAM_ASSIGNMENT_FEATURE_COUNT + 3;
+  int PARAM_FEATURE_COUNT = PARAM_ASSIGNMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl <em>General Clause</em>}' class.
@@ -884,6 +893,17 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EAttribute getParam_ParamValues();
 
   /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getAdditionalValues <em>Additional Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Additional Values</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getAdditionalValues()
+   * @see #getParam()
+   * @generated
+   */
+  EAttribute getParam_AdditionalValues();
+
+  /**
    * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getArithOp <em>Arith Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1297,6 +1317,14 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
      * @generated
      */
     EAttribute PARAM__PARAM_VALUES = eINSTANCE.getParam_ParamValues();
+
+    /**
+     * The meta object literal for the '<em><b>Additional Values</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAM__ADDITIONAL_VALUES = eINSTANCE.getParam_AdditionalValues();
 
     /**
      * The meta object literal for the '<em><b>Arith Op</b></em>' attribute feature.

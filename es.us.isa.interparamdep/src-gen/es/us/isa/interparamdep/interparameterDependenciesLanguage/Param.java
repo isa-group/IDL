@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getName <em>Name</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getParamValues <em>Param Values</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getAdditionalValues <em>Additional Values</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getArithOp <em>Arith Op</em>}</li>
  * </ul>
  *
@@ -58,6 +59,28 @@ public interface Param extends ParamAssignment
    * @generated
    */
   EList<String> getParamValues();
+
+  /**
+   * Returns the value of the '<em><b>Additional Values</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Additional Values</em>' attribute.
+   * @see #setAdditionalValues(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getParam_AdditionalValues()
+   * @model
+   * @generated
+   */
+  String getAdditionalValues();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getAdditionalValues <em>Additional Values</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Additional Values</em>' attribute.
+   * @see #getAdditionalValues()
+   * @generated
+   */
+  void setAdditionalValues(String value);
 
   /**
    * Returns the value of the '<em><b>Arith Op</b></em>' attribute.

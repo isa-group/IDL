@@ -200,80 +200,6 @@ ruleDependency returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleComparisonDependency
-entryRuleComparisonDependency returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getComparisonDependencyRule()); }
-	iv_ruleComparisonDependency=ruleComparisonDependency
-	{ $current=$iv_ruleComparisonDependency.current; }
-	EOF;
-
-// Rule ComparisonDependency
-ruleComparisonDependency returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_param1_0_0=RULE_ID
-				{
-					newLeafNode(lv_param1_0_0, grammarAccess.getComparisonDependencyAccess().getParam1IDTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getComparisonDependencyRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"param1",
-						lv_param1_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getComparisonDependencyAccess().getArithOpArithmeticOperatorParserRuleCall_1_0());
-				}
-				lv_arithOp_1_0=ruleArithmeticOperator
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComparisonDependencyRule());
-					}
-					set(
-						$current,
-						"arithOp",
-						lv_arithOp_1_0,
-						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticOperator");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				lv_param2_2_0=RULE_ID
-				{
-					newLeafNode(lv_param2_2_0, grammarAccess.getComparisonDependencyAccess().getParam2IDTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getComparisonDependencyRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"param2",
-						lv_param2_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-	)
-;
-
 // Entry rule entryRuleArithmeticOperator
 entryRuleArithmeticOperator returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getArithmeticOperatorRule()); }
@@ -325,6 +251,174 @@ ruleArithmeticOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatype
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getArithmeticOperatorAccess().getExclamationMarkEqualsSignKeyword_5());
 		}
+	)
+;
+
+// Entry rule entryRuleMathOperator
+entryRuleMathOperator returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getMathOperatorRule()); }
+	iv_ruleMathOperator=ruleMathOperator
+	{ $current=$iv_ruleMathOperator.current.getText(); }
+	EOF;
+
+// Rule MathOperator
+ruleMathOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='+'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getMathOperatorAccess().getPlusSignKeyword_0());
+		}
+		    |
+		kw='-'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getMathOperatorAccess().getHyphenMinusKeyword_1());
+		}
+		    |
+		kw='*'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getMathOperatorAccess().getAsteriskKeyword_2());
+		}
+		    |
+		kw='/'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getMathOperatorAccess().getSolidusKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleNot
+entryRuleNot returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getNotRule()); }
+	iv_ruleNot=ruleNot
+	{ $current=$iv_ruleNot.current.getText(); }
+	EOF;
+
+// Rule Not
+ruleNot returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	kw='NOT'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getNotAccess().getNOTKeyword());
+	}
+;
+
+// Entry rule entryRuleLogicalOperator
+entryRuleLogicalOperator returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getLogicalOperatorRule()); }
+	iv_ruleLogicalOperator=ruleLogicalOperator
+	{ $current=$iv_ruleLogicalOperator.current.getText(); }
+	EOF;
+
+// Rule LogicalOperator
+ruleLogicalOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='AND'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getLogicalOperatorAccess().getANDKeyword_0());
+		}
+		    |
+		kw='OR'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getLogicalOperatorAccess().getORKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRuleComparisonDependency
+entryRuleComparisonDependency returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getComparisonDependencyRule()); }
+	iv_ruleComparisonDependency=ruleComparisonDependency
+	{ $current=$iv_ruleComparisonDependency.current; }
+	EOF;
+
+// Rule ComparisonDependency
+ruleComparisonDependency returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_param1_0_0=RULE_ID
+				{
+					newLeafNode(lv_param1_0_0, grammarAccess.getComparisonDependencyAccess().getParam1IDTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getComparisonDependencyRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"param1",
+						lv_param1_0_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ID");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getComparisonDependencyAccess().getArithOpArithmeticOperatorParserRuleCall_1_0());
+				}
+				lv_arithOp_1_0=ruleArithmeticOperator
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComparisonDependencyRule());
+					}
+					set(
+						$current,
+						"arithOp",
+						lv_arithOp_1_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticOperator");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_param2_2_0=RULE_ID
+				{
+					newLeafNode(lv_param2_2_0, grammarAccess.getComparisonDependencyAccess().getParam2IDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getComparisonDependencyRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"param2",
+						lv_param2_2_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ID");
+				}
+			)
+		)
 	)
 ;
 
@@ -587,48 +681,6 @@ ruleOperationContinuation returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleMathOperator
-entryRuleMathOperator returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getMathOperatorRule()); }
-	iv_ruleMathOperator=ruleMathOperator
-	{ $current=$iv_ruleMathOperator.current.getText(); }
-	EOF;
-
-// Rule MathOperator
-ruleMathOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		kw='+'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMathOperatorAccess().getPlusSignKeyword_0());
-		}
-		    |
-		kw='-'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMathOperatorAccess().getHyphenMinusKeyword_1());
-		}
-		    |
-		kw='*'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMathOperatorAccess().getAsteriskKeyword_2());
-		}
-		    |
-		kw='/'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMathOperatorAccess().getSolidusKeyword_3());
-		}
-	)
-;
-
 // Entry rule entryRuleConditionalDependency
 entryRuleConditionalDependency returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getConditionalDependencyRule()); }
@@ -835,7 +887,7 @@ ruleParam returns [EObject current=null]
 					$current,
 					"name",
 					lv_name_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
+					"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ID");
 			}
 		)
 	)
@@ -915,6 +967,20 @@ ruleParamAssignment returns [EObject current=null]
 					)
 				)
 			)*
+			(
+				(
+					lv_additionalValues_5_0='|*'
+					{
+						newLeafNode(lv_additionalValues_5_0, grammarAccess.getParamAssignmentAccess().getAdditionalValuesVerticalLineAsteriskKeyword_0_4_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getParamAssignmentRule());
+						}
+						setWithLastConsumed($current, "additionalValues", lv_additionalValues_5_0, "|*");
+					}
+				)
+			)?
 		)
 		    |
 		(
@@ -924,20 +990,20 @@ ruleParamAssignment returns [EObject current=null]
 			{
 				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_1_0());
 			}
-			this_Param_5=ruleParam
+			this_Param_6=ruleParam
 			{
-				$current = $this_Param_5.current;
+				$current = $this_Param_6.current;
 				afterParserOrEnumRuleCall();
 			}
-			otherlv_6='='
+			otherlv_7='='
 			{
-				newLeafNode(otherlv_6, grammarAccess.getParamAssignmentAccess().getEqualsSignKeyword_1_1());
+				newLeafNode(otherlv_7, grammarAccess.getParamAssignmentAccess().getEqualsSignKeyword_1_1());
 			}
 			(
 				(
-					lv_paramValues_7_0=RULE_BOOLEAN
+					lv_paramValues_8_0=RULE_BOOLEAN
 					{
-						newLeafNode(lv_paramValues_7_0, grammarAccess.getParamAssignmentAccess().getParamValuesBOOLEANTerminalRuleCall_1_2_0());
+						newLeafNode(lv_paramValues_8_0, grammarAccess.getParamAssignmentAccess().getParamValuesBOOLEANTerminalRuleCall_1_2_0());
 					}
 					{
 						if ($current==null) {
@@ -946,7 +1012,7 @@ ruleParamAssignment returns [EObject current=null]
 						addWithLastConsumed(
 							$current,
 							"paramValues",
-							lv_paramValues_7_0,
+							lv_paramValues_8_0,
 							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.BOOLEAN");
 					}
 				)
@@ -960,9 +1026,9 @@ ruleParamAssignment returns [EObject current=null]
 			{
 				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_2_0());
 			}
-			this_Param_8=ruleParam
+			this_Param_9=ruleParam
 			{
-				$current = $this_Param_8.current;
+				$current = $this_Param_9.current;
 				afterParserOrEnumRuleCall();
 			}
 			(
@@ -970,7 +1036,7 @@ ruleParamAssignment returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getParamAssignmentAccess().getArithOpArithmeticOperatorParserRuleCall_2_1_0());
 					}
-					lv_arithOp_9_0=ruleArithmeticOperator
+					lv_arithOp_10_0=ruleArithmeticOperator
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getParamAssignmentRule());
@@ -978,7 +1044,7 @@ ruleParamAssignment returns [EObject current=null]
 						set(
 							$current,
 							"arithOp",
-							lv_arithOp_9_0,
+							lv_arithOp_10_0,
 							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticOperator");
 						afterParserOrEnumRuleCall();
 					}
@@ -986,9 +1052,9 @@ ruleParamAssignment returns [EObject current=null]
 			)
 			(
 				(
-					lv_paramValues_10_0=RULE_DOUBLE
+					lv_paramValues_11_0=RULE_DOUBLE
 					{
-						newLeafNode(lv_paramValues_10_0, grammarAccess.getParamAssignmentAccess().getParamValuesDOUBLETerminalRuleCall_2_2_0());
+						newLeafNode(lv_paramValues_11_0, grammarAccess.getParamAssignmentAccess().getParamValuesDOUBLETerminalRuleCall_2_2_0());
 					}
 					{
 						if ($current==null) {
@@ -997,7 +1063,7 @@ ruleParamAssignment returns [EObject current=null]
 						addWithLastConsumed(
 							$current,
 							"paramValues",
-							lv_paramValues_10_0,
+							lv_paramValues_11_0,
 							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.DOUBLE");
 					}
 				)
@@ -1908,65 +1974,13 @@ rulePositivePredefinedDependency returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleNot
-entryRuleNot returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getNotRule()); }
-	iv_ruleNot=ruleNot
-	{ $current=$iv_ruleNot.current.getText(); }
-	EOF;
-
-// Rule Not
-ruleNot returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='NOT'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getNotAccess().getNOTKeyword());
-	}
-;
-
-// Entry rule entryRuleLogicalOperator
-entryRuleLogicalOperator returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getLogicalOperatorRule()); }
-	iv_ruleLogicalOperator=ruleLogicalOperator
-	{ $current=$iv_ruleLogicalOperator.current.getText(); }
-	EOF;
-
-// Rule LogicalOperator
-ruleLogicalOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		kw='AND'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getLogicalOperatorAccess().getANDKeyword_0());
-		}
-		    |
-		kw='OR'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getLogicalOperatorAccess().getORKeyword_1());
-		}
-	)
-;
-
 RULE_NL : ('\r'? '\n')+;
-
-RULE_DOUBLE : RULE_INT ('.' RULE_INT)?;
 
 RULE_BOOLEAN : ('true'|'false');
 
-RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+RULE_DOUBLE : RULE_INT ('.' RULE_INT)?;
+
+RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_'|'-'|'.') ('a'..'z'|'A'..'Z'|'_'|'-'|'.'|'0'..'9')*;
 
 fragment RULE_INT : ('0'..'9')+;
 

@@ -327,7 +327,10 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     ParamAssignment returns Param
 	 *
 	 * Constraint:
-	 *     (name=ID ((paramValues+=STRING paramValues+=STRING*) | paramValues+=BOOLEAN | (arithOp=ArithmeticOperator paramValues+=DOUBLE)))
+	 *     (
+	 *         name=ID 
+	 *         ((paramValues+=STRING paramValues+=STRING* additionalValues='|*'?) | paramValues+=BOOLEAN | (arithOp=ArithmeticOperator paramValues+=DOUBLE))
+	 *     )
 	 */
 	protected void sequence_Param_ParamAssignment(ISerializationContext context, Param semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

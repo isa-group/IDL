@@ -80,41 +80,6 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		//NL?
 		public RuleCall getNLTerminalRuleCall_2() { return cNLTerminalRuleCall_2; }
 	}
-	public class ComparisonDependencyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.ComparisonDependency");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cParam1Assignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cParam1IDTerminalRuleCall_0_0 = (RuleCall)cParam1Assignment_0.eContents().get(0);
-		private final Assignment cArithOpAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cArithOpArithmeticOperatorParserRuleCall_1_0 = (RuleCall)cArithOpAssignment_1.eContents().get(0);
-		private final Assignment cParam2Assignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cParam2IDTerminalRuleCall_2_0 = (RuleCall)cParam2Assignment_2.eContents().get(0);
-		
-		//ComparisonDependency:
-		//	param1=ID arithOp=ArithmeticOperator param2=ID;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//param1=ID arithOp=ArithmeticOperator param2=ID
-		public Group getGroup() { return cGroup; }
-		
-		//param1=ID
-		public Assignment getParam1Assignment_0() { return cParam1Assignment_0; }
-		
-		//ID
-		public RuleCall getParam1IDTerminalRuleCall_0_0() { return cParam1IDTerminalRuleCall_0_0; }
-		
-		//arithOp=ArithmeticOperator
-		public Assignment getArithOpAssignment_1() { return cArithOpAssignment_1; }
-		
-		//ArithmeticOperator
-		public RuleCall getArithOpArithmeticOperatorParserRuleCall_1_0() { return cArithOpArithmeticOperatorParserRuleCall_1_0; }
-		
-		//param2=ID
-		public Assignment getParam2Assignment_2() { return cParam2Assignment_2; }
-		
-		//ID
-		public RuleCall getParam2IDTerminalRuleCall_2_0() { return cParam2IDTerminalRuleCall_2_0; }
-	}
 	public class ArithmeticOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -149,6 +114,98 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		
 		//'!='
 		public Keyword getExclamationMarkEqualsSignKeyword_5() { return cExclamationMarkEqualsSignKeyword_5; }
+	}
+	public class MathOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.MathOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cPlusSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cAsteriskKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cSolidusKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		
+		//MathOperator:
+		//	'+' | '-' | '*' | '/';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'+' | '-' | '*' | '/'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'+'
+		public Keyword getPlusSignKeyword_0() { return cPlusSignKeyword_0; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_1() { return cHyphenMinusKeyword_1; }
+		
+		//'*'
+		public Keyword getAsteriskKeyword_2() { return cAsteriskKeyword_2; }
+		
+		//'/'
+		public Keyword getSolidusKeyword_3() { return cSolidusKeyword_3; }
+	}
+	public class NotElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.Not");
+		private final Keyword cNOTKeyword = (Keyword)rule.eContents().get(1);
+		
+		//Not:
+		//	'NOT';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'NOT'
+		public Keyword getNOTKeyword() { return cNOTKeyword; }
+	}
+	public class LogicalOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.LogicalOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cANDKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cORKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//LogicalOperator:
+		//	'AND' | 'OR';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'AND' | 'OR'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'AND'
+		public Keyword getANDKeyword_0() { return cANDKeyword_0; }
+		
+		//'OR'
+		public Keyword getORKeyword_1() { return cORKeyword_1; }
+	}
+	public class ComparisonDependencyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.ComparisonDependency");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cParam1Assignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cParam1IDTerminalRuleCall_0_0 = (RuleCall)cParam1Assignment_0.eContents().get(0);
+		private final Assignment cArithOpAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cArithOpArithmeticOperatorParserRuleCall_1_0 = (RuleCall)cArithOpAssignment_1.eContents().get(0);
+		private final Assignment cParam2Assignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParam2IDTerminalRuleCall_2_0 = (RuleCall)cParam2Assignment_2.eContents().get(0);
+		
+		//ComparisonDependency:
+		//	param1=ID arithOp=ArithmeticOperator param2=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//param1=ID arithOp=ArithmeticOperator param2=ID
+		public Group getGroup() { return cGroup; }
+		
+		//param1=ID
+		public Assignment getParam1Assignment_0() { return cParam1Assignment_0; }
+		
+		//ID
+		public RuleCall getParam1IDTerminalRuleCall_0_0() { return cParam1IDTerminalRuleCall_0_0; }
+		
+		//arithOp=ArithmeticOperator
+		public Assignment getArithOpAssignment_1() { return cArithOpAssignment_1; }
+		
+		//ArithmeticOperator
+		public RuleCall getArithOpArithmeticOperatorParserRuleCall_1_0() { return cArithOpArithmeticOperatorParserRuleCall_1_0; }
+		
+		//param2=ID
+		public Assignment getParam2Assignment_2() { return cParam2Assignment_2; }
+		
+		//ID
+		public RuleCall getParam2IDTerminalRuleCall_2_0() { return cParam2IDTerminalRuleCall_2_0; }
 	}
 	public class ArithmeticDependencyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticDependency");
@@ -281,33 +338,6 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		//Operation
 		public RuleCall getAdditionalParamsOperationParserRuleCall_1_0() { return cAdditionalParamsOperationParserRuleCall_1_0; }
 	}
-	public class MathOperatorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.MathOperator");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cPlusSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cAsteriskKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cSolidusKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		
-		//MathOperator:
-		//	'+' | '-' | '*' | '/';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'+' | '-' | '*' | '/'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'+'
-		public Keyword getPlusSignKeyword_0() { return cPlusSignKeyword_0; }
-		
-		//'-'
-		public Keyword getHyphenMinusKeyword_1() { return cHyphenMinusKeyword_1; }
-		
-		//'*'
-		public Keyword getAsteriskKeyword_2() { return cAsteriskKeyword_2; }
-		
-		//'/'
-		public Keyword getSolidusKeyword_3() { return cSolidusKeyword_3; }
-	}
 	public class ConditionalDependencyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.ConditionalDependency");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -404,7 +434,8 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
 		//Param:
-		//	name=ID;
+		//	name=ID //| preName+=ID('.'preName+=ID)* '.' name=ID
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//name=ID
@@ -425,6 +456,8 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		private final Keyword cVerticalLineKeyword_0_3_0 = (Keyword)cGroup_0_3.eContents().get(0);
 		private final Assignment cParamValuesAssignment_0_3_1 = (Assignment)cGroup_0_3.eContents().get(1);
 		private final RuleCall cParamValuesSTRINGTerminalRuleCall_0_3_1_0 = (RuleCall)cParamValuesAssignment_0_3_1.eContents().get(0);
+		private final Assignment cAdditionalValuesAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final Keyword cAdditionalValuesVerticalLineAsteriskKeyword_0_4_0 = (Keyword)cAdditionalValuesAssignment_0_4.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final RuleCall cParamParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
@@ -438,15 +471,15 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		private final RuleCall cParamValuesDOUBLETerminalRuleCall_2_2_0 = (RuleCall)cParamValuesAssignment_2_2.eContents().get(0);
 		
 		//ParamAssignment:
-		//	Param '=' paramValues+=STRING ('|' paramValues+=STRING)* | Param '=' paramValues+=BOOLEAN | Param
-		//	arithOp=ArithmeticOperator paramValues+=DOUBLE;
+		//	Param '=' paramValues+=STRING ('|' paramValues+=STRING)* additionalValues='|*'? | Param '=' paramValues+=BOOLEAN |
+		//	Param arithOp=ArithmeticOperator paramValues+=DOUBLE;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Param '=' paramValues+=STRING ('|' paramValues+=STRING)* | Param '=' paramValues+=BOOLEAN | Param
+		//Param '=' paramValues+=STRING ('|' paramValues+=STRING)* additionalValues='|*'? | Param '=' paramValues+=BOOLEAN | Param
 		//arithOp=ArithmeticOperator paramValues+=DOUBLE
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Param '=' paramValues+=STRING ('|' paramValues+=STRING)*
+		//Param '=' paramValues+=STRING ('|' paramValues+=STRING)* additionalValues='|*'?
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//Param
@@ -472,6 +505,12 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		
 		//STRING
 		public RuleCall getParamValuesSTRINGTerminalRuleCall_0_3_1_0() { return cParamValuesSTRINGTerminalRuleCall_0_3_1_0; }
+		
+		//additionalValues='|*'?
+		public Assignment getAdditionalValuesAssignment_0_4() { return cAdditionalValuesAssignment_0_4; }
+		
+		//'|*'
+		public Keyword getAdditionalValuesVerticalLineAsteriskKeyword_0_4_0() { return cAdditionalValuesVerticalLineAsteriskKeyword_0_4_0; }
 		
 		//Param '=' paramValues+=BOOLEAN
 		public Group getGroup_1() { return cGroup_1; }
@@ -971,53 +1010,26 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
-	public class NotElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.Not");
-		private final Keyword cNOTKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Not:
-		//	'NOT';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'NOT'
-		public Keyword getNOTKeyword() { return cNOTKeyword; }
-	}
-	public class LogicalOperatorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.LogicalOperator");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cANDKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cORKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		
-		//LogicalOperator:
-		//	'AND' | 'OR';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'AND' | 'OR'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'AND'
-		public Keyword getANDKeyword_0() { return cANDKeyword_0; }
-		
-		//'OR'
-		public Keyword getORKeyword_1() { return cORKeyword_1; }
-	}
 	
 	
 	private final ModelElements pModel;
 	private final DependencyElements pDependency;
 	private final TerminalRule tNL;
-	private final ComparisonDependencyElements pComparisonDependency;
-	private final ArithmeticOperatorElements pArithmeticOperator;
-	private final ArithmeticDependencyElements pArithmeticDependency;
+	private final TerminalRule tBOOLEAN;
 	private final TerminalRule tDOUBLE;
+	private final TerminalRule tID;
+	private final ArithmeticOperatorElements pArithmeticOperator;
+	private final MathOperatorElements pMathOperator;
+	private final NotElements pNot;
+	private final LogicalOperatorElements pLogicalOperator;
+	private final ComparisonDependencyElements pComparisonDependency;
+	private final ArithmeticDependencyElements pArithmeticDependency;
 	private final OperationElements pOperation;
 	private final OperationContinuationElements pOperationContinuation;
-	private final MathOperatorElements pMathOperator;
 	private final ConditionalDependencyElements pConditionalDependency;
 	private final AtomicElements pAtomic;
 	private final ParamElements pParam;
 	private final ParamAssignmentElements pParamAssignment;
-	private final TerminalRule tBOOLEAN;
 	private final ClauseElements pClause;
 	private final ClauseContinuationElements pClauseContinuation;
 	private final PredefinedDependencyElements pPredefinedDependency;
@@ -1025,8 +1037,6 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	private final PositiveClauseElements pPositiveClause;
 	private final PositiveClauseContinuationElements pPositiveClauseContinuation;
 	private final PositivePredefinedDependencyElements pPositivePredefinedDependency;
-	private final NotElements pNot;
-	private final LogicalOperatorElements pLogicalOperator;
 	
 	private final Grammar grammar;
 	
@@ -1040,18 +1050,21 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		this.pModel = new ModelElements();
 		this.pDependency = new DependencyElements();
 		this.tNL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.NL");
-		this.pComparisonDependency = new ComparisonDependencyElements();
-		this.pArithmeticOperator = new ArithmeticOperatorElements();
-		this.pArithmeticDependency = new ArithmeticDependencyElements();
+		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.BOOLEAN");
 		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.DOUBLE");
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.ID");
+		this.pArithmeticOperator = new ArithmeticOperatorElements();
+		this.pMathOperator = new MathOperatorElements();
+		this.pNot = new NotElements();
+		this.pLogicalOperator = new LogicalOperatorElements();
+		this.pComparisonDependency = new ComparisonDependencyElements();
+		this.pArithmeticDependency = new ArithmeticDependencyElements();
 		this.pOperation = new OperationElements();
 		this.pOperationContinuation = new OperationContinuationElements();
-		this.pMathOperator = new MathOperatorElements();
 		this.pConditionalDependency = new ConditionalDependencyElements();
 		this.pAtomic = new AtomicElements();
 		this.pParam = new ParamElements();
 		this.pParamAssignment = new ParamAssignmentElements();
-		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.BOOLEAN");
 		this.pClause = new ClauseElements();
 		this.pClauseContinuation = new ClauseContinuationElements();
 		this.pPredefinedDependency = new PredefinedDependencyElements();
@@ -1059,8 +1072,6 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		this.pPositiveClause = new PositiveClauseElements();
 		this.pPositiveClauseContinuation = new PositiveClauseContinuationElements();
 		this.pPositivePredefinedDependency = new PositivePredefinedDependencyElements();
-		this.pNot = new NotElements();
-		this.pLogicalOperator = new LogicalOperatorElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1116,14 +1127,23 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		return tNL;
 	}
 	
-	//ComparisonDependency:
-	//	param1=ID arithOp=ArithmeticOperator param2=ID;
-	public ComparisonDependencyElements getComparisonDependencyAccess() {
-		return pComparisonDependency;
+	//terminal BOOLEAN:
+	//	'true' | 'false';
+	public TerminalRule getBOOLEANRule() {
+		return tBOOLEAN;
 	}
 	
-	public ParserRule getComparisonDependencyRule() {
-		return getComparisonDependencyAccess().getRule();
+	//terminal DOUBLE:
+	//	INT ('.' INT)?;
+	public TerminalRule getDOUBLERule() {
+		return tDOUBLE;
+	}
+	
+	//@Override
+	//terminal ID:
+	//	'^'? ('a'..'z' | 'A'..'Z' | '_' | '-' | '.') ('a'..'z' | 'A'..'Z' | '_' | '-' | '.' | '0'..'9')*;
+	public TerminalRule getIDRule() {
+		return tID;
 	}
 	
 	//ArithmeticOperator:
@@ -1136,6 +1156,46 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		return getArithmeticOperatorAccess().getRule();
 	}
 	
+	//MathOperator:
+	//	'+' | '-' | '*' | '/';
+	public MathOperatorElements getMathOperatorAccess() {
+		return pMathOperator;
+	}
+	
+	public ParserRule getMathOperatorRule() {
+		return getMathOperatorAccess().getRule();
+	}
+	
+	//Not:
+	//	'NOT';
+	public NotElements getNotAccess() {
+		return pNot;
+	}
+	
+	public ParserRule getNotRule() {
+		return getNotAccess().getRule();
+	}
+	
+	//LogicalOperator:
+	//	'AND' | 'OR';
+	public LogicalOperatorElements getLogicalOperatorAccess() {
+		return pLogicalOperator;
+	}
+	
+	public ParserRule getLogicalOperatorRule() {
+		return getLogicalOperatorAccess().getRule();
+	}
+	
+	//ComparisonDependency:
+	//	param1=ID arithOp=ArithmeticOperator param2=ID;
+	public ComparisonDependencyElements getComparisonDependencyAccess() {
+		return pComparisonDependency;
+	}
+	
+	public ParserRule getComparisonDependencyRule() {
+		return getComparisonDependencyAccess().getRule();
+	}
+	
 	//ArithmeticDependency:
 	//	operation=Operation arithOp=ArithmeticOperator result=DOUBLE;
 	public ArithmeticDependencyElements getArithmeticDependencyAccess() {
@@ -1144,12 +1204,6 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	
 	public ParserRule getArithmeticDependencyRule() {
 		return getArithmeticDependencyAccess().getRule();
-	}
-	
-	//terminal DOUBLE:
-	//	INT ('.' INT)?;
-	public TerminalRule getDOUBLERule() {
-		return tDOUBLE;
 	}
 	
 	//Operation:
@@ -1173,16 +1227,6 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		return getOperationContinuationAccess().getRule();
 	}
 	
-	//MathOperator:
-	//	'+' | '-' | '*' | '/';
-	public MathOperatorElements getMathOperatorAccess() {
-		return pMathOperator;
-	}
-	
-	public ParserRule getMathOperatorRule() {
-		return getMathOperatorAccess().getRule();
-	}
-	
 	//ConditionalDependency:
 	//	'IF' condition=Clause 'THEN' consequence=Clause;
 	public ConditionalDependencyElements getConditionalDependencyAccess() {
@@ -1204,7 +1248,8 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	}
 	
 	//Param:
-	//	name=ID;
+	//	name=ID //| preName+=ID('.'preName+=ID)* '.' name=ID
+	//;
 	public ParamElements getParamAccess() {
 		return pParam;
 	}
@@ -1214,20 +1259,14 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	}
 	
 	//ParamAssignment:
-	//	Param '=' paramValues+=STRING ('|' paramValues+=STRING)* | Param '=' paramValues+=BOOLEAN | Param
-	//	arithOp=ArithmeticOperator paramValues+=DOUBLE;
+	//	Param '=' paramValues+=STRING ('|' paramValues+=STRING)* additionalValues='|*'? | Param '=' paramValues+=BOOLEAN |
+	//	Param arithOp=ArithmeticOperator paramValues+=DOUBLE;
 	public ParamAssignmentElements getParamAssignmentAccess() {
 		return pParamAssignment;
 	}
 	
 	public ParserRule getParamAssignmentRule() {
 		return getParamAssignmentAccess().getRule();
-	}
-	
-	//terminal BOOLEAN:
-	//	'true' | 'false';
-	public TerminalRule getBOOLEANRule() {
-		return tBOOLEAN;
 	}
 	
 	//Clause GeneralClause:
@@ -1305,32 +1344,6 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	
 	public ParserRule getPositivePredefinedDependencyRule() {
 		return getPositivePredefinedDependencyAccess().getRule();
-	}
-	
-	//Not:
-	//	'NOT';
-	public NotElements getNotAccess() {
-		return pNot;
-	}
-	
-	public ParserRule getNotRule() {
-		return getNotAccess().getRule();
-	}
-	
-	//LogicalOperator:
-	//	'AND' | 'OR';
-	public LogicalOperatorElements getLogicalOperatorAccess() {
-		return pLogicalOperator;
-	}
-	
-	public ParserRule getLogicalOperatorRule() {
-		return getLogicalOperatorAccess().getRule();
-	}
-	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
-	public TerminalRule getIDRule() {
-		return gaTerminals.getIDRule();
 	}
 	
 	//terminal INT returns ecore::EInt:

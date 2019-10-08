@@ -502,9 +502,20 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EAttribute getParam_ArithOp()
+  public EAttribute getParam_AdditionalValues()
   {
     return (EAttribute)paramEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getParam_ArithOp()
+  {
+    return (EAttribute)paramEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -717,6 +728,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     paramEClass = createEClass(PARAM);
     createEAttribute(paramEClass, PARAM__NAME);
     createEAttribute(paramEClass, PARAM__PARAM_VALUES);
+    createEAttribute(paramEClass, PARAM__ADDITIONAL_VALUES);
     createEAttribute(paramEClass, PARAM__ARITH_OP);
 
     paramAssignmentEClass = createEClass(PARAM_ASSIGNMENT);
@@ -806,6 +818,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     initEClass(paramEClass, Param.class, "Param", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParam_ParamValues(), ecorePackage.getEString(), "paramValues", null, 0, -1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParam_AdditionalValues(), ecorePackage.getEString(), "additionalValues", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParam_ArithOp(), ecorePackage.getEString(), "arithOp", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(paramAssignmentEClass, ParamAssignment.class, "ParamAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

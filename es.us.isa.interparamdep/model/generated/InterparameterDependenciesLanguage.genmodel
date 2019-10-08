@@ -42,6 +42,7 @@
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Param">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/paramValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/additionalValues"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/arithOp"/>
     </genClasses>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//ParamAssignment"/>
