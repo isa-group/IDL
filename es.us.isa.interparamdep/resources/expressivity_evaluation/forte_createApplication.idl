@@ -1,0 +1,15 @@
+AllOrNone(average_payable_amount, maximum_payable_amount, monthly_payable_volume);
+
+owner.percentage + owner_2.percentage + owner_3.percentage + owner_4.percentage <= 100;
+
+IF NOT applicant_organization='government'|'sole_proprietorship'|'publicly_held_corporation' THEN owner.percentage;
+
+IF NOT applicant_organization='government'|'sole_proprietorship'|'publicly_held_corporation' THEN owner.country;
+
+IF NOT applicant_organization='government'|'sole_proprietorship'|'publicly_held_corporation' THEN owner.citizenship;
+
+IF applicant_organization='government'|'sole_proprietorship'|'publicly_held_corporation' THEN NOT owner2;
+
+IF applicant_organization='government'|'sole_proprietorship'|'publicly_held_corporation' THEN NOT owner3;
+
+IF applicant_organization='government'|'sole_proprietorship'|'publicly_held_corporation' THEN NOT owner4;

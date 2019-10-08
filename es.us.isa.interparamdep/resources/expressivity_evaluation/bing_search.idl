@@ -1,0 +1,11 @@
+ZeroOrOne(Accept-Language, setLang);
+
+AllOrNone(Accept-Language, cc);
+
+IF X-Search-Location='head:'|* THEN NOT X-Search-Location='sp:0'|*;
+
+IF X-Search-Location='are:'|* THEN X-Search-Location='alt:';
+
+ZeroOrOne(mkt, cc);
+
+IF promote THEN answerCount;
