@@ -48,7 +48,10 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		file.delete
 		file.createNewFile
 		
+		var String csp
+		
 		for (dependency: resource.allContents.filter(Dependency).toIterable) {
+			csp = "constraint"
 //			solveDependencyAndOrIterate(dependency.dep, 0, 0)
 //	    	Files.write(writePath, Arrays.asList("....................."),
 //		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
@@ -58,12 +61,12 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 			} else if (dependency.dep.class == typeof(ComparisonDependencyImpl)) {
 				solveComparisonDependency(dependency.dep as ComparisonDependency)
 			} else if (dependency.dep.class == typeof(ArithmeticDependencyImpl)) {
-//				solveArithmeticDependency(dependency.dep as ArithmeticDependency)
+				solveArithmeticDependency(dependency.dep as ArithmeticDependency)
 			} else if (dependency.dep.class == typeof(GeneralPredefinedDependencyImpl)) {
 				solvePredefinedDependency(dependency.dep as GeneralPredefinedDependency)
 			} else {
 				throw new Exception("The dependency must be a conditional, an " + 
-					"arithmetic or a predefined one")
+					"arithmetic, a comparison or a predefined one")
 			}
 
 		    for (subElement: dependency.eAllContents.toIterable) {
@@ -141,11 +144,17 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	// Solving a dependency means returning 'true' or 'false'.
 	
 	/**
-	 * Since the arithmetic dependency cannot nest any other dependencies, its
+	 * Since the comparison dependency cannot nest any other dependencies, its
 	 * solving stops after the CSP mapping, i.e. there's no need to iterate over
 	 * other possibly nested dependencies.
 	 */
 	def boolean solveComparisonDependency(ComparisonDependency dep) {
+		// TODO: Implement CSP mapping
+		
+		return true
+	}
+	
+	def boolean solveArithmeticDependency(ArithmeticDependency dep) {
 		// TODO: Implement CSP mapping
 		
 		return true

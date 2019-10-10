@@ -741,8 +741,8 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalInterparameterDependenciesLanguage.g:1983:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '.' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '.' | '0' .. '9' )* )
-            // InternalInterparameterDependenciesLanguage.g:1983:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '.' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '.' | '0' .. '9' )*
+            // InternalInterparameterDependenciesLanguage.g:1983:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '0' .. '9' )* )
+            // InternalInterparameterDependenciesLanguage.g:1983:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '0' .. '9' )*
             {
             // InternalInterparameterDependenciesLanguage.g:1983:11: ( '^' )?
             int alt5=2;
@@ -762,7 +762,7 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
 
             }
 
-            if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            if ( input.LA(1)=='.'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
 
             }
@@ -771,13 +771,13 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalInterparameterDependenciesLanguage.g:1983:48: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' | '.' | '0' .. '9' )*
+            // InternalInterparameterDependenciesLanguage.g:1983:44: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '0' .. '9' )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( ((LA6_0>='-' && LA6_0<='.')||(LA6_0>='0' && LA6_0<='9')||(LA6_0>='A' && LA6_0<='Z')||LA6_0=='_'||(LA6_0>='a' && LA6_0<='z')) ) {
+                if ( (LA6_0=='.'||(LA6_0>='0' && LA6_0<='9')||(LA6_0>='A' && LA6_0<='Z')||LA6_0=='_'||(LA6_0>='a' && LA6_0<='z')) ) {
                     alt6=1;
                 }
 
@@ -786,7 +786,7 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
             	case 1 :
             	    // InternalInterparameterDependenciesLanguage.g:
             	    {
-            	    if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            	    if ( input.LA(1)=='.'||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
 
             	    }
@@ -1481,15 +1481,15 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
 
     protected DFA16 dfa16 = new DFA16(this);
     static final String DFA16_eotS =
-        "\2\uffff\1\41\1\43\1\uffff\1\36\1\uffff\1\47\1\uffff\1\54\3\50\2\uffff\2\50\1\70\1\50\1\uffff\1\73\1\75\2\50\1\uffff\1\36\1\uffff\2\36\20\uffff\3\50\1\106\1\107\1\50\2\uffff\1\111\1\50\2\uffff\1\50\2\uffff\1\75\1\uffff\1\73\2\50\2\uffff\1\116\1\117\1\50\2\uffff\1\50\1\uffff\4\50\2\uffff\2\50\1\130\1\50\1\132\3\50\1\uffff\1\50\1\uffff\1\132\4\50\1\143\2\50\1\uffff\1\50\1\147\1\150\2\uffff";
+        "\2\uffff\1\41\1\43\1\uffff\1\36\3\uffff\1\53\3\55\2\uffff\2\55\1\70\1\55\1\uffff\1\73\1\75\2\55\1\uffff\1\36\1\uffff\2\36\17\uffff\1\55\1\uffff\2\55\1\106\1\107\1\55\2\uffff\1\111\1\55\2\uffff\1\55\2\uffff\1\75\1\uffff\1\73\2\55\2\uffff\1\116\1\117\1\55\2\uffff\1\55\1\uffff\4\55\2\uffff\2\55\1\130\1\55\1\132\3\55\1\uffff\1\55\1\uffff\1\132\4\55\1\143\2\55\1\uffff\1\55\1\147\1\150\2\uffff";
     static final String DFA16_eofS =
         "\151\uffff";
     static final String DFA16_minS =
-        "\1\0\1\uffff\2\75\1\uffff\1\75\1\uffff\1\55\1\uffff\1\52\1\117\1\116\1\122\2\uffff\1\106\1\110\1\52\1\145\1\uffff\1\12\1\11\1\162\1\141\1\uffff\1\55\1\uffff\2\0\20\uffff\1\124\1\104\1\154\2\55\1\154\2\uffff\1\55\1\105\2\uffff\1\162\2\uffff\1\11\1\uffff\1\12\1\165\1\154\2\uffff\2\55\1\117\2\uffff\1\171\1\uffff\1\116\1\157\1\145\1\163\2\uffff\1\162\1\117\1\55\1\117\1\55\1\145\1\116\1\156\1\uffff\1\162\1\uffff\1\55\1\157\1\145\1\117\1\156\1\55\1\156\1\145\1\uffff\1\145\2\55\2\uffff";
+        "\1\0\1\uffff\2\75\1\uffff\1\75\3\uffff\1\52\1\117\1\116\1\122\2\uffff\1\106\1\110\1\52\1\145\1\uffff\1\12\1\11\1\162\1\141\1\uffff\1\56\1\uffff\2\0\17\uffff\1\124\1\uffff\1\104\1\154\2\56\1\154\2\uffff\1\56\1\105\2\uffff\1\162\2\uffff\1\11\1\uffff\1\12\1\165\1\154\2\uffff\2\56\1\117\2\uffff\1\171\1\uffff\1\116\1\157\1\145\1\163\2\uffff\1\162\1\117\1\56\1\117\1\56\1\145\1\116\1\156\1\uffff\1\162\1\uffff\1\56\1\157\1\145\1\117\1\156\1\56\1\156\1\145\1\uffff\1\145\2\56\2\uffff";
     static final String DFA16_maxS =
-        "\1\uffff\1\uffff\2\75\1\uffff\1\75\1\uffff\1\172\1\uffff\1\57\1\117\1\154\1\162\2\uffff\1\106\1\110\1\52\1\145\1\uffff\1\12\1\40\1\162\1\141\1\uffff\1\172\1\uffff\2\uffff\20\uffff\1\124\1\104\1\154\2\172\1\154\2\uffff\1\172\1\105\2\uffff\1\162\2\uffff\1\40\1\uffff\1\12\1\165\1\154\2\uffff\2\172\1\117\2\uffff\1\171\1\uffff\1\116\1\157\1\145\1\163\2\uffff\1\162\1\117\1\172\1\117\1\172\1\145\1\116\1\156\1\uffff\1\162\1\uffff\1\172\1\157\1\145\1\117\1\156\1\172\1\156\1\145\1\uffff\1\145\2\172\2\uffff";
+        "\1\uffff\1\uffff\2\75\1\uffff\1\75\3\uffff\1\57\1\117\1\154\1\162\2\uffff\1\106\1\110\1\52\1\145\1\uffff\1\12\1\40\1\162\1\141\1\uffff\1\172\1\uffff\2\uffff\17\uffff\1\124\1\uffff\1\104\1\154\2\172\1\154\2\uffff\1\172\1\105\2\uffff\1\162\2\uffff\1\40\1\uffff\1\12\1\165\1\154\2\uffff\2\172\1\117\2\uffff\1\171\1\uffff\1\116\1\157\1\145\1\163\2\uffff\1\162\1\117\1\172\1\117\1\172\1\145\1\116\1\156\1\uffff\1\162\1\uffff\1\172\1\157\1\145\1\117\1\156\1\172\1\156\1\145\1\uffff\1\145\2\172\2\uffff";
     static final String DFA16_acceptS =
-        "\1\uffff\1\1\2\uffff\1\6\1\uffff\1\10\1\uffff\1\12\4\uffff\1\17\1\20\4\uffff\1\31\4\uffff\1\34\1\uffff\1\35\2\uffff\1\41\1\42\1\1\1\4\1\2\1\5\1\3\1\6\1\7\1\10\1\11\1\35\1\12\1\37\1\40\1\13\6\uffff\1\17\1\20\2\uffff\1\24\1\23\1\uffff\1\31\1\41\1\uffff\1\32\3\uffff\1\34\1\36\3\uffff\1\16\1\25\1\uffff\1\21\4\uffff\1\14\1\15\10\uffff\1\22\1\uffff\1\33\10\uffff\1\26\3\uffff\1\27\1\30";
+        "\1\uffff\1\1\2\uffff\1\6\1\uffff\1\10\1\11\1\12\4\uffff\1\17\1\20\4\uffff\1\31\4\uffff\1\34\1\uffff\1\35\2\uffff\1\41\1\42\1\1\1\4\1\2\1\5\1\3\1\6\1\7\1\10\1\11\1\12\1\37\1\40\1\13\1\uffff\1\35\5\uffff\1\17\1\20\2\uffff\1\24\1\23\1\uffff\1\31\1\41\1\uffff\1\32\3\uffff\1\34\1\36\3\uffff\1\16\1\25\1\uffff\1\21\4\uffff\1\14\1\15\10\uffff\1\22\1\uffff\1\33\10\uffff\1\26\3\uffff\1\27\1\30";
     static final String DFA16_specialS =
         "\1\1\32\uffff\1\0\1\2\114\uffff}>";
     static final String[] DFA16_transitionS = {
@@ -1500,10 +1500,10 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
             "",
             "\1\45",
             "",
-            "\2\50\1\uffff\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "",
-            "\1\52\4\uffff\1\53",
-            "\1\55",
+            "",
+            "\1\51\4\uffff\1\52",
+            "\1\54",
             "\1\56\35\uffff\1\57",
             "\1\60\33\uffff\1\62\3\uffff\1\61",
             "",
@@ -1518,11 +1518,10 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
             "\1\77",
             "\1\100",
             "",
-            "\2\50\22\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\55\22\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "",
             "\0\102",
             "\0\102",
-            "",
             "",
             "",
             "",
@@ -1539,14 +1538,15 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
             "",
             "",
             "\1\103",
+            "",
             "\1\104",
             "\1\105",
-            "\2\50\1\uffff\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\2\50\1\uffff\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\55\1\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\1\55\1\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\1\110",
             "",
             "",
-            "\2\50\1\uffff\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\55\1\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\1\112",
             "",
             "",
@@ -1560,8 +1560,8 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
             "\1\115",
             "",
             "",
-            "\2\50\1\uffff\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\2\50\1\uffff\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\55\1\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\1\55\1\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\1\120",
             "",
             "",
@@ -1575,27 +1575,27 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
             "",
             "\1\126",
             "\1\127",
-            "\2\50\1\uffff\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\55\1\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\1\131",
-            "\2\50\1\uffff\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\55\1\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\1\133",
             "\1\134",
             "\1\135",
             "",
             "\1\136",
             "",
-            "\2\50\1\uffff\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\55\1\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\1\137",
             "\1\140",
             "\1\141",
             "\1\142",
-            "\2\50\1\uffff\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\55\1\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\1\144",
             "\1\145",
             "",
             "\1\146",
-            "\2\50\1\uffff\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\2\50\1\uffff\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\55\1\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\1\55\1\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "",
             ""
     };

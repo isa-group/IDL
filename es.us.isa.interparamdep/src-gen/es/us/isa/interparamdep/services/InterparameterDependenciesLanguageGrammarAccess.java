@@ -1141,7 +1141,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	
 	//@Override
 	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_' | '-' | '.') ('a'..'z' | 'A'..'Z' | '_' | '-' | '.' | '0'..'9')*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | '_' | '.') ('a'..'z' | 'A'..'Z' | '_' | '.' | '0'..'9')*;
 	public TerminalRule getIDRule() {
 		return tID;
 	}
