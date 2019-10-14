@@ -3,7 +3,6 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
 
@@ -15,6 +14,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -88,7 +88,7 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
    * @generated
    * @ordered
    */
-  protected EList<GeneralClause> predefDepClauses;
+  protected EList<EObject> predefDepClauses;
 
   /**
    * <!-- begin-user-doc -->
@@ -167,11 +167,11 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
    * @generated
    */
   @Override
-  public EList<GeneralClause> getPredefDepClauses()
+  public EList<EObject> getPredefDepClauses()
   {
     if (predefDepClauses == null)
     {
-      predefDepClauses = new EObjectContainmentEList<GeneralClause>(GeneralClause.class, this, InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES);
+      predefDepClauses = new EObjectContainmentEList<EObject>(EObject.class, this, InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES);
     }
     return predefDepClauses;
   }
@@ -231,7 +231,7 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
         getPredefDepClauses().clear();
-        getPredefDepClauses().addAll((Collection<? extends GeneralClause>)newValue);
+        getPredefDepClauses().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

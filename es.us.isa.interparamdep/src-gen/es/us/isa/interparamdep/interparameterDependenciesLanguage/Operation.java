@@ -16,7 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getFirstParam <em>First Param</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperationContinuation <em>Operation Continuation</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperationContinuation2 <em>Operation Continuation2</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOpeningParenthesis <em>Opening Parenthesis</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperation <em>Operation</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getClosingParenthesis <em>Closing Parenthesis</em>}</li>
  * </ul>
  *
  * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getOperation()
@@ -70,25 +72,69 @@ public interface Operation extends EObject
   void setOperationContinuation(OperationContinuation value);
 
   /**
-   * Returns the value of the '<em><b>Operation Continuation2</b></em>' containment reference.
+   * Returns the value of the '<em><b>Opening Parenthesis</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Operation Continuation2</em>' containment reference.
-   * @see #setOperationContinuation2(OperationContinuation)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getOperation_OperationContinuation2()
+   * @return the value of the '<em>Opening Parenthesis</em>' attribute.
+   * @see #setOpeningParenthesis(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getOperation_OpeningParenthesis()
+   * @model
+   * @generated
+   */
+  String getOpeningParenthesis();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOpeningParenthesis <em>Opening Parenthesis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Opening Parenthesis</em>' attribute.
+   * @see #getOpeningParenthesis()
+   * @generated
+   */
+  void setOpeningParenthesis(String value);
+
+  /**
+   * Returns the value of the '<em><b>Operation</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Operation</em>' containment reference.
+   * @see #setOperation(Operation)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getOperation_Operation()
    * @model containment="true"
    * @generated
    */
-  OperationContinuation getOperationContinuation2();
+  Operation getOperation();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperationContinuation2 <em>Operation Continuation2</em>}' containment reference.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperation <em>Operation</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Operation Continuation2</em>' containment reference.
-   * @see #getOperationContinuation2()
+   * @param value the new value of the '<em>Operation</em>' containment reference.
+   * @see #getOperation()
    * @generated
    */
-  void setOperationContinuation2(OperationContinuation value);
+  void setOperation(Operation value);
+
+  /**
+   * Returns the value of the '<em><b>Closing Parenthesis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Closing Parenthesis</em>' attribute.
+   * @see #setClosingParenthesis(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getOperation_ClosingParenthesis()
+   * @model
+   * @generated
+   */
+  String getClosingParenthesis();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getClosingParenthesis <em>Closing Parenthesis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Closing Parenthesis</em>' attribute.
+   * @see #getClosingParenthesis()
+   * @generated
+   */
+  void setClosingParenthesis(String value);
 
 } // Operation

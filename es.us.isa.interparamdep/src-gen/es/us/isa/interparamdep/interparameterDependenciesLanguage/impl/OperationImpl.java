@@ -27,7 +27,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationImpl#getFirstParam <em>First Param</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationImpl#getOperationContinuation <em>Operation Continuation</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationImpl#getOperationContinuation2 <em>Operation Continuation2</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationImpl#getOpeningParenthesis <em>Opening Parenthesis</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationImpl#getOperation <em>Operation</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationImpl#getClosingParenthesis <em>Closing Parenthesis</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,14 +57,54 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
   protected OperationContinuation operationContinuation;
 
   /**
-   * The cached value of the '{@link #getOperationContinuation2() <em>Operation Continuation2</em>}' containment reference.
+   * The default value of the '{@link #getOpeningParenthesis() <em>Opening Parenthesis</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOperationContinuation2()
+   * @see #getOpeningParenthesis()
    * @generated
    * @ordered
    */
-  protected OperationContinuation operationContinuation2;
+  protected static final String OPENING_PARENTHESIS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOpeningParenthesis() <em>Opening Parenthesis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOpeningParenthesis()
+   * @generated
+   * @ordered
+   */
+  protected String openingParenthesis = OPENING_PARENTHESIS_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getOperation() <em>Operation</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOperation()
+   * @generated
+   * @ordered
+   */
+  protected Operation operation;
+
+  /**
+   * The default value of the '{@link #getClosingParenthesis() <em>Closing Parenthesis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClosingParenthesis()
+   * @generated
+   * @ordered
+   */
+  protected static final String CLOSING_PARENTHESIS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getClosingParenthesis() <em>Closing Parenthesis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClosingParenthesis()
+   * @generated
+   * @ordered
+   */
+  protected String closingParenthesis = CLOSING_PARENTHESIS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -191,9 +233,9 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
    * @generated
    */
   @Override
-  public OperationContinuation getOperationContinuation2()
+  public String getOpeningParenthesis()
   {
-    return operationContinuation2;
+    return openingParenthesis;
   }
 
   /**
@@ -201,13 +243,38 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetOperationContinuation2(OperationContinuation newOperationContinuation2, NotificationChain msgs)
+  @Override
+  public void setOpeningParenthesis(String newOpeningParenthesis)
   {
-    OperationContinuation oldOperationContinuation2 = operationContinuation2;
-    operationContinuation2 = newOperationContinuation2;
+    String oldOpeningParenthesis = openingParenthesis;
+    openingParenthesis = newOpeningParenthesis;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.OPERATION__OPENING_PARENTHESIS, oldOpeningParenthesis, openingParenthesis));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Operation getOperation()
+  {
+    return operation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetOperation(Operation newOperation, NotificationChain msgs)
+  {
+    Operation oldOperation = operation;
+    operation = newOperation;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION2, oldOperationContinuation2, newOperationContinuation2);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.OPERATION__OPERATION, oldOperation, newOperation);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -219,20 +286,45 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
    * @generated
    */
   @Override
-  public void setOperationContinuation2(OperationContinuation newOperationContinuation2)
+  public void setOperation(Operation newOperation)
   {
-    if (newOperationContinuation2 != operationContinuation2)
+    if (newOperation != operation)
     {
       NotificationChain msgs = null;
-      if (operationContinuation2 != null)
-        msgs = ((InternalEObject)operationContinuation2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION2, null, msgs);
-      if (newOperationContinuation2 != null)
-        msgs = ((InternalEObject)newOperationContinuation2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION2, null, msgs);
-      msgs = basicSetOperationContinuation2(newOperationContinuation2, msgs);
+      if (operation != null)
+        msgs = ((InternalEObject)operation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.OPERATION__OPERATION, null, msgs);
+      if (newOperation != null)
+        msgs = ((InternalEObject)newOperation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.OPERATION__OPERATION, null, msgs);
+      msgs = basicSetOperation(newOperation, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION2, newOperationContinuation2, newOperationContinuation2));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.OPERATION__OPERATION, newOperation, newOperation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getClosingParenthesis()
+  {
+    return closingParenthesis;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setClosingParenthesis(String newClosingParenthesis)
+  {
+    String oldClosingParenthesis = closingParenthesis;
+    closingParenthesis = newClosingParenthesis;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.OPERATION__CLOSING_PARENTHESIS, oldClosingParenthesis, closingParenthesis));
   }
 
   /**
@@ -249,8 +341,8 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
         return basicSetFirstParam(null, msgs);
       case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION:
         return basicSetOperationContinuation(null, msgs);
-      case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION2:
-        return basicSetOperationContinuation2(null, msgs);
+      case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION:
+        return basicSetOperation(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -269,8 +361,12 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
         return getFirstParam();
       case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION:
         return getOperationContinuation();
-      case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION2:
-        return getOperationContinuation2();
+      case InterparameterDependenciesLanguagePackage.OPERATION__OPENING_PARENTHESIS:
+        return getOpeningParenthesis();
+      case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION:
+        return getOperation();
+      case InterparameterDependenciesLanguagePackage.OPERATION__CLOSING_PARENTHESIS:
+        return getClosingParenthesis();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -291,8 +387,14 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
       case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION:
         setOperationContinuation((OperationContinuation)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION2:
-        setOperationContinuation2((OperationContinuation)newValue);
+      case InterparameterDependenciesLanguagePackage.OPERATION__OPENING_PARENTHESIS:
+        setOpeningParenthesis((String)newValue);
+        return;
+      case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION:
+        setOperation((Operation)newValue);
+        return;
+      case InterparameterDependenciesLanguagePackage.OPERATION__CLOSING_PARENTHESIS:
+        setClosingParenthesis((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -314,8 +416,14 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
       case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION:
         setOperationContinuation((OperationContinuation)null);
         return;
-      case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION2:
-        setOperationContinuation2((OperationContinuation)null);
+      case InterparameterDependenciesLanguagePackage.OPERATION__OPENING_PARENTHESIS:
+        setOpeningParenthesis(OPENING_PARENTHESIS_EDEFAULT);
+        return;
+      case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION:
+        setOperation((Operation)null);
+        return;
+      case InterparameterDependenciesLanguagePackage.OPERATION__CLOSING_PARENTHESIS:
+        setClosingParenthesis(CLOSING_PARENTHESIS_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -335,10 +443,33 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
         return firstParam != null;
       case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION:
         return operationContinuation != null;
-      case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION_CONTINUATION2:
-        return operationContinuation2 != null;
+      case InterparameterDependenciesLanguagePackage.OPERATION__OPENING_PARENTHESIS:
+        return OPENING_PARENTHESIS_EDEFAULT == null ? openingParenthesis != null : !OPENING_PARENTHESIS_EDEFAULT.equals(openingParenthesis);
+      case InterparameterDependenciesLanguagePackage.OPERATION__OPERATION:
+        return operation != null;
+      case InterparameterDependenciesLanguagePackage.OPERATION__CLOSING_PARENTHESIS:
+        return CLOSING_PARENTHESIS_EDEFAULT == null ? closingParenthesis != null : !CLOSING_PARENTHESIS_EDEFAULT.equals(closingParenthesis);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (openingParenthesis: ");
+    result.append(openingParenthesis);
+    result.append(", closingParenthesis: ");
+    result.append(closingParenthesis);
+    result.append(')');
+    return result.toString();
   }
 
 } //OperationImpl

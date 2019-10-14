@@ -4,13 +4,13 @@
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -60,7 +60,7 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
    * @generated
    * @ordered
    */
-  protected Operation additionalParams;
+  protected EObject additionalParams;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,7 +114,7 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public Operation getAdditionalParams()
+  public EObject getAdditionalParams()
   {
     return additionalParams;
   }
@@ -124,9 +124,9 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAdditionalParams(Operation newAdditionalParams, NotificationChain msgs)
+  public NotificationChain basicSetAdditionalParams(EObject newAdditionalParams, NotificationChain msgs)
   {
-    Operation oldAdditionalParams = additionalParams;
+    EObject oldAdditionalParams = additionalParams;
     additionalParams = newAdditionalParams;
     if (eNotificationRequired())
     {
@@ -142,7 +142,7 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public void setAdditionalParams(Operation newAdditionalParams)
+  public void setAdditionalParams(EObject newAdditionalParams)
   {
     if (newAdditionalParams != additionalParams)
     {
@@ -206,7 +206,7 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
         setMathOp((String)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__ADDITIONAL_PARAMS:
-        setAdditionalParams((Operation)newValue);
+        setAdditionalParams((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -226,7 +226,7 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
         setMathOp(MATH_OP_EDEFAULT);
         return;
       case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__ADDITIONAL_PARAMS:
-        setAdditionalParams((Operation)null);
+        setAdditionalParams((EObject)null);
         return;
     }
     super.eUnset(featureID);

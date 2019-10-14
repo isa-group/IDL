@@ -289,13 +289,31 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int OPERATION__OPERATION_CONTINUATION = 1;
 
   /**
-   * The feature id for the '<em><b>Operation Continuation2</b></em>' containment reference.
+   * The feature id for the '<em><b>Opening Parenthesis</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPERATION__OPERATION_CONTINUATION2 = 2;
+  int OPERATION__OPENING_PARENTHESIS = 2;
+
+  /**
+   * The feature id for the '<em><b>Operation</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION__OPERATION = 3;
+
+  /**
+   * The feature id for the '<em><b>Closing Parenthesis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION__CLOSING_PARENTHESIS = 4;
 
   /**
    * The number of structural features of the '<em>Operation</em>' class.
@@ -304,7 +322,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPERATION_FEATURE_COUNT = 3;
+  int OPERATION_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationContinuationImpl <em>Operation Continuation</em>}' class.
@@ -419,13 +437,13 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int PARAM__NAME = PARAM_ASSIGNMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Param Values</b></em>' attribute list.
+   * The feature id for the '<em><b>String Values</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAM__PARAM_VALUES = PARAM_ASSIGNMENT_FEATURE_COUNT + 1;
+  int PARAM__STRING_VALUES = PARAM_ASSIGNMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Additional Values</b></em>' attribute.
@@ -437,13 +455,31 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int PARAM__ADDITIONAL_VALUES = PARAM_ASSIGNMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Boolean Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAM__BOOLEAN_VALUE = PARAM_ASSIGNMENT_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Arith Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAM__ARITH_OP = PARAM_ASSIGNMENT_FEATURE_COUNT + 3;
+  int PARAM__ARITH_OP = PARAM_ASSIGNMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Double Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAM__DOUBLE_VALUE = PARAM_ASSIGNMENT_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Param</em>' class.
@@ -452,7 +488,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAM_FEATURE_COUNT = PARAM_ASSIGNMENT_FEATURE_COUNT + 4;
+  int PARAM_FEATURE_COUNT = PARAM_ASSIGNMENT_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl <em>General Clause</em>}' class.
@@ -465,13 +501,13 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int GENERAL_CLAUSE = 10;
 
   /**
-   * The feature id for the '<em><b>First Element</b></em>' containment reference.
+   * The feature id for the '<em><b>Firs Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__FIRST_ELEMENT = 0;
+  int GENERAL_CLAUSE__FIRS_ELEMENT = 0;
 
   /**
    * The feature id for the '<em><b>Clause Continuation</b></em>' containment reference.
@@ -492,13 +528,31 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int GENERAL_CLAUSE__NOT = 2;
 
   /**
-   * The feature id for the '<em><b>Clause Continuation2</b></em>' containment reference.
+   * The feature id for the '<em><b>Opening Parenthesis</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__CLAUSE_CONTINUATION2 = 3;
+  int GENERAL_CLAUSE__OPENING_PARENTHESIS = 3;
+
+  /**
+   * The feature id for the '<em><b>Clause</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__CLAUSE = 4;
+
+  /**
+   * The feature id for the '<em><b>Closing Parenthesis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__CLOSING_PARENTHESIS = 5;
 
   /**
    * The number of structural features of the '<em>General Clause</em>' class.
@@ -507,7 +561,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE_FEATURE_COUNT = 4;
+  int GENERAL_CLAUSE_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseContinuationImpl <em>General Clause Continuation</em>}' class.
@@ -754,15 +808,37 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EReference getOperation_OperationContinuation();
 
   /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperationContinuation2 <em>Operation Continuation2</em>}'.
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOpeningParenthesis <em>Opening Parenthesis</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Operation Continuation2</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperationContinuation2()
+   * @return the meta object for the attribute '<em>Opening Parenthesis</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOpeningParenthesis()
    * @see #getOperation()
    * @generated
    */
-  EReference getOperation_OperationContinuation2();
+  EAttribute getOperation_OpeningParenthesis();
+
+  /**
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operation</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getOperation()
+   * @see #getOperation()
+   * @generated
+   */
+  EReference getOperation_Operation();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getClosingParenthesis <em>Closing Parenthesis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Closing Parenthesis</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation#getClosingParenthesis()
+   * @see #getOperation()
+   * @generated
+   */
+  EAttribute getOperation_ClosingParenthesis();
 
   /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation <em>Operation Continuation</em>}'.
@@ -882,15 +958,15 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EAttribute getParam_Name();
 
   /**
-   * Returns the meta object for the attribute list '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getParamValues <em>Param Values</em>}'.
+   * Returns the meta object for the attribute list '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getStringValues <em>String Values</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Param Values</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getParamValues()
+   * @return the meta object for the attribute list '<em>String Values</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getStringValues()
    * @see #getParam()
    * @generated
    */
-  EAttribute getParam_ParamValues();
+  EAttribute getParam_StringValues();
 
   /**
    * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getAdditionalValues <em>Additional Values</em>}'.
@@ -904,6 +980,17 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EAttribute getParam_AdditionalValues();
 
   /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getBooleanValue <em>Boolean Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Boolean Value</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getBooleanValue()
+   * @see #getParam()
+   * @generated
+   */
+  EAttribute getParam_BooleanValue();
+
+  /**
    * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getArithOp <em>Arith Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -913,6 +1000,17 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    */
   EAttribute getParam_ArithOp();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getDoubleValue <em>Double Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Double Value</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getDoubleValue()
+   * @see #getParam()
+   * @generated
+   */
+  EAttribute getParam_DoubleValue();
 
   /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment <em>Param Assignment</em>}'.
@@ -935,15 +1033,15 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EClass getGeneralClause();
 
   /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirstElement <em>First Element</em>}'.
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirsElement <em>Firs Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>First Element</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirstElement()
+   * @return the meta object for the containment reference '<em>Firs Element</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirsElement()
    * @see #getGeneralClause()
    * @generated
    */
-  EReference getGeneralClause_FirstElement();
+  EReference getGeneralClause_FirsElement();
 
   /**
    * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClauseContinuation <em>Clause Continuation</em>}'.
@@ -968,15 +1066,37 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EAttribute getGeneralClause_Not();
 
   /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClauseContinuation2 <em>Clause Continuation2</em>}'.
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getOpeningParenthesis <em>Opening Parenthesis</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Clause Continuation2</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClauseContinuation2()
+   * @return the meta object for the attribute '<em>Opening Parenthesis</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getOpeningParenthesis()
    * @see #getGeneralClause()
    * @generated
    */
-  EReference getGeneralClause_ClauseContinuation2();
+  EAttribute getGeneralClause_OpeningParenthesis();
+
+  /**
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClause <em>Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Clause</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClause()
+   * @see #getGeneralClause()
+   * @generated
+   */
+  EReference getGeneralClause_Clause();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClosingParenthesis <em>Closing Parenthesis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Closing Parenthesis</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClosingParenthesis()
+   * @see #getGeneralClause()
+   * @generated
+   */
+  EAttribute getGeneralClause_ClosingParenthesis();
 
   /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClauseContinuation <em>General Clause Continuation</em>}'.
@@ -1207,12 +1327,28 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EReference OPERATION__OPERATION_CONTINUATION = eINSTANCE.getOperation_OperationContinuation();
 
     /**
-     * The meta object literal for the '<em><b>Operation Continuation2</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Opening Parenthesis</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OPERATION__OPERATION_CONTINUATION2 = eINSTANCE.getOperation_OperationContinuation2();
+    EAttribute OPERATION__OPENING_PARENTHESIS = eINSTANCE.getOperation_OpeningParenthesis();
+
+    /**
+     * The meta object literal for the '<em><b>Operation</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION__OPERATION = eINSTANCE.getOperation_Operation();
+
+    /**
+     * The meta object literal for the '<em><b>Closing Parenthesis</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPERATION__CLOSING_PARENTHESIS = eINSTANCE.getOperation_ClosingParenthesis();
 
     /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationContinuationImpl <em>Operation Continuation</em>}' class.
@@ -1311,12 +1447,12 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EAttribute PARAM__NAME = eINSTANCE.getParam_Name();
 
     /**
-     * The meta object literal for the '<em><b>Param Values</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>String Values</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PARAM__PARAM_VALUES = eINSTANCE.getParam_ParamValues();
+    EAttribute PARAM__STRING_VALUES = eINSTANCE.getParam_StringValues();
 
     /**
      * The meta object literal for the '<em><b>Additional Values</b></em>' attribute feature.
@@ -1327,12 +1463,28 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EAttribute PARAM__ADDITIONAL_VALUES = eINSTANCE.getParam_AdditionalValues();
 
     /**
+     * The meta object literal for the '<em><b>Boolean Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAM__BOOLEAN_VALUE = eINSTANCE.getParam_BooleanValue();
+
+    /**
      * The meta object literal for the '<em><b>Arith Op</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute PARAM__ARITH_OP = eINSTANCE.getParam_ArithOp();
+
+    /**
+     * The meta object literal for the '<em><b>Double Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAM__DOUBLE_VALUE = eINSTANCE.getParam_DoubleValue();
 
     /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamAssignmentImpl <em>Param Assignment</em>}' class.
@@ -1355,12 +1507,12 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EClass GENERAL_CLAUSE = eINSTANCE.getGeneralClause();
 
     /**
-     * The meta object literal for the '<em><b>First Element</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Firs Element</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GENERAL_CLAUSE__FIRST_ELEMENT = eINSTANCE.getGeneralClause_FirstElement();
+    EReference GENERAL_CLAUSE__FIRS_ELEMENT = eINSTANCE.getGeneralClause_FirsElement();
 
     /**
      * The meta object literal for the '<em><b>Clause Continuation</b></em>' containment reference feature.
@@ -1379,12 +1531,28 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EAttribute GENERAL_CLAUSE__NOT = eINSTANCE.getGeneralClause_Not();
 
     /**
-     * The meta object literal for the '<em><b>Clause Continuation2</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Opening Parenthesis</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GENERAL_CLAUSE__CLAUSE_CONTINUATION2 = eINSTANCE.getGeneralClause_ClauseContinuation2();
+    EAttribute GENERAL_CLAUSE__OPENING_PARENTHESIS = eINSTANCE.getGeneralClause_OpeningParenthesis();
+
+    /**
+     * The meta object literal for the '<em><b>Clause</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GENERAL_CLAUSE__CLAUSE = eINSTANCE.getGeneralClause_Clause();
+
+    /**
+     * The meta object literal for the '<em><b>Closing Parenthesis</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_CLAUSE__CLOSING_PARENTHESIS = eINSTANCE.getGeneralClause_ClosingParenthesis();
 
     /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseContinuationImpl <em>General Clause Continuation</em>}' class.

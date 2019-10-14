@@ -25,7 +25,9 @@
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Operation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Operation/firstParam"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Operation/operationContinuation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Operation/operationContinuation2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Operation/openingParenthesis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Operation/operation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Operation/closingParenthesis"/>
     </genClasses>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//OperationContinuation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//OperationContinuation/mathOp"/>
@@ -41,16 +43,20 @@
     </genClasses>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Param">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/paramValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/stringValues"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/additionalValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/booleanValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/arithOp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/doubleValue"/>
     </genClasses>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//ParamAssignment"/>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//GeneralClause">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralClause/firstElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralClause/firsElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralClause/clauseContinuation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//GeneralClause/not"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralClause/clauseContinuation2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//GeneralClause/openingParenthesis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralClause/clause"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//GeneralClause/closingParenthesis"/>
     </genClasses>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//GeneralClauseContinuation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//GeneralClauseContinuation/logicalOp"/>

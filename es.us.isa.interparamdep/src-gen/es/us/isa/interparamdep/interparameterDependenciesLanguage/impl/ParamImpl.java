@@ -27,9 +27,11 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * </p>
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getName <em>Name</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getParamValues <em>Param Values</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getStringValues <em>String Values</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getAdditionalValues <em>Additional Values</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getBooleanValue <em>Boolean Value</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getArithOp <em>Arith Op</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getDoubleValue <em>Double Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,14 +59,14 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getParamValues() <em>Param Values</em>}' attribute list.
+   * The cached value of the '{@link #getStringValues() <em>String Values</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParamValues()
+   * @see #getStringValues()
    * @generated
    * @ordered
    */
-  protected EList<String> paramValues;
+  protected EList<String> stringValues;
 
   /**
    * The default value of the '{@link #getAdditionalValues() <em>Additional Values</em>}' attribute.
@@ -87,6 +89,26 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
   protected String additionalValues = ADDITIONAL_VALUES_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getBooleanValue() <em>Boolean Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBooleanValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String BOOLEAN_VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getBooleanValue() <em>Boolean Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBooleanValue()
+   * @generated
+   * @ordered
+   */
+  protected String booleanValue = BOOLEAN_VALUE_EDEFAULT;
+
+  /**
    * The default value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -105,6 +127,26 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
    * @ordered
    */
   protected String arithOp = ARITH_OP_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDoubleValue() <em>Double Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDoubleValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String DOUBLE_VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDoubleValue() <em>Double Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDoubleValue()
+   * @generated
+   * @ordered
+   */
+  protected String doubleValue = DOUBLE_VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -158,13 +200,13 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
    * @generated
    */
   @Override
-  public EList<String> getParamValues()
+  public EList<String> getStringValues()
   {
-    if (paramValues == null)
+    if (stringValues == null)
     {
-      paramValues = new EDataTypeEList<String>(String.class, this, InterparameterDependenciesLanguagePackage.PARAM__PARAM_VALUES);
+      stringValues = new EDataTypeEList<String>(String.class, this, InterparameterDependenciesLanguagePackage.PARAM__STRING_VALUES);
     }
-    return paramValues;
+    return stringValues;
   }
 
   /**
@@ -198,6 +240,31 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
    * @generated
    */
   @Override
+  public String getBooleanValue()
+  {
+    return booleanValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setBooleanValue(String newBooleanValue)
+  {
+    String oldBooleanValue = booleanValue;
+    booleanValue = newBooleanValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE, oldBooleanValue, booleanValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getArithOp()
   {
     return arithOp;
@@ -223,18 +290,47 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
    * @generated
    */
   @Override
+  public String getDoubleValue()
+  {
+    return doubleValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDoubleValue(String newDoubleValue)
+  {
+    String oldDoubleValue = doubleValue;
+    doubleValue = newDoubleValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.PARAM__DOUBLE_VALUE, oldDoubleValue, doubleValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case InterparameterDependenciesLanguagePackage.PARAM__NAME:
         return getName();
-      case InterparameterDependenciesLanguagePackage.PARAM__PARAM_VALUES:
-        return getParamValues();
+      case InterparameterDependenciesLanguagePackage.PARAM__STRING_VALUES:
+        return getStringValues();
       case InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES:
         return getAdditionalValues();
+      case InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE:
+        return getBooleanValue();
       case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
         return getArithOp();
+      case InterparameterDependenciesLanguagePackage.PARAM__DOUBLE_VALUE:
+        return getDoubleValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -253,15 +349,21 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
       case InterparameterDependenciesLanguagePackage.PARAM__NAME:
         setName((String)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.PARAM__PARAM_VALUES:
-        getParamValues().clear();
-        getParamValues().addAll((Collection<? extends String>)newValue);
+      case InterparameterDependenciesLanguagePackage.PARAM__STRING_VALUES:
+        getStringValues().clear();
+        getStringValues().addAll((Collection<? extends String>)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES:
         setAdditionalValues((String)newValue);
         return;
+      case InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE:
+        setBooleanValue((String)newValue);
+        return;
       case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
         setArithOp((String)newValue);
+        return;
+      case InterparameterDependenciesLanguagePackage.PARAM__DOUBLE_VALUE:
+        setDoubleValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -280,14 +382,20 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
       case InterparameterDependenciesLanguagePackage.PARAM__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case InterparameterDependenciesLanguagePackage.PARAM__PARAM_VALUES:
-        getParamValues().clear();
+      case InterparameterDependenciesLanguagePackage.PARAM__STRING_VALUES:
+        getStringValues().clear();
         return;
       case InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES:
         setAdditionalValues(ADDITIONAL_VALUES_EDEFAULT);
         return;
+      case InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE:
+        setBooleanValue(BOOLEAN_VALUE_EDEFAULT);
+        return;
       case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
         setArithOp(ARITH_OP_EDEFAULT);
+        return;
+      case InterparameterDependenciesLanguagePackage.PARAM__DOUBLE_VALUE:
+        setDoubleValue(DOUBLE_VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -305,12 +413,16 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
     {
       case InterparameterDependenciesLanguagePackage.PARAM__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case InterparameterDependenciesLanguagePackage.PARAM__PARAM_VALUES:
-        return paramValues != null && !paramValues.isEmpty();
+      case InterparameterDependenciesLanguagePackage.PARAM__STRING_VALUES:
+        return stringValues != null && !stringValues.isEmpty();
       case InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES:
         return ADDITIONAL_VALUES_EDEFAULT == null ? additionalValues != null : !ADDITIONAL_VALUES_EDEFAULT.equals(additionalValues);
+      case InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE:
+        return BOOLEAN_VALUE_EDEFAULT == null ? booleanValue != null : !BOOLEAN_VALUE_EDEFAULT.equals(booleanValue);
       case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
         return ARITH_OP_EDEFAULT == null ? arithOp != null : !ARITH_OP_EDEFAULT.equals(arithOp);
+      case InterparameterDependenciesLanguagePackage.PARAM__DOUBLE_VALUE:
+        return DOUBLE_VALUE_EDEFAULT == null ? doubleValue != null : !DOUBLE_VALUE_EDEFAULT.equals(doubleValue);
     }
     return super.eIsSet(featureID);
   }
@@ -328,12 +440,16 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", paramValues: ");
-    result.append(paramValues);
+    result.append(", stringValues: ");
+    result.append(stringValues);
     result.append(", additionalValues: ");
     result.append(additionalValues);
+    result.append(", booleanValue: ");
+    result.append(booleanValue);
     result.append(", arithOp: ");
     result.append(arithOp);
+    result.append(", doubleValue: ");
+    result.append(doubleValue);
     result.append(')');
     return result.toString();
   }

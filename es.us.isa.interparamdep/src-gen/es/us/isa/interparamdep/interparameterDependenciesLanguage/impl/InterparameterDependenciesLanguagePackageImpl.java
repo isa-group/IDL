@@ -359,9 +359,31 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EReference getOperation_OperationContinuation2()
+  public EAttribute getOperation_OpeningParenthesis()
   {
-    return (EReference)operationEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)operationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getOperation_Operation()
+  {
+    return (EReference)operationEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getOperation_ClosingParenthesis()
+  {
+    return (EAttribute)operationEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -491,7 +513,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EAttribute getParam_ParamValues()
+  public EAttribute getParam_StringValues()
   {
     return (EAttribute)paramEClass.getEStructuralFeatures().get(1);
   }
@@ -513,9 +535,31 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EAttribute getParam_ArithOp()
+  public EAttribute getParam_BooleanValue()
   {
     return (EAttribute)paramEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getParam_ArithOp()
+  {
+    return (EAttribute)paramEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getParam_DoubleValue()
+  {
+    return (EAttribute)paramEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -546,7 +590,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EReference getGeneralClause_FirstElement()
+  public EReference getGeneralClause_FirsElement()
   {
     return (EReference)generalClauseEClass.getEStructuralFeatures().get(0);
   }
@@ -579,9 +623,31 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EReference getGeneralClause_ClauseContinuation2()
+  public EAttribute getGeneralClause_OpeningParenthesis()
   {
-    return (EReference)generalClauseEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)generalClauseEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGeneralClause_Clause()
+  {
+    return (EReference)generalClauseEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGeneralClause_ClosingParenthesis()
+  {
+    return (EAttribute)generalClauseEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -711,7 +777,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     operationEClass = createEClass(OPERATION);
     createEReference(operationEClass, OPERATION__FIRST_PARAM);
     createEReference(operationEClass, OPERATION__OPERATION_CONTINUATION);
-    createEReference(operationEClass, OPERATION__OPERATION_CONTINUATION2);
+    createEAttribute(operationEClass, OPERATION__OPENING_PARENTHESIS);
+    createEReference(operationEClass, OPERATION__OPERATION);
+    createEAttribute(operationEClass, OPERATION__CLOSING_PARENTHESIS);
 
     operationContinuationEClass = createEClass(OPERATION_CONTINUATION);
     createEAttribute(operationContinuationEClass, OPERATION_CONTINUATION__MATH_OP);
@@ -727,17 +795,21 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
 
     paramEClass = createEClass(PARAM);
     createEAttribute(paramEClass, PARAM__NAME);
-    createEAttribute(paramEClass, PARAM__PARAM_VALUES);
+    createEAttribute(paramEClass, PARAM__STRING_VALUES);
     createEAttribute(paramEClass, PARAM__ADDITIONAL_VALUES);
+    createEAttribute(paramEClass, PARAM__BOOLEAN_VALUE);
     createEAttribute(paramEClass, PARAM__ARITH_OP);
+    createEAttribute(paramEClass, PARAM__DOUBLE_VALUE);
 
     paramAssignmentEClass = createEClass(PARAM_ASSIGNMENT);
 
     generalClauseEClass = createEClass(GENERAL_CLAUSE);
-    createEReference(generalClauseEClass, GENERAL_CLAUSE__FIRST_ELEMENT);
+    createEReference(generalClauseEClass, GENERAL_CLAUSE__FIRS_ELEMENT);
     createEReference(generalClauseEClass, GENERAL_CLAUSE__CLAUSE_CONTINUATION);
     createEAttribute(generalClauseEClass, GENERAL_CLAUSE__NOT);
-    createEReference(generalClauseEClass, GENERAL_CLAUSE__CLAUSE_CONTINUATION2);
+    createEAttribute(generalClauseEClass, GENERAL_CLAUSE__OPENING_PARENTHESIS);
+    createEReference(generalClauseEClass, GENERAL_CLAUSE__CLAUSE);
+    createEAttribute(generalClauseEClass, GENERAL_CLAUSE__CLOSING_PARENTHESIS);
 
     generalClauseContinuationEClass = createEClass(GENERAL_CLAUSE_CONTINUATION);
     createEAttribute(generalClauseContinuationEClass, GENERAL_CLAUSE_CONTINUATION__LOGICAL_OP);
@@ -801,15 +873,17 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOperation_FirstParam(), this.getParam(), null, "firstParam", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOperation_OperationContinuation(), this.getOperationContinuation(), null, "operationContinuation", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOperation_OperationContinuation2(), this.getOperationContinuation(), null, "operationContinuation2", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOperation_OpeningParenthesis(), ecorePackage.getEString(), "openingParenthesis", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOperation_Operation(), this.getOperation(), null, "operation", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOperation_ClosingParenthesis(), ecorePackage.getEString(), "closingParenthesis", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationContinuationEClass, OperationContinuation.class, "OperationContinuation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOperationContinuation_MathOp(), ecorePackage.getEString(), "mathOp", null, 0, 1, OperationContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOperationContinuation_AdditionalParams(), this.getOperation(), null, "additionalParams", null, 0, 1, OperationContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOperationContinuation_AdditionalParams(), ecorePackage.getEObject(), null, "additionalParams", null, 0, 1, OperationContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionalDependencyEClass, ConditionalDependency.class, "ConditionalDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConditionalDependency_Condition(), this.getGeneralClause(), null, "condition", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConditionalDependency_Consequence(), this.getGeneralClause(), null, "consequence", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConditionalDependency_Condition(), ecorePackage.getEObject(), null, "condition", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConditionalDependency_Consequence(), ecorePackage.getEObject(), null, "consequence", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(generalAtomicEClass, GeneralAtomic.class, "GeneralAtomic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGeneralAtomic_Not(), ecorePackage.getEString(), "not", null, 0, 1, GeneralAtomic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -817,26 +891,30 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
 
     initEClass(paramEClass, Param.class, "Param", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getParam_ParamValues(), ecorePackage.getEString(), "paramValues", null, 0, -1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParam_StringValues(), ecorePackage.getEString(), "stringValues", null, 0, -1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParam_AdditionalValues(), ecorePackage.getEString(), "additionalValues", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParam_BooleanValue(), ecorePackage.getEString(), "booleanValue", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParam_ArithOp(), ecorePackage.getEString(), "arithOp", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParam_DoubleValue(), ecorePackage.getEString(), "doubleValue", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(paramAssignmentEClass, ParamAssignment.class, "ParamAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(generalClauseEClass, GeneralClause.class, "GeneralClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGeneralClause_FirstElement(), ecorePackage.getEObject(), null, "firstElement", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralClause_FirsElement(), ecorePackage.getEObject(), null, "firsElement", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGeneralClause_ClauseContinuation(), this.getGeneralClauseContinuation(), null, "clauseContinuation", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGeneralClause_Not(), ecorePackage.getEString(), "not", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGeneralClause_ClauseContinuation2(), this.getGeneralClauseContinuation(), null, "clauseContinuation2", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGeneralClause_OpeningParenthesis(), ecorePackage.getEString(), "openingParenthesis", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralClause_Clause(), this.getGeneralClause(), null, "clause", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGeneralClause_ClosingParenthesis(), ecorePackage.getEString(), "closingParenthesis", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(generalClauseContinuationEClass, GeneralClauseContinuation.class, "GeneralClauseContinuation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGeneralClauseContinuation_LogicalOp(), ecorePackage.getEString(), "logicalOp", null, 0, 1, GeneralClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGeneralClauseContinuation_AdditionalElements(), this.getGeneralClause(), null, "additionalElements", null, 0, 1, GeneralClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralClauseContinuation_AdditionalElements(), ecorePackage.getEObject(), null, "additionalElements", null, 0, 1, GeneralClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(generalPredefinedDependencyEClass, GeneralPredefinedDependency.class, "GeneralPredefinedDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGeneralPredefinedDependency_Not(), ecorePackage.getEString(), "not", null, 0, 1, GeneralPredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGeneralPredefinedDependency_PredefDepType(), ecorePackage.getEString(), "predefDepType", null, 0, 1, GeneralPredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGeneralPredefinedDependency_PredefDepClauses(), this.getGeneralClause(), null, "predefDepClauses", null, 0, -1, GeneralPredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralPredefinedDependency_PredefDepClauses(), ecorePackage.getEObject(), null, "predefDepClauses", null, 0, -1, GeneralPredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

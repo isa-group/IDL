@@ -15,9 +15,11 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getName <em>Name</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getParamValues <em>Param Values</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getStringValues <em>String Values</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getAdditionalValues <em>Additional Values</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getBooleanValue <em>Boolean Value</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getArithOp <em>Arith Op</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getDoubleValue <em>Double Value</em>}</li>
  * </ul>
  *
  * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getParam()
@@ -49,16 +51,16 @@ public interface Param extends ParamAssignment
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Param Values</b></em>' attribute list.
+   * Returns the value of the '<em><b>String Values</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Param Values</em>' attribute list.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getParam_ParamValues()
+   * @return the value of the '<em>String Values</em>' attribute list.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getParam_StringValues()
    * @model unique="false"
    * @generated
    */
-  EList<String> getParamValues();
+  EList<String> getStringValues();
 
   /**
    * Returns the value of the '<em><b>Additional Values</b></em>' attribute.
@@ -83,6 +85,28 @@ public interface Param extends ParamAssignment
   void setAdditionalValues(String value);
 
   /**
+   * Returns the value of the '<em><b>Boolean Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Boolean Value</em>' attribute.
+   * @see #setBooleanValue(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getParam_BooleanValue()
+   * @model
+   * @generated
+   */
+  String getBooleanValue();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getBooleanValue <em>Boolean Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Boolean Value</em>' attribute.
+   * @see #getBooleanValue()
+   * @generated
+   */
+  void setBooleanValue(String value);
+
+  /**
    * Returns the value of the '<em><b>Arith Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,5 +127,27 @@ public interface Param extends ParamAssignment
    * @generated
    */
   void setArithOp(String value);
+
+  /**
+   * Returns the value of the '<em><b>Double Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Double Value</em>' attribute.
+   * @see #setDoubleValue(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getParam_DoubleValue()
+   * @model
+   * @generated
+   */
+  String getDoubleValue();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getDoubleValue <em>Double Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Double Value</em>' attribute.
+   * @see #getDoubleValue()
+   * @generated
+   */
+  void setDoubleValue(String value);
 
 } // Param

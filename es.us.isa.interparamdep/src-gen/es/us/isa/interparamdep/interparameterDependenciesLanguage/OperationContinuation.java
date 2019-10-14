@@ -51,12 +51,12 @@ public interface OperationContinuation extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Additional Params</em>' containment reference.
-   * @see #setAdditionalParams(Operation)
+   * @see #setAdditionalParams(EObject)
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getOperationContinuation_AdditionalParams()
    * @model containment="true"
    * @generated
    */
-  Operation getAdditionalParams();
+  EObject getAdditionalParams();
 
   /**
    * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation#getAdditionalParams <em>Additional Params</em>}' containment reference.
@@ -66,6 +66,6 @@ public interface OperationContinuation extends EObject
    * @see #getAdditionalParams()
    * @generated
    */
-  void setAdditionalParams(Operation value);
+  void setAdditionalParams(EObject value);
 
 } // OperationContinuation

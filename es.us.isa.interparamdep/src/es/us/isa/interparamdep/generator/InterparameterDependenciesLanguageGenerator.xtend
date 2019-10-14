@@ -31,6 +31,12 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.Condition
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredefinedDependencyImpl
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.Param
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment
 
 /**
  * Generates code from your model files on save.
@@ -39,42 +45,48 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDepe
  */
 class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	
-	val String path = System.getProperty("user.home") + "/output.txt"
+	val String path = System.getProperty("user.home") + "/constraints.mzn"
 	val File file = new File(path)
 	val Path writePath = Paths.get(path)
+	var String csp
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
 		file.delete
 		file.createNewFile
 		
-		var String csp
-		
 		for (dependency: resource.allContents.filter(Dependency).toIterable) {
-			csp = "constraint"
-//			solveDependencyAndOrIterate(dependency.dep, 0, 0)
+			csp = "constraint "
+//			writeDependencyAndOrIterate(dependency.dep, 0, 0)
 //	    	Files.write(writePath, Arrays.asList("....................."),
 //		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
 
 			if (dependency.dep.class == typeof(ConditionalDependencyImpl)) {
-				solveConditionalDependency(dependency.dep as ConditionalDependency)
+				writeConditionalDependency(dependency.dep as ConditionalDependency)
 			} else if (dependency.dep.class == typeof(ComparisonDependencyImpl)) {
-				solveComparisonDependency(dependency.dep as ComparisonDependency)
+				writeComparisonDependency(dependency.dep as ComparisonDependency)
 			} else if (dependency.dep.class == typeof(ArithmeticDependencyImpl)) {
-				solveArithmeticDependency(dependency.dep as ArithmeticDependency)
+				writeArithmeticDependency(dependency.dep as ArithmeticDependency)
 			} else if (dependency.dep.class == typeof(GeneralPredefinedDependencyImpl)) {
-				solvePredefinedDependency(dependency.dep as GeneralPredefinedDependency)
+				writePredefinedDependency(dependency.dep as GeneralPredefinedDependency)
 			} else {
 				throw new Exception("The dependency must be a conditional, an " + 
 					"arithmetic, a comparison or a predefined one")
 			}
-
-		    for (subElement: dependency.eAllContents.toIterable) {
-		    	Files.write(writePath, Arrays.asList(subElement.toString),
-		    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-		    }
-		    Files.write(writePath, Arrays.asList("---------------------"),
+			
+			csp += ";"
+			
+		    Files.write(writePath, Arrays.asList(csp),
 		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+		    Files.write(writePath, Arrays.asList("%---------------------"),
+		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+
+//		    for (subElement: dependency.eAllContents.toIterable) {
+//		    	Files.write(writePath, Arrays.asList(subElement.toString),
+//		    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+//		    }
+//		    Files.write(writePath, Arrays.asList("---------------------"),
+//		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
 		}
 	}
 	
@@ -84,16 +96,16 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	
 	
 	
-//	def void solveDependencyAndOrIterate(EObject object, int depthLevel, int objectDepthLevel) {
+//	def void writeDependencyAndOrIterate(EObject object, int depthLevel, int objectDepthLevel) {
 //		if (object.class == typeof(ConditionalDependencyImpl)) {
 //			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Conditional dependency: " + object),
 //	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
 //	    	Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Condition"),
 //	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//    		solveDependencyAndOrIterate((object as ConditionalDependency).condition, depthLevel+1, objectDepthLevel+1)
+//    		writeDependencyAndOrIterate((object as ConditionalDependency).condition, depthLevel+1, objectDepthLevel+1)
 //	    	Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Consequence"),
 //	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//    		solveDependencyAndOrIterate((object as ConditionalDependency).consequence, depthLevel+1, objectDepthLevel+1)
+//    		writeDependencyAndOrIterate((object as ConditionalDependency).consequence, depthLevel+1, objectDepthLevel+1)
 //		} else if (object.class == typeof(ComparisonDependencyImpl)) {
 //			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Arithmetic dependency: " + object),
 //    			StandardCharsets.UTF_8, StandardOpenOption.APPEND)
@@ -101,16 +113,16 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 //			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Predefined dependency: " + object),
 //	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
 //	    	for (element: object.eContents) {
-//	    		solveDependencyAndOrIterate(element, depthLevel+1, objectDepthLevel+1)
+//	    		writeDependencyAndOrIterate(element, depthLevel+1, objectDepthLevel+1)
 //	    	}
 //		} else {
 //			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Object: " + object),
 //	    			StandardCharsets.UTF_8, StandardOpenOption.APPEND)
 //			for (subElement: object.eContents) {
 ////				if (subElement.class == typeof(GeneralClauseImpl)) {
-////					solveLogicalClause((subElement as GeneralClause).firstElement, (subElement as GeneralClause).clauseContinuation)
+////					writeLogicalClause((subElement as GeneralClause).firstElement, (subElement as GeneralClause).clauseContinuation)
 ////				}
-//				solveDependencyAndOrIterate(subElement, depthLevel, objectDepthLevel+1)
+//				writeDependencyAndOrIterate(subElement, depthLevel, objectDepthLevel+1)
 //			}
 //		}
 //	}
@@ -122,116 +134,129 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	 * Auxiliar function to process sub elements of dependencies, specifically
 	 * predicates (an atomic or a clause).
 	 */
-	def boolean solvePredicate(EObject predicate) {
+	def void writePredicate(EObject predicate) {
 		if (predicate.class == typeof(GeneralAtomicImpl)) {
 			// TODO
-			return true
+			val GeneralAtomic atomic = (predicate as GeneralAtomic)
+			val Param param = (atomic.param as Param)
+			System.out.println(param.stringValues)
+			System.out.println(param.booleanValue)
+			System.out.println(param.doubleValue)
+			if (param.stringValues.size === 0 && param.booleanValue === null && param.doubleValue === null) {
+				if (atomic.not === null) {
+					csp += param.name + "Set==1 "
+				} else {
+					csp += param.name + "Set==0 "
+				}
+			}
 		} else if(predicate.class == typeof(ComparisonDependencyImpl)) {
-			return solveComparisonDependency(predicate as ComparisonDependency)
+			writeComparisonDependency(predicate as ComparisonDependency)
 		} else if(predicate.class == typeof(GeneralClauseImpl)) {
-			return solveLogicalClause(
-				(predicate as GeneralClause).firstElement,
-				(predicate as GeneralClause).clauseContinuation,
-				(predicate as GeneralClause).clauseContinuation2
-			)
+//			return writeLogicalClause(
+//				(predicate as GeneralClause).firstElement,
+//				(predicate as GeneralClause).clauseContinuation,
+//				(predicate as GeneralClause).clauseContinuation2
+//			)
 		} else {
 			throw new Exception("The element must be a param, an arithmetic" + 
 				"dependency or a clause")
 		}
 	}
-	
-	
-	// Solving a dependency means returning 'true' or 'false'.
-	
-	/**
-	 * Since the comparison dependency cannot nest any other dependencies, its
-	 * solving stops after the CSP mapping, i.e. there's no need to iterate over
-	 * other possibly nested dependencies.
-	 */
-	def boolean solveComparisonDependency(ComparisonDependency dep) {
-		// TODO: Implement CSP mapping
-		
-		return true
+
+	def void writeComparisonDependency(ComparisonDependency dep) {
+		csp += dep.param1 + dep.arithOp + dep.param2
 	}
 	
-	def boolean solveArithmeticDependency(ArithmeticDependency dep) {
+	def void writeArithmeticDependency(ArithmeticDependency dep) {
 		// TODO: Implement CSP mapping
-		
-		return true
+		writeOperation(dep.operation)
+		csp += dep.arithOp
+		csp += dep.result
 	}
 	
-	def boolean solvePredefinedDependency(GeneralPredefinedDependency dep) {
+	def void writeOperation(Operation operation) {
+		if (operation.openingParenthesis === null) { // Alternative 1 of Operation
+			csp += operation.firstParam.name
+			writeOperationContinuation(operation.operationContinuation)
+			
+		} else { // Alternative 2 of Operation
+			csp += "("
+			writeOperation(operation.operation)
+			csp += ")"
+			if (operation.operationContinuation !== null) {
+				writeOperationContinuation(operation.operationContinuation)
+			}
+			
+		}
+	}
+	
+	def void writeOperationContinuation(OperationContinuation opCont) {
+		csp += opCont.mathOp
+		if (opCont.additionalParams.class == typeof(ParamImpl)) {
+			csp += (opCont.additionalParams as Param).name
+		} else {
+			writeOperation(opCont.additionalParams as Operation)
+		}
+	}
+	
+	def void writePredefinedDependency(GeneralPredefinedDependency dep) {
 		// TODO: Implement CSP mapping
 		
 		var elementOutputs = newArrayList
 		for (depElement: dep.predefDepClauses) {
-			elementOutputs.add(solvePredicate(depElement))
+			elementOutputs.add(depElement)
 		}
 		
-		switch dep.predefDepType {
-			case "Or":
-				return true
-			case "OnlyOne":
-				return true
-			case "AllOrNone":
-				return true
-			case "ZeroOrOne":
-				return true
-			default:
-				throw new Exception("The predefined dependency can only be 'Or', " + 
-					"'OnlyOne', 'AllOrNone' or 'ZeroOrOne'")
-		}
+//		switch dep.predefDepType {
+//			case "Or":
+//
+//			case "OnlyOne":
+//
+//			case "AllOrNone":
+//
+//			case "ZeroOrOne":
+//
+//			default:
+//				throw new Exception("The predefined dependency can only be 'Or', " + 
+//					"'OnlyOne', 'AllOrNone' or 'ZeroOrOne'")
+//		}
 		
 	}
 	
-	def boolean solveConditionalDependency(ConditionalDependency dep) {
+	def void writeConditionalDependency(ConditionalDependency dep) {
 		// TODO: Implement CSP mapping
 		
-		var boolean conditionOutput
-		var boolean consequenceOutput
-		
-		conditionOutput = solvePredicate(dep.condition)
-		consequenceOutput = solvePredicate(dep.consequence)
-		
-		// If the condition is met, the consequence must meet too
-		if (conditionOutput && !consequenceOutput) {
-			return false
-		}
-		
-		return true
+		writePredicate(dep.condition)
+		csp += " -> "
+		writePredicate(dep.consequence)
 	}
 	
-	def boolean solveLogicalClause(EObject firstElement, GeneralClauseContinuation clauseCont, GeneralClauseContinuation clauseCont2) {
+	def void writeLogicalClause(EObject firstElement, GeneralClauseContinuation clauseCont, GeneralClauseContinuation clauseCont2) {
 		// TODO: Implement CSP mapping
-		
-		var boolean firstElementOutput
-		var boolean secondElementOutput
-		var boolean thirdElementOutput
-		var boolean clauseOutput
 		
 		// Solve first element, which can only be a param, arithmetic dep or predefined dep
 		if (firstElement.class == typeof(GeneralAtomicImpl)) { // param or param assignment
 			// TODO
-			firstElementOutput = true
+			
 		} else if(firstElement.class == typeof(ComparisonDependencyImpl)) {
-			firstElementOutput = solveComparisonDependency(firstElement as ComparisonDependency)
+			writeComparisonDependency(firstElement as ComparisonDependency)
+		} else if(firstElement.class == typeof(ArithmeticDependencyImpl)) {
+			writeArithmeticDependency(firstElement as ArithmeticDependency)
 		} else if(firstElement.class == typeof(GeneralPredefinedDependencyImpl)) {
-			firstElementOutput = solvePredefinedDependency(firstElement as GeneralPredefinedDependency)
+			writePredefinedDependency(firstElement as GeneralPredefinedDependency)
 		} else {
 			throw new Exception("The first element of a clause must be a param, an " + 
 				"arithmetic dependency or a predefined dependency")
 		}
-		
-		clauseOutput = firstElementOutput
-		
+				
 		// Solve second element, which is a clause continuation containing either
 		// a GeneralAtomic or another clause
 		if (clauseCont !== null) {
-			secondElementOutput = solvePredicate(clauseCont.additionalElements)
+			writePredicate(clauseCont.additionalElements)
 			if (clauseCont.logicalOp == "AND") {
-				clauseOutput = clauseOutput && secondElementOutput
+
 			} else if (clauseCont.logicalOp == "OR") {
-				clauseOutput = clauseOutput || secondElementOutput
+
 			} else {
 				throw new Exception("The logical operator can only be AND or OR")
 			}
@@ -240,17 +265,15 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		// Solve third element, which is a clause continuation containing either
 		// a GeneralAtomic or another clause
 		if (clauseCont2 !== null) {
-			thirdElementOutput = solvePredicate(clauseCont2.additionalElements)
+			writePredicate(clauseCont2.additionalElements)
 			if (clauseCont2.logicalOp == "AND") {
-				clauseOutput = clauseOutput && thirdElementOutput
+
 			} else if (clauseCont2.logicalOp == "OR") {
-				clauseOutput = clauseOutput || thirdElementOutput
+
 			} else {
 				throw new Exception("The logical operator can only be AND or OR")
 			}
 		}
-		
-		return clauseOutput
 	}
 	
 }

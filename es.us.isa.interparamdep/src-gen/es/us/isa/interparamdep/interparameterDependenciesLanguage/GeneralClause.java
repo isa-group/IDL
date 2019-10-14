@@ -14,10 +14,12 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirstElement <em>First Element</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirsElement <em>Firs Element</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClauseContinuation <em>Clause Continuation</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getNot <em>Not</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClauseContinuation2 <em>Clause Continuation2</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getOpeningParenthesis <em>Opening Parenthesis</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClause <em>Clause</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClosingParenthesis <em>Closing Parenthesis</em>}</li>
  * </ul>
  *
  * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause()
@@ -27,26 +29,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface GeneralClause extends EObject
 {
   /**
-   * Returns the value of the '<em><b>First Element</b></em>' containment reference.
+   * Returns the value of the '<em><b>Firs Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>First Element</em>' containment reference.
-   * @see #setFirstElement(EObject)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause_FirstElement()
+   * @return the value of the '<em>Firs Element</em>' containment reference.
+   * @see #setFirsElement(EObject)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause_FirsElement()
    * @model containment="true"
    * @generated
    */
-  EObject getFirstElement();
+  EObject getFirsElement();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirstElement <em>First Element</em>}' containment reference.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirsElement <em>Firs Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>First Element</em>' containment reference.
-   * @see #getFirstElement()
+   * @param value the new value of the '<em>Firs Element</em>' containment reference.
+   * @see #getFirsElement()
    * @generated
    */
-  void setFirstElement(EObject value);
+  void setFirsElement(EObject value);
 
   /**
    * Returns the value of the '<em><b>Clause Continuation</b></em>' containment reference.
@@ -93,25 +95,69 @@ public interface GeneralClause extends EObject
   void setNot(String value);
 
   /**
-   * Returns the value of the '<em><b>Clause Continuation2</b></em>' containment reference.
+   * Returns the value of the '<em><b>Opening Parenthesis</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Clause Continuation2</em>' containment reference.
-   * @see #setClauseContinuation2(GeneralClauseContinuation)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause_ClauseContinuation2()
+   * @return the value of the '<em>Opening Parenthesis</em>' attribute.
+   * @see #setOpeningParenthesis(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause_OpeningParenthesis()
+   * @model
+   * @generated
+   */
+  String getOpeningParenthesis();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getOpeningParenthesis <em>Opening Parenthesis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Opening Parenthesis</em>' attribute.
+   * @see #getOpeningParenthesis()
+   * @generated
+   */
+  void setOpeningParenthesis(String value);
+
+  /**
+   * Returns the value of the '<em><b>Clause</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Clause</em>' containment reference.
+   * @see #setClause(GeneralClause)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause_Clause()
    * @model containment="true"
    * @generated
    */
-  GeneralClauseContinuation getClauseContinuation2();
+  GeneralClause getClause();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClauseContinuation2 <em>Clause Continuation2</em>}' containment reference.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClause <em>Clause</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Clause Continuation2</em>' containment reference.
-   * @see #getClauseContinuation2()
+   * @param value the new value of the '<em>Clause</em>' containment reference.
+   * @see #getClause()
    * @generated
    */
-  void setClauseContinuation2(GeneralClauseContinuation value);
+  void setClause(GeneralClause value);
+
+  /**
+   * Returns the value of the '<em><b>Closing Parenthesis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Closing Parenthesis</em>' attribute.
+   * @see #setClosingParenthesis(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause_ClosingParenthesis()
+   * @model
+   * @generated
+   */
+  String getClosingParenthesis();
+
+  /**
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClosingParenthesis <em>Closing Parenthesis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Closing Parenthesis</em>' attribute.
+   * @see #getClosingParenthesis()
+   * @generated
+   */
+  void setClosingParenthesis(String value);
 
 } // GeneralClause
