@@ -67,10 +67,6 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		
 		for (dependency: resource.allContents.filter(Dependency).toIterable) {
 			csp = "constraint "
-//			writeDependencyAndOrIterate(dependency.dep, 0, 0)
-//	    	Files.write(writePath, Arrays.asList("....................."),
-//		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-
 			if (dependency.dep.class == typeof(ConditionalDependencyImpl)) {
 				writeConditionalDependency(dependency.dep as ConditionalDependency)
 			} else if (dependency.dep.class == typeof(ComparisonDependencyImpl)) {
@@ -83,59 +79,15 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 				throw new Exception("The dependency must be a conditional, an " + 
 					"arithmetic, a comparison or a predefined one")
 			}
-			
 			csp += ";"
 			
 		    Files.write(writePath, Arrays.asList(csp),
 		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
 		    Files.write(writePath, Arrays.asList("%---------------------"),
 		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-
-//		    for (subElement: dependency.eAllContents.toIterable) {
-//		    	Files.write(writePath, Arrays.asList(subElement.toString),
-//		    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//		    }
-//		    Files.write(writePath, Arrays.asList("---------------------"),
-//		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
 		}
 	}
 	
-	
-	
-	
-	
-	
-	
-//	def void writeDependencyAndOrIterate(EObject object, int depthLevel, int objectDepthLevel) {
-//		if (object.class == typeof(ConditionalDependencyImpl)) {
-//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Conditional dependency: " + object),
-//	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//	    	Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Condition"),
-//	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//    		writeDependencyAndOrIterate((object as ConditionalDependency).condition, depthLevel+1, objectDepthLevel+1)
-//	    	Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Consequence"),
-//	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//    		writeDependencyAndOrIterate((object as ConditionalDependency).consequence, depthLevel+1, objectDepthLevel+1)
-//		} else if (object.class == typeof(ComparisonDependencyImpl)) {
-//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Arithmetic dependency: " + object),
-//    			StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//		} else if (object.class == typeof(GeneralPredefinedDependencyImpl)) {
-//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Predefined dependency: " + object),
-//	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//	    	for (element: object.eContents) {
-//	    		writeDependencyAndOrIterate(element, depthLevel+1, objectDepthLevel+1)
-//	    	}
-//		} else {
-//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Object: " + object),
-//	    			StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//			for (subElement: object.eContents) {
-////				if (subElement.class == typeof(GeneralClauseImpl)) {
-////					writeLogicalClause((subElement as GeneralClause).firstElement, (subElement as GeneralClause).clauseContinuation)
-////				}
-//				writeDependencyAndOrIterate(subElement, depthLevel, objectDepthLevel+1)
-//			}
-//		}
-//	}
 
 	/**
 	 * Used to assign an int to a param that is a string
@@ -162,8 +114,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 			
 			if (atomic.not !== null)
 				csp += "(not "
-			if (isParamAssignment(param))
-				csp += "("
+			csp += "("
 
 			csp += param.name + "Set==1"
 			
@@ -182,8 +133,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 					csp += ")"
 				}
 			}
-			if (isParamAssignment(param))
-				csp += ")"
+			csp += ")"
 			if (atomic.not !== null)
 				csp += ")"
 			
@@ -236,9 +186,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		}
 	}
 	
-	def void writePredefinedDependency(GeneralPredefinedDependency dep) {
-		// TODO: Implement CSP mapping
-		
+	def void writePredefinedDependency(GeneralPredefinedDependency dep) {		
 		if (dep.not !== null)
 			csp += "(not "
 		csp += "("
@@ -250,86 +198,63 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 					writePredicate(depElement)
 					csp += ") \\/ "
 				} case "OnlyOne": {
-					doStuff()
+					writeZeroOrOneOnlyOneElement(depElement, dep.predefDepElements)
+					csp += ") /\\ "
 				} case "AllOrNone": {
-//					writeAllOrNoneElement(depElement, dep.predefDepElements)
-//					csp += ") /\\ "
+					writeAllOrNoneElement(depElement, dep.predefDepElements)
+					csp += ") /\\ "
 				} case "ZeroOrOne": {
-					writeZeroOrOneElement(depElement, dep.predefDepElements)
+					writeZeroOrOneOnlyOneElement(depElement, dep.predefDepElements)
 					csp += ") /\\ "
 				} default:
 					throw new Exception("The predefined dependency can only be 'Or', " + 
 						"'OnlyOne', 'AllOrNone' or 'ZeroOrOne'")
 			}
 		}
-		csp = csp.substring(0, csp.length-4) // Trim last " /\\ " or " \\/ "
+		if (dep.predefDepType.equals("OnlyOne")) { // If dep is OnlyOne, one more clause must be added
+			csp += "("
+			for (depElement: dep.predefDepElements) {
+				csp += "("
+				writePredicate(depElement)
+				csp += ") \\/ "
+			}
+			csp = csp.substring(0, csp.length-4) // Trim last " /\\ " or " \\/ "
+			csp += ")"
+		} else { // Otherwise, last logicalOp must be removed
+			csp = csp.substring(0, csp.length-4) // Trim last " /\\ " or " \\/ "
+		}
 		csp += ")"
 		if (dep.not !== null)
 			csp += ")"
-		
-//		csp += "("
-//		switch dep.predefDepType {
-//			case "Or":
-//				writeOrDependency(depElements)
-//			case "OnlyOne":
-//				doStuff()
-//			case "AllOrNone":
-//				doStuff()
-//			case "ZeroOrOne":
-//				doStuff()
-//			default:
-//				throw new Exception("The predefined dependency can only be 'Or', " + 
-//					"'OnlyOne', 'AllOrNone' or 'ZeroOrOne'")
-//		}
-//		csp += ")"
-		
 	}
-	
-	def void doStuff(){}
-	
-	def void writeZeroOrOneElement(EObject element, EObject[] allElements) {
-//		csp += "("
-//		writePredicate(element) // Include element in the condition
-//		csp += ") -> ("
-//		for (remainingElement: allElements) {
-//			if (!remainingElement.equals(element)) { // Include negated remaining elements in the consequence
-//				csp += "(not ("
-//				writePredicate(remainingElement)
-//				csp += ")) /\\ "
-//			}
-//		}
-//		csp = csp.substring(0, csp.length-4) // Trim last " /\\ "
-//		csp += ")"
-		writeZeroOrOneAllOrNoneElement(element, allElements, true)
+		
+	def void writeZeroOrOneOnlyOneElement(EObject element, EObject[] allElements) {
+		writeZeroOrOneAllOrNoneElement(element, allElements, false, true)
 	}
 	
 	def void writeAllOrNoneElement(EObject element, EObject[] allElements) {
-//		csp += "("
-//		writePredicate(element) // Include element in the condition
-//		csp += ") -> ("
-//		for (remainingElement: allElements) {
-//			if (!remainingElement.equals(element)) { // Include negated remaining elements in the consequence
-//				csp += "(not ("
-//				writePredicate(remainingElement)
-//				csp += ")) /\\ "
-//			}
-//		}
-//		csp = csp.substring(0, csp.length-4) // Trim last " /\\ "
-//		csp += ")"
-		writeZeroOrOneAllOrNoneElement(element, allElements, false)
+		writeZeroOrOneAllOrNoneElement(element, allElements, false, false)
+		csp += ") /\\ ("
+		writeZeroOrOneAllOrNoneElement(element, allElements, true, true)
 	}
 	
-	def void writeZeroOrOneAllOrNoneElement(EObject element, EObject[] allElements, boolean negate) {
-		csp += "("
-		writePredicate(element) // Include element in the condition
-		csp += ") -> ("
+	def void writeZeroOrOneAllOrNoneElement(EObject element, EObject[] allElements, boolean negateElement, boolean negateRemainingElements) {
+		if (negateElement) { // For AllOrNone dependencies
+			csp += "(not ("
+			writePredicate(element)
+			csp += ")) -> ("
+		} else { // For ZeroOrOne, AllOrNone and OnlyOne dependencies
+			csp += "("
+			writePredicate(element)
+			csp += ") -> ("
+		}
 		for (remainingElement: allElements) {
 			if (!remainingElement.equals(element)) { // Include remaining elements in the consequence
-				if (negate) { // For ZeroOrOne dependencies
+				if (negateRemainingElements) { // For ZeroOrOne dependencies
 					csp += "(not ("
 					writePredicate(remainingElement)
 					csp += ")) /\\ "
-				} else { // For ZeroOrOne and AllOrNone dependencies
+				} else { // For ZeroOrOne, AllOrNone and OnlyOne dependencies
 					csp += "("
 					writePredicate(remainingElement)
 					csp += ") /\\ "
@@ -387,8 +312,57 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 			writePredicate(clause.clauseContinuation.additionalElements)
 		}
 	}
-	
 }
+
+
+
+
+
+// ***************
+// ADDITIONAL CODE
+// ***************
+
+//			writeDependencyAndOrIterate(dependency.dep, 0, 0)
+//	    	Files.write(writePath, Arrays.asList("....................."),
+//		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+
+//		    for (subElement: dependency.eAllContents.toIterable) {
+//		    	Files.write(writePath, Arrays.asList(subElement.toString),
+//		    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+//		    }
+//		    Files.write(writePath, Arrays.asList("---------------------"),
+//		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+
+//	def void writeDependencyAndOrIterate(EObject object, int depthLevel, int objectDepthLevel) {
+//		if (object.class == typeof(ConditionalDependencyImpl)) {
+//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Conditional dependency: " + object),
+//	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+//	    	Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Condition"),
+//	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+//    		writeDependencyAndOrIterate((object as ConditionalDependency).condition, depthLevel+1, objectDepthLevel+1)
+//	    	Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Consequence"),
+//	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+//    		writeDependencyAndOrIterate((object as ConditionalDependency).consequence, depthLevel+1, objectDepthLevel+1)
+//		} else if (object.class == typeof(ComparisonDependencyImpl)) {
+//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Arithmetic dependency: " + object),
+//    			StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+//		} else if (object.class == typeof(GeneralPredefinedDependencyImpl)) {
+//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Predefined dependency: " + object),
+//	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+//	    	for (element: object.eContents) {
+//	    		writeDependencyAndOrIterate(element, depthLevel+1, objectDepthLevel+1)
+//	    	}
+//		} else {
+//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Object: " + object),
+//	    			StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+//			for (subElement: object.eContents) {
+////				if (subElement.class == typeof(GeneralClauseImpl)) {
+////					writeLogicalClause((subElement as GeneralClause).firstElement, (subElement as GeneralClause).clauseContinuation)
+////				}
+//				writeDependencyAndOrIterate(subElement, depthLevel, objectDepthLevel+1)
+//			}
+//		}
+//	}
 
 
 
