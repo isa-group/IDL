@@ -38,6 +38,10 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationConti
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment
 import java.util.ArrayList
+import java.util.Map
+import java.util.Map.Entry
+import java.util.HashMap
+import java.util.AbstractMap.SimpleEntry
 
 /**
  * Generates code from your model files on save.
@@ -50,16 +54,19 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	val File file = new File(path)
 	val Path writePath = Paths.get(path)
 	var String csp
-	var int intedString = 1
+	var int intedString
+	var Map<Entry<String, String>, Integer> paramStringsToInts = new HashMap<Entry<String, String>, Integer>()
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
 		file.delete
 		file.createNewFile
 		
+		intedString = 1
+		paramStringsToInts.clear
+		
 		for (dependency: resource.allContents.filter(Dependency).toIterable) {
 			csp = "constraint "
-			intedString = 1
 //			writeDependencyAndOrIterate(dependency.dep, 0, 0)
 //	    	Files.write(writePath, Arrays.asList("....................."),
 //		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
@@ -133,9 +140,15 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	/**
 	 * Used to assign an int to a param that is a string
 	 */
-	def int stringToInt(String string) {
-		// TODO: Save tuple of string-int-param in some external file
-		return intedString++
+	def int stringToInt(String param, String string) {
+		// TODO: Save tuple of param-string-int in some external file
+		var Entry<String, String> paramEntry = new SimpleEntry<String, String>(param, string) // Search int associated to param and string
+		if (paramStringsToInts.get(paramEntry) !== null) { // If exists, return it
+			return paramStringsToInts.get(paramEntry)
+		} else { // Otherwise, add new entry with new int and return it
+			paramStringsToInts.put(paramEntry, intedString)
+			return intedString++
+		}
 	}
 
 	/**
@@ -148,8 +161,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 			val Param param = (atomic.param as Param)
 			
 			if (atomic.not !== null)
-				csp += "not "
-			
+				csp += "(not "
 			if (isParamAssignment(param))
 				csp += "("
 
@@ -164,13 +176,15 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 				} else if (param.stringValues.size !== 0) {
 					csp += "("
 					for (string: param.stringValues) {
-						csp += param.name + "==" + stringToInt(string) + " \\/ "
+						csp += param.name + "==" + stringToInt(param.name, string) + " \\/ "
 					}
 					csp = csp.substring(0, csp.length-4) // Trim last " \\/ "
 					csp += ")"
 				}
 			}
 			if (isParamAssignment(param))
+				csp += ")"
+			if (atomic.not !== null)
 				csp += ")"
 			
 		} else if(predicate.class == typeof(ComparisonDependencyImpl)) {
@@ -225,38 +239,105 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	def void writePredefinedDependency(GeneralPredefinedDependency dep) {
 		// TODO: Implement CSP mapping
 		
-		var depElements = new ArrayList<EObject>()
-		for (depElement: dep.predefDepElements) {
-			depElements.add(depElement)
-		}
-		
+		if (dep.not !== null)
+			csp += "(not "
 		csp += "("
-		switch dep.predefDepType {
-			case "Or":
-				writeOrDependency(depElements)
-			case "OnlyOne":
-				doStuff()
-			case "AllOrNone":
-				doStuff()
-			case "ZeroOrOne":
-				doStuff()
-			default:
-				throw new Exception("The predefined dependency can only be 'Or', " + 
-					"'OnlyOne', 'AllOrNone' or 'ZeroOrOne'")
+		
+		for (depElement: dep.predefDepElements) {
+			csp += "("
+			switch dep.predefDepType {
+				case "Or": {
+					writePredicate(depElement)
+					csp += ") \\/ "
+				} case "OnlyOne": {
+					doStuff()
+				} case "AllOrNone": {
+//					writeAllOrNoneElement(depElement, dep.predefDepElements)
+//					csp += ") /\\ "
+				} case "ZeroOrOne": {
+					writeZeroOrOneElement(depElement, dep.predefDepElements)
+					csp += ") /\\ "
+				} default:
+					throw new Exception("The predefined dependency can only be 'Or', " + 
+						"'OnlyOne', 'AllOrNone' or 'ZeroOrOne'")
+			}
 		}
+		csp = csp.substring(0, csp.length-4) // Trim last " /\\ " or " \\/ "
 		csp += ")"
+		if (dep.not !== null)
+			csp += ")"
+		
+//		csp += "("
+//		switch dep.predefDepType {
+//			case "Or":
+//				writeOrDependency(depElements)
+//			case "OnlyOne":
+//				doStuff()
+//			case "AllOrNone":
+//				doStuff()
+//			case "ZeroOrOne":
+//				doStuff()
+//			default:
+//				throw new Exception("The predefined dependency can only be 'Or', " + 
+//					"'OnlyOne', 'AllOrNone' or 'ZeroOrOne'")
+//		}
+//		csp += ")"
 		
 	}
 	
 	def void doStuff(){}
 	
-	def void writeOrDependency(ArrayList<EObject> elements) {
-		for (element: elements) {
-			csp += "("
-			writePredicate(element)
-			csp += ") \\/ "
+	def void writeZeroOrOneElement(EObject element, EObject[] allElements) {
+//		csp += "("
+//		writePredicate(element) // Include element in the condition
+//		csp += ") -> ("
+//		for (remainingElement: allElements) {
+//			if (!remainingElement.equals(element)) { // Include negated remaining elements in the consequence
+//				csp += "(not ("
+//				writePredicate(remainingElement)
+//				csp += ")) /\\ "
+//			}
+//		}
+//		csp = csp.substring(0, csp.length-4) // Trim last " /\\ "
+//		csp += ")"
+		writeZeroOrOneAllOrNoneElement(element, allElements, true)
+	}
+	
+	def void writeAllOrNoneElement(EObject element, EObject[] allElements) {
+//		csp += "("
+//		writePredicate(element) // Include element in the condition
+//		csp += ") -> ("
+//		for (remainingElement: allElements) {
+//			if (!remainingElement.equals(element)) { // Include negated remaining elements in the consequence
+//				csp += "(not ("
+//				writePredicate(remainingElement)
+//				csp += ")) /\\ "
+//			}
+//		}
+//		csp = csp.substring(0, csp.length-4) // Trim last " /\\ "
+//		csp += ")"
+		writeZeroOrOneAllOrNoneElement(element, allElements, false)
+	}
+	
+	def void writeZeroOrOneAllOrNoneElement(EObject element, EObject[] allElements, boolean negate) {
+		csp += "("
+		writePredicate(element) // Include element in the condition
+		csp += ") -> ("
+		for (remainingElement: allElements) {
+			if (!remainingElement.equals(element)) { // Include remaining elements in the consequence
+				if (negate) { // For ZeroOrOne dependencies
+					csp += "(not ("
+					writePredicate(remainingElement)
+					csp += ")) /\\ "
+				} else { // For ZeroOrOne and AllOrNone dependencies
+					csp += "("
+					writePredicate(remainingElement)
+					csp += ") /\\ "
+				}
+			}
 		}
-		csp = csp.substring(0, csp.length-4) // Trim last " \\/ "
+		csp = csp.substring(0, csp.length-4) // Trim last " /\\ "
+		csp += ")"
 	}
 	
 	def void writeConditionalDependency(ConditionalDependency dep) {
@@ -269,12 +350,13 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	
 	def void writeLogicalClause(GeneralClause clause) {
 		if (clause.clause !== null) {
-			if (clause.not !== null) {
-				csp += "not "
-			}
+			if (clause.not !== null)
+				csp += "(not "
 			csp += "("
 			writeLogicalClause(clause.clause)
 			csp += ")"
+			if (clause.not !== null)
+				csp += ")"
 		}
 		
 		// Solve first element, which can only be a param, arithmetic dep, comparison dep or predefined dep
@@ -293,8 +375,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 			}
 		}
 
-		// Solve second element, which is a clause continuation containing either
-		// a GeneralAtomic or another clause
+		// Solve second element, which is a clause continuation containing either a GeneralAtomic or another clause
 		if (clause.clauseContinuation !== null) {
 			if (clause.clauseContinuation.logicalOp == "AND") {
 				csp += " /\\ "
