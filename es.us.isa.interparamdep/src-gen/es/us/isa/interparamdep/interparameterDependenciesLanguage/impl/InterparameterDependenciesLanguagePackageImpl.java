@@ -590,7 +590,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EReference getGeneralClause_FirsElement()
+  public EReference getGeneralClause_FirstElement()
   {
     return (EReference)generalClauseEClass.getEStructuralFeatures().get(0);
   }
@@ -722,7 +722,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EReference getGeneralPredefinedDependency_PredefDepClauses()
+  public EReference getGeneralPredefinedDependency_PredefDepElements()
   {
     return (EReference)generalPredefinedDependencyEClass.getEStructuralFeatures().get(2);
   }
@@ -804,7 +804,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     paramAssignmentEClass = createEClass(PARAM_ASSIGNMENT);
 
     generalClauseEClass = createEClass(GENERAL_CLAUSE);
-    createEReference(generalClauseEClass, GENERAL_CLAUSE__FIRS_ELEMENT);
+    createEReference(generalClauseEClass, GENERAL_CLAUSE__FIRST_ELEMENT);
     createEReference(generalClauseEClass, GENERAL_CLAUSE__CLAUSE_CONTINUATION);
     createEAttribute(generalClauseEClass, GENERAL_CLAUSE__NOT);
     createEAttribute(generalClauseEClass, GENERAL_CLAUSE__OPENING_PARENTHESIS);
@@ -818,7 +818,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     generalPredefinedDependencyEClass = createEClass(GENERAL_PREDEFINED_DEPENDENCY);
     createEAttribute(generalPredefinedDependencyEClass, GENERAL_PREDEFINED_DEPENDENCY__NOT);
     createEAttribute(generalPredefinedDependencyEClass, GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE);
-    createEReference(generalPredefinedDependencyEClass, GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES);
+    createEReference(generalPredefinedDependencyEClass, GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS);
   }
 
   /**
@@ -900,7 +900,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     initEClass(paramAssignmentEClass, ParamAssignment.class, "ParamAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(generalClauseEClass, GeneralClause.class, "GeneralClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGeneralClause_FirsElement(), ecorePackage.getEObject(), null, "firsElement", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralClause_FirstElement(), ecorePackage.getEObject(), null, "firstElement", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGeneralClause_ClauseContinuation(), this.getGeneralClauseContinuation(), null, "clauseContinuation", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGeneralClause_Not(), ecorePackage.getEString(), "not", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGeneralClause_OpeningParenthesis(), ecorePackage.getEString(), "openingParenthesis", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -914,7 +914,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     initEClass(generalPredefinedDependencyEClass, GeneralPredefinedDependency.class, "GeneralPredefinedDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGeneralPredefinedDependency_Not(), ecorePackage.getEString(), "not", null, 0, 1, GeneralPredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGeneralPredefinedDependency_PredefDepType(), ecorePackage.getEString(), "predefDepType", null, 0, 1, GeneralPredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGeneralPredefinedDependency_PredefDepClauses(), ecorePackage.getEObject(), null, "predefDepClauses", null, 0, -1, GeneralPredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralPredefinedDependency_PredefDepElements(), ecorePackage.getEObject(), null, "predefDepElements", null, 0, -1, GeneralPredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

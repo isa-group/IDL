@@ -81,8 +81,8 @@ ParamAssignment:
 ;
 
 Clause returns GeneralClause:
-	firsElement=Atomic clauseContinuation=ClauseContinuation |
-	firsElement=(PredefinedDependency|ArithmeticDependency) (clauseContinuation=ClauseContinuation)? |
+	firstElement=Atomic clauseContinuation=ClauseContinuation |
+	firstElement=(PredefinedDependency|ArithmeticDependency) (clauseContinuation=ClauseContinuation)? |
 	not=Not? openingParenthesis='(' clause=Clause closingParenthesis=')' (clauseContinuation=ClauseContinuation)?
 ;
 
@@ -91,7 +91,7 @@ ClauseContinuation returns GeneralClauseContinuation:
 ;
 
 PredefinedDependency returns GeneralPredefinedDependency:
-	not=Not? predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=(PositiveAtomic|PositiveClause) (',' predefDepClauses+=(PositiveAtomic|PositiveClause))+ ')'
+	not=Not? predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepElements+=(PositiveAtomic|PositiveClause) (',' predefDepElements+=(PositiveAtomic|PositiveClause))+ ')'
 ;
 
 PositiveAtomic returns GeneralAtomic:
@@ -101,8 +101,8 @@ PositiveAtomic returns GeneralAtomic:
 ;
 
 PositiveClause returns GeneralClause:
-	firsElement=PositiveAtomic clauseContinuation=PositiveClauseContinuation |
-	firsElement=(PositivePredefinedDependency|ArithmeticDependency) (clauseContinuation=PositiveClauseContinuation)? |
+	firstElement=PositiveAtomic clauseContinuation=PositiveClauseContinuation |
+	firstElement=(PositivePredefinedDependency|ArithmeticDependency) (clauseContinuation=PositiveClauseContinuation)? |
 	openingParenthesis='(' clause=PositiveClause closingParenthesis=')' (clauseContinuation=PositiveClauseContinuation)?
 ;
 
@@ -111,6 +111,6 @@ PositiveClauseContinuation returns GeneralClauseContinuation:
 ;
 
 PositivePredefinedDependency returns GeneralPredefinedDependency:
-	predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepClauses+=(PositiveAtomic|PositiveClause) (',' predefDepClauses+=(PositiveAtomic|PositiveClause))+ ')'
+	predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepElements+=(PositiveAtomic|PositiveClause) (',' predefDepElements+=(PositiveAtomic|PositiveClause))+ ')'
 ;
 

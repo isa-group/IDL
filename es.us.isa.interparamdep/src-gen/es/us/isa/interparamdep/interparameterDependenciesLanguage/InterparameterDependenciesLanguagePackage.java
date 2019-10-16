@@ -501,13 +501,13 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int GENERAL_CLAUSE = 10;
 
   /**
-   * The feature id for the '<em><b>Firs Element</b></em>' containment reference.
+   * The feature id for the '<em><b>First Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__FIRS_ELEMENT = 0;
+  int GENERAL_CLAUSE__FIRST_ELEMENT = 0;
 
   /**
    * The feature id for the '<em><b>Clause Continuation</b></em>' containment reference.
@@ -629,13 +629,13 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Predef Dep Clauses</b></em>' containment reference list.
+   * The feature id for the '<em><b>Predef Dep Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES = 2;
+  int GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS = 2;
 
   /**
    * The number of structural features of the '<em>General Predefined Dependency</em>' class.
@@ -1033,15 +1033,15 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EClass getGeneralClause();
 
   /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirsElement <em>Firs Element</em>}'.
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirstElement <em>First Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Firs Element</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirsElement()
+   * @return the meta object for the containment reference '<em>First Element</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirstElement()
    * @see #getGeneralClause()
    * @generated
    */
-  EReference getGeneralClause_FirsElement();
+  EReference getGeneralClause_FirstElement();
 
   /**
    * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClauseContinuation <em>Clause Continuation</em>}'.
@@ -1163,15 +1163,15 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EAttribute getGeneralPredefinedDependency_PredefDepType();
 
   /**
-   * Returns the meta object for the containment reference list '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency#getPredefDepClauses <em>Predef Dep Clauses</em>}'.
+   * Returns the meta object for the containment reference list '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency#getPredefDepElements <em>Predef Dep Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Predef Dep Clauses</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency#getPredefDepClauses()
+   * @return the meta object for the containment reference list '<em>Predef Dep Elements</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency#getPredefDepElements()
    * @see #getGeneralPredefinedDependency()
    * @generated
    */
-  EReference getGeneralPredefinedDependency_PredefDepClauses();
+  EReference getGeneralPredefinedDependency_PredefDepElements();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1507,12 +1507,12 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EClass GENERAL_CLAUSE = eINSTANCE.getGeneralClause();
 
     /**
-     * The meta object literal for the '<em><b>Firs Element</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>First Element</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GENERAL_CLAUSE__FIRS_ELEMENT = eINSTANCE.getGeneralClause_FirsElement();
+    EReference GENERAL_CLAUSE__FIRST_ELEMENT = eINSTANCE.getGeneralClause_FirstElement();
 
     /**
      * The meta object literal for the '<em><b>Clause Continuation</b></em>' containment reference feature.
@@ -1607,12 +1607,12 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EAttribute GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE = eINSTANCE.getGeneralPredefinedDependency_PredefDepType();
 
     /**
-     * The meta object literal for the '<em><b>Predef Dep Clauses</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Predef Dep Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES = eINSTANCE.getGeneralPredefinedDependency_PredefDepClauses();
+    EReference GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS = eINSTANCE.getGeneralPredefinedDependency_PredefDepElements();
 
   }
 

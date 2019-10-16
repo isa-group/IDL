@@ -3204,19 +3204,19 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "ruleClause"
-    // InternalInterparameterDependenciesLanguage.g:1138:1: ruleClause returns [EObject current=null] : ( ( ( (lv_firsElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) ) | ( ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? ) | ( ( (lv_not_4_0= ruleNot ) )? ( (lv_openingParenthesis_5_0= '(' ) ) ( (lv_clause_6_0= ruleClause ) ) ( (lv_closingParenthesis_7_0= ')' ) ) ( (lv_clauseContinuation_8_0= ruleClauseContinuation ) )? ) ) ;
+    // InternalInterparameterDependenciesLanguage.g:1138:1: ruleClause returns [EObject current=null] : ( ( ( (lv_firstElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) ) | ( ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? ) | ( ( (lv_not_4_0= ruleNot ) )? ( (lv_openingParenthesis_5_0= '(' ) ) ( (lv_clause_6_0= ruleClause ) ) ( (lv_closingParenthesis_7_0= ')' ) ) ( (lv_clauseContinuation_8_0= ruleClauseContinuation ) )? ) ) ;
     public final EObject ruleClause() throws RecognitionException {
         EObject current = null;
 
         Token lv_openingParenthesis_5_0=null;
         Token lv_closingParenthesis_7_0=null;
-        EObject lv_firsElement_0_0 = null;
+        EObject lv_firstElement_0_0 = null;
 
         EObject lv_clauseContinuation_1_0 = null;
 
-        EObject lv_firsElement_2_1 = null;
+        EObject lv_firstElement_2_1 = null;
 
-        EObject lv_firsElement_2_2 = null;
+        EObject lv_firstElement_2_2 = null;
 
         EObject lv_clauseContinuation_3_0 = null;
 
@@ -3231,32 +3231,32 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         	enterRule();
 
         try {
-            // InternalInterparameterDependenciesLanguage.g:1144:2: ( ( ( ( (lv_firsElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) ) | ( ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? ) | ( ( (lv_not_4_0= ruleNot ) )? ( (lv_openingParenthesis_5_0= '(' ) ) ( (lv_clause_6_0= ruleClause ) ) ( (lv_closingParenthesis_7_0= ')' ) ) ( (lv_clauseContinuation_8_0= ruleClauseContinuation ) )? ) ) )
-            // InternalInterparameterDependenciesLanguage.g:1145:2: ( ( ( (lv_firsElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) ) | ( ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? ) | ( ( (lv_not_4_0= ruleNot ) )? ( (lv_openingParenthesis_5_0= '(' ) ) ( (lv_clause_6_0= ruleClause ) ) ( (lv_closingParenthesis_7_0= ')' ) ) ( (lv_clauseContinuation_8_0= ruleClauseContinuation ) )? ) )
+            // InternalInterparameterDependenciesLanguage.g:1144:2: ( ( ( ( (lv_firstElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) ) | ( ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? ) | ( ( (lv_not_4_0= ruleNot ) )? ( (lv_openingParenthesis_5_0= '(' ) ) ( (lv_clause_6_0= ruleClause ) ) ( (lv_closingParenthesis_7_0= ')' ) ) ( (lv_clauseContinuation_8_0= ruleClauseContinuation ) )? ) ) )
+            // InternalInterparameterDependenciesLanguage.g:1145:2: ( ( ( (lv_firstElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) ) | ( ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? ) | ( ( (lv_not_4_0= ruleNot ) )? ( (lv_openingParenthesis_5_0= '(' ) ) ( (lv_clause_6_0= ruleClause ) ) ( (lv_closingParenthesis_7_0= ')' ) ) ( (lv_clauseContinuation_8_0= ruleClauseContinuation ) )? ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:1145:2: ( ( ( (lv_firsElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) ) | ( ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? ) | ( ( (lv_not_4_0= ruleNot ) )? ( (lv_openingParenthesis_5_0= '(' ) ) ( (lv_clause_6_0= ruleClause ) ) ( (lv_closingParenthesis_7_0= ')' ) ) ( (lv_clauseContinuation_8_0= ruleClauseContinuation ) )? ) )
+            // InternalInterparameterDependenciesLanguage.g:1145:2: ( ( ( (lv_firstElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) ) | ( ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? ) | ( ( (lv_not_4_0= ruleNot ) )? ( (lv_openingParenthesis_5_0= '(' ) ) ( (lv_clause_6_0= ruleClause ) ) ( (lv_closingParenthesis_7_0= ')' ) ) ( (lv_clauseContinuation_8_0= ruleClauseContinuation ) )? ) )
             int alt22=3;
             alt22 = dfa22.predict(input);
             switch (alt22) {
                 case 1 :
-                    // InternalInterparameterDependenciesLanguage.g:1146:3: ( ( (lv_firsElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) )
+                    // InternalInterparameterDependenciesLanguage.g:1146:3: ( ( (lv_firstElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1146:3: ( ( (lv_firsElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) )
-                    // InternalInterparameterDependenciesLanguage.g:1147:4: ( (lv_firsElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) )
+                    // InternalInterparameterDependenciesLanguage.g:1146:3: ( ( (lv_firstElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) )
+                    // InternalInterparameterDependenciesLanguage.g:1147:4: ( (lv_firstElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1147:4: ( (lv_firsElement_0_0= ruleAtomic ) )
-                    // InternalInterparameterDependenciesLanguage.g:1148:5: (lv_firsElement_0_0= ruleAtomic )
+                    // InternalInterparameterDependenciesLanguage.g:1147:4: ( (lv_firstElement_0_0= ruleAtomic ) )
+                    // InternalInterparameterDependenciesLanguage.g:1148:5: (lv_firstElement_0_0= ruleAtomic )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1148:5: (lv_firsElement_0_0= ruleAtomic )
-                    // InternalInterparameterDependenciesLanguage.g:1149:6: lv_firsElement_0_0= ruleAtomic
+                    // InternalInterparameterDependenciesLanguage.g:1148:5: (lv_firstElement_0_0= ruleAtomic )
+                    // InternalInterparameterDependenciesLanguage.g:1149:6: lv_firstElement_0_0= ruleAtomic
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getClauseAccess().getFirsElementAtomicParserRuleCall_0_0_0());
+                      						newCompositeNode(grammarAccess.getClauseAccess().getFirstElementAtomicParserRuleCall_0_0_0());
                       					
                     }
                     pushFollow(FOLLOW_20);
-                    lv_firsElement_0_0=ruleAtomic();
+                    lv_firstElement_0_0=ruleAtomic();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -3267,8 +3267,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                       						}
                       						set(
                       							current,
-                      							"firsElement",
-                      							lv_firsElement_0_0,
+                      							"firstElement",
+                      							lv_firstElement_0_0,
                       							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Atomic");
                       						afterParserOrEnumRuleCall();
                       					
@@ -3321,18 +3321,18 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     }
                     break;
                 case 2 :
-                    // InternalInterparameterDependenciesLanguage.g:1187:3: ( ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? )
+                    // InternalInterparameterDependenciesLanguage.g:1187:3: ( ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1187:3: ( ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? )
-                    // InternalInterparameterDependenciesLanguage.g:1188:4: ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )?
+                    // InternalInterparameterDependenciesLanguage.g:1187:3: ( ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? )
+                    // InternalInterparameterDependenciesLanguage.g:1188:4: ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )?
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1188:4: ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) )
-                    // InternalInterparameterDependenciesLanguage.g:1189:5: ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) )
+                    // InternalInterparameterDependenciesLanguage.g:1188:4: ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) )
+                    // InternalInterparameterDependenciesLanguage.g:1189:5: ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1189:5: ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) )
-                    // InternalInterparameterDependenciesLanguage.g:1190:6: (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency )
+                    // InternalInterparameterDependenciesLanguage.g:1189:5: ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) )
+                    // InternalInterparameterDependenciesLanguage.g:1190:6: (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1190:6: (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency )
+                    // InternalInterparameterDependenciesLanguage.g:1190:6: (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency )
                     int alt18=2;
                     int LA18_0 = input.LA(1);
 
@@ -3351,15 +3351,15 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     }
                     switch (alt18) {
                         case 1 :
-                            // InternalInterparameterDependenciesLanguage.g:1191:7: lv_firsElement_2_1= rulePredefinedDependency
+                            // InternalInterparameterDependenciesLanguage.g:1191:7: lv_firstElement_2_1= rulePredefinedDependency
                             {
                             if ( state.backtracking==0 ) {
 
-                              							newCompositeNode(grammarAccess.getClauseAccess().getFirsElementPredefinedDependencyParserRuleCall_1_0_0_0());
+                              							newCompositeNode(grammarAccess.getClauseAccess().getFirstElementPredefinedDependencyParserRuleCall_1_0_0_0());
                               						
                             }
                             pushFollow(FOLLOW_21);
-                            lv_firsElement_2_1=rulePredefinedDependency();
+                            lv_firstElement_2_1=rulePredefinedDependency();
 
                             state._fsp--;
                             if (state.failed) return current;
@@ -3370,8 +3370,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                               							}
                               							set(
                               								current,
-                              								"firsElement",
-                              								lv_firsElement_2_1,
+                              								"firstElement",
+                              								lv_firstElement_2_1,
                               								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PredefinedDependency");
                               							afterParserOrEnumRuleCall();
                               						
@@ -3380,15 +3380,15 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                             }
                             break;
                         case 2 :
-                            // InternalInterparameterDependenciesLanguage.g:1207:7: lv_firsElement_2_2= ruleArithmeticDependency
+                            // InternalInterparameterDependenciesLanguage.g:1207:7: lv_firstElement_2_2= ruleArithmeticDependency
                             {
                             if ( state.backtracking==0 ) {
 
-                              							newCompositeNode(grammarAccess.getClauseAccess().getFirsElementArithmeticDependencyParserRuleCall_1_0_0_1());
+                              							newCompositeNode(grammarAccess.getClauseAccess().getFirstElementArithmeticDependencyParserRuleCall_1_0_0_1());
                               						
                             }
                             pushFollow(FOLLOW_21);
-                            lv_firsElement_2_2=ruleArithmeticDependency();
+                            lv_firstElement_2_2=ruleArithmeticDependency();
 
                             state._fsp--;
                             if (state.failed) return current;
@@ -3399,8 +3399,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                               							}
                               							set(
                               								current,
-                              								"firsElement",
-                              								lv_firsElement_2_2,
+                              								"firstElement",
+                              								lv_firstElement_2_2,
                               								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticDependency");
                               							afterParserOrEnumRuleCall();
                               						
@@ -3923,7 +3923,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "rulePredefinedDependency"
-    // InternalInterparameterDependenciesLanguage.g:1419:1: rulePredefinedDependency returns [EObject current=null] : ( ( (lv_not_0_0= ruleNot ) )? ( ( (lv_predefDepType_1_1= 'Or' | lv_predefDepType_1_2= 'OnlyOne' | lv_predefDepType_1_3= 'AllOrNone' | lv_predefDepType_1_4= 'ZeroOrOne' ) ) ) otherlv_2= '(' ( ( (lv_predefDepClauses_3_1= rulePositiveAtomic | lv_predefDepClauses_3_2= rulePositiveClause ) ) ) (otherlv_4= ',' ( ( (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause ) ) ) )+ otherlv_6= ')' ) ;
+    // InternalInterparameterDependenciesLanguage.g:1419:1: rulePredefinedDependency returns [EObject current=null] : ( ( (lv_not_0_0= ruleNot ) )? ( ( (lv_predefDepType_1_1= 'Or' | lv_predefDepType_1_2= 'OnlyOne' | lv_predefDepType_1_3= 'AllOrNone' | lv_predefDepType_1_4= 'ZeroOrOne' ) ) ) otherlv_2= '(' ( ( (lv_predefDepElements_3_1= rulePositiveAtomic | lv_predefDepElements_3_2= rulePositiveClause ) ) ) (otherlv_4= ',' ( ( (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause ) ) ) )+ otherlv_6= ')' ) ;
     public final EObject rulePredefinedDependency() throws RecognitionException {
         EObject current = null;
 
@@ -3936,24 +3936,24 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         Token otherlv_6=null;
         AntlrDatatypeRuleToken lv_not_0_0 = null;
 
-        EObject lv_predefDepClauses_3_1 = null;
+        EObject lv_predefDepElements_3_1 = null;
 
-        EObject lv_predefDepClauses_3_2 = null;
+        EObject lv_predefDepElements_3_2 = null;
 
-        EObject lv_predefDepClauses_5_1 = null;
+        EObject lv_predefDepElements_5_1 = null;
 
-        EObject lv_predefDepClauses_5_2 = null;
+        EObject lv_predefDepElements_5_2 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalInterparameterDependenciesLanguage.g:1425:2: ( ( ( (lv_not_0_0= ruleNot ) )? ( ( (lv_predefDepType_1_1= 'Or' | lv_predefDepType_1_2= 'OnlyOne' | lv_predefDepType_1_3= 'AllOrNone' | lv_predefDepType_1_4= 'ZeroOrOne' ) ) ) otherlv_2= '(' ( ( (lv_predefDepClauses_3_1= rulePositiveAtomic | lv_predefDepClauses_3_2= rulePositiveClause ) ) ) (otherlv_4= ',' ( ( (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause ) ) ) )+ otherlv_6= ')' ) )
-            // InternalInterparameterDependenciesLanguage.g:1426:2: ( ( (lv_not_0_0= ruleNot ) )? ( ( (lv_predefDepType_1_1= 'Or' | lv_predefDepType_1_2= 'OnlyOne' | lv_predefDepType_1_3= 'AllOrNone' | lv_predefDepType_1_4= 'ZeroOrOne' ) ) ) otherlv_2= '(' ( ( (lv_predefDepClauses_3_1= rulePositiveAtomic | lv_predefDepClauses_3_2= rulePositiveClause ) ) ) (otherlv_4= ',' ( ( (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause ) ) ) )+ otherlv_6= ')' )
+            // InternalInterparameterDependenciesLanguage.g:1425:2: ( ( ( (lv_not_0_0= ruleNot ) )? ( ( (lv_predefDepType_1_1= 'Or' | lv_predefDepType_1_2= 'OnlyOne' | lv_predefDepType_1_3= 'AllOrNone' | lv_predefDepType_1_4= 'ZeroOrOne' ) ) ) otherlv_2= '(' ( ( (lv_predefDepElements_3_1= rulePositiveAtomic | lv_predefDepElements_3_2= rulePositiveClause ) ) ) (otherlv_4= ',' ( ( (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause ) ) ) )+ otherlv_6= ')' ) )
+            // InternalInterparameterDependenciesLanguage.g:1426:2: ( ( (lv_not_0_0= ruleNot ) )? ( ( (lv_predefDepType_1_1= 'Or' | lv_predefDepType_1_2= 'OnlyOne' | lv_predefDepType_1_3= 'AllOrNone' | lv_predefDepType_1_4= 'ZeroOrOne' ) ) ) otherlv_2= '(' ( ( (lv_predefDepElements_3_1= rulePositiveAtomic | lv_predefDepElements_3_2= rulePositiveClause ) ) ) (otherlv_4= ',' ( ( (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause ) ) ) )+ otherlv_6= ')' )
             {
-            // InternalInterparameterDependenciesLanguage.g:1426:2: ( ( (lv_not_0_0= ruleNot ) )? ( ( (lv_predefDepType_1_1= 'Or' | lv_predefDepType_1_2= 'OnlyOne' | lv_predefDepType_1_3= 'AllOrNone' | lv_predefDepType_1_4= 'ZeroOrOne' ) ) ) otherlv_2= '(' ( ( (lv_predefDepClauses_3_1= rulePositiveAtomic | lv_predefDepClauses_3_2= rulePositiveClause ) ) ) (otherlv_4= ',' ( ( (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause ) ) ) )+ otherlv_6= ')' )
-            // InternalInterparameterDependenciesLanguage.g:1427:3: ( (lv_not_0_0= ruleNot ) )? ( ( (lv_predefDepType_1_1= 'Or' | lv_predefDepType_1_2= 'OnlyOne' | lv_predefDepType_1_3= 'AllOrNone' | lv_predefDepType_1_4= 'ZeroOrOne' ) ) ) otherlv_2= '(' ( ( (lv_predefDepClauses_3_1= rulePositiveAtomic | lv_predefDepClauses_3_2= rulePositiveClause ) ) ) (otherlv_4= ',' ( ( (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause ) ) ) )+ otherlv_6= ')'
+            // InternalInterparameterDependenciesLanguage.g:1426:2: ( ( (lv_not_0_0= ruleNot ) )? ( ( (lv_predefDepType_1_1= 'Or' | lv_predefDepType_1_2= 'OnlyOne' | lv_predefDepType_1_3= 'AllOrNone' | lv_predefDepType_1_4= 'ZeroOrOne' ) ) ) otherlv_2= '(' ( ( (lv_predefDepElements_3_1= rulePositiveAtomic | lv_predefDepElements_3_2= rulePositiveClause ) ) ) (otherlv_4= ',' ( ( (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause ) ) ) )+ otherlv_6= ')' )
+            // InternalInterparameterDependenciesLanguage.g:1427:3: ( (lv_not_0_0= ruleNot ) )? ( ( (lv_predefDepType_1_1= 'Or' | lv_predefDepType_1_2= 'OnlyOne' | lv_predefDepType_1_3= 'AllOrNone' | lv_predefDepType_1_4= 'ZeroOrOne' ) ) ) otherlv_2= '(' ( ( (lv_predefDepElements_3_1= rulePositiveAtomic | lv_predefDepElements_3_2= rulePositiveClause ) ) ) (otherlv_4= ',' ( ( (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause ) ) ) )+ otherlv_6= ')'
             {
             // InternalInterparameterDependenciesLanguage.g:1427:3: ( (lv_not_0_0= ruleNot ) )?
             int alt24=2;
@@ -4134,26 +4134,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
               			newLeafNode(otherlv_2, grammarAccess.getPredefinedDependencyAccess().getLeftParenthesisKeyword_2());
               		
             }
-            // InternalInterparameterDependenciesLanguage.g:1499:3: ( ( (lv_predefDepClauses_3_1= rulePositiveAtomic | lv_predefDepClauses_3_2= rulePositiveClause ) ) )
-            // InternalInterparameterDependenciesLanguage.g:1500:4: ( (lv_predefDepClauses_3_1= rulePositiveAtomic | lv_predefDepClauses_3_2= rulePositiveClause ) )
+            // InternalInterparameterDependenciesLanguage.g:1499:3: ( ( (lv_predefDepElements_3_1= rulePositiveAtomic | lv_predefDepElements_3_2= rulePositiveClause ) ) )
+            // InternalInterparameterDependenciesLanguage.g:1500:4: ( (lv_predefDepElements_3_1= rulePositiveAtomic | lv_predefDepElements_3_2= rulePositiveClause ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:1500:4: ( (lv_predefDepClauses_3_1= rulePositiveAtomic | lv_predefDepClauses_3_2= rulePositiveClause ) )
-            // InternalInterparameterDependenciesLanguage.g:1501:5: (lv_predefDepClauses_3_1= rulePositiveAtomic | lv_predefDepClauses_3_2= rulePositiveClause )
+            // InternalInterparameterDependenciesLanguage.g:1500:4: ( (lv_predefDepElements_3_1= rulePositiveAtomic | lv_predefDepElements_3_2= rulePositiveClause ) )
+            // InternalInterparameterDependenciesLanguage.g:1501:5: (lv_predefDepElements_3_1= rulePositiveAtomic | lv_predefDepElements_3_2= rulePositiveClause )
             {
-            // InternalInterparameterDependenciesLanguage.g:1501:5: (lv_predefDepClauses_3_1= rulePositiveAtomic | lv_predefDepClauses_3_2= rulePositiveClause )
+            // InternalInterparameterDependenciesLanguage.g:1501:5: (lv_predefDepElements_3_1= rulePositiveAtomic | lv_predefDepElements_3_2= rulePositiveClause )
             int alt26=2;
             alt26 = dfa26.predict(input);
             switch (alt26) {
                 case 1 :
-                    // InternalInterparameterDependenciesLanguage.g:1502:6: lv_predefDepClauses_3_1= rulePositiveAtomic
+                    // InternalInterparameterDependenciesLanguage.g:1502:6: lv_predefDepElements_3_1= rulePositiveAtomic
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_3_0_0());
+                      						newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_3_0_0());
                       					
                     }
                     pushFollow(FOLLOW_25);
-                    lv_predefDepClauses_3_1=rulePositiveAtomic();
+                    lv_predefDepElements_3_1=rulePositiveAtomic();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -4164,8 +4164,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                       						}
                       						add(
                       							current,
-                      							"predefDepClauses",
-                      							lv_predefDepClauses_3_1,
+                      							"predefDepElements",
+                      							lv_predefDepElements_3_1,
                       							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
                       						afterParserOrEnumRuleCall();
                       					
@@ -4174,15 +4174,15 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     }
                     break;
                 case 2 :
-                    // InternalInterparameterDependenciesLanguage.g:1518:6: lv_predefDepClauses_3_2= rulePositiveClause
+                    // InternalInterparameterDependenciesLanguage.g:1518:6: lv_predefDepElements_3_2= rulePositiveClause
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_3_0_1());
+                      						newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_3_0_1());
                       					
                     }
                     pushFollow(FOLLOW_25);
-                    lv_predefDepClauses_3_2=rulePositiveClause();
+                    lv_predefDepElements_3_2=rulePositiveClause();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -4193,8 +4193,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                       						}
                       						add(
                       							current,
-                      							"predefDepClauses",
-                      							lv_predefDepClauses_3_2,
+                      							"predefDepElements",
+                      							lv_predefDepElements_3_2,
                       							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
                       						afterParserOrEnumRuleCall();
                       					
@@ -4211,7 +4211,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
             }
 
-            // InternalInterparameterDependenciesLanguage.g:1536:3: (otherlv_4= ',' ( ( (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause ) ) ) )+
+            // InternalInterparameterDependenciesLanguage.g:1536:3: (otherlv_4= ',' ( ( (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause ) ) ) )+
             int cnt28=0;
             loop28:
             do {
@@ -4225,7 +4225,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
                 switch (alt28) {
             	case 1 :
-            	    // InternalInterparameterDependenciesLanguage.g:1537:4: otherlv_4= ',' ( ( (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause ) ) )
+            	    // InternalInterparameterDependenciesLanguage.g:1537:4: otherlv_4= ',' ( ( (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause ) ) )
             	    {
             	    otherlv_4=(Token)match(input,38,FOLLOW_24); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -4233,26 +4233,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             	      				newLeafNode(otherlv_4, grammarAccess.getPredefinedDependencyAccess().getCommaKeyword_4_0());
             	      			
             	    }
-            	    // InternalInterparameterDependenciesLanguage.g:1541:4: ( ( (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause ) ) )
-            	    // InternalInterparameterDependenciesLanguage.g:1542:5: ( (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause ) )
+            	    // InternalInterparameterDependenciesLanguage.g:1541:4: ( ( (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause ) ) )
+            	    // InternalInterparameterDependenciesLanguage.g:1542:5: ( (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause ) )
             	    {
-            	    // InternalInterparameterDependenciesLanguage.g:1542:5: ( (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause ) )
-            	    // InternalInterparameterDependenciesLanguage.g:1543:6: (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause )
+            	    // InternalInterparameterDependenciesLanguage.g:1542:5: ( (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause ) )
+            	    // InternalInterparameterDependenciesLanguage.g:1543:6: (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause )
             	    {
-            	    // InternalInterparameterDependenciesLanguage.g:1543:6: (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause )
+            	    // InternalInterparameterDependenciesLanguage.g:1543:6: (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause )
             	    int alt27=2;
             	    alt27 = dfa27.predict(input);
             	    switch (alt27) {
             	        case 1 :
-            	            // InternalInterparameterDependenciesLanguage.g:1544:7: lv_predefDepClauses_5_1= rulePositiveAtomic
+            	            // InternalInterparameterDependenciesLanguage.g:1544:7: lv_predefDepElements_5_1= rulePositiveAtomic
             	            {
             	            if ( state.backtracking==0 ) {
 
-            	              							newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_4_1_0_0());
+            	              							newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_4_1_0_0());
             	              						
             	            }
             	            pushFollow(FOLLOW_26);
-            	            lv_predefDepClauses_5_1=rulePositiveAtomic();
+            	            lv_predefDepElements_5_1=rulePositiveAtomic();
 
             	            state._fsp--;
             	            if (state.failed) return current;
@@ -4263,8 +4263,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             	              							}
             	              							add(
             	              								current,
-            	              								"predefDepClauses",
-            	              								lv_predefDepClauses_5_1,
+            	              								"predefDepElements",
+            	              								lv_predefDepElements_5_1,
             	              								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
             	              							afterParserOrEnumRuleCall();
             	              						
@@ -4273,15 +4273,15 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             	            }
             	            break;
             	        case 2 :
-            	            // InternalInterparameterDependenciesLanguage.g:1560:7: lv_predefDepClauses_5_2= rulePositiveClause
+            	            // InternalInterparameterDependenciesLanguage.g:1560:7: lv_predefDepElements_5_2= rulePositiveClause
             	            {
             	            if ( state.backtracking==0 ) {
 
-            	              							newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_4_1_0_1());
+            	              							newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_4_1_0_1());
             	              						
             	            }
             	            pushFollow(FOLLOW_26);
-            	            lv_predefDepClauses_5_2=rulePositiveClause();
+            	            lv_predefDepElements_5_2=rulePositiveClause();
 
             	            state._fsp--;
             	            if (state.failed) return current;
@@ -4292,8 +4292,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             	              							}
             	              							add(
             	              								current,
-            	              								"predefDepClauses",
-            	              								lv_predefDepClauses_5_2,
+            	              								"predefDepElements",
+            	              								lv_predefDepElements_5_2,
             	              								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
             	              							afterParserOrEnumRuleCall();
             	              						
@@ -4591,19 +4591,19 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "rulePositiveClause"
-    // InternalInterparameterDependenciesLanguage.g:1664:1: rulePositiveClause returns [EObject current=null] : ( ( ( (lv_firsElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) ) | ( ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? ) | ( ( (lv_openingParenthesis_4_0= '(' ) ) ( (lv_clause_5_0= rulePositiveClause ) ) ( (lv_closingParenthesis_6_0= ')' ) ) ( (lv_clauseContinuation_7_0= rulePositiveClauseContinuation ) )? ) ) ;
+    // InternalInterparameterDependenciesLanguage.g:1664:1: rulePositiveClause returns [EObject current=null] : ( ( ( (lv_firstElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) ) | ( ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? ) | ( ( (lv_openingParenthesis_4_0= '(' ) ) ( (lv_clause_5_0= rulePositiveClause ) ) ( (lv_closingParenthesis_6_0= ')' ) ) ( (lv_clauseContinuation_7_0= rulePositiveClauseContinuation ) )? ) ) ;
     public final EObject rulePositiveClause() throws RecognitionException {
         EObject current = null;
 
         Token lv_openingParenthesis_4_0=null;
         Token lv_closingParenthesis_6_0=null;
-        EObject lv_firsElement_0_0 = null;
+        EObject lv_firstElement_0_0 = null;
 
         EObject lv_clauseContinuation_1_0 = null;
 
-        EObject lv_firsElement_2_1 = null;
+        EObject lv_firstElement_2_1 = null;
 
-        EObject lv_firsElement_2_2 = null;
+        EObject lv_firstElement_2_2 = null;
 
         EObject lv_clauseContinuation_3_0 = null;
 
@@ -4616,10 +4616,10 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         	enterRule();
 
         try {
-            // InternalInterparameterDependenciesLanguage.g:1670:2: ( ( ( ( (lv_firsElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) ) | ( ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? ) | ( ( (lv_openingParenthesis_4_0= '(' ) ) ( (lv_clause_5_0= rulePositiveClause ) ) ( (lv_closingParenthesis_6_0= ')' ) ) ( (lv_clauseContinuation_7_0= rulePositiveClauseContinuation ) )? ) ) )
-            // InternalInterparameterDependenciesLanguage.g:1671:2: ( ( ( (lv_firsElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) ) | ( ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? ) | ( ( (lv_openingParenthesis_4_0= '(' ) ) ( (lv_clause_5_0= rulePositiveClause ) ) ( (lv_closingParenthesis_6_0= ')' ) ) ( (lv_clauseContinuation_7_0= rulePositiveClauseContinuation ) )? ) )
+            // InternalInterparameterDependenciesLanguage.g:1670:2: ( ( ( ( (lv_firstElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) ) | ( ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? ) | ( ( (lv_openingParenthesis_4_0= '(' ) ) ( (lv_clause_5_0= rulePositiveClause ) ) ( (lv_closingParenthesis_6_0= ')' ) ) ( (lv_clauseContinuation_7_0= rulePositiveClauseContinuation ) )? ) ) )
+            // InternalInterparameterDependenciesLanguage.g:1671:2: ( ( ( (lv_firstElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) ) | ( ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? ) | ( ( (lv_openingParenthesis_4_0= '(' ) ) ( (lv_clause_5_0= rulePositiveClause ) ) ( (lv_closingParenthesis_6_0= ')' ) ) ( (lv_clauseContinuation_7_0= rulePositiveClauseContinuation ) )? ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:1671:2: ( ( ( (lv_firsElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) ) | ( ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? ) | ( ( (lv_openingParenthesis_4_0= '(' ) ) ( (lv_clause_5_0= rulePositiveClause ) ) ( (lv_closingParenthesis_6_0= ')' ) ) ( (lv_clauseContinuation_7_0= rulePositiveClauseContinuation ) )? ) )
+            // InternalInterparameterDependenciesLanguage.g:1671:2: ( ( ( (lv_firstElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) ) | ( ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? ) | ( ( (lv_openingParenthesis_4_0= '(' ) ) ( (lv_clause_5_0= rulePositiveClause ) ) ( (lv_closingParenthesis_6_0= ')' ) ) ( (lv_clauseContinuation_7_0= rulePositiveClauseContinuation ) )? ) )
             int alt33=3;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -4678,24 +4678,24 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
             switch (alt33) {
                 case 1 :
-                    // InternalInterparameterDependenciesLanguage.g:1672:3: ( ( (lv_firsElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) )
+                    // InternalInterparameterDependenciesLanguage.g:1672:3: ( ( (lv_firstElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1672:3: ( ( (lv_firsElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) )
-                    // InternalInterparameterDependenciesLanguage.g:1673:4: ( (lv_firsElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) )
+                    // InternalInterparameterDependenciesLanguage.g:1672:3: ( ( (lv_firstElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) )
+                    // InternalInterparameterDependenciesLanguage.g:1673:4: ( (lv_firstElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1673:4: ( (lv_firsElement_0_0= rulePositiveAtomic ) )
-                    // InternalInterparameterDependenciesLanguage.g:1674:5: (lv_firsElement_0_0= rulePositiveAtomic )
+                    // InternalInterparameterDependenciesLanguage.g:1673:4: ( (lv_firstElement_0_0= rulePositiveAtomic ) )
+                    // InternalInterparameterDependenciesLanguage.g:1674:5: (lv_firstElement_0_0= rulePositiveAtomic )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1674:5: (lv_firsElement_0_0= rulePositiveAtomic )
-                    // InternalInterparameterDependenciesLanguage.g:1675:6: lv_firsElement_0_0= rulePositiveAtomic
+                    // InternalInterparameterDependenciesLanguage.g:1674:5: (lv_firstElement_0_0= rulePositiveAtomic )
+                    // InternalInterparameterDependenciesLanguage.g:1675:6: lv_firstElement_0_0= rulePositiveAtomic
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirsElementPositiveAtomicParserRuleCall_0_0_0());
+                      						newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementPositiveAtomicParserRuleCall_0_0_0());
                       					
                     }
                     pushFollow(FOLLOW_20);
-                    lv_firsElement_0_0=rulePositiveAtomic();
+                    lv_firstElement_0_0=rulePositiveAtomic();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -4706,8 +4706,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                       						}
                       						set(
                       							current,
-                      							"firsElement",
-                      							lv_firsElement_0_0,
+                      							"firstElement",
+                      							lv_firstElement_0_0,
                       							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
                       						afterParserOrEnumRuleCall();
                       					
@@ -4760,18 +4760,18 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     }
                     break;
                 case 2 :
-                    // InternalInterparameterDependenciesLanguage.g:1713:3: ( ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? )
+                    // InternalInterparameterDependenciesLanguage.g:1713:3: ( ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1713:3: ( ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? )
-                    // InternalInterparameterDependenciesLanguage.g:1714:4: ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )?
+                    // InternalInterparameterDependenciesLanguage.g:1713:3: ( ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? )
+                    // InternalInterparameterDependenciesLanguage.g:1714:4: ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )?
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1714:4: ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) )
-                    // InternalInterparameterDependenciesLanguage.g:1715:5: ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) )
+                    // InternalInterparameterDependenciesLanguage.g:1714:4: ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) )
+                    // InternalInterparameterDependenciesLanguage.g:1715:5: ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1715:5: ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) )
-                    // InternalInterparameterDependenciesLanguage.g:1716:6: (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency )
+                    // InternalInterparameterDependenciesLanguage.g:1715:5: ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) )
+                    // InternalInterparameterDependenciesLanguage.g:1716:6: (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1716:6: (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency )
+                    // InternalInterparameterDependenciesLanguage.g:1716:6: (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency )
                     int alt30=2;
                     int LA30_0 = input.LA(1);
 
@@ -4790,15 +4790,15 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     }
                     switch (alt30) {
                         case 1 :
-                            // InternalInterparameterDependenciesLanguage.g:1717:7: lv_firsElement_2_1= rulePositivePredefinedDependency
+                            // InternalInterparameterDependenciesLanguage.g:1717:7: lv_firstElement_2_1= rulePositivePredefinedDependency
                             {
                             if ( state.backtracking==0 ) {
 
-                              							newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirsElementPositivePredefinedDependencyParserRuleCall_1_0_0_0());
+                              							newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementPositivePredefinedDependencyParserRuleCall_1_0_0_0());
                               						
                             }
                             pushFollow(FOLLOW_21);
-                            lv_firsElement_2_1=rulePositivePredefinedDependency();
+                            lv_firstElement_2_1=rulePositivePredefinedDependency();
 
                             state._fsp--;
                             if (state.failed) return current;
@@ -4809,8 +4809,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                               							}
                               							set(
                               								current,
-                              								"firsElement",
-                              								lv_firsElement_2_1,
+                              								"firstElement",
+                              								lv_firstElement_2_1,
                               								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredefinedDependency");
                               							afterParserOrEnumRuleCall();
                               						
@@ -4819,15 +4819,15 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                             }
                             break;
                         case 2 :
-                            // InternalInterparameterDependenciesLanguage.g:1733:7: lv_firsElement_2_2= ruleArithmeticDependency
+                            // InternalInterparameterDependenciesLanguage.g:1733:7: lv_firstElement_2_2= ruleArithmeticDependency
                             {
                             if ( state.backtracking==0 ) {
 
-                              							newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirsElementArithmeticDependencyParserRuleCall_1_0_0_1());
+                              							newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementArithmeticDependencyParserRuleCall_1_0_0_1());
                               						
                             }
                             pushFollow(FOLLOW_21);
-                            lv_firsElement_2_2=ruleArithmeticDependency();
+                            lv_firstElement_2_2=ruleArithmeticDependency();
 
                             state._fsp--;
                             if (state.failed) return current;
@@ -4838,8 +4838,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                               							}
                               							set(
                               								current,
-                              								"firsElement",
-                              								lv_firsElement_2_2,
+                              								"firstElement",
+                              								lv_firstElement_2_2,
                               								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticDependency");
                               							afterParserOrEnumRuleCall();
                               						
@@ -5316,7 +5316,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "rulePositivePredefinedDependency"
-    // InternalInterparameterDependenciesLanguage.g:1926:1: rulePositivePredefinedDependency returns [EObject current=null] : ( ( ( (lv_predefDepType_0_1= 'Or' | lv_predefDepType_0_2= 'OnlyOne' | lv_predefDepType_0_3= 'AllOrNone' | lv_predefDepType_0_4= 'ZeroOrOne' ) ) ) otherlv_1= '(' ( ( (lv_predefDepClauses_2_1= rulePositiveAtomic | lv_predefDepClauses_2_2= rulePositiveClause ) ) ) (otherlv_3= ',' ( ( (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause ) ) ) )+ otherlv_5= ')' ) ;
+    // InternalInterparameterDependenciesLanguage.g:1926:1: rulePositivePredefinedDependency returns [EObject current=null] : ( ( ( (lv_predefDepType_0_1= 'Or' | lv_predefDepType_0_2= 'OnlyOne' | lv_predefDepType_0_3= 'AllOrNone' | lv_predefDepType_0_4= 'ZeroOrOne' ) ) ) otherlv_1= '(' ( ( (lv_predefDepElements_2_1= rulePositiveAtomic | lv_predefDepElements_2_2= rulePositiveClause ) ) ) (otherlv_3= ',' ( ( (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause ) ) ) )+ otherlv_5= ')' ) ;
     public final EObject rulePositivePredefinedDependency() throws RecognitionException {
         EObject current = null;
 
@@ -5327,24 +5327,24 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
-        EObject lv_predefDepClauses_2_1 = null;
+        EObject lv_predefDepElements_2_1 = null;
 
-        EObject lv_predefDepClauses_2_2 = null;
+        EObject lv_predefDepElements_2_2 = null;
 
-        EObject lv_predefDepClauses_4_1 = null;
+        EObject lv_predefDepElements_4_1 = null;
 
-        EObject lv_predefDepClauses_4_2 = null;
+        EObject lv_predefDepElements_4_2 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalInterparameterDependenciesLanguage.g:1932:2: ( ( ( ( (lv_predefDepType_0_1= 'Or' | lv_predefDepType_0_2= 'OnlyOne' | lv_predefDepType_0_3= 'AllOrNone' | lv_predefDepType_0_4= 'ZeroOrOne' ) ) ) otherlv_1= '(' ( ( (lv_predefDepClauses_2_1= rulePositiveAtomic | lv_predefDepClauses_2_2= rulePositiveClause ) ) ) (otherlv_3= ',' ( ( (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause ) ) ) )+ otherlv_5= ')' ) )
-            // InternalInterparameterDependenciesLanguage.g:1933:2: ( ( ( (lv_predefDepType_0_1= 'Or' | lv_predefDepType_0_2= 'OnlyOne' | lv_predefDepType_0_3= 'AllOrNone' | lv_predefDepType_0_4= 'ZeroOrOne' ) ) ) otherlv_1= '(' ( ( (lv_predefDepClauses_2_1= rulePositiveAtomic | lv_predefDepClauses_2_2= rulePositiveClause ) ) ) (otherlv_3= ',' ( ( (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause ) ) ) )+ otherlv_5= ')' )
+            // InternalInterparameterDependenciesLanguage.g:1932:2: ( ( ( ( (lv_predefDepType_0_1= 'Or' | lv_predefDepType_0_2= 'OnlyOne' | lv_predefDepType_0_3= 'AllOrNone' | lv_predefDepType_0_4= 'ZeroOrOne' ) ) ) otherlv_1= '(' ( ( (lv_predefDepElements_2_1= rulePositiveAtomic | lv_predefDepElements_2_2= rulePositiveClause ) ) ) (otherlv_3= ',' ( ( (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause ) ) ) )+ otherlv_5= ')' ) )
+            // InternalInterparameterDependenciesLanguage.g:1933:2: ( ( ( (lv_predefDepType_0_1= 'Or' | lv_predefDepType_0_2= 'OnlyOne' | lv_predefDepType_0_3= 'AllOrNone' | lv_predefDepType_0_4= 'ZeroOrOne' ) ) ) otherlv_1= '(' ( ( (lv_predefDepElements_2_1= rulePositiveAtomic | lv_predefDepElements_2_2= rulePositiveClause ) ) ) (otherlv_3= ',' ( ( (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause ) ) ) )+ otherlv_5= ')' )
             {
-            // InternalInterparameterDependenciesLanguage.g:1933:2: ( ( ( (lv_predefDepType_0_1= 'Or' | lv_predefDepType_0_2= 'OnlyOne' | lv_predefDepType_0_3= 'AllOrNone' | lv_predefDepType_0_4= 'ZeroOrOne' ) ) ) otherlv_1= '(' ( ( (lv_predefDepClauses_2_1= rulePositiveAtomic | lv_predefDepClauses_2_2= rulePositiveClause ) ) ) (otherlv_3= ',' ( ( (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause ) ) ) )+ otherlv_5= ')' )
-            // InternalInterparameterDependenciesLanguage.g:1934:3: ( ( (lv_predefDepType_0_1= 'Or' | lv_predefDepType_0_2= 'OnlyOne' | lv_predefDepType_0_3= 'AllOrNone' | lv_predefDepType_0_4= 'ZeroOrOne' ) ) ) otherlv_1= '(' ( ( (lv_predefDepClauses_2_1= rulePositiveAtomic | lv_predefDepClauses_2_2= rulePositiveClause ) ) ) (otherlv_3= ',' ( ( (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause ) ) ) )+ otherlv_5= ')'
+            // InternalInterparameterDependenciesLanguage.g:1933:2: ( ( ( (lv_predefDepType_0_1= 'Or' | lv_predefDepType_0_2= 'OnlyOne' | lv_predefDepType_0_3= 'AllOrNone' | lv_predefDepType_0_4= 'ZeroOrOne' ) ) ) otherlv_1= '(' ( ( (lv_predefDepElements_2_1= rulePositiveAtomic | lv_predefDepElements_2_2= rulePositiveClause ) ) ) (otherlv_3= ',' ( ( (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause ) ) ) )+ otherlv_5= ')' )
+            // InternalInterparameterDependenciesLanguage.g:1934:3: ( ( (lv_predefDepType_0_1= 'Or' | lv_predefDepType_0_2= 'OnlyOne' | lv_predefDepType_0_3= 'AllOrNone' | lv_predefDepType_0_4= 'ZeroOrOne' ) ) ) otherlv_1= '(' ( ( (lv_predefDepElements_2_1= rulePositiveAtomic | lv_predefDepElements_2_2= rulePositiveClause ) ) ) (otherlv_3= ',' ( ( (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause ) ) ) )+ otherlv_5= ')'
             {
             // InternalInterparameterDependenciesLanguage.g:1934:3: ( ( (lv_predefDepType_0_1= 'Or' | lv_predefDepType_0_2= 'OnlyOne' | lv_predefDepType_0_3= 'AllOrNone' | lv_predefDepType_0_4= 'ZeroOrOne' ) ) )
             // InternalInterparameterDependenciesLanguage.g:1935:4: ( (lv_predefDepType_0_1= 'Or' | lv_predefDepType_0_2= 'OnlyOne' | lv_predefDepType_0_3= 'AllOrNone' | lv_predefDepType_0_4= 'ZeroOrOne' ) )
@@ -5479,26 +5479,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
               			newLeafNode(otherlv_1, grammarAccess.getPositivePredefinedDependencyAccess().getLeftParenthesisKeyword_1());
               		
             }
-            // InternalInterparameterDependenciesLanguage.g:1987:3: ( ( (lv_predefDepClauses_2_1= rulePositiveAtomic | lv_predefDepClauses_2_2= rulePositiveClause ) ) )
-            // InternalInterparameterDependenciesLanguage.g:1988:4: ( (lv_predefDepClauses_2_1= rulePositiveAtomic | lv_predefDepClauses_2_2= rulePositiveClause ) )
+            // InternalInterparameterDependenciesLanguage.g:1987:3: ( ( (lv_predefDepElements_2_1= rulePositiveAtomic | lv_predefDepElements_2_2= rulePositiveClause ) ) )
+            // InternalInterparameterDependenciesLanguage.g:1988:4: ( (lv_predefDepElements_2_1= rulePositiveAtomic | lv_predefDepElements_2_2= rulePositiveClause ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:1988:4: ( (lv_predefDepClauses_2_1= rulePositiveAtomic | lv_predefDepClauses_2_2= rulePositiveClause ) )
-            // InternalInterparameterDependenciesLanguage.g:1989:5: (lv_predefDepClauses_2_1= rulePositiveAtomic | lv_predefDepClauses_2_2= rulePositiveClause )
+            // InternalInterparameterDependenciesLanguage.g:1988:4: ( (lv_predefDepElements_2_1= rulePositiveAtomic | lv_predefDepElements_2_2= rulePositiveClause ) )
+            // InternalInterparameterDependenciesLanguage.g:1989:5: (lv_predefDepElements_2_1= rulePositiveAtomic | lv_predefDepElements_2_2= rulePositiveClause )
             {
-            // InternalInterparameterDependenciesLanguage.g:1989:5: (lv_predefDepClauses_2_1= rulePositiveAtomic | lv_predefDepClauses_2_2= rulePositiveClause )
+            // InternalInterparameterDependenciesLanguage.g:1989:5: (lv_predefDepElements_2_1= rulePositiveAtomic | lv_predefDepElements_2_2= rulePositiveClause )
             int alt36=2;
             alt36 = dfa36.predict(input);
             switch (alt36) {
                 case 1 :
-                    // InternalInterparameterDependenciesLanguage.g:1990:6: lv_predefDepClauses_2_1= rulePositiveAtomic
+                    // InternalInterparameterDependenciesLanguage.g:1990:6: lv_predefDepElements_2_1= rulePositiveAtomic
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_2_0_0());
+                      						newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_2_0_0());
                       					
                     }
                     pushFollow(FOLLOW_25);
-                    lv_predefDepClauses_2_1=rulePositiveAtomic();
+                    lv_predefDepElements_2_1=rulePositiveAtomic();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -5509,8 +5509,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                       						}
                       						add(
                       							current,
-                      							"predefDepClauses",
-                      							lv_predefDepClauses_2_1,
+                      							"predefDepElements",
+                      							lv_predefDepElements_2_1,
                       							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
                       						afterParserOrEnumRuleCall();
                       					
@@ -5519,15 +5519,15 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     }
                     break;
                 case 2 :
-                    // InternalInterparameterDependenciesLanguage.g:2006:6: lv_predefDepClauses_2_2= rulePositiveClause
+                    // InternalInterparameterDependenciesLanguage.g:2006:6: lv_predefDepElements_2_2= rulePositiveClause
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_2_0_1());
+                      						newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_2_0_1());
                       					
                     }
                     pushFollow(FOLLOW_25);
-                    lv_predefDepClauses_2_2=rulePositiveClause();
+                    lv_predefDepElements_2_2=rulePositiveClause();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -5538,8 +5538,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                       						}
                       						add(
                       							current,
-                      							"predefDepClauses",
-                      							lv_predefDepClauses_2_2,
+                      							"predefDepElements",
+                      							lv_predefDepElements_2_2,
                       							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
                       						afterParserOrEnumRuleCall();
                       					
@@ -5556,7 +5556,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
             }
 
-            // InternalInterparameterDependenciesLanguage.g:2024:3: (otherlv_3= ',' ( ( (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause ) ) ) )+
+            // InternalInterparameterDependenciesLanguage.g:2024:3: (otherlv_3= ',' ( ( (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause ) ) ) )+
             int cnt38=0;
             loop38:
             do {
@@ -5570,7 +5570,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
                 switch (alt38) {
             	case 1 :
-            	    // InternalInterparameterDependenciesLanguage.g:2025:4: otherlv_3= ',' ( ( (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause ) ) )
+            	    // InternalInterparameterDependenciesLanguage.g:2025:4: otherlv_3= ',' ( ( (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause ) ) )
             	    {
             	    otherlv_3=(Token)match(input,38,FOLLOW_24); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -5578,26 +5578,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             	      				newLeafNode(otherlv_3, grammarAccess.getPositivePredefinedDependencyAccess().getCommaKeyword_3_0());
             	      			
             	    }
-            	    // InternalInterparameterDependenciesLanguage.g:2029:4: ( ( (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause ) ) )
-            	    // InternalInterparameterDependenciesLanguage.g:2030:5: ( (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause ) )
+            	    // InternalInterparameterDependenciesLanguage.g:2029:4: ( ( (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause ) ) )
+            	    // InternalInterparameterDependenciesLanguage.g:2030:5: ( (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause ) )
             	    {
-            	    // InternalInterparameterDependenciesLanguage.g:2030:5: ( (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause ) )
-            	    // InternalInterparameterDependenciesLanguage.g:2031:6: (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause )
+            	    // InternalInterparameterDependenciesLanguage.g:2030:5: ( (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause ) )
+            	    // InternalInterparameterDependenciesLanguage.g:2031:6: (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause )
             	    {
-            	    // InternalInterparameterDependenciesLanguage.g:2031:6: (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause )
+            	    // InternalInterparameterDependenciesLanguage.g:2031:6: (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause )
             	    int alt37=2;
             	    alt37 = dfa37.predict(input);
             	    switch (alt37) {
             	        case 1 :
-            	            // InternalInterparameterDependenciesLanguage.g:2032:7: lv_predefDepClauses_4_1= rulePositiveAtomic
+            	            // InternalInterparameterDependenciesLanguage.g:2032:7: lv_predefDepElements_4_1= rulePositiveAtomic
             	            {
             	            if ( state.backtracking==0 ) {
 
-            	              							newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_3_1_0_0());
+            	              							newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_3_1_0_0());
             	              						
             	            }
             	            pushFollow(FOLLOW_26);
-            	            lv_predefDepClauses_4_1=rulePositiveAtomic();
+            	            lv_predefDepElements_4_1=rulePositiveAtomic();
 
             	            state._fsp--;
             	            if (state.failed) return current;
@@ -5608,8 +5608,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             	              							}
             	              							add(
             	              								current,
-            	              								"predefDepClauses",
-            	              								lv_predefDepClauses_4_1,
+            	              								"predefDepElements",
+            	              								lv_predefDepElements_4_1,
             	              								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
             	              							afterParserOrEnumRuleCall();
             	              						
@@ -5618,15 +5618,15 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             	            }
             	            break;
             	        case 2 :
-            	            // InternalInterparameterDependenciesLanguage.g:2048:7: lv_predefDepClauses_4_2= rulePositiveClause
+            	            // InternalInterparameterDependenciesLanguage.g:2048:7: lv_predefDepElements_4_2= rulePositiveClause
             	            {
             	            if ( state.backtracking==0 ) {
 
-            	              							newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_3_1_0_1());
+            	              							newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_3_1_0_1());
             	              						
             	            }
             	            pushFollow(FOLLOW_26);
-            	            lv_predefDepClauses_4_2=rulePositiveClause();
+            	            lv_predefDepElements_4_2=rulePositiveClause();
 
             	            state._fsp--;
             	            if (state.failed) return current;
@@ -5637,8 +5637,8 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             	              							}
             	              							add(
             	              								current,
-            	              								"predefDepClauses",
-            	              								lv_predefDepClauses_4_2,
+            	              								"predefDepElements",
+            	              								lv_predefDepElements_4_2,
             	              								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
             	              							afterParserOrEnumRuleCall();
             	              						
@@ -5700,30 +5700,30 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
     // $ANTLR start synpred28_InternalInterparameterDependenciesLanguage
     public final void synpred28_InternalInterparameterDependenciesLanguage_fragment() throws RecognitionException {   
-        EObject lv_firsElement_0_0 = null;
+        EObject lv_firstElement_0_0 = null;
 
         EObject lv_clauseContinuation_1_0 = null;
 
 
-        // InternalInterparameterDependenciesLanguage.g:1146:3: ( ( ( (lv_firsElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) ) )
-        // InternalInterparameterDependenciesLanguage.g:1146:3: ( ( (lv_firsElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) )
+        // InternalInterparameterDependenciesLanguage.g:1146:3: ( ( ( (lv_firstElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) ) )
+        // InternalInterparameterDependenciesLanguage.g:1146:3: ( ( (lv_firstElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) )
         {
-        // InternalInterparameterDependenciesLanguage.g:1146:3: ( ( (lv_firsElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) )
-        // InternalInterparameterDependenciesLanguage.g:1147:4: ( (lv_firsElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) )
+        // InternalInterparameterDependenciesLanguage.g:1146:3: ( ( (lv_firstElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) )
+        // InternalInterparameterDependenciesLanguage.g:1147:4: ( (lv_firstElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) )
         {
-        // InternalInterparameterDependenciesLanguage.g:1147:4: ( (lv_firsElement_0_0= ruleAtomic ) )
-        // InternalInterparameterDependenciesLanguage.g:1148:5: (lv_firsElement_0_0= ruleAtomic )
+        // InternalInterparameterDependenciesLanguage.g:1147:4: ( (lv_firstElement_0_0= ruleAtomic ) )
+        // InternalInterparameterDependenciesLanguage.g:1148:5: (lv_firstElement_0_0= ruleAtomic )
         {
-        // InternalInterparameterDependenciesLanguage.g:1148:5: (lv_firsElement_0_0= ruleAtomic )
-        // InternalInterparameterDependenciesLanguage.g:1149:6: lv_firsElement_0_0= ruleAtomic
+        // InternalInterparameterDependenciesLanguage.g:1148:5: (lv_firstElement_0_0= ruleAtomic )
+        // InternalInterparameterDependenciesLanguage.g:1149:6: lv_firstElement_0_0= ruleAtomic
         {
         if ( state.backtracking==0 ) {
 
-          						newCompositeNode(grammarAccess.getClauseAccess().getFirsElementAtomicParserRuleCall_0_0_0());
+          						newCompositeNode(grammarAccess.getClauseAccess().getFirstElementAtomicParserRuleCall_0_0_0());
           					
         }
         pushFollow(FOLLOW_20);
-        lv_firsElement_0_0=ruleAtomic();
+        lv_firstElement_0_0=ruleAtomic();
 
         state._fsp--;
         if (state.failed) return ;
@@ -5765,26 +5765,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
     // $ANTLR start synpred31_InternalInterparameterDependenciesLanguage
     public final void synpred31_InternalInterparameterDependenciesLanguage_fragment() throws RecognitionException {   
-        EObject lv_firsElement_2_1 = null;
+        EObject lv_firstElement_2_1 = null;
 
-        EObject lv_firsElement_2_2 = null;
+        EObject lv_firstElement_2_2 = null;
 
         EObject lv_clauseContinuation_3_0 = null;
 
 
-        // InternalInterparameterDependenciesLanguage.g:1187:3: ( ( ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? ) )
-        // InternalInterparameterDependenciesLanguage.g:1187:3: ( ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? )
+        // InternalInterparameterDependenciesLanguage.g:1187:3: ( ( ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? ) )
+        // InternalInterparameterDependenciesLanguage.g:1187:3: ( ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? )
         {
-        // InternalInterparameterDependenciesLanguage.g:1187:3: ( ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? )
-        // InternalInterparameterDependenciesLanguage.g:1188:4: ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )?
+        // InternalInterparameterDependenciesLanguage.g:1187:3: ( ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? )
+        // InternalInterparameterDependenciesLanguage.g:1188:4: ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )?
         {
-        // InternalInterparameterDependenciesLanguage.g:1188:4: ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) )
-        // InternalInterparameterDependenciesLanguage.g:1189:5: ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) )
+        // InternalInterparameterDependenciesLanguage.g:1188:4: ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) )
+        // InternalInterparameterDependenciesLanguage.g:1189:5: ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) )
         {
-        // InternalInterparameterDependenciesLanguage.g:1189:5: ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) )
-        // InternalInterparameterDependenciesLanguage.g:1190:6: (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency )
+        // InternalInterparameterDependenciesLanguage.g:1189:5: ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) )
+        // InternalInterparameterDependenciesLanguage.g:1190:6: (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency )
         {
-        // InternalInterparameterDependenciesLanguage.g:1190:6: (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency )
+        // InternalInterparameterDependenciesLanguage.g:1190:6: (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency )
         int alt43=2;
         int LA43_0 = input.LA(1);
 
@@ -5803,10 +5803,10 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         switch (alt43) {
             case 1 :
-                // InternalInterparameterDependenciesLanguage.g:1191:7: lv_firsElement_2_1= rulePredefinedDependency
+                // InternalInterparameterDependenciesLanguage.g:1191:7: lv_firstElement_2_1= rulePredefinedDependency
                 {
                 pushFollow(FOLLOW_21);
-                lv_firsElement_2_1=rulePredefinedDependency();
+                lv_firstElement_2_1=rulePredefinedDependency();
 
                 state._fsp--;
                 if (state.failed) return ;
@@ -5814,15 +5814,15 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                 }
                 break;
             case 2 :
-                // InternalInterparameterDependenciesLanguage.g:1207:7: lv_firsElement_2_2= ruleArithmeticDependency
+                // InternalInterparameterDependenciesLanguage.g:1207:7: lv_firstElement_2_2= ruleArithmeticDependency
                 {
                 if ( state.backtracking==0 ) {
 
-                  							newCompositeNode(grammarAccess.getClauseAccess().getFirsElementArithmeticDependencyParserRuleCall_1_0_0_1());
+                  							newCompositeNode(grammarAccess.getClauseAccess().getFirstElementArithmeticDependencyParserRuleCall_1_0_0_1());
                   						
                 }
                 pushFollow(FOLLOW_21);
-                lv_firsElement_2_2=ruleArithmeticDependency();
+                lv_firstElement_2_2=ruleArithmeticDependency();
 
                 state._fsp--;
                 if (state.failed) return ;
@@ -5881,30 +5881,30 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
     // $ANTLR start synpred44_InternalInterparameterDependenciesLanguage
     public final void synpred44_InternalInterparameterDependenciesLanguage_fragment() throws RecognitionException {   
-        EObject lv_firsElement_0_0 = null;
+        EObject lv_firstElement_0_0 = null;
 
         EObject lv_clauseContinuation_1_0 = null;
 
 
-        // InternalInterparameterDependenciesLanguage.g:1672:3: ( ( ( (lv_firsElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) ) )
-        // InternalInterparameterDependenciesLanguage.g:1672:3: ( ( (lv_firsElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) )
+        // InternalInterparameterDependenciesLanguage.g:1672:3: ( ( ( (lv_firstElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) ) )
+        // InternalInterparameterDependenciesLanguage.g:1672:3: ( ( (lv_firstElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) )
         {
-        // InternalInterparameterDependenciesLanguage.g:1672:3: ( ( (lv_firsElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) )
-        // InternalInterparameterDependenciesLanguage.g:1673:4: ( (lv_firsElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) )
+        // InternalInterparameterDependenciesLanguage.g:1672:3: ( ( (lv_firstElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) ) )
+        // InternalInterparameterDependenciesLanguage.g:1673:4: ( (lv_firstElement_0_0= rulePositiveAtomic ) ) ( (lv_clauseContinuation_1_0= rulePositiveClauseContinuation ) )
         {
-        // InternalInterparameterDependenciesLanguage.g:1673:4: ( (lv_firsElement_0_0= rulePositiveAtomic ) )
-        // InternalInterparameterDependenciesLanguage.g:1674:5: (lv_firsElement_0_0= rulePositiveAtomic )
+        // InternalInterparameterDependenciesLanguage.g:1673:4: ( (lv_firstElement_0_0= rulePositiveAtomic ) )
+        // InternalInterparameterDependenciesLanguage.g:1674:5: (lv_firstElement_0_0= rulePositiveAtomic )
         {
-        // InternalInterparameterDependenciesLanguage.g:1674:5: (lv_firsElement_0_0= rulePositiveAtomic )
-        // InternalInterparameterDependenciesLanguage.g:1675:6: lv_firsElement_0_0= rulePositiveAtomic
+        // InternalInterparameterDependenciesLanguage.g:1674:5: (lv_firstElement_0_0= rulePositiveAtomic )
+        // InternalInterparameterDependenciesLanguage.g:1675:6: lv_firstElement_0_0= rulePositiveAtomic
         {
         if ( state.backtracking==0 ) {
 
-          						newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirsElementPositiveAtomicParserRuleCall_0_0_0());
+          						newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementPositiveAtomicParserRuleCall_0_0_0());
           					
         }
         pushFollow(FOLLOW_20);
-        lv_firsElement_0_0=rulePositiveAtomic();
+        lv_firstElement_0_0=rulePositiveAtomic();
 
         state._fsp--;
         if (state.failed) return ;
@@ -5946,26 +5946,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
     // $ANTLR start synpred47_InternalInterparameterDependenciesLanguage
     public final void synpred47_InternalInterparameterDependenciesLanguage_fragment() throws RecognitionException {   
-        EObject lv_firsElement_2_1 = null;
+        EObject lv_firstElement_2_1 = null;
 
-        EObject lv_firsElement_2_2 = null;
+        EObject lv_firstElement_2_2 = null;
 
         EObject lv_clauseContinuation_3_0 = null;
 
 
-        // InternalInterparameterDependenciesLanguage.g:1713:3: ( ( ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? ) )
-        // InternalInterparameterDependenciesLanguage.g:1713:3: ( ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? )
+        // InternalInterparameterDependenciesLanguage.g:1713:3: ( ( ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? ) )
+        // InternalInterparameterDependenciesLanguage.g:1713:3: ( ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? )
         {
-        // InternalInterparameterDependenciesLanguage.g:1713:3: ( ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? )
-        // InternalInterparameterDependenciesLanguage.g:1714:4: ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )?
+        // InternalInterparameterDependenciesLanguage.g:1713:3: ( ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )? )
+        // InternalInterparameterDependenciesLanguage.g:1714:4: ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= rulePositiveClauseContinuation ) )?
         {
-        // InternalInterparameterDependenciesLanguage.g:1714:4: ( ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) )
-        // InternalInterparameterDependenciesLanguage.g:1715:5: ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) )
+        // InternalInterparameterDependenciesLanguage.g:1714:4: ( ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) )
+        // InternalInterparameterDependenciesLanguage.g:1715:5: ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) )
         {
-        // InternalInterparameterDependenciesLanguage.g:1715:5: ( (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) )
-        // InternalInterparameterDependenciesLanguage.g:1716:6: (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency )
+        // InternalInterparameterDependenciesLanguage.g:1715:5: ( (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) )
+        // InternalInterparameterDependenciesLanguage.g:1716:6: (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency )
         {
-        // InternalInterparameterDependenciesLanguage.g:1716:6: (lv_firsElement_2_1= rulePositivePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency )
+        // InternalInterparameterDependenciesLanguage.g:1716:6: (lv_firstElement_2_1= rulePositivePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency )
         int alt46=2;
         int LA46_0 = input.LA(1);
 
@@ -5984,10 +5984,10 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         switch (alt46) {
             case 1 :
-                // InternalInterparameterDependenciesLanguage.g:1717:7: lv_firsElement_2_1= rulePositivePredefinedDependency
+                // InternalInterparameterDependenciesLanguage.g:1717:7: lv_firstElement_2_1= rulePositivePredefinedDependency
                 {
                 pushFollow(FOLLOW_21);
-                lv_firsElement_2_1=rulePositivePredefinedDependency();
+                lv_firstElement_2_1=rulePositivePredefinedDependency();
 
                 state._fsp--;
                 if (state.failed) return ;
@@ -5995,15 +5995,15 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                 }
                 break;
             case 2 :
-                // InternalInterparameterDependenciesLanguage.g:1733:7: lv_firsElement_2_2= ruleArithmeticDependency
+                // InternalInterparameterDependenciesLanguage.g:1733:7: lv_firstElement_2_2= ruleArithmeticDependency
                 {
                 if ( state.backtracking==0 ) {
 
-                  							newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirsElementArithmeticDependencyParserRuleCall_1_0_0_1());
+                  							newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementArithmeticDependencyParserRuleCall_1_0_0_1());
                   						
                 }
                 pushFollow(FOLLOW_21);
-                lv_firsElement_2_2=ruleArithmeticDependency();
+                lv_firstElement_2_2=ruleArithmeticDependency();
 
                 state._fsp--;
                 if (state.failed) return ;
@@ -6326,7 +6326,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             this.transition = dfa_23;
         }
         public String getDescription() {
-            return "1145:2: ( ( ( (lv_firsElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) ) | ( ( ( (lv_firsElement_2_1= rulePredefinedDependency | lv_firsElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? ) | ( ( (lv_not_4_0= ruleNot ) )? ( (lv_openingParenthesis_5_0= '(' ) ) ( (lv_clause_6_0= ruleClause ) ) ( (lv_closingParenthesis_7_0= ')' ) ) ( (lv_clauseContinuation_8_0= ruleClauseContinuation ) )? ) )";
+            return "1145:2: ( ( ( (lv_firstElement_0_0= ruleAtomic ) ) ( (lv_clauseContinuation_1_0= ruleClauseContinuation ) ) ) | ( ( ( (lv_firstElement_2_1= rulePredefinedDependency | lv_firstElement_2_2= ruleArithmeticDependency ) ) ) ( (lv_clauseContinuation_3_0= ruleClauseContinuation ) )? ) | ( ( (lv_not_4_0= ruleNot ) )? ( (lv_openingParenthesis_5_0= '(' ) ) ( (lv_clause_6_0= ruleClause ) ) ( (lv_closingParenthesis_7_0= ')' ) ) ( (lv_clauseContinuation_8_0= ruleClauseContinuation ) )? ) )";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -6481,7 +6481,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             this.transition = dfa_31;
         }
         public String getDescription() {
-            return "1501:5: (lv_predefDepClauses_3_1= rulePositiveAtomic | lv_predefDepClauses_3_2= rulePositiveClause )";
+            return "1501:5: (lv_predefDepElements_3_1= rulePositiveAtomic | lv_predefDepElements_3_2= rulePositiveClause )";
         }
     }
     static final String[] dfa_32s = {
@@ -6519,7 +6519,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             this.transition = dfa_32;
         }
         public String getDescription() {
-            return "1543:6: (lv_predefDepClauses_5_1= rulePositiveAtomic | lv_predefDepClauses_5_2= rulePositiveClause )";
+            return "1543:6: (lv_predefDepElements_5_1= rulePositiveAtomic | lv_predefDepElements_5_2= rulePositiveClause )";
         }
     }
     static final String dfa_33s = "\13\uffff";
@@ -6624,7 +6624,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             this.transition = dfa_31;
         }
         public String getDescription() {
-            return "1989:5: (lv_predefDepClauses_2_1= rulePositiveAtomic | lv_predefDepClauses_2_2= rulePositiveClause )";
+            return "1989:5: (lv_predefDepElements_2_1= rulePositiveAtomic | lv_predefDepElements_2_2= rulePositiveClause )";
         }
     }
 
@@ -6642,7 +6642,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             this.transition = dfa_42;
         }
         public String getDescription() {
-            return "2031:6: (lv_predefDepClauses_4_1= rulePositiveAtomic | lv_predefDepClauses_4_2= rulePositiveClause )";
+            return "2031:6: (lv_predefDepElements_4_1= rulePositiveAtomic | lv_predefDepElements_4_2= rulePositiveClause )";
         }
     }
  

@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getFirsElement <em>Firs Element</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getFirstElement <em>First Element</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getClauseContinuation <em>Clause Continuation</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getNot <em>Not</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getOpeningParenthesis <em>Opening Parenthesis</em>}</li>
@@ -38,14 +38,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements GeneralClause
 {
   /**
-   * The cached value of the '{@link #getFirsElement() <em>Firs Element</em>}' containment reference.
+   * The cached value of the '{@link #getFirstElement() <em>First Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFirsElement()
+   * @see #getFirstElement()
    * @generated
    * @ordered
    */
-  protected EObject firsElement;
+  protected EObject firstElement;
 
   /**
    * The cached value of the '{@link #getClauseContinuation() <em>Clause Continuation</em>}' containment reference.
@@ -154,9 +154,9 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    */
   @Override
-  public EObject getFirsElement()
+  public EObject getFirstElement()
   {
-    return firsElement;
+    return firstElement;
   }
 
   /**
@@ -164,13 +164,13 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFirsElement(EObject newFirsElement, NotificationChain msgs)
+  public NotificationChain basicSetFirstElement(EObject newFirstElement, NotificationChain msgs)
   {
-    EObject oldFirsElement = firsElement;
-    firsElement = newFirsElement;
+    EObject oldFirstElement = firstElement;
+    firstElement = newFirstElement;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRS_ELEMENT, oldFirsElement, newFirsElement);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT, oldFirstElement, newFirstElement);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -182,20 +182,20 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    */
   @Override
-  public void setFirsElement(EObject newFirsElement)
+  public void setFirstElement(EObject newFirstElement)
   {
-    if (newFirsElement != firsElement)
+    if (newFirstElement != firstElement)
     {
       NotificationChain msgs = null;
-      if (firsElement != null)
-        msgs = ((InternalEObject)firsElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRS_ELEMENT, null, msgs);
-      if (newFirsElement != null)
-        msgs = ((InternalEObject)newFirsElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRS_ELEMENT, null, msgs);
-      msgs = basicSetFirsElement(newFirsElement, msgs);
+      if (firstElement != null)
+        msgs = ((InternalEObject)firstElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT, null, msgs);
+      if (newFirstElement != null)
+        msgs = ((InternalEObject)newFirstElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT, null, msgs);
+      msgs = basicSetFirstElement(newFirstElement, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRS_ELEMENT, newFirsElement, newFirsElement));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT, newFirstElement, newFirstElement));
   }
 
   /**
@@ -383,8 +383,8 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRS_ELEMENT:
-        return basicSetFirsElement(null, msgs);
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT:
+        return basicSetFirstElement(null, msgs);
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
         return basicSetClauseContinuation(null, msgs);
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE:
@@ -403,8 +403,8 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRS_ELEMENT:
-        return getFirsElement();
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT:
+        return getFirstElement();
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
         return getClauseContinuation();
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__NOT:
@@ -429,8 +429,8 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRS_ELEMENT:
-        setFirsElement((EObject)newValue);
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT:
+        setFirstElement((EObject)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
         setClauseContinuation((GeneralClauseContinuation)newValue);
@@ -461,8 +461,8 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRS_ELEMENT:
-        setFirsElement((EObject)null);
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT:
+        setFirstElement((EObject)null);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
         setClauseContinuation((GeneralClauseContinuation)null);
@@ -493,8 +493,8 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRS_ELEMENT:
-        return firsElement != null;
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT:
+        return firstElement != null;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
         return clauseContinuation != null;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__NOT:

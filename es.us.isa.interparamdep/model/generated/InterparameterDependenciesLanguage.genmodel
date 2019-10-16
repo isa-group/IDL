@@ -51,7 +51,7 @@
     </genClasses>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//ParamAssignment"/>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//GeneralClause">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralClause/firsElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralClause/firstElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralClause/clauseContinuation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//GeneralClause/not"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//GeneralClause/openingParenthesis"/>
@@ -65,7 +65,7 @@
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//GeneralPredefinedDependency">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//GeneralPredefinedDependency/not"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//GeneralPredefinedDependency/predefDepType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralPredefinedDependency/predefDepClauses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralPredefinedDependency/predefDepElements"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

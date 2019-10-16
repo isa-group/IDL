@@ -37,6 +37,7 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment
+import java.util.ArrayList
 
 /**
  * Generates code from your model files on save.
@@ -49,6 +50,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	val File file = new File(path)
 	val Path writePath = Paths.get(path)
 	var String csp
+	var int intedString = 1
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
@@ -57,6 +59,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		
 		for (dependency: resource.allContents.filter(Dependency).toIterable) {
 			csp = "constraint "
+			intedString = 1
 //			writeDependencyAndOrIterate(dependency.dep, 0, 0)
 //	    	Files.write(writePath, Arrays.asList("....................."),
 //		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
@@ -127,8 +130,13 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 //		}
 //	}
 
-
-
+	/**
+	 * Used to assign an int to a param that is a string
+	 */
+	def int stringToInt(String string) {
+		// TODO: Save tuple of string-int-param in some external file
+		return intedString++
+	}
 
 	/**
 	 * Auxiliar function to process sub elements of dependencies, specifically
@@ -136,31 +144,47 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	 */
 	def void writePredicate(EObject predicate) {
 		if (predicate.class == typeof(GeneralAtomicImpl)) {
-			// TODO
 			val GeneralAtomic atomic = (predicate as GeneralAtomic)
 			val Param param = (atomic.param as Param)
-			System.out.println(param.stringValues)
-			System.out.println(param.booleanValue)
-			System.out.println(param.doubleValue)
-			if (param.stringValues.size === 0 && param.booleanValue === null && param.doubleValue === null) {
-				if (atomic.not === null) {
-					csp += param.name + "Set==1 "
-				} else {
-					csp += param.name + "Set==0 "
+			
+			if (atomic.not !== null)
+				csp += "not "
+			
+			if (isParamAssignment(param))
+				csp += "("
+
+			csp += param.name + "Set==1"
+			
+			if (isParamAssignment(param)) {
+				csp += " /\\ "
+				if (param.booleanValue !== null) {
+					csp += param.name + "==" + param.booleanValue
+				} else if (param.doubleValue !== null) {
+					csp += param.name + param.arithOp + param.doubleValue
+				} else if (param.stringValues.size !== 0) {
+					csp += "("
+					for (string: param.stringValues) {
+						csp += param.name + "==" + stringToInt(string) + " \\/ "
+					}
+					csp = csp.substring(0, csp.length-4) // Trim last " \\/ "
+					csp += ")"
 				}
 			}
+			if (isParamAssignment(param))
+				csp += ")"
+			
 		} else if(predicate.class == typeof(ComparisonDependencyImpl)) {
 			writeComparisonDependency(predicate as ComparisonDependency)
 		} else if(predicate.class == typeof(GeneralClauseImpl)) {
-//			return writeLogicalClause(
-//				(predicate as GeneralClause).firstElement,
-//				(predicate as GeneralClause).clauseContinuation,
-//				(predicate as GeneralClause).clauseContinuation2
-//			)
+			writeLogicalClause(predicate as GeneralClause)
 		} else {
-			throw new Exception("The element must be a param, an arithmetic" + 
+			throw new Exception("The element must be a param, a comparison" + 
 				"dependency or a clause")
 		}
+	}
+	
+	def boolean isParamAssignment(Param param) {
+		return param.stringValues.size !== 0 || param.booleanValue !== null || param.doubleValue !== null
 	}
 
 	def void writeComparisonDependency(ComparisonDependency dep) {
@@ -168,7 +192,6 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	}
 	
 	def void writeArithmeticDependency(ArithmeticDependency dep) {
-		// TODO: Implement CSP mapping
 		writeOperation(dep.operation)
 		csp += dep.arithOp
 		csp += dep.result
@@ -202,77 +225,85 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	def void writePredefinedDependency(GeneralPredefinedDependency dep) {
 		// TODO: Implement CSP mapping
 		
-		var elementOutputs = newArrayList
-		for (depElement: dep.predefDepClauses) {
-			elementOutputs.add(depElement)
+		var depElements = new ArrayList<EObject>()
+		for (depElement: dep.predefDepElements) {
+			depElements.add(depElement)
 		}
 		
-//		switch dep.predefDepType {
-//			case "Or":
-//
-//			case "OnlyOne":
-//
-//			case "AllOrNone":
-//
-//			case "ZeroOrOne":
-//
-//			default:
-//				throw new Exception("The predefined dependency can only be 'Or', " + 
-//					"'OnlyOne', 'AllOrNone' or 'ZeroOrOne'")
-//		}
+		csp += "("
+		switch dep.predefDepType {
+			case "Or":
+				writeOrDependency(depElements)
+			case "OnlyOne":
+				doStuff()
+			case "AllOrNone":
+				doStuff()
+			case "ZeroOrOne":
+				doStuff()
+			default:
+				throw new Exception("The predefined dependency can only be 'Or', " + 
+					"'OnlyOne', 'AllOrNone' or 'ZeroOrOne'")
+		}
+		csp += ")"
 		
+	}
+	
+	def void doStuff(){}
+	
+	def void writeOrDependency(ArrayList<EObject> elements) {
+		for (element: elements) {
+			csp += "("
+			writePredicate(element)
+			csp += ") \\/ "
+		}
+		csp = csp.substring(0, csp.length-4) // Trim last " \\/ "
 	}
 	
 	def void writeConditionalDependency(ConditionalDependency dep) {
-		// TODO: Implement CSP mapping
-		
+		csp += "("
 		writePredicate(dep.condition)
-		csp += " -> "
+		csp += ") -> ("
 		writePredicate(dep.consequence)
+		csp += ")"
 	}
 	
-	def void writeLogicalClause(EObject firstElement, GeneralClauseContinuation clauseCont, GeneralClauseContinuation clauseCont2) {
-		// TODO: Implement CSP mapping
-		
-		// Solve first element, which can only be a param, arithmetic dep or predefined dep
-		if (firstElement.class == typeof(GeneralAtomicImpl)) { // param or param assignment
-			// TODO
-			
-		} else if(firstElement.class == typeof(ComparisonDependencyImpl)) {
-			writeComparisonDependency(firstElement as ComparisonDependency)
-		} else if(firstElement.class == typeof(ArithmeticDependencyImpl)) {
-			writeArithmeticDependency(firstElement as ArithmeticDependency)
-		} else if(firstElement.class == typeof(GeneralPredefinedDependencyImpl)) {
-			writePredefinedDependency(firstElement as GeneralPredefinedDependency)
-		} else {
-			throw new Exception("The first element of a clause must be a param, an " + 
-				"arithmetic dependency or a predefined dependency")
+	def void writeLogicalClause(GeneralClause clause) {
+		if (clause.clause !== null) {
+			if (clause.not !== null) {
+				csp += "not "
+			}
+			csp += "("
+			writeLogicalClause(clause.clause)
+			csp += ")"
 		}
-				
+		
+		// Solve first element, which can only be a param, arithmetic dep, comparison dep or predefined dep
+		if (clause.firstElement !== null) {
+			if (clause.firstElement.class == typeof(GeneralAtomicImpl)) { // param or param assignment
+				writePredicate(clause.firstElement)
+			} else if(clause.firstElement.class == typeof(ComparisonDependencyImpl)) {
+				writeComparisonDependency(clause.firstElement as ComparisonDependency)
+			} else if(clause.firstElement.class == typeof(ArithmeticDependencyImpl)) {
+				writeArithmeticDependency(clause.firstElement as ArithmeticDependency)
+			} else if(clause.firstElement.class == typeof(GeneralPredefinedDependencyImpl)) {
+				writePredefinedDependency(clause.firstElement as GeneralPredefinedDependency)
+			} else {
+				throw new Exception("The first element of a clause must be a param, an " + 
+					"arithmetic dependency, a comparison dependency or a predefined dependency")
+			}
+		}
+
 		// Solve second element, which is a clause continuation containing either
 		// a GeneralAtomic or another clause
-		if (clauseCont !== null) {
-			writePredicate(clauseCont.additionalElements)
-			if (clauseCont.logicalOp == "AND") {
-
-			} else if (clauseCont.logicalOp == "OR") {
-
+		if (clause.clauseContinuation !== null) {
+			if (clause.clauseContinuation.logicalOp == "AND") {
+				csp += " /\\ "
+			} else if (clause.clauseContinuation.logicalOp == "OR") {
+				csp += " \\/ "
 			} else {
 				throw new Exception("The logical operator can only be AND or OR")
 			}
-		}
-		
-		// Solve third element, which is a clause continuation containing either
-		// a GeneralAtomic or another clause
-		if (clauseCont2 !== null) {
-			writePredicate(clauseCont2.additionalElements)
-			if (clauseCont2.logicalOp == "AND") {
-
-			} else if (clauseCont2.logicalOp == "OR") {
-
-			} else {
-				throw new Exception("The logical operator can only be AND or OR")
-			}
+			writePredicate(clause.clauseContinuation.additionalElements)
 		}
 	}
 	

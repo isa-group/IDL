@@ -42,18 +42,18 @@ public class InterparameterDependenciesLanguageParser extends AbstractContentAss
 			builder.put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
 			builder.put(grammarAccess.getParamAssignmentAccess().getAlternatives(), "rule__ParamAssignment__Alternatives");
 			builder.put(grammarAccess.getClauseAccess().getAlternatives(), "rule__Clause__Alternatives");
-			builder.put(grammarAccess.getClauseAccess().getFirsElementAlternatives_1_0_0(), "rule__Clause__FirsElementAlternatives_1_0_0");
+			builder.put(grammarAccess.getClauseAccess().getFirstElementAlternatives_1_0_0(), "rule__Clause__FirstElementAlternatives_1_0_0");
 			builder.put(grammarAccess.getClauseContinuationAccess().getAdditionalElementsAlternatives_1_0(), "rule__ClauseContinuation__AdditionalElementsAlternatives_1_0");
 			builder.put(grammarAccess.getPredefinedDependencyAccess().getPredefDepTypeAlternatives_1_0(), "rule__PredefinedDependency__PredefDepTypeAlternatives_1_0");
-			builder.put(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesAlternatives_3_0(), "rule__PredefinedDependency__PredefDepClausesAlternatives_3_0");
-			builder.put(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesAlternatives_4_1_0(), "rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0");
+			builder.put(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsAlternatives_3_0(), "rule__PredefinedDependency__PredefDepElementsAlternatives_3_0");
+			builder.put(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsAlternatives_4_1_0(), "rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0");
 			builder.put(grammarAccess.getPositiveAtomicAccess().getAlternatives(), "rule__PositiveAtomic__Alternatives");
 			builder.put(grammarAccess.getPositiveClauseAccess().getAlternatives(), "rule__PositiveClause__Alternatives");
-			builder.put(grammarAccess.getPositiveClauseAccess().getFirsElementAlternatives_1_0_0(), "rule__PositiveClause__FirsElementAlternatives_1_0_0");
+			builder.put(grammarAccess.getPositiveClauseAccess().getFirstElementAlternatives_1_0_0(), "rule__PositiveClause__FirstElementAlternatives_1_0_0");
 			builder.put(grammarAccess.getPositiveClauseContinuationAccess().getAdditionalElementsAlternatives_1_0(), "rule__PositiveClauseContinuation__AdditionalElementsAlternatives_1_0");
 			builder.put(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepTypeAlternatives_0_0(), "rule__PositivePredefinedDependency__PredefDepTypeAlternatives_0_0");
-			builder.put(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesAlternatives_2_0(), "rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0");
-			builder.put(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesAlternatives_3_1_0(), "rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0");
+			builder.put(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsAlternatives_2_0(), "rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0");
+			builder.put(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsAlternatives_3_1_0(), "rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0");
 			builder.put(grammarAccess.getDependencyAccess().getGroup(), "rule__Dependency__Group__0");
 			builder.put(grammarAccess.getComparisonDependencyAccess().getGroup(), "rule__ComparisonDependency__Group__0");
 			builder.put(grammarAccess.getArithmeticDependencyAccess().getGroup(), "rule__ArithmeticDependency__Group__0");
@@ -108,9 +108,9 @@ public class InterparameterDependenciesLanguageParser extends AbstractContentAss
 			builder.put(grammarAccess.getParamAssignmentAccess().getBooleanValueAssignment_1_2(), "rule__ParamAssignment__BooleanValueAssignment_1_2");
 			builder.put(grammarAccess.getParamAssignmentAccess().getArithOpAssignment_2_1(), "rule__ParamAssignment__ArithOpAssignment_2_1");
 			builder.put(grammarAccess.getParamAssignmentAccess().getDoubleValueAssignment_2_2(), "rule__ParamAssignment__DoubleValueAssignment_2_2");
-			builder.put(grammarAccess.getClauseAccess().getFirsElementAssignment_0_0(), "rule__Clause__FirsElementAssignment_0_0");
+			builder.put(grammarAccess.getClauseAccess().getFirstElementAssignment_0_0(), "rule__Clause__FirstElementAssignment_0_0");
 			builder.put(grammarAccess.getClauseAccess().getClauseContinuationAssignment_0_1(), "rule__Clause__ClauseContinuationAssignment_0_1");
-			builder.put(grammarAccess.getClauseAccess().getFirsElementAssignment_1_0(), "rule__Clause__FirsElementAssignment_1_0");
+			builder.put(grammarAccess.getClauseAccess().getFirstElementAssignment_1_0(), "rule__Clause__FirstElementAssignment_1_0");
 			builder.put(grammarAccess.getClauseAccess().getClauseContinuationAssignment_1_1(), "rule__Clause__ClauseContinuationAssignment_1_1");
 			builder.put(grammarAccess.getClauseAccess().getNotAssignment_2_0(), "rule__Clause__NotAssignment_2_0");
 			builder.put(grammarAccess.getClauseAccess().getOpeningParenthesisAssignment_2_1(), "rule__Clause__OpeningParenthesisAssignment_2_1");
@@ -121,13 +121,13 @@ public class InterparameterDependenciesLanguageParser extends AbstractContentAss
 			builder.put(grammarAccess.getClauseContinuationAccess().getAdditionalElementsAssignment_1(), "rule__ClauseContinuation__AdditionalElementsAssignment_1");
 			builder.put(grammarAccess.getPredefinedDependencyAccess().getNotAssignment_0(), "rule__PredefinedDependency__NotAssignment_0");
 			builder.put(grammarAccess.getPredefinedDependencyAccess().getPredefDepTypeAssignment_1(), "rule__PredefinedDependency__PredefDepTypeAssignment_1");
-			builder.put(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesAssignment_3(), "rule__PredefinedDependency__PredefDepClausesAssignment_3");
-			builder.put(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesAssignment_4_1(), "rule__PredefinedDependency__PredefDepClausesAssignment_4_1");
+			builder.put(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsAssignment_3(), "rule__PredefinedDependency__PredefDepElementsAssignment_3");
+			builder.put(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsAssignment_4_1(), "rule__PredefinedDependency__PredefDepElementsAssignment_4_1");
 			builder.put(grammarAccess.getPositiveAtomicAccess().getParamAssignment_0(), "rule__PositiveAtomic__ParamAssignment_0");
 			builder.put(grammarAccess.getPositiveAtomicAccess().getParamAssignment_1(), "rule__PositiveAtomic__ParamAssignment_1");
-			builder.put(grammarAccess.getPositiveClauseAccess().getFirsElementAssignment_0_0(), "rule__PositiveClause__FirsElementAssignment_0_0");
+			builder.put(grammarAccess.getPositiveClauseAccess().getFirstElementAssignment_0_0(), "rule__PositiveClause__FirstElementAssignment_0_0");
 			builder.put(grammarAccess.getPositiveClauseAccess().getClauseContinuationAssignment_0_1(), "rule__PositiveClause__ClauseContinuationAssignment_0_1");
-			builder.put(grammarAccess.getPositiveClauseAccess().getFirsElementAssignment_1_0(), "rule__PositiveClause__FirsElementAssignment_1_0");
+			builder.put(grammarAccess.getPositiveClauseAccess().getFirstElementAssignment_1_0(), "rule__PositiveClause__FirstElementAssignment_1_0");
 			builder.put(grammarAccess.getPositiveClauseAccess().getClauseContinuationAssignment_1_1(), "rule__PositiveClause__ClauseContinuationAssignment_1_1");
 			builder.put(grammarAccess.getPositiveClauseAccess().getOpeningParenthesisAssignment_2_0(), "rule__PositiveClause__OpeningParenthesisAssignment_2_0");
 			builder.put(grammarAccess.getPositiveClauseAccess().getClauseAssignment_2_1(), "rule__PositiveClause__ClauseAssignment_2_1");
@@ -136,8 +136,8 @@ public class InterparameterDependenciesLanguageParser extends AbstractContentAss
 			builder.put(grammarAccess.getPositiveClauseContinuationAccess().getLogicalOpAssignment_0(), "rule__PositiveClauseContinuation__LogicalOpAssignment_0");
 			builder.put(grammarAccess.getPositiveClauseContinuationAccess().getAdditionalElementsAssignment_1(), "rule__PositiveClauseContinuation__AdditionalElementsAssignment_1");
 			builder.put(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepTypeAssignment_0(), "rule__PositivePredefinedDependency__PredefDepTypeAssignment_0");
-			builder.put(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesAssignment_2(), "rule__PositivePredefinedDependency__PredefDepClausesAssignment_2");
-			builder.put(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesAssignment_3_1(), "rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1");
+			builder.put(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsAssignment_2(), "rule__PositivePredefinedDependency__PredefDepElementsAssignment_2");
+			builder.put(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsAssignment_3_1(), "rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1");
 		}
 	}
 	

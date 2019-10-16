@@ -3185,9 +3185,9 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
     // $ANTLR end "rule__Clause__Alternatives"
 
 
-    // $ANTLR start "rule__Clause__FirsElementAlternatives_1_0_0"
-    // InternalInterparameterDependenciesLanguage.g:875:1: rule__Clause__FirsElementAlternatives_1_0_0 : ( ( rulePredefinedDependency ) | ( ruleArithmeticDependency ) );
-    public final void rule__Clause__FirsElementAlternatives_1_0_0() throws RecognitionException {
+    // $ANTLR start "rule__Clause__FirstElementAlternatives_1_0_0"
+    // InternalInterparameterDependenciesLanguage.g:875:1: rule__Clause__FirstElementAlternatives_1_0_0 : ( ( rulePredefinedDependency ) | ( ruleArithmeticDependency ) );
+    public final void rule__Clause__FirstElementAlternatives_1_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3217,7 +3217,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     // InternalInterparameterDependenciesLanguage.g:881:3: rulePredefinedDependency
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getClauseAccess().getFirsElementPredefinedDependencyParserRuleCall_1_0_0_0()); 
+                       before(grammarAccess.getClauseAccess().getFirstElementPredefinedDependencyParserRuleCall_1_0_0_0()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePredefinedDependency();
@@ -3225,7 +3225,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getClauseAccess().getFirsElementPredefinedDependencyParserRuleCall_1_0_0_0()); 
+                       after(grammarAccess.getClauseAccess().getFirstElementPredefinedDependencyParserRuleCall_1_0_0_0()); 
                     }
 
                     }
@@ -3240,7 +3240,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     // InternalInterparameterDependenciesLanguage.g:887:3: ruleArithmeticDependency
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getClauseAccess().getFirsElementArithmeticDependencyParserRuleCall_1_0_0_1()); 
+                       before(grammarAccess.getClauseAccess().getFirstElementArithmeticDependencyParserRuleCall_1_0_0_1()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleArithmeticDependency();
@@ -3248,7 +3248,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getClauseAccess().getFirsElementArithmeticDependencyParserRuleCall_1_0_0_1()); 
+                       after(grammarAccess.getClauseAccess().getFirstElementArithmeticDependencyParserRuleCall_1_0_0_1()); 
                     }
 
                     }
@@ -3270,7 +3270,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__Clause__FirsElementAlternatives_1_0_0"
+    // $ANTLR end "rule__Clause__FirstElementAlternatives_1_0_0"
 
 
     // $ANTLR start "rule__ClauseContinuation__AdditionalElementsAlternatives_1_0"
@@ -3479,9 +3479,9 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
     // $ANTLR end "rule__PredefinedDependency__PredefDepTypeAlternatives_1_0"
 
 
-    // $ANTLR start "rule__PredefinedDependency__PredefDepClausesAlternatives_3_0"
-    // InternalInterparameterDependenciesLanguage.g:950:1: rule__PredefinedDependency__PredefDepClausesAlternatives_3_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );
-    public final void rule__PredefinedDependency__PredefDepClausesAlternatives_3_0() throws RecognitionException {
+    // $ANTLR start "rule__PredefinedDependency__PredefDepElementsAlternatives_3_0"
+    // InternalInterparameterDependenciesLanguage.g:950:1: rule__PredefinedDependency__PredefDepElementsAlternatives_3_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );
+    public final void rule__PredefinedDependency__PredefDepElementsAlternatives_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3497,7 +3497,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     // InternalInterparameterDependenciesLanguage.g:956:3: rulePositiveAtomic
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_3_0_0()); 
+                       before(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_3_0_0()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePositiveAtomic();
@@ -3505,7 +3505,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_3_0_0()); 
+                       after(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_3_0_0()); 
                     }
 
                     }
@@ -3520,7 +3520,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     // InternalInterparameterDependenciesLanguage.g:962:3: rulePositiveClause
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_3_0_1()); 
+                       before(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_3_0_1()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePositiveClause();
@@ -3528,7 +3528,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_3_0_1()); 
+                       after(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_3_0_1()); 
                     }
 
                     }
@@ -3550,12 +3550,12 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__PredefinedDependency__PredefDepClausesAlternatives_3_0"
+    // $ANTLR end "rule__PredefinedDependency__PredefDepElementsAlternatives_3_0"
 
 
-    // $ANTLR start "rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0"
-    // InternalInterparameterDependenciesLanguage.g:971:1: rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );
-    public final void rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0() throws RecognitionException {
+    // $ANTLR start "rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0"
+    // InternalInterparameterDependenciesLanguage.g:971:1: rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );
+    public final void rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3571,7 +3571,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     // InternalInterparameterDependenciesLanguage.g:977:3: rulePositiveAtomic
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_4_1_0_0()); 
+                       before(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_4_1_0_0()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePositiveAtomic();
@@ -3579,7 +3579,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_4_1_0_0()); 
+                       after(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_4_1_0_0()); 
                     }
 
                     }
@@ -3594,7 +3594,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     // InternalInterparameterDependenciesLanguage.g:983:3: rulePositiveClause
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_4_1_0_1()); 
+                       before(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_4_1_0_1()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePositiveClause();
@@ -3602,7 +3602,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_4_1_0_1()); 
+                       after(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_4_1_0_1()); 
                     }
 
                     }
@@ -3624,7 +3624,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0"
+    // $ANTLR end "rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0"
 
 
     // $ANTLR start "rule__PositiveAtomic__Alternatives"
@@ -3905,9 +3905,9 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
     // $ANTLR end "rule__PositiveClause__Alternatives"
 
 
-    // $ANTLR start "rule__PositiveClause__FirsElementAlternatives_1_0_0"
-    // InternalInterparameterDependenciesLanguage.g:1046:1: rule__PositiveClause__FirsElementAlternatives_1_0_0 : ( ( rulePositivePredefinedDependency ) | ( ruleArithmeticDependency ) );
-    public final void rule__PositiveClause__FirsElementAlternatives_1_0_0() throws RecognitionException {
+    // $ANTLR start "rule__PositiveClause__FirstElementAlternatives_1_0_0"
+    // InternalInterparameterDependenciesLanguage.g:1046:1: rule__PositiveClause__FirstElementAlternatives_1_0_0 : ( ( rulePositivePredefinedDependency ) | ( ruleArithmeticDependency ) );
+    public final void rule__PositiveClause__FirstElementAlternatives_1_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3937,7 +3937,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     // InternalInterparameterDependenciesLanguage.g:1052:3: rulePositivePredefinedDependency
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getPositiveClauseAccess().getFirsElementPositivePredefinedDependencyParserRuleCall_1_0_0_0()); 
+                       before(grammarAccess.getPositiveClauseAccess().getFirstElementPositivePredefinedDependencyParserRuleCall_1_0_0_0()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePositivePredefinedDependency();
@@ -3945,7 +3945,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getPositiveClauseAccess().getFirsElementPositivePredefinedDependencyParserRuleCall_1_0_0_0()); 
+                       after(grammarAccess.getPositiveClauseAccess().getFirstElementPositivePredefinedDependencyParserRuleCall_1_0_0_0()); 
                     }
 
                     }
@@ -3960,7 +3960,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     // InternalInterparameterDependenciesLanguage.g:1058:3: ruleArithmeticDependency
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getPositiveClauseAccess().getFirsElementArithmeticDependencyParserRuleCall_1_0_0_1()); 
+                       before(grammarAccess.getPositiveClauseAccess().getFirstElementArithmeticDependencyParserRuleCall_1_0_0_1()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleArithmeticDependency();
@@ -3968,7 +3968,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getPositiveClauseAccess().getFirsElementArithmeticDependencyParserRuleCall_1_0_0_1()); 
+                       after(grammarAccess.getPositiveClauseAccess().getFirstElementArithmeticDependencyParserRuleCall_1_0_0_1()); 
                     }
 
                     }
@@ -3990,7 +3990,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__PositiveClause__FirsElementAlternatives_1_0_0"
+    // $ANTLR end "rule__PositiveClause__FirstElementAlternatives_1_0_0"
 
 
     // $ANTLR start "rule__PositiveClauseContinuation__AdditionalElementsAlternatives_1_0"
@@ -4199,9 +4199,9 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
     // $ANTLR end "rule__PositivePredefinedDependency__PredefDepTypeAlternatives_0_0"
 
 
-    // $ANTLR start "rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0"
-    // InternalInterparameterDependenciesLanguage.g:1121:1: rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );
-    public final void rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0() throws RecognitionException {
+    // $ANTLR start "rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0"
+    // InternalInterparameterDependenciesLanguage.g:1121:1: rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );
+    public final void rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -4217,7 +4217,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     // InternalInterparameterDependenciesLanguage.g:1127:3: rulePositiveAtomic
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_2_0_0()); 
+                       before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_2_0_0()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePositiveAtomic();
@@ -4225,7 +4225,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_2_0_0()); 
+                       after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_2_0_0()); 
                     }
 
                     }
@@ -4240,7 +4240,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     // InternalInterparameterDependenciesLanguage.g:1133:3: rulePositiveClause
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_2_0_1()); 
+                       before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_2_0_1()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePositiveClause();
@@ -4248,7 +4248,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_2_0_1()); 
+                       after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_2_0_1()); 
                     }
 
                     }
@@ -4270,12 +4270,12 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0"
+    // $ANTLR end "rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0"
 
 
-    // $ANTLR start "rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0"
-    // InternalInterparameterDependenciesLanguage.g:1142:1: rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );
-    public final void rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0() throws RecognitionException {
+    // $ANTLR start "rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0"
+    // InternalInterparameterDependenciesLanguage.g:1142:1: rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );
+    public final void rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -4291,7 +4291,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     // InternalInterparameterDependenciesLanguage.g:1148:3: rulePositiveAtomic
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_3_1_0_0()); 
+                       before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_3_1_0_0()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePositiveAtomic();
@@ -4299,7 +4299,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveAtomicParserRuleCall_3_1_0_0()); 
+                       after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_3_1_0_0()); 
                     }
 
                     }
@@ -4314,7 +4314,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     // InternalInterparameterDependenciesLanguage.g:1154:3: rulePositiveClause
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_3_1_0_1()); 
+                       before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_3_1_0_1()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePositiveClause();
@@ -4322,7 +4322,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesPositiveClauseParserRuleCall_3_1_0_1()); 
+                       after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_3_1_0_1()); 
                     }
 
                     }
@@ -4344,7 +4344,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0"
+    // $ANTLR end "rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0"
 
 
     // $ANTLR start "rule__Dependency__Group__0"
@@ -7694,26 +7694,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "rule__Clause__Group_0__0__Impl"
-    // InternalInterparameterDependenciesLanguage.g:2201:1: rule__Clause__Group_0__0__Impl : ( ( rule__Clause__FirsElementAssignment_0_0 ) ) ;
+    // InternalInterparameterDependenciesLanguage.g:2201:1: rule__Clause__Group_0__0__Impl : ( ( rule__Clause__FirstElementAssignment_0_0 ) ) ;
     public final void rule__Clause__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:2205:1: ( ( ( rule__Clause__FirsElementAssignment_0_0 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:2206:1: ( ( rule__Clause__FirsElementAssignment_0_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:2205:1: ( ( ( rule__Clause__FirstElementAssignment_0_0 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:2206:1: ( ( rule__Clause__FirstElementAssignment_0_0 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:2206:1: ( ( rule__Clause__FirsElementAssignment_0_0 ) )
-            // InternalInterparameterDependenciesLanguage.g:2207:2: ( rule__Clause__FirsElementAssignment_0_0 )
+            // InternalInterparameterDependenciesLanguage.g:2206:1: ( ( rule__Clause__FirstElementAssignment_0_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:2207:2: ( rule__Clause__FirstElementAssignment_0_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getClauseAccess().getFirsElementAssignment_0_0()); 
+               before(grammarAccess.getClauseAccess().getFirstElementAssignment_0_0()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:2208:2: ( rule__Clause__FirsElementAssignment_0_0 )
-            // InternalInterparameterDependenciesLanguage.g:2208:3: rule__Clause__FirsElementAssignment_0_0
+            // InternalInterparameterDependenciesLanguage.g:2208:2: ( rule__Clause__FirstElementAssignment_0_0 )
+            // InternalInterparameterDependenciesLanguage.g:2208:3: rule__Clause__FirstElementAssignment_0_0
             {
             pushFollow(FOLLOW_2);
-            rule__Clause__FirsElementAssignment_0_0();
+            rule__Clause__FirstElementAssignment_0_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -7721,7 +7721,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getClauseAccess().getFirsElementAssignment_0_0()); 
+               after(grammarAccess.getClauseAccess().getFirstElementAssignment_0_0()); 
             }
 
             }
@@ -7867,26 +7867,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "rule__Clause__Group_1__0__Impl"
-    // InternalInterparameterDependenciesLanguage.g:2255:1: rule__Clause__Group_1__0__Impl : ( ( rule__Clause__FirsElementAssignment_1_0 ) ) ;
+    // InternalInterparameterDependenciesLanguage.g:2255:1: rule__Clause__Group_1__0__Impl : ( ( rule__Clause__FirstElementAssignment_1_0 ) ) ;
     public final void rule__Clause__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:2259:1: ( ( ( rule__Clause__FirsElementAssignment_1_0 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:2260:1: ( ( rule__Clause__FirsElementAssignment_1_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:2259:1: ( ( ( rule__Clause__FirstElementAssignment_1_0 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:2260:1: ( ( rule__Clause__FirstElementAssignment_1_0 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:2260:1: ( ( rule__Clause__FirsElementAssignment_1_0 ) )
-            // InternalInterparameterDependenciesLanguage.g:2261:2: ( rule__Clause__FirsElementAssignment_1_0 )
+            // InternalInterparameterDependenciesLanguage.g:2260:1: ( ( rule__Clause__FirstElementAssignment_1_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:2261:2: ( rule__Clause__FirstElementAssignment_1_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getClauseAccess().getFirsElementAssignment_1_0()); 
+               before(grammarAccess.getClauseAccess().getFirstElementAssignment_1_0()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:2262:2: ( rule__Clause__FirsElementAssignment_1_0 )
-            // InternalInterparameterDependenciesLanguage.g:2262:3: rule__Clause__FirsElementAssignment_1_0
+            // InternalInterparameterDependenciesLanguage.g:2262:2: ( rule__Clause__FirstElementAssignment_1_0 )
+            // InternalInterparameterDependenciesLanguage.g:2262:3: rule__Clause__FirstElementAssignment_1_0
             {
             pushFollow(FOLLOW_2);
-            rule__Clause__FirsElementAssignment_1_0();
+            rule__Clause__FirstElementAssignment_1_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -7894,7 +7894,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getClauseAccess().getFirsElementAssignment_1_0()); 
+               after(grammarAccess.getClauseAccess().getFirstElementAssignment_1_0()); 
             }
 
             }
@@ -8954,26 +8954,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "rule__PredefinedDependency__Group__3__Impl"
-    // InternalInterparameterDependenciesLanguage.g:2579:1: rule__PredefinedDependency__Group__3__Impl : ( ( rule__PredefinedDependency__PredefDepClausesAssignment_3 ) ) ;
+    // InternalInterparameterDependenciesLanguage.g:2579:1: rule__PredefinedDependency__Group__3__Impl : ( ( rule__PredefinedDependency__PredefDepElementsAssignment_3 ) ) ;
     public final void rule__PredefinedDependency__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:2583:1: ( ( ( rule__PredefinedDependency__PredefDepClausesAssignment_3 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:2584:1: ( ( rule__PredefinedDependency__PredefDepClausesAssignment_3 ) )
+            // InternalInterparameterDependenciesLanguage.g:2583:1: ( ( ( rule__PredefinedDependency__PredefDepElementsAssignment_3 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:2584:1: ( ( rule__PredefinedDependency__PredefDepElementsAssignment_3 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:2584:1: ( ( rule__PredefinedDependency__PredefDepClausesAssignment_3 ) )
-            // InternalInterparameterDependenciesLanguage.g:2585:2: ( rule__PredefinedDependency__PredefDepClausesAssignment_3 )
+            // InternalInterparameterDependenciesLanguage.g:2584:1: ( ( rule__PredefinedDependency__PredefDepElementsAssignment_3 ) )
+            // InternalInterparameterDependenciesLanguage.g:2585:2: ( rule__PredefinedDependency__PredefDepElementsAssignment_3 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesAssignment_3()); 
+               before(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsAssignment_3()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:2586:2: ( rule__PredefinedDependency__PredefDepClausesAssignment_3 )
-            // InternalInterparameterDependenciesLanguage.g:2586:3: rule__PredefinedDependency__PredefDepClausesAssignment_3
+            // InternalInterparameterDependenciesLanguage.g:2586:2: ( rule__PredefinedDependency__PredefDepElementsAssignment_3 )
+            // InternalInterparameterDependenciesLanguage.g:2586:3: rule__PredefinedDependency__PredefDepElementsAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__PredefinedDependency__PredefDepClausesAssignment_3();
+            rule__PredefinedDependency__PredefDepElementsAssignment_3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -8981,7 +8981,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesAssignment_3()); 
+               after(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsAssignment_3()); 
             }
 
             }
@@ -9327,26 +9327,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "rule__PredefinedDependency__Group_4__1__Impl"
-    // InternalInterparameterDependenciesLanguage.g:2693:1: rule__PredefinedDependency__Group_4__1__Impl : ( ( rule__PredefinedDependency__PredefDepClausesAssignment_4_1 ) ) ;
+    // InternalInterparameterDependenciesLanguage.g:2693:1: rule__PredefinedDependency__Group_4__1__Impl : ( ( rule__PredefinedDependency__PredefDepElementsAssignment_4_1 ) ) ;
     public final void rule__PredefinedDependency__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:2697:1: ( ( ( rule__PredefinedDependency__PredefDepClausesAssignment_4_1 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:2698:1: ( ( rule__PredefinedDependency__PredefDepClausesAssignment_4_1 ) )
+            // InternalInterparameterDependenciesLanguage.g:2697:1: ( ( ( rule__PredefinedDependency__PredefDepElementsAssignment_4_1 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:2698:1: ( ( rule__PredefinedDependency__PredefDepElementsAssignment_4_1 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:2698:1: ( ( rule__PredefinedDependency__PredefDepClausesAssignment_4_1 ) )
-            // InternalInterparameterDependenciesLanguage.g:2699:2: ( rule__PredefinedDependency__PredefDepClausesAssignment_4_1 )
+            // InternalInterparameterDependenciesLanguage.g:2698:1: ( ( rule__PredefinedDependency__PredefDepElementsAssignment_4_1 ) )
+            // InternalInterparameterDependenciesLanguage.g:2699:2: ( rule__PredefinedDependency__PredefDepElementsAssignment_4_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesAssignment_4_1()); 
+               before(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsAssignment_4_1()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:2700:2: ( rule__PredefinedDependency__PredefDepClausesAssignment_4_1 )
-            // InternalInterparameterDependenciesLanguage.g:2700:3: rule__PredefinedDependency__PredefDepClausesAssignment_4_1
+            // InternalInterparameterDependenciesLanguage.g:2700:2: ( rule__PredefinedDependency__PredefDepElementsAssignment_4_1 )
+            // InternalInterparameterDependenciesLanguage.g:2700:3: rule__PredefinedDependency__PredefDepElementsAssignment_4_1
             {
             pushFollow(FOLLOW_2);
-            rule__PredefinedDependency__PredefDepClausesAssignment_4_1();
+            rule__PredefinedDependency__PredefDepElementsAssignment_4_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9354,7 +9354,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesAssignment_4_1()); 
+               after(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsAssignment_4_1()); 
             }
 
             }
@@ -9416,26 +9416,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "rule__PositiveClause__Group_0__0__Impl"
-    // InternalInterparameterDependenciesLanguage.g:2721:1: rule__PositiveClause__Group_0__0__Impl : ( ( rule__PositiveClause__FirsElementAssignment_0_0 ) ) ;
+    // InternalInterparameterDependenciesLanguage.g:2721:1: rule__PositiveClause__Group_0__0__Impl : ( ( rule__PositiveClause__FirstElementAssignment_0_0 ) ) ;
     public final void rule__PositiveClause__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:2725:1: ( ( ( rule__PositiveClause__FirsElementAssignment_0_0 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:2726:1: ( ( rule__PositiveClause__FirsElementAssignment_0_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:2725:1: ( ( ( rule__PositiveClause__FirstElementAssignment_0_0 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:2726:1: ( ( rule__PositiveClause__FirstElementAssignment_0_0 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:2726:1: ( ( rule__PositiveClause__FirsElementAssignment_0_0 ) )
-            // InternalInterparameterDependenciesLanguage.g:2727:2: ( rule__PositiveClause__FirsElementAssignment_0_0 )
+            // InternalInterparameterDependenciesLanguage.g:2726:1: ( ( rule__PositiveClause__FirstElementAssignment_0_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:2727:2: ( rule__PositiveClause__FirstElementAssignment_0_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPositiveClauseAccess().getFirsElementAssignment_0_0()); 
+               before(grammarAccess.getPositiveClauseAccess().getFirstElementAssignment_0_0()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:2728:2: ( rule__PositiveClause__FirsElementAssignment_0_0 )
-            // InternalInterparameterDependenciesLanguage.g:2728:3: rule__PositiveClause__FirsElementAssignment_0_0
+            // InternalInterparameterDependenciesLanguage.g:2728:2: ( rule__PositiveClause__FirstElementAssignment_0_0 )
+            // InternalInterparameterDependenciesLanguage.g:2728:3: rule__PositiveClause__FirstElementAssignment_0_0
             {
             pushFollow(FOLLOW_2);
-            rule__PositiveClause__FirsElementAssignment_0_0();
+            rule__PositiveClause__FirstElementAssignment_0_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9443,7 +9443,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPositiveClauseAccess().getFirsElementAssignment_0_0()); 
+               after(grammarAccess.getPositiveClauseAccess().getFirstElementAssignment_0_0()); 
             }
 
             }
@@ -9589,26 +9589,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "rule__PositiveClause__Group_1__0__Impl"
-    // InternalInterparameterDependenciesLanguage.g:2775:1: rule__PositiveClause__Group_1__0__Impl : ( ( rule__PositiveClause__FirsElementAssignment_1_0 ) ) ;
+    // InternalInterparameterDependenciesLanguage.g:2775:1: rule__PositiveClause__Group_1__0__Impl : ( ( rule__PositiveClause__FirstElementAssignment_1_0 ) ) ;
     public final void rule__PositiveClause__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:2779:1: ( ( ( rule__PositiveClause__FirsElementAssignment_1_0 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:2780:1: ( ( rule__PositiveClause__FirsElementAssignment_1_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:2779:1: ( ( ( rule__PositiveClause__FirstElementAssignment_1_0 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:2780:1: ( ( rule__PositiveClause__FirstElementAssignment_1_0 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:2780:1: ( ( rule__PositiveClause__FirsElementAssignment_1_0 ) )
-            // InternalInterparameterDependenciesLanguage.g:2781:2: ( rule__PositiveClause__FirsElementAssignment_1_0 )
+            // InternalInterparameterDependenciesLanguage.g:2780:1: ( ( rule__PositiveClause__FirstElementAssignment_1_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:2781:2: ( rule__PositiveClause__FirstElementAssignment_1_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPositiveClauseAccess().getFirsElementAssignment_1_0()); 
+               before(grammarAccess.getPositiveClauseAccess().getFirstElementAssignment_1_0()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:2782:2: ( rule__PositiveClause__FirsElementAssignment_1_0 )
-            // InternalInterparameterDependenciesLanguage.g:2782:3: rule__PositiveClause__FirsElementAssignment_1_0
+            // InternalInterparameterDependenciesLanguage.g:2782:2: ( rule__PositiveClause__FirstElementAssignment_1_0 )
+            // InternalInterparameterDependenciesLanguage.g:2782:3: rule__PositiveClause__FirstElementAssignment_1_0
             {
             pushFollow(FOLLOW_2);
-            rule__PositiveClause__FirsElementAssignment_1_0();
+            rule__PositiveClause__FirstElementAssignment_1_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9616,7 +9616,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPositiveClauseAccess().getFirsElementAssignment_1_0()); 
+               after(grammarAccess.getPositiveClauseAccess().getFirstElementAssignment_1_0()); 
             }
 
             }
@@ -10476,26 +10476,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "rule__PositivePredefinedDependency__Group__2__Impl"
-    // InternalInterparameterDependenciesLanguage.g:3045:1: rule__PositivePredefinedDependency__Group__2__Impl : ( ( rule__PositivePredefinedDependency__PredefDepClausesAssignment_2 ) ) ;
+    // InternalInterparameterDependenciesLanguage.g:3045:1: rule__PositivePredefinedDependency__Group__2__Impl : ( ( rule__PositivePredefinedDependency__PredefDepElementsAssignment_2 ) ) ;
     public final void rule__PositivePredefinedDependency__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:3049:1: ( ( ( rule__PositivePredefinedDependency__PredefDepClausesAssignment_2 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:3050:1: ( ( rule__PositivePredefinedDependency__PredefDepClausesAssignment_2 ) )
+            // InternalInterparameterDependenciesLanguage.g:3049:1: ( ( ( rule__PositivePredefinedDependency__PredefDepElementsAssignment_2 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:3050:1: ( ( rule__PositivePredefinedDependency__PredefDepElementsAssignment_2 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:3050:1: ( ( rule__PositivePredefinedDependency__PredefDepClausesAssignment_2 ) )
-            // InternalInterparameterDependenciesLanguage.g:3051:2: ( rule__PositivePredefinedDependency__PredefDepClausesAssignment_2 )
+            // InternalInterparameterDependenciesLanguage.g:3050:1: ( ( rule__PositivePredefinedDependency__PredefDepElementsAssignment_2 ) )
+            // InternalInterparameterDependenciesLanguage.g:3051:2: ( rule__PositivePredefinedDependency__PredefDepElementsAssignment_2 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesAssignment_2()); 
+               before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsAssignment_2()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:3052:2: ( rule__PositivePredefinedDependency__PredefDepClausesAssignment_2 )
-            // InternalInterparameterDependenciesLanguage.g:3052:3: rule__PositivePredefinedDependency__PredefDepClausesAssignment_2
+            // InternalInterparameterDependenciesLanguage.g:3052:2: ( rule__PositivePredefinedDependency__PredefDepElementsAssignment_2 )
+            // InternalInterparameterDependenciesLanguage.g:3052:3: rule__PositivePredefinedDependency__PredefDepElementsAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__PositivePredefinedDependency__PredefDepClausesAssignment_2();
+            rule__PositivePredefinedDependency__PredefDepElementsAssignment_2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -10503,7 +10503,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesAssignment_2()); 
+               after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsAssignment_2()); 
             }
 
             }
@@ -10849,26 +10849,26 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "rule__PositivePredefinedDependency__Group_3__1__Impl"
-    // InternalInterparameterDependenciesLanguage.g:3159:1: rule__PositivePredefinedDependency__Group_3__1__Impl : ( ( rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1 ) ) ;
+    // InternalInterparameterDependenciesLanguage.g:3159:1: rule__PositivePredefinedDependency__Group_3__1__Impl : ( ( rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1 ) ) ;
     public final void rule__PositivePredefinedDependency__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:3163:1: ( ( ( rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:3164:1: ( ( rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1 ) )
+            // InternalInterparameterDependenciesLanguage.g:3163:1: ( ( ( rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:3164:1: ( ( rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:3164:1: ( ( rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1 ) )
-            // InternalInterparameterDependenciesLanguage.g:3165:2: ( rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1 )
+            // InternalInterparameterDependenciesLanguage.g:3164:1: ( ( rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1 ) )
+            // InternalInterparameterDependenciesLanguage.g:3165:2: ( rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesAssignment_3_1()); 
+               before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsAssignment_3_1()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:3166:2: ( rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1 )
-            // InternalInterparameterDependenciesLanguage.g:3166:3: rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1
+            // InternalInterparameterDependenciesLanguage.g:3166:2: ( rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1 )
+            // InternalInterparameterDependenciesLanguage.g:3166:3: rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1
             {
             pushFollow(FOLLOW_2);
-            rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1();
+            rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -10876,7 +10876,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesAssignment_3_1()); 
+               after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsAssignment_3_1()); 
             }
 
             }
@@ -12220,9 +12220,9 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
     // $ANTLR end "rule__ParamAssignment__DoubleValueAssignment_2_2"
 
 
-    // $ANTLR start "rule__Clause__FirsElementAssignment_0_0"
-    // InternalInterparameterDependenciesLanguage.g:3622:1: rule__Clause__FirsElementAssignment_0_0 : ( ruleAtomic ) ;
-    public final void rule__Clause__FirsElementAssignment_0_0() throws RecognitionException {
+    // $ANTLR start "rule__Clause__FirstElementAssignment_0_0"
+    // InternalInterparameterDependenciesLanguage.g:3622:1: rule__Clause__FirstElementAssignment_0_0 : ( ruleAtomic ) ;
+    public final void rule__Clause__FirstElementAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12234,7 +12234,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             // InternalInterparameterDependenciesLanguage.g:3628:3: ruleAtomic
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getClauseAccess().getFirsElementAtomicParserRuleCall_0_0_0()); 
+               before(grammarAccess.getClauseAccess().getFirstElementAtomicParserRuleCall_0_0_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleAtomic();
@@ -12242,7 +12242,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getClauseAccess().getFirsElementAtomicParserRuleCall_0_0_0()); 
+               after(grammarAccess.getClauseAccess().getFirstElementAtomicParserRuleCall_0_0_0()); 
             }
 
             }
@@ -12262,7 +12262,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__Clause__FirsElementAssignment_0_0"
+    // $ANTLR end "rule__Clause__FirstElementAssignment_0_0"
 
 
     // $ANTLR start "rule__Clause__ClauseContinuationAssignment_0_1"
@@ -12310,27 +12310,27 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
     // $ANTLR end "rule__Clause__ClauseContinuationAssignment_0_1"
 
 
-    // $ANTLR start "rule__Clause__FirsElementAssignment_1_0"
-    // InternalInterparameterDependenciesLanguage.g:3652:1: rule__Clause__FirsElementAssignment_1_0 : ( ( rule__Clause__FirsElementAlternatives_1_0_0 ) ) ;
-    public final void rule__Clause__FirsElementAssignment_1_0() throws RecognitionException {
+    // $ANTLR start "rule__Clause__FirstElementAssignment_1_0"
+    // InternalInterparameterDependenciesLanguage.g:3652:1: rule__Clause__FirstElementAssignment_1_0 : ( ( rule__Clause__FirstElementAlternatives_1_0_0 ) ) ;
+    public final void rule__Clause__FirstElementAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:3656:1: ( ( ( rule__Clause__FirsElementAlternatives_1_0_0 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:3657:2: ( ( rule__Clause__FirsElementAlternatives_1_0_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:3656:1: ( ( ( rule__Clause__FirstElementAlternatives_1_0_0 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:3657:2: ( ( rule__Clause__FirstElementAlternatives_1_0_0 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:3657:2: ( ( rule__Clause__FirsElementAlternatives_1_0_0 ) )
-            // InternalInterparameterDependenciesLanguage.g:3658:3: ( rule__Clause__FirsElementAlternatives_1_0_0 )
+            // InternalInterparameterDependenciesLanguage.g:3657:2: ( ( rule__Clause__FirstElementAlternatives_1_0_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:3658:3: ( rule__Clause__FirstElementAlternatives_1_0_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getClauseAccess().getFirsElementAlternatives_1_0_0()); 
+               before(grammarAccess.getClauseAccess().getFirstElementAlternatives_1_0_0()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:3659:3: ( rule__Clause__FirsElementAlternatives_1_0_0 )
-            // InternalInterparameterDependenciesLanguage.g:3659:4: rule__Clause__FirsElementAlternatives_1_0_0
+            // InternalInterparameterDependenciesLanguage.g:3659:3: ( rule__Clause__FirstElementAlternatives_1_0_0 )
+            // InternalInterparameterDependenciesLanguage.g:3659:4: rule__Clause__FirstElementAlternatives_1_0_0
             {
             pushFollow(FOLLOW_2);
-            rule__Clause__FirsElementAlternatives_1_0_0();
+            rule__Clause__FirstElementAlternatives_1_0_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -12338,7 +12338,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getClauseAccess().getFirsElementAlternatives_1_0_0()); 
+               after(grammarAccess.getClauseAccess().getFirstElementAlternatives_1_0_0()); 
             }
 
             }
@@ -12358,7 +12358,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__Clause__FirsElementAssignment_1_0"
+    // $ANTLR end "rule__Clause__FirstElementAssignment_1_0"
 
 
     // $ANTLR start "rule__Clause__ClauseContinuationAssignment_1_1"
@@ -12839,27 +12839,27 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
     // $ANTLR end "rule__PredefinedDependency__PredefDepTypeAssignment_1"
 
 
-    // $ANTLR start "rule__PredefinedDependency__PredefDepClausesAssignment_3"
-    // InternalInterparameterDependenciesLanguage.g:3825:1: rule__PredefinedDependency__PredefDepClausesAssignment_3 : ( ( rule__PredefinedDependency__PredefDepClausesAlternatives_3_0 ) ) ;
-    public final void rule__PredefinedDependency__PredefDepClausesAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__PredefinedDependency__PredefDepElementsAssignment_3"
+    // InternalInterparameterDependenciesLanguage.g:3825:1: rule__PredefinedDependency__PredefDepElementsAssignment_3 : ( ( rule__PredefinedDependency__PredefDepElementsAlternatives_3_0 ) ) ;
+    public final void rule__PredefinedDependency__PredefDepElementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:3829:1: ( ( ( rule__PredefinedDependency__PredefDepClausesAlternatives_3_0 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:3830:2: ( ( rule__PredefinedDependency__PredefDepClausesAlternatives_3_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:3829:1: ( ( ( rule__PredefinedDependency__PredefDepElementsAlternatives_3_0 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:3830:2: ( ( rule__PredefinedDependency__PredefDepElementsAlternatives_3_0 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:3830:2: ( ( rule__PredefinedDependency__PredefDepClausesAlternatives_3_0 ) )
-            // InternalInterparameterDependenciesLanguage.g:3831:3: ( rule__PredefinedDependency__PredefDepClausesAlternatives_3_0 )
+            // InternalInterparameterDependenciesLanguage.g:3830:2: ( ( rule__PredefinedDependency__PredefDepElementsAlternatives_3_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:3831:3: ( rule__PredefinedDependency__PredefDepElementsAlternatives_3_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesAlternatives_3_0()); 
+               before(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsAlternatives_3_0()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:3832:3: ( rule__PredefinedDependency__PredefDepClausesAlternatives_3_0 )
-            // InternalInterparameterDependenciesLanguage.g:3832:4: rule__PredefinedDependency__PredefDepClausesAlternatives_3_0
+            // InternalInterparameterDependenciesLanguage.g:3832:3: ( rule__PredefinedDependency__PredefDepElementsAlternatives_3_0 )
+            // InternalInterparameterDependenciesLanguage.g:3832:4: rule__PredefinedDependency__PredefDepElementsAlternatives_3_0
             {
             pushFollow(FOLLOW_2);
-            rule__PredefinedDependency__PredefDepClausesAlternatives_3_0();
+            rule__PredefinedDependency__PredefDepElementsAlternatives_3_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -12867,7 +12867,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesAlternatives_3_0()); 
+               after(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsAlternatives_3_0()); 
             }
 
             }
@@ -12887,30 +12887,30 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__PredefinedDependency__PredefDepClausesAssignment_3"
+    // $ANTLR end "rule__PredefinedDependency__PredefDepElementsAssignment_3"
 
 
-    // $ANTLR start "rule__PredefinedDependency__PredefDepClausesAssignment_4_1"
-    // InternalInterparameterDependenciesLanguage.g:3840:1: rule__PredefinedDependency__PredefDepClausesAssignment_4_1 : ( ( rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0 ) ) ;
-    public final void rule__PredefinedDependency__PredefDepClausesAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__PredefinedDependency__PredefDepElementsAssignment_4_1"
+    // InternalInterparameterDependenciesLanguage.g:3840:1: rule__PredefinedDependency__PredefDepElementsAssignment_4_1 : ( ( rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0 ) ) ;
+    public final void rule__PredefinedDependency__PredefDepElementsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:3844:1: ( ( ( rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:3845:2: ( ( rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:3844:1: ( ( ( rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:3845:2: ( ( rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:3845:2: ( ( rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0 ) )
-            // InternalInterparameterDependenciesLanguage.g:3846:3: ( rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0 )
+            // InternalInterparameterDependenciesLanguage.g:3845:2: ( ( rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:3846:3: ( rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesAlternatives_4_1_0()); 
+               before(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsAlternatives_4_1_0()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:3847:3: ( rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0 )
-            // InternalInterparameterDependenciesLanguage.g:3847:4: rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0
+            // InternalInterparameterDependenciesLanguage.g:3847:3: ( rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0 )
+            // InternalInterparameterDependenciesLanguage.g:3847:4: rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0
             {
             pushFollow(FOLLOW_2);
-            rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0();
+            rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -12918,7 +12918,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPredefinedDependencyAccess().getPredefDepClausesAlternatives_4_1_0()); 
+               after(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsAlternatives_4_1_0()); 
             }
 
             }
@@ -12938,7 +12938,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__PredefinedDependency__PredefDepClausesAssignment_4_1"
+    // $ANTLR end "rule__PredefinedDependency__PredefDepElementsAssignment_4_1"
 
 
     // $ANTLR start "rule__PositiveAtomic__ParamAssignment_0"
@@ -13031,9 +13031,9 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
     // $ANTLR end "rule__PositiveAtomic__ParamAssignment_1"
 
 
-    // $ANTLR start "rule__PositiveClause__FirsElementAssignment_0_0"
-    // InternalInterparameterDependenciesLanguage.g:3885:1: rule__PositiveClause__FirsElementAssignment_0_0 : ( rulePositiveAtomic ) ;
-    public final void rule__PositiveClause__FirsElementAssignment_0_0() throws RecognitionException {
+    // $ANTLR start "rule__PositiveClause__FirstElementAssignment_0_0"
+    // InternalInterparameterDependenciesLanguage.g:3885:1: rule__PositiveClause__FirstElementAssignment_0_0 : ( rulePositiveAtomic ) ;
+    public final void rule__PositiveClause__FirstElementAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -13045,7 +13045,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             // InternalInterparameterDependenciesLanguage.g:3891:3: rulePositiveAtomic
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPositiveClauseAccess().getFirsElementPositiveAtomicParserRuleCall_0_0_0()); 
+               before(grammarAccess.getPositiveClauseAccess().getFirstElementPositiveAtomicParserRuleCall_0_0_0()); 
             }
             pushFollow(FOLLOW_2);
             rulePositiveAtomic();
@@ -13053,7 +13053,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPositiveClauseAccess().getFirsElementPositiveAtomicParserRuleCall_0_0_0()); 
+               after(grammarAccess.getPositiveClauseAccess().getFirstElementPositiveAtomicParserRuleCall_0_0_0()); 
             }
 
             }
@@ -13073,7 +13073,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__PositiveClause__FirsElementAssignment_0_0"
+    // $ANTLR end "rule__PositiveClause__FirstElementAssignment_0_0"
 
 
     // $ANTLR start "rule__PositiveClause__ClauseContinuationAssignment_0_1"
@@ -13121,27 +13121,27 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
     // $ANTLR end "rule__PositiveClause__ClauseContinuationAssignment_0_1"
 
 
-    // $ANTLR start "rule__PositiveClause__FirsElementAssignment_1_0"
-    // InternalInterparameterDependenciesLanguage.g:3915:1: rule__PositiveClause__FirsElementAssignment_1_0 : ( ( rule__PositiveClause__FirsElementAlternatives_1_0_0 ) ) ;
-    public final void rule__PositiveClause__FirsElementAssignment_1_0() throws RecognitionException {
+    // $ANTLR start "rule__PositiveClause__FirstElementAssignment_1_0"
+    // InternalInterparameterDependenciesLanguage.g:3915:1: rule__PositiveClause__FirstElementAssignment_1_0 : ( ( rule__PositiveClause__FirstElementAlternatives_1_0_0 ) ) ;
+    public final void rule__PositiveClause__FirstElementAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:3919:1: ( ( ( rule__PositiveClause__FirsElementAlternatives_1_0_0 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:3920:2: ( ( rule__PositiveClause__FirsElementAlternatives_1_0_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:3919:1: ( ( ( rule__PositiveClause__FirstElementAlternatives_1_0_0 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:3920:2: ( ( rule__PositiveClause__FirstElementAlternatives_1_0_0 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:3920:2: ( ( rule__PositiveClause__FirsElementAlternatives_1_0_0 ) )
-            // InternalInterparameterDependenciesLanguage.g:3921:3: ( rule__PositiveClause__FirsElementAlternatives_1_0_0 )
+            // InternalInterparameterDependenciesLanguage.g:3920:2: ( ( rule__PositiveClause__FirstElementAlternatives_1_0_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:3921:3: ( rule__PositiveClause__FirstElementAlternatives_1_0_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPositiveClauseAccess().getFirsElementAlternatives_1_0_0()); 
+               before(grammarAccess.getPositiveClauseAccess().getFirstElementAlternatives_1_0_0()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:3922:3: ( rule__PositiveClause__FirsElementAlternatives_1_0_0 )
-            // InternalInterparameterDependenciesLanguage.g:3922:4: rule__PositiveClause__FirsElementAlternatives_1_0_0
+            // InternalInterparameterDependenciesLanguage.g:3922:3: ( rule__PositiveClause__FirstElementAlternatives_1_0_0 )
+            // InternalInterparameterDependenciesLanguage.g:3922:4: rule__PositiveClause__FirstElementAlternatives_1_0_0
             {
             pushFollow(FOLLOW_2);
-            rule__PositiveClause__FirsElementAlternatives_1_0_0();
+            rule__PositiveClause__FirstElementAlternatives_1_0_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -13149,7 +13149,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPositiveClauseAccess().getFirsElementAlternatives_1_0_0()); 
+               after(grammarAccess.getPositiveClauseAccess().getFirstElementAlternatives_1_0_0()); 
             }
 
             }
@@ -13169,7 +13169,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__PositiveClause__FirsElementAssignment_1_0"
+    // $ANTLR end "rule__PositiveClause__FirstElementAssignment_1_0"
 
 
     // $ANTLR start "rule__PositiveClause__ClauseContinuationAssignment_1_1"
@@ -13560,27 +13560,27 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
     // $ANTLR end "rule__PositivePredefinedDependency__PredefDepTypeAssignment_0"
 
 
-    // $ANTLR start "rule__PositivePredefinedDependency__PredefDepClausesAssignment_2"
-    // InternalInterparameterDependenciesLanguage.g:4058:1: rule__PositivePredefinedDependency__PredefDepClausesAssignment_2 : ( ( rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0 ) ) ;
-    public final void rule__PositivePredefinedDependency__PredefDepClausesAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__PositivePredefinedDependency__PredefDepElementsAssignment_2"
+    // InternalInterparameterDependenciesLanguage.g:4058:1: rule__PositivePredefinedDependency__PredefDepElementsAssignment_2 : ( ( rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0 ) ) ;
+    public final void rule__PositivePredefinedDependency__PredefDepElementsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:4062:1: ( ( ( rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:4063:2: ( ( rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:4062:1: ( ( ( rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:4063:2: ( ( rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:4063:2: ( ( rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0 ) )
-            // InternalInterparameterDependenciesLanguage.g:4064:3: ( rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0 )
+            // InternalInterparameterDependenciesLanguage.g:4063:2: ( ( rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:4064:3: ( rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesAlternatives_2_0()); 
+               before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsAlternatives_2_0()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:4065:3: ( rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0 )
-            // InternalInterparameterDependenciesLanguage.g:4065:4: rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0
+            // InternalInterparameterDependenciesLanguage.g:4065:3: ( rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0 )
+            // InternalInterparameterDependenciesLanguage.g:4065:4: rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0
             {
             pushFollow(FOLLOW_2);
-            rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0();
+            rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -13588,7 +13588,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesAlternatives_2_0()); 
+               after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsAlternatives_2_0()); 
             }
 
             }
@@ -13608,30 +13608,30 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__PositivePredefinedDependency__PredefDepClausesAssignment_2"
+    // $ANTLR end "rule__PositivePredefinedDependency__PredefDepElementsAssignment_2"
 
 
-    // $ANTLR start "rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1"
-    // InternalInterparameterDependenciesLanguage.g:4073:1: rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1 : ( ( rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0 ) ) ;
-    public final void rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1"
+    // InternalInterparameterDependenciesLanguage.g:4073:1: rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1 : ( ( rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0 ) ) ;
+    public final void rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalInterparameterDependenciesLanguage.g:4077:1: ( ( ( rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0 ) ) )
-            // InternalInterparameterDependenciesLanguage.g:4078:2: ( ( rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:4077:1: ( ( ( rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0 ) ) )
+            // InternalInterparameterDependenciesLanguage.g:4078:2: ( ( rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0 ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:4078:2: ( ( rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0 ) )
-            // InternalInterparameterDependenciesLanguage.g:4079:3: ( rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0 )
+            // InternalInterparameterDependenciesLanguage.g:4078:2: ( ( rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0 ) )
+            // InternalInterparameterDependenciesLanguage.g:4079:3: ( rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesAlternatives_3_1_0()); 
+               before(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsAlternatives_3_1_0()); 
             }
-            // InternalInterparameterDependenciesLanguage.g:4080:3: ( rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0 )
-            // InternalInterparameterDependenciesLanguage.g:4080:4: rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0
+            // InternalInterparameterDependenciesLanguage.g:4080:3: ( rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0 )
+            // InternalInterparameterDependenciesLanguage.g:4080:4: rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0
             {
             pushFollow(FOLLOW_2);
-            rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0();
+            rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -13639,7 +13639,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepClausesAlternatives_3_1_0()); 
+               after(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsAlternatives_3_1_0()); 
             }
 
             }
@@ -13659,7 +13659,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return ;
     }
-    // $ANTLR end "rule__PositivePredefinedDependency__PredefDepClausesAssignment_3_1"
+    // $ANTLR end "rule__PositivePredefinedDependency__PredefDepElementsAssignment_3_1"
 
     // $ANTLR start synpred22_InternalInterparameterDependenciesLanguage
     public final void synpred22_InternalInterparameterDependenciesLanguage_fragment() throws RecognitionException {   
@@ -14200,7 +14200,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             this.transition = dfa_30;
         }
         public String getDescription() {
-            return "950:1: rule__PredefinedDependency__PredefDepClausesAlternatives_3_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );";
+            return "950:1: rule__PredefinedDependency__PredefDepElementsAlternatives_3_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );";
         }
     }
     static final String dfa_31s = "\1\uffff\1\11\10\uffff\4\11\1\uffff\2\11";
@@ -14240,7 +14240,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             this.transition = dfa_32;
         }
         public String getDescription() {
-            return "971:1: rule__PredefinedDependency__PredefDepClausesAlternatives_4_1_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );";
+            return "971:1: rule__PredefinedDependency__PredefDepElementsAlternatives_4_1_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );";
         }
     }
     static final String dfa_33s = "\13\uffff";
@@ -14365,7 +14365,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             this.transition = dfa_43;
         }
         public String getDescription() {
-            return "1121:1: rule__PositivePredefinedDependency__PredefDepClausesAlternatives_2_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );";
+            return "1121:1: rule__PositivePredefinedDependency__PredefDepElementsAlternatives_2_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );";
         }
     }
 
@@ -14383,7 +14383,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             this.transition = dfa_32;
         }
         public String getDescription() {
-            return "1142:1: rule__PositivePredefinedDependency__PredefDepClausesAlternatives_3_1_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );";
+            return "1142:1: rule__PositivePredefinedDependency__PredefDepElementsAlternatives_3_1_0 : ( ( rulePositiveAtomic ) | ( rulePositiveClause ) );";
         }
     }
  

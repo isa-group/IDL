@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirsElement <em>Firs Element</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirstElement <em>First Element</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClauseContinuation <em>Clause Continuation</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getNot <em>Not</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getOpeningParenthesis <em>Opening Parenthesis</em>}</li>
@@ -29,26 +29,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface GeneralClause extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Firs Element</b></em>' containment reference.
+   * Returns the value of the '<em><b>First Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Firs Element</em>' containment reference.
-   * @see #setFirsElement(EObject)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause_FirsElement()
+   * @return the value of the '<em>First Element</em>' containment reference.
+   * @see #setFirstElement(EObject)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause_FirstElement()
    * @model containment="true"
    * @generated
    */
-  EObject getFirsElement();
+  EObject getFirstElement();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirsElement <em>Firs Element</em>}' containment reference.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirstElement <em>First Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Firs Element</em>' containment reference.
-   * @see #getFirsElement()
+   * @param value the new value of the '<em>First Element</em>' containment reference.
+   * @see #getFirstElement()
    * @generated
    */
-  void setFirsElement(EObject value);
+  void setFirstElement(EObject value);
 
   /**
    * Returns the value of the '<em><b>Clause Continuation</b></em>' containment reference.

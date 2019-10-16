@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency#getNot <em>Not</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency#getPredefDepType <em>Predef Dep Type</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency#getPredefDepClauses <em>Predef Dep Clauses</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency#getPredefDepElements <em>Predef Dep Elements</em>}</li>
  * </ul>
  *
  * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralPredefinedDependency()
@@ -72,15 +72,15 @@ public interface GeneralPredefinedDependency extends EObject
   void setPredefDepType(String value);
 
   /**
-   * Returns the value of the '<em><b>Predef Dep Clauses</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Predef Dep Elements</b></em>' containment reference list.
    * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Predef Dep Clauses</em>' containment reference list.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralPredefinedDependency_PredefDepClauses()
+   * @return the value of the '<em>Predef Dep Elements</em>' containment reference list.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralPredefinedDependency_PredefDepElements()
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getPredefDepClauses();
+  EList<EObject> getPredefDepElements();
 
 } // GeneralPredefinedDependency

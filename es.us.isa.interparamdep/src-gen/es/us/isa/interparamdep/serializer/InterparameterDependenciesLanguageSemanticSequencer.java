@@ -173,8 +173,8 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *
 	 * Constraint:
 	 *     (
-	 *         (firsElement=Atomic clauseContinuation=ClauseContinuation) | 
-	 *         ((firsElement=PredefinedDependency | firsElement=ArithmeticDependency) clauseContinuation=ClauseContinuation?) | 
+	 *         (firstElement=Atomic clauseContinuation=ClauseContinuation) | 
+	 *         ((firstElement=PredefinedDependency | firstElement=ArithmeticDependency) clauseContinuation=ClauseContinuation?) | 
 	 *         (not=Not? openingParenthesis='(' clause=Clause closingParenthesis=')' clauseContinuation=ClauseContinuation?)
 	 *     )
 	 */
@@ -335,8 +335,8 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *
 	 * Constraint:
 	 *     (
-	 *         (firsElement=PositiveAtomic clauseContinuation=PositiveClauseContinuation) | 
-	 *         ((firsElement=PositivePredefinedDependency | firsElement=ArithmeticDependency) clauseContinuation=PositiveClauseContinuation?) | 
+	 *         (firstElement=PositiveAtomic clauseContinuation=PositiveClauseContinuation) | 
+	 *         ((firstElement=PositivePredefinedDependency | firstElement=ArithmeticDependency) clauseContinuation=PositiveClauseContinuation?) | 
 	 *         (openingParenthesis='(' clause=PositiveClause closingParenthesis=')' clauseContinuation=PositiveClauseContinuation?)
 	 *     )
 	 */
@@ -352,8 +352,8 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 * Constraint:
 	 *     (
 	 *         (predefDepType='Or' | predefDepType='OnlyOne' | predefDepType='AllOrNone' | predefDepType='ZeroOrOne') 
-	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause) 
-	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause)+
+	 *         (predefDepElements+=PositiveAtomic | predefDepElements+=PositiveClause) 
+	 *         (predefDepElements+=PositiveAtomic | predefDepElements+=PositiveClause)+
 	 *     )
 	 */
 	protected void sequence_PositivePredefinedDependency(ISerializationContext context, GeneralPredefinedDependency semanticObject) {
@@ -369,8 +369,8 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     (
 	 *         not=Not? 
 	 *         (predefDepType='Or' | predefDepType='OnlyOne' | predefDepType='AllOrNone' | predefDepType='ZeroOrOne') 
-	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause) 
-	 *         (predefDepClauses+=PositiveAtomic | predefDepClauses+=PositiveClause)+
+	 *         (predefDepElements+=PositiveAtomic | predefDepElements+=PositiveClause) 
+	 *         (predefDepElements+=PositiveAtomic | predefDepElements+=PositiveClause)+
 	 *     )
 	 */
 	protected void sequence_PredefinedDependency(ISerializationContext context, GeneralPredefinedDependency semanticObject) {

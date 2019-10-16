@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredefinedDependencyImpl#getNot <em>Not</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredefinedDependencyImpl#getPredefDepType <em>Predef Dep Type</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredefinedDependencyImpl#getPredefDepClauses <em>Predef Dep Clauses</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredefinedDependencyImpl#getPredefDepElements <em>Predef Dep Elements</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,14 +81,14 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
   protected String predefDepType = PREDEF_DEP_TYPE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getPredefDepClauses() <em>Predef Dep Clauses</em>}' containment reference list.
+   * The cached value of the '{@link #getPredefDepElements() <em>Predef Dep Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPredefDepClauses()
+   * @see #getPredefDepElements()
    * @generated
    * @ordered
    */
-  protected EList<EObject> predefDepClauses;
+  protected EList<EObject> predefDepElements;
 
   /**
    * <!-- begin-user-doc -->
@@ -167,13 +167,13 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
    * @generated
    */
   @Override
-  public EList<EObject> getPredefDepClauses()
+  public EList<EObject> getPredefDepElements()
   {
-    if (predefDepClauses == null)
+    if (predefDepElements == null)
     {
-      predefDepClauses = new EObjectContainmentEList<EObject>(EObject.class, this, InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES);
+      predefDepElements = new EObjectContainmentEList<EObject>(EObject.class, this, InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS);
     }
-    return predefDepClauses;
+    return predefDepElements;
   }
 
   /**
@@ -186,8 +186,8 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
-        return ((InternalEList<?>)getPredefDepClauses()).basicRemove(otherEnd, msgs);
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS:
+        return ((InternalEList<?>)getPredefDepElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -206,8 +206,8 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
         return getNot();
       case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         return getPredefDepType();
-      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
-        return getPredefDepClauses();
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS:
+        return getPredefDepElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -229,9 +229,9 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
       case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         setPredefDepType((String)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
-        getPredefDepClauses().clear();
-        getPredefDepClauses().addAll((Collection<? extends EObject>)newValue);
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS:
+        getPredefDepElements().clear();
+        getPredefDepElements().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -253,8 +253,8 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
       case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         setPredefDepType(PREDEF_DEP_TYPE_EDEFAULT);
         return;
-      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
-        getPredefDepClauses().clear();
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS:
+        getPredefDepElements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -274,8 +274,8 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
         return NOT_EDEFAULT == null ? not != null : !NOT_EDEFAULT.equals(not);
       case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE:
         return PREDEF_DEP_TYPE_EDEFAULT == null ? predefDepType != null : !PREDEF_DEP_TYPE_EDEFAULT.equals(predefDepType);
-      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_CLAUSES:
-        return predefDepClauses != null && !predefDepClauses.isEmpty();
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS:
+        return predefDepElements != null && !predefDepElements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
