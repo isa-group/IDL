@@ -152,13 +152,21 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	}
 
 	def void writeComparisonDependency(ComparisonDependency dep) {
-		csp += dep.param1 + dep.arithOp + dep.param2
+		csp += "((" + dep.param1 + "Set==1 /\\ " + dep.param2 + "Set==1) -> (" +
+				dep.param1 + dep.arithOp + dep.param2 + "))"
 	}
 	
 	def void writeArithmeticDependency(ArithmeticDependency dep) {
+		csp += "(("
+		for (param: dep.eAllContents.filter(Param).toIterable) {
+			csp += param.name + "Set==1 /\\ "
+		}
+		csp = csp.substring(0, csp.length-4) // Trim last " \\/ "
+		csp += ") -> ("
 		writeOperation(dep.operation)
 		csp += dep.arithOp
 		csp += dep.result
+		csp += "))"
 	}
 	
 	def void writeOperation(Operation operation) {
