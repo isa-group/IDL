@@ -27,6 +27,10 @@ terminal ID:
     ('^')?('a'..'z'|'A'..'Z'|'_'|'.') ('a'..'z'|'A'..'Z'|'_'|'.'|'0'..'9')*
 ;
 
+terminal ID_SPECIAL_CHARS: 
+    '['('^')?('a'..'z'|'A'..'Z'|'_'|'.'|'-'|'/'|':') ('a'..'z'|'A'..'Z'|'_'|'.'|'-'|'/'|':'|'0'..'9')*']'
+;
+
 ArithmeticOperator:
 	'<' | '>' | '<=' | '>=' | '==' | '!='
 ;
@@ -44,7 +48,7 @@ LogicalOperator:
 ;
 
 ComparisonDependency:
-	param1=ID arithOp=ArithmeticOperator param2=ID
+	param1=Param arithOp=ArithmeticOperator param2=Param
 ;
 
 ArithmeticDependency:
@@ -71,11 +75,12 @@ Atomic returns GeneralAtomic:
 ;
 
 Param:
-	name=ID
+	name=(ID|ID_SPECIAL_CHARS)
 ;
 
 ParamAssignment:
-	Param '==' stringValues+=STRING('|'stringValues+=STRING)* additionalValues='|*'? |
+	Param '==' stringValues+=STRING('|'stringValues+=STRING)* |
+	Param 'LIKE' patternString=STRING |
 	Param '==' booleanValue=BOOLEAN |
 	Param arithOp=ArithmeticOperator doubleValue=DOUBLE
 ;

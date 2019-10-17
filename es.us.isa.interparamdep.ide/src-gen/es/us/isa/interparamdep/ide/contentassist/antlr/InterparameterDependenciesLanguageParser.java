@@ -40,6 +40,7 @@ public class InterparameterDependenciesLanguageParser extends AbstractContentAss
 			builder.put(grammarAccess.getConditionalDependencyAccess().getConditionAlternatives_1_0(), "rule__ConditionalDependency__ConditionAlternatives_1_0");
 			builder.put(grammarAccess.getConditionalDependencyAccess().getConsequenceAlternatives_3_0(), "rule__ConditionalDependency__ConsequenceAlternatives_3_0");
 			builder.put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
+			builder.put(grammarAccess.getParamAccess().getNameAlternatives_0(), "rule__Param__NameAlternatives_0");
 			builder.put(grammarAccess.getParamAssignmentAccess().getAlternatives(), "rule__ParamAssignment__Alternatives");
 			builder.put(grammarAccess.getClauseAccess().getAlternatives(), "rule__Clause__Alternatives");
 			builder.put(grammarAccess.getClauseAccess().getFirstElementAlternatives_1_0_0(), "rule__Clause__FirstElementAlternatives_1_0_0");
@@ -67,6 +68,7 @@ public class InterparameterDependenciesLanguageParser extends AbstractContentAss
 			builder.put(grammarAccess.getParamAssignmentAccess().getGroup_0_3(), "rule__ParamAssignment__Group_0_3__0");
 			builder.put(grammarAccess.getParamAssignmentAccess().getGroup_1(), "rule__ParamAssignment__Group_1__0");
 			builder.put(grammarAccess.getParamAssignmentAccess().getGroup_2(), "rule__ParamAssignment__Group_2__0");
+			builder.put(grammarAccess.getParamAssignmentAccess().getGroup_3(), "rule__ParamAssignment__Group_3__0");
 			builder.put(grammarAccess.getClauseAccess().getGroup_0(), "rule__Clause__Group_0__0");
 			builder.put(grammarAccess.getClauseAccess().getGroup_1(), "rule__Clause__Group_1__0");
 			builder.put(grammarAccess.getClauseAccess().getGroup_2(), "rule__Clause__Group_2__0");
@@ -104,10 +106,10 @@ public class InterparameterDependenciesLanguageParser extends AbstractContentAss
 			builder.put(grammarAccess.getParamAccess().getNameAssignment(), "rule__Param__NameAssignment");
 			builder.put(grammarAccess.getParamAssignmentAccess().getStringValuesAssignment_0_2(), "rule__ParamAssignment__StringValuesAssignment_0_2");
 			builder.put(grammarAccess.getParamAssignmentAccess().getStringValuesAssignment_0_3_1(), "rule__ParamAssignment__StringValuesAssignment_0_3_1");
-			builder.put(grammarAccess.getParamAssignmentAccess().getAdditionalValuesAssignment_0_4(), "rule__ParamAssignment__AdditionalValuesAssignment_0_4");
-			builder.put(grammarAccess.getParamAssignmentAccess().getBooleanValueAssignment_1_2(), "rule__ParamAssignment__BooleanValueAssignment_1_2");
-			builder.put(grammarAccess.getParamAssignmentAccess().getArithOpAssignment_2_1(), "rule__ParamAssignment__ArithOpAssignment_2_1");
-			builder.put(grammarAccess.getParamAssignmentAccess().getDoubleValueAssignment_2_2(), "rule__ParamAssignment__DoubleValueAssignment_2_2");
+			builder.put(grammarAccess.getParamAssignmentAccess().getPatternStringAssignment_1_2(), "rule__ParamAssignment__PatternStringAssignment_1_2");
+			builder.put(grammarAccess.getParamAssignmentAccess().getBooleanValueAssignment_2_2(), "rule__ParamAssignment__BooleanValueAssignment_2_2");
+			builder.put(grammarAccess.getParamAssignmentAccess().getArithOpAssignment_3_1(), "rule__ParamAssignment__ArithOpAssignment_3_1");
+			builder.put(grammarAccess.getParamAssignmentAccess().getDoubleValueAssignment_3_2(), "rule__ParamAssignment__DoubleValueAssignment_3_2");
 			builder.put(grammarAccess.getClauseAccess().getFirstElementAssignment_0_0(), "rule__Clause__FirstElementAssignment_0_0");
 			builder.put(grammarAccess.getClauseAccess().getClauseContinuationAssignment_0_1(), "rule__Clause__ClauseContinuationAssignment_0_1");
 			builder.put(grammarAccess.getClauseAccess().getFirstElementAssignment_1_0(), "rule__Clause__FirstElementAssignment_1_0");

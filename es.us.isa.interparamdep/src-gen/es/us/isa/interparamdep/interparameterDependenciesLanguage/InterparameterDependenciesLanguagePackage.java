@@ -179,7 +179,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int COMPARISON_DEPENDENCY__PARAM = GENERAL_ATOMIC__PARAM;
 
   /**
-   * The feature id for the '<em><b>Param1</b></em>' attribute.
+   * The feature id for the '<em><b>Param1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -197,7 +197,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int COMPARISON_DEPENDENCY__ARITH_OP = GENERAL_ATOMIC_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Param2</b></em>' attribute.
+   * The feature id for the '<em><b>Param2</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -446,13 +446,13 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int PARAM__STRING_VALUES = PARAM_ASSIGNMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Additional Values</b></em>' attribute.
+   * The feature id for the '<em><b>Pattern String</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAM__ADDITIONAL_VALUES = PARAM_ASSIGNMENT_FEATURE_COUNT + 2;
+  int PARAM__PATTERN_STRING = PARAM_ASSIGNMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Boolean Value</b></em>' attribute.
@@ -700,15 +700,15 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EClass getComparisonDependency();
 
   /**
-   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam1 <em>Param1</em>}'.
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam1 <em>Param1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Param1</em>'.
+   * @return the meta object for the containment reference '<em>Param1</em>'.
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam1()
    * @see #getComparisonDependency()
    * @generated
    */
-  EAttribute getComparisonDependency_Param1();
+  EReference getComparisonDependency_Param1();
 
   /**
    * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getArithOp <em>Arith Op</em>}'.
@@ -722,15 +722,15 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EAttribute getComparisonDependency_ArithOp();
 
   /**
-   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam2 <em>Param2</em>}'.
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam2 <em>Param2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Param2</em>'.
+   * @return the meta object for the containment reference '<em>Param2</em>'.
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam2()
    * @see #getComparisonDependency()
    * @generated
    */
-  EAttribute getComparisonDependency_Param2();
+  EReference getComparisonDependency_Param2();
 
   /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency <em>Arithmetic Dependency</em>}'.
@@ -969,15 +969,15 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EAttribute getParam_StringValues();
 
   /**
-   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getAdditionalValues <em>Additional Values</em>}'.
+   * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getPatternString <em>Pattern String</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Additional Values</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getAdditionalValues()
+   * @return the meta object for the attribute '<em>Pattern String</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getPatternString()
    * @see #getParam()
    * @generated
    */
-  EAttribute getParam_AdditionalValues();
+  EAttribute getParam_PatternString();
 
   /**
    * Returns the meta object for the attribute '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getBooleanValue <em>Boolean Value</em>}'.
@@ -1243,12 +1243,12 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EClass COMPARISON_DEPENDENCY = eINSTANCE.getComparisonDependency();
 
     /**
-     * The meta object literal for the '<em><b>Param1</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Param1</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMPARISON_DEPENDENCY__PARAM1 = eINSTANCE.getComparisonDependency_Param1();
+    EReference COMPARISON_DEPENDENCY__PARAM1 = eINSTANCE.getComparisonDependency_Param1();
 
     /**
      * The meta object literal for the '<em><b>Arith Op</b></em>' attribute feature.
@@ -1259,12 +1259,12 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EAttribute COMPARISON_DEPENDENCY__ARITH_OP = eINSTANCE.getComparisonDependency_ArithOp();
 
     /**
-     * The meta object literal for the '<em><b>Param2</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Param2</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMPARISON_DEPENDENCY__PARAM2 = eINSTANCE.getComparisonDependency_Param2();
+    EReference COMPARISON_DEPENDENCY__PARAM2 = eINSTANCE.getComparisonDependency_Param2();
 
     /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl <em>Arithmetic Dependency</em>}' class.
@@ -1455,12 +1455,12 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EAttribute PARAM__STRING_VALUES = eINSTANCE.getParam_StringValues();
 
     /**
-     * The meta object literal for the '<em><b>Additional Values</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Pattern String</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PARAM__ADDITIONAL_VALUES = eINSTANCE.getParam_AdditionalValues();
+    EAttribute PARAM__PATTERN_STRING = eINSTANCE.getParam_PatternString();
 
     /**
      * The meta object literal for the '<em><b>Boolean Value</b></em>' attribute feature.

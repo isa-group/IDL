@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getName <em>Name</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getStringValues <em>String Values</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getAdditionalValues <em>Additional Values</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getPatternString <em>Pattern String</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getBooleanValue <em>Boolean Value</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getArithOp <em>Arith Op</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getDoubleValue <em>Double Value</em>}</li>
@@ -63,26 +63,26 @@ public interface Param extends ParamAssignment
   EList<String> getStringValues();
 
   /**
-   * Returns the value of the '<em><b>Additional Values</b></em>' attribute.
+   * Returns the value of the '<em><b>Pattern String</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Additional Values</em>' attribute.
-   * @see #setAdditionalValues(String)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getParam_AdditionalValues()
+   * @return the value of the '<em>Pattern String</em>' attribute.
+   * @see #setPatternString(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getParam_PatternString()
    * @model
    * @generated
    */
-  String getAdditionalValues();
+  String getPatternString();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getAdditionalValues <em>Additional Values</em>}' attribute.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getPatternString <em>Pattern String</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Additional Values</em>' attribute.
-   * @see #getAdditionalValues()
+   * @param value the new value of the '<em>Pattern String</em>' attribute.
+   * @see #getPatternString()
    * @generated
    */
-  void setAdditionalValues(String value);
+  void setPatternString(String value);
 
   /**
    * Returns the value of the '<em><b>Boolean Value</b></em>' attribute.

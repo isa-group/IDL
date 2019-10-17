@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getName <em>Name</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getStringValues <em>String Values</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getAdditionalValues <em>Additional Values</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getPatternString <em>Pattern String</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getBooleanValue <em>Boolean Value</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getArithOp <em>Arith Op</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getDoubleValue <em>Double Value</em>}</li>
@@ -69,24 +69,24 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
   protected EList<String> stringValues;
 
   /**
-   * The default value of the '{@link #getAdditionalValues() <em>Additional Values</em>}' attribute.
+   * The default value of the '{@link #getPatternString() <em>Pattern String</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAdditionalValues()
+   * @see #getPatternString()
    * @generated
    * @ordered
    */
-  protected static final String ADDITIONAL_VALUES_EDEFAULT = null;
+  protected static final String PATTERN_STRING_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAdditionalValues() <em>Additional Values</em>}' attribute.
+   * The cached value of the '{@link #getPatternString() <em>Pattern String</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAdditionalValues()
+   * @see #getPatternString()
    * @generated
    * @ordered
    */
-  protected String additionalValues = ADDITIONAL_VALUES_EDEFAULT;
+  protected String patternString = PATTERN_STRING_EDEFAULT;
 
   /**
    * The default value of the '{@link #getBooleanValue() <em>Boolean Value</em>}' attribute.
@@ -215,9 +215,9 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
    * @generated
    */
   @Override
-  public String getAdditionalValues()
+  public String getPatternString()
   {
-    return additionalValues;
+    return patternString;
   }
 
   /**
@@ -226,12 +226,12 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
    * @generated
    */
   @Override
-  public void setAdditionalValues(String newAdditionalValues)
+  public void setPatternString(String newPatternString)
   {
-    String oldAdditionalValues = additionalValues;
-    additionalValues = newAdditionalValues;
+    String oldPatternString = patternString;
+    patternString = newPatternString;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES, oldAdditionalValues, additionalValues));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.PARAM__PATTERN_STRING, oldPatternString, patternString));
   }
 
   /**
@@ -323,8 +323,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
         return getName();
       case InterparameterDependenciesLanguagePackage.PARAM__STRING_VALUES:
         return getStringValues();
-      case InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES:
-        return getAdditionalValues();
+      case InterparameterDependenciesLanguagePackage.PARAM__PATTERN_STRING:
+        return getPatternString();
       case InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE:
         return getBooleanValue();
       case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
@@ -353,8 +353,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
         getStringValues().clear();
         getStringValues().addAll((Collection<? extends String>)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES:
-        setAdditionalValues((String)newValue);
+      case InterparameterDependenciesLanguagePackage.PARAM__PATTERN_STRING:
+        setPatternString((String)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE:
         setBooleanValue((String)newValue);
@@ -385,8 +385,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
       case InterparameterDependenciesLanguagePackage.PARAM__STRING_VALUES:
         getStringValues().clear();
         return;
-      case InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES:
-        setAdditionalValues(ADDITIONAL_VALUES_EDEFAULT);
+      case InterparameterDependenciesLanguagePackage.PARAM__PATTERN_STRING:
+        setPatternString(PATTERN_STRING_EDEFAULT);
         return;
       case InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE:
         setBooleanValue(BOOLEAN_VALUE_EDEFAULT);
@@ -415,8 +415,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case InterparameterDependenciesLanguagePackage.PARAM__STRING_VALUES:
         return stringValues != null && !stringValues.isEmpty();
-      case InterparameterDependenciesLanguagePackage.PARAM__ADDITIONAL_VALUES:
-        return ADDITIONAL_VALUES_EDEFAULT == null ? additionalValues != null : !ADDITIONAL_VALUES_EDEFAULT.equals(additionalValues);
+      case InterparameterDependenciesLanguagePackage.PARAM__PATTERN_STRING:
+        return PATTERN_STRING_EDEFAULT == null ? patternString != null : !PATTERN_STRING_EDEFAULT.equals(patternString);
       case InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE:
         return BOOLEAN_VALUE_EDEFAULT == null ? booleanValue != null : !BOOLEAN_VALUE_EDEFAULT.equals(booleanValue);
       case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
@@ -442,8 +442,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
     result.append(name);
     result.append(", stringValues: ");
     result.append(stringValues);
-    result.append(", additionalValues: ");
-    result.append(additionalValues);
+    result.append(", patternString: ");
+    result.append(patternString);
     result.append(", booleanValue: ");
     result.append(booleanValue);
     result.append(", arithOp: ");

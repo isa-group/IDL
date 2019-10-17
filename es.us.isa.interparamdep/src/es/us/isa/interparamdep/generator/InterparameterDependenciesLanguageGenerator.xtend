@@ -102,11 +102,21 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 			return intedString++
 		}
 	}
-
+	
 	/**
-	 * Auxiliar function to process sub elements of dependencies, specifically
-	 * predicates (an atomic or a clause).
+	 * Remove special characters from paramName
 	 */
+	def String parseParamName(String paramName) {
+		return paramName.replaceAll("[\\.\\-\\/\\:\\[\\]]", "")
+	}
+	
+	/**
+	 * Returns true if param is actually a ParamAssignment. False if it is a Param
+	 */
+	def boolean isParamAssignment(Param param) {
+		return param.stringValues.size !== 0 || param.patternString !== null || param.booleanValue !== null || param.doubleValue !== null
+	}
+
 	def void writePredicate(EObject predicate) {
 		if (predicate.class == typeof(GeneralAtomicImpl)) {
 			val GeneralAtomic atomic = (predicate as GeneralAtomic)
@@ -116,21 +126,24 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 				csp += "(not "
 			csp += "("
 
-			csp += param.name + "Set==1"
+			csp += parseParamName(param.name) + "Set==1"
 			
 			if (isParamAssignment(param)) {
 				csp += " /\\ "
 				if (param.booleanValue !== null) {
-					csp += param.name + "==" + param.booleanValue
+					csp += parseParamName(param.name) + "==" + param.booleanValue
 				} else if (param.doubleValue !== null) {
-					csp += param.name + param.arithOp + param.doubleValue
+					csp += parseParamName(param.name) + param.arithOp + param.doubleValue
 				} else if (param.stringValues.size !== 0) {
 					csp += "("
 					for (string: param.stringValues) {
-						csp += param.name + "==" + stringToInt(param.name, string) + " \\/ "
+						csp += parseParamName(param.name) + "==" + stringToInt(parseParamName(param.name), string) + " \\/ "
 					}
 					csp = csp.substring(0, csp.length-4) // Trim last " \\/ "
 					csp += ")"
+				} else if (param.patternString !== null) {
+					// TODO: Implement CSP mapping (none for now)
+					csp += "true"
 				}
 			}
 			csp += ")"
@@ -146,20 +159,16 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 				"dependency or a clause")
 		}
 	}
-	
-	def boolean isParamAssignment(Param param) {
-		return param.stringValues.size !== 0 || param.booleanValue !== null || param.doubleValue !== null
-	}
 
 	def void writeComparisonDependency(ComparisonDependency dep) {
-		csp += "((" + dep.param1 + "Set==1 /\\ " + dep.param2 + "Set==1) -> (" +
-				dep.param1 + dep.arithOp + dep.param2 + "))"
+		csp += "((" + parseParamName(dep.param1.name) + "Set==1 /\\ " + parseParamName(dep.param2.name) + "Set==1) -> (" +
+				parseParamName(dep.param1.name) + dep.arithOp + parseParamName(dep.param2.name) + "))"
 	}
 	
 	def void writeArithmeticDependency(ArithmeticDependency dep) {
 		csp += "(("
 		for (param: dep.eAllContents.filter(Param).toIterable) {
-			csp += param.name + "Set==1 /\\ "
+			csp += parseParamName(param.name) + "Set==1 /\\ "
 		}
 		csp = csp.substring(0, csp.length-4) // Trim last " \\/ "
 		csp += ") -> ("

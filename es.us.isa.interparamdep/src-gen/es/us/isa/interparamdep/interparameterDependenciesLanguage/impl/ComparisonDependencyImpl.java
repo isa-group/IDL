@@ -5,10 +5,13 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.Param;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -30,24 +33,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ComparisonDependencyImpl extends GeneralAtomicImpl implements ComparisonDependency
 {
   /**
-   * The default value of the '{@link #getParam1() <em>Param1</em>}' attribute.
+   * The cached value of the '{@link #getParam1() <em>Param1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getParam1()
    * @generated
    * @ordered
    */
-  protected static final String PARAM1_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getParam1() <em>Param1</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getParam1()
-   * @generated
-   * @ordered
-   */
-  protected String param1 = PARAM1_EDEFAULT;
+  protected Param param1;
 
   /**
    * The default value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
@@ -70,24 +63,14 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
   protected String arithOp = ARITH_OP_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getParam2() <em>Param2</em>}' attribute.
+   * The cached value of the '{@link #getParam2() <em>Param2</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getParam2()
    * @generated
    * @ordered
    */
-  protected static final String PARAM2_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getParam2() <em>Param2</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getParam2()
-   * @generated
-   * @ordered
-   */
-  protected String param2 = PARAM2_EDEFAULT;
+  protected Param param2;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,7 +99,7 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
    * @generated
    */
   @Override
-  public String getParam1()
+  public Param getParam1()
   {
     return param1;
   }
@@ -126,13 +109,38 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setParam1(String newParam1)
+  public NotificationChain basicSetParam1(Param newParam1, NotificationChain msgs)
   {
-    String oldParam1 = param1;
+    Param oldParam1 = param1;
     param1 = newParam1;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1, oldParam1, param1));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1, oldParam1, newParam1);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setParam1(Param newParam1)
+  {
+    if (newParam1 != param1)
+    {
+      NotificationChain msgs = null;
+      if (param1 != null)
+        msgs = ((InternalEObject)param1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1, null, msgs);
+      if (newParam1 != null)
+        msgs = ((InternalEObject)newParam1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1, null, msgs);
+      msgs = basicSetParam1(newParam1, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1, newParam1, newParam1));
   }
 
   /**
@@ -166,7 +174,7 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
    * @generated
    */
   @Override
-  public String getParam2()
+  public Param getParam2()
   {
     return param2;
   }
@@ -176,13 +184,56 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setParam2(String newParam2)
+  public NotificationChain basicSetParam2(Param newParam2, NotificationChain msgs)
   {
-    String oldParam2 = param2;
+    Param oldParam2 = param2;
     param2 = newParam2;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2, oldParam2, param2));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2, oldParam2, newParam2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setParam2(Param newParam2)
+  {
+    if (newParam2 != param2)
+    {
+      NotificationChain msgs = null;
+      if (param2 != null)
+        msgs = ((InternalEObject)param2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2, null, msgs);
+      if (newParam2 != null)
+        msgs = ((InternalEObject)newParam2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2, null, msgs);
+      msgs = basicSetParam2(newParam2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2, newParam2, newParam2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1:
+        return basicSetParam1(null, msgs);
+      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2:
+        return basicSetParam2(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -216,13 +267,13 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
     switch (featureID)
     {
       case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1:
-        setParam1((String)newValue);
+        setParam1((Param)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__ARITH_OP:
         setArithOp((String)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2:
-        setParam2((String)newValue);
+        setParam2((Param)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -239,13 +290,13 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
     switch (featureID)
     {
       case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1:
-        setParam1(PARAM1_EDEFAULT);
+        setParam1((Param)null);
         return;
       case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__ARITH_OP:
         setArithOp(ARITH_OP_EDEFAULT);
         return;
       case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2:
-        setParam2(PARAM2_EDEFAULT);
+        setParam2((Param)null);
         return;
     }
     super.eUnset(featureID);
@@ -262,11 +313,11 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
     switch (featureID)
     {
       case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1:
-        return PARAM1_EDEFAULT == null ? param1 != null : !PARAM1_EDEFAULT.equals(param1);
+        return param1 != null;
       case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__ARITH_OP:
         return ARITH_OP_EDEFAULT == null ? arithOp != null : !ARITH_OP_EDEFAULT.equals(arithOp);
       case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2:
-        return PARAM2_EDEFAULT == null ? param2 != null : !PARAM2_EDEFAULT.equals(param2);
+        return param2 != null;
     }
     return super.eIsSet(featureID);
   }
@@ -282,12 +333,8 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (param1: ");
-    result.append(param1);
-    result.append(", arithOp: ");
+    result.append(" (arithOp: ");
     result.append(arithOp);
-    result.append(", param2: ");
-    result.append(param2);
     result.append(')');
     return result.toString();
   }

@@ -366,19 +366,20 @@ ruleComparisonDependency returns [EObject current=null]
 	(
 		(
 			(
-				lv_param1_0_0=RULE_ID
 				{
-					newLeafNode(lv_param1_0_0, grammarAccess.getComparisonDependencyAccess().getParam1IDTerminalRuleCall_0_0());
+					newCompositeNode(grammarAccess.getComparisonDependencyAccess().getParam1ParamParserRuleCall_0_0());
 				}
+				lv_param1_0_0=ruleParam
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getComparisonDependencyRule());
+						$current = createModelElementForParent(grammarAccess.getComparisonDependencyRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"param1",
 						lv_param1_0_0,
-						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ID");
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Param");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -403,19 +404,20 @@ ruleComparisonDependency returns [EObject current=null]
 		)
 		(
 			(
-				lv_param2_2_0=RULE_ID
 				{
-					newLeafNode(lv_param2_2_0, grammarAccess.getComparisonDependencyAccess().getParam2IDTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getComparisonDependencyAccess().getParam2ParamParserRuleCall_2_0());
 				}
+				lv_param2_2_0=ruleParam
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getComparisonDependencyRule());
+						$current = createModelElementForParent(grammarAccess.getComparisonDependencyRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"param2",
 						lv_param2_2_0,
-						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ID");
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Param");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -930,20 +932,37 @@ ruleParam returns [EObject current=null]
 }:
 	(
 		(
-			lv_name_0_0=RULE_ID
-			{
-				newLeafNode(lv_name_0_0, grammarAccess.getParamAccess().getNameIDTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getParamRule());
+			(
+				lv_name_0_1=RULE_ID
+				{
+					newLeafNode(lv_name_0_1, grammarAccess.getParamAccess().getNameIDTerminalRuleCall_0_0());
 				}
-				setWithLastConsumed(
-					$current,
-					"name",
-					lv_name_0_0,
-					"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ID");
-			}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getParamRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_0_1,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ID");
+				}
+				    |
+				lv_name_0_2=RULE_ID_SPECIAL_CHARS
+				{
+					newLeafNode(lv_name_0_2, grammarAccess.getParamAccess().getNameID_SPECIAL_CHARSTerminalRuleCall_0_1());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getParamRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_0_2,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ID_SPECIAL_CHARS");
+				}
+			)
 		)
 	)
 ;
@@ -1022,20 +1041,6 @@ ruleParamAssignment returns [EObject current=null]
 					)
 				)
 			)*
-			(
-				(
-					lv_additionalValues_5_0='|*'
-					{
-						newLeafNode(lv_additionalValues_5_0, grammarAccess.getParamAssignmentAccess().getAdditionalValuesVerticalLineAsteriskKeyword_0_4_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getParamAssignmentRule());
-						}
-						setWithLastConsumed($current, "additionalValues", lv_additionalValues_5_0, "|*");
-					}
-				)
-			)?
 		)
 		    |
 		(
@@ -1045,20 +1050,20 @@ ruleParamAssignment returns [EObject current=null]
 			{
 				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_1_0());
 			}
-			this_Param_6=ruleParam
+			this_Param_5=ruleParam
 			{
-				$current = $this_Param_6.current;
+				$current = $this_Param_5.current;
 				afterParserOrEnumRuleCall();
 			}
-			otherlv_7='=='
+			otherlv_6='LIKE'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getParamAssignmentAccess().getEqualsSignEqualsSignKeyword_1_1());
+				newLeafNode(otherlv_6, grammarAccess.getParamAssignmentAccess().getLIKEKeyword_1_1());
 			}
 			(
 				(
-					lv_booleanValue_8_0=RULE_BOOLEAN
+					lv_patternString_7_0=RULE_STRING
 					{
-						newLeafNode(lv_booleanValue_8_0, grammarAccess.getParamAssignmentAccess().getBooleanValueBOOLEANTerminalRuleCall_1_2_0());
+						newLeafNode(lv_patternString_7_0, grammarAccess.getParamAssignmentAccess().getPatternStringSTRINGTerminalRuleCall_1_2_0());
 					}
 					{
 						if ($current==null) {
@@ -1066,9 +1071,9 @@ ruleParamAssignment returns [EObject current=null]
 						}
 						setWithLastConsumed(
 							$current,
-							"booleanValue",
-							lv_booleanValue_8_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.BOOLEAN");
+							"patternString",
+							lv_patternString_7_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -1081,17 +1086,53 @@ ruleParamAssignment returns [EObject current=null]
 			{
 				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_2_0());
 			}
-			this_Param_9=ruleParam
+			this_Param_8=ruleParam
 			{
-				$current = $this_Param_9.current;
+				$current = $this_Param_8.current;
+				afterParserOrEnumRuleCall();
+			}
+			otherlv_9='=='
+			{
+				newLeafNode(otherlv_9, grammarAccess.getParamAssignmentAccess().getEqualsSignEqualsSignKeyword_2_1());
+			}
+			(
+				(
+					lv_booleanValue_10_0=RULE_BOOLEAN
+					{
+						newLeafNode(lv_booleanValue_10_0, grammarAccess.getParamAssignmentAccess().getBooleanValueBOOLEANTerminalRuleCall_2_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getParamAssignmentRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"booleanValue",
+							lv_booleanValue_10_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.BOOLEAN");
+					}
+				)
+			)
+		)
+		    |
+		(
+			{
+				/* */
+			}
+			{
+				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_3_0());
+			}
+			this_Param_11=ruleParam
+			{
+				$current = $this_Param_11.current;
 				afterParserOrEnumRuleCall();
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getParamAssignmentAccess().getArithOpArithmeticOperatorParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getParamAssignmentAccess().getArithOpArithmeticOperatorParserRuleCall_3_1_0());
 					}
-					lv_arithOp_10_0=ruleArithmeticOperator
+					lv_arithOp_12_0=ruleArithmeticOperator
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getParamAssignmentRule());
@@ -1099,7 +1140,7 @@ ruleParamAssignment returns [EObject current=null]
 						set(
 							$current,
 							"arithOp",
-							lv_arithOp_10_0,
+							lv_arithOp_12_0,
 							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticOperator");
 						afterParserOrEnumRuleCall();
 					}
@@ -1107,9 +1148,9 @@ ruleParamAssignment returns [EObject current=null]
 			)
 			(
 				(
-					lv_doubleValue_11_0=RULE_DOUBLE
+					lv_doubleValue_13_0=RULE_DOUBLE
 					{
-						newLeafNode(lv_doubleValue_11_0, grammarAccess.getParamAssignmentAccess().getDoubleValueDOUBLETerminalRuleCall_2_2_0());
+						newLeafNode(lv_doubleValue_13_0, grammarAccess.getParamAssignmentAccess().getDoubleValueDOUBLETerminalRuleCall_3_2_0());
 					}
 					{
 						if ($current==null) {
@@ -1118,7 +1159,7 @@ ruleParamAssignment returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"doubleValue",
-							lv_doubleValue_11_0,
+							lv_doubleValue_13_0,
 							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.DOUBLE");
 					}
 				)
@@ -2078,6 +2119,8 @@ RULE_BOOLEAN : ('true'|'false');
 RULE_DOUBLE : RULE_INT ('.' RULE_INT)?;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_'|'.') ('a'..'z'|'A'..'Z'|'_'|'.'|'0'..'9')*;
+
+RULE_ID_SPECIAL_CHARS : '[' '^'? ('a'..'z'|'A'..'Z'|'_'|'.'|'-'|'/'|':') ('a'..'z'|'A'..'Z'|'_'|'.'|'-'|'/'|':'|'0'..'9')* ']';
 
 fragment RULE_INT : ('0'..'9')+;
 

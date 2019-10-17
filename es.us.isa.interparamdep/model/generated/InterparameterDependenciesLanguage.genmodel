@@ -13,9 +13,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Dependency/dep"/>
     </genClasses>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//ComparisonDependency">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//ComparisonDependency/param1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//ComparisonDependency/param1"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//ComparisonDependency/arithOp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//ComparisonDependency/param2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//ComparisonDependency/param2"/>
     </genClasses>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//ArithmeticDependency">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//ArithmeticDependency/operation"/>
@@ -44,7 +44,7 @@
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Param">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/stringValues"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/additionalValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/patternString"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/booleanValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/arithOp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/doubleValue"/>

@@ -190,7 +190,7 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     PositiveAtomic returns ComparisonDependency
 	 *
 	 * Constraint:
-	 *     (param1=ID arithOp=ArithmeticOperator param2=ID)
+	 *     (param1=Param arithOp=ArithmeticOperator param2=Param)
 	 */
 	protected void sequence_ComparisonDependency(ISerializationContext context, ComparisonDependency semanticObject) {
 		if (errorAcceptor != null) {
@@ -202,9 +202,9 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.COMPARISON_DEPENDENCY__PARAM2));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getComparisonDependencyAccess().getParam1IDTerminalRuleCall_0_0(), semanticObject.getParam1());
+		feeder.accept(grammarAccess.getComparisonDependencyAccess().getParam1ParamParserRuleCall_0_0(), semanticObject.getParam1());
 		feeder.accept(grammarAccess.getComparisonDependencyAccess().getArithOpArithmeticOperatorParserRuleCall_1_0(), semanticObject.getArithOp());
-		feeder.accept(grammarAccess.getComparisonDependencyAccess().getParam2IDTerminalRuleCall_2_0(), semanticObject.getParam2());
+		feeder.accept(grammarAccess.getComparisonDependencyAccess().getParam2ParamParserRuleCall_2_0(), semanticObject.getParam2());
 		feeder.finish();
 	}
 	
@@ -277,16 +277,10 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     Param returns Param
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID | name=ID_SPECIAL_CHARS)
 	 */
 	protected void sequence_Param(ISerializationContext context, Param semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.PARAM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.PARAM__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParamAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -296,8 +290,8 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=ID 
-	 *         ((stringValues+=STRING stringValues+=STRING* additionalValues='|*'?) | booleanValue=BOOLEAN | (arithOp=ArithmeticOperator doubleValue=DOUBLE))
+	 *         (name=ID | name=ID_SPECIAL_CHARS) 
+	 *         ((stringValues+=STRING stringValues+=STRING*) | patternString=STRING | booleanValue=BOOLEAN | (arithOp=ArithmeticOperator doubleValue=DOUBLE))
 	 *     )
 	 */
 	protected void sequence_Param_ParamAssignment(ISerializationContext context, Param semanticObject) {

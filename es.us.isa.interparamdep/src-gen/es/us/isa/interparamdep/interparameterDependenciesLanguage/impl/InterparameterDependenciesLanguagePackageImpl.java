@@ -249,9 +249,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EAttribute getComparisonDependency_Param1()
+  public EReference getComparisonDependency_Param1()
   {
-    return (EAttribute)comparisonDependencyEClass.getEStructuralFeatures().get(0);
+    return (EReference)comparisonDependencyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -271,9 +271,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EAttribute getComparisonDependency_Param2()
+  public EReference getComparisonDependency_Param2()
   {
-    return (EAttribute)comparisonDependencyEClass.getEStructuralFeatures().get(2);
+    return (EReference)comparisonDependencyEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -524,7 +524,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EAttribute getParam_AdditionalValues()
+  public EAttribute getParam_PatternString()
   {
     return (EAttribute)paramEClass.getEStructuralFeatures().get(2);
   }
@@ -765,9 +765,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     createEReference(dependencyEClass, DEPENDENCY__DEP);
 
     comparisonDependencyEClass = createEClass(COMPARISON_DEPENDENCY);
-    createEAttribute(comparisonDependencyEClass, COMPARISON_DEPENDENCY__PARAM1);
+    createEReference(comparisonDependencyEClass, COMPARISON_DEPENDENCY__PARAM1);
     createEAttribute(comparisonDependencyEClass, COMPARISON_DEPENDENCY__ARITH_OP);
-    createEAttribute(comparisonDependencyEClass, COMPARISON_DEPENDENCY__PARAM2);
+    createEReference(comparisonDependencyEClass, COMPARISON_DEPENDENCY__PARAM2);
 
     arithmeticDependencyEClass = createEClass(ARITHMETIC_DEPENDENCY);
     createEReference(arithmeticDependencyEClass, ARITHMETIC_DEPENDENCY__OPERATION);
@@ -796,7 +796,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     paramEClass = createEClass(PARAM);
     createEAttribute(paramEClass, PARAM__NAME);
     createEAttribute(paramEClass, PARAM__STRING_VALUES);
-    createEAttribute(paramEClass, PARAM__ADDITIONAL_VALUES);
+    createEAttribute(paramEClass, PARAM__PATTERN_STRING);
     createEAttribute(paramEClass, PARAM__BOOLEAN_VALUE);
     createEAttribute(paramEClass, PARAM__ARITH_OP);
     createEAttribute(paramEClass, PARAM__DOUBLE_VALUE);
@@ -861,9 +861,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     initEReference(getDependency_Dep(), ecorePackage.getEObject(), null, "dep", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comparisonDependencyEClass, ComparisonDependency.class, "ComparisonDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getComparisonDependency_Param1(), ecorePackage.getEString(), "param1", null, 0, 1, ComparisonDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComparisonDependency_Param1(), this.getParam(), null, "param1", null, 0, 1, ComparisonDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getComparisonDependency_ArithOp(), ecorePackage.getEString(), "arithOp", null, 0, 1, ComparisonDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComparisonDependency_Param2(), ecorePackage.getEString(), "param2", null, 0, 1, ComparisonDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComparisonDependency_Param2(), this.getParam(), null, "param2", null, 0, 1, ComparisonDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(arithmeticDependencyEClass, ArithmeticDependency.class, "ArithmeticDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArithmeticDependency_Operation(), this.getOperation(), null, "operation", null, 0, 1, ArithmeticDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -892,7 +892,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     initEClass(paramEClass, Param.class, "Param", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParam_StringValues(), ecorePackage.getEString(), "stringValues", null, 0, -1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getParam_AdditionalValues(), ecorePackage.getEString(), "additionalValues", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParam_PatternString(), ecorePackage.getEString(), "patternString", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParam_BooleanValue(), ecorePackage.getEString(), "booleanValue", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParam_ArithOp(), ecorePackage.getEString(), "arithOp", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParam_DoubleValue(), ecorePackage.getEString(), "doubleValue", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

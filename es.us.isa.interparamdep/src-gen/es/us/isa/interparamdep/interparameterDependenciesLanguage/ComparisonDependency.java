@@ -25,26 +25,26 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage;
 public interface ComparisonDependency extends GeneralAtomic
 {
   /**
-   * Returns the value of the '<em><b>Param1</b></em>' attribute.
+   * Returns the value of the '<em><b>Param1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Param1</em>' attribute.
-   * @see #setParam1(String)
+   * @return the value of the '<em>Param1</em>' containment reference.
+   * @see #setParam1(Param)
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getComparisonDependency_Param1()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getParam1();
+  Param getParam1();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam1 <em>Param1</em>}' attribute.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam1 <em>Param1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Param1</em>' attribute.
+   * @param value the new value of the '<em>Param1</em>' containment reference.
    * @see #getParam1()
    * @generated
    */
-  void setParam1(String value);
+  void setParam1(Param value);
 
   /**
    * Returns the value of the '<em><b>Arith Op</b></em>' attribute.
@@ -69,25 +69,25 @@ public interface ComparisonDependency extends GeneralAtomic
   void setArithOp(String value);
 
   /**
-   * Returns the value of the '<em><b>Param2</b></em>' attribute.
+   * Returns the value of the '<em><b>Param2</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Param2</em>' attribute.
-   * @see #setParam2(String)
+   * @return the value of the '<em>Param2</em>' containment reference.
+   * @see #setParam2(Param)
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getComparisonDependency_Param2()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getParam2();
+  Param getParam2();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam2 <em>Param2</em>}' attribute.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency#getParam2 <em>Param2</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Param2</em>' attribute.
+   * @param value the new value of the '<em>Param2</em>' containment reference.
    * @see #getParam2()
    * @generated
    */
-  void setParam2(String value);
+  void setParam2(Param value);
 
 } // ComparisonDependency
