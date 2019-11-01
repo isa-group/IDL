@@ -4,7 +4,6 @@
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClauseContinuation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -26,10 +25,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getFirstElement <em>First Element</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getClauseContinuation <em>Clause Continuation</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getNot <em>Not</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getOpeningParenthesis <em>Opening Parenthesis</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getClause <em>Clause</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getPredicate <em>Predicate</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl#getClosingParenthesis <em>Closing Parenthesis</em>}</li>
  * </ul>
  *
@@ -46,16 +44,6 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
    * @ordered
    */
   protected EObject firstElement;
-
-  /**
-   * The cached value of the '{@link #getClauseContinuation() <em>Clause Continuation</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getClauseContinuation()
-   * @generated
-   * @ordered
-   */
-  protected GeneralClauseContinuation clauseContinuation;
 
   /**
    * The default value of the '{@link #getNot() <em>Not</em>}' attribute.
@@ -98,14 +86,14 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
   protected String openingParenthesis = OPENING_PARENTHESIS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getClause() <em>Clause</em>}' containment reference.
+   * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClause()
+   * @see #getPredicate()
    * @generated
    * @ordered
    */
-  protected GeneralClause clause;
+  protected EObject predicate;
 
   /**
    * The default value of the '{@link #getClosingParenthesis() <em>Closing Parenthesis</em>}' attribute.
@@ -204,56 +192,6 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    */
   @Override
-  public GeneralClauseContinuation getClauseContinuation()
-  {
-    return clauseContinuation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetClauseContinuation(GeneralClauseContinuation newClauseContinuation, NotificationChain msgs)
-  {
-    GeneralClauseContinuation oldClauseContinuation = clauseContinuation;
-    clauseContinuation = newClauseContinuation;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION, oldClauseContinuation, newClauseContinuation);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setClauseContinuation(GeneralClauseContinuation newClauseContinuation)
-  {
-    if (newClauseContinuation != clauseContinuation)
-    {
-      NotificationChain msgs = null;
-      if (clauseContinuation != null)
-        msgs = ((InternalEObject)clauseContinuation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION, null, msgs);
-      if (newClauseContinuation != null)
-        msgs = ((InternalEObject)newClauseContinuation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION, null, msgs);
-      msgs = basicSetClauseContinuation(newClauseContinuation, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION, newClauseContinuation, newClauseContinuation));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getNot()
   {
     return not;
@@ -304,9 +242,9 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    */
   @Override
-  public GeneralClause getClause()
+  public EObject getPredicate()
   {
-    return clause;
+    return predicate;
   }
 
   /**
@@ -314,13 +252,13 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetClause(GeneralClause newClause, NotificationChain msgs)
+  public NotificationChain basicSetPredicate(EObject newPredicate, NotificationChain msgs)
   {
-    GeneralClause oldClause = clause;
-    clause = newClause;
+    EObject oldPredicate = predicate;
+    predicate = newPredicate;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE, oldClause, newClause);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__PREDICATE, oldPredicate, newPredicate);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -332,20 +270,20 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    */
   @Override
-  public void setClause(GeneralClause newClause)
+  public void setPredicate(EObject newPredicate)
   {
-    if (newClause != clause)
+    if (newPredicate != predicate)
     {
       NotificationChain msgs = null;
-      if (clause != null)
-        msgs = ((InternalEObject)clause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE, null, msgs);
-      if (newClause != null)
-        msgs = ((InternalEObject)newClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE, null, msgs);
-      msgs = basicSetClause(newClause, msgs);
+      if (predicate != null)
+        msgs = ((InternalEObject)predicate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__PREDICATE, null, msgs);
+      if (newPredicate != null)
+        msgs = ((InternalEObject)newPredicate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__PREDICATE, null, msgs);
+      msgs = basicSetPredicate(newPredicate, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE, newClause, newClause));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__PREDICATE, newPredicate, newPredicate));
   }
 
   /**
@@ -385,10 +323,8 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
     {
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT:
         return basicSetFirstElement(null, msgs);
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
-        return basicSetClauseContinuation(null, msgs);
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE:
-        return basicSetClause(null, msgs);
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__PREDICATE:
+        return basicSetPredicate(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -405,14 +341,12 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
     {
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT:
         return getFirstElement();
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
-        return getClauseContinuation();
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__NOT:
         return getNot();
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__OPENING_PARENTHESIS:
         return getOpeningParenthesis();
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE:
-        return getClause();
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__PREDICATE:
+        return getPredicate();
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLOSING_PARENTHESIS:
         return getClosingParenthesis();
     }
@@ -432,17 +366,14 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT:
         setFirstElement((EObject)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
-        setClauseContinuation((GeneralClauseContinuation)newValue);
-        return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__NOT:
         setNot((String)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__OPENING_PARENTHESIS:
         setOpeningParenthesis((String)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE:
-        setClause((GeneralClause)newValue);
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__PREDICATE:
+        setPredicate((EObject)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLOSING_PARENTHESIS:
         setClosingParenthesis((String)newValue);
@@ -464,17 +395,14 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT:
         setFirstElement((EObject)null);
         return;
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
-        setClauseContinuation((GeneralClauseContinuation)null);
-        return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__NOT:
         setNot(NOT_EDEFAULT);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__OPENING_PARENTHESIS:
         setOpeningParenthesis(OPENING_PARENTHESIS_EDEFAULT);
         return;
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE:
-        setClause((GeneralClause)null);
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__PREDICATE:
+        setPredicate((EObject)null);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLOSING_PARENTHESIS:
         setClosingParenthesis(CLOSING_PARENTHESIS_EDEFAULT);
@@ -495,14 +423,12 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
     {
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__FIRST_ELEMENT:
         return firstElement != null;
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE_CONTINUATION:
-        return clauseContinuation != null;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__NOT:
         return NOT_EDEFAULT == null ? not != null : !NOT_EDEFAULT.equals(not);
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__OPENING_PARENTHESIS:
         return OPENING_PARENTHESIS_EDEFAULT == null ? openingParenthesis != null : !OPENING_PARENTHESIS_EDEFAULT.equals(openingParenthesis);
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLAUSE:
-        return clause != null;
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__PREDICATE:
+        return predicate != null;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLOSING_PARENTHESIS:
         return CLOSING_PARENTHESIS_EDEFAULT == null ? closingParenthesis != null : !CLOSING_PARENTHESIS_EDEFAULT.equals(closingParenthesis);
     }

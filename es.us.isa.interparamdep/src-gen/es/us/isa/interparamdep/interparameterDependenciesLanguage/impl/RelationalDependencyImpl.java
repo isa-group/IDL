@@ -3,9 +3,9 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Param;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.RelationalDependency;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -17,20 +17,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Comparison Dependency</b></em>'.
+ * An implementation of the model object '<em><b>Relational Dependency</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ComparisonDependencyImpl#getParam1 <em>Param1</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ComparisonDependencyImpl#getArithOp <em>Arith Op</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ComparisonDependencyImpl#getParam2 <em>Param2</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.RelationalDependencyImpl#getParam1 <em>Param1</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.RelationalDependencyImpl#getRelationalOp <em>Relational Op</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.RelationalDependencyImpl#getParam2 <em>Param2</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ComparisonDependencyImpl extends GeneralAtomicImpl implements ComparisonDependency
+public class RelationalDependencyImpl extends GeneralTermImpl implements RelationalDependency
 {
   /**
    * The cached value of the '{@link #getParam1() <em>Param1</em>}' containment reference.
@@ -43,24 +43,24 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
   protected Param param1;
 
   /**
-   * The default value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
+   * The default value of the '{@link #getRelationalOp() <em>Relational Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArithOp()
+   * @see #getRelationalOp()
    * @generated
    * @ordered
    */
-  protected static final String ARITH_OP_EDEFAULT = null;
+  protected static final String RELATIONAL_OP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
+   * The cached value of the '{@link #getRelationalOp() <em>Relational Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArithOp()
+   * @see #getRelationalOp()
    * @generated
    * @ordered
    */
-  protected String arithOp = ARITH_OP_EDEFAULT;
+  protected String relationalOp = RELATIONAL_OP_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getParam2() <em>Param2</em>}' containment reference.
@@ -77,7 +77,7 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ComparisonDependencyImpl()
+  protected RelationalDependencyImpl()
   {
     super();
   }
@@ -90,7 +90,7 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
   @Override
   protected EClass eStaticClass()
   {
-    return InterparameterDependenciesLanguagePackage.Literals.COMPARISON_DEPENDENCY;
+    return InterparameterDependenciesLanguagePackage.Literals.RELATIONAL_DEPENDENCY;
   }
 
   /**
@@ -115,7 +115,7 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
     param1 = newParam1;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1, oldParam1, newParam1);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM1, oldParam1, newParam1);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -133,14 +133,14 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
     {
       NotificationChain msgs = null;
       if (param1 != null)
-        msgs = ((InternalEObject)param1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1, null, msgs);
+        msgs = ((InternalEObject)param1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM1, null, msgs);
       if (newParam1 != null)
-        msgs = ((InternalEObject)newParam1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1, null, msgs);
+        msgs = ((InternalEObject)newParam1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM1, null, msgs);
       msgs = basicSetParam1(newParam1, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1, newParam1, newParam1));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM1, newParam1, newParam1));
   }
 
   /**
@@ -149,9 +149,9 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
    * @generated
    */
   @Override
-  public String getArithOp()
+  public String getRelationalOp()
   {
-    return arithOp;
+    return relationalOp;
   }
 
   /**
@@ -160,12 +160,12 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
    * @generated
    */
   @Override
-  public void setArithOp(String newArithOp)
+  public void setRelationalOp(String newRelationalOp)
   {
-    String oldArithOp = arithOp;
-    arithOp = newArithOp;
+    String oldRelationalOp = relationalOp;
+    relationalOp = newRelationalOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__ARITH_OP, oldArithOp, arithOp));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__RELATIONAL_OP, oldRelationalOp, relationalOp));
   }
 
   /**
@@ -190,7 +190,7 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
     param2 = newParam2;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2, oldParam2, newParam2);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM2, oldParam2, newParam2);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -208,14 +208,14 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
     {
       NotificationChain msgs = null;
       if (param2 != null)
-        msgs = ((InternalEObject)param2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2, null, msgs);
+        msgs = ((InternalEObject)param2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM2, null, msgs);
       if (newParam2 != null)
-        msgs = ((InternalEObject)newParam2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2, null, msgs);
+        msgs = ((InternalEObject)newParam2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM2, null, msgs);
       msgs = basicSetParam2(newParam2, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2, newParam2, newParam2));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM2, newParam2, newParam2));
   }
 
   /**
@@ -228,9 +228,9 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1:
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM1:
         return basicSetParam1(null, msgs);
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2:
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM2:
         return basicSetParam2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -246,11 +246,11 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1:
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM1:
         return getParam1();
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__ARITH_OP:
-        return getArithOp();
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2:
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__RELATIONAL_OP:
+        return getRelationalOp();
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM2:
         return getParam2();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -266,13 +266,13 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1:
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM1:
         setParam1((Param)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__ARITH_OP:
-        setArithOp((String)newValue);
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__RELATIONAL_OP:
+        setRelationalOp((String)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2:
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM2:
         setParam2((Param)newValue);
         return;
     }
@@ -289,13 +289,13 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1:
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM1:
         setParam1((Param)null);
         return;
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__ARITH_OP:
-        setArithOp(ARITH_OP_EDEFAULT);
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__RELATIONAL_OP:
+        setRelationalOp(RELATIONAL_OP_EDEFAULT);
         return;
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2:
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM2:
         setParam2((Param)null);
         return;
     }
@@ -312,11 +312,11 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM1:
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM1:
         return param1 != null;
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__ARITH_OP:
-        return ARITH_OP_EDEFAULT == null ? arithOp != null : !ARITH_OP_EDEFAULT.equals(arithOp);
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY__PARAM2:
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__RELATIONAL_OP:
+        return RELATIONAL_OP_EDEFAULT == null ? relationalOp != null : !RELATIONAL_OP_EDEFAULT.equals(relationalOp);
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY__PARAM2:
         return param2 != null;
     }
     return super.eIsSet(featureID);
@@ -333,10 +333,10 @@ public class ComparisonDependencyImpl extends GeneralAtomicImpl implements Compa
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (arithOp: ");
-    result.append(arithOp);
+    result.append(" (relationalOp: ");
+    result.append(relationalOp);
     result.append(')');
     return result.toString();
   }
 
-} //ComparisonDependencyImpl
+} //RelationalDependencyImpl

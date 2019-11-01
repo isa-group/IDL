@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getStringValues <em>String Values</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getPatternString <em>Pattern String</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getBooleanValue <em>Boolean Value</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getArithOp <em>Arith Op</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getRelationalOp <em>Relational Op</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getDoubleValue <em>Double Value</em>}</li>
  * </ul>
  *
@@ -107,26 +107,26 @@ public interface Param extends ParamAssignment
   void setBooleanValue(String value);
 
   /**
-   * Returns the value of the '<em><b>Arith Op</b></em>' attribute.
+   * Returns the value of the '<em><b>Relational Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Arith Op</em>' attribute.
-   * @see #setArithOp(String)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getParam_ArithOp()
+   * @return the value of the '<em>Relational Op</em>' attribute.
+   * @see #setRelationalOp(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getParam_RelationalOp()
    * @model
    * @generated
    */
-  String getArithOp();
+  String getRelationalOp();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getArithOp <em>Arith Op</em>}' attribute.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Param#getRelationalOp <em>Relational Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Arith Op</em>' attribute.
-   * @see #getArithOp()
+   * @param value the new value of the '<em>Relational Op</em>' attribute.
+   * @see #getRelationalOp()
    * @generated
    */
-  void setArithOp(String value);
+  void setRelationalOp(String value);
 
   /**
    * Returns the value of the '<em><b>Double Value</b></em>' attribute.

@@ -5,18 +5,20 @@ package es.us.isa.interparamdep.serializer;
 
 import com.google.inject.Inject;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ConditionalDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Dependency;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClauseContinuation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Model;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Param;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.RelationalDependency;
 import es.us.isa.interparamdep.services.InterparameterDependenciesLanguageGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -46,25 +48,12 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 			case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY:
 				sequence_ArithmeticDependency(context, (ArithmeticDependency) semanticObject); 
 				return; 
-			case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY:
-				sequence_ComparisonDependency(context, (ComparisonDependency) semanticObject); 
-				return; 
 			case InterparameterDependenciesLanguagePackage.CONDITIONAL_DEPENDENCY:
 				sequence_ConditionalDependency(context, (ConditionalDependency) semanticObject); 
 				return; 
 			case InterparameterDependenciesLanguagePackage.DEPENDENCY:
 				sequence_Dependency(context, (Dependency) semanticObject); 
 				return; 
-			case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC:
-				if (rule == grammarAccess.getAtomicRule()) {
-					sequence_Atomic(context, (GeneralAtomic) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getPositiveAtomicRule()) {
-					sequence_PositiveAtomic(context, (GeneralAtomic) semanticObject); 
-					return; 
-				}
-				else break;
 			case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE:
 				if (rule == grammarAccess.getClauseRule()) {
 					sequence_Clause(context, (GeneralClause) semanticObject); 
@@ -95,6 +84,16 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 					return; 
 				}
 				else break;
+			case InterparameterDependenciesLanguagePackage.GENERAL_TERM:
+				if (rule == grammarAccess.getPositiveTermRule()) {
+					sequence_PositiveTerm(context, (GeneralTerm) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getTermRule()) {
+					sequence_Term(context, (GeneralTerm) semanticObject); 
+					return; 
+				}
+				else break;
 			case InterparameterDependenciesLanguagePackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
@@ -114,6 +113,15 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 					return; 
 				}
 				else break;
+			case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE:
+				sequence_PositivePredicate(context, (PositivePredicate) semanticObject); 
+				return; 
+			case InterparameterDependenciesLanguagePackage.PREDICATE:
+				sequence_Predicate(context, (Predicate) semanticObject); 
+				return; 
+			case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY:
+				sequence_RelationalDependency(context, (RelationalDependency) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -124,34 +132,22 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     ArithmeticDependency returns ArithmeticDependency
 	 *
 	 * Constraint:
-	 *     (operation=Operation arithOp=ArithmeticOperator result=DOUBLE)
+	 *     (operation=Operation relationalOp=RelationalOperator result=DOUBLE)
 	 */
 	protected void sequence_ArithmeticDependency(ISerializationContext context, ArithmeticDependency semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.ARITHMETIC_DEPENDENCY__OPERATION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.ARITHMETIC_DEPENDENCY__OPERATION));
-			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.ARITHMETIC_DEPENDENCY__ARITH_OP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.ARITHMETIC_DEPENDENCY__ARITH_OP));
+			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.ARITHMETIC_DEPENDENCY__RELATIONAL_OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.ARITHMETIC_DEPENDENCY__RELATIONAL_OP));
 			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.ARITHMETIC_DEPENDENCY__RESULT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.ARITHMETIC_DEPENDENCY__RESULT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getArithmeticDependencyAccess().getOperationOperationParserRuleCall_0_0(), semanticObject.getOperation());
-		feeder.accept(grammarAccess.getArithmeticDependencyAccess().getArithOpArithmeticOperatorParserRuleCall_1_0(), semanticObject.getArithOp());
+		feeder.accept(grammarAccess.getArithmeticDependencyAccess().getRelationalOpRelationalOperatorParserRuleCall_1_0(), semanticObject.getRelationalOp());
 		feeder.accept(grammarAccess.getArithmeticDependencyAccess().getResultDOUBLETerminalRuleCall_2_0(), semanticObject.getResult());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Atomic returns GeneralAtomic
-	 *
-	 * Constraint:
-	 *     ((not=Not? param=Param) | (not=Not? param=ParamAssignment))
-	 */
-	protected void sequence_Atomic(ISerializationContext context, GeneralAtomic semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -160,10 +156,19 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     ClauseContinuation returns GeneralClauseContinuation
 	 *
 	 * Constraint:
-	 *     (logicalOp=LogicalOperator (additionalElements=Atomic | additionalElements=Clause))
+	 *     (logicalOp=LogicalOperator additionalElements=Predicate)
 	 */
 	protected void sequence_ClauseContinuation(ISerializationContext context, GeneralClauseContinuation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.GENERAL_CLAUSE_CONTINUATION__LOGICAL_OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.GENERAL_CLAUSE_CONTINUATION__LOGICAL_OP));
+			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.GENERAL_CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.GENERAL_CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getClauseContinuationAccess().getLogicalOpLogicalOperatorParserRuleCall_0_0(), semanticObject.getLogicalOp());
+		feeder.accept(grammarAccess.getClauseContinuationAccess().getAdditionalElementsPredicateParserRuleCall_1_0(), semanticObject.getAdditionalElements());
+		feeder.finish();
 	}
 	
 	
@@ -173,9 +178,11 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *
 	 * Constraint:
 	 *     (
-	 *         (firstElement=Atomic clauseContinuation=ClauseContinuation) | 
-	 *         ((firstElement=PredefinedDependency | firstElement=ArithmeticDependency) clauseContinuation=ClauseContinuation?) | 
-	 *         (not=Not? openingParenthesis='(' clause=Clause closingParenthesis=')' clauseContinuation=ClauseContinuation?)
+	 *         firstElement=Term | 
+	 *         firstElement=RelationalDependency | 
+	 *         firstElement=ArithmeticDependency | 
+	 *         firstElement=PredefinedDependency | 
+	 *         (not=Not? openingParenthesis='(' predicate=Predicate closingParenthesis=')')
 	 *     )
 	 */
 	protected void sequence_Clause(ISerializationContext context, GeneralClause semanticObject) {
@@ -185,39 +192,22 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	
 	/**
 	 * Contexts:
-	 *     ComparisonDependency returns ComparisonDependency
-	 *     Atomic returns ComparisonDependency
-	 *     PositiveAtomic returns ComparisonDependency
-	 *
-	 * Constraint:
-	 *     (param1=Param arithOp=ArithmeticOperator param2=Param)
-	 */
-	protected void sequence_ComparisonDependency(ISerializationContext context, ComparisonDependency semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.COMPARISON_DEPENDENCY__PARAM1) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.COMPARISON_DEPENDENCY__PARAM1));
-			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.COMPARISON_DEPENDENCY__ARITH_OP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.COMPARISON_DEPENDENCY__ARITH_OP));
-			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.COMPARISON_DEPENDENCY__PARAM2) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.COMPARISON_DEPENDENCY__PARAM2));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getComparisonDependencyAccess().getParam1ParamParserRuleCall_0_0(), semanticObject.getParam1());
-		feeder.accept(grammarAccess.getComparisonDependencyAccess().getArithOpArithmeticOperatorParserRuleCall_1_0(), semanticObject.getArithOp());
-		feeder.accept(grammarAccess.getComparisonDependencyAccess().getParam2ParamParserRuleCall_2_0(), semanticObject.getParam2());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     ConditionalDependency returns ConditionalDependency
 	 *
 	 * Constraint:
-	 *     ((condition=Atomic | condition=Clause) (consequence=Atomic | consequence=Clause))
+	 *     (condition=Predicate consequence=Predicate)
 	 */
 	protected void sequence_ConditionalDependency(ISerializationContext context, ConditionalDependency semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.CONDITIONAL_DEPENDENCY__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.CONDITIONAL_DEPENDENCY__CONDITION));
+			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.CONDITIONAL_DEPENDENCY__CONSEQUENCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.CONDITIONAL_DEPENDENCY__CONSEQUENCE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConditionalDependencyAccess().getConditionPredicateParserRuleCall_1_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getConditionalDependencyAccess().getConsequencePredicateParserRuleCall_3_0(), semanticObject.getConsequence());
+		feeder.finish();
 	}
 	
 	
@@ -226,7 +216,7 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     Dependency returns Dependency
 	 *
 	 * Constraint:
-	 *     (dep=ComparisonDependency | dep=ArithmeticDependency | dep=ConditionalDependency | dep=PredefinedDependency)
+	 *     (dep=RelationalDependency | dep=ArithmeticDependency | dep=ConditionalDependency | dep=PredefinedDependency)
 	 */
 	protected void sequence_Dependency(ISerializationContext context, Dependency semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -250,7 +240,7 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     OperationContinuation returns OperationContinuation
 	 *
 	 * Constraint:
-	 *     (mathOp=MathOperator (additionalParams=Param | additionalParams=Operation))
+	 *     (arithOp=ArithmeticOperator (additionalParams=Param | additionalParams=Operation))
 	 */
 	protected void sequence_OperationContinuation(ISerializationContext context, OperationContinuation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -291,7 +281,7 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 * Constraint:
 	 *     (
 	 *         (name=ID | name=ID_SPECIAL_CHARS) 
-	 *         ((stringValues+=STRING stringValues+=STRING*) | patternString=STRING | booleanValue=BOOLEAN | (arithOp=ArithmeticOperator doubleValue=DOUBLE))
+	 *         ((stringValues+=STRING stringValues+=STRING*) | patternString=STRING | booleanValue=BOOLEAN | (relationalOp=RelationalOperator doubleValue=DOUBLE))
 	 *     )
 	 */
 	protected void sequence_Param_ParamAssignment(ISerializationContext context, Param semanticObject) {
@@ -301,25 +291,22 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	
 	/**
 	 * Contexts:
-	 *     PositiveAtomic returns GeneralAtomic
-	 *
-	 * Constraint:
-	 *     (param=Param | param=ParamAssignment)
-	 */
-	protected void sequence_PositiveAtomic(ISerializationContext context, GeneralAtomic semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     PositiveClauseContinuation returns GeneralClauseContinuation
 	 *
 	 * Constraint:
-	 *     (logicalOp=LogicalOperator (additionalElements=PositiveAtomic | additionalElements=PositiveClause))
+	 *     (logicalOp=LogicalOperator additionalElements=PositivePredicate)
 	 */
 	protected void sequence_PositiveClauseContinuation(ISerializationContext context, GeneralClauseContinuation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.GENERAL_CLAUSE_CONTINUATION__LOGICAL_OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.GENERAL_CLAUSE_CONTINUATION__LOGICAL_OP));
+			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.GENERAL_CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.GENERAL_CLAUSE_CONTINUATION__ADDITIONAL_ELEMENTS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPositiveClauseContinuationAccess().getLogicalOpLogicalOperatorParserRuleCall_0_0(), semanticObject.getLogicalOp());
+		feeder.accept(grammarAccess.getPositiveClauseContinuationAccess().getAdditionalElementsPositivePredicateParserRuleCall_1_0(), semanticObject.getAdditionalElements());
+		feeder.finish();
 	}
 	
 	
@@ -329,9 +316,11 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *
 	 * Constraint:
 	 *     (
-	 *         (firstElement=PositiveAtomic clauseContinuation=PositiveClauseContinuation) | 
-	 *         ((firstElement=PositivePredefinedDependency | firstElement=ArithmeticDependency) clauseContinuation=PositiveClauseContinuation?) | 
-	 *         (openingParenthesis='(' clause=PositiveClause closingParenthesis=')' clauseContinuation=PositiveClauseContinuation?)
+	 *         firstElement=PositiveTerm | 
+	 *         firstElement=RelationalDependency | 
+	 *         firstElement=ArithmeticDependency | 
+	 *         firstElement=PositivePredefinedDependency | 
+	 *         (openingParenthesis='(' predicate=PositivePredicate closingParenthesis=')')
 	 *     )
 	 */
 	protected void sequence_PositiveClause(ISerializationContext context, GeneralClause semanticObject) {
@@ -346,11 +335,35 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 * Constraint:
 	 *     (
 	 *         (predefDepType='Or' | predefDepType='OnlyOne' | predefDepType='AllOrNone' | predefDepType='ZeroOrOne') 
-	 *         (predefDepElements+=PositiveAtomic | predefDepElements+=PositiveClause) 
-	 *         (predefDepElements+=PositiveAtomic | predefDepElements+=PositiveClause)+
+	 *         predefDepElements+=PositivePredicate 
+	 *         predefDepElements+=PositivePredicate+
 	 *     )
 	 */
 	protected void sequence_PositivePredefinedDependency(ISerializationContext context, GeneralPredefinedDependency semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PositivePredicate returns PositivePredicate
+	 *
+	 * Constraint:
+	 *     (firstClause=PositiveClause clauseContinuation=PositiveClauseContinuation?)
+	 */
+	protected void sequence_PositivePredicate(ISerializationContext context, PositivePredicate semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PositiveTerm returns GeneralTerm
+	 *
+	 * Constraint:
+	 *     (param=Param | param=ParamAssignment)
+	 */
+	protected void sequence_PositiveTerm(ISerializationContext context, GeneralTerm semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -363,11 +376,60 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     (
 	 *         not=Not? 
 	 *         (predefDepType='Or' | predefDepType='OnlyOne' | predefDepType='AllOrNone' | predefDepType='ZeroOrOne') 
-	 *         (predefDepElements+=PositiveAtomic | predefDepElements+=PositiveClause) 
-	 *         (predefDepElements+=PositiveAtomic | predefDepElements+=PositiveClause)+
+	 *         predefDepElements+=PositivePredicate 
+	 *         predefDepElements+=PositivePredicate+
 	 *     )
 	 */
 	protected void sequence_PredefinedDependency(ISerializationContext context, GeneralPredefinedDependency semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Predicate returns Predicate
+	 *
+	 * Constraint:
+	 *     (firstClause=Clause clauseContinuation=ClauseContinuation?)
+	 */
+	protected void sequence_Predicate(ISerializationContext context, Predicate semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RelationalDependency returns RelationalDependency
+	 *     PositiveTerm returns RelationalDependency
+	 *
+	 * Constraint:
+	 *     (param1=Param relationalOp=RelationalOperator param2=Param)
+	 */
+	protected void sequence_RelationalDependency(ISerializationContext context, RelationalDependency semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.RELATIONAL_DEPENDENCY__PARAM1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.RELATIONAL_DEPENDENCY__PARAM1));
+			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.RELATIONAL_DEPENDENCY__RELATIONAL_OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.RELATIONAL_DEPENDENCY__RELATIONAL_OP));
+			if (transientValues.isValueTransient(semanticObject, InterparameterDependenciesLanguagePackage.Literals.RELATIONAL_DEPENDENCY__PARAM2) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, InterparameterDependenciesLanguagePackage.Literals.RELATIONAL_DEPENDENCY__PARAM2));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRelationalDependencyAccess().getParam1ParamParserRuleCall_0_0(), semanticObject.getParam1());
+		feeder.accept(grammarAccess.getRelationalDependencyAccess().getRelationalOpRelationalOperatorParserRuleCall_1_0(), semanticObject.getRelationalOp());
+		feeder.accept(grammarAccess.getRelationalDependencyAccess().getParam2ParamParserRuleCall_2_0(), semanticObject.getParam2());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Term returns GeneralTerm
+	 *
+	 * Constraint:
+	 *     ((not=Not? param=Param) | (not=Not? param=ParamAssignment))
+	 */
+	protected void sequence_Term(ISerializationContext context, GeneralTerm semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

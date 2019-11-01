@@ -86,9 +86,9 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
         return createDependencyAdapter();
       }
       @Override
-      public Adapter caseComparisonDependency(ComparisonDependency object)
+      public Adapter caseRelationalDependency(RelationalDependency object)
       {
-        return createComparisonDependencyAdapter();
+        return createRelationalDependencyAdapter();
       }
       @Override
       public Adapter caseArithmeticDependency(ArithmeticDependency object)
@@ -111,9 +111,19 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
         return createConditionalDependencyAdapter();
       }
       @Override
-      public Adapter caseGeneralAtomic(GeneralAtomic object)
+      public Adapter casePredicate(Predicate object)
       {
-        return createGeneralAtomicAdapter();
+        return createPredicateAdapter();
+      }
+      @Override
+      public Adapter caseGeneralClause(GeneralClause object)
+      {
+        return createGeneralClauseAdapter();
+      }
+      @Override
+      public Adapter caseGeneralTerm(GeneralTerm object)
+      {
+        return createGeneralTermAdapter();
       }
       @Override
       public Adapter caseParam(Param object)
@@ -126,11 +136,6 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
         return createParamAssignmentAdapter();
       }
       @Override
-      public Adapter caseGeneralClause(GeneralClause object)
-      {
-        return createGeneralClauseAdapter();
-      }
-      @Override
       public Adapter caseGeneralClauseContinuation(GeneralClauseContinuation object)
       {
         return createGeneralClauseContinuationAdapter();
@@ -139,6 +144,11 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
       public Adapter caseGeneralPredefinedDependency(GeneralPredefinedDependency object)
       {
         return createGeneralPredefinedDependencyAdapter();
+      }
+      @Override
+      public Adapter casePositivePredicate(PositivePredicate object)
+      {
+        return createPositivePredicateAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -193,16 +203,16 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency <em>Comparison Dependency</em>}'.
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.RelationalDependency <em>Relational Dependency</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ComparisonDependency
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.RelationalDependency
    * @generated
    */
-  public Adapter createComparisonDependencyAdapter()
+  public Adapter createRelationalDependencyAdapter()
   {
     return null;
   }
@@ -268,16 +278,46 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic <em>General Atomic</em>}'.
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate <em>Predicate</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate
    * @generated
    */
-  public Adapter createGeneralAtomicAdapter()
+  public Adapter createPredicateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause <em>General Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause
+   * @generated
+   */
+  public Adapter createGeneralClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm <em>General Term</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm
+   * @generated
+   */
+  public Adapter createGeneralTermAdapter()
   {
     return null;
   }
@@ -313,21 +353,6 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause <em>General Clause</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause
-   * @generated
-   */
-  public Adapter createGeneralClauseAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClauseContinuation <em>General Clause Continuation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -353,6 +378,21 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
    * @generated
    */
   public Adapter createGeneralPredefinedDependencyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate <em>Positive Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate
+   * @generated
+   */
+  public Adapter createPositivePredicateAdapter()
   {
     return null;
   }

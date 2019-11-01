@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getStringValues <em>String Values</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getPatternString <em>Pattern String</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getBooleanValue <em>Boolean Value</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getArithOp <em>Arith Op</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getRelationalOp <em>Relational Op</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl#getDoubleValue <em>Double Value</em>}</li>
  * </ul>
  *
@@ -109,24 +109,24 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
   protected String booleanValue = BOOLEAN_VALUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
+   * The default value of the '{@link #getRelationalOp() <em>Relational Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArithOp()
+   * @see #getRelationalOp()
    * @generated
    * @ordered
    */
-  protected static final String ARITH_OP_EDEFAULT = null;
+  protected static final String RELATIONAL_OP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
+   * The cached value of the '{@link #getRelationalOp() <em>Relational Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArithOp()
+   * @see #getRelationalOp()
    * @generated
    * @ordered
    */
-  protected String arithOp = ARITH_OP_EDEFAULT;
+  protected String relationalOp = RELATIONAL_OP_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDoubleValue() <em>Double Value</em>}' attribute.
@@ -265,9 +265,9 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
    * @generated
    */
   @Override
-  public String getArithOp()
+  public String getRelationalOp()
   {
-    return arithOp;
+    return relationalOp;
   }
 
   /**
@@ -276,12 +276,12 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
    * @generated
    */
   @Override
-  public void setArithOp(String newArithOp)
+  public void setRelationalOp(String newRelationalOp)
   {
-    String oldArithOp = arithOp;
-    arithOp = newArithOp;
+    String oldRelationalOp = relationalOp;
+    relationalOp = newRelationalOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP, oldArithOp, arithOp));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.PARAM__RELATIONAL_OP, oldRelationalOp, relationalOp));
   }
 
   /**
@@ -327,8 +327,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
         return getPatternString();
       case InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE:
         return getBooleanValue();
-      case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
-        return getArithOp();
+      case InterparameterDependenciesLanguagePackage.PARAM__RELATIONAL_OP:
+        return getRelationalOp();
       case InterparameterDependenciesLanguagePackage.PARAM__DOUBLE_VALUE:
         return getDoubleValue();
     }
@@ -359,8 +359,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
       case InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE:
         setBooleanValue((String)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
-        setArithOp((String)newValue);
+      case InterparameterDependenciesLanguagePackage.PARAM__RELATIONAL_OP:
+        setRelationalOp((String)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.PARAM__DOUBLE_VALUE:
         setDoubleValue((String)newValue);
@@ -391,8 +391,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
       case InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE:
         setBooleanValue(BOOLEAN_VALUE_EDEFAULT);
         return;
-      case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
-        setArithOp(ARITH_OP_EDEFAULT);
+      case InterparameterDependenciesLanguagePackage.PARAM__RELATIONAL_OP:
+        setRelationalOp(RELATIONAL_OP_EDEFAULT);
         return;
       case InterparameterDependenciesLanguagePackage.PARAM__DOUBLE_VALUE:
         setDoubleValue(DOUBLE_VALUE_EDEFAULT);
@@ -419,8 +419,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
         return PATTERN_STRING_EDEFAULT == null ? patternString != null : !PATTERN_STRING_EDEFAULT.equals(patternString);
       case InterparameterDependenciesLanguagePackage.PARAM__BOOLEAN_VALUE:
         return BOOLEAN_VALUE_EDEFAULT == null ? booleanValue != null : !BOOLEAN_VALUE_EDEFAULT.equals(booleanValue);
-      case InterparameterDependenciesLanguagePackage.PARAM__ARITH_OP:
-        return ARITH_OP_EDEFAULT == null ? arithOp != null : !ARITH_OP_EDEFAULT.equals(arithOp);
+      case InterparameterDependenciesLanguagePackage.PARAM__RELATIONAL_OP:
+        return RELATIONAL_OP_EDEFAULT == null ? relationalOp != null : !RELATIONAL_OP_EDEFAULT.equals(relationalOp);
       case InterparameterDependenciesLanguagePackage.PARAM__DOUBLE_VALUE:
         return DOUBLE_VALUE_EDEFAULT == null ? doubleValue != null : !DOUBLE_VALUE_EDEFAULT.equals(doubleValue);
     }
@@ -446,8 +446,8 @@ public class ParamImpl extends ParamAssignmentImpl implements Param
     result.append(patternString);
     result.append(", booleanValue: ");
     result.append(booleanValue);
-    result.append(", arithOp: ");
-    result.append(arithOp);
+    result.append(", relationalOp: ");
+    result.append(relationalOp);
     result.append(", doubleValue: ");
     result.append(doubleValue);
     result.append(')');

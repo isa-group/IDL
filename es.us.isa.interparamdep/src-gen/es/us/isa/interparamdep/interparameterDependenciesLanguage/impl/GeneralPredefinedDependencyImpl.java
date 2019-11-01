@@ -5,6 +5,7 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate;
 
 import java.util.Collection;
 
@@ -14,7 +15,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -88,7 +88,7 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
    * @generated
    * @ordered
    */
-  protected EList<EObject> predefDepElements;
+  protected EList<PositivePredicate> predefDepElements;
 
   /**
    * <!-- begin-user-doc -->
@@ -167,11 +167,11 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
    * @generated
    */
   @Override
-  public EList<EObject> getPredefDepElements()
+  public EList<PositivePredicate> getPredefDepElements()
   {
     if (predefDepElements == null)
     {
-      predefDepElements = new EObjectContainmentEList<EObject>(EObject.class, this, InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS);
+      predefDepElements = new EObjectContainmentEList<PositivePredicate>(PositivePredicate.class, this, InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS);
     }
     return predefDepElements;
   }
@@ -231,7 +231,7 @@ public class GeneralPredefinedDependencyImpl extends MinimalEObjectImpl.Containe
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS:
         getPredefDepElements().clear();
-        getPredefDepElements().addAll((Collection<? extends EObject>)newValue);
+        getPredefDepElements().addAll((Collection<? extends PositivePredicate>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

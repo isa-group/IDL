@@ -73,7 +73,7 @@ public interface GeneralPredefinedDependency extends EObject
 
   /**
    * Returns the value of the '<em><b>Predef Dep Elements</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * The list contents are of type {@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Predef Dep Elements</em>' containment reference list.
@@ -81,6 +81,6 @@ public interface GeneralPredefinedDependency extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getPredefDepElements();
+  EList<PositivePredicate> getPredefDepElements();
 
 } // GeneralPredefinedDependency

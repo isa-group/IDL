@@ -7,22 +7,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>General Atomic</b></em>'.
+ * A representation of the model object '<em><b>General Term</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic#getNot <em>Not</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic#getParam <em>Param</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm#getNot <em>Not</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm#getParam <em>Param</em>}</li>
  * </ul>
  *
- * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralAtomic()
+ * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralTerm()
  * @model
  * @generated
  */
-public interface GeneralAtomic extends EObject
+public interface GeneralTerm extends EObject
 {
   /**
    * Returns the value of the '<em><b>Not</b></em>' attribute.
@@ -30,14 +30,14 @@ public interface GeneralAtomic extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Not</em>' attribute.
    * @see #setNot(String)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralAtomic_Not()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralTerm_Not()
    * @model
    * @generated
    */
   String getNot();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic#getNot <em>Not</em>}' attribute.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm#getNot <em>Not</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Not</em>' attribute.
@@ -52,14 +52,14 @@ public interface GeneralAtomic extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Param</em>' containment reference.
    * @see #setParam(ParamAssignment)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralAtomic_Param()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralTerm_Param()
    * @model containment="true"
    * @generated
    */
   ParamAssignment getParam();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic#getParam <em>Param</em>}' containment reference.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm#getParam <em>Param</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Param</em>' containment reference.
@@ -68,4 +68,4 @@ public interface GeneralAtomic extends EObject
    */
   void setParam(ParamAssignment value);
 
-} // GeneralAtomic
+} // GeneralTerm

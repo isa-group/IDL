@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl#getOperation <em>Operation</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl#getArithOp <em>Arith Op</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl#getRelationalOp <em>Relational Op</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ArithmeticDependencyImpl#getResult <em>Result</em>}</li>
  * </ul>
  *
@@ -44,24 +44,24 @@ public class ArithmeticDependencyImpl extends MinimalEObjectImpl.Container imple
   protected Operation operation;
 
   /**
-   * The default value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
+   * The default value of the '{@link #getRelationalOp() <em>Relational Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArithOp()
+   * @see #getRelationalOp()
    * @generated
    * @ordered
    */
-  protected static final String ARITH_OP_EDEFAULT = null;
+  protected static final String RELATIONAL_OP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
+   * The cached value of the '{@link #getRelationalOp() <em>Relational Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArithOp()
+   * @see #getRelationalOp()
    * @generated
    * @ordered
    */
-  protected String arithOp = ARITH_OP_EDEFAULT;
+  protected String relationalOp = RELATIONAL_OP_EDEFAULT;
 
   /**
    * The default value of the '{@link #getResult() <em>Result</em>}' attribute.
@@ -160,9 +160,9 @@ public class ArithmeticDependencyImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
-  public String getArithOp()
+  public String getRelationalOp()
   {
-    return arithOp;
+    return relationalOp;
   }
 
   /**
@@ -171,12 +171,12 @@ public class ArithmeticDependencyImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
-  public void setArithOp(String newArithOp)
+  public void setRelationalOp(String newRelationalOp)
   {
-    String oldArithOp = arithOp;
-    arithOp = newArithOp;
+    String oldRelationalOp = relationalOp;
+    relationalOp = newRelationalOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__ARITH_OP, oldArithOp, arithOp));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RELATIONAL_OP, oldRelationalOp, relationalOp));
   }
 
   /**
@@ -232,8 +232,8 @@ public class ArithmeticDependencyImpl extends MinimalEObjectImpl.Container imple
     {
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION:
         return getOperation();
-      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__ARITH_OP:
-        return getArithOp();
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RELATIONAL_OP:
+        return getRelationalOp();
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RESULT:
         return getResult();
     }
@@ -253,8 +253,8 @@ public class ArithmeticDependencyImpl extends MinimalEObjectImpl.Container imple
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION:
         setOperation((Operation)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__ARITH_OP:
-        setArithOp((String)newValue);
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RELATIONAL_OP:
+        setRelationalOp((String)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RESULT:
         setResult((String)newValue);
@@ -276,8 +276,8 @@ public class ArithmeticDependencyImpl extends MinimalEObjectImpl.Container imple
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION:
         setOperation((Operation)null);
         return;
-      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__ARITH_OP:
-        setArithOp(ARITH_OP_EDEFAULT);
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RELATIONAL_OP:
+        setRelationalOp(RELATIONAL_OP_EDEFAULT);
         return;
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RESULT:
         setResult(RESULT_EDEFAULT);
@@ -298,8 +298,8 @@ public class ArithmeticDependencyImpl extends MinimalEObjectImpl.Container imple
     {
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__OPERATION:
         return operation != null;
-      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__ARITH_OP:
-        return ARITH_OP_EDEFAULT == null ? arithOp != null : !ARITH_OP_EDEFAULT.equals(arithOp);
+      case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RELATIONAL_OP:
+        return RELATIONAL_OP_EDEFAULT == null ? relationalOp != null : !RELATIONAL_OP_EDEFAULT.equals(relationalOp);
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY__RESULT:
         return RESULT_EDEFAULT == null ? result != null : !RESULT_EDEFAULT.equals(result);
     }
@@ -317,8 +317,8 @@ public class ArithmeticDependencyImpl extends MinimalEObjectImpl.Container imple
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (arithOp: ");
-    result.append(arithOp);
+    result.append(" (relationalOp: ");
+    result.append(relationalOp);
     result.append(", result: ");
     result.append(result);
     result.append(')');

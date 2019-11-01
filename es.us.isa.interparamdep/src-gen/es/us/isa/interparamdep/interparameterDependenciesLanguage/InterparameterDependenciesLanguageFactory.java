@@ -42,13 +42,13 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
   Dependency createDependency();
 
   /**
-   * Returns a new object of class '<em>Comparison Dependency</em>'.
+   * Returns a new object of class '<em>Relational Dependency</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comparison Dependency</em>'.
+   * @return a new object of class '<em>Relational Dependency</em>'.
    * @generated
    */
-  ComparisonDependency createComparisonDependency();
+  RelationalDependency createRelationalDependency();
 
   /**
    * Returns a new object of class '<em>Arithmetic Dependency</em>'.
@@ -87,13 +87,31 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
   ConditionalDependency createConditionalDependency();
 
   /**
-   * Returns a new object of class '<em>General Atomic</em>'.
+   * Returns a new object of class '<em>Predicate</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>General Atomic</em>'.
+   * @return a new object of class '<em>Predicate</em>'.
    * @generated
    */
-  GeneralAtomic createGeneralAtomic();
+  Predicate createPredicate();
+
+  /**
+   * Returns a new object of class '<em>General Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General Clause</em>'.
+   * @generated
+   */
+  GeneralClause createGeneralClause();
+
+  /**
+   * Returns a new object of class '<em>General Term</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General Term</em>'.
+   * @generated
+   */
+  GeneralTerm createGeneralTerm();
 
   /**
    * Returns a new object of class '<em>Param</em>'.
@@ -114,15 +132,6 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
   ParamAssignment createParamAssignment();
 
   /**
-   * Returns a new object of class '<em>General Clause</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>General Clause</em>'.
-   * @generated
-   */
-  GeneralClause createGeneralClause();
-
-  /**
    * Returns a new object of class '<em>General Clause Continuation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -139,6 +148,15 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
    * @generated
    */
   GeneralPredefinedDependency createGeneralPredefinedDependency();
+
+  /**
+   * Returns a new object of class '<em>Positive Predicate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Positive Predicate</em>'.
+   * @generated
+   */
+  PositivePredicate createPositivePredicate();
 
   /**
    * Returns the package supported by this factory.

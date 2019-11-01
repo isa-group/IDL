@@ -67,17 +67,19 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
     {
       case InterparameterDependenciesLanguagePackage.MODEL: return createModel();
       case InterparameterDependenciesLanguagePackage.DEPENDENCY: return createDependency();
-      case InterparameterDependenciesLanguagePackage.COMPARISON_DEPENDENCY: return createComparisonDependency();
+      case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY: return createRelationalDependency();
       case InterparameterDependenciesLanguagePackage.ARITHMETIC_DEPENDENCY: return createArithmeticDependency();
       case InterparameterDependenciesLanguagePackage.OPERATION: return createOperation();
       case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION: return createOperationContinuation();
       case InterparameterDependenciesLanguagePackage.CONDITIONAL_DEPENDENCY: return createConditionalDependency();
-      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC: return createGeneralAtomic();
+      case InterparameterDependenciesLanguagePackage.PREDICATE: return createPredicate();
+      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE: return createGeneralClause();
+      case InterparameterDependenciesLanguagePackage.GENERAL_TERM: return createGeneralTerm();
       case InterparameterDependenciesLanguagePackage.PARAM: return createParam();
       case InterparameterDependenciesLanguagePackage.PARAM_ASSIGNMENT: return createParamAssignment();
-      case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE: return createGeneralClause();
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE_CONTINUATION: return createGeneralClauseContinuation();
       case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY: return createGeneralPredefinedDependency();
+      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE: return createPositivePredicate();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -113,10 +115,10 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public ComparisonDependency createComparisonDependency()
+  public RelationalDependency createRelationalDependency()
   {
-    ComparisonDependencyImpl comparisonDependency = new ComparisonDependencyImpl();
-    return comparisonDependency;
+    RelationalDependencyImpl relationalDependency = new RelationalDependencyImpl();
+    return relationalDependency;
   }
 
   /**
@@ -173,10 +175,34 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public GeneralAtomic createGeneralAtomic()
+  public Predicate createPredicate()
   {
-    GeneralAtomicImpl generalAtomic = new GeneralAtomicImpl();
-    return generalAtomic;
+    PredicateImpl predicate = new PredicateImpl();
+    return predicate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GeneralClause createGeneralClause()
+  {
+    GeneralClauseImpl generalClause = new GeneralClauseImpl();
+    return generalClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GeneralTerm createGeneralTerm()
+  {
+    GeneralTermImpl generalTerm = new GeneralTermImpl();
+    return generalTerm;
   }
 
   /**
@@ -209,18 +235,6 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public GeneralClause createGeneralClause()
-  {
-    GeneralClauseImpl generalClause = new GeneralClauseImpl();
-    return generalClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public GeneralClauseContinuation createGeneralClauseContinuation()
   {
     GeneralClauseContinuationImpl generalClauseContinuation = new GeneralClauseContinuationImpl();
@@ -237,6 +251,18 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
   {
     GeneralPredefinedDependencyImpl generalPredefinedDependency = new GeneralPredefinedDependencyImpl();
     return generalPredefinedDependency;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PositivePredicate createPositivePredicate()
+  {
+    PositivePredicateImpl positivePredicate = new PositivePredicateImpl();
+    return positivePredicate;
   }
 
   /**

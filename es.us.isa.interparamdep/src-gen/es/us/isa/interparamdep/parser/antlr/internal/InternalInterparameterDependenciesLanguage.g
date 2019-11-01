@@ -122,9 +122,9 @@ ruleDependency returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDependencyAccess().getDepComparisonDependencyParserRuleCall_0_0_0());
+						newCompositeNode(grammarAccess.getDependencyAccess().getDepRelationalDependencyParserRuleCall_0_0_0());
 					}
-					lv_dep_0_1=ruleComparisonDependency
+					lv_dep_0_1=ruleRelationalDependency
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDependencyRule());
@@ -133,7 +133,7 @@ ruleDependency returns [EObject current=null]
 							$current,
 							"dep",
 							lv_dep_0_1,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ComparisonDependency");
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.RelationalDependency");
 						afterParserOrEnumRuleCall();
 					}
 					    |
@@ -200,6 +200,60 @@ ruleDependency returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleRelationalOperator
+entryRuleRelationalOperator returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getRelationalOperatorRule()); }
+	iv_ruleRelationalOperator=ruleRelationalOperator
+	{ $current=$iv_ruleRelationalOperator.current.getText(); }
+	EOF;
+
+// Rule RelationalOperator
+ruleRelationalOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='<'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getRelationalOperatorAccess().getLessThanSignKeyword_0());
+		}
+		    |
+		kw='>'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getRelationalOperatorAccess().getGreaterThanSignKeyword_1());
+		}
+		    |
+		kw='<='
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getRelationalOperatorAccess().getLessThanSignEqualsSignKeyword_2());
+		}
+		    |
+		kw='>='
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getRelationalOperatorAccess().getGreaterThanSignEqualsSignKeyword_3());
+		}
+		    |
+		kw='=='
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getRelationalOperatorAccess().getEqualsSignEqualsSignKeyword_4());
+		}
+		    |
+		kw='!='
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getRelationalOperatorAccess().getExclamationMarkEqualsSignKeyword_5());
+		}
+	)
+;
+
 // Entry rule entryRuleArithmeticOperator
 entryRuleArithmeticOperator returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getArithmeticOperatorRule()); }
@@ -216,82 +270,28 @@ ruleArithmeticOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatype
 	leaveRule();
 }:
 	(
-		kw='<'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getArithmeticOperatorAccess().getLessThanSignKeyword_0());
-		}
-		    |
-		kw='>'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getArithmeticOperatorAccess().getGreaterThanSignKeyword_1());
-		}
-		    |
-		kw='<='
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getArithmeticOperatorAccess().getLessThanSignEqualsSignKeyword_2());
-		}
-		    |
-		kw='>='
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getArithmeticOperatorAccess().getGreaterThanSignEqualsSignKeyword_3());
-		}
-		    |
-		kw='=='
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getArithmeticOperatorAccess().getEqualsSignEqualsSignKeyword_4());
-		}
-		    |
-		kw='!='
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getArithmeticOperatorAccess().getExclamationMarkEqualsSignKeyword_5());
-		}
-	)
-;
-
-// Entry rule entryRuleMathOperator
-entryRuleMathOperator returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getMathOperatorRule()); }
-	iv_ruleMathOperator=ruleMathOperator
-	{ $current=$iv_ruleMathOperator.current.getText(); }
-	EOF;
-
-// Rule MathOperator
-ruleMathOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
 		kw='+'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMathOperatorAccess().getPlusSignKeyword_0());
+			newLeafNode(kw, grammarAccess.getArithmeticOperatorAccess().getPlusSignKeyword_0());
 		}
 		    |
 		kw='-'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMathOperatorAccess().getHyphenMinusKeyword_1());
+			newLeafNode(kw, grammarAccess.getArithmeticOperatorAccess().getHyphenMinusKeyword_1());
 		}
 		    |
 		kw='*'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMathOperatorAccess().getAsteriskKeyword_2());
+			newLeafNode(kw, grammarAccess.getArithmeticOperatorAccess().getAsteriskKeyword_2());
 		}
 		    |
 		kw='/'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMathOperatorAccess().getSolidusKeyword_3());
+			newLeafNode(kw, grammarAccess.getArithmeticOperatorAccess().getSolidusKeyword_3());
 		}
 	)
 ;
@@ -348,15 +348,15 @@ ruleLogicalOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRul
 	)
 ;
 
-// Entry rule entryRuleComparisonDependency
-entryRuleComparisonDependency returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getComparisonDependencyRule()); }
-	iv_ruleComparisonDependency=ruleComparisonDependency
-	{ $current=$iv_ruleComparisonDependency.current; }
+// Entry rule entryRuleRelationalDependency
+entryRuleRelationalDependency returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRelationalDependencyRule()); }
+	iv_ruleRelationalDependency=ruleRelationalDependency
+	{ $current=$iv_ruleRelationalDependency.current; }
 	EOF;
 
-// Rule ComparisonDependency
-ruleComparisonDependency returns [EObject current=null]
+// Rule RelationalDependency
+ruleRelationalDependency returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -367,12 +367,12 @@ ruleComparisonDependency returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getComparisonDependencyAccess().getParam1ParamParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getRelationalDependencyAccess().getParam1ParamParserRuleCall_0_0());
 				}
 				lv_param1_0_0=ruleParam
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComparisonDependencyRule());
+						$current = createModelElementForParent(grammarAccess.getRelationalDependencyRule());
 					}
 					set(
 						$current,
@@ -386,18 +386,18 @@ ruleComparisonDependency returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getComparisonDependencyAccess().getArithOpArithmeticOperatorParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getRelationalDependencyAccess().getRelationalOpRelationalOperatorParserRuleCall_1_0());
 				}
-				lv_arithOp_1_0=ruleArithmeticOperator
+				lv_relationalOp_1_0=ruleRelationalOperator
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComparisonDependencyRule());
+						$current = createModelElementForParent(grammarAccess.getRelationalDependencyRule());
 					}
 					set(
 						$current,
-						"arithOp",
-						lv_arithOp_1_0,
-						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticOperator");
+						"relationalOp",
+						lv_relationalOp_1_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.RelationalOperator");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -405,12 +405,12 @@ ruleComparisonDependency returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getComparisonDependencyAccess().getParam2ParamParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getRelationalDependencyAccess().getParam2ParamParserRuleCall_2_0());
 				}
 				lv_param2_2_0=ruleParam
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComparisonDependencyRule());
+						$current = createModelElementForParent(grammarAccess.getRelationalDependencyRule());
 					}
 					set(
 						$current,
@@ -462,18 +462,18 @@ ruleArithmeticDependency returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getArithmeticDependencyAccess().getArithOpArithmeticOperatorParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getArithmeticDependencyAccess().getRelationalOpRelationalOperatorParserRuleCall_1_0());
 				}
-				lv_arithOp_1_0=ruleArithmeticOperator
+				lv_relationalOp_1_0=ruleRelationalOperator
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getArithmeticDependencyRule());
 					}
 					set(
 						$current,
-						"arithOp",
-						lv_arithOp_1_0,
-						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticOperator");
+						"relationalOp",
+						lv_relationalOp_1_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.RelationalOperator");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -646,18 +646,18 @@ ruleOperationContinuation returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getOperationContinuationAccess().getMathOpMathOperatorParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getOperationContinuationAccess().getArithOpArithmeticOperatorParserRuleCall_0_0());
 				}
-				lv_mathOp_0_0=ruleMathOperator
+				lv_arithOp_0_0=ruleArithmeticOperator
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getOperationContinuationRule());
 					}
 					set(
 						$current,
-						"mathOp",
-						lv_mathOp_0_0,
-						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.MathOperator");
+						"arithOp",
+						lv_arithOp_0_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticOperator");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -724,39 +724,21 @@ ruleConditionalDependency returns [EObject current=null]
 		}
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getConditionalDependencyAccess().getConditionAtomicParserRuleCall_1_0_0());
+				{
+					newCompositeNode(grammarAccess.getConditionalDependencyAccess().getConditionPredicateParserRuleCall_1_0());
+				}
+				lv_condition_1_0=rulePredicate
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConditionalDependencyRule());
 					}
-					lv_condition_1_1=ruleAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConditionalDependencyRule());
-						}
-						set(
-							$current,
-							"condition",
-							lv_condition_1_1,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Atomic");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getConditionalDependencyAccess().getConditionClauseParserRuleCall_1_0_1());
-					}
-					lv_condition_1_2=ruleClause
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConditionalDependencyRule());
-						}
-						set(
-							$current,
-							"condition",
-							lv_condition_1_2,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Clause");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"condition",
+						lv_condition_1_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Predicate");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 		otherlv_2='THEN'
@@ -765,53 +747,92 @@ ruleConditionalDependency returns [EObject current=null]
 		}
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getConditionalDependencyAccess().getConsequenceAtomicParserRuleCall_3_0_0());
+				{
+					newCompositeNode(grammarAccess.getConditionalDependencyAccess().getConsequencePredicateParserRuleCall_3_0());
+				}
+				lv_consequence_3_0=rulePredicate
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConditionalDependencyRule());
 					}
-					lv_consequence_3_1=ruleAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConditionalDependencyRule());
-						}
-						set(
-							$current,
-							"consequence",
-							lv_consequence_3_1,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Atomic");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getConditionalDependencyAccess().getConsequenceClauseParserRuleCall_3_0_1());
-					}
-					lv_consequence_3_2=ruleClause
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConditionalDependencyRule());
-						}
-						set(
-							$current,
-							"consequence",
-							lv_consequence_3_2,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Clause");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"consequence",
+						lv_consequence_3_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Predicate");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 	)
 ;
 
-// Entry rule entryRuleAtomic
-entryRuleAtomic returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAtomicRule()); }
-	iv_ruleAtomic=ruleAtomic
-	{ $current=$iv_ruleAtomic.current; }
+// Entry rule entryRulePredicate
+entryRulePredicate returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPredicateRule()); }
+	iv_rulePredicate=rulePredicate
+	{ $current=$iv_rulePredicate.current; }
 	EOF;
 
-// Rule Atomic
-ruleAtomic returns [EObject current=null]
+// Rule Predicate
+rulePredicate returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPredicateAccess().getFirstClauseClauseParserRuleCall_0_0());
+				}
+				lv_firstClause_0_0=ruleClause
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPredicateRule());
+					}
+					set(
+						$current,
+						"firstClause",
+						lv_firstClause_0_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Clause");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPredicateAccess().getClauseContinuationClauseContinuationParserRuleCall_1_0());
+				}
+				lv_clauseContinuation_1_0=ruleClauseContinuation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPredicateRule());
+					}
+					set(
+						$current,
+						"clauseContinuation",
+						lv_clauseContinuation_1_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ClauseContinuation");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleClause
+entryRuleClause returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getClauseRule()); }
+	iv_ruleClause=ruleClause
+	{ $current=$iv_ruleClause.current; }
+	EOF;
+
+// Rule Clause
+ruleClause returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -823,12 +844,169 @@ ruleAtomic returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAtomicAccess().getNotNotParserRuleCall_0_0_0());
+						newCompositeNode(grammarAccess.getClauseAccess().getFirstElementTermParserRuleCall_0_0_0());
+					}
+					lv_firstElement_0_1=ruleTerm
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getClauseRule());
+						}
+						set(
+							$current,
+							"firstElement",
+							lv_firstElement_0_1,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Term");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getClauseAccess().getFirstElementRelationalDependencyParserRuleCall_0_0_1());
+					}
+					lv_firstElement_0_2=ruleRelationalDependency
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getClauseRule());
+						}
+						set(
+							$current,
+							"firstElement",
+							lv_firstElement_0_2,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.RelationalDependency");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getClauseAccess().getFirstElementArithmeticDependencyParserRuleCall_0_0_2());
+					}
+					lv_firstElement_0_3=ruleArithmeticDependency
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getClauseRule());
+						}
+						set(
+							$current,
+							"firstElement",
+							lv_firstElement_0_3,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticDependency");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getClauseAccess().getFirstElementPredefinedDependencyParserRuleCall_0_0_3());
+					}
+					lv_firstElement_0_4=rulePredefinedDependency
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getClauseRule());
+						}
+						set(
+							$current,
+							"firstElement",
+							lv_firstElement_0_4,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PredefinedDependency");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getClauseAccess().getNotNotParserRuleCall_1_0_0());
+					}
+					lv_not_1_0=ruleNot
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getClauseRule());
+						}
+						set(
+							$current,
+							"not",
+							lv_not_1_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Not");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)?
+			(
+				(
+					lv_openingParenthesis_2_0='('
+					{
+						newLeafNode(lv_openingParenthesis_2_0, grammarAccess.getClauseAccess().getOpeningParenthesisLeftParenthesisKeyword_1_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getClauseRule());
+						}
+						setWithLastConsumed($current, "openingParenthesis", lv_openingParenthesis_2_0, "(");
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getClauseAccess().getPredicatePredicateParserRuleCall_1_2_0());
+					}
+					lv_predicate_3_0=rulePredicate
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getClauseRule());
+						}
+						set(
+							$current,
+							"predicate",
+							lv_predicate_3_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Predicate");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					lv_closingParenthesis_4_0=')'
+					{
+						newLeafNode(lv_closingParenthesis_4_0, grammarAccess.getClauseAccess().getClosingParenthesisRightParenthesisKeyword_1_3_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getClauseRule());
+						}
+						setWithLastConsumed($current, "closingParenthesis", lv_closingParenthesis_4_0, ")");
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleTerm
+entryRuleTerm returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTermRule()); }
+	iv_ruleTerm=ruleTerm
+	{ $current=$iv_ruleTerm.current; }
+	EOF;
+
+// Rule Term
+ruleTerm returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getTermAccess().getNotNotParserRuleCall_0_0_0());
 					}
 					lv_not_0_0=ruleNot
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAtomicRule());
+							$current = createModelElementForParent(grammarAccess.getTermRule());
 						}
 						set(
 							$current,
@@ -842,12 +1020,12 @@ ruleAtomic returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAtomicAccess().getParamParamParserRuleCall_0_1_0());
+						newCompositeNode(grammarAccess.getTermAccess().getParamParamParserRuleCall_0_1_0());
 					}
 					lv_param_1_0=ruleParam
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAtomicRule());
+							$current = createModelElementForParent(grammarAccess.getTermRule());
 						}
 						set(
 							$current,
@@ -864,12 +1042,12 @@ ruleAtomic returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAtomicAccess().getNotNotParserRuleCall_1_0_0());
+						newCompositeNode(grammarAccess.getTermAccess().getNotNotParserRuleCall_1_0_0());
 					}
 					lv_not_2_0=ruleNot
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAtomicRule());
+							$current = createModelElementForParent(grammarAccess.getTermRule());
 						}
 						set(
 							$current,
@@ -883,12 +1061,12 @@ ruleAtomic returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAtomicAccess().getParamParamAssignmentParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getTermAccess().getParamParamAssignmentParserRuleCall_1_1_0());
 					}
 					lv_param_3_0=ruleParamAssignment
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAtomicRule());
+							$current = createModelElementForParent(grammarAccess.getTermRule());
 						}
 						set(
 							$current,
@@ -900,18 +1078,6 @@ ruleAtomic returns [EObject current=null]
 				)
 			)
 		)
-		    |
-		{
-			/* */
-		}
-		{
-			newCompositeNode(grammarAccess.getAtomicAccess().getComparisonDependencyParserRuleCall_2());
-		}
-		this_ComparisonDependency_4=ruleComparisonDependency
-		{
-			$current = $this_ComparisonDependency_4.current;
-			afterParserOrEnumRuleCall();
-		}
 	)
 ;
 
@@ -1130,18 +1296,18 @@ ruleParamAssignment returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getParamAssignmentAccess().getArithOpArithmeticOperatorParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getParamAssignmentAccess().getRelationalOpRelationalOperatorParserRuleCall_3_1_0());
 					}
-					lv_arithOp_12_0=ruleArithmeticOperator
+					lv_relationalOp_12_0=ruleRelationalOperator
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getParamAssignmentRule());
 						}
 						set(
 							$current,
-							"arithOp",
-							lv_arithOp_12_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticOperator");
+							"relationalOp",
+							lv_relationalOp_12_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.RelationalOperator");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1164,212 +1330,6 @@ ruleParamAssignment returns [EObject current=null]
 					}
 				)
 			)
-		)
-	)
-;
-
-// Entry rule entryRuleClause
-entryRuleClause returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getClauseRule()); }
-	iv_ruleClause=ruleClause
-	{ $current=$iv_ruleClause.current; }
-	EOF;
-
-// Rule Clause
-ruleClause returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getClauseAccess().getFirstElementAtomicParserRuleCall_0_0_0());
-					}
-					lv_firstElement_0_0=ruleAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getClauseRule());
-						}
-						set(
-							$current,
-							"firstElement",
-							lv_firstElement_0_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Atomic");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getClauseAccess().getClauseContinuationClauseContinuationParserRuleCall_0_1_0());
-					}
-					lv_clauseContinuation_1_0=ruleClauseContinuation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getClauseRule());
-						}
-						set(
-							$current,
-							"clauseContinuation",
-							lv_clauseContinuation_1_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ClauseContinuation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
-		    |
-		(
-			(
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getClauseAccess().getFirstElementPredefinedDependencyParserRuleCall_1_0_0_0());
-						}
-						lv_firstElement_2_1=rulePredefinedDependency
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getClauseRule());
-							}
-							set(
-								$current,
-								"firstElement",
-								lv_firstElement_2_1,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PredefinedDependency");
-							afterParserOrEnumRuleCall();
-						}
-						    |
-						{
-							newCompositeNode(grammarAccess.getClauseAccess().getFirstElementArithmeticDependencyParserRuleCall_1_0_0_1());
-						}
-						lv_firstElement_2_2=ruleArithmeticDependency
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getClauseRule());
-							}
-							set(
-								$current,
-								"firstElement",
-								lv_firstElement_2_2,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticDependency");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getClauseAccess().getClauseContinuationClauseContinuationParserRuleCall_1_1_0());
-					}
-					lv_clauseContinuation_3_0=ruleClauseContinuation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getClauseRule());
-						}
-						set(
-							$current,
-							"clauseContinuation",
-							lv_clauseContinuation_3_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ClauseContinuation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)?
-		)
-		    |
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getClauseAccess().getNotNotParserRuleCall_2_0_0());
-					}
-					lv_not_4_0=ruleNot
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getClauseRule());
-						}
-						set(
-							$current,
-							"not",
-							lv_not_4_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Not");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)?
-			(
-				(
-					lv_openingParenthesis_5_0='('
-					{
-						newLeafNode(lv_openingParenthesis_5_0, grammarAccess.getClauseAccess().getOpeningParenthesisLeftParenthesisKeyword_2_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getClauseRule());
-						}
-						setWithLastConsumed($current, "openingParenthesis", lv_openingParenthesis_5_0, "(");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getClauseAccess().getClauseClauseParserRuleCall_2_2_0());
-					}
-					lv_clause_6_0=ruleClause
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getClauseRule());
-						}
-						set(
-							$current,
-							"clause",
-							lv_clause_6_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Clause");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				(
-					lv_closingParenthesis_7_0=')'
-					{
-						newLeafNode(lv_closingParenthesis_7_0, grammarAccess.getClauseAccess().getClosingParenthesisRightParenthesisKeyword_2_3_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getClauseRule());
-						}
-						setWithLastConsumed($current, "closingParenthesis", lv_closingParenthesis_7_0, ")");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getClauseAccess().getClauseContinuationClauseContinuationParserRuleCall_2_4_0());
-					}
-					lv_clauseContinuation_8_0=ruleClauseContinuation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getClauseRule());
-						}
-						set(
-							$current,
-							"clauseContinuation",
-							lv_clauseContinuation_8_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ClauseContinuation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)?
 		)
 	)
 ;
@@ -1411,39 +1371,21 @@ ruleClauseContinuation returns [EObject current=null]
 		)
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getClauseContinuationAccess().getAdditionalElementsAtomicParserRuleCall_1_0_0());
+				{
+					newCompositeNode(grammarAccess.getClauseContinuationAccess().getAdditionalElementsPredicateParserRuleCall_1_0());
+				}
+				lv_additionalElements_1_0=rulePredicate
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getClauseContinuationRule());
 					}
-					lv_additionalElements_1_1=ruleAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getClauseContinuationRule());
-						}
-						set(
-							$current,
-							"additionalElements",
-							lv_additionalElements_1_1,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Atomic");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getClauseContinuationAccess().getAdditionalElementsClauseParserRuleCall_1_0_1());
-					}
-					lv_additionalElements_1_2=ruleClause
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getClauseContinuationRule());
-						}
-						set(
-							$current,
-							"additionalElements",
-							lv_additionalElements_1_2,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Clause");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"additionalElements",
+						lv_additionalElements_1_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.Predicate");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 	)
@@ -1539,39 +1481,21 @@ rulePredefinedDependency returns [EObject current=null]
 		}
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_3_0_0());
+				{
+					newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositivePredicateParserRuleCall_3_0());
+				}
+				lv_predefDepElements_3_0=rulePositivePredicate
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPredefinedDependencyRule());
 					}
-					lv_predefDepElements_3_1=rulePositiveAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPredefinedDependencyRule());
-						}
-						add(
-							$current,
-							"predefDepElements",
-							lv_predefDepElements_3_1,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_3_0_1());
-					}
-					lv_predefDepElements_3_2=rulePositiveClause
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPredefinedDependencyRule());
-						}
-						add(
-							$current,
-							"predefDepElements",
-							lv_predefDepElements_3_2,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					add(
+						$current,
+						"predefDepElements",
+						lv_predefDepElements_3_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredicate");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 		(
@@ -1581,39 +1505,21 @@ rulePredefinedDependency returns [EObject current=null]
 			}
 			(
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_4_1_0_0());
+					{
+						newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositivePredicateParserRuleCall_4_1_0());
+					}
+					lv_predefDepElements_5_0=rulePositivePredicate
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPredefinedDependencyRule());
 						}
-						lv_predefDepElements_5_1=rulePositiveAtomic
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPredefinedDependencyRule());
-							}
-							add(
-								$current,
-								"predefDepElements",
-								lv_predefDepElements_5_1,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
-							afterParserOrEnumRuleCall();
-						}
-						    |
-						{
-							newCompositeNode(grammarAccess.getPredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_4_1_0_1());
-						}
-						lv_predefDepElements_5_2=rulePositiveClause
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPredefinedDependencyRule());
-							}
-							add(
-								$current,
-								"predefDepElements",
-								lv_predefDepElements_5_2,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						add(
+							$current,
+							"predefDepElements",
+							lv_predefDepElements_5_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredicate");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 		)+
@@ -1624,15 +1530,15 @@ rulePredefinedDependency returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRulePositiveAtomic
-entryRulePositiveAtomic returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPositiveAtomicRule()); }
-	iv_rulePositiveAtomic=rulePositiveAtomic
-	{ $current=$iv_rulePositiveAtomic.current; }
+// Entry rule entryRulePositivePredicate
+entryRulePositivePredicate returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPositivePredicateRule()); }
+	iv_rulePositivePredicate=rulePositivePredicate
+	{ $current=$iv_rulePositivePredicate.current; }
 	EOF;
 
-// Rule PositiveAtomic
-rulePositiveAtomic returns [EObject current=null]
+// Rule PositivePredicate
+rulePositivePredicate returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1643,12 +1549,69 @@ rulePositiveAtomic returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPositiveAtomicAccess().getParamParamParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getPositivePredicateAccess().getFirstClausePositiveClauseParserRuleCall_0_0());
+				}
+				lv_firstClause_0_0=rulePositiveClause
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPositivePredicateRule());
+					}
+					set(
+						$current,
+						"firstClause",
+						lv_firstClause_0_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPositivePredicateAccess().getClauseContinuationPositiveClauseContinuationParserRuleCall_1_0());
+				}
+				lv_clauseContinuation_1_0=rulePositiveClauseContinuation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPositivePredicateRule());
+					}
+					set(
+						$current,
+						"clauseContinuation",
+						lv_clauseContinuation_1_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClauseContinuation");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+	)
+;
+
+// Entry rule entryRulePositiveTerm
+entryRulePositiveTerm returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPositiveTermRule()); }
+	iv_rulePositiveTerm=rulePositiveTerm
+	{ $current=$iv_rulePositiveTerm.current; }
+	EOF;
+
+// Rule PositiveTerm
+rulePositiveTerm returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPositiveTermAccess().getParamParamParserRuleCall_0_0());
 				}
 				lv_param_0_0=ruleParam
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPositiveAtomicRule());
+						$current = createModelElementForParent(grammarAccess.getPositiveTermRule());
 					}
 					set(
 						$current,
@@ -1663,12 +1626,12 @@ rulePositiveAtomic returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPositiveAtomicAccess().getParamParamAssignmentParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getPositiveTermAccess().getParamParamAssignmentParserRuleCall_1_0());
 				}
 				lv_param_1_0=ruleParamAssignment
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPositiveAtomicRule());
+						$current = createModelElementForParent(grammarAccess.getPositiveTermRule());
 					}
 					set(
 						$current,
@@ -1684,11 +1647,11 @@ rulePositiveAtomic returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getPositiveAtomicAccess().getComparisonDependencyParserRuleCall_2());
+			newCompositeNode(grammarAccess.getPositiveTermAccess().getRelationalDependencyParserRuleCall_2());
 		}
-		this_ComparisonDependency_2=ruleComparisonDependency
+		this_RelationalDependency_2=ruleRelationalDependency
 		{
-			$current = $this_ComparisonDependency_2.current;
+			$current = $this_RelationalDependency_2.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -1714,9 +1677,9 @@ rulePositiveClause returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementPositiveAtomicParserRuleCall_0_0_0());
+						newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementPositiveTermParserRuleCall_0_0_0());
 					}
-					lv_firstElement_0_0=rulePositiveAtomic
+					lv_firstElement_0_1=rulePositiveTerm
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
@@ -1724,27 +1687,56 @@ rulePositiveClause returns [EObject current=null]
 						set(
 							$current,
 							"firstElement",
-							lv_firstElement_0_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
+							lv_firstElement_0_1,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveTerm");
 						afterParserOrEnumRuleCall();
 					}
-				)
-			)
-			(
-				(
+					    |
 					{
-						newCompositeNode(grammarAccess.getPositiveClauseAccess().getClauseContinuationPositiveClauseContinuationParserRuleCall_0_1_0());
+						newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementRelationalDependencyParserRuleCall_0_0_1());
 					}
-					lv_clauseContinuation_1_0=rulePositiveClauseContinuation
+					lv_firstElement_0_2=ruleRelationalDependency
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
 						}
 						set(
 							$current,
-							"clauseContinuation",
-							lv_clauseContinuation_1_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClauseContinuation");
+							"firstElement",
+							lv_firstElement_0_2,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.RelationalDependency");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementArithmeticDependencyParserRuleCall_0_0_2());
+					}
+					lv_firstElement_0_3=ruleArithmeticDependency
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
+						}
+						set(
+							$current,
+							"firstElement",
+							lv_firstElement_0_3,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticDependency");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementPositivePredefinedDependencyParserRuleCall_0_0_3());
+					}
+					lv_firstElement_0_4=rulePositivePredefinedDependency
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
+						}
+						set(
+							$current,
+							"firstElement",
+							lv_firstElement_0_4,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredefinedDependency");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1754,129 +1746,51 @@ rulePositiveClause returns [EObject current=null]
 		(
 			(
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementPositivePredefinedDependencyParserRuleCall_1_0_0_0());
-						}
-						lv_firstElement_2_1=rulePositivePredefinedDependency
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
-							}
-							set(
-								$current,
-								"firstElement",
-								lv_firstElement_2_1,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredefinedDependency");
-							afterParserOrEnumRuleCall();
-						}
-						    |
-						{
-							newCompositeNode(grammarAccess.getPositiveClauseAccess().getFirstElementArithmeticDependencyParserRuleCall_1_0_0_1());
-						}
-						lv_firstElement_2_2=ruleArithmeticDependency
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
-							}
-							set(
-								$current,
-								"firstElement",
-								lv_firstElement_2_2,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ArithmeticDependency");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)
-			(
-				(
+					lv_openingParenthesis_1_0='('
 					{
-						newCompositeNode(grammarAccess.getPositiveClauseAccess().getClauseContinuationPositiveClauseContinuationParserRuleCall_1_1_0());
-					}
-					lv_clauseContinuation_3_0=rulePositiveClauseContinuation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
-						}
-						set(
-							$current,
-							"clauseContinuation",
-							lv_clauseContinuation_3_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClauseContinuation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)?
-		)
-		    |
-		(
-			(
-				(
-					lv_openingParenthesis_4_0='('
-					{
-						newLeafNode(lv_openingParenthesis_4_0, grammarAccess.getPositiveClauseAccess().getOpeningParenthesisLeftParenthesisKeyword_2_0_0());
+						newLeafNode(lv_openingParenthesis_1_0, grammarAccess.getPositiveClauseAccess().getOpeningParenthesisLeftParenthesisKeyword_1_0_0());
 					}
 					{
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getPositiveClauseRule());
 						}
-						setWithLastConsumed($current, "openingParenthesis", lv_openingParenthesis_4_0, "(");
+						setWithLastConsumed($current, "openingParenthesis", lv_openingParenthesis_1_0, "(");
 					}
 				)
 			)
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPositiveClauseAccess().getClausePositiveClauseParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getPositiveClauseAccess().getPredicatePositivePredicateParserRuleCall_1_1_0());
 					}
-					lv_clause_5_0=rulePositiveClause
+					lv_predicate_2_0=rulePositivePredicate
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
 						}
 						set(
 							$current,
-							"clause",
-							lv_clause_5_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
+							"predicate",
+							lv_predicate_2_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredicate");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
 				(
-					lv_closingParenthesis_6_0=')'
+					lv_closingParenthesis_3_0=')'
 					{
-						newLeafNode(lv_closingParenthesis_6_0, grammarAccess.getPositiveClauseAccess().getClosingParenthesisRightParenthesisKeyword_2_2_0());
+						newLeafNode(lv_closingParenthesis_3_0, grammarAccess.getPositiveClauseAccess().getClosingParenthesisRightParenthesisKeyword_1_2_0());
 					}
 					{
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getPositiveClauseRule());
 						}
-						setWithLastConsumed($current, "closingParenthesis", lv_closingParenthesis_6_0, ")");
+						setWithLastConsumed($current, "closingParenthesis", lv_closingParenthesis_3_0, ")");
 					}
 				)
 			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPositiveClauseAccess().getClauseContinuationPositiveClauseContinuationParserRuleCall_2_3_0());
-					}
-					lv_clauseContinuation_7_0=rulePositiveClauseContinuation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositiveClauseRule());
-						}
-						set(
-							$current,
-							"clauseContinuation",
-							lv_clauseContinuation_7_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClauseContinuation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)?
 		)
 	)
 ;
@@ -1918,39 +1832,21 @@ rulePositiveClauseContinuation returns [EObject current=null]
 		)
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPositiveClauseContinuationAccess().getAdditionalElementsPositiveAtomicParserRuleCall_1_0_0());
+				{
+					newCompositeNode(grammarAccess.getPositiveClauseContinuationAccess().getAdditionalElementsPositivePredicateParserRuleCall_1_0());
+				}
+				lv_additionalElements_1_0=rulePositivePredicate
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPositiveClauseContinuationRule());
 					}
-					lv_additionalElements_1_1=rulePositiveAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositiveClauseContinuationRule());
-						}
-						set(
-							$current,
-							"additionalElements",
-							lv_additionalElements_1_1,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getPositiveClauseContinuationAccess().getAdditionalElementsPositiveClauseParserRuleCall_1_0_1());
-					}
-					lv_additionalElements_1_2=rulePositiveClause
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositiveClauseContinuationRule());
-						}
-						set(
-							$current,
-							"additionalElements",
-							lv_additionalElements_1_2,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"additionalElements",
+						lv_additionalElements_1_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredicate");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 	)
@@ -2027,39 +1923,21 @@ rulePositivePredefinedDependency returns [EObject current=null]
 		}
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_2_0_0());
+				{
+					newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositivePredicateParserRuleCall_2_0());
+				}
+				lv_predefDepElements_2_0=rulePositivePredicate
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPositivePredefinedDependencyRule());
 					}
-					lv_predefDepElements_2_1=rulePositiveAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositivePredefinedDependencyRule());
-						}
-						add(
-							$current,
-							"predefDepElements",
-							lv_predefDepElements_2_1,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_2_0_1());
-					}
-					lv_predefDepElements_2_2=rulePositiveClause
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPositivePredefinedDependencyRule());
-						}
-						add(
-							$current,
-							"predefDepElements",
-							lv_predefDepElements_2_2,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					add(
+						$current,
+						"predefDepElements",
+						lv_predefDepElements_2_0,
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredicate");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 		(
@@ -2069,39 +1947,21 @@ rulePositivePredefinedDependency returns [EObject current=null]
 			}
 			(
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveAtomicParserRuleCall_3_1_0_0());
+					{
+						newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositivePredicateParserRuleCall_3_1_0());
+					}
+					lv_predefDepElements_4_0=rulePositivePredicate
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPositivePredefinedDependencyRule());
 						}
-						lv_predefDepElements_4_1=rulePositiveAtomic
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPositivePredefinedDependencyRule());
-							}
-							add(
-								$current,
-								"predefDepElements",
-								lv_predefDepElements_4_1,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveAtomic");
-							afterParserOrEnumRuleCall();
-						}
-						    |
-						{
-							newCompositeNode(grammarAccess.getPositivePredefinedDependencyAccess().getPredefDepElementsPositiveClauseParserRuleCall_3_1_0_1());
-						}
-						lv_predefDepElements_4_2=rulePositiveClause
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPositivePredefinedDependencyRule());
-							}
-							add(
-								$current,
-								"predefDepElements",
-								lv_predefDepElements_4_2,
-								"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositiveClause");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						add(
+							$current,
+							"predefDepElements",
+							lv_predefDepElements_4_0,
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.PositivePredicate");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 		)+

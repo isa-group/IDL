@@ -15,10 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getFirstElement <em>First Element</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClauseContinuation <em>Clause Continuation</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getNot <em>Not</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getOpeningParenthesis <em>Opening Parenthesis</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClause <em>Clause</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getPredicate <em>Predicate</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClosingParenthesis <em>Closing Parenthesis</em>}</li>
  * </ul>
  *
@@ -49,28 +48,6 @@ public interface GeneralClause extends EObject
    * @generated
    */
   void setFirstElement(EObject value);
-
-  /**
-   * Returns the value of the '<em><b>Clause Continuation</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Clause Continuation</em>' containment reference.
-   * @see #setClauseContinuation(GeneralClauseContinuation)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause_ClauseContinuation()
-   * @model containment="true"
-   * @generated
-   */
-  GeneralClauseContinuation getClauseContinuation();
-
-  /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClauseContinuation <em>Clause Continuation</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Clause Continuation</em>' containment reference.
-   * @see #getClauseContinuation()
-   * @generated
-   */
-  void setClauseContinuation(GeneralClauseContinuation value);
 
   /**
    * Returns the value of the '<em><b>Not</b></em>' attribute.
@@ -117,26 +94,26 @@ public interface GeneralClause extends EObject
   void setOpeningParenthesis(String value);
 
   /**
-   * Returns the value of the '<em><b>Clause</b></em>' containment reference.
+   * Returns the value of the '<em><b>Predicate</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Clause</em>' containment reference.
-   * @see #setClause(GeneralClause)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause_Clause()
+   * @return the value of the '<em>Predicate</em>' containment reference.
+   * @see #setPredicate(EObject)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause_Predicate()
    * @model containment="true"
    * @generated
    */
-  GeneralClause getClause();
+  EObject getPredicate();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getClause <em>Clause</em>}' containment reference.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getPredicate <em>Predicate</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Clause</em>' containment reference.
-   * @see #getClause()
+   * @param value the new value of the '<em>Predicate</em>' containment reference.
+   * @see #getPredicate()
    * @generated
    */
-  void setClause(GeneralClause value);
+  void setPredicate(EObject value);
 
   /**
    * Returns the value of the '<em><b>Closing Parenthesis</b></em>' attribute.

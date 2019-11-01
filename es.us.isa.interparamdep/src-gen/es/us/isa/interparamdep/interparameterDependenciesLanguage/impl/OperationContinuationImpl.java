@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationContinuationImpl#getMathOp <em>Math Op</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationContinuationImpl#getArithOp <em>Arith Op</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.OperationContinuationImpl#getAdditionalParams <em>Additional Params</em>}</li>
  * </ul>
  *
@@ -33,24 +33,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class OperationContinuationImpl extends MinimalEObjectImpl.Container implements OperationContinuation
 {
   /**
-   * The default value of the '{@link #getMathOp() <em>Math Op</em>}' attribute.
+   * The default value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMathOp()
+   * @see #getArithOp()
    * @generated
    * @ordered
    */
-  protected static final String MATH_OP_EDEFAULT = null;
+  protected static final String ARITH_OP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMathOp() <em>Math Op</em>}' attribute.
+   * The cached value of the '{@link #getArithOp() <em>Arith Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMathOp()
+   * @see #getArithOp()
    * @generated
    * @ordered
    */
-  protected String mathOp = MATH_OP_EDEFAULT;
+  protected String arithOp = ARITH_OP_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getAdditionalParams() <em>Additional Params</em>}' containment reference.
@@ -89,9 +89,9 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public String getMathOp()
+  public String getArithOp()
   {
-    return mathOp;
+    return arithOp;
   }
 
   /**
@@ -100,12 +100,12 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public void setMathOp(String newMathOp)
+  public void setArithOp(String newArithOp)
   {
-    String oldMathOp = mathOp;
-    mathOp = newMathOp;
+    String oldArithOp = arithOp;
+    arithOp = newArithOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__MATH_OP, oldMathOp, mathOp));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__ARITH_OP, oldArithOp, arithOp));
   }
 
   /**
@@ -184,8 +184,8 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__MATH_OP:
-        return getMathOp();
+      case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__ARITH_OP:
+        return getArithOp();
       case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__ADDITIONAL_PARAMS:
         return getAdditionalParams();
     }
@@ -202,8 +202,8 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__MATH_OP:
-        setMathOp((String)newValue);
+      case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__ARITH_OP:
+        setArithOp((String)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__ADDITIONAL_PARAMS:
         setAdditionalParams((EObject)newValue);
@@ -222,8 +222,8 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__MATH_OP:
-        setMathOp(MATH_OP_EDEFAULT);
+      case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__ARITH_OP:
+        setArithOp(ARITH_OP_EDEFAULT);
         return;
       case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__ADDITIONAL_PARAMS:
         setAdditionalParams((EObject)null);
@@ -242,8 +242,8 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__MATH_OP:
-        return MATH_OP_EDEFAULT == null ? mathOp != null : !MATH_OP_EDEFAULT.equals(mathOp);
+      case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__ARITH_OP:
+        return ARITH_OP_EDEFAULT == null ? arithOp != null : !ARITH_OP_EDEFAULT.equals(arithOp);
       case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION__ADDITIONAL_PARAMS:
         return additionalParams != null;
     }
@@ -261,8 +261,8 @@ public class OperationContinuationImpl extends MinimalEObjectImpl.Container impl
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (mathOp: ");
-    result.append(mathOp);
+    result.append(" (arithOp: ");
+    result.append(arithOp);
     result.append(')');
     return result.toString();
   }

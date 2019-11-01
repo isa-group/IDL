@@ -3,7 +3,7 @@
  */
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralAtomic;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment;
 
@@ -18,19 +18,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>General Atomic</b></em>'.
+ * An implementation of the model object '<em><b>General Term</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralAtomicImpl#getNot <em>Not</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralAtomicImpl#getParam <em>Param</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralTermImpl#getNot <em>Not</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralTermImpl#getParam <em>Param</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements GeneralAtomic
+public class GeneralTermImpl extends MinimalEObjectImpl.Container implements GeneralTerm
 {
   /**
    * The default value of the '{@link #getNot() <em>Not</em>}' attribute.
@@ -67,7 +67,7 @@ public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements G
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GeneralAtomicImpl()
+  protected GeneralTermImpl()
   {
     super();
   }
@@ -80,7 +80,7 @@ public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements G
   @Override
   protected EClass eStaticClass()
   {
-    return InterparameterDependenciesLanguagePackage.Literals.GENERAL_ATOMIC;
+    return InterparameterDependenciesLanguagePackage.Literals.GENERAL_TERM;
   }
 
   /**
@@ -105,7 +105,7 @@ public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements G
     String oldNot = not;
     not = newNot;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__NOT, oldNot, not));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_TERM__NOT, oldNot, not));
   }
 
   /**
@@ -130,7 +130,7 @@ public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements G
     param = newParam;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM, oldParam, newParam);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_TERM__PARAM, oldParam, newParam);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -148,14 +148,14 @@ public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements G
     {
       NotificationChain msgs = null;
       if (param != null)
-        msgs = ((InternalEObject)param).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM, null, msgs);
+        msgs = ((InternalEObject)param).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_TERM__PARAM, null, msgs);
       if (newParam != null)
-        msgs = ((InternalEObject)newParam).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM, null, msgs);
+        msgs = ((InternalEObject)newParam).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_TERM__PARAM, null, msgs);
       msgs = basicSetParam(newParam, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM, newParam, newParam));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_TERM__PARAM, newParam, newParam));
   }
 
   /**
@@ -168,7 +168,7 @@ public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM:
+      case InterparameterDependenciesLanguagePackage.GENERAL_TERM__PARAM:
         return basicSetParam(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -184,9 +184,9 @@ public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__NOT:
+      case InterparameterDependenciesLanguagePackage.GENERAL_TERM__NOT:
         return getNot();
-      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM:
+      case InterparameterDependenciesLanguagePackage.GENERAL_TERM__PARAM:
         return getParam();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -202,10 +202,10 @@ public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__NOT:
+      case InterparameterDependenciesLanguagePackage.GENERAL_TERM__NOT:
         setNot((String)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM:
+      case InterparameterDependenciesLanguagePackage.GENERAL_TERM__PARAM:
         setParam((ParamAssignment)newValue);
         return;
     }
@@ -222,10 +222,10 @@ public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__NOT:
+      case InterparameterDependenciesLanguagePackage.GENERAL_TERM__NOT:
         setNot(NOT_EDEFAULT);
         return;
-      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM:
+      case InterparameterDependenciesLanguagePackage.GENERAL_TERM__PARAM:
         setParam((ParamAssignment)null);
         return;
     }
@@ -242,9 +242,9 @@ public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements G
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__NOT:
+      case InterparameterDependenciesLanguagePackage.GENERAL_TERM__NOT:
         return NOT_EDEFAULT == null ? not != null : !NOT_EDEFAULT.equals(not);
-      case InterparameterDependenciesLanguagePackage.GENERAL_ATOMIC__PARAM:
+      case InterparameterDependenciesLanguagePackage.GENERAL_TERM__PARAM:
         return param != null;
     }
     return super.eIsSet(featureID);
@@ -267,4 +267,4 @@ public class GeneralAtomicImpl extends MinimalEObjectImpl.Container implements G
     return result.toString();
   }
 
-} //GeneralAtomicImpl
+} //GeneralTermImpl

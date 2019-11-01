@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getOperation <em>Operation</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getArithOp <em>Arith Op</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getRelationalOp <em>Relational Op</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getResult <em>Result</em>}</li>
  * </ul>
  *
@@ -48,26 +48,26 @@ public interface ArithmeticDependency extends EObject
   void setOperation(Operation value);
 
   /**
-   * Returns the value of the '<em><b>Arith Op</b></em>' attribute.
+   * Returns the value of the '<em><b>Relational Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Arith Op</em>' attribute.
-   * @see #setArithOp(String)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getArithmeticDependency_ArithOp()
+   * @return the value of the '<em>Relational Op</em>' attribute.
+   * @see #setRelationalOp(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getArithmeticDependency_RelationalOp()
    * @model
    * @generated
    */
-  String getArithOp();
+  String getRelationalOp();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getArithOp <em>Arith Op</em>}' attribute.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ArithmeticDependency#getRelationalOp <em>Relational Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Arith Op</em>' attribute.
-   * @see #getArithOp()
+   * @param value the new value of the '<em>Relational Op</em>' attribute.
+   * @see #getRelationalOp()
    * @generated
    */
-  void setArithOp(String value);
+  void setRelationalOp(String value);
 
   /**
    * Returns the value of the '<em><b>Result</b></em>' attribute.

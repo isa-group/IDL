@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation#getMathOp <em>Math Op</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation#getArithOp <em>Arith Op</em>}</li>
  *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation#getAdditionalParams <em>Additional Params</em>}</li>
  * </ul>
  *
@@ -25,26 +25,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface OperationContinuation extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Math Op</b></em>' attribute.
+   * Returns the value of the '<em><b>Arith Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Math Op</em>' attribute.
-   * @see #setMathOp(String)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getOperationContinuation_MathOp()
+   * @return the value of the '<em>Arith Op</em>' attribute.
+   * @see #setArithOp(String)
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getOperationContinuation_ArithOp()
    * @model
    * @generated
    */
-  String getMathOp();
+  String getArithOp();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation#getMathOp <em>Math Op</em>}' attribute.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation#getArithOp <em>Arith Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Math Op</em>' attribute.
-   * @see #getMathOp()
+   * @param value the new value of the '<em>Arith Op</em>' attribute.
+   * @see #getArithOp()
    * @generated
    */
-  void setMathOp(String value);
+  void setArithOp(String value);
 
   /**
    * Returns the value of the '<em><b>Additional Params</b></em>' containment reference.
