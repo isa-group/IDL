@@ -9,6 +9,7 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.Dependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClauseContinuation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguageFactory;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
@@ -17,8 +18,6 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Param;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.RelationalDependency;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -90,7 +89,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass predicateEClass = null;
+  private EClass generalPredicateEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -133,13 +132,6 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   private EClass generalPredefinedDependencyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass positivePredicateEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -474,9 +466,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EClass getPredicate()
+  public EClass getGeneralPredicate()
   {
-    return predicateEClass;
+    return generalPredicateEClass;
   }
 
   /**
@@ -485,9 +477,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EReference getPredicate_FirstClause()
+  public EReference getGeneralPredicate_FirstClause()
   {
-    return (EReference)predicateEClass.getEStructuralFeatures().get(0);
+    return (EReference)generalPredicateEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -496,9 +488,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EReference getPredicate_ClauseContinuation()
+  public EReference getGeneralPredicate_ClauseContinuation()
   {
-    return (EReference)predicateEClass.getEStructuralFeatures().get(1);
+    return (EReference)generalPredicateEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -771,39 +763,6 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EClass getPositivePredicate()
-  {
-    return positivePredicateEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPositivePredicate_FirstClause()
-  {
-    return (EReference)positivePredicateEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPositivePredicate_ClauseContinuation()
-  {
-    return (EReference)positivePredicateEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public InterparameterDependenciesLanguageFactory getInterparameterDependenciesLanguageFactory()
   {
     return (InterparameterDependenciesLanguageFactory)getEFactoryInstance();
@@ -860,9 +819,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     createEReference(conditionalDependencyEClass, CONDITIONAL_DEPENDENCY__CONDITION);
     createEReference(conditionalDependencyEClass, CONDITIONAL_DEPENDENCY__CONSEQUENCE);
 
-    predicateEClass = createEClass(PREDICATE);
-    createEReference(predicateEClass, PREDICATE__FIRST_CLAUSE);
-    createEReference(predicateEClass, PREDICATE__CLAUSE_CONTINUATION);
+    generalPredicateEClass = createEClass(GENERAL_PREDICATE);
+    createEReference(generalPredicateEClass, GENERAL_PREDICATE__FIRST_CLAUSE);
+    createEReference(generalPredicateEClass, GENERAL_PREDICATE__CLAUSE_CONTINUATION);
 
     generalClauseEClass = createEClass(GENERAL_CLAUSE);
     createEReference(generalClauseEClass, GENERAL_CLAUSE__FIRST_ELEMENT);
@@ -893,10 +852,6 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     createEAttribute(generalPredefinedDependencyEClass, GENERAL_PREDEFINED_DEPENDENCY__NOT);
     createEAttribute(generalPredefinedDependencyEClass, GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_TYPE);
     createEReference(generalPredefinedDependencyEClass, GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS);
-
-    positivePredicateEClass = createEClass(POSITIVE_PREDICATE);
-    createEReference(positivePredicateEClass, POSITIVE_PREDICATE__FIRST_CLAUSE);
-    createEReference(positivePredicateEClass, POSITIVE_PREDICATE__CLAUSE_CONTINUATION);
   }
 
   /**
@@ -960,18 +915,18 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     initEReference(getOperationContinuation_AdditionalParams(), ecorePackage.getEObject(), null, "additionalParams", null, 0, 1, OperationContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionalDependencyEClass, ConditionalDependency.class, "ConditionalDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConditionalDependency_Condition(), this.getPredicate(), null, "condition", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConditionalDependency_Consequence(), this.getPredicate(), null, "consequence", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConditionalDependency_Condition(), this.getGeneralPredicate(), null, "condition", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConditionalDependency_Consequence(), this.getGeneralPredicate(), null, "consequence", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(predicateEClass, Predicate.class, "Predicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPredicate_FirstClause(), this.getGeneralClause(), null, "firstClause", null, 0, 1, Predicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPredicate_ClauseContinuation(), this.getGeneralClauseContinuation(), null, "clauseContinuation", null, 0, 1, Predicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(generalPredicateEClass, GeneralPredicate.class, "GeneralPredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGeneralPredicate_FirstClause(), this.getGeneralClause(), null, "firstClause", null, 0, 1, GeneralPredicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralPredicate_ClauseContinuation(), this.getGeneralClauseContinuation(), null, "clauseContinuation", null, 0, 1, GeneralPredicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(generalClauseEClass, GeneralClause.class, "GeneralClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getGeneralClause_FirstElement(), ecorePackage.getEObject(), null, "firstElement", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGeneralClause_Not(), ecorePackage.getEString(), "not", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGeneralClause_OpeningParenthesis(), ecorePackage.getEString(), "openingParenthesis", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGeneralClause_Predicate(), ecorePackage.getEObject(), null, "predicate", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralClause_Predicate(), this.getGeneralPredicate(), null, "predicate", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGeneralClause_ClosingParenthesis(), ecorePackage.getEString(), "closingParenthesis", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(generalTermEClass, GeneralTerm.class, "GeneralTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -990,16 +945,12 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
 
     initEClass(generalClauseContinuationEClass, GeneralClauseContinuation.class, "GeneralClauseContinuation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGeneralClauseContinuation_LogicalOp(), ecorePackage.getEString(), "logicalOp", null, 0, 1, GeneralClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGeneralClauseContinuation_AdditionalElements(), ecorePackage.getEObject(), null, "additionalElements", null, 0, 1, GeneralClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralClauseContinuation_AdditionalElements(), this.getGeneralPredicate(), null, "additionalElements", null, 0, 1, GeneralClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(generalPredefinedDependencyEClass, GeneralPredefinedDependency.class, "GeneralPredefinedDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGeneralPredefinedDependency_Not(), ecorePackage.getEString(), "not", null, 0, 1, GeneralPredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGeneralPredefinedDependency_PredefDepType(), ecorePackage.getEString(), "predefDepType", null, 0, 1, GeneralPredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGeneralPredefinedDependency_PredefDepElements(), this.getPositivePredicate(), null, "predefDepElements", null, 0, -1, GeneralPredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(positivePredicateEClass, PositivePredicate.class, "PositivePredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPositivePredicate_FirstClause(), this.getGeneralClause(), null, "firstClause", null, 0, 1, PositivePredicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPositivePredicate_ClauseContinuation(), this.getGeneralClauseContinuation(), null, "clauseContinuation", null, 0, 1, PositivePredicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralPredefinedDependency_PredefDepElements(), this.getGeneralPredicate(), null, "predefDepElements", null, 0, -1, GeneralPredefinedDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

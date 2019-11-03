@@ -98,12 +98,12 @@ public interface GeneralClause extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Predicate</em>' containment reference.
-   * @see #setPredicate(EObject)
+   * @see #setPredicate(GeneralPredicate)
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClause_Predicate()
    * @model containment="true"
    * @generated
    */
-  EObject getPredicate();
+  GeneralPredicate getPredicate();
 
   /**
    * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause#getPredicate <em>Predicate</em>}' containment reference.
@@ -113,7 +113,7 @@ public interface GeneralClause extends EObject
    * @see #getPredicate()
    * @generated
    */
-  void setPredicate(EObject value);
+  void setPredicate(GeneralPredicate value);
 
   /**
    * Returns the value of the '<em><b>Closing Parenthesis</b></em>' attribute.

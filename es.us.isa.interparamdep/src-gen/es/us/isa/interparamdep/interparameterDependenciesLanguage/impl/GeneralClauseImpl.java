@@ -4,6 +4,7 @@
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -93,7 +94,7 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    * @ordered
    */
-  protected EObject predicate;
+  protected GeneralPredicate predicate;
 
   /**
    * The default value of the '{@link #getClosingParenthesis() <em>Closing Parenthesis</em>}' attribute.
@@ -242,7 +243,7 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    */
   @Override
-  public EObject getPredicate()
+  public GeneralPredicate getPredicate()
   {
     return predicate;
   }
@@ -252,9 +253,9 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPredicate(EObject newPredicate, NotificationChain msgs)
+  public NotificationChain basicSetPredicate(GeneralPredicate newPredicate, NotificationChain msgs)
   {
-    EObject oldPredicate = predicate;
+    GeneralPredicate oldPredicate = predicate;
     predicate = newPredicate;
     if (eNotificationRequired())
     {
@@ -270,7 +271,7 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
    * @generated
    */
   @Override
-  public void setPredicate(EObject newPredicate)
+  public void setPredicate(GeneralPredicate newPredicate)
   {
     if (newPredicate != predicate)
     {
@@ -373,7 +374,7 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
         setOpeningParenthesis((String)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__PREDICATE:
-        setPredicate((EObject)newValue);
+        setPredicate((GeneralPredicate)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLOSING_PARENTHESIS:
         setClosingParenthesis((String)newValue);
@@ -402,7 +403,7 @@ public class GeneralClauseImpl extends MinimalEObjectImpl.Container implements G
         setOpeningParenthesis(OPENING_PARENTHESIS_EDEFAULT);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__PREDICATE:
-        setPredicate((EObject)null);
+        setPredicate((GeneralPredicate)null);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE__CLOSING_PARENTHESIS:
         setClosingParenthesis(CLOSING_PARENTHESIS_EDEFAULT);

@@ -87,13 +87,13 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
   ConditionalDependency createConditionalDependency();
 
   /**
-   * Returns a new object of class '<em>Predicate</em>'.
+   * Returns a new object of class '<em>General Predicate</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predicate</em>'.
+   * @return a new object of class '<em>General Predicate</em>'.
    * @generated
    */
-  Predicate createPredicate();
+  GeneralPredicate createGeneralPredicate();
 
   /**
    * Returns a new object of class '<em>General Clause</em>'.
@@ -148,15 +148,6 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
    * @generated
    */
   GeneralPredefinedDependency createGeneralPredefinedDependency();
-
-  /**
-   * Returns a new object of class '<em>Positive Predicate</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Positive Predicate</em>'.
-   * @generated
-   */
-  PositivePredicate createPositivePredicate();
 
   /**
    * Returns the package supported by this factory.

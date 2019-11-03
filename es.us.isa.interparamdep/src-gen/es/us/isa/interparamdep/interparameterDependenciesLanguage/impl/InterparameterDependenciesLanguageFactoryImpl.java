@@ -72,14 +72,13 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
       case InterparameterDependenciesLanguagePackage.OPERATION: return createOperation();
       case InterparameterDependenciesLanguagePackage.OPERATION_CONTINUATION: return createOperationContinuation();
       case InterparameterDependenciesLanguagePackage.CONDITIONAL_DEPENDENCY: return createConditionalDependency();
-      case InterparameterDependenciesLanguagePackage.PREDICATE: return createPredicate();
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE: return createGeneralPredicate();
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE: return createGeneralClause();
       case InterparameterDependenciesLanguagePackage.GENERAL_TERM: return createGeneralTerm();
       case InterparameterDependenciesLanguagePackage.PARAM: return createParam();
       case InterparameterDependenciesLanguagePackage.PARAM_ASSIGNMENT: return createParamAssignment();
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE_CONTINUATION: return createGeneralClauseContinuation();
       case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY: return createGeneralPredefinedDependency();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE: return createPositivePredicate();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -175,10 +174,10 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public Predicate createPredicate()
+  public GeneralPredicate createGeneralPredicate()
   {
-    PredicateImpl predicate = new PredicateImpl();
-    return predicate;
+    GeneralPredicateImpl generalPredicate = new GeneralPredicateImpl();
+    return generalPredicate;
   }
 
   /**
@@ -251,18 +250,6 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
   {
     GeneralPredefinedDependencyImpl generalPredefinedDependency = new GeneralPredefinedDependencyImpl();
     return generalPredefinedDependency;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PositivePredicate createPositivePredicate()
-  {
-    PositivePredicateImpl positivePredicate = new PositivePredicateImpl();
-    return positivePredicate;
   }
 
   /**

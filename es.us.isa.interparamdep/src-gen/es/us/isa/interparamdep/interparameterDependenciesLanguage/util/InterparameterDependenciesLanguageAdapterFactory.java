@@ -111,9 +111,9 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
         return createConditionalDependencyAdapter();
       }
       @Override
-      public Adapter casePredicate(Predicate object)
+      public Adapter caseGeneralPredicate(GeneralPredicate object)
       {
-        return createPredicateAdapter();
+        return createGeneralPredicateAdapter();
       }
       @Override
       public Adapter caseGeneralClause(GeneralClause object)
@@ -144,11 +144,6 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
       public Adapter caseGeneralPredefinedDependency(GeneralPredefinedDependency object)
       {
         return createGeneralPredefinedDependencyAdapter();
-      }
-      @Override
-      public Adapter casePositivePredicate(PositivePredicate object)
-      {
-        return createPositivePredicateAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -278,16 +273,16 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate <em>Predicate</em>}'.
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate <em>General Predicate</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate
    * @generated
    */
-  public Adapter createPredicateAdapter()
+  public Adapter createGeneralPredicateAdapter()
   {
     return null;
   }
@@ -378,21 +373,6 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
    * @generated
    */
   public Adapter createGeneralPredefinedDependencyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate <em>Positive Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate
-   * @generated
-   */
-  public Adapter createPositivePredicateAdapter()
   {
     return null;
   }

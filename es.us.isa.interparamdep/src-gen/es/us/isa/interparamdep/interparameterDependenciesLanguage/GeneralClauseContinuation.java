@@ -51,12 +51,12 @@ public interface GeneralClauseContinuation extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Additional Elements</em>' containment reference.
-   * @see #setAdditionalElements(EObject)
+   * @see #setAdditionalElements(GeneralPredicate)
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralClauseContinuation_AdditionalElements()
    * @model containment="true"
    * @generated
    */
-  EObject getAdditionalElements();
+  GeneralPredicate getAdditionalElements();
 
   /**
    * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClauseContinuation#getAdditionalElements <em>Additional Elements</em>}' containment reference.
@@ -66,6 +66,6 @@ public interface GeneralClauseContinuation extends EObject
    * @see #getAdditionalElements()
    * @generated
    */
-  void setAdditionalElements(EObject value);
+  void setAdditionalElements(GeneralPredicate value);
 
 } // GeneralClauseContinuation

@@ -389,7 +389,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		private final Assignment cClauseContinuationAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cClauseContinuationClauseContinuationParserRuleCall_1_0 = (RuleCall)cClauseContinuationAssignment_1.eContents().get(0);
 		
-		//Predicate:
+		//Predicate GeneralPredicate:
 		//	firstClause=Clause clauseContinuation=ClauseContinuation?;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -780,7 +780,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		private final Assignment cClauseContinuationAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cClauseContinuationPositiveClauseContinuationParserRuleCall_1_0 = (RuleCall)cClauseContinuationAssignment_1.eContents().get(0);
 		
-		//PositivePredicate:
+		//PositivePredicate GeneralPredicate:
 		//	firstClause=PositiveClause clauseContinuation=PositiveClauseContinuation?;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1231,7 +1231,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		return getConditionalDependencyAccess().getRule();
 	}
 	
-	//Predicate:
+	//Predicate GeneralPredicate:
 	//	firstClause=Clause clauseContinuation=ClauseContinuation?;
 	public PredicateElements getPredicateAccess() {
 		return pPredicate;
@@ -1304,7 +1304,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		return getPredefinedDependencyAccess().getRule();
 	}
 	
-	//PositivePredicate:
+	//PositivePredicate GeneralPredicate:
 	//	firstClause=PositiveClause clauseContinuation=PositiveClauseContinuation?;
 	public PositivePredicateElements getPositivePredicateAccess() {
 		return pPositivePredicate;

@@ -10,14 +10,13 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.Dependency;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClauseContinuation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Model;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Param;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.RelationalDependency;
 import es.us.isa.interparamdep.services.InterparameterDependenciesLanguageGrammarAccess;
 import java.util.Set;
@@ -84,6 +83,16 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 					return; 
 				}
 				else break;
+			case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE:
+				if (rule == grammarAccess.getPositivePredicateRule()) {
+					sequence_PositivePredicate(context, (GeneralPredicate) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getPredicateRule()) {
+					sequence_Predicate(context, (GeneralPredicate) semanticObject); 
+					return; 
+				}
+				else break;
 			case InterparameterDependenciesLanguagePackage.GENERAL_TERM:
 				if (rule == grammarAccess.getPositiveTermRule()) {
 					sequence_PositiveTerm(context, (GeneralTerm) semanticObject); 
@@ -113,12 +122,6 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 					return; 
 				}
 				else break;
-			case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE:
-				sequence_PositivePredicate(context, (PositivePredicate) semanticObject); 
-				return; 
-			case InterparameterDependenciesLanguagePackage.PREDICATE:
-				sequence_Predicate(context, (Predicate) semanticObject); 
-				return; 
 			case InterparameterDependenciesLanguagePackage.RELATIONAL_DEPENDENCY:
 				sequence_RelationalDependency(context, (RelationalDependency) semanticObject); 
 				return; 
@@ -346,12 +349,12 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	
 	/**
 	 * Contexts:
-	 *     PositivePredicate returns PositivePredicate
+	 *     PositivePredicate returns GeneralPredicate
 	 *
 	 * Constraint:
 	 *     (firstClause=PositiveClause clauseContinuation=PositiveClauseContinuation?)
 	 */
-	protected void sequence_PositivePredicate(ISerializationContext context, PositivePredicate semanticObject) {
+	protected void sequence_PositivePredicate(ISerializationContext context, GeneralPredicate semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -387,12 +390,12 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	
 	/**
 	 * Contexts:
-	 *     Predicate returns Predicate
+	 *     Predicate returns GeneralPredicate
 	 *
 	 * Constraint:
 	 *     (firstClause=Clause clauseContinuation=ClauseContinuation?)
 	 */
-	protected void sequence_Predicate(ISerializationContext context, Predicate semanticObject) {
+	protected void sequence_Predicate(ISerializationContext context, GeneralPredicate semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

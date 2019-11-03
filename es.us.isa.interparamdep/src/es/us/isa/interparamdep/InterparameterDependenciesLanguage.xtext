@@ -68,7 +68,7 @@ ConditionalDependency:
 	'IF' condition=Predicate 'THEN' consequence=Predicate
 ;
 
-Predicate:
+Predicate returns GeneralPredicate:
 	firstClause=Clause (clauseContinuation=ClauseContinuation)?
 ;
 
@@ -101,7 +101,7 @@ PredefinedDependency returns GeneralPredefinedDependency:
 	not=Not? predefDepType=('Or' | 'OnlyOne' | 'AllOrNone' | 'ZeroOrOne') '(' predefDepElements+=PositivePredicate (',' predefDepElements+=PositivePredicate)+ ')'
 ;
 
-PositivePredicate:
+PositivePredicate returns GeneralPredicate:
 	firstClause=PositiveClause (clauseContinuation=PositiveClauseContinuation)?
 ;
 

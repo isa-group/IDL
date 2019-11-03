@@ -123,10 +123,10 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case InterparameterDependenciesLanguagePackage.PREDICATE:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE:
       {
-        Predicate predicate = (Predicate)theEObject;
-        T result = casePredicate(predicate);
+        GeneralPredicate generalPredicate = (GeneralPredicate)theEObject;
+        T result = caseGeneralPredicate(generalPredicate);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -170,13 +170,6 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
       {
         GeneralPredefinedDependency generalPredefinedDependency = (GeneralPredefinedDependency)theEObject;
         T result = caseGeneralPredefinedDependency(generalPredefinedDependency);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE:
-      {
-        PositivePredicate positivePredicate = (PositivePredicate)theEObject;
-        T result = casePositivePredicate(positivePredicate);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -297,17 +290,17 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Predicate</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>General Predicate</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Predicate</em>'.
+   * @return the result of interpreting the object as an instance of '<em>General Predicate</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePredicate(Predicate object)
+  public T caseGeneralPredicate(GeneralPredicate object)
   {
     return null;
   }
@@ -404,22 +397,6 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGeneralPredefinedDependency(GeneralPredefinedDependency object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Positive Predicate</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Positive Predicate</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePositivePredicate(PositivePredicate object)
   {
     return null;
   }

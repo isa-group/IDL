@@ -5,8 +5,8 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClauseContinuation;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -19,19 +19,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Positive Predicate</b></em>'.
+ * An implementation of the model object '<em><b>General Predicate</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredicateImpl#getFirstClause <em>First Clause</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredicateImpl#getClauseContinuation <em>Clause Continuation</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredicateImpl#getFirstClause <em>First Clause</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredicateImpl#getClauseContinuation <em>Clause Continuation</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PositivePredicateImpl extends MinimalEObjectImpl.Container implements PositivePredicate
+public class GeneralPredicateImpl extends MinimalEObjectImpl.Container implements GeneralPredicate
 {
   /**
    * The cached value of the '{@link #getFirstClause() <em>First Clause</em>}' containment reference.
@@ -58,7 +58,7 @@ public class PositivePredicateImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PositivePredicateImpl()
+  protected GeneralPredicateImpl()
   {
     super();
   }
@@ -71,7 +71,7 @@ public class PositivePredicateImpl extends MinimalEObjectImpl.Container implemen
   @Override
   protected EClass eStaticClass()
   {
-    return InterparameterDependenciesLanguagePackage.Literals.POSITIVE_PREDICATE;
+    return InterparameterDependenciesLanguagePackage.Literals.GENERAL_PREDICATE;
   }
 
   /**
@@ -96,7 +96,7 @@ public class PositivePredicateImpl extends MinimalEObjectImpl.Container implemen
     firstClause = newFirstClause;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__FIRST_CLAUSE, oldFirstClause, newFirstClause);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__FIRST_CLAUSE, oldFirstClause, newFirstClause);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -114,14 +114,14 @@ public class PositivePredicateImpl extends MinimalEObjectImpl.Container implemen
     {
       NotificationChain msgs = null;
       if (firstClause != null)
-        msgs = ((InternalEObject)firstClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__FIRST_CLAUSE, null, msgs);
+        msgs = ((InternalEObject)firstClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__FIRST_CLAUSE, null, msgs);
       if (newFirstClause != null)
-        msgs = ((InternalEObject)newFirstClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__FIRST_CLAUSE, null, msgs);
+        msgs = ((InternalEObject)newFirstClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__FIRST_CLAUSE, null, msgs);
       msgs = basicSetFirstClause(newFirstClause, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__FIRST_CLAUSE, newFirstClause, newFirstClause));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__FIRST_CLAUSE, newFirstClause, newFirstClause));
   }
 
   /**
@@ -146,7 +146,7 @@ public class PositivePredicateImpl extends MinimalEObjectImpl.Container implemen
     clauseContinuation = newClauseContinuation;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__CLAUSE_CONTINUATION, oldClauseContinuation, newClauseContinuation);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__CLAUSE_CONTINUATION, oldClauseContinuation, newClauseContinuation);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -164,14 +164,14 @@ public class PositivePredicateImpl extends MinimalEObjectImpl.Container implemen
     {
       NotificationChain msgs = null;
       if (clauseContinuation != null)
-        msgs = ((InternalEObject)clauseContinuation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__CLAUSE_CONTINUATION, null, msgs);
+        msgs = ((InternalEObject)clauseContinuation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__CLAUSE_CONTINUATION, null, msgs);
       if (newClauseContinuation != null)
-        msgs = ((InternalEObject)newClauseContinuation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__CLAUSE_CONTINUATION, null, msgs);
+        msgs = ((InternalEObject)newClauseContinuation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__CLAUSE_CONTINUATION, null, msgs);
       msgs = basicSetClauseContinuation(newClauseContinuation, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__CLAUSE_CONTINUATION, newClauseContinuation, newClauseContinuation));
+      eNotify(new ENotificationImpl(this, Notification.SET, InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__CLAUSE_CONTINUATION, newClauseContinuation, newClauseContinuation));
   }
 
   /**
@@ -184,9 +184,9 @@ public class PositivePredicateImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__FIRST_CLAUSE:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__FIRST_CLAUSE:
         return basicSetFirstClause(null, msgs);
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__CLAUSE_CONTINUATION:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__CLAUSE_CONTINUATION:
         return basicSetClauseContinuation(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -202,9 +202,9 @@ public class PositivePredicateImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__FIRST_CLAUSE:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__FIRST_CLAUSE:
         return getFirstClause();
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__CLAUSE_CONTINUATION:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__CLAUSE_CONTINUATION:
         return getClauseContinuation();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -220,10 +220,10 @@ public class PositivePredicateImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__FIRST_CLAUSE:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__FIRST_CLAUSE:
         setFirstClause((GeneralClause)newValue);
         return;
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__CLAUSE_CONTINUATION:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__CLAUSE_CONTINUATION:
         setClauseContinuation((GeneralClauseContinuation)newValue);
         return;
     }
@@ -240,10 +240,10 @@ public class PositivePredicateImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__FIRST_CLAUSE:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__FIRST_CLAUSE:
         setFirstClause((GeneralClause)null);
         return;
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__CLAUSE_CONTINUATION:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__CLAUSE_CONTINUATION:
         setClauseContinuation((GeneralClauseContinuation)null);
         return;
     }
@@ -260,12 +260,12 @@ public class PositivePredicateImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__FIRST_CLAUSE:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__FIRST_CLAUSE:
         return firstClause != null;
-      case InterparameterDependenciesLanguagePackage.POSITIVE_PREDICATE__CLAUSE_CONTINUATION:
+      case InterparameterDependenciesLanguagePackage.GENERAL_PREDICATE__CLAUSE_CONTINUATION:
         return clauseContinuation != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //PositivePredicateImpl
+} //GeneralPredicateImpl

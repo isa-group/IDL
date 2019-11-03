@@ -399,14 +399,14 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int CONDITIONAL_DEPENDENCY_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredicateImpl <em>Predicate</em>}' class.
+   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredicateImpl <em>General Predicate</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredicateImpl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPredicate()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredicateImpl
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getGeneralPredicate()
    * @generated
    */
-  int PREDICATE = 7;
+  int GENERAL_PREDICATE = 7;
 
   /**
    * The feature id for the '<em><b>First Clause</b></em>' containment reference.
@@ -415,7 +415,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREDICATE__FIRST_CLAUSE = 0;
+  int GENERAL_PREDICATE__FIRST_CLAUSE = 0;
 
   /**
    * The feature id for the '<em><b>Clause Continuation</b></em>' containment reference.
@@ -424,16 +424,16 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREDICATE__CLAUSE_CONTINUATION = 1;
+  int GENERAL_PREDICATE__CLAUSE_CONTINUATION = 1;
 
   /**
-   * The number of structural features of the '<em>Predicate</em>' class.
+   * The number of structural features of the '<em>General Predicate</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREDICATE_FEATURE_COUNT = 2;
+  int GENERAL_PREDICATE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl <em>General Clause</em>}' class.
@@ -673,43 +673,6 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @ordered
    */
   int GENERAL_PREDEFINED_DEPENDENCY_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredicateImpl <em>Positive Predicate</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredicateImpl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositivePredicate()
-   * @generated
-   */
-  int POSITIVE_PREDICATE = 14;
-
-  /**
-   * The feature id for the '<em><b>First Clause</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_PREDICATE__FIRST_CLAUSE = 0;
-
-  /**
-   * The feature id for the '<em><b>Clause Continuation</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_PREDICATE__CLAUSE_CONTINUATION = 1;
-
-  /**
-   * The number of structural features of the '<em>Positive Predicate</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITIVE_PREDICATE_FEATURE_COUNT = 2;
 
 
   /**
@@ -970,36 +933,36 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EReference getConditionalDependency_Consequence();
 
   /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate <em>Predicate</em>}'.
+   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate <em>General Predicate</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Predicate</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate
+   * @return the meta object for class '<em>General Predicate</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate
    * @generated
    */
-  EClass getPredicate();
+  EClass getGeneralPredicate();
 
   /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getFirstClause <em>First Clause</em>}'.
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate#getFirstClause <em>First Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>First Clause</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getFirstClause()
-   * @see #getPredicate()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate#getFirstClause()
+   * @see #getGeneralPredicate()
    * @generated
    */
-  EReference getPredicate_FirstClause();
+  EReference getGeneralPredicate_FirstClause();
 
   /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getClauseContinuation <em>Clause Continuation</em>}'.
+   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate#getClauseContinuation <em>Clause Continuation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Clause Continuation</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getClauseContinuation()
-   * @see #getPredicate()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate#getClauseContinuation()
+   * @see #getGeneralPredicate()
    * @generated
    */
-  EReference getPredicate_ClauseContinuation();
+  EReference getGeneralPredicate_ClauseContinuation();
 
   /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause <em>General Clause</em>}'.
@@ -1260,38 +1223,6 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EReference getGeneralPredefinedDependency_PredefDepElements();
 
   /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate <em>Positive Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Positive Predicate</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate
-   * @generated
-   */
-  EClass getPositivePredicate();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate#getFirstClause <em>First Clause</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>First Clause</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate#getFirstClause()
-   * @see #getPositivePredicate()
-   * @generated
-   */
-  EReference getPositivePredicate_FirstClause();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate#getClauseContinuation <em>Clause Continuation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Clause Continuation</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.PositivePredicate#getClauseContinuation()
-   * @see #getPositivePredicate()
-   * @generated
-   */
-  EReference getPositivePredicate_ClauseContinuation();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1521,14 +1452,14 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EReference CONDITIONAL_DEPENDENCY__CONSEQUENCE = eINSTANCE.getConditionalDependency_Consequence();
 
     /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredicateImpl <em>Predicate</em>}' class.
+     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredicateImpl <em>General Predicate</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PredicateImpl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPredicate()
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralPredicateImpl
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getGeneralPredicate()
      * @generated
      */
-    EClass PREDICATE = eINSTANCE.getPredicate();
+    EClass GENERAL_PREDICATE = eINSTANCE.getGeneralPredicate();
 
     /**
      * The meta object literal for the '<em><b>First Clause</b></em>' containment reference feature.
@@ -1536,7 +1467,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PREDICATE__FIRST_CLAUSE = eINSTANCE.getPredicate_FirstClause();
+    EReference GENERAL_PREDICATE__FIRST_CLAUSE = eINSTANCE.getGeneralPredicate_FirstClause();
 
     /**
      * The meta object literal for the '<em><b>Clause Continuation</b></em>' containment reference feature.
@@ -1544,7 +1475,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PREDICATE__CLAUSE_CONTINUATION = eINSTANCE.getPredicate_ClauseContinuation();
+    EReference GENERAL_PREDICATE__CLAUSE_CONTINUATION = eINSTANCE.getGeneralPredicate_ClauseContinuation();
 
     /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseImpl <em>General Clause</em>}' class.
@@ -1749,32 +1680,6 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
      * @generated
      */
     EReference GENERAL_PREDEFINED_DEPENDENCY__PREDEF_DEP_ELEMENTS = eINSTANCE.getGeneralPredefinedDependency_PredefDepElements();
-
-    /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredicateImpl <em>Positive Predicate</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.PositivePredicateImpl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getPositivePredicate()
-     * @generated
-     */
-    EClass POSITIVE_PREDICATE = eINSTANCE.getPositivePredicate();
-
-    /**
-     * The meta object literal for the '<em><b>First Clause</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference POSITIVE_PREDICATE__FIRST_CLAUSE = eINSTANCE.getPositivePredicate_FirstClause();
-
-    /**
-     * The meta object literal for the '<em><b>Clause Continuation</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference POSITIVE_PREDICATE__CLAUSE_CONTINUATION = eINSTANCE.getPositivePredicate_ClauseContinuation();
 
   }
 

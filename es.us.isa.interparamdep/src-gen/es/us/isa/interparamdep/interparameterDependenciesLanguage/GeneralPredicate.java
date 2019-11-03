@@ -7,22 +7,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Predicate</b></em>'.
+ * A representation of the model object '<em><b>General Predicate</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getFirstClause <em>First Clause</em>}</li>
- *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getClauseContinuation <em>Clause Continuation</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate#getFirstClause <em>First Clause</em>}</li>
+ *   <li>{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate#getClauseContinuation <em>Clause Continuation</em>}</li>
  * </ul>
  *
- * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPredicate()
+ * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralPredicate()
  * @model
  * @generated
  */
-public interface Predicate extends EObject
+public interface GeneralPredicate extends EObject
 {
   /**
    * Returns the value of the '<em><b>First Clause</b></em>' containment reference.
@@ -30,14 +30,14 @@ public interface Predicate extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>First Clause</em>' containment reference.
    * @see #setFirstClause(GeneralClause)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPredicate_FirstClause()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralPredicate_FirstClause()
    * @model containment="true"
    * @generated
    */
   GeneralClause getFirstClause();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getFirstClause <em>First Clause</em>}' containment reference.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate#getFirstClause <em>First Clause</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>First Clause</em>' containment reference.
@@ -52,14 +52,14 @@ public interface Predicate extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Clause Continuation</em>' containment reference.
    * @see #setClauseContinuation(GeneralClauseContinuation)
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getPredicate_ClauseContinuation()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralPredicate_ClauseContinuation()
    * @model containment="true"
    * @generated
    */
   GeneralClauseContinuation getClauseContinuation();
 
   /**
-   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.Predicate#getClauseContinuation <em>Clause Continuation</em>}' containment reference.
+   * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate#getClauseContinuation <em>Clause Continuation</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Clause Continuation</em>' containment reference.
@@ -68,4 +68,4 @@ public interface Predicate extends EObject
    */
   void setClauseContinuation(GeneralClauseContinuation value);
 
-} // Predicate
+} // GeneralPredicate

@@ -37,9 +37,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//ConditionalDependency/condition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//ConditionalDependency/consequence"/>
     </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//Predicate">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Predicate/firstClause"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//Predicate/clauseContinuation"/>
+    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//GeneralPredicate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralPredicate/firstClause"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralPredicate/clauseContinuation"/>
     </genClasses>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//GeneralClause">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralClause/firstElement"/>
@@ -69,10 +69,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//GeneralPredefinedDependency/not"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//GeneralPredefinedDependency/predefDepType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralPredefinedDependency/predefDepElements"/>
-    </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//PositivePredicate">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositivePredicate/firstClause"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//PositivePredicate/clauseContinuation"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
