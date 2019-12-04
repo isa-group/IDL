@@ -148,14 +148,14 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
       {
         Param param = (Param)theEObject;
         T result = caseParam(param);
-        if (result == null) result = caseParamAssignment(param);
+        if (result == null) result = caseParamValueRelation(param);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case InterparameterDependenciesLanguagePackage.PARAM_ASSIGNMENT:
+      case InterparameterDependenciesLanguagePackage.PARAM_VALUE_RELATION:
       {
-        ParamAssignment paramAssignment = (ParamAssignment)theEObject;
-        T result = caseParamAssignment(paramAssignment);
+        ParamValueRelation paramValueRelation = (ParamValueRelation)theEObject;
+        T result = caseParamValueRelation(paramValueRelation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -354,17 +354,17 @@ public class InterparameterDependenciesLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Param Assignment</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Param Value Relation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Param Assignment</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Param Value Relation</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseParamAssignment(ParamAssignment object)
+  public T caseParamValueRelation(ParamValueRelation object)
   {
     return null;
   }

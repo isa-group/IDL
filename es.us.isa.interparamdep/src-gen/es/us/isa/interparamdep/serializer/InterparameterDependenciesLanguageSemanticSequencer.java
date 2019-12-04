@@ -117,8 +117,8 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 					sequence_Param(context, (Param) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getParamAssignmentRule()) {
-					sequence_Param_ParamAssignment(context, (Param) semanticObject); 
+				else if (rule == grammarAccess.getParamValueRelationRule()) {
+					sequence_Param_ParamValueRelation(context, (Param) semanticObject); 
 					return; 
 				}
 				else break;
@@ -279,7 +279,7 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	
 	/**
 	 * Contexts:
-	 *     ParamAssignment returns Param
+	 *     ParamValueRelation returns Param
 	 *
 	 * Constraint:
 	 *     (
@@ -287,7 +287,7 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *         ((stringValues+=STRING stringValues+=STRING*) | patternString=STRING | booleanValue=BOOLEAN | (relationalOp=RelationalOperator doubleValue=DOUBLE))
 	 *     )
 	 */
-	protected void sequence_Param_ParamAssignment(ISerializationContext context, Param semanticObject) {
+	protected void sequence_Param_ParamValueRelation(ISerializationContext context, Param semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -364,7 +364,7 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     PositiveTerm returns GeneralTerm
 	 *
 	 * Constraint:
-	 *     (param=Param | param=ParamAssignment)
+	 *     (param=Param | param=ParamValueRelation)
 	 */
 	protected void sequence_PositiveTerm(ISerializationContext context, GeneralTerm semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -430,7 +430,7 @@ public class InterparameterDependenciesLanguageSemanticSequencer extends Abstrac
 	 *     Term returns GeneralTerm
 	 *
 	 * Constraint:
-	 *     ((not=Not? param=Param) | (not=Not? param=ParamAssignment))
+	 *     ((not=Not? param=Param) | (not=Not? param=ParamValueRelation))
 	 */
 	protected void sequence_Term(ISerializationContext context, GeneralTerm semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

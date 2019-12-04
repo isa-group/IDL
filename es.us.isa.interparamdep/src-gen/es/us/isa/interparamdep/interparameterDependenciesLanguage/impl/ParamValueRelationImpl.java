@@ -4,7 +4,7 @@
 package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamValueRelation;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -12,19 +12,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Param Assignment</b></em>'.
+ * An implementation of the model object '<em><b>Param Value Relation</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ParamAssignmentImpl extends MinimalEObjectImpl.Container implements ParamAssignment
+public class ParamValueRelationImpl extends MinimalEObjectImpl.Container implements ParamValueRelation
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ParamAssignmentImpl()
+  protected ParamValueRelationImpl()
   {
     super();
   }
@@ -37,7 +37,7 @@ public class ParamAssignmentImpl extends MinimalEObjectImpl.Container implements
   @Override
   protected EClass eStaticClass()
   {
-    return InterparameterDependenciesLanguagePackage.Literals.PARAM_ASSIGNMENT;
+    return InterparameterDependenciesLanguagePackage.Literals.PARAM_VALUE_RELATION;
   }
 
-} //ParamAssignmentImpl
+} //ParamValueRelationImpl

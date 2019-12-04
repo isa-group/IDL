@@ -131,9 +131,9 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
         return createParamAdapter();
       }
       @Override
-      public Adapter caseParamAssignment(ParamAssignment object)
+      public Adapter caseParamValueRelation(ParamValueRelation object)
       {
-        return createParamAssignmentAdapter();
+        return createParamValueRelationAdapter();
       }
       @Override
       public Adapter caseGeneralClauseContinuation(GeneralClauseContinuation object)
@@ -333,16 +333,16 @@ public class InterparameterDependenciesLanguageAdapterFactory extends AdapterFac
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment <em>Param Assignment</em>}'.
+   * Creates a new adapter for an object of class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamValueRelation <em>Param Value Relation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamValueRelation
    * @generated
    */
-  public Adapter createParamAssignmentAdapter()
+  public Adapter createParamValueRelationAdapter()
   {
     return null;
   }

@@ -51,12 +51,12 @@ public interface GeneralTerm extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Param</em>' containment reference.
-   * @see #setParam(ParamAssignment)
+   * @see #setParam(ParamValueRelation)
    * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage#getGeneralTerm_Param()
    * @model containment="true"
    * @generated
    */
-  ParamAssignment getParam();
+  ParamValueRelation getParam();
 
   /**
    * Sets the value of the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm#getParam <em>Param</em>}' containment reference.
@@ -66,6 +66,6 @@ public interface GeneralTerm extends EObject
    * @see #getParam()
    * @generated
    */
-  void setParam(ParamAssignment value);
+  void setParam(ParamValueRelation value);
 
 } // GeneralTerm

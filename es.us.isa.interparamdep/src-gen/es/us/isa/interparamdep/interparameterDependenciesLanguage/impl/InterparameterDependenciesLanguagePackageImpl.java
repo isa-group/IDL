@@ -17,7 +17,7 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.Model;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Operation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.OperationContinuation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Param;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamValueRelation;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.RelationalDependency;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -117,7 +117,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass paramAssignmentEClass = null;
+  private EClass paramValueRelationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -675,9 +675,9 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
    * @generated
    */
   @Override
-  public EClass getParamAssignment()
+  public EClass getParamValueRelation()
   {
-    return paramAssignmentEClass;
+    return paramValueRelationEClass;
   }
 
   /**
@@ -842,7 +842,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     createEAttribute(paramEClass, PARAM__RELATIONAL_OP);
     createEAttribute(paramEClass, PARAM__DOUBLE_VALUE);
 
-    paramAssignmentEClass = createEClass(PARAM_ASSIGNMENT);
+    paramValueRelationEClass = createEClass(PARAM_VALUE_RELATION);
 
     generalClauseContinuationEClass = createEClass(GENERAL_CLAUSE_CONTINUATION);
     createEAttribute(generalClauseContinuationEClass, GENERAL_CLAUSE_CONTINUATION__LOGICAL_OP);
@@ -884,7 +884,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
 
     // Add supertypes to classes
     relationalDependencyEClass.getESuperTypes().add(this.getGeneralTerm());
-    paramEClass.getESuperTypes().add(this.getParamAssignment());
+    paramEClass.getESuperTypes().add(this.getParamValueRelation());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -931,7 +931,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
 
     initEClass(generalTermEClass, GeneralTerm.class, "GeneralTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGeneralTerm_Not(), ecorePackage.getEString(), "not", null, 0, 1, GeneralTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGeneralTerm_Param(), this.getParamAssignment(), null, "param", null, 0, 1, GeneralTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralTerm_Param(), this.getParamValueRelation(), null, "param", null, 0, 1, GeneralTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(paramEClass, Param.class, "Param", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -941,7 +941,7 @@ public class InterparameterDependenciesLanguagePackageImpl extends EPackageImpl 
     initEAttribute(getParam_RelationalOp(), ecorePackage.getEString(), "relationalOp", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParam_DoubleValue(), ecorePackage.getEString(), "doubleValue", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(paramAssignmentEClass, ParamAssignment.class, "ParamAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(paramValueRelationEClass, ParamValueRelation.class, "ParamValueRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(generalClauseContinuationEClass, GeneralClauseContinuation.class, "GeneralClauseContinuation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGeneralClauseContinuation_LogicalOp(), ecorePackage.getEString(), "logicalOp", null, 0, 1, GeneralClauseContinuation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

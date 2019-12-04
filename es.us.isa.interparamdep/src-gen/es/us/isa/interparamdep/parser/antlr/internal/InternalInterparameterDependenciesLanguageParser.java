@@ -2830,7 +2830,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "ruleTerm"
-    // InternalInterparameterDependenciesLanguage.g:992:1: ruleTerm returns [EObject current=null] : ( ( ( (lv_not_0_0= ruleNot ) )? ( (lv_param_1_0= ruleParam ) ) ) | ( ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamAssignment ) ) ) ) ;
+    // InternalInterparameterDependenciesLanguage.g:992:1: ruleTerm returns [EObject current=null] : ( ( ( (lv_not_0_0= ruleNot ) )? ( (lv_param_1_0= ruleParam ) ) ) | ( ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamValueRelation ) ) ) ) ;
     public final EObject ruleTerm() throws RecognitionException {
         EObject current = null;
 
@@ -2847,10 +2847,10 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         	enterRule();
 
         try {
-            // InternalInterparameterDependenciesLanguage.g:998:2: ( ( ( ( (lv_not_0_0= ruleNot ) )? ( (lv_param_1_0= ruleParam ) ) ) | ( ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamAssignment ) ) ) ) )
-            // InternalInterparameterDependenciesLanguage.g:999:2: ( ( ( (lv_not_0_0= ruleNot ) )? ( (lv_param_1_0= ruleParam ) ) ) | ( ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamAssignment ) ) ) )
+            // InternalInterparameterDependenciesLanguage.g:998:2: ( ( ( ( (lv_not_0_0= ruleNot ) )? ( (lv_param_1_0= ruleParam ) ) ) | ( ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamValueRelation ) ) ) ) )
+            // InternalInterparameterDependenciesLanguage.g:999:2: ( ( ( (lv_not_0_0= ruleNot ) )? ( (lv_param_1_0= ruleParam ) ) ) | ( ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamValueRelation ) ) ) )
             {
-            // InternalInterparameterDependenciesLanguage.g:999:2: ( ( ( (lv_not_0_0= ruleNot ) )? ( (lv_param_1_0= ruleParam ) ) ) | ( ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamAssignment ) ) ) )
+            // InternalInterparameterDependenciesLanguage.g:999:2: ( ( ( (lv_not_0_0= ruleNot ) )? ( (lv_param_1_0= ruleParam ) ) ) | ( ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamValueRelation ) ) ) )
             int alt16=2;
             switch ( input.LA(1) ) {
             case 26:
@@ -3041,10 +3041,10 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     }
                     break;
                 case 2 :
-                    // InternalInterparameterDependenciesLanguage.g:1041:3: ( ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamAssignment ) ) )
+                    // InternalInterparameterDependenciesLanguage.g:1041:3: ( ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamValueRelation ) ) )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1041:3: ( ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamAssignment ) ) )
-                    // InternalInterparameterDependenciesLanguage.g:1042:4: ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamAssignment ) )
+                    // InternalInterparameterDependenciesLanguage.g:1041:3: ( ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamValueRelation ) ) )
+                    // InternalInterparameterDependenciesLanguage.g:1042:4: ( (lv_not_2_0= ruleNot ) )? ( (lv_param_3_0= ruleParamValueRelation ) )
                     {
                     // InternalInterparameterDependenciesLanguage.g:1042:4: ( (lv_not_2_0= ruleNot ) )?
                     int alt15=2;
@@ -3092,19 +3092,19 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
                     }
 
-                    // InternalInterparameterDependenciesLanguage.g:1061:4: ( (lv_param_3_0= ruleParamAssignment ) )
-                    // InternalInterparameterDependenciesLanguage.g:1062:5: (lv_param_3_0= ruleParamAssignment )
+                    // InternalInterparameterDependenciesLanguage.g:1061:4: ( (lv_param_3_0= ruleParamValueRelation ) )
+                    // InternalInterparameterDependenciesLanguage.g:1062:5: (lv_param_3_0= ruleParamValueRelation )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1062:5: (lv_param_3_0= ruleParamAssignment )
-                    // InternalInterparameterDependenciesLanguage.g:1063:6: lv_param_3_0= ruleParamAssignment
+                    // InternalInterparameterDependenciesLanguage.g:1062:5: (lv_param_3_0= ruleParamValueRelation )
+                    // InternalInterparameterDependenciesLanguage.g:1063:6: lv_param_3_0= ruleParamValueRelation
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getTermAccess().getParamParamAssignmentParserRuleCall_1_1_0());
+                      						newCompositeNode(grammarAccess.getTermAccess().getParamParamValueRelationParserRuleCall_1_1_0());
                       					
                     }
                     pushFollow(FOLLOW_2);
-                    lv_param_3_0=ruleParamAssignment();
+                    lv_param_3_0=ruleParamValueRelation();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -3117,7 +3117,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                       							current,
                       							"param",
                       							lv_param_3_0,
-                      							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ParamAssignment");
+                      							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ParamValueRelation");
                       						afterParserOrEnumRuleCall();
                       					
                     }
@@ -3314,28 +3314,28 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
     // $ANTLR end "ruleParam"
 
 
-    // $ANTLR start "entryRuleParamAssignment"
-    // InternalInterparameterDependenciesLanguage.g:1137:1: entryRuleParamAssignment returns [EObject current=null] : iv_ruleParamAssignment= ruleParamAssignment EOF ;
-    public final EObject entryRuleParamAssignment() throws RecognitionException {
+    // $ANTLR start "entryRuleParamValueRelation"
+    // InternalInterparameterDependenciesLanguage.g:1137:1: entryRuleParamValueRelation returns [EObject current=null] : iv_ruleParamValueRelation= ruleParamValueRelation EOF ;
+    public final EObject entryRuleParamValueRelation() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleParamAssignment = null;
+        EObject iv_ruleParamValueRelation = null;
 
 
         try {
-            // InternalInterparameterDependenciesLanguage.g:1137:56: (iv_ruleParamAssignment= ruleParamAssignment EOF )
-            // InternalInterparameterDependenciesLanguage.g:1138:2: iv_ruleParamAssignment= ruleParamAssignment EOF
+            // InternalInterparameterDependenciesLanguage.g:1137:59: (iv_ruleParamValueRelation= ruleParamValueRelation EOF )
+            // InternalInterparameterDependenciesLanguage.g:1138:2: iv_ruleParamValueRelation= ruleParamValueRelation EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getParamAssignmentRule()); 
+               newCompositeNode(grammarAccess.getParamValueRelationRule()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleParamAssignment=ruleParamAssignment();
+            iv_ruleParamValueRelation=ruleParamValueRelation();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleParamAssignment; 
+               current =iv_ruleParamValueRelation; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -3351,12 +3351,12 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return current;
     }
-    // $ANTLR end "entryRuleParamAssignment"
+    // $ANTLR end "entryRuleParamValueRelation"
 
 
-    // $ANTLR start "ruleParamAssignment"
-    // InternalInterparameterDependenciesLanguage.g:1144:1: ruleParamAssignment returns [EObject current=null] : ( (this_Param_0= ruleParam otherlv_1= '==' ( (lv_stringValues_2_0= RULE_STRING ) ) (otherlv_3= '|' ( (lv_stringValues_4_0= RULE_STRING ) ) )* ) | (this_Param_5= ruleParam otherlv_6= 'LIKE' ( (lv_patternString_7_0= RULE_STRING ) ) ) | (this_Param_8= ruleParam otherlv_9= '==' ( (lv_booleanValue_10_0= RULE_BOOLEAN ) ) ) | (this_Param_11= ruleParam ( (lv_relationalOp_12_0= ruleRelationalOperator ) ) ( (lv_doubleValue_13_0= RULE_DOUBLE ) ) ) ) ;
-    public final EObject ruleParamAssignment() throws RecognitionException {
+    // $ANTLR start "ruleParamValueRelation"
+    // InternalInterparameterDependenciesLanguage.g:1144:1: ruleParamValueRelation returns [EObject current=null] : ( (this_Param_0= ruleParam otherlv_1= '==' ( (lv_stringValues_2_0= RULE_STRING ) ) (otherlv_3= '|' ( (lv_stringValues_4_0= RULE_STRING ) ) )* ) | (this_Param_5= ruleParam otherlv_6= 'LIKE' ( (lv_patternString_7_0= RULE_STRING ) ) ) | (this_Param_8= ruleParam otherlv_9= '==' ( (lv_booleanValue_10_0= RULE_BOOLEAN ) ) ) | (this_Param_11= ruleParam ( (lv_relationalOp_12_0= ruleRelationalOperator ) ) ( (lv_doubleValue_13_0= RULE_DOUBLE ) ) ) ) ;
+    public final EObject ruleParamValueRelation() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
@@ -3517,7 +3517,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     }
                     if ( state.backtracking==0 ) {
 
-                      				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_0_0());
+                      				newCompositeNode(grammarAccess.getParamValueRelationAccess().getParamParserRuleCall_0_0());
                       			
                     }
                     pushFollow(FOLLOW_18);
@@ -3534,7 +3534,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     otherlv_1=(Token)match(input,20,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_1, grammarAccess.getParamAssignmentAccess().getEqualsSignEqualsSignKeyword_0_1());
+                      				newLeafNode(otherlv_1, grammarAccess.getParamValueRelationAccess().getEqualsSignEqualsSignKeyword_0_1());
                       			
                     }
                     // InternalInterparameterDependenciesLanguage.g:1168:4: ( (lv_stringValues_2_0= RULE_STRING ) )
@@ -3546,13 +3546,13 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     lv_stringValues_2_0=(Token)match(input,RULE_STRING,FOLLOW_20); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      						newLeafNode(lv_stringValues_2_0, grammarAccess.getParamAssignmentAccess().getStringValuesSTRINGTerminalRuleCall_0_2_0());
+                      						newLeafNode(lv_stringValues_2_0, grammarAccess.getParamValueRelationAccess().getStringValuesSTRINGTerminalRuleCall_0_2_0());
                       					
                     }
                     if ( state.backtracking==0 ) {
 
                       						if (current==null) {
-                      							current = createModelElement(grammarAccess.getParamAssignmentRule());
+                      							current = createModelElement(grammarAccess.getParamValueRelationRule());
                       						}
                       						addWithLastConsumed(
                       							current,
@@ -3585,7 +3585,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     	    otherlv_3=(Token)match(input,33,FOLLOW_19); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
-                    	      					newLeafNode(otherlv_3, grammarAccess.getParamAssignmentAccess().getVerticalLineKeyword_0_3_0());
+                    	      					newLeafNode(otherlv_3, grammarAccess.getParamValueRelationAccess().getVerticalLineKeyword_0_3_0());
                     	      				
                     	    }
                     	    // InternalInterparameterDependenciesLanguage.g:1191:5: ( (lv_stringValues_4_0= RULE_STRING ) )
@@ -3597,13 +3597,13 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     	    lv_stringValues_4_0=(Token)match(input,RULE_STRING,FOLLOW_20); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
-                    	      							newLeafNode(lv_stringValues_4_0, grammarAccess.getParamAssignmentAccess().getStringValuesSTRINGTerminalRuleCall_0_3_1_0());
+                    	      							newLeafNode(lv_stringValues_4_0, grammarAccess.getParamValueRelationAccess().getStringValuesSTRINGTerminalRuleCall_0_3_1_0());
                     	      						
                     	    }
                     	    if ( state.backtracking==0 ) {
 
                     	      							if (current==null) {
-                    	      								current = createModelElement(grammarAccess.getParamAssignmentRule());
+                    	      								current = createModelElement(grammarAccess.getParamValueRelationRule());
                     	      							}
                     	      							addWithLastConsumed(
                     	      								current,
@@ -3646,7 +3646,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     }
                     if ( state.backtracking==0 ) {
 
-                      				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_1_0());
+                      				newCompositeNode(grammarAccess.getParamValueRelationAccess().getParamParserRuleCall_1_0());
                       			
                     }
                     pushFollow(FOLLOW_21);
@@ -3663,7 +3663,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     otherlv_6=(Token)match(input,34,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_6, grammarAccess.getParamAssignmentAccess().getLIKEKeyword_1_1());
+                      				newLeafNode(otherlv_6, grammarAccess.getParamValueRelationAccess().getLIKEKeyword_1_1());
                       			
                     }
                     // InternalInterparameterDependenciesLanguage.g:1228:4: ( (lv_patternString_7_0= RULE_STRING ) )
@@ -3675,13 +3675,13 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     lv_patternString_7_0=(Token)match(input,RULE_STRING,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      						newLeafNode(lv_patternString_7_0, grammarAccess.getParamAssignmentAccess().getPatternStringSTRINGTerminalRuleCall_1_2_0());
+                      						newLeafNode(lv_patternString_7_0, grammarAccess.getParamValueRelationAccess().getPatternStringSTRINGTerminalRuleCall_1_2_0());
                       					
                     }
                     if ( state.backtracking==0 ) {
 
                       						if (current==null) {
-                      							current = createModelElement(grammarAccess.getParamAssignmentRule());
+                      							current = createModelElement(grammarAccess.getParamValueRelationRule());
                       						}
                       						setWithLastConsumed(
                       							current,
@@ -3715,7 +3715,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     }
                     if ( state.backtracking==0 ) {
 
-                      				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_2_0());
+                      				newCompositeNode(grammarAccess.getParamValueRelationAccess().getParamParserRuleCall_2_0());
                       			
                     }
                     pushFollow(FOLLOW_18);
@@ -3732,7 +3732,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     otherlv_9=(Token)match(input,20,FOLLOW_22); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_9, grammarAccess.getParamAssignmentAccess().getEqualsSignEqualsSignKeyword_2_1());
+                      				newLeafNode(otherlv_9, grammarAccess.getParamValueRelationAccess().getEqualsSignEqualsSignKeyword_2_1());
                       			
                     }
                     // InternalInterparameterDependenciesLanguage.g:1264:4: ( (lv_booleanValue_10_0= RULE_BOOLEAN ) )
@@ -3744,13 +3744,13 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     lv_booleanValue_10_0=(Token)match(input,RULE_BOOLEAN,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      						newLeafNode(lv_booleanValue_10_0, grammarAccess.getParamAssignmentAccess().getBooleanValueBOOLEANTerminalRuleCall_2_2_0());
+                      						newLeafNode(lv_booleanValue_10_0, grammarAccess.getParamValueRelationAccess().getBooleanValueBOOLEANTerminalRuleCall_2_2_0());
                       					
                     }
                     if ( state.backtracking==0 ) {
 
                       						if (current==null) {
-                      							current = createModelElement(grammarAccess.getParamAssignmentRule());
+                      							current = createModelElement(grammarAccess.getParamValueRelationRule());
                       						}
                       						setWithLastConsumed(
                       							current,
@@ -3784,7 +3784,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     }
                     if ( state.backtracking==0 ) {
 
-                      				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_3_0());
+                      				newCompositeNode(grammarAccess.getParamValueRelationAccess().getParamParserRuleCall_3_0());
                       			
                     }
                     pushFollow(FOLLOW_6);
@@ -3806,7 +3806,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getParamAssignmentAccess().getRelationalOpRelationalOperatorParserRuleCall_3_1_0());
+                      						newCompositeNode(grammarAccess.getParamValueRelationAccess().getRelationalOpRelationalOperatorParserRuleCall_3_1_0());
                       					
                     }
                     pushFollow(FOLLOW_8);
@@ -3817,7 +3817,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     if ( state.backtracking==0 ) {
 
                       						if (current==null) {
-                      							current = createModelElementForParent(grammarAccess.getParamAssignmentRule());
+                      							current = createModelElementForParent(grammarAccess.getParamValueRelationRule());
                       						}
                       						set(
                       							current,
@@ -3842,13 +3842,13 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     lv_doubleValue_13_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      						newLeafNode(lv_doubleValue_13_0, grammarAccess.getParamAssignmentAccess().getDoubleValueDOUBLETerminalRuleCall_3_2_0());
+                      						newLeafNode(lv_doubleValue_13_0, grammarAccess.getParamValueRelationAccess().getDoubleValueDOUBLETerminalRuleCall_3_2_0());
                       					
                     }
                     if ( state.backtracking==0 ) {
 
                       						if (current==null) {
-                      							current = createModelElement(grammarAccess.getParamAssignmentRule());
+                      							current = createModelElement(grammarAccess.getParamValueRelationRule());
                       						}
                       						setWithLastConsumed(
                       							current,
@@ -3890,7 +3890,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         }
         return current;
     }
-    // $ANTLR end "ruleParamAssignment"
+    // $ANTLR end "ruleParamValueRelation"
 
 
     // $ANTLR start "entryRuleClauseContinuation"
@@ -4637,7 +4637,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
 
 
     // $ANTLR start "rulePositiveTerm"
-    // InternalInterparameterDependenciesLanguage.g:1598:1: rulePositiveTerm returns [EObject current=null] : ( ( (lv_param_0_0= ruleParam ) ) | ( (lv_param_1_0= ruleParamAssignment ) ) | this_RelationalDependency_2= ruleRelationalDependency ) ;
+    // InternalInterparameterDependenciesLanguage.g:1598:1: rulePositiveTerm returns [EObject current=null] : ( ( (lv_param_0_0= ruleParam ) ) | ( (lv_param_1_0= ruleParamValueRelation ) ) | this_RelationalDependency_2= ruleRelationalDependency ) ;
     public final EObject rulePositiveTerm() throws RecognitionException {
         EObject current = null;
 
@@ -4652,10 +4652,10 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
         	enterRule();
 
         try {
-            // InternalInterparameterDependenciesLanguage.g:1604:2: ( ( ( (lv_param_0_0= ruleParam ) ) | ( (lv_param_1_0= ruleParamAssignment ) ) | this_RelationalDependency_2= ruleRelationalDependency ) )
-            // InternalInterparameterDependenciesLanguage.g:1605:2: ( ( (lv_param_0_0= ruleParam ) ) | ( (lv_param_1_0= ruleParamAssignment ) ) | this_RelationalDependency_2= ruleRelationalDependency )
+            // InternalInterparameterDependenciesLanguage.g:1604:2: ( ( ( (lv_param_0_0= ruleParam ) ) | ( (lv_param_1_0= ruleParamValueRelation ) ) | this_RelationalDependency_2= ruleRelationalDependency ) )
+            // InternalInterparameterDependenciesLanguage.g:1605:2: ( ( (lv_param_0_0= ruleParam ) ) | ( (lv_param_1_0= ruleParamValueRelation ) ) | this_RelationalDependency_2= ruleRelationalDependency )
             {
-            // InternalInterparameterDependenciesLanguage.g:1605:2: ( ( (lv_param_0_0= ruleParam ) ) | ( (lv_param_1_0= ruleParamAssignment ) ) | this_RelationalDependency_2= ruleRelationalDependency )
+            // InternalInterparameterDependenciesLanguage.g:1605:2: ( ( (lv_param_0_0= ruleParam ) ) | ( (lv_param_1_0= ruleParamValueRelation ) ) | this_RelationalDependency_2= ruleRelationalDependency )
             int alt24=3;
             alt24 = dfa24.predict(input);
             switch (alt24) {
@@ -4701,21 +4701,21 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                     }
                     break;
                 case 2 :
-                    // InternalInterparameterDependenciesLanguage.g:1626:3: ( (lv_param_1_0= ruleParamAssignment ) )
+                    // InternalInterparameterDependenciesLanguage.g:1626:3: ( (lv_param_1_0= ruleParamValueRelation ) )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1626:3: ( (lv_param_1_0= ruleParamAssignment ) )
-                    // InternalInterparameterDependenciesLanguage.g:1627:4: (lv_param_1_0= ruleParamAssignment )
+                    // InternalInterparameterDependenciesLanguage.g:1626:3: ( (lv_param_1_0= ruleParamValueRelation ) )
+                    // InternalInterparameterDependenciesLanguage.g:1627:4: (lv_param_1_0= ruleParamValueRelation )
                     {
-                    // InternalInterparameterDependenciesLanguage.g:1627:4: (lv_param_1_0= ruleParamAssignment )
-                    // InternalInterparameterDependenciesLanguage.g:1628:5: lv_param_1_0= ruleParamAssignment
+                    // InternalInterparameterDependenciesLanguage.g:1627:4: (lv_param_1_0= ruleParamValueRelation )
+                    // InternalInterparameterDependenciesLanguage.g:1628:5: lv_param_1_0= ruleParamValueRelation
                     {
                     if ( state.backtracking==0 ) {
 
-                      					newCompositeNode(grammarAccess.getPositiveTermAccess().getParamParamAssignmentParserRuleCall_1_0());
+                      					newCompositeNode(grammarAccess.getPositiveTermAccess().getParamParamValueRelationParserRuleCall_1_0());
                       				
                     }
                     pushFollow(FOLLOW_2);
-                    lv_param_1_0=ruleParamAssignment();
+                    lv_param_1_0=ruleParamValueRelation();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -4728,7 +4728,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
                       						current,
                       						"param",
                       						lv_param_1_0,
-                      						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ParamAssignment");
+                      						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ParamValueRelation");
                       					afterParserOrEnumRuleCall();
                       				
                     }
@@ -6102,7 +6102,7 @@ public class InternalInterparameterDependenciesLanguageParser extends AbstractIn
             this.transition = dfa_20;
         }
         public String getDescription() {
-            return "1605:2: ( ( (lv_param_0_0= ruleParam ) ) | ( (lv_param_1_0= ruleParamAssignment ) ) | this_RelationalDependency_2= ruleRelationalDependency )";
+            return "1605:2: ( ( (lv_param_0_0= ruleParam ) ) | ( (lv_param_1_0= ruleParamValueRelation ) ) | this_RelationalDependency_2= ruleRelationalDependency )";
         }
     }
     static final String dfa_21s = "\17\uffff";

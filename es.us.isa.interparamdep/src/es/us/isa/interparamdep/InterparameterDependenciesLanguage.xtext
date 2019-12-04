@@ -79,14 +79,14 @@ Clause returns GeneralClause:
 
 Term returns GeneralTerm:
 	not=Not? param=Param |
-	not=Not? param=ParamAssignment
+	not=Not? param=ParamValueRelation
 ;
 
 Param:
 	name=(ID|ID_SPECIAL_CHARS)
 ;
 
-ParamAssignment:
+ParamValueRelation:
 	Param '==' stringValues+=STRING('|'stringValues+=STRING)* |
 	Param 'LIKE' patternString=STRING |
 	Param '==' booleanValue=BOOLEAN |
@@ -107,7 +107,7 @@ PositivePredicate returns GeneralPredicate:
 
 PositiveTerm returns GeneralTerm:
 	param=Param |
-	param=ParamAssignment |
+	param=ParamValueRelation |
 	RelationalDependency
 ;
 

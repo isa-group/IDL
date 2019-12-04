@@ -493,13 +493,13 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		private final Assignment cNotAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
 		private final RuleCall cNotNotParserRuleCall_1_0_0 = (RuleCall)cNotAssignment_1_0.eContents().get(0);
 		private final Assignment cParamAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cParamParamAssignmentParserRuleCall_1_1_0 = (RuleCall)cParamAssignment_1_1.eContents().get(0);
+		private final RuleCall cParamParamValueRelationParserRuleCall_1_1_0 = (RuleCall)cParamAssignment_1_1.eContents().get(0);
 		
 		//Term GeneralTerm:
-		//	not=Not? param=Param | not=Not? param=ParamAssignment;
+		//	not=Not? param=Param | not=Not? param=ParamValueRelation;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//not=Not? param=Param | not=Not? param=ParamAssignment
+		//not=Not? param=Param | not=Not? param=ParamValueRelation
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//not=Not? param=Param
@@ -517,7 +517,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		//Param
 		public RuleCall getParamParamParserRuleCall_0_1_0() { return cParamParamParserRuleCall_0_1_0; }
 		
-		//not=Not? param=ParamAssignment
+		//not=Not? param=ParamValueRelation
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//not=Not?
@@ -526,11 +526,11 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		//Not
 		public RuleCall getNotNotParserRuleCall_1_0_0() { return cNotNotParserRuleCall_1_0_0; }
 		
-		//param=ParamAssignment
+		//param=ParamValueRelation
 		public Assignment getParamAssignment_1_1() { return cParamAssignment_1_1; }
 		
-		//ParamAssignment
-		public RuleCall getParamParamAssignmentParserRuleCall_1_1_0() { return cParamParamAssignmentParserRuleCall_1_1_0; }
+		//ParamValueRelation
+		public RuleCall getParamParamValueRelationParserRuleCall_1_1_0() { return cParamParamValueRelationParserRuleCall_1_1_0; }
 	}
 	public class ParamElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.Param");
@@ -555,8 +555,8 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		//ID_SPECIAL_CHARS
 		public RuleCall getNameID_SPECIAL_CHARSTerminalRuleCall_0_1() { return cNameID_SPECIAL_CHARSTerminalRuleCall_0_1; }
 	}
-	public class ParamAssignmentElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.ParamAssignment");
+	public class ParamValueRelationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "es.us.isa.interparamdep.InterparameterDependenciesLanguage.ParamValueRelation");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final RuleCall cParamParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
@@ -584,7 +584,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		private final Assignment cDoubleValueAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
 		private final RuleCall cDoubleValueDOUBLETerminalRuleCall_3_2_0 = (RuleCall)cDoubleValueAssignment_3_2.eContents().get(0);
 		
-		//ParamAssignment:
+		//ParamValueRelation:
 		//	Param '==' stringValues+=STRING ('|' stringValues+=STRING)* | Param 'LIKE' patternString=STRING | Param '=='
 		//	booleanValue=BOOLEAN | Param relationalOp=RelationalOperator doubleValue=DOUBLE;
 		@Override public ParserRule getRule() { return rule; }
@@ -805,14 +805,14 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		private final Assignment cParamAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cParamParamParserRuleCall_0_0 = (RuleCall)cParamAssignment_0.eContents().get(0);
 		private final Assignment cParamAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cParamParamAssignmentParserRuleCall_1_0 = (RuleCall)cParamAssignment_1.eContents().get(0);
+		private final RuleCall cParamParamValueRelationParserRuleCall_1_0 = (RuleCall)cParamAssignment_1.eContents().get(0);
 		private final RuleCall cRelationalDependencyParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//PositiveTerm GeneralTerm:
-		//	param=Param | param=ParamAssignment | RelationalDependency;
+		//	param=Param | param=ParamValueRelation | RelationalDependency;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//param=Param | param=ParamAssignment | RelationalDependency
+		//param=Param | param=ParamValueRelation | RelationalDependency
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//param=Param
@@ -821,11 +821,11 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		//Param
 		public RuleCall getParamParamParserRuleCall_0_0() { return cParamParamParserRuleCall_0_0; }
 		
-		//param=ParamAssignment
+		//param=ParamValueRelation
 		public Assignment getParamAssignment_1() { return cParamAssignment_1; }
 		
-		//ParamAssignment
-		public RuleCall getParamParamAssignmentParserRuleCall_1_0() { return cParamParamAssignmentParserRuleCall_1_0; }
+		//ParamValueRelation
+		public RuleCall getParamParamValueRelationParserRuleCall_1_0() { return cParamParamValueRelationParserRuleCall_1_0; }
 		
 		//RelationalDependency
 		public RuleCall getRelationalDependencyParserRuleCall_2() { return cRelationalDependencyParserRuleCall_2; }
@@ -1013,7 +1013,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	private final ClauseElements pClause;
 	private final TermElements pTerm;
 	private final ParamElements pParam;
-	private final ParamAssignmentElements pParamAssignment;
+	private final ParamValueRelationElements pParamValueRelation;
 	private final ClauseContinuationElements pClauseContinuation;
 	private final PredefinedDependencyElements pPredefinedDependency;
 	private final PositivePredicateElements pPositivePredicate;
@@ -1051,7 +1051,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		this.pClause = new ClauseElements();
 		this.pTerm = new TermElements();
 		this.pParam = new ParamElements();
-		this.pParamAssignment = new ParamAssignmentElements();
+		this.pParamValueRelation = new ParamValueRelationElements();
 		this.pClauseContinuation = new ClauseContinuationElements();
 		this.pPredefinedDependency = new PredefinedDependencyElements();
 		this.pPositivePredicate = new PositivePredicateElements();
@@ -1253,7 +1253,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	}
 	
 	//Term GeneralTerm:
-	//	not=Not? param=Param | not=Not? param=ParamAssignment;
+	//	not=Not? param=Param | not=Not? param=ParamValueRelation;
 	public TermElements getTermAccess() {
 		return pTerm;
 	}
@@ -1272,15 +1272,15 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 		return getParamAccess().getRule();
 	}
 	
-	//ParamAssignment:
+	//ParamValueRelation:
 	//	Param '==' stringValues+=STRING ('|' stringValues+=STRING)* | Param 'LIKE' patternString=STRING | Param '=='
 	//	booleanValue=BOOLEAN | Param relationalOp=RelationalOperator doubleValue=DOUBLE;
-	public ParamAssignmentElements getParamAssignmentAccess() {
-		return pParamAssignment;
+	public ParamValueRelationElements getParamValueRelationAccess() {
+		return pParamValueRelation;
 	}
 	
-	public ParserRule getParamAssignmentRule() {
-		return getParamAssignmentAccess().getRule();
+	public ParserRule getParamValueRelationRule() {
+		return getParamValueRelationAccess().getRule();
 	}
 	
 	//ClauseContinuation GeneralClauseContinuation:
@@ -1315,7 +1315,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	}
 	
 	//PositiveTerm GeneralTerm:
-	//	param=Param | param=ParamAssignment | RelationalDependency;
+	//	param=Param | param=ParamValueRelation | RelationalDependency;
 	public PositiveTermElements getPositiveTermAccess() {
 		return pPositiveTerm;
 	}

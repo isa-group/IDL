@@ -9,13 +9,7 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 
-import java.nio.file.Files
-import java.nio.file.Paths
-import java.util.Arrays
-import java.nio.charset.StandardCharsets
-import java.nio.file.StandardOpenOption
 import java.io.File
-import java.nio.file.Path
 import java.util.Map
 import java.util.Map.Entry
 import java.util.HashMap
@@ -38,6 +32,8 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.RelationalDepe
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralTermImpl
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate
+import java.io.BufferedWriter
+import java.io.FileWriter
 
 /**
  * Generates code from your model files on save.
@@ -46,17 +42,23 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredica
  */
 class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	
-	val String path = System.getProperty("user.home") + "/constraints.mzn"
-	val File file = new File(path)
-	val Path writePath = Paths.get(path)
+	val String path = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
+	// val String path = "./idl_aux_files/aux_constraints.mzn"
+	var File file
+	var BufferedWriter out
 	var String csp
 	var int intedString
 	var Map<Entry<String, String>, Integer> paramStringsToInts = new HashMap<Entry<String, String>, Integer>()
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
+		file = new File(path)
 		file.delete
-		file.createNewFile
+		if (!file.exists) {
+		  file.parentFile.mkdirs
+		  file.createNewFile
+		}
+		out = new BufferedWriter(new FileWriter(file, false))
 		
 		intedString = 1
 		paramStringsToInts.clear
@@ -77,11 +79,10 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 			}
 			csp += ";"
 			
-		    Files.write(writePath, Arrays.asList(csp),
-		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-		    Files.write(writePath, Arrays.asList("%---------------------"),
-		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
+		    out.append(csp + "\n")
 		}
+		out.flush
+		out.close
 	}
 	
 
@@ -107,9 +108,9 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	}
 	
 	/**
-	 * Returns true if param is actually a ParamAssignment. False if it is a Param
+	 * Returns true if param is actually a ParamValueRelation. False if it is a Param
 	 */
-	def boolean isParamAssignment(Param param) {
+	def boolean isParamValueRelation(Param param) {
 		return param.stringValues.size !== 0 || param.patternString !== null || param.booleanValue !== null || param.doubleValue !== null
 	}
 	
@@ -152,7 +153,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	
 				csp += parseParamName(param.name) + "Set==1"
 				
-				if (isParamAssignment(param)) {
+				if (isParamValueRelation(param)) {
 					csp += " /\\ "
 					if (param.booleanValue !== null) {
 						csp += parseParamName(param.name) + "==" + param.booleanValue

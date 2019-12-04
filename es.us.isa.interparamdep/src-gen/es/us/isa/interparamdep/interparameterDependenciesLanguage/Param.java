@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Param extends ParamAssignment
+public interface Param extends ParamValueRelation
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -500,23 +500,23 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   int GENERAL_CLAUSE_FEATURE_COUNT = 5;
 
   /**
-   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamAssignmentImpl <em>Param Assignment</em>}' class.
+   * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamValueRelationImpl <em>Param Value Relation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamAssignmentImpl
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getParamAssignment()
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamValueRelationImpl
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getParamValueRelation()
    * @generated
    */
-  int PARAM_ASSIGNMENT = 11;
+  int PARAM_VALUE_RELATION = 11;
 
   /**
-   * The number of structural features of the '<em>Param Assignment</em>' class.
+   * The number of structural features of the '<em>Param Value Relation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAM_ASSIGNMENT_FEATURE_COUNT = 0;
+  int PARAM_VALUE_RELATION_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamImpl <em>Param</em>}' class.
@@ -535,7 +535,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAM__NAME = PARAM_ASSIGNMENT_FEATURE_COUNT + 0;
+  int PARAM__NAME = PARAM_VALUE_RELATION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>String Values</b></em>' attribute list.
@@ -544,7 +544,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAM__STRING_VALUES = PARAM_ASSIGNMENT_FEATURE_COUNT + 1;
+  int PARAM__STRING_VALUES = PARAM_VALUE_RELATION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Pattern String</b></em>' attribute.
@@ -553,7 +553,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAM__PATTERN_STRING = PARAM_ASSIGNMENT_FEATURE_COUNT + 2;
+  int PARAM__PATTERN_STRING = PARAM_VALUE_RELATION_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Boolean Value</b></em>' attribute.
@@ -562,7 +562,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAM__BOOLEAN_VALUE = PARAM_ASSIGNMENT_FEATURE_COUNT + 3;
+  int PARAM__BOOLEAN_VALUE = PARAM_VALUE_RELATION_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Relational Op</b></em>' attribute.
@@ -571,7 +571,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAM__RELATIONAL_OP = PARAM_ASSIGNMENT_FEATURE_COUNT + 4;
+  int PARAM__RELATIONAL_OP = PARAM_VALUE_RELATION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Double Value</b></em>' attribute.
@@ -580,7 +580,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAM__DOUBLE_VALUE = PARAM_ASSIGNMENT_FEATURE_COUNT + 5;
+  int PARAM__DOUBLE_VALUE = PARAM_VALUE_RELATION_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Param</em>' class.
@@ -589,7 +589,7 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAM_FEATURE_COUNT = PARAM_ASSIGNMENT_FEATURE_COUNT + 6;
+  int PARAM_FEATURE_COUNT = PARAM_VALUE_RELATION_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseContinuationImpl <em>General Clause Continuation</em>}' class.
@@ -1138,14 +1138,14 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
   EAttribute getParam_DoubleValue();
 
   /**
-   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment <em>Param Assignment</em>}'.
+   * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamValueRelation <em>Param Value Relation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Param Assignment</em>'.
-   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment
+   * @return the meta object for class '<em>Param Value Relation</em>'.
+   * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamValueRelation
    * @generated
    */
-  EClass getParamAssignment();
+  EClass getParamValueRelation();
 
   /**
    * Returns the meta object for class '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClauseContinuation <em>General Clause Continuation</em>}'.
@@ -1612,14 +1612,14 @@ public interface InterparameterDependenciesLanguagePackage extends EPackage
     EAttribute PARAM__DOUBLE_VALUE = eINSTANCE.getParam_DoubleValue();
 
     /**
-     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamAssignmentImpl <em>Param Assignment</em>}' class.
+     * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamValueRelationImpl <em>Param Value Relation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamAssignmentImpl
-     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getParamAssignment()
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.ParamValueRelationImpl
+     * @see es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.InterparameterDependenciesLanguagePackageImpl#getParamValueRelation()
      * @generated
      */
-    EClass PARAM_ASSIGNMENT = eINSTANCE.getParamAssignment();
+    EClass PARAM_VALUE_RELATION = eINSTANCE.getParamValueRelation();
 
     /**
      * The meta object literal for the '{@link es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralClauseContinuationImpl <em>General Clause Continuation</em>}' class.

@@ -1061,9 +1061,9 @@ ruleTerm returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTermAccess().getParamParamAssignmentParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getTermAccess().getParamParamValueRelationParserRuleCall_1_1_0());
 					}
-					lv_param_3_0=ruleParamAssignment
+					lv_param_3_0=ruleParamValueRelation
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTermRule());
@@ -1072,7 +1072,7 @@ ruleTerm returns [EObject current=null]
 							$current,
 							"param",
 							lv_param_3_0,
-							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ParamAssignment");
+							"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ParamValueRelation");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1133,15 +1133,15 @@ ruleParam returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleParamAssignment
-entryRuleParamAssignment returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getParamAssignmentRule()); }
-	iv_ruleParamAssignment=ruleParamAssignment
-	{ $current=$iv_ruleParamAssignment.current; }
+// Entry rule entryRuleParamValueRelation
+entryRuleParamValueRelation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getParamValueRelationRule()); }
+	iv_ruleParamValueRelation=ruleParamValueRelation
+	{ $current=$iv_ruleParamValueRelation.current; }
 	EOF;
 
-// Rule ParamAssignment
-ruleParamAssignment returns [EObject current=null]
+// Rule ParamValueRelation
+ruleParamValueRelation returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1154,7 +1154,7 @@ ruleParamAssignment returns [EObject current=null]
 				/* */
 			}
 			{
-				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_0_0());
+				newCompositeNode(grammarAccess.getParamValueRelationAccess().getParamParserRuleCall_0_0());
 			}
 			this_Param_0=ruleParam
 			{
@@ -1163,17 +1163,17 @@ ruleParamAssignment returns [EObject current=null]
 			}
 			otherlv_1='=='
 			{
-				newLeafNode(otherlv_1, grammarAccess.getParamAssignmentAccess().getEqualsSignEqualsSignKeyword_0_1());
+				newLeafNode(otherlv_1, grammarAccess.getParamValueRelationAccess().getEqualsSignEqualsSignKeyword_0_1());
 			}
 			(
 				(
 					lv_stringValues_2_0=RULE_STRING
 					{
-						newLeafNode(lv_stringValues_2_0, grammarAccess.getParamAssignmentAccess().getStringValuesSTRINGTerminalRuleCall_0_2_0());
+						newLeafNode(lv_stringValues_2_0, grammarAccess.getParamValueRelationAccess().getStringValuesSTRINGTerminalRuleCall_0_2_0());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getParamAssignmentRule());
+							$current = createModelElement(grammarAccess.getParamValueRelationRule());
 						}
 						addWithLastConsumed(
 							$current,
@@ -1186,17 +1186,17 @@ ruleParamAssignment returns [EObject current=null]
 			(
 				otherlv_3='|'
 				{
-					newLeafNode(otherlv_3, grammarAccess.getParamAssignmentAccess().getVerticalLineKeyword_0_3_0());
+					newLeafNode(otherlv_3, grammarAccess.getParamValueRelationAccess().getVerticalLineKeyword_0_3_0());
 				}
 				(
 					(
 						lv_stringValues_4_0=RULE_STRING
 						{
-							newLeafNode(lv_stringValues_4_0, grammarAccess.getParamAssignmentAccess().getStringValuesSTRINGTerminalRuleCall_0_3_1_0());
+							newLeafNode(lv_stringValues_4_0, grammarAccess.getParamValueRelationAccess().getStringValuesSTRINGTerminalRuleCall_0_3_1_0());
 						}
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getParamAssignmentRule());
+								$current = createModelElement(grammarAccess.getParamValueRelationRule());
 							}
 							addWithLastConsumed(
 								$current,
@@ -1214,7 +1214,7 @@ ruleParamAssignment returns [EObject current=null]
 				/* */
 			}
 			{
-				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_1_0());
+				newCompositeNode(grammarAccess.getParamValueRelationAccess().getParamParserRuleCall_1_0());
 			}
 			this_Param_5=ruleParam
 			{
@@ -1223,17 +1223,17 @@ ruleParamAssignment returns [EObject current=null]
 			}
 			otherlv_6='LIKE'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getParamAssignmentAccess().getLIKEKeyword_1_1());
+				newLeafNode(otherlv_6, grammarAccess.getParamValueRelationAccess().getLIKEKeyword_1_1());
 			}
 			(
 				(
 					lv_patternString_7_0=RULE_STRING
 					{
-						newLeafNode(lv_patternString_7_0, grammarAccess.getParamAssignmentAccess().getPatternStringSTRINGTerminalRuleCall_1_2_0());
+						newLeafNode(lv_patternString_7_0, grammarAccess.getParamValueRelationAccess().getPatternStringSTRINGTerminalRuleCall_1_2_0());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getParamAssignmentRule());
+							$current = createModelElement(grammarAccess.getParamValueRelationRule());
 						}
 						setWithLastConsumed(
 							$current,
@@ -1250,7 +1250,7 @@ ruleParamAssignment returns [EObject current=null]
 				/* */
 			}
 			{
-				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_2_0());
+				newCompositeNode(grammarAccess.getParamValueRelationAccess().getParamParserRuleCall_2_0());
 			}
 			this_Param_8=ruleParam
 			{
@@ -1259,17 +1259,17 @@ ruleParamAssignment returns [EObject current=null]
 			}
 			otherlv_9='=='
 			{
-				newLeafNode(otherlv_9, grammarAccess.getParamAssignmentAccess().getEqualsSignEqualsSignKeyword_2_1());
+				newLeafNode(otherlv_9, grammarAccess.getParamValueRelationAccess().getEqualsSignEqualsSignKeyword_2_1());
 			}
 			(
 				(
 					lv_booleanValue_10_0=RULE_BOOLEAN
 					{
-						newLeafNode(lv_booleanValue_10_0, grammarAccess.getParamAssignmentAccess().getBooleanValueBOOLEANTerminalRuleCall_2_2_0());
+						newLeafNode(lv_booleanValue_10_0, grammarAccess.getParamValueRelationAccess().getBooleanValueBOOLEANTerminalRuleCall_2_2_0());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getParamAssignmentRule());
+							$current = createModelElement(grammarAccess.getParamValueRelationRule());
 						}
 						setWithLastConsumed(
 							$current,
@@ -1286,7 +1286,7 @@ ruleParamAssignment returns [EObject current=null]
 				/* */
 			}
 			{
-				newCompositeNode(grammarAccess.getParamAssignmentAccess().getParamParserRuleCall_3_0());
+				newCompositeNode(grammarAccess.getParamValueRelationAccess().getParamParserRuleCall_3_0());
 			}
 			this_Param_11=ruleParam
 			{
@@ -1296,12 +1296,12 @@ ruleParamAssignment returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getParamAssignmentAccess().getRelationalOpRelationalOperatorParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getParamValueRelationAccess().getRelationalOpRelationalOperatorParserRuleCall_3_1_0());
 					}
 					lv_relationalOp_12_0=ruleRelationalOperator
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getParamAssignmentRule());
+							$current = createModelElementForParent(grammarAccess.getParamValueRelationRule());
 						}
 						set(
 							$current,
@@ -1316,11 +1316,11 @@ ruleParamAssignment returns [EObject current=null]
 				(
 					lv_doubleValue_13_0=RULE_DOUBLE
 					{
-						newLeafNode(lv_doubleValue_13_0, grammarAccess.getParamAssignmentAccess().getDoubleValueDOUBLETerminalRuleCall_3_2_0());
+						newLeafNode(lv_doubleValue_13_0, grammarAccess.getParamValueRelationAccess().getDoubleValueDOUBLETerminalRuleCall_3_2_0());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getParamAssignmentRule());
+							$current = createModelElement(grammarAccess.getParamValueRelationRule());
 						}
 						setWithLastConsumed(
 							$current,
@@ -1626,9 +1626,9 @@ rulePositiveTerm returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPositiveTermAccess().getParamParamAssignmentParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getPositiveTermAccess().getParamParamValueRelationParserRuleCall_1_0());
 				}
-				lv_param_1_0=ruleParamAssignment
+				lv_param_1_0=ruleParamValueRelation
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPositiveTermRule());
@@ -1637,7 +1637,7 @@ rulePositiveTerm returns [EObject current=null]
 						$current,
 						"param",
 						lv_param_1_0,
-						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ParamAssignment");
+						"es.us.isa.interparamdep.InterparameterDependenciesLanguage.ParamValueRelation");
 					afterParserOrEnumRuleCall();
 				}
 			)

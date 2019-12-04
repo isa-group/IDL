@@ -5,7 +5,7 @@ package es.us.isa.interparamdep.interparameterDependenciesLanguage.impl;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm;
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.InterparameterDependenciesLanguagePackage;
-import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamAssignment;
+import es.us.isa.interparamdep.interparameterDependenciesLanguage.ParamValueRelation;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -60,7 +60,7 @@ public class GeneralTermImpl extends MinimalEObjectImpl.Container implements Gen
    * @generated
    * @ordered
    */
-  protected ParamAssignment param;
+  protected ParamValueRelation param;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,7 +114,7 @@ public class GeneralTermImpl extends MinimalEObjectImpl.Container implements Gen
    * @generated
    */
   @Override
-  public ParamAssignment getParam()
+  public ParamValueRelation getParam()
   {
     return param;
   }
@@ -124,9 +124,9 @@ public class GeneralTermImpl extends MinimalEObjectImpl.Container implements Gen
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetParam(ParamAssignment newParam, NotificationChain msgs)
+  public NotificationChain basicSetParam(ParamValueRelation newParam, NotificationChain msgs)
   {
-    ParamAssignment oldParam = param;
+    ParamValueRelation oldParam = param;
     param = newParam;
     if (eNotificationRequired())
     {
@@ -142,7 +142,7 @@ public class GeneralTermImpl extends MinimalEObjectImpl.Container implements Gen
    * @generated
    */
   @Override
-  public void setParam(ParamAssignment newParam)
+  public void setParam(ParamValueRelation newParam)
   {
     if (newParam != param)
     {
@@ -206,7 +206,7 @@ public class GeneralTermImpl extends MinimalEObjectImpl.Container implements Gen
         setNot((String)newValue);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_TERM__PARAM:
-        setParam((ParamAssignment)newValue);
+        setParam((ParamValueRelation)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -226,7 +226,7 @@ public class GeneralTermImpl extends MinimalEObjectImpl.Container implements Gen
         setNot(NOT_EDEFAULT);
         return;
       case InterparameterDependenciesLanguagePackage.GENERAL_TERM__PARAM:
-        setParam((ParamAssignment)null);
+        setParam((ParamValueRelation)null);
         return;
     }
     super.eUnset(featureID);

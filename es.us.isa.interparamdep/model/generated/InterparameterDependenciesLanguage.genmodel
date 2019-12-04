@@ -60,7 +60,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/relationalOp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//Param/doubleValue"/>
     </genClasses>
-    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//ParamAssignment"/>
+    <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//ParamValueRelation"/>
     <genClasses ecoreClass="InterparameterDependenciesLanguage.ecore#//GeneralClauseContinuation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InterparameterDependenciesLanguage.ecore#//GeneralClauseContinuation/logicalOp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InterparameterDependenciesLanguage.ecore#//GeneralClauseContinuation/additionalElements"/>

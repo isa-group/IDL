@@ -76,7 +76,7 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE: return createGeneralClause();
       case InterparameterDependenciesLanguagePackage.GENERAL_TERM: return createGeneralTerm();
       case InterparameterDependenciesLanguagePackage.PARAM: return createParam();
-      case InterparameterDependenciesLanguagePackage.PARAM_ASSIGNMENT: return createParamAssignment();
+      case InterparameterDependenciesLanguagePackage.PARAM_VALUE_RELATION: return createParamValueRelation();
       case InterparameterDependenciesLanguagePackage.GENERAL_CLAUSE_CONTINUATION: return createGeneralClauseContinuation();
       case InterparameterDependenciesLanguagePackage.GENERAL_PREDEFINED_DEPENDENCY: return createGeneralPredefinedDependency();
       default:
@@ -222,10 +222,10 @@ public class InterparameterDependenciesLanguageFactoryImpl extends EFactoryImpl 
    * @generated
    */
   @Override
-  public ParamAssignment createParamAssignment()
+  public ParamValueRelation createParamValueRelation()
   {
-    ParamAssignmentImpl paramAssignment = new ParamAssignmentImpl();
-    return paramAssignment;
+    ParamValueRelationImpl paramValueRelation = new ParamValueRelationImpl();
+    return paramValueRelation;
   }
 
   /**

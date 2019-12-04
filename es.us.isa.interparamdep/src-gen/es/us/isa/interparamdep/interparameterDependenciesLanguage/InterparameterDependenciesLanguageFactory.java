@@ -123,13 +123,13 @@ public interface InterparameterDependenciesLanguageFactory extends EFactory
   Param createParam();
 
   /**
-   * Returns a new object of class '<em>Param Assignment</em>'.
+   * Returns a new object of class '<em>Param Value Relation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Param Assignment</em>'.
+   * @return a new object of class '<em>Param Value Relation</em>'.
    * @generated
    */
-  ParamAssignment createParamAssignment();
+  ParamValueRelation createParamValueRelation();
 
   /**
    * Returns a new object of class '<em>General Clause Continuation</em>'.

@@ -61,10 +61,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralTerm">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="not" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="param" eType="#//ParamAssignment"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="param" eType="#//ParamValueRelation"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Param" eSuperTypes="#//ParamAssignment">
+  <eClassifiers xsi:type="ecore:EClass" name="Param" eSuperTypes="#//ParamValueRelation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringValues" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -73,7 +73,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationalOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="doubleValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParamAssignment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ParamValueRelation"/>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralClauseContinuation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="additionalElements" eType="#//GeneralPredicate"
