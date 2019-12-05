@@ -28,3 +28,7 @@ Export-Package: es.us.isa.interparamdep.scoping,
  es.us.isa.interparamdep.interparameterDependenciesLanguage,
  es.us.isa.interparamdep.services
 Import-Package: org.apache.log4j
+Bundle-ClassPath: lib/jackson-annotations-2.10.1.jar,
+ lib/jackson-core-2.10.1.jar,
+ lib/jackson-databind-2.10.1.jar,
+ .
