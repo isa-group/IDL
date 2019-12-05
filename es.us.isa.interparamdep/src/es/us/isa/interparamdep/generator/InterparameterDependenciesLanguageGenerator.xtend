@@ -15,6 +15,9 @@ import java.util.Map.Entry
 import java.util.HashMap
 import java.util.AbstractMap.SimpleEntry
 
+import static es.us.isa.interparamdep.generator.ReservedWords.RESERVED_WORDS
+import es.us.isa.interparamdep.generator.ParamStringIntTuple
+
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.Dependency;
@@ -34,6 +37,11 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate
 import java.io.BufferedWriter
 import java.io.FileWriter
+import java.util.Set
+import java.util.HashSet
+import java.util.Comparator
+import java.io.FileOutputStream
+import java.io.ObjectOutputStream
 
 /**
  * Generates code from your model files on save.
@@ -42,26 +50,31 @@ import java.io.FileWriter
  */
 class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	
-	val String path = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
+	val String constraintsFilePath = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
+	val String paramStringIntTuplesFilePath = System.getProperty("user.home") + "/constraints_folder/param_string_int_mapping.json"
 	// val String path = "./idl_aux_files/aux_constraints.mzn"
-	var File file
-	var BufferedWriter out
+	
+//	var File file
+//	var BufferedWriter out
 	var String csp
-	var int intedString
-	var Map<Entry<String, String>, Integer> paramStringsToInts = new HashMap<Entry<String, String>, Integer>()
+//	var int intedString
+//	var Map<Entry<String, String>, Integer> paramStringsToInts = new HashMap<Entry<String, String>, Integer>()
+//	var Set<ParamStringIntTuple> paramStringIntTuples = new HashSet<ParamStringIntTuple>()
+	var Map<String, Map<String, Integer>> paramStringIntMappings = new HashMap<String, Map<String, Integer>>()
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
-		file = new File(path)
+		var file = new File(constraintsFilePath)
 		file.delete
 		if (!file.exists) {
 		  file.parentFile.mkdirs
 		  file.createNewFile
 		}
-		out = new BufferedWriter(new FileWriter(file, false))
+		var out = new BufferedWriter(new FileWriter(file, false))
 		
-		intedString = 1
-		paramStringsToInts.clear
+//		intedString = 1
+//		paramStringsToInts.clear
+		paramStringIntMappings.clear
 		
 		for (dependency: resource.allContents.filter(Dependency).toIterable) {
 			csp = "constraint "
@@ -83,28 +96,90 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		}
 		out.flush
 		out.close
+		
+//		var mappingFile = new File(paramStringIntTuplesFilePath)
+//		mappingFile.delete
+//		if (!mappingFile.exists) {
+//		  mappingFile.parentFile.mkdirs
+//		  mappingFile.createNewFile
+//		}
+//        var ObjectOutputStream mappingOut = new ObjectOutputStream(new FileOutputStream(paramStringIntTuplesFilePath));
+//        mappingOut.writeObject(paramStringIntMappings);
+//        mappingOut.close();
 	}
+	
+	
+	def int stringToInt3(String param, String string) {
+		var Integer intMapping = 0
+		var Map<String, Integer> paramMap =	paramStringIntMappings.get(param)
+		if (paramMap !== null) {
+			var Integer paramStringMapping = paramMap.get(string)
+			if (paramStringMapping !== null) {
+				intMapping = paramStringMapping
+			} else {
+				var Entry<String,Integer> mappingWithHighestInt = paramMap.entrySet.stream
+						.max(Comparator.comparing(entry | entry.value))
+						.orElse(null)
+				intMapping = mappingWithHighestInt.value+1
+				paramMap.put(string, intMapping)
+			}
+		} else {
+			paramStringIntMappings.put(param, new HashMap<String, Integer>())
+			paramStringIntMappings.get(param).put(string, 0)
+		}
+		
+		return intMapping
+	}
+	
+//	/**
+//	 * Used to assign an int to a param that is a string
+//	 */
+//	def int stringToInt2(String param, String string) {
+//		var ParamStringIntTuple existingTuple = paramStringIntTuples.stream
+//				.filter(tuple | tuple.name==param && tuple.stringValue==string)
+//				.findFirst
+//				.orElse(null)
+//		if (existingTuple !== null) {
+//			return existingTuple.intValue
+//		} else {
+//			var Integer nextIntValue = 0
+//			var ParamStringIntTuple tupleWithHighestInt = paramStringIntTuples.stream
+//					.filter(tuple | tuple.name==param)
+//					.max(Comparator.comparing(tuple | tuple.intValue))
+//					.orElse(null)
+//			if (tupleWithHighestInt !== null)
+//				nextIntValue = tupleWithHighestInt.intValue+1
+//			paramStringIntTuples.add(new ParamStringIntTuple(param, string, nextIntValue))
+//			
+//			return nextIntValue	
+//		}
+//	}
 	
 
-	/**
-	 * Used to assign an int to a param that is a string
-	 */
-	def int stringToInt(String param, String string) {
-		// TODO: Save tuple of param-string-int in some external file
-		var Entry<String, String> paramEntry = new SimpleEntry<String, String>(param, string) // Search int associated to param and string
-		if (paramStringsToInts.get(paramEntry) !== null) { // If exists, return it
-			return paramStringsToInts.get(paramEntry)
-		} else { // Otherwise, add new entry with new int and return it
-			paramStringsToInts.put(paramEntry, intedString)
-			return intedString++
-		}
-	}
+//	/**
+//	 * Used to assign an int to a param that is a string
+//	 */
+//	def int stringToInt(String param, String string) {
+//		var a = new ParamStringIntTuple("dsfd", "sfvs", 12)
+//		a.name
+//		// TODO: Save tuple of param-string-int in some external file
+//		var Entry<String, String> paramEntry = new SimpleEntry<String, String>(param, string) // Search int associated to param and string
+//		if (paramStringsToInts.get(paramEntry) !== null) { // If exists, return it
+//			return paramStringsToInts.get(paramEntry)
+//		} else { // Otherwise, add new entry with new int and return it
+//			paramStringsToInts.put(paramEntry, intedString)
+//			return intedString++
+//		}
+//	}
 	
 	/**
-	 * Remove special characters from paramName
+	 * Remove and replace special characters from paramName
 	 */
 	def String parseParamName(String paramName) {
-		return paramName.replaceAll("[\\.\\-\\/\\:\\[\\]]", "")
+		var String parsedParamName = paramName.replaceAll("[\\[\\]]", "").replaceAll("[\\.\\-\\/\\:]", "_")
+		if (RESERVED_WORDS.contains(parsedParamName))
+			parsedParamName += "_R"
+		return parsedParamName
 	}
 	
 	/**
@@ -162,7 +237,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 					} else if (param.stringValues.size !== 0) {
 						csp += "("
 						for (string: param.stringValues) {
-							csp += parseParamName(param.name) + "==" + stringToInt(parseParamName(param.name), string) + " \\/ "
+							csp += parseParamName(param.name) + "==" + stringToInt3(parseParamName(param.name), string) + " \\/ "
 						}
 						csp = csp.substring(0, csp.length-4) // Trim last " \\/ "
 						csp += ")"
