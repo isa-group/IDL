@@ -45,14 +45,16 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredica
  */
 class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	
-	val String constraintsFilePath = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
-	val String paramStringIntTuplesFilePath = System.getProperty("user.home") + "/constraints_folder/param_string_int_mapping.json"
-//	val String constraintsFilePath = "./idl_aux_files/aux_constraints.mzn"
-//	val String paramStringIntTuplesFilePath = "./idl_aux_files/param_string_int_mapping.json"
+//	val String constraintsFilePath = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
+//	val String stringIntMappingFilePath = System.getProperty("user.home") + "/constraints_folder/string_int_mapping.json"
+	val String constraintsFilePath = "./idl_aux_files/base_constraints.mzn"
+	val String stringIntMappingFilePath = "./idl_aux_files/string_int_mapping.json"
 //	val Integer correctionFactor = 100
 	var String csp
-	var Map<String, Map<String, Integer>> paramStringIntMappings = new HashMap<String, Map<String, Integer>>()
+//	var Map<String, Map<String, Integer>> paramStringIntMappings = new HashMap
 //	var Map<String, Map<Float, Integer>> paramFloatIntMappings = new HashMap<String, Map<Float, Integer>>()
+	var Integer stringToIntCounter
+	var Map<String, Integer> stringIntMapping = new HashMap
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
@@ -64,7 +66,9 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		}
 		var BufferedWriter out = new BufferedWriter(new FileWriter(file, false))
 		
-		paramStringIntMappings.clear
+//		paramStringIntMappings.clear
+		stringIntMapping.clear
+		stringToIntCounter = 0
 		
 		for (dependency: resource.allContents.filter(Dependency).toIterable) {
 			csp = "constraint "
@@ -87,10 +91,10 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		out.flush
 		out.close
 		
-		// Export param-string-int mapping to JSON
+		// Export string-int mapping to JSON
 		var ObjectMapper mapper = new ObjectMapper
-		var String json = mapper.writerWithDefaultPrettyPrinter.writeValueAsString(paramStringIntMappings)
-		var mappingFile = new File(paramStringIntTuplesFilePath)
+		var String json = mapper.writerWithDefaultPrettyPrinter.writeValueAsString(stringIntMapping)
+		var mappingFile = new File(stringIntMappingFilePath)
 		mappingFile.delete
 		if (!mappingFile.exists) {
 		  mappingFile.parentFile.mkdirs
@@ -131,28 +135,38 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 //		return intMapping
 ////		return 0
 //	}
-	
-	def Integer stringToInt(String param, String string) {
-		var Integer intMapping = 0
-		var Map<String, Integer> paramMap =	paramStringIntMappings.get(param)
-		if (paramMap !== null) {
-			var Integer paramStringMapping = paramMap.get(string)
-			if (paramStringMapping !== null) {
-				intMapping = paramStringMapping
-			} else {
-				var Entry<String,Integer> mappingWithHighestInt = paramMap.entrySet.stream
-						.max(Comparator.comparing(entry | entry.value))
-						.orElse(null)
-				intMapping = mappingWithHighestInt.value+1
-				paramMap.put(string, intMapping)
-			}
+
+	def Integer stringToInt(String stringValue) {
+		val Integer intMapping = stringIntMapping.get(stringValue)
+		if (intMapping !== null) {
+			return intMapping
 		} else {
-			paramStringIntMappings.put(param, new HashMap<String, Integer>())
-			paramStringIntMappings.get(param).put(string, 0)
+			stringIntMapping.put(stringValue, stringToIntCounter)
+			return stringToIntCounter++
 		}
-		
-		return intMapping
 	}
+	
+//	def Integer stringToInt(String param, String string) {
+//		var Integer intMapping = 0
+//		var Map<String, Integer> paramMap =	paramStringIntMappings.get(param)
+//		if (paramMap !== null) {
+//			var Integer paramStringMapping = paramMap.get(string)
+//			if (paramStringMapping !== null) {
+//				intMapping = paramStringMapping
+//			} else {
+//				var Entry<String,Integer> mappingWithHighestInt = paramMap.entrySet.stream
+//						.max(Comparator.comparing(entry | entry.value))
+//						.orElse(null)
+//				intMapping = mappingWithHighestInt.value+1
+//				paramMap.put(string, intMapping)
+//			}
+//		} else {
+//			paramStringIntMappings.put(param, new HashMap<String, Integer>())
+//			paramStringIntMappings.get(param).put(string, 0)
+//		}
+//		
+//		return intMapping
+//	}
 	
 	/**
 	 * Remove and replace special characters from paramName
@@ -222,7 +236,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 					} else if (param.stringValues.size !== 0) {
 						csp += "("
 						for (string: param.stringValues) {
-							csp += parseParamName(param.name) + "==" + stringToInt(parseParamName(param.name), string) + " \\/ "
+							csp += parseParamName(param.name) + "==" + stringToInt(string) + " \\/ "
 						}
 						csp = csp.substring(0, csp.length-4) // Trim last " \\/ "
 						csp += ")"
