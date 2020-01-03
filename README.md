@@ -1,4 +1,4 @@
-# IDL4OAI
+# IDL: Inter-parameter Dependency Language
 Inter-parameter Dependencies Language for the OpenAPI Initiative
 
 ### Things to notice
