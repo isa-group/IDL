@@ -1,5 +1,4 @@
 # IDL: Inter-parameter Dependency Language
-Inter-parameter Dependencies Language for the OpenAPI Initiative
 
 ### Things to notice
 - The project containing the grammar definition and all language-specific components (parser, lexer, linker, validation, etc.) is ```'es.us.isa.interparamdep'```.
