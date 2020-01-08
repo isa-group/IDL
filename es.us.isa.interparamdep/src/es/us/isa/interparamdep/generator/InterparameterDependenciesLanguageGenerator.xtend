@@ -11,11 +11,9 @@ import org.eclipse.xtext.generator.IGeneratorContext
 
 import java.io.File
 import java.util.Map
-import java.util.Map.Entry
 import java.util.HashMap
 import java.io.BufferedWriter
 import java.io.FileWriter
-import java.util.Comparator
 import com.fasterxml.jackson.databind.ObjectMapper
 
 import static es.us.isa.interparamdep.generator.ReservedWords.RESERVED_WORDS
@@ -75,9 +73,9 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 			if (dependency.dep.class == typeof(ConditionalDependencyImpl)) {
 				writeConditionalDependency(dependency.dep as ConditionalDependency)
 			} else if (dependency.dep.class == typeof(RelationalDependencyImpl)) {
-				writeRelationalDependency(dependency.dep as RelationalDependency)
+				writeRelationalDependency(dependency.dep as RelationalDependency, true)
 			} else if (dependency.dep.class == typeof(ArithmeticDependencyImpl)) {
-				writeArithmeticDependency(dependency.dep as ArithmeticDependency)
+				writeArithmeticDependency(dependency.dep as ArithmeticDependency, true)
 			} else if (dependency.dep.class == typeof(GeneralPredefinedDependencyImpl)) {
 				writePredefinedDependency(dependency.dep as GeneralPredefinedDependency)
 			} else {
@@ -249,9 +247,9 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 				if (term.not !== null)
 					csp += ")"
 			} else if(clause.firstElement.class == typeof(RelationalDependencyImpl)) {
-				writeRelationalDependency(clause.firstElement as RelationalDependency)
+				writeRelationalDependency(clause.firstElement as RelationalDependency, false)
 			} else if(clause.firstElement.class == typeof(ArithmeticDependencyImpl)) {
-				writeArithmeticDependency(clause.firstElement as ArithmeticDependency)
+				writeArithmeticDependency(clause.firstElement as ArithmeticDependency, false)
 			} else if(clause.firstElement.class == typeof(GeneralPredefinedDependencyImpl)) {
 				writePredefinedDependency(clause.firstElement as GeneralPredefinedDependency)
 			} else {
@@ -269,18 +267,24 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		csp += ")"
 	}
 
-	def void writeRelationalDependency(RelationalDependency dep) {
-		csp += "((" + parseParamName(dep.param1.name) + "Set==1 /\\ " + parseParamName(dep.param2.name) + "Set==1) -> (" +
-				parseParamName(dep.param1.name) + dep.relationalOp + parseParamName(dep.param2.name) + "))"
+	def void writeRelationalDependency(RelationalDependency dep, boolean alone) {
+		if (alone)
+			csp += "((" + parseParamName(dep.param1.name) + "Set==1 /\\ " + parseParamName(dep.param2.name) + "Set==1) -> (" +
+					parseParamName(dep.param1.name) + dep.relationalOp + parseParamName(dep.param2.name) + "))"
+		else
+			csp += "(" + parseParamName(dep.param1.name) + "Set==1 /\\ " + parseParamName(dep.param2.name) + "Set==1 /\\ " +
+					parseParamName(dep.param1.name) + dep.relationalOp + parseParamName(dep.param2.name) + ")"
 	}
 	
-	def void writeArithmeticDependency(ArithmeticDependency dep) {
+	def void writeArithmeticDependency(ArithmeticDependency dep, boolean alone) {
 		csp += "(("
 		for (param: dep.eAllContents.filter(Param).toIterable) {
 			csp += parseParamName(param.name) + "Set==1 /\\ "
 		}
-		csp = csp.substring(0, csp.length-4) // Trim last " \\/ "
-		csp += ") -> ("
+		if (alone) {
+			csp = csp.substring(0, csp.length-4) // Trim last " /\\ "
+			csp += ") -> ("
+		}
 		writeOperation(dep.operation)
 		csp += dep.relationalOp
 		csp += dep.result
