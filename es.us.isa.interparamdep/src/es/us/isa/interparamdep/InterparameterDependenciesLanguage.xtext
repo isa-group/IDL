@@ -19,7 +19,7 @@ terminal BOOLEAN:
 ;
 
 terminal DOUBLE:
-	INT ('.' INT)?
+	('-'' '*)? INT ('.' INT)?
 ;
 
 @Override 
