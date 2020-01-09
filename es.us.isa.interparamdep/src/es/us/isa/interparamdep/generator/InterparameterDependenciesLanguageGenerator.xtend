@@ -177,6 +177,15 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	}
 	
 	/**
+	 * Surround double with brackets if it's negative
+	 */
+	def String parseDouble(String doubleValue) {
+		if (doubleValue.contains('-'))
+			return ('(' + doubleValue + ')')
+		return doubleValue
+	}
+	
+	/**
 	 * Returns true if param is actually a ParamValueRelation. False if it is a Param
 	 */
 	def boolean isParamValueRelation(Param param) {
@@ -228,7 +237,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 						csp += parseParamName(param.name) + "==" + param.booleanValue
 					} else if (param.doubleValue !== null) {
 //						csp += parseParamName(param.name) + param.relationalOp + correctNumber(param.doubleValue)
-						csp += parseParamName(param.name) + param.relationalOp + param.doubleValue
+						csp += parseParamName(param.name) + param.relationalOp + parseDouble(param.doubleValue)
 //					} else if (param.intValue !== null) {
 //						csp += parseParamName(param.name) + param.relationalOp + correctNumber(param.doubleValue)
 					} else if (param.stringValues.size !== 0) {
@@ -287,7 +296,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		}
 		writeOperation(dep.operation)
 		csp += dep.relationalOp
-		csp += dep.result
+		csp += parseDouble(dep.result)
 //		if (dep.doubleResult !== null)
 //			csp += correctFloat(dep.doubleResult)
 //		else 
