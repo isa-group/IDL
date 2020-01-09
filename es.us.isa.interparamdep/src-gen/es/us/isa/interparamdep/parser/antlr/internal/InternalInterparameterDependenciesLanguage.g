@@ -1976,7 +1976,7 @@ RULE_NL : ('\r'? '\n')+;
 
 RULE_BOOLEAN : ('true'|'false');
 
-RULE_DOUBLE : RULE_INT ('.' RULE_INT)?;
+RULE_DOUBLE : ('-' ' '*)? RULE_INT ('.' RULE_INT)?;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_'|'.') ('a'..'z'|'A'..'Z'|'_'|'.'|'0'..'9')*;
 

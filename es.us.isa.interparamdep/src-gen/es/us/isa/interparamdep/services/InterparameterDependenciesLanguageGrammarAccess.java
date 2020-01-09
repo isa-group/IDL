@@ -1121,7 +1121,7 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	}
 	
 	//terminal DOUBLE:
-	//	INT ('.' INT)?;
+	//	('-' ' '*)? INT ('.' INT)?;
 	public TerminalRule getDOUBLERule() {
 		return tDOUBLE;
 	}
