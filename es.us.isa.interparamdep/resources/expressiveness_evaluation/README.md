@@ -1,0 +1,2 @@
+- Napster:
+  - Get Favorites: https://developer.napster.com/api/v2.2#member-favorites
