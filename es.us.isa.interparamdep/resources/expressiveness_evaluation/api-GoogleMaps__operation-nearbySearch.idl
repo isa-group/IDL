@@ -1,7 +1,4 @@
-IF rankby='distance' THEN NOT radius;
-
-IF rankby='distance' THEN Or(keyword, name, type);
-
+IF rankby=='distance' THEN NOT radius;
+IF rankby=='distance' THEN Or(keyword, name, type);
 minprice<=maxprice;
-
 IF radius THEN NOT rankby;

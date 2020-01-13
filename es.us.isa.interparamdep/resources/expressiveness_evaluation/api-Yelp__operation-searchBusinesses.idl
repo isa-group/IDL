@@ -1,3 +1,2 @@
 OnlyOne(location, latitude AND longitude);
-
 ZeroOrOne(open_now, open_at);

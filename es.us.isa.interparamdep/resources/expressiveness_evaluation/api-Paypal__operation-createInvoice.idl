@@ -1,3 +1,2 @@
 IF custom.label THEN custom.amount;
-
-IF minimum_amount_due THEN allow_partial_payment=true;
+IF minimum_amount_due THEN allow_partial_payment==true;

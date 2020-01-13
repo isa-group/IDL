@@ -1,11 +1,6 @@
-IF state='inactive' THEN Accept='application/vnd.github.ant-man-preview+json'|*;
-
-IF state='in_progress'|'queued' THEN Accept='application/vnd.github.flash-preview+json'|*;
-
-IF log_url THEN Accept='application/vnd.github.ant-man-preview+json'|*;
-
-IF environment THEN Accept='application/vnd.github.flash-preview+json'|*;
-
-IF environment_url THEN Accept='application/vnd.github.ant-man-preview+json'|*;
-
-IF auto_inactive THEN Accept='application/vnd.github.ant-man-preview+json'|*;
+IF state=='inactive' THEN Accept LIKE '*application/vnd.github.ant-man-preview+json*';
+IF state=='in_progress'|'queued' THEN Accept LIKE '*application/vnd.github.flash-preview+json*';
+IF log_url THEN Accept LIKE '*application/vnd.github.ant-man-preview+json*';
+IF environment THEN Accept LIKE '*application/vnd.github.flash-preview+json*';
+IF environment_url THEN Accept LIKE '*application/vnd.github.ant-man-preview+json*';
+IF auto_inactive THEN Accept LIKE '*application/vnd.github.ant-man-preview+json*';

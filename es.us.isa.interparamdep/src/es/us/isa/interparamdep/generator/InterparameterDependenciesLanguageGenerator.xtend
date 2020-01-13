@@ -43,10 +43,10 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredica
  */
 class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	
-//	val String constraintsFilePath = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
-//	val String stringIntMappingFilePath = System.getProperty("user.home") + "/constraints_folder/string_int_mapping.json"
-	val String constraintsFilePath = "./idl_aux_files/base_constraints.mzn"
-	val String stringIntMappingFilePath = "./idl_aux_files/string_int_mapping.json"
+	val String constraintsFilePath = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
+	val String stringIntMappingFilePath = System.getProperty("user.home") + "/constraints_folder/string_int_mapping.json"
+//	val String constraintsFilePath = "./idl_aux_files/base_constraints.mzn"
+//	val String stringIntMappingFilePath = "./idl_aux_files/string_int_mapping.json"
 //	val Integer correctionFactor = 100
 	var String csp
 //	var Map<String, Map<String, Integer>> paramStringIntMappings = new HashMap
