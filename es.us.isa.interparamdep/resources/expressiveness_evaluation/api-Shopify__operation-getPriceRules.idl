@@ -1,0 +1,4 @@
+created_at_min <= created_at_max;
+updated_at_min <= updated_at_max;
+starts_at_min <= starts_at_max;
+ends_at_min <= ends_at_max;
