@@ -14,7 +14,7 @@ This folder contains the IDL specifications of 31 operations from 22 different w
 - [**Google Geocoding**](https://developers.google.com/maps/documentation/geocoding/start):
   - *Geocode request*. [IDL specification](api-GoogleGeocoding__operation-geocode.idl). Link to the [API documentation](https://developers.google.com/maps/documentation/geocoding/start).
 - [**Google Maps**](https://developers.google.com/places/web-service/intro):
-  - *Searby search*. [IDL specification](api-GoogleMaps__operation-nearbySearch.idl). Link to the [API documentation](https://developers.google.com/places/web-service/search#PlaceSearchRequests).
+  - *Nearby search*. [IDL specification](api-GoogleMaps__operation-nearbySearch.idl). Link to the [API documentation](https://developers.google.com/places/web-service/search#PlaceSearchRequests).
 - [**PayPal**](https://developer.paypal.com/docs/api/invoicing/v1/):
   - *Create invoice*. [IDL specification](api-Paypal__operation-createInvoice.idl). Link to the [API documentation](https://developer.paypal.com/docs/api/invoicing/v1/#invoices_create).
 - [**Tumblr**](https://www.tumblr.com/docs/en/api/v2):
