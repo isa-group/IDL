@@ -1,2 +1,12 @@
-- Napster:
-  - Get Favorites: https://developer.napster.com/api/v2.2#member-favorites
+- **Napster**:
+  - _Get favorites_. [IDL specification](). Link to the [API documentation](https://developer.napster.com/api/v2.2#member-favorites).
+- **Shopify**:
+  - _Get price rules_. [IDL specification](). Link to the [API documentation](https://help.shopify.com/en/api/reference/discounts/pricerule#index-2020-01).
+  - _Create price rule_. [IDL specification](). Link to the [API documentation](https://help.shopify.com/en/api/reference/discounts/pricerule#create-2020-01).
+- **Hoiio**:
+  - _Make call_. [IDL specification](). Link to the [API documentation](https://openapi.hoiio.com/voice-api/make-call/index.html).
+- **CityGrid**:
+  - _Get places detail_. [IDL specification](). Link to the [API documentation](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API#PlacesAPI-PlacesDetail).
+  - _LatLon search_. [IDL specification](). Link to the [API documentation](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API#PlacesAPI-SearchUsingLatitudeandLongitude).
+- **Groupon**:
+  - _Get deals_. [IDL specification](). Link to the [API documentation](http://partner-api.groupon.com/help/deal-api).
