@@ -26,15 +26,16 @@ This folder contains the IDL specifications of 31 operations from 23 different w
   - *Search*. [IDL specification](api-Youtube__operation-search.idl). Link to the [API documentation](https://developers.google.com/youtube/v3/docs/search/list).
 
 ### 2. APIs not included in the study
-- **Napster**:
-  - *Get favorites*. [IDL specification](). Link to the [API documentation](https://developer.napster.com/api/v2.2#member-favorites).
-- **Shopify**:
-  - *Get price rules*. [IDL specification](). Link to the [API documentation](https://help.shopify.com/en/api/reference/discounts/pricerule#index-2020-01).
-  - *Create price rule*. [IDL specification](). Link to the [API documentation](https://help.shopify.com/en/api/reference/discounts/pricerule#create-2020-01).
-- **Hoiio**:
-  - *Make call*. [IDL specification](). Link to the [API documentation](https://openapi.hoiio.com/voice-api/make-call/index.html).
-- **CityGrid**:
-  - *Get places detail*. [IDL specification](). Link to the [API documentation](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API#PlacesAPI-PlacesDetail).
-  - *LatLon search*. [IDL specification](). Link to the [API documentation](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API#PlacesAPI-SearchUsingLatitudeandLongitude).
-- **Groupon**:
-  - *Get deals*. [IDL specification](). Link to the [API documentation](http://partner-api.groupon.com/help/deal-api).
+- [**CityGrid**](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API):
+  - *LatLon search*. [IDL specification](api-CityGrid__operation-latLonSearch.idl). Link to the [API documentation](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API#PlacesAPI-SearchUsingLatitudeandLongitude).
+  - *Get places detail*. [IDL specification](api-CityGrid__operation-placesDetail.idl). Link to the [API documentation](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API#PlacesAPI-PlacesDetail).
+- [**Groupon**](http://partner-api.groupon.com/help/api-introduction):
+  - *Get deals*. [IDL specification](api-Groupon__operation-getDeals.idl). Link to the [API documentation](http://partner-api.groupon.com/help/deal-api).
+- [**Hoiio**](https://openapi.hoiio.com/):
+  - *Make call*. [IDL specification](api-Hoiio__operation-makeCall.idl). Link to the [API documentation](https://openapi.hoiio.com/voice-api/make-call/index.html).
+- [**Napster**](https://developer.napster.com/api/v2.2):
+  - *Get favorites*. [IDL specification](api-Napster__operation-getFavorites.idl). Link to the [API documentation](https://developer.napster.com/api/v2.2#member-favorites).
+- [**Shopify**](https://help.shopify.com/en/api/reference):
+  - *Create price rule*. [IDL specification](api-Shopify__operation-createPriceRule.idl). Link to the [API documentation](https://help.shopify.com/en/api/reference/discounts/pricerule#create-2020-01).
+  - *Get price rules*. [IDL specification](api-Shopify__operation-getPriceRules.idl). Link to the [API documentation](https://help.shopify.com/en/api/reference/discounts/pricerule#index-2020-01).
+
