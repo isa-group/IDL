@@ -52,4 +52,9 @@ This folder contains the IDL specifications of 31 operations from 22 different w
 - [**Shopify**](https://help.shopify.com/en/api/reference):
   - *Create price rule*. [IDL specification](api-Shopify__operation-createPriceRule.idl). Link to the [API documentation](https://help.shopify.com/en/api/reference/discounts/pricerule#create-2020-01).
   - *Get price rules*. [IDL specification](api-Shopify__operation-getPriceRules.idl). Link to the [API documentation](https://help.shopify.com/en/api/reference/discounts/pricerule#index-2020-01).
-
+- [**Vimeo**](https://developer.vimeo.com/api/reference):
+  - *Edit user*. [IDL specification](api-Vimeo__operation-editUser.idl). Link to the [API documentation](https://developer.vimeo.com/api/reference/users#edit_user).
+  - *Get videos uploaded by user*. [IDL specification](api-Vimeo__operation-getVideosUploadedByUser.idl). Link to the [API documentation](https://developer.vimeo.com/api/reference/videos#get_videos).
+- [**Weather Company Data**](https://twcservice.mybluemix.net/rest-api/?_ga=2.216780950.1077140740.1578932427-1138945265.1575532646&cm_mc_uid=01540670708715755326464&cm_mc_sid_50200000=50819341578932426703):
+  - *Get daily almanac of location*. [IDL specification](api-WeatherCompany__operation-almanacServicesLocationDaily.idl). Link to the [API documentation](https://twcservice.mybluemix.net/rest-api/?_ga=2.216780950.1077140740.1578932427-1138945265.1575532646&cm_mc_uid=01540670708715755326464&cm_mc_sid_50200000=50819341578932426703#!/Almanac_Services/v1pcdailyalmanac).
+  - *Search locations*. [IDL specification](api-WeatherCompany__operation-locationServices.idl). Link to the [API documentation](https://twcservice.mybluemix.net/rest-api/?_ga=2.216780950.1077140740.1578932427-1138945265.1575532646&cm_mc_uid=01540670708715755326464&cm_mc_sid_50200000=50819341578932426703#!/Location_Services/v3locSearch).
