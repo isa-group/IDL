@@ -1,6 +1,6 @@
-This folder contains the IDL specifications of 31 operations from 23 different web APIs. The APIs are classified into 2 groups:
+This folder contains the IDL specifications of 31 operations from 22 different web APIs. The APIs are classified into 2 groups:
 1. APIs originally included in our review of inter-parameter dependencies in real-world web APIs [[reference](https://personal.us.es/amarlop/wp-content/uploads/2019/10/A-Catalogue-of-Inter-Parameter-Dependencies-in-RESTful-Web-APIs.pdf)] (10 APIs, 11 operations).
-2. APIs not included in our initial study (13 APIs, 20 operations).
+2. APIs not included in our initial study (12 APIs, 20 operations).
 
 ### 1. APIs included in the study
 - [**Bing Web Search**](https://docs.microsoft.com/en-us/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference):
