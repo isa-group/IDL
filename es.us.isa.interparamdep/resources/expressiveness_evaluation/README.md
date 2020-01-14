@@ -17,14 +17,13 @@ This folder contains the IDL specifications of 31 operations from 23 different w
   - *Searby search*. [IDL specification](api-GoogleMaps__operation-nearbySearch). Link to the [API documentation](https://developers.google.com/places/web-service/search#PlaceSearchRequests).
 - [**PayPal**](https://developer.paypal.com/docs/api/invoicing/v1/):
   - *Create invoice*. [IDL specification](api-Paypal__operation-createInvoice). Link to the [API documentation](https://developer.paypal.com/docs/api/invoicing/v1/#invoices_create).
-- [**Foursquare**](https://developer.foursquare.com/places):
-  - *Search for venues*. [IDL specification](api-Foursquare__operation-searchVenues.idl). Link to the [API documentation](https://developer.foursquare.com/docs/api/venues/search).
-- [**Foursquare**](https://developer.foursquare.com/places):
-  - *Search for venues*. [IDL specification](api-Foursquare__operation-searchVenues.idl). Link to the [API documentation](https://developer.foursquare.com/docs/api/venues/search).
-- [**Foursquare**](https://developer.foursquare.com/places):
-  - *Search for venues*. [IDL specification](api-Foursquare__operation-searchVenues.idl). Link to the [API documentation](https://developer.foursquare.com/docs/api/venues/search).
-
-
+- [**Tumblr**](https://www.tumblr.com/docs/en/api/v2):
+  - *Create post*. [IDL specification](api-Tumblr__operation-createPost). Link to the [API documentation](https://www.tumblr.com/docs/en/api/v2#post--create-a-new-blog-post-legacy).
+- [**Yelp**](https://www.yelp.com/developers/documentation/v3):
+  - *Search businesses*. [IDL specification](api-Yelp__operation-searchBusinesses). Link to the [API documentation](https://www.yelp.com/developers/documentation/v3/business_search).
+- [**YouTube**](https://developers.google.com/youtube/v3/getting-started?hl=es):
+  - *Get videos*. [IDL specification](api-Youtube__operation-getVideos). Link to the [API documentation](https://developers.google.com/youtube/v3/docs/videos/list).
+  - *Search*. [IDL specification](api-Youtube__operation-search). Link to the [API documentation](https://developers.google.com/youtube/v3/docs/search/list).
 
 ### 2. APIs not included in the study
 - **Napster**:
