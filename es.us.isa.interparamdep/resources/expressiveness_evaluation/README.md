@@ -37,12 +37,18 @@ This folder contains the IDL specifications of 31 operations from 23 different w
 - [**CityGrid**](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API):
   - *LatLon search*. [IDL specification](api-CityGrid__operation-latLonSearch.idl). Link to the [API documentation](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API#PlacesAPI-SearchUsingLatitudeandLongitude).
   - *Get places detail*. [IDL specification](api-CityGrid__operation-placesDetail.idl). Link to the [API documentation](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API#PlacesAPI-PlacesDetail).
+- [**Google Calendar**](https://developers.google.com/calendar/v3/reference):
+  - *Get instances of recurring event*. [IDL specification](api-GoogleCalendar__operation-getInstancesOfEvent.idl). Link to the [API documentation](https://developers.google.com/calendar/v3/reference/events/instances).
+  - *List events*. [IDL specification](api-GoogleCalendar__operation-listEvents.idl). Link to the [API documentation](https://developers.google.com/calendar/v3/reference/events/list).
 - [**Groupon**](http://partner-api.groupon.com/help/api-introduction):
   - *Get deals*. [IDL specification](api-Groupon__operation-getDeals.idl). Link to the [API documentation](http://partner-api.groupon.com/help/deal-api).
 - [**Hoiio**](https://openapi.hoiio.com/):
   - *Make call*. [IDL specification](api-Hoiio__operation-makeCall.idl). Link to the [API documentation](https://openapi.hoiio.com/voice-api/make-call/index.html).
 - [**Napster**](https://developer.napster.com/api/v2.2):
   - *Get favorites*. [IDL specification](api-Napster__operation-getFavorites.idl). Link to the [API documentation](https://developer.napster.com/api/v2.2#member-favorites).
+- [**Reddit**](https://www.reddit.com/dev/api):
+  - *Search*. [IDL specification](api-Reddit__operation-search.idl). Link to the [API documentation](https://www.reddit.com/dev/api#GET_search).
+  - *Upload subreddit image*. [IDL specification](api-Reddit__operation-uploadSrImg.idl). Link to the [API documentation](https://www.reddit.com/dev/api#POST_api_upload_sr_img).
 - [**Shopify**](https://help.shopify.com/en/api/reference):
   - *Create price rule*. [IDL specification](api-Shopify__operation-createPriceRule.idl). Link to the [API documentation](https://help.shopify.com/en/api/reference/discounts/pricerule#create-2020-01).
   - *Get price rules*. [IDL specification](api-Shopify__operation-getPriceRules.idl). Link to the [API documentation](https://help.shopify.com/en/api/reference/discounts/pricerule#index-2020-01).
