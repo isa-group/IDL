@@ -26,6 +26,14 @@ This folder contains the IDL specifications of 31 operations from 23 different w
   - *Search*. [IDL specification](api-Youtube__operation-search.idl). Link to the [API documentation](https://developers.google.com/youtube/v3/docs/search/list).
 
 ### 2. APIs not included in the study
+- [**Amazon Product Advertising**](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/Welcome.html):
+  - *Add items to cart*. [IDL specification](api-AmazonProductAdvertising__operation-cartAdd.idl). Link to the [API documentation](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/CartAdd.html).
+  - *Look up items*. [IDL specification](api-AmazonProductAdvertising__operation-itemLookup.idl). Link to the [API documentation](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/ItemLookup.html).
+- [**BitLy**](https://dev.bitly.com/v4_documentation.html):
+  - *Get bitlinks by group*. [IDL specification](api-BitLy__operation-getBitlinksByGroup.idl). Link to the [API documentation](https://dev.bitly.com/v4/#operation/getBitlinksByGroup).
+- [**Box**](https://developer.box.com/en/reference/):
+  - *Get items in folder*. [IDL specification](api-Box__operation-getItemsInFolder.idl). Link to the [API documentation](https://developer.box.com/en/reference/get-folders-id-items/).
+  - *Request access token*. [IDL specification](api-Box__operation-requestAccessToken.idl). Link to the [API documentation](https://developer.box.com/en/reference/post-oauth2-token/).
 - [**CityGrid**](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API):
   - *LatLon search*. [IDL specification](api-CityGrid__operation-latLonSearch.idl). Link to the [API documentation](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API#PlacesAPI-SearchUsingLatitudeandLongitude).
   - *Get places detail*. [IDL specification](api-CityGrid__operation-placesDetail.idl). Link to the [API documentation](https://citygridmedia.atlassian.net/wiki/spaces/citygridv2/pages/4980755/Places+API#PlacesAPI-PlacesDetail).
