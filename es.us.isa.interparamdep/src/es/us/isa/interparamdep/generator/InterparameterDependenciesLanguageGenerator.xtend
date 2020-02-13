@@ -35,6 +35,7 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.RelationalDepe
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.impl.GeneralTermImpl
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralTerm
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredicate
+import java.net.URLDecoder
 
 /**
  * Generates code from your model files on save.
@@ -43,11 +44,13 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredica
  */
 class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	
-	val String constraintsFilePath = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
-	val String stringIntMappingFilePath = System.getProperty("user.home") + "/constraints_folder/string_int_mapping.json"
+//	val String constraintsFilePath = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
+//	val String stringIntMappingFilePath = System.getProperty("user.home") + "/constraints_folder/string_int_mapping.json"
 //	val String constraintsFilePath = "./idl_aux_files/base_constraints.mzn"
 //	val String stringIntMappingFilePath = "./idl_aux_files/string_int_mapping.json"
 //	val Integer correctionFactor = 100
+	var String constraintsFilePath
+	var String stringIntMappingFilePath
 	var String csp
 //	var Map<String, Map<String, Integer>> paramStringIntMappings = new HashMap
 //	var Map<String, Map<Float, Integer>> paramFloatIntMappings = new HashMap<String, Map<Float, Integer>>()
@@ -56,6 +59,27 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
+		//This is only for make IDL usable in a webcontent
+		if(System.getProperty("user.dir").equals("C:\\WINDOWS\\system32") ||
+			System.getProperty("user.dir").equals("C:\\WINDOWS\\System32") ||
+			System.getProperty("user.dir").equals("/app")
+		){
+			
+			var String path = this.getClass().getClassLoader().getResource("").getPath();
+			var String fullPath = URLDecoder.decode(path, "UTF-8");
+			var String[] pathArr = fullPath.split("/WEB-INF/classes/");
+			fullPath = pathArr.get(0);
+			// to read a file from webcontent
+			constraintsFilePath = "/idl_aux_files/base_constraints.mzn"
+			constraintsFilePath = new File(fullPath).getPath() + File.separatorChar + constraintsFilePath;
+			stringIntMappingFilePath = "/idl_aux_files/string_int_mapping.json"
+			stringIntMappingFilePath =  new File(fullPath).getPath() + File.separatorChar + stringIntMappingFilePath;
+		}else{
+			constraintsFilePath = "./idl_aux_files/base_constraints.mzn"
+			stringIntMappingFilePath = "./idl_aux_files/string_int_mapping.json"
+		}
+		
+		
 		var file = new File(constraintsFilePath)
 		file.delete
 		if (!file.exists) {

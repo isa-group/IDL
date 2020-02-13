@@ -43,11 +43,14 @@ import java.net.URLDecoder
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
-	var String constraintsFilePath 
-	var String stringIntMappingFilePath
+	
+//	val String constraintsFilePath = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
+//	val String stringIntMappingFilePath = System.getProperty("user.home") + "/constraints_folder/string_int_mapping.json"
 //	val String constraintsFilePath = "./idl_aux_files/base_constraints.mzn"
 //	val String stringIntMappingFilePath = "./idl_aux_files/string_int_mapping.json"
 //	val Integer correctionFactor = 100
+	var String constraintsFilePath
+	var String stringIntMappingFilePath
 	var String csp
 //	var Map<String, Map<String, Integer>> paramStringIntMappings = new HashMap
 //	var Map<String, Map<Float, Integer>> paramFloatIntMappings = new HashMap<String, Map<Float, Integer>>()
@@ -58,7 +61,8 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 
 		//This is only for make IDL usable in a webcontent
 		if(System.getProperty("user.dir").equals("C:\\WINDOWS\\system32") ||
-			System.getProperty("user.dir").equals("C:\\WINDOWS\\System32") 
+			System.getProperty("user.dir").equals("C:\\WINDOWS\\System32") ||
+			System.getProperty("user.dir").equals("/app")
 		){
 			
 			var String path = this.getClass().getClassLoader().getResource("").getPath();
@@ -66,14 +70,15 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 			var String[] pathArr = fullPath.split("/WEB-INF/classes/");
 			fullPath = pathArr.get(0);
 			// to read a file from webcontent
-			constraintsFilePath = "/constraints_folder/base_constraints.mzn"
+			constraintsFilePath = "/idl_aux_files/base_constraints.mzn"
 			constraintsFilePath = new File(fullPath).getPath() + File.separatorChar + constraintsFilePath;
-			stringIntMappingFilePath = "/constraints_folder/string_int_mapping.json"
+			stringIntMappingFilePath = "/idl_aux_files/string_int_mapping.json"
 			stringIntMappingFilePath =  new File(fullPath).getPath() + File.separatorChar + stringIntMappingFilePath;
 		}else{
-			constraintsFilePath = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
-			stringIntMappingFilePath = System.getProperty("user.home") + "/constraints_folder/string_int_mapping.json"
+			constraintsFilePath = "./idl_aux_files/base_constraints.mzn"
+			stringIntMappingFilePath = "./idl_aux_files/string_int_mapping.json"
 		}
+		
 		
 		var file = new File(constraintsFilePath)
 		file.delete
