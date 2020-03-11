@@ -16,7 +16,7 @@ import java.io.BufferedWriter
 import java.io.FileWriter
 import com.fasterxml.jackson.databind.ObjectMapper
 
-import static es.us.isa.interparamdep.generator.ReservedWords.RESERVED_WORDS
+import static es.us.isa.interparamdep.generator.Utils.*;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency
@@ -43,10 +43,10 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredica
  */
 class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	
-	val String constraintsFilePath = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
-	val String stringIntMappingFilePath = System.getProperty("user.home") + "/constraints_folder/string_int_mapping.json"
-//	val String constraintsFilePath = "./idl_aux_files/base_constraints.mzn"
-//	val String stringIntMappingFilePath = "./idl_aux_files/string_int_mapping.json"
+//	val String constraintsFilePath = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
+//	val String stringIntMappingFilePath = System.getProperty("user.home") + "/constraints_folder/string_int_mapping.json"
+	val String constraintsFilePath = "./idl_aux_files/base_constraints.mzn"
+	val String stringIntMappingFilePath = "./idl_aux_files/string_int_mapping.json"
 //	val Integer correctionFactor = 100
 	var String csp
 //	var Map<String, Map<String, Integer>> paramStringIntMappings = new HashMap
@@ -167,22 +167,13 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 //	}
 	
 	/**
-	 * Remove and replace special characters from paramName
-	 */
-	def String parseParamName(String paramName) {
-		var String parsedParamName = paramName.replaceAll("[\\[\\]]", "").replaceAll("[\\.\\-\\/\\:]", "_")
-		if (RESERVED_WORDS.contains(parsedParamName))
-			parsedParamName += "_R"
-		return parsedParamName
-	}
-	
-	/**
-	 * Surround double with brackets if it's negative
+	 * Surround double with brackets if it's negative, and remove decimals (MiniZinc does not support floats)
 	 */
 	def String parseDouble(String doubleValue) {
-		if (doubleValue.contains('-'))
-			return ('(' + doubleValue + ')')
-		return doubleValue
+		val doubleWithoutDec = doubleValue.replaceAll("\\.\\d+", "")
+		if (doubleWithoutDec.contains('-'))
+			return ('(' + doubleWithoutDec + ')')
+		return doubleWithoutDec
 	}
 	
 	/**

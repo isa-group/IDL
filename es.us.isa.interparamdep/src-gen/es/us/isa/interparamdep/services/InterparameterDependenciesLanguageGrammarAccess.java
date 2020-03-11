@@ -1134,8 +1134,8 @@ public class InterparameterDependenciesLanguageGrammarAccess extends AbstractGra
 	}
 	
 	//terminal ID_SPECIAL_CHARS:
-	//	'[' '^'? ('a'..'z' | 'A'..'Z' | '_' | '.' | '-' | '/' | ':') ('a'..'z' | 'A'..'Z' | '_' | '.' | '-' | '/' | ':' |
-	//	'0'..'9')* ']';
+	//	'[' '^'? ('a'..'z' | 'A'..'Z' | '_' | '.' | '-' | '/' | ':' | '[' | ']') ('a'..'z' | 'A'..'Z' | '_' | '.' | '-' | '/'
+	//	| ':' | '[' | ']' | '0'..'9')* ']';
 	public TerminalRule getID_SPECIAL_CHARSRule() {
 		return tID_SPECIAL_CHARS;
 	}

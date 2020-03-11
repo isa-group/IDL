@@ -865,8 +865,8 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID_SPECIAL_CHARS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalInterparameterDependenciesLanguage.g:3839:23: ( '[' ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '/' | ':' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '/' | ':' | '0' .. '9' )* ']' )
-            // InternalInterparameterDependenciesLanguage.g:3839:25: '[' ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '/' | ':' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '/' | ':' | '0' .. '9' )* ']'
+            // InternalInterparameterDependenciesLanguage.g:3839:23: ( '[' ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '/' | ':' | '[' | ']' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '/' | ':' | '[' | ']' | '0' .. '9' )* ']' )
+            // InternalInterparameterDependenciesLanguage.g:3839:25: '[' ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '/' | ':' | '[' | ']' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '/' | ':' | '[' | ']' | '0' .. '9' )* ']'
             {
             match('['); 
             // InternalInterparameterDependenciesLanguage.g:3839:29: ( '^' )?
@@ -887,7 +887,7 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
 
             }
 
-            if ( (input.LA(1)>='-' && input.LA(1)<='/')||input.LA(1)==':'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            if ( (input.LA(1)>='-' && input.LA(1)<='/')||input.LA(1)==':'||(input.LA(1)>='A' && input.LA(1)<='[')||input.LA(1)==']'||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
 
             }
@@ -896,13 +896,22 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalInterparameterDependenciesLanguage.g:3839:74: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '/' | ':' | '0' .. '9' )*
+            // InternalInterparameterDependenciesLanguage.g:3839:82: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '/' | ':' | '[' | ']' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( ((LA10_0>='-' && LA10_0<=':')||(LA10_0>='A' && LA10_0<='Z')||LA10_0=='_'||(LA10_0>='a' && LA10_0<='z')) ) {
+                if ( (LA10_0==']') ) {
+                    int LA10_1 = input.LA(2);
+
+                    if ( ((LA10_1>='-' && LA10_1<=':')||(LA10_1>='A' && LA10_1<='[')||LA10_1==']'||LA10_1=='_'||(LA10_1>='a' && LA10_1<='z')) ) {
+                        alt10=1;
+                    }
+
+
+                }
+                else if ( ((LA10_0>='-' && LA10_0<=':')||(LA10_0>='A' && LA10_0<='[')||LA10_0=='_'||(LA10_0>='a' && LA10_0<='z')) ) {
                     alt10=1;
                 }
 
@@ -911,7 +920,7 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
             	case 1 :
             	    // InternalInterparameterDependenciesLanguage.g:
             	    {
-            	    if ( (input.LA(1)>='-' && input.LA(1)<=':')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            	    if ( (input.LA(1)>='-' && input.LA(1)<=':')||(input.LA(1)>='A' && input.LA(1)<='[')||input.LA(1)==']'||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
 
             	    }
@@ -1654,7 +1663,7 @@ public class InternalInterparameterDependenciesLanguageLexer extends Lexer {
             "",
             "\1\42\22\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
-            "\3\104\12\uffff\1\104\6\uffff\32\104\3\uffff\2\104\1\uffff\32\104",
+            "\3\104\12\uffff\1\104\6\uffff\33\104\1\uffff\3\104\1\uffff\32\104",
             "\0\105",
             "\0\105",
             "",
