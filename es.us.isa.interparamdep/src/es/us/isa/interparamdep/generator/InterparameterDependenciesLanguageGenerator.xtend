@@ -16,7 +16,7 @@ import java.io.BufferedWriter
 import java.io.FileWriter
 import com.fasterxml.jackson.databind.ObjectMapper
 
-import static es.us.isa.interparamdep.generator.Utils.*;
+import static es.us.isa.interparamdep.generator.ReservedWords.RESERVED_WORDS;
 
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralClause
 import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredefinedDependency
@@ -134,6 +134,16 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 ////		return 0
 //	}
 
+	/**
+	 * Remove and replace special characters from paramName
+	 */
+	def String parseIDLParamName(String paramName) {
+		var String parsedParamName = paramName.replaceAll("^\\[|\\]$", "").replaceAll("[\\.\\-\\/\\:\\[\\]]", "_")
+		if (RESERVED_WORDS.contains(parsedParamName))
+			parsedParamName += "_R"
+		return parsedParamName
+	}
+
 	def Integer stringToInt(String stringValue) {
 		val Integer intMapping = stringIntMapping.get(stringValue)
 		if (intMapping !== null) {
@@ -220,21 +230,21 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 					csp += "(not "
 				csp += "("
 	
-				csp += parseParamName(param.name) + "Set==1"
+				csp += parseIDLParamName(param.name) + "Set==1"
 				
 				if (isParamValueRelation(param)) {
 					csp += " /\\ "
 					if (param.booleanValue !== null) {
-						csp += parseParamName(param.name) + "==" + param.booleanValue
+						csp += parseIDLParamName(param.name) + "==" + param.booleanValue
 					} else if (param.doubleValue !== null) {
 //						csp += parseParamName(param.name) + param.relationalOp + correctNumber(param.doubleValue)
-						csp += parseParamName(param.name) + param.relationalOp + parseDouble(param.doubleValue)
+						csp += parseIDLParamName(param.name) + param.relationalOp + parseDouble(param.doubleValue)
 //					} else if (param.intValue !== null) {
 //						csp += parseParamName(param.name) + param.relationalOp + correctNumber(param.doubleValue)
 					} else if (param.stringValues.size !== 0) {
 						csp += "("
 						for (string: param.stringValues) {
-							csp += parseParamName(param.name) + "==" + stringToInt(string) + " \\/ "
+							csp += parseIDLParamName(param.name) + "==" + stringToInt(string) + " \\/ "
 						}
 						csp = csp.substring(0, csp.length-4) // Trim last " \\/ "
 						csp += ")"
@@ -269,17 +279,17 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 
 	def void writeRelationalDependency(RelationalDependency dep, boolean alone) {
 		if (alone)
-			csp += "((" + parseParamName(dep.param1.name) + "Set==1 /\\ " + parseParamName(dep.param2.name) + "Set==1) -> (" +
-					parseParamName(dep.param1.name) + dep.relationalOp + parseParamName(dep.param2.name) + "))"
+			csp += "((" + parseIDLParamName(dep.param1.name) + "Set==1 /\\ " + parseIDLParamName(dep.param2.name) + "Set==1) -> (" +
+					parseIDLParamName(dep.param1.name) + dep.relationalOp + parseIDLParamName(dep.param2.name) + "))"
 		else
-			csp += "(" + parseParamName(dep.param1.name) + "Set==1 /\\ " + parseParamName(dep.param2.name) + "Set==1 /\\ " +
-					parseParamName(dep.param1.name) + dep.relationalOp + parseParamName(dep.param2.name) + ")"
+			csp += "(" + parseIDLParamName(dep.param1.name) + "Set==1 /\\ " + parseIDLParamName(dep.param2.name) + "Set==1 /\\ " +
+					parseIDLParamName(dep.param1.name) + dep.relationalOp + parseIDLParamName(dep.param2.name) + ")"
 	}
 	
 	def void writeArithmeticDependency(ArithmeticDependency dep, boolean alone) {
 		csp += "(("
 		for (param: dep.eAllContents.filter(Param).toIterable) {
-			csp += parseParamName(param.name) + "Set==1 /\\ "
+			csp += parseIDLParamName(param.name) + "Set==1 /\\ "
 		}
 		if (alone) {
 			csp = csp.substring(0, csp.length-4) // Trim last " /\\ "
