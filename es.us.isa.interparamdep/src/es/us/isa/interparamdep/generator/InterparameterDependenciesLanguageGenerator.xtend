@@ -49,6 +49,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	val String stringIntMappingFilePath = "./idl_aux_files/string_int_mapping.json"
 //	val Integer correctionFactor = 100
 	var String csp
+	var String fullCsp
 //	var Map<String, Map<String, Integer>> paramStringIntMappings = new HashMap
 //	var Map<String, Map<Float, Integer>> paramFloatIntMappings = new HashMap<String, Map<Float, Integer>>()
 	var Integer stringToIntCounter
@@ -68,8 +69,9 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		stringIntMapping.clear
 		stringToIntCounter = 0
 		
+		fullCsp = "constraint ("
 		for (dependency: resource.allContents.filter(Dependency).toIterable) {
-			csp = "constraint "
+			csp = "("
 			if (dependency.dep.class == typeof(ConditionalDependencyImpl)) {
 				writeConditionalDependency(dependency.dep as ConditionalDependency)
 			} else if (dependency.dep.class == typeof(RelationalDependencyImpl)) {
@@ -82,10 +84,17 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 				throw new Exception("The dependency must be a conditional, an " + 
 					"arithmetic, a relational or a predefined one")
 			}
-			csp += ";"
+			csp += ")\n/\\\n"
 			
-		    out.append(csp + "\n")
+			fullCsp += csp
+			
 		}
+		fullCsp = fullCsp.substring(0, fullCsp.length-4)
+		fullCsp += ");"
+		if (fullCsp.contains("constrai);"))
+			fullCsp = ""
+		
+		out.append(fullCsp)
 		out.flush
 		out.close
 		
