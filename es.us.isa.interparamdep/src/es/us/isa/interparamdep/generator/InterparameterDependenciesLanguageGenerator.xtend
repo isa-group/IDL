@@ -43,15 +43,10 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredica
  */
 class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	
-//	val String constraintsFilePath = System.getProperty("user.home") + "/constraints_folder/constraints.mzn"
-//	val String stringIntMappingFilePath = System.getProperty("user.home") + "/constraints_folder/string_int_mapping.json"
 	val String constraintsFilePath = "./idl_aux_files/base_constraints.mzn"
 	val String stringIntMappingFilePath = "./idl_aux_files/string_int_mapping.json"
-//	val Integer correctionFactor = 100
 	var String csp
 	var String fullCsp
-//	var Map<String, Map<String, Integer>> paramStringIntMappings = new HashMap
-//	var Map<String, Map<Float, Integer>> paramFloatIntMappings = new HashMap<String, Map<Float, Integer>>()
 	var Integer stringToIntCounter
 	var Map<String, Integer> stringIntMapping = new HashMap
 
@@ -65,7 +60,6 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		}
 		var BufferedWriter out = new BufferedWriter(new FileWriter(file, false))
 		
-//		paramStringIntMappings.clear
 		stringIntMapping.clear
 		stringToIntCounter = 0
 		
@@ -114,35 +108,6 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	}
 	
 	
-//	def Integer correctInt(String intValue) {
-//		return Integer.parseInt(intValue)*correctionFactor
-//	}
-//	def Integer correctInt(Integer intValue) {
-//		return intValue*correctionFactor
-//	}
-//	def Integer correctFloat(String floatValue) {
-//		return new Integer((Float.parseFloat(floatValue)*correctionFactor) as int)
-//	}
-//
-//def Integer floatToInt(String param, Float floatValue) {
-//		var Integer intMapping = new Integer((floatValue*correctionFactor) as int)
-//		var Map<Float, Integer> paramMap =	paramFloatIntMappings.get(param)
-//		if (paramMap !== null) {
-//			var Integer paramFloatMapping = paramMap.get(floatValue)
-//			if (paramFloatMapping !== null) {
-//				intMapping = paramFloatMapping
-//			} else {
-//				paramMap.put(floatValue, intMapping)
-//			}
-//		} else {
-//			paramFloatIntMappings.put(param, new HashMap<Float, Integer>())
-//			paramFloatIntMappings.get(param).put(floatValue, intMapping)
-//		}
-//		
-//		return intMapping
-////		return 0
-//	}
-
 	/**
 	 * Remove and replace special characters from paramName
 	 */
@@ -163,27 +128,6 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		}
 	}
 	
-//	def Integer stringToInt(String param, String string) {
-//		var Integer intMapping = 0
-//		var Map<String, Integer> paramMap =	paramStringIntMappings.get(param)
-//		if (paramMap !== null) {
-//			var Integer paramStringMapping = paramMap.get(string)
-//			if (paramStringMapping !== null) {
-//				intMapping = paramStringMapping
-//			} else {
-//				var Entry<String,Integer> mappingWithHighestInt = paramMap.entrySet.stream
-//						.max(Comparator.comparing(entry | entry.value))
-//						.orElse(null)
-//				intMapping = mappingWithHighestInt.value+1
-//				paramMap.put(string, intMapping)
-//			}
-//		} else {
-//			paramStringIntMappings.put(param, new HashMap<String, Integer>())
-//			paramStringIntMappings.get(param).put(string, 0)
-//		}
-//		
-//		return intMapping
-//	}
 	
 	/**
 	 * Surround double with brackets if it's negative, and remove decimals (MiniZinc does not support floats)
@@ -246,10 +190,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 					if (param.booleanValue !== null) {
 						csp += parseIDLParamName(param.name) + "==" + param.booleanValue
 					} else if (param.doubleValue !== null) {
-//						csp += parseParamName(param.name) + param.relationalOp + correctNumber(param.doubleValue)
 						csp += parseIDLParamName(param.name) + param.relationalOp + parseDouble(param.doubleValue)
-//					} else if (param.intValue !== null) {
-//						csp += parseParamName(param.name) + param.relationalOp + correctNumber(param.doubleValue)
 					} else if (param.stringValues.size !== 0) {
 						csp += "("
 						for (string: param.stringValues) {
@@ -307,10 +248,6 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		writeOperation(dep.operation)
 		csp += dep.relationalOp
 		csp += parseDouble(dep.result)
-//		if (dep.doubleResult !== null)
-//			csp += correctFloat(dep.doubleResult)
-//		else 
-//			csp += correctInt(dep.intResult)
 		csp += "))"
 	}
 	
@@ -419,59 +356,6 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	}
 	
 }
-
-
-
-
-
-// ***************
-// ADDITIONAL CODE
-// ***************
-
-//			writeDependencyAndOrIterate(dependency.dep, 0, 0)
-//	    	Files.write(writePath, Arrays.asList("....................."),
-//		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-
-//		    for (subElement: dependency.eAllContents.toIterable) {
-//		    	Files.write(writePath, Arrays.asList(subElement.toString),
-//		    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//		    }
-//		    Files.write(writePath, Arrays.asList("---------------------"),
-//		    	StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-
-//	def void writeDependencyAndOrIterate(EObject object, int depthLevel, int objectDepthLevel) {
-//		if (object.class == typeof(ConditionalDependencyImpl)) {
-//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Conditional dependency: " + object),
-//	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//	    	Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Condition"),
-//	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//    		writeDependencyAndOrIterate((object as ConditionalDependency).condition, depthLevel+1, objectDepthLevel+1)
-//	    	Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Consequence"),
-//	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//    		writeDependencyAndOrIterate((object as ConditionalDependency).consequence, depthLevel+1, objectDepthLevel+1)
-//		} else if (object.class == typeof(ComparisonDependencyImpl)) {
-//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Arithmetic dependency: " + object),
-//    			StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//		} else if (object.class == typeof(GeneralPredefinedDependencyImpl)) {
-//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Predefined dependency: " + object),
-//	    		StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//	    	for (element: object.eContents) {
-//	    		writeDependencyAndOrIterate(element, depthLevel+1, objectDepthLevel+1)
-//	    	}
-//		} else {
-//			Files.write(writePath, Arrays.asList("("+ depthLevel + ", " + objectDepthLevel + ") - Object: " + object),
-//	    			StandardCharsets.UTF_8, StandardOpenOption.APPEND)
-//			for (subElement: object.eContents) {
-////				if (subElement.class == typeof(GeneralClauseImpl)) {
-////					writeLogicalClause((subElement as GeneralClause).firstElement, (subElement as GeneralClause).clauseContinuation)
-////				}
-//				writeDependencyAndOrIterate(subElement, depthLevel, objectDepthLevel+1)
-//			}
-//		}
-//	}
-
-
-
 
 
 
