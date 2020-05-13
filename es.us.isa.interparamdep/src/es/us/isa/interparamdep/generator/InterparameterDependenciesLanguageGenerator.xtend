@@ -43,22 +43,24 @@ import es.us.isa.interparamdep.interparameterDependenciesLanguage.GeneralPredica
  */
 class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	
-	val String constraintsFilePath = "./idl_aux_files/base_constraints.mzn"
-	val String stringIntMappingFilePath = "./idl_aux_files/string_int_mapping.json"
+	val String constraintsFileName = "base_constraints.mzn"
+	val String stringIntMappingFileName = "string_int_mapping.json"
 	var String csp
 	var String fullCsp
 	var Integer stringToIntCounter
 	var Map<String, Integer> stringIntMapping = new HashMap
+	
+	var String folderPath = "./idl_aux_files"
+	
+	def String getFolderPath() {
+		return this.folderPath
+	}
+	
+	def void setFolderPath(String folderPath) {
+		this.folderPath = folderPath
+	}
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-
-		var file = new File(constraintsFilePath)
-		file.delete
-		if (!file.exists) {
-		  file.parentFile.mkdirs
-		  file.createNewFile
-		}
-		var BufferedWriter out = new BufferedWriter(new FileWriter(file, false))
 		
 		stringIntMapping.clear
 		stringToIntCounter = 0
@@ -88,20 +90,31 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		if (fullCsp.contains("constrai);"))
 			fullCsp = ""
 		
+		// Export constraints to IDL file
+		var file = new File(folderPath + "/" + constraintsFileName)
+		file.delete
+		if (!file.exists) {
+		  file.parentFile.mkdirs
+		  file.createNewFile
+		}
+		var BufferedWriter out = new BufferedWriter(new FileWriter(file, false))
+		
 		out.append(fullCsp)
 		out.flush
 		out.close
 		
 		// Export string-int mapping to JSON
-		var ObjectMapper mapper = new ObjectMapper
-		var String json = mapper.writerWithDefaultPrettyPrinter.writeValueAsString(stringIntMapping)
-		var mappingFile = new File(stringIntMappingFilePath)
+		var mappingFile = new File(folderPath + "/" + stringIntMappingFileName)
 		mappingFile.delete
 		if (!mappingFile.exists) {
 		  mappingFile.parentFile.mkdirs
 		  mappingFile.createNewFile
 		}
         var BufferedWriter mappingOut = new BufferedWriter(new FileWriter(mappingFile, false))
+        
+		var ObjectMapper mapper = new ObjectMapper
+		var String json = mapper.writerWithDefaultPrettyPrinter.writeValueAsString(stringIntMapping)
+		
         mappingOut.append(json)
         mappingOut.flush
         mappingOut.close
@@ -111,14 +124,14 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	/**
 	 * Remove and replace special characters from paramName
 	 */
-	def String parseIDLParamName(String paramName) {
+	def private String parseIDLParamName(String paramName) {
 		var String parsedParamName = paramName.replaceAll("^\\[|\\]$", "").replaceAll("[\\.\\-\\/\\:\\[\\]]", "_")
 		if (RESERVED_WORDS.contains(parsedParamName))
 			parsedParamName += "_R"
 		return parsedParamName
 	}
 
-	def Integer stringToInt(String stringValue) {
+	def private Integer stringToInt(String stringValue) {
 		val Integer intMapping = stringIntMapping.get(stringValue)
 		if (intMapping !== null) {
 			return intMapping
@@ -132,7 +145,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	/**
 	 * Surround double with brackets if it's negative, and remove decimals (MiniZinc does not support floats)
 	 */
-	def String parseDouble(String doubleValue) {
+	def private String parseDouble(String doubleValue) {
 		val doubleWithoutDec = doubleValue.replaceAll("\\.\\d+", "")
 		if (doubleWithoutDec.contains('-'))
 			return ('(' + doubleWithoutDec + ')')
@@ -142,11 +155,11 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 	/**
 	 * Returns true if param is actually a ParamValueRelation. False if it is a Param
 	 */
-	def boolean isParamValueRelation(Param param) {
+	def private boolean isParamValueRelation(Param param) {
 		return param.stringValues.size !== 0 || param.patternString !== null || param.booleanValue !== null || param.doubleValue !== null
 	}
 	
-	def void writePredicate(GeneralPredicate predicate) {
+	def private void writePredicate(GeneralPredicate predicate) {
 		writeClause(predicate.firstClause)
 		
 		if (predicate.clauseContinuation !== null) {
@@ -162,7 +175,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		}
 	}
 	
-	def void writeClause(GeneralClause clause) {
+	def private void writeClause(GeneralClause clause) {
 		if (clause.predicate !== null) {
 			if (clause.not !== null)
 				csp += "(not "
@@ -219,7 +232,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		}
 	}
 	
-	def void writeConditionalDependency(ConditionalDependency dep) {
+	def private void writeConditionalDependency(ConditionalDependency dep) {
 		csp += "("
 		writePredicate(dep.condition)
 		csp += ") -> ("
@@ -227,7 +240,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		csp += ")"
 	}
 
-	def void writeRelationalDependency(RelationalDependency dep, boolean alone) {
+	def private void writeRelationalDependency(RelationalDependency dep, boolean alone) {
 		if (alone)
 			csp += "((" + parseIDLParamName(dep.param1.name) + "Set==1 /\\ " + parseIDLParamName(dep.param2.name) + "Set==1) -> (" +
 					parseIDLParamName(dep.param1.name) + dep.relationalOp + parseIDLParamName(dep.param2.name) + "))"
@@ -236,7 +249,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 					parseIDLParamName(dep.param1.name) + dep.relationalOp + parseIDLParamName(dep.param2.name) + ")"
 	}
 	
-	def void writeArithmeticDependency(ArithmeticDependency dep, boolean alone) {
+	def private void writeArithmeticDependency(ArithmeticDependency dep, boolean alone) {
 		csp += "(("
 		for (param: dep.eAllContents.filter(Param).toIterable) {
 			csp += parseIDLParamName(param.name) + "Set==1 /\\ "
@@ -251,7 +264,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		csp += "))"
 	}
 	
-	def void writeOperation(Operation operation) {
+	def private void writeOperation(Operation operation) {
 		if (operation.openingParenthesis === null) { // Alternative 1 of Operation
 			csp += operation.firstParam.name
 			writeOperationContinuation(operation.operationContinuation)
@@ -267,7 +280,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		}
 	}
 	
-	def void writeOperationContinuation(OperationContinuation opCont) {
+	def private void writeOperationContinuation(OperationContinuation opCont) {
 		csp += opCont.arithOp
 		if (opCont.additionalParams.class == typeof(ParamImpl)) {
 			csp += (opCont.additionalParams as Param).name
@@ -276,7 +289,7 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 		}
 	}
 	
-	def void writePredefinedDependency(GeneralPredefinedDependency dep) {		
+	def private void writePredefinedDependency(GeneralPredefinedDependency dep) {		
 		if (dep.not !== null)
 			csp += "(not "
 		csp += "("
@@ -318,17 +331,17 @@ class InterparameterDependenciesLanguageGenerator extends AbstractGenerator {
 			csp += ")"
 	}
 		
-	def void writeZeroOrOneOnlyOneElement(GeneralPredicate element, GeneralPredicate[] allElements) {
+	def private void writeZeroOrOneOnlyOneElement(GeneralPredicate element, GeneralPredicate[] allElements) {
 		writeZeroOrOneAllOrNoneElement(element, allElements, false, true)
 	}
 	
-	def void writeAllOrNoneElement(GeneralPredicate element, GeneralPredicate[] allElements) {
+	def private void writeAllOrNoneElement(GeneralPredicate element, GeneralPredicate[] allElements) {
 		writeZeroOrOneAllOrNoneElement(element, allElements, false, false)
 		csp += ") /\\ ("
 		writeZeroOrOneAllOrNoneElement(element, allElements, true, true)
 	}
 	
-	def void writeZeroOrOneAllOrNoneElement(GeneralPredicate element, GeneralPredicate[] allElements, boolean negateElement, boolean negateRemainingElements) {
+	def private void writeZeroOrOneAllOrNoneElement(GeneralPredicate element, GeneralPredicate[] allElements, boolean negateElement, boolean negateRemainingElements) {
 		if (negateElement) { // For AllOrNone dependencies
 			csp += "(not ("
 			writePredicate(element)
