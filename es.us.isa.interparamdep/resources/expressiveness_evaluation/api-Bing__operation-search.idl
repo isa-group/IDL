@@ -1,6 +1,0 @@
-ZeroOrOne([Accept-Language], setLang);
-AllOrNone([Accept-Language], cc);
-IF [X-Search-Location] LIKE '*head:*' THEN NOT [X-Search-Location] LIKE '*sp:0*';
-IF [X-Search-Location] LIKE '*are:*' THEN [X-Search-Location] LIKE 'alt:*';
-ZeroOrOne(mkt, cc);
-IF promote THEN answerCount;

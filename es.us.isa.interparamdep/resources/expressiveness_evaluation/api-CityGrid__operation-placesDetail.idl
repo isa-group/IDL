@@ -1,4 +1,0 @@
-Or(id, listing_id, infousa_id, public_id, phone);
-AllOrNone(id, id_type);
-Or(listing_id, public_id, infousa_id, phone);
-image_size_min <= image_size_max;

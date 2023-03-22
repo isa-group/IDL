@@ -1,2 +1,0 @@
-OnlyOne(what, type, tag, chain, radius, lat2 AND lon2);
-IF sort=='dist' THEN radius OR (lat2 AND lon2);

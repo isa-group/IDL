@@ -1,2 +1,0 @@
-ZeroOrOne(division_id, lat AND lng AND radius);
-AllOrNone(lat, lng);

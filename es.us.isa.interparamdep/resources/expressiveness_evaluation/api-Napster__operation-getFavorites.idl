@@ -1,1 +1,0 @@
-AllOrNone(rights, filter=='track'|'album');
