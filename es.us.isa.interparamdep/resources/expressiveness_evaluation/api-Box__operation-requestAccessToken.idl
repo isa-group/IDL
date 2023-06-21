@@ -1,7 +1,0 @@
-IF actor_token THEN grant_type=='urn:ietf:params:oauth:grant-type:token-exchange';
-IF assertion THEN grant_type=='urn:ietf:params:oauth:grant-type:jwt-bearer';
-IF client_id THEN grant_type=='urn:ietf:params:oauth:grant-type:jwt-bearer'|'authorization_code';
-IF client_secret THEN grant_type=='urn:ietf:params:oauth:grant-type:jwt-bearer'|'authorization_code';
-IF code THEN grant_type=='authorization_code';
-IF refresh_token THEN grant_type=='refresh_token';
-IF subject_token THEN grant_type=='urn:ietf:params:oauth:grant-type:token-exchange';

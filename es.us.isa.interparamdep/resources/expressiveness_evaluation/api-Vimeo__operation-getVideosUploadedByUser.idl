@@ -1,2 +1,0 @@
-ZeroOrOne(containing_uri, query);
-IF filter=='embeddable' THEN filter_embeddable;

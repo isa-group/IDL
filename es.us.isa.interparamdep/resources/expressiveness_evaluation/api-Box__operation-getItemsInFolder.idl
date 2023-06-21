@@ -1,3 +1,0 @@
-IF marker THEN usemarker==true;
-IF usemarker==true AND folder_id==0 THEN NOT sort;
-ZeroOrOne(usemarker==true, offset);

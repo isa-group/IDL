@@ -1,3 +1,0 @@
-OnlyOne(amount_off, percent_off);
-IF amount_off THEN currency;
-AllOrNone(duration=='repeating', duration_in_months);

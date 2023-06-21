@@ -1,2 +1,0 @@
-IF upload_type=='img' THEN name;
-Or(header, upload_type);
