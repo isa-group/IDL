@@ -1,5 +1,4 @@
 # Deploy your Hyas site to GitHub Pages
-
 name: GitHub Pages
 
 on:
