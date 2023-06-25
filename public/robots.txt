@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://saman-barakat.github.io/IDLWEBTest/sitemap.xml

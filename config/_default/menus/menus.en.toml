@@ -2,7 +2,7 @@
   name = "IDL"
   weight = 10
   identifier = "idl"
-  url = "/IDLWebsite/"
+  url = "/IDL/"
 
  [[publications]]
   name = "Publications"

@@ -15,6 +15,8 @@ homepage: false
 
 |                                                            |
 |:-----------------------------------------------------------|
+| Saman Barakat, Ana Belén Sánchez, Sergio Segura. <a href="#" target="_blank">Toward Dependency-Aware API Gateways</a>. JCIS 2022.|
+| Saman Barakat, Enrique Barba Roque, Ana Belén Sánchez, Sergio Segura. <a href="https://link.springer.com/chapter/10.1007/978-3-031-26507-5_21" target="_blank">Specification-Driven Code Generation for Inter-parameter Dependencies in Web APIs</a>. ICSOC 2022.|
 | Saman Barakat, Enrique Barba Roque, Ana Belén Sánchez, Sergio Segura. <a href="https://biblioteca.sistedes.es/articulo/automated-code-generation-for-inter-parameter-dependencies-in-rest-apis/" target="_blank">Automated Code Generation for Inter-parameter Dependencies in REST APIs</a>. JCIS 2022.|
 | Alberto Martin-Lopez, Sergio Segura, and Antonio Ruiz-Cortés. <a href="https://personales.us.es/sergiosegura/files/papers/martin22-fse.pdf" target="_blank">Online Testing of RESTful APIs: Promises and Challenges</a>. ESEC/FSE 2022.|
 {.table-striped}
