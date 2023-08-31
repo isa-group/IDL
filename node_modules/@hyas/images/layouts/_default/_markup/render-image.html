@@ -1,0 +1,6 @@
+{{- $markdownImageLinkClass := .Page.Params.imageMarkdownLinkClass | default .Page.Site.Params.imageMarkdownLinkClass -}}
+{{- $markdownImageClass := .Page.Params.imageMarkdownClass | default .Page.Site.Params.imageMarkdownClass -}}
+{{- $markdownImageWrapper := .Page.Params.imageMarkdownAddWrapper | default .Page.Site.Params.imageMarkdownAddWrapper -}}
+{{- $image := partial "helpers/lib/image-handling/find-image-src" (dict "src" .Destination "page" .Page "getRelative" true "ignoreBundleAssets" false) -}}
+{{- partial "helpers/wrapped-image" (dict "alt" .Text "altRendered" true "title" .Title "image" $image "page" .Page "noImageWrapper" (not $markdownImageWrapper) "linkClass" $markdownImageLinkClass "class" $markdownImageClass) -}}
+{{- /* Remove trailing newlines */ -}}

@@ -1,0 +1,5 @@
+{{- $ctx := . -}}
+{{- $curPage := .Page -}}
+{{- $featuredImages := $curPage.Scratch.Get "non-existent-scratch" -}}
+{{- $featuredImages = partial "helpers/lib/image-handling/find-featured-images" (dict "page" $curPage "getRelative" false) -}}
+{{- return $featuredImages -}}

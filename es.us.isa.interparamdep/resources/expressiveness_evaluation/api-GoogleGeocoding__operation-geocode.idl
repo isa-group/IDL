@@ -1,5 +1,0 @@
-OnlyOne(address OR components, latlng, place_id);
-ZeroOrOne(bounds, latlng OR place_id);
-ZeroOrOne(region, latlng OR place_id);
-ZeroOrOne(result_type, address OR components);
-ZeroOrOne(location_type, address OR components);

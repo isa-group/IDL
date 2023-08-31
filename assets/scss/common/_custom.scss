@@ -1,0 +1,35 @@
+/** Custom styles */
+html {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 40%;
+  margin-bottom: 10px;
+  padding: 0 15;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 5px;
+}
+
+.container::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  padding: 8px;
+  width: 100%;
+}

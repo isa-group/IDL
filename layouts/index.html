@@ -1,0 +1,182 @@
+{{ define "main" }}
+<section class="section container-fluid mt-n3 pb-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-0">{{ .Title }}</h1>
+    </div>
+    <div class="col-lg-10 col-xl-8">
+      <div class="text-center">
+      <p class="lead">{{ .Params.lead | safeHTML }}</p>
+      </div>
+      <div class="text-left">
+        <pre  >
+          <code >
+IF videoDimension THEN type=='video';          // Requires
+Or(title, description);                        // Or
+OnlyOne(From, MessagingServiceSid);            // OnlyOne
+AllOrNone(subject_id, subject_type);           // AllOrNone
+ZeroOrOne(radius, rankby=='distance');         // ZeroOrOne
+max_id >= since_id;                            // Relational
+offset + limit <= 1000;                        // Arithmetic
+IF type=='video' THEN OnlyOne(embed, data);    // Complex
+          </code>
+  </pre>
+      </div>
+      <div class="text-center p-lg-3">
+      <a class="btn btn-primary btn-lg px-4 mb-2" href="https://personales.us.es/sergiosegura/files/papers/martin-lopez21-tsc.pdf" role="button"
+        target="_blank">Publication</a>
+        <a class="btn btn-outline-primary btn-lg px-4 mb-2" href="https://github.com/isa-group/IDL" role="button"
+        target="_blank">Get Started</a>
+      </div>
+      </div>
+  </div>
+</section>
+{{ end }}
+{{ define "sidebar-prefooter" }}
+<div class="progress" style="height:10px">
+  <div class="progress-bar btn-primary" style="width:100%;height:10px"></div>
+</div>
+<br>
+<section class="section section-sm">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <p class="h2">IDL4OAS: An OAS Extension</p>
+        <p>"Extend your Open API Specification (OAS) documents with IDL dependencies and take automation to the next level: consistency checking, automated testing, code generation and more!".</p>
+        <div class="progress" style="height:2px">
+          <div class="progress-bar btn-primary" style="width:100%;height:2px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <section class="section section-sm">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 justify-content-center text-center">
+         <br>
+         <br>
+          <p>IDL dependencies can be straightforwardly specified in OAS specifications using <b>IDL4OAS</b>, an OAS
+            extension. You just need to include the keyword <b>x-dependencies</b> at the operation level, and include the
+            list of dependencies as an array.</p>
+          <div >
+            <img class="img-fluid" style="width:60%"
+              src="https://raw.githubusercontent.com/saman-barakat/IDLWebsite/master/images/IDL4OAS.png"
+              alt="IDL4OAS">
+          </div>
+          
+        </div>
+        <div class="col-lg-6">
+  
+          <pre>
+            <code>
+  paths:
+    /example/route:
+      get:
+        operationId: exampleOperation
+        parameters:
+          - in: query
+            type: boolean
+            required: false
+            name: p1
+          - in: query
+            type: integer
+            required: false
+            name: p2
+          - in: query
+            type: string
+            required: false
+            name: p3
+        x-dependencies:
+          - Or(p1, p2, p3);
+          - IF p1==true THEN p2;
+            </code>
+          </pre>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+<div class="progress" style="height:10px">
+  <div class="progress-bar btn-primary" style="width:100%;height:10px"></div>
+</div>
+<br>
+<section class="section section-sm">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <p class="h2">Automated Analysis</p>
+        <p>Check the consistency of IDL specification and identify bugs automatically by using IDLReasoner, a Java tool for the automated analysis of IDL specifications using constraint programming." </p>
+        <p>Are you interested in integrating these analyses in your own product? Have a look to the IDLReasoner REST API.</p>
+      </div>
+      <div class="text-center p-lg-3">
+        <a class="btn btn-primary btn-lg px-4 mb-2" href="https://personales.us.es/sergiosegura/files/papers/martin-lopez21-tsc.pdf" role="button"
+          target="_blank">Publication</a>
+          <a class="btn btn-outline-primary btn-lg px-4 mb-2" href="https://idlreasonerapi.azurewebsites.net/swagger-ui/index.html" role="button"
+          target="_blank">Get Started</a>
+        </div>
+    </div>
+</section>
+<div class="progress" style="height:10px">
+  <div class="progress-bar btn-primary" style="width:100%;height:10px"></div>
+</div>
+<br>
+<section class="section section-sm">
+  <div class="container">
+    <div class="row justify-content-center justify-content-center text-center">
+      <div class="col-lg-6 ">
+        <p class="h2">Automated Testing</p>
+        <p>Dependency-aware test case generation is supported by RESTest, a Java framework for the automated testing of REST APIs. Check how we found hundreds of bugs in industrial APIs leveraging our tools for the automated analysis of IDL dependencies.</p>
+      </div>
+      <div class="col-lg-6">
+        <img class="img-fluid"
+          src="https://camo.githubusercontent.com/7a21b9d694cc230d8c33b50e6a088100b02143b62deb5e9661adeb9d495c5da6/68747470733a2f2f706572736f6e616c65732e75732e65732f73657267696f7365677572612f77702d636f6e74656e742f75706c6f6164732f323032312f30312f524553544c6f676f5f426c61636b2e706e67"
+          alt="RESTest">
+      </div>
+      <div class="text-center p-lg-3">
+        <a class="btn btn-primary btn-lg px-4 mb-2" href="https://personales.us.es/sergiosegura/files/papers/martin-lopez20-icsoc.pdf" role="button"
+          target="_blank">Publication</a>
+          <a class="btn btn-outline-primary btn-lg px-4 mb-2" href="https://github.com/isa-group/RESTest" role="button"
+          target="_blank">Get Started</a>
+        </div>
+    </div>
+  </div>
+</section>
+<div class="progress" style="height:10px">
+  <div class="progress-bar btn-primary" style="width:100%;height:10px"></div>
+</div>
+<br>
+<section class="section section-sm">
+  <div class="container">
+    <div class="row justify-content-center justify-content-center text-center">
+      
+      <div class="col-lg-8">
+        <p class="h2">Code Generation</p>
+        <p>IDLGen is an extension of OpenAPI Generator. it relies on IDL4OAS to generate IDL code validation.</p>
+        <div class="border border-3 border-primary">
+          <img class="img-fluid" 
+            src="https://raw.githubusercontent.com/saman-barakat/IDLWebsite/master/assets/images/CodeGeneration.jpg"
+            alt="CodeGeneration">
+        </div>
+      </div>
+      <div class="text-center p-lg-3">
+        <a class="btn btn-primary btn-lg px-4 mb-2" href="https://link.springer.com/chapter/10.1007/978-3-031-26507-5_21" role="button"
+          target="_blank">Publication</a>
+          <a class="btn btn-outline-primary btn-lg px-4 mb-2" href="https://github.com/saman-barakat/openapi-generator/tree/IDLGen-extension" role="button"
+          target="_blank">Get Started</a>
+        </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ define "sidebar-footer" }}
+<section class="section section-sm container-fluid">
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-9">
+      {{- .Content -}}
+    </div>
+  </div>
+</section>
+{{ end }}

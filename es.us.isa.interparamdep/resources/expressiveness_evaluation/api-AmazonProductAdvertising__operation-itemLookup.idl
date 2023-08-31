@@ -1,3 +1,0 @@
-IF IdType AND NOT IdType=='ASIN' THEN SearchIndex;
-IF RelatedItemPage THEN ResponseGroup LIKE '*RelatedItems*';
-AllOrNone(ResponseGroup LIKE '*RelatedItems*', RelationshipType);

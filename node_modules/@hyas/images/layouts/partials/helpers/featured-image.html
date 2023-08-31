@@ -1,0 +1,11 @@
+{{- $ctx := . -}}
+{{- $curPage := . -}}
+{{- $featuredImage := partial "helpers/lib/image-handling/find-featured-images" (dict "page" $curPage "getRelative" false) -}}
+{{- with $featuredImage -}}
+    {{- if reflect.IsSlice . -}}
+        {{- range first 1 . -}}
+            {{- $featuredImage = . -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- return $featuredImage -}}

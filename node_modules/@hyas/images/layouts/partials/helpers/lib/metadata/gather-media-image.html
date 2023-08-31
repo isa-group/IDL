@@ -1,0 +1,6 @@
+{{- $curPage := . -}}
+{{- $images := partial "helpers/lib/metadata/gather-media-images" $curPage -}}
+{{- if reflect.IsSlice $images -}}
+    {{- $images = index $images 0 -}}
+{{- end -}}
+{{- return $images -}}

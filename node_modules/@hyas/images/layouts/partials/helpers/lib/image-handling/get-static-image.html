@@ -1,0 +1,29 @@
+{{- $destination := .destination -}}
+{{- $getRelative := .getRelative -}}
+{{- $finalDestination := "" -}}
+{{- $isFile := false -}}
+{{- $foundFile := false -}}
+{{- if $destination -}}
+    {{- /* fileExists operates relative to site root not relative to applicable directory */ -}}
+    {{- $filePath := path.Join "/static" $destination -}}{{- /* Non-resource images must be in 'static' */ -}}
+    {{- if fileExists $filePath -}}
+        {{- $foundFile = true -}}
+    {{- else -}}
+        {{- $filePath = path.Join "/static" site.Language.Lang $destination -}}
+        {{- if fileExists $filePath -}}
+            {{- $foundFile = true -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if eq $foundFile true -}}
+        {{- if not $getRelative -}}
+            {{- $finalDestination = $destination | absURL -}}
+        {{- else -}}
+            {{- $finalDestination = $destination | absURL | relURL -}}{{- /* Canonicalize the URL */ -}}
+        {{- end -}}
+    {{- else if strings.HasPrefix $destination "data:image" -}}
+        {{- $finalDestination = $destination -}}
+    {{- end -}}
+{{- end -}}
+{{- return $finalDestination -}}
+{{- /* Remove trailing newlines */ -}}
+

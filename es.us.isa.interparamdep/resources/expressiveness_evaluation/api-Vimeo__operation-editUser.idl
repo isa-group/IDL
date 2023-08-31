@@ -1,1 +1,0 @@
-IF password THEN videos.privacy.view=='password';

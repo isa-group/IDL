@@ -1,0 +1,95 @@
+{{- $destination := .src -}}
+{{- $curPage := .page -}}
+{{- $getRelative := .getRelative -}}
+{{- $ignoreBundleAssets := .ignoreBundleAssets -}}
+{{- $ignoreSiteAssets := .ignoreSiteAssets -}}
+{{- $ignoreStaticImages := .ignoreStaticImages -}}
+{{- $alt := .alt -}}
+{{- $title := .title -}}
+{{- $finalSearch := .finalSearch | default true -}}
+{{- $external := false -}}
+{{- $base64 := false -}}
+{{- $finalDestination := "" -}}
+{{- $finalSrc := "" -}}
+{{- $path := "" -}}
+{{- $imageResource := $curPage.Scratch.Get "non-existent-scratch" -}}
+{{- if strings.HasPrefix $destination "data:image" -}}
+    {{- $base64 = true -}}
+{{- else -}}
+    {{- with urls.Parse $destination -}}
+        {{- if or .Host .Scheme -}}
+            {{- $external = true -}}
+        {{- end -}}
+        {{- $path = .Path -}}
+    {{- else -}}
+        {{- errorf printf "Unable to parse image src '%s'" $destination -}}
+    {{- end -}}
+{{- end -}}
+{{- if and $path (not $external) (not $base64) -}}
+    {{- /* For compatibility with Git repos, strip relative paths; the repos need them */ -}}
+    {{- /* but resources expect a different 'root' */ -}}
+    {{- if hasPrefix $path ".." -}}
+        {{ $newPath := "" -}}
+        {{ $doneRelStrip := false -}}
+        {{- range split $path "/" -}}
+            {{- if or (ne . "..") $doneRelStrip -}}
+                {{- $newPath = path.Join $newPath  . -}}
+                {{- $doneRelStrip = true -}}
+            {{- end -}}
+        {{- end -}}
+        {{- if ne $newPath "" -}}
+            {{- $path = $newPath -}}
+        {{- end -}}
+    {{- end -}}
+    {{- /* Prefer page bundle assets unless we are ignoring page bundles */ -}}
+    {{- if ne $ignoreBundleAssets true -}}
+        {{- $imageResources := $curPage.Resources.ByType "image" -}}
+        {{- $imageResource = $imageResources.GetMatch (printf "*%s*" $path) -}}
+    {{- end -}}
+    {{- /* Next prefer assets from 'assets' directory */ -}}
+    {{- if and (not $imageResource) (ne $ignoreSiteAssets true) -}}
+        {{- $imageResource = resources.Get $path -}}
+    {{- end -}}
+    {{- /* Finally (for local images), try the 'static' directory (not a resource so no Hugo Pipes) */ -}}
+    {{- if and (not $imageResource) (ne $ignoreStaticImages true) -}}
+        {{- $finalDestination = partial "helpers/lib/image-handling/get-static-image" (dict "destination" $path "getRelative" $getRelative) -}}
+    {{- else if $imageResource -}}
+        {{- /* For images resources, get the resulting link to the image */ -}}
+        {{- $finalDestination = partial "helpers/lib/image-handling/get-resource-link" (dict "imageResource" $imageResource "getRelative" $getRelative) -}}
+    {{- end -}}
+    {{- if and (or (not $finalDestination) (eq $finalDestination "")) (ne $finalSearch false) -}}
+        {{- if $curPage.File -}}
+            {{- errorf (printf "Image %s is missing and not external for page %s" $path $curPage.File.Path) -}}
+        {{- else -}}
+            {{- errorf (printf "Image %s is missing and not external for page %s" $path $curPage.Title) -}}
+        {{- end -}}
+    {{- end -}}
+{{- else if $external -}}{{- /* Use external URLs verbatim (not as a resource so no Hugo Pipes; we don't use 0.92.x only functionality, yet) */ -}}
+    {{- $finalDestination = $destination -}}
+{{- else if $base64 -}}
+    {{- $finalSrc = $destination -}}
+{{- end -}}
+{{- $image := (dict "imageResource" $imageResource "link" $finalDestination "url" $finalDestination "specialSrc" $finalSrc) -}}
+{{- with $image.imageResource -}}
+    {{- if partial "helpers/lib/image-handling/is-processable" . -}}
+        {{- $image = $image | merge (dict "width" .Width "height" .Height) -}}
+    {{- end -}}
+{{- end -}}
+{{- with ($alt | default $curPage.Params.imageFeaturedAlt | default $curPage.Params.imageCoverAlt | default $curPage.Params.imageThumbnailAlt | default $curPage.Params.featuredImageAlt | default $curPage.Params.featuredAlt) -}}
+    {{ $image = $image | merge (dict "alt" .) -}}
+{{- end -}}
+{{- with ($title | default $curPage.Params.imageFeaturedTitle | default $curPage.Params.imageCoverTitle | default $curPage.Params.imageThumbnailTitle | default $curPage.Params.featuredImageTitle | default $curPage.Params.featuredTitle) -}}
+    {{ $image = $image | merge (dict "title" .) -}}
+{{- end -}}
+{{- if $finalDestination -}}
+    {{- $secUrl := $finalDestination | absURL -}}
+    {{- with urls.Parse $secUrl -}}
+        {{- if eq .Scheme "https" -}}
+           {{- $image = $image | merge (dict "secure_url" $secUrl) -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- if not (or $image.imageResource $image.link $image.specialSrc) -}}
+    {{- $image = $curPage.Scratch.Get "non-existent-scratch" -}}
+{{- end -}}
+{{- return $image -}}
