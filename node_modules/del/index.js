@@ -1,14 +1,14 @@
-'use strict';
-const {promisify} = require('util');
-const path = require('path');
-const globby = require('globby');
-const isGlob = require('is-glob');
-const slash = require('slash');
-const gracefulFs = require('graceful-fs');
-const isPathCwd = require('is-path-cwd');
-const isPathInside = require('is-path-inside');
-const rimraf = require('rimraf');
-const pMap = require('p-map');
+import {promisify} from 'node:util';
+import path from 'node:path';
+import process from 'node:process';
+import {globby, globbySync} from 'globby';
+import isGlob from 'is-glob';
+import slash from 'slash';
+import gracefulFs from 'graceful-fs';
+import isPathCwd from 'is-path-cwd';
+import isPathInside from 'is-path-inside';
+import rimraf from 'rimraf';
+import pMap from 'p-map';
 
 const rimrafP = promisify(rimraf);
 
@@ -25,7 +25,7 @@ const rimrafOptions = {
 	rmdir: gracefulFs.rmdir,
 	rmdirSync: gracefulFs.rmdirSync,
 	readdir: gracefulFs.readdir,
-	readdirSync: gracefulFs.readdirSync
+	readdirSync: gracefulFs.readdirSync,
 };
 
 function safeCheck(file, cwd) {
@@ -52,19 +52,29 @@ function normalizePatterns(patterns) {
 	return patterns;
 }
 
-module.exports = async (patterns, {force, dryRun, cwd = process.cwd(), ...options} = {}) => {
+export async function deleteAsync(patterns, {force, dryRun, cwd = process.cwd(), onProgress = () => {}, ...options} = {}) {
 	options = {
 		expandDirectories: false,
 		onlyFiles: false,
 		followSymbolicLinks: false,
 		cwd,
-		...options
+		...options,
 	};
 
 	patterns = normalizePatterns(patterns);
 
-	const files = (await globby(patterns, options))
-		.sort((a, b) => b.localeCompare(a));
+	const paths = await globby(patterns, options);
+	const files = paths.sort((a, b) => b.localeCompare(a));
+
+	if (files.length === 0) {
+		onProgress({
+			totalCount: 0,
+			deletedCount: 0,
+			percent: 1,
+		});
+	}
+
+	let deletedCount = 0;
 
 	const mapper = async file => {
 		file = path.resolve(cwd, file);
@@ -77,6 +87,14 @@ module.exports = async (patterns, {force, dryRun, cwd = process.cwd(), ...option
 			await rimrafP(file, rimrafOptions);
 		}
 
+		deletedCount += 1;
+
+		onProgress({
+			totalCount: files.length,
+			deletedCount,
+			percent: deletedCount / files.length,
+		});
+
 		return file;
 	};
 
@@ -85,20 +103,20 @@ module.exports = async (patterns, {force, dryRun, cwd = process.cwd(), ...option
 	removedFiles.sort((a, b) => a.localeCompare(b));
 
 	return removedFiles;
-};
+}
 
-module.exports.sync = (patterns, {force, dryRun, cwd = process.cwd(), ...options} = {}) => {
+export function deleteSync(patterns, {force, dryRun, cwd = process.cwd(), ...options} = {}) {
 	options = {
 		expandDirectories: false,
 		onlyFiles: false,
 		followSymbolicLinks: false,
 		cwd,
-		...options
+		...options,
 	};
 
 	patterns = normalizePatterns(patterns);
 
-	const files = globby.sync(patterns, options)
+	const files = globbySync(patterns, options)
 		.sort((a, b) => b.localeCompare(a));
 
 	const removedFiles = files.map(file => {
@@ -118,4 +136,4 @@ module.exports.sync = (patterns, {force, dryRun, cwd = process.cwd(), ...options
 	removedFiles.sort((a, b) => a.localeCompare(b));
 
 	return removedFiles;
-};
+}
