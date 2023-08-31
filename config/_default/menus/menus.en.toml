@@ -28,7 +28,7 @@
 
 [[main]]
 name = "Playground"
-url = "https://idlanalyzer.herokuapp.com/"
+url = "https://idlwebeditor.azurewebsites.net/"
 weight = 25
 
 #[[main]]
