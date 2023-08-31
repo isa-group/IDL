@@ -1,0 +1,38 @@
+{{- $curPage := .page -}}
+{{- $relativeUrl := .getRelative -}}
+{{- $featuredImages := $curPage.Scratch.Get "non-existent-scratch" -}}
+{{- $foundImages := $curPage.Scratch.Get "non-existent-scratch" -}}
+{{- $foundImagesByName := $curPage.Scratch.Get "non-existent-scratch" -}}
+{{- $image := $curPage.Scratch.Get "non-existent-scratch" -}}
+{{- /* Try page-level images first */ -}}
+{{- $featuredParam := $curPage.Params.imageFeatured | default $curPage.Params.imageCover | default $curPage.Params.imageThumbnail | default $curPage.Params.featured_image -}}
+{{- if $featuredParam -}}
+    {{- $foundImages = partial "helpers/lib/image-handling/find-image-maps" (dict "page" $curPage "images" $featuredParam "ignoreBundleAssets" false "ignoreSiteAssets" false "ignoreStaticImages" true "getRelative" $relativeUrl "finalSearch" false) -}}
+{{- end -}}
+{{- $imageResources := $curPage.Resources.ByType "image" -}}
+{{ if and (not $foundImages) $imageResources -}}
+    {{- $foundImagesByName = $imageResources.Match "*feature*" -}}
+{{- end -}}
+{{ if and (not $foundImages) (not $foundImagesByName) $imageResources -}}
+    {{- $foundImagesByName = $imageResources.Match "{*cover*,*thumbnail*}" -}}
+{{- end -}}
+{{ if and (not $foundImages) (not $foundImagesByName) $featuredParam -}}
+    {{- $foundImages = partial "helpers/lib/image-handling/find-image-maps" (dict "page" $curPage "images" $featuredParam "ignoreBundleAssets" true "ignoreSiteAssets" true "ignoreStaticImages" false "getRelative" $relativeUrl "finalSearch" true) -}}
+{{- end -}}
+{{- with $foundImagesByName -}}
+    {{- if reflect.IsSlice . -}}
+        {{- $featuredImages = (slice) -}}
+        {{- range . -}}
+            {{ $image := partial "helpers/lib/image-handling/generate-featured-map" (dict "page" $curPage "imageResource" . "getRelative" $relativeUrl) -}}
+            {{- $featuredImages = $featuredImages | append $image -}}
+        {{- end -}}
+    {{- else -}}
+        {{ $image := partial "helpers/lib/image-handling/generate-featured-map" (dict "page" $curPage "imageResource" . "getRelative" $relativeUrl) -}}
+        {{- $featuredImages = $image -}}
+    {{- end -}}
+{{- else -}}
+    {{- with $foundImages -}}
+        {{- $featuredImages = . -}}
+    {{- end -}}
+{{- end -}}
+{{- return $featuredImages -}}

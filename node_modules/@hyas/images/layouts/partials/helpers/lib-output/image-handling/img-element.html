@@ -1,0 +1,16 @@
+{{- $ctx := . -}}
+{{- $inImgMap := .imgMap -}}
+{{- $inPage := .page -}}
+{{- $inAlt := .alt -}}
+{{- $inTitle := .title -}}
+{{- $inUseSrcSet := .useSrcSet -}}
+{{- $inSizesAttr := .sizesAttr -}}
+{{- $inLoading := .loading -}}
+{{- $inClass := .class -}}
+{{- $loading := $inLoading | default $inPage.Params.imageLoading | default $inPage.Site.Params.imageLoading -}}
+<img{{ with $inClass }} class="{{ . }}"{{ end }}{{ with $loading }} loading="{{ . }}"{{ end -}}
+{{- if and (ge (len $inImgMap.srcSet) 1) $inUseSrcSet }} srcset="{{ delimit $inImgMap.srcSet ", " }}" sizes="{{ $inSizesAttr }}"
+{{- end }} src="{{ $inImgMap.finalSrc | safeURL }}"
+{{- with $inAlt }} alt="{{ . }}"{{- end }}{{- with $inTitle }} title="{{ . }}"{{- end }}
+{{- with $inImgMap.width }} width="{{ . }}"{{- end }}{{- with $inImgMap.height }} height="{{ . }}"{{- end -}}>
+{{- /* Clean up trailing whitespace */ -}}

@@ -1,0 +1,42 @@
+{{- $ctx := . -}}
+{{- $curPage := .page -}}
+{{- $imageResource := .imageResource -}}
+{{- $getRelative := .getRelative }}
+{{- $image := $curPage.Scratch.Get "non-existent-scratch" -}}
+{{- with $imageResource -}}
+    {{- if eq $getRelative true -}}
+        {{- $image = (dict "imageResource" . "link" .RelPermalink "url" .RelPermalink) -}}
+    {{- else -}}
+        {{- $image = (dict "imageResource" . "link" .Permalink "url" .Permalink) -}}
+    {{- end -}}
+    {{- with . -}}
+        {{- if partial "helpers/lib/image-handling/is-processable" . -}}
+            {{- $image = $image | merge (dict "width" .Width "height" .Height) -}}
+        {{- else -}}
+            {{- with ($curPage.Params.imageFeaturedWidth | default $curPage.Params.imageCoverWidth | default $curPage.Params.featuredImageWidth | default $curPage.Params.featuredWidth) -}}
+                {{ $image = $image | merge (dict "width" .) -}}
+            {{- end -}}
+            {{- with ($curPage.Params.imageFeaturedHeight | default $curPage.Params.imageCoverHeight | default $curPage.Params.featuredImageHeight | default $curPage.Params.featuredHeight) -}}
+                {{ $image = $image | merge (dict "height" .) -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- with ($curPage.Params.imageFeaturedAlt | default $curPage.Params.imageCoverAlt | default $curPage.Params.imageThumbnailAlt | default $curPage.Params.featuredImageAlt | default $curPage.Params.featuredAlt) -}}
+        {{ $image = $image | merge (dict "alt" .) -}}
+    {{- end -}}
+    {{- with ($curPage.Params.imageFeaturedTitle | default $curPage.Params.imageCoverTitle | default $curPage.Params.imageThumbnailTitle | default $curPage.Params.featuredImageTitle | default $curPage.Params.featuredTitle) -}}
+        {{ $image = $image | merge (dict "title" .) -}}
+    {{- end -}}
+    {{- if $image.url -}}
+        {{- $secUrl := $image.url | absURL -}}
+        {{- with urls.Parse $secUrl -}}
+            {{- if eq .Scheme "https" -}}
+            {{- $image = $image | merge (dict "secure_url" $secUrl) -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if not (or $image.imageResource $image.link) -}}
+        {{- $image = $curPage.Scratch.Get "non-existent-scratch" -}}
+    {{- end -}}
+{{- end -}}
+{{- return $image -}}

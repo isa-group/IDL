@@ -1,0 +1,21 @@
+{{- /* Returns a slice containing strings that can be used by a 'srcset' attribute
+     * if you add appropriate delimiters.
+     */ -}}
+{{- $ctx := . -}}
+{{- $srcSet := (slice) -}}
+{{- $imageSizes := .imageSizes -}}
+{{- $imageConversion := .imageConversion -}}
+{{- $fullImage := .fullImage -}}
+{{- $fullConvertedImage := .fullConvertedImage -}}
+{{- $lastSize := 0 -}}
+{{- range $size := $imageSizes -}}
+    {{- /* Don't generate images larger than original size; it's a waste of bandwidth and storage */ -}}
+    {{- if ge $fullImage.Width $size -}}
+        {{- $srcSet = $srcSet | append (printf "%s %dw" ($fullImage.Resize (printf "%dx%s" (int $size) $imageConversion)).RelPermalink (int $size)) -}}
+        {{- $lastSize = int $size -}}
+    {{- end -}}
+{{- end -}}
+{{- if ne $lastSize $fullConvertedImage.Width -}}
+    {{- $srcSet = $srcSet | append (printf "%s %dw" $fullConvertedImage.RelPermalink $fullConvertedImage.Width) -}}
+{{- end -}}
+{{- return $srcSet -}}

@@ -1,0 +1,17 @@
+{{- $curPage := . -}}
+{{- $images := (slice) -}}
+{{- with .Params.images -}}
+    {{- $images = partial "helpers/lib/image-handling/find-image-maps" (dict "images" . "page" $curPage "getRelative" false "ignoreBundleAssets" false "ignoreSiteAssets" false) -}}
+{{- end -}}
+{{- if eq (len $images) 0 -}}
+    {{- with $curPage.Site.Params.images -}}
+        {{- $images = partial "helpers/lib/image-handling/find-image-maps" (dict "images" . "page" $curPage "getRelative" false "ignoreBundleAssets" true "ignoreSiteAssets" false) -}}
+    {{- end -}}
+{{- end -}}
+{{- if eq (len $images) 0 -}}
+    {{- $images = partial "helpers/lib/image-handling/find-featured-images" (dict "page" $curPage "getRelative" false "ignoreBundleAssets" false "ignoreSiteAssets" false) -}}
+{{- end -}}
+{{- if $images -}}
+    {{- $images = partial "helpers/lib/microformats/generate-microformat-images" (dict "page" $curPage "images" $images) -}}
+{{- end -}}
+{{- return $images -}}

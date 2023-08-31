@@ -1,0 +1,119 @@
+{{- /* returns a dict (map) containing the final 'src' (URL) for the full image and
+     * a (possibly empty) slice containing the elements to be used by a 'srcset' attribute
+     */ -}}
+{{- $ctx := . -}}
+{{- $inWidth := .width -}}
+{{- $inHeight := .height -}}
+{{- $inImage := .image -}}{{- /* Image dict has .imageResource if available and has .link */ -}}
+{{- $inPage := .page -}}
+{{- $inImageSizes := .imageSizes -}}
+{{- $inSingleSize := .singleSize -}}
+{{- $inConvertTo := .convertTo -}}
+{{- $inConvertMethod := .convertMethod | default "Resize" -}}
+{{- $inRelativeUrl := .getRelative | default true -}}
+
+{{- $fullImage := $inImage.imageResource -}}
+{{- $finalSrc := "" -}}
+{{- $srcSet := (slice) -}}
+{{- $fullWidth := $inWidth -}}
+{{- $fullHeight := $inHeight -}}
+
+{{- with $inPage -}}
+    {{- if $fullImage -}}
+        {{- $fullConvertedImage := $fullImage -}}
+
+        {{- if and (ne $inHeight "auto") (ne $inHeight "") -}}
+            {{- $fullHeight = $inHeight | int -}}
+        {{- else -}}
+            {{- $fullHeight = "" -}}
+        {{- end -}}
+
+        {{- if (partial "helpers/lib/image-handling/is-processable" $fullImage) -}}
+            {{- $fullWidth = $inWidth | default $fullImage.Width | int -}}
+            {{- $responsiveImages := $inPage.Params.imageResponsive | default $inPage.Site.Params.imageResponsive | default true -}}
+            {{- $convertTo := $inConvertTo | default $inPage.Params.imageConvertTo | default $inPage.Site.Params.imageConvertTo -}}
+            {{- $imageSizes := $inImageSizes | default $inPage.Params.imageImageSizes | default $inPage.Site.Params.imageImageSizes | default (slice "480" "720" "1080" "1280" "1600" "2048") -}}
+            {{- $singleSize := not $responsiveImages -}}
+            {{- if and $inSingleSize (ne $inSingleSize false) -}}
+                {{- $responsiveImages = false -}}
+                {{- $singleSize = true -}}
+                {{- if $fullHeight -}}
+                    {{- $imageSizes = (slice (printf "%dx%d" $fullWidth $fullHeight)) -}}
+                {{- else -}}
+                    {{- $imageSizes = (slice (printf "%dx" $fullWidth)) -}}
+                {{- end -}}
+            {{- end -}}
+
+            {{- $imageConversion := "" -}}
+            {{- $imageOptions := "" -}}
+
+            {{- if $fullHeight -}}
+                {{- $imageOptions = printf "%dx%d" $fullWidth $fullHeight -}}
+            {{- else -}}
+                {{- $imageOptions = printf "%dx" $fullWidth -}}
+            {{- end -}}
+
+            {{- with $convertTo -}}
+                {{- if $fullHeight -}}
+                    {{- $imageOptions = printf "%dx%d %s" $fullWidth $fullHeight . -}}
+                {{- else -}}
+                    {{- $imageOptions = printf "%dx %s" $fullWidth . -}}
+                {{- end -}}
+                {{- $imageConversion = printf " %s" . -}}
+            {{- end -}}
+
+            {{- if eq $inConvertMethod "Resize" -}}
+                {{- if or (ne $fullImage.Width $fullWidth) (ne $fullImage.Height $fullHeight) $convertTo -}}
+                    {{- $fullConvertedImage = $fullImage.Resize $imageOptions -}}
+                {{- else -}}
+                    {{- $fullConvertedImage = $fullImage -}}
+                {{- end -}}
+            {{- else if eq $inConvertMethod "Fit" -}}
+                {{- if or (eq $fullHeight "") (eq (int $fullHeight) 0) -}}
+                    {{- errorf (printf "Must specify a height with 'Fit' for image '%s' on page '%s'" $fullImage.RelPermalink $inPage) -}}
+                {{- end -}}
+                {{- $fullConvertedImage = $fullImage.Fit $imageOptions -}}
+            {{- else if eq $inConvertMethod "Fill" -}}
+                {{- if or (eq $fullHeight "") (eq (int $fullHeight) 0) -}}
+                    {{- errorf (printf "Must specify a height with 'Fill' for image '%s' on page '%s'" $fullImage.RelPermalink $inPage) -}}
+                {{- end -}}
+                {{- $fullConvertedImage = $fullImage.Fill $imageOptions -}}
+            {{- else if eq $inConvertMethod "GrowFit" -}}
+                {{- if or (eq $fullHeight "") (eq (int $fullHeight) 0) -}}
+                    {{- errorf (printf "Must specify a height with 'GrowFit' for image '%s' on page '%s'" $fullImage.RelPermalink $inPage) -}}
+                {{- end -}}
+                {{- $fullConvertedImage = $fullImage.Resize (printf "%dx%s" $fullWidth $imageConversion) -}}
+                {{- $fullConvertedImage = $fullConvertedImage.Fit (printf "%dx%d%s" $fullWidth $fullHeight $imageConversion) -}}
+            {{- else -}}
+                {{- $fullConvertedImage = $fullImage.Resize (printf "%dx%d%s" $fullImage.Width $fullImage.Height $imageConversion) -}}
+            {{- end -}}
+            {{- $finalSrc = $fullConvertedImage.RelPermalink -}}
+            {{- $fullHeight = $fullConvertedImage.Height -}}
+            {{- $fullWidth = $fullConvertedImage.Width -}}
+            {{- $fullImage = $fullConvertedImage -}}
+            {{- if not $singleSize -}}
+                {{- $srcSetImageSizes := $imageSizes -}}
+                {{- if $responsiveImages -}}
+                    {{- $srcSet = partial "helpers/lib/image-handling/generate-srcset-slice" (dict "imageSizes" $imageSizes "imageConversion" $imageConversion "fullImage" $fullImage "fullConvertedImage" $fullConvertedImage "getRelative" $inRelativeUrl) -}}
+                {{- end -}}
+            {{- end -}}
+        {{- else -}}{{- /* Is an image but not of a processable format */ -}}
+            {{- $finalSrc = $fullImage.RelPermalink -}}
+        {{- end -}}
+    {{- else if not $inImage.specialSrc -}}{{- /* Is not a known image format for Hugo */ -}}
+        {{- $finalSrc = $inImage.link -}}
+    {{- else -}}
+        {{- $finalSrc = $inImage.specialSrc | safeHTMLAttr -}}
+    {{- end -}}
+{{- end -}}
+{{- if $finalSrc -}}
+   {{- if not $inImage.specialSrc -}}
+        {{- if not $inRelativeUrl -}}
+            {{- $finalSrc = $finalSrc | absURL -}}
+        {{- else -}}
+            {{- $finalSrc = $finalSrc | absURL | relURL -}} {{- /* Canonicalize url */ -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- $retMap := (dict "finalSrc" $finalSrc "srcSet" $srcSet "width" $fullWidth "height" $fullHeight "fullImage" $fullImage) -}}
+{{- return $retMap -}}

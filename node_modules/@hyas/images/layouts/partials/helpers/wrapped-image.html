@@ -1,0 +1,144 @@
+{{- $ctx := . -}}
+{{- $inWidth := .width -}}
+{{- $inHeight := .height -}}
+{{- $inThumbnailWidth := .thumbnailWidth -}}
+{{- $inThumbnailHeight := .thumbnailHeight -}}
+{{- $inAlt := .alt -}}
+{{- $inAltRendered := .altRendered -}}
+{{- $inTitle := .title -}}
+{{- $inImage := .image -}}
+{{- $inPage := .page -}}
+{{- $inClass := .class -}}
+{{- $inLink := .link -}}
+{{- $inLinkClass := .linkClass -}}
+{{- $inTarget := .target -}}
+{{- $inRel := .rel -}}
+{{- $inImageWrapper := .imageWrapper -}}
+{{- $inCaption := .caption -}}
+{{- $inCaptionRendered := .captionRendered -}}
+{{- $inAttr := .attr -}}
+{{- $inAttrLink := .attrLink -}}
+{{- $inImageClass := .imageClass -}}
+{{- $inNoImageWrapper := .noImageWrapper -}}
+{{- $inImageSizes := .imageSizes -}}
+{{- $inThumbnailSizes := .thumbnailSizes -}}
+{{- $inSingleSize := .singleSize -}}
+{{- $inConvertTo := .convertTo -}}
+{{- $inDoThumbnails := .thumbnails -}}
+{{- $inDoFullSize := .fullSize -}}
+{{- $inSizesAttr := .sizesAttr -}}
+{{- $inThumbnailSizesAttr := .thumbnailSizesAttr -}}
+{{- $inMinThumbnailViewport := .minThumbnailViewport -}}
+{{- $inLoading := .loading -}}
+{{- $inNoVisibleCaption := .noVisibleCaption -}}
+{{- $altRendered := false -}}
+{{- $captionRendered := false -}}
+
+{{- with $inPage -}}
+    {{- $addLink := false -}}
+    {{- $link := $inLink -}}
+    {{- $haveLink := false -}}
+    {{- if $inLink -}}
+        {{- $haveLink = true -}}
+    {{- else -}}
+        {{- $link = "" -}}
+    {{- end -}}
+    {{- $addFullLink := .Params.imageLinkFull | default .Site.Params.imageLinkFull | default false -}}
+    {{- if or $haveLink $addFullLink -}}
+        {{- $addLink = true -}}
+    {{- end -}}
+
+    {{- $alt := "" -}}
+    {{- if or $inAlt $inCaption }}
+        {{- with $inAlt -}}
+            {{- $alt = . -}}
+            {{- $altRendered = eq $inAltRendered true }}
+        {{- else -}}
+            {{- if not (eq $inCaptionRendered true) -}}
+                {{- $alt = $inCaption | .RenderString | plainify -}}
+                {{- $altRendered = true -}}
+            {{- else -}}
+                {{- $alt = $inCaption | plainify -}}
+                {{- $captionRendered = true -}}
+                {{- $altRendered = true -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+
+    {{- $imageWrapper := $inImageWrapper -}}
+    {{- $class := $inClass -}}
+    {{- $caption := $inCaption -}}
+    {{- $captionRendered = eq $inCaptionRendered true -}}
+
+    {{- $addWrapper := .Params.imageAddWrapper | default .Site.Params.imageAddWrapper -}}
+    {{- if and $addWrapper (not $imageWrapper) -}}
+        {{- $imageWrapper = $addWrapper -}}
+    {{- end -}}
+
+    {{- $addClass := .Params.imageAddClass | default .Site.Params.imageAddClass -}}
+    {{- if and $addClass (not $class) -}}
+        {{- $class = $addClass -}}
+    {{- end -}}
+
+    {{- $altAsCaption := .Params.imageAltAsCaption | default .Site.Params.imageAltAsCaption -}}
+    {{- if and $altAsCaption (not $caption) -}}
+        {{- $caption = $inAlt -}}
+        {{- $captionRendered = $altRendered -}}
+    {{- end -}}
+
+    {{- $renderedCaption := "" -}}
+    {{- if $captionRendered -}}
+        {{- $renderedCaption = $caption -}}
+    {{- else -}}
+        {{- $renderedCaption = ($caption | $inPage.RenderString (dict "display" "block")) -}}
+    {{- end -}}
+
+    {{- if $inNoImageWrapper -}}
+        {{- $imageWrapper = "" -}}
+    {{- end -}}
+
+    {{- if $imageWrapper -}}
+        {{- if $class -}}
+            {{- printf "\n<%s class=\"%s\">" $imageWrapper $class | safeHTML -}}
+        {{- else -}}
+            {{- printf "\n<%s>" $imageWrapper | safeHTML -}}
+        {{- end -}}
+    {{- end -}}
+
+    {{- $pictureOptions := (dict "width" $inWidth "height" $inHeight "thumbnailWidth" $inThumbnailWidth "thumbnailHeight" $inThumbnailHeight "alt" $alt "title" $inTitle "image" $inImage "page" $inPage "caption" $caption "class" (cond (eq $imageWrapper "") $class $inImageClass) "linkClass" $inLinkClass "imageSizes" $inImageSizes "thumbnailSizes" $inThumbnailSizes "singleSize" $inSingleSize "convertTo" $inConvertTo "thumbnails" $inDoThumbnails "fullSize" $inDoFullSize "sizesAttr" $inSizesAttr "thumbnailSizeAttr" $inThumbnailSizesAttr "loading" $inLoading "addLink" $addLink "link" $link "target" $inTarget "rel" $inRel "minThumbnailViewport" $inMinThumbnailViewport) -}}
+    {{- partial "helpers/lib-output/image-handling/thumbnail-or-full-picture" $pictureOptions -}}
+
+    {{- if $imageWrapper -}}
+        {{- if or $inTitle $caption $inAttr -}}
+            {{- if (eq $imageWrapper "figure") -}}<figcaption>{{- else if not $inTitle -}}<span>{{- else -}}<div>{{- end -}}
+                {{- if ne $inNoVisibleCaption true -}}
+                    {{- with $inTitle -}}
+                        <h2>{{ . }}</h2>
+                    {{- end -}}
+                    {{- if or $caption $inAttr -}}<span>
+                    {{- /* Can't have 'p' inside 'span' and rendering markdown sometimes results in a 'p' wrapper.
+                        * We ensure we get a 'p' (display block) so that we after we convert them we have the
+                        * expected spans (for CSS)
+                        */ -}}
+                        {{- (replaceRE "<(/?)p>" "<${1}span>" $renderedCaption) | safeHTML -}}
+                        {{- with $inAttrLink -}}
+                        <a href="{{ . }}">
+                        {{- end -}}
+                        {{- (replaceRE "<(/?)p>" "<${1}span>" ($inAttr | $inPage.RenderString (dict "display" "block"))) | safeHTML -}}
+                        {{- if $inAttrLink -}}</a>{{- end -}}</span>
+                    {{- end -}}
+                {{- end -}}
+            {{- if (eq $imageWrapper "figure") -}}</figcaption>{{- else if not $inTitle -}}</span>{{- else -}}</div>{{- end -}}
+        {{- end -}}
+        {{- printf "</%s>" $imageWrapper | safeHTML -}}
+    {{- else -}}
+        {{- if or $caption $inAttr -}}<span>
+            {{- (replaceRE "<(/?)p>" "<${1}span>" $renderedCaption) | safeHTML -}}
+            {{- with $inAttrLink -}}
+                <a href="{{ . }}">
+            {{- end -}}
+            {{- replaceRE "<(/?)p>" "<$1{s}pan>" ($inAttr | $inPage.RenderString (dict "display" "block")) | safeHTML -}}
+            {{- if $inAttrLink }}</a>{{ end }}</span>
+        {{- end -}}
+    {{- end -}}
+{{- end -}}

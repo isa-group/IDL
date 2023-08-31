@@ -1,0 +1,39 @@
+{{- $ctx := . -}}
+{{- $curPage := .page -}}
+{{- $inImages := .images -}}
+{{- $getRelative := .getRelative -}}
+{{- $ignoreBundleAssets := .ignoreBundleAssets -}}
+{{- $ignoreSiteAssets := .ignoreSiteAssets -}}
+{{- $ignoreStaticImages := .ignoreStaticImages -}}
+{{- $finalSearch := .finalSearch | default true -}}
+{{- $skipItem := $curPage.Scratch.Get "non-existent-scratch" -}}
+{{- $images := (slice) -}}
+{{- if reflect.IsMap $inImages -}}
+    {{- with (partial "helpers/lib/image-handling/find-image-src" (dict "src" $inImages.src "alt" (cond (isset $inImages "alt") $inImages.alt $skipItem) "title" (cond (isset $inImages "title") $inImages.title $skipItem) "page" $curPage "getRelative" $getRelative "ignoreBundleAssets" $ignoreBundleAssets "ignoreSiteAssets" $ignoreSiteAssets "ignoreStaticImages" $ignoreStaticImages "finalSearch" $finalSearch)) -}}
+        {{- $images = $images | append . -}}
+    {{- end -}}
+{{- else if reflect.IsSlice $inImages -}}
+    {{- range $inImages -}}
+        {{- if reflect.IsMap . -}}
+            {{- with (partial "helpers/lib/image-handling/find-image-src" (dict "src" .src "alt" (cond (isset . "alt") .alt $skipItem) "title" (cond (isset . "title") .title $skipItem) "page" $curPage "getRelative" $getRelative "ignoreBundleAssets" $ignoreBundleAssets "ignoreSiteAssets" $ignoreSiteAssets "ignoreStaticImages" $ignoreStaticImages "finalSearch" $finalSearch)) -}}
+                {{- $images = $images | append . -}}
+            {{- end -}}
+        {{- else if reflect.IsSlice . -}}
+            {{- with (partial "helpers/lib/image-handling/find-image-src" (dict "src" (index . 0) "alt" (cond (isset . 1) (index . 1) $skipItem) "title" (cond (isset . 2) (index . 2) $skipItem) "page" $curPage "getRelative" $getRelative "ignoreBundleAssets" $ignoreBundleAssets "ignoreSiteAssets" $ignoreSiteAssets "ignoreStaticImages" $ignoreStaticImages "finalSearch" $finalSearch)) -}}
+                {{- $images = $images | append . -}}
+            {{- end -}}
+        {{- else -}}
+            {{- with (partial "helpers/lib/image-handling/find-image-src" (dict "src" . "page" $curPage "getRelative" $getRelative "ignoreBundleAssets" $ignoreBundleAssets "ignoreSiteAssets" $ignoreSiteAssets "ignoreStaticImages" $ignoreStaticImages  "finalSearch" $finalSearch)) -}}
+                {{- $images = $images | append . -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- else -}}
+    {{- with (partial "helpers/lib/image-handling/find-image-src" (dict "src" $inImages "page" $curPage "getRelative" $getRelative "ignoreBundleAssets" $ignoreBundleAssets "ignoreSiteAssets" $ignoreSiteAssets "ignoreStaticImages" $ignoreStaticImages "finalSearch" $finalSearch)) -}}
+        {{- $images = $images | append . -}}
+    {{- end -}}
+{{- end -}}
+{{- if eq (len $images) 0 -}}
+    {{- $images = $curPage.Scratch.Get "non-existent-scratch" -}}
+{{- end -}}
+{{- return $images -}}
