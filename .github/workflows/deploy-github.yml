@@ -16,8 +16,8 @@ jobs:
           node-version: '16'
           cache: 'npm'
 
-     # - name: Install dependencies
-     #   run: npm install
+      - name: Install dependencies
+        run: npm install
 
       - name: Check for linting errors
         run: npm test
