@@ -16,6 +16,10 @@ jobs:
           node-version: '16'
           cache: 'npm'
 
+      # Clear npm cache before installing dependencies
+      - name: Clear npm cache
+        run: npm cache clean --force
+        
       - name: Install dependencies
         run: npm install
 
