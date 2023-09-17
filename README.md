@@ -126,7 +126,7 @@ The following section presents a simplified version of the IDL grammar. The full
 
 The IDL is implemented using Xtext, a popular framework for the development of programming languages and DSLs. Xtext takes a grammar as input and generates a complete set of tools as output, including a linker, a compiler, a parser and a fully-fledged editor supporting features such as code completion, type checking, syntax coloring and validation as can be observed in the figure below. For instructions on how to generate the Xtext artifacts and test the DSL, refer to [this tutorial](https://www.eclipse.org/Xtext/documentation/102_domainmodelwalkthrough.html).
 
-![IDL Editor](http://idlanalysis.com/wp-content/uploads/2021/11/editor.png)
+![IDL Editor]([http://idlanalysis.com/wp-content/uploads/2021/11/editor.png](https://github.com/isa-group/IDL/blob/IDLWebsite/assets/images/IDLEditor.png))
 
 ### Things to notice
 - The project containing the grammar definition and all language-specific components (parser, lexer, linker, validation, etc.) is ```'es.us.isa.interparamdep'```.
