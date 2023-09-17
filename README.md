@@ -1,7 +1,7 @@
 # IDL: Inter-parameter Dependency Language
 
 Inter-Parameter Dependency Language (IDL) is a textual domain-specific language for the specification of dependencies among input parameters in web APIs.
-IDL is designed to express the seven types of inter-parameter dependencies identified on real-world APIs, including (**Requires**, **Or**, **OnlyOne**, **AllOrNone**, **ZeroOrOne**, **Arithmetic/Relational**, **Complex**).
+IDL is designed to express the seven types of inter-parameter dependencies identified on real-world APIs, including (**Requires**, **Or**, **OnlyOne**, **AllOrNone**, **ZeroOrOne**, **Arithmetic/Relational**, **Complex**). For more details about IDL projects and to explore its applications, please visit the **[IDL website](https://isa-group.github.io/IDL/)**.
 
 ## Index:
 
