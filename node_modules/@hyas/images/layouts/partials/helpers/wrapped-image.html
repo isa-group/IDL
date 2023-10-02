@@ -44,7 +44,7 @@
         {{- $link = "" -}}
     {{- end -}}
     {{- $addFullLink := .Params.imageLinkFull | default .Site.Params.imageLinkFull | default false -}}
-    {{- if or $haveLink $addFullLink -}}
+    {{- if and (not $haveLink) $addFullLink -}}
         {{- $addLink = true -}}
     {{- end -}}
 

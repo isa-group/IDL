@@ -180,6 +180,7 @@ function scheme(hljs) {
 
   return {
     name: 'Scheme',
+    aliases: ['scm'],
     illegal: /\S/,
     contains: [
       hljs.SHEBANG(),

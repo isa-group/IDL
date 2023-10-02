@@ -45,6 +45,10 @@ function nix(hljs) {
     end: /\}/,
     keywords: KEYWORDS
   };
+  const ESCAPED_DOLLAR = {
+    className: 'char.escape',
+    begin: /''\$/,
+  };
   const ATTRS = {
     begin: /[a-zA-Z0-9-_]+(\s*=)/,
     returnBegin: true,
@@ -59,7 +63,7 @@ function nix(hljs) {
   };
   const STRING = {
     className: 'string',
-    contains: [ ANTIQUOTE ],
+    contains: [ ESCAPED_DOLLAR, ANTIQUOTE ],
     variants: [
       {
         begin: "''",
